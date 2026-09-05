@@ -21,11 +21,14 @@ abstract final class G {
   static const Color gemGreen = Color(0xFF34C759);
   static const Color white = Color(0xFFFFFFFF);
 
+  /// Small labels were hard to read: every size below 16 is raised by 3 points.
+  static double _readable(double size) => size < 16 ? size + 3 : size;
+
   static TextStyle display(double size, {Color color = gold, double weight = 700, double letterSpacing = 1.2}) =>
-      TextStyle(fontFamily: 'Cinzel', fontSize: size, color: color, fontVariations: [FontVariation('wght', weight)], letterSpacing: letterSpacing, height: 1.15);
+      TextStyle(fontFamily: 'Cinzel', fontSize: _readable(size), color: color, fontVariations: [FontVariation('wght', weight)], letterSpacing: letterSpacing, height: 1.15);
 
   static TextStyle body(double size, {Color color = ink, double weight = 500, FontStyle style = FontStyle.normal, double height = 1.3}) =>
-      TextStyle(fontFamily: 'Nunito', fontSize: size, color: color, fontVariations: [FontVariation('wght', weight)], fontStyle: style, height: height);
+      TextStyle(fontFamily: 'Nunito', fontSize: _readable(size), color: color, fontVariations: [FontVariation('wght', weight)], fontStyle: style, height: height);
 
   static ThemeData theme() {
     final base = ThemeData(
