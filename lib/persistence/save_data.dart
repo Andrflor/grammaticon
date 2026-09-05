@@ -8,16 +8,12 @@ import '../pedagogy/mastery.dart';
 const int kSchemaVersion = 1;
 
 class Settings {
-  const Settings({
-    this.volume = 0.8,
-    this.soundOn = true,
-    this.reducedMotion = false,
-    this.correctDelayMs = 350,
-    this.wrongDelayMs = 2800,
-  });
+  const Settings({this.volume = 0.8, this.soundOn = true, this.reducedMotion = false, this.correctDelayMs = 350, this.wrongDelayMs = 2800, this.musicOn = true, this.musicVolume = 0.5});
 
   final double volume;
   final bool soundOn;
+  final bool musicOn;
+  final double musicVolume;
   final bool reducedMotion;
 
   /// Delay before the next question after a correct answer.
@@ -26,22 +22,26 @@ class Settings {
   /// Reading delay after an error before the next question.
   final int wrongDelayMs;
 
-  Settings copyWith({double? volume, bool? soundOn, bool? reducedMotion, int? correctDelayMs, int? wrongDelayMs}) => Settings(
-        volume: volume ?? this.volume,
-        soundOn: soundOn ?? this.soundOn,
-        reducedMotion: reducedMotion ?? this.reducedMotion,
-        correctDelayMs: correctDelayMs ?? this.correctDelayMs,
-        wrongDelayMs: wrongDelayMs ?? this.wrongDelayMs,
-      );
+  Settings copyWith({double? volume, bool? soundOn, bool? reducedMotion, int? correctDelayMs, int? wrongDelayMs, bool? musicOn, double? musicVolume}) => Settings(
+    volume: volume ?? this.volume,
+    soundOn: soundOn ?? this.soundOn,
+    reducedMotion: reducedMotion ?? this.reducedMotion,
+    correctDelayMs: correctDelayMs ?? this.correctDelayMs,
+    wrongDelayMs: wrongDelayMs ?? this.wrongDelayMs,
+    musicOn: musicOn ?? this.musicOn,
+    musicVolume: musicVolume ?? this.musicVolume,
+  );
 
-  Map<String, Object?> toJson() => {'vol': volume, 'snd': soundOn, 'rm': reducedMotion, 'cd': correctDelayMs, 'wd': wrongDelayMs};
+  Map<String, Object?> toJson() => {'vol': volume, 'snd': soundOn, 'rm': reducedMotion, 'cd': correctDelayMs, 'wd': wrongDelayMs, 'mus': musicOn, 'mvol': musicVolume};
   factory Settings.fromJson(Map<String, Object?> j) => Settings(
-        volume: (j['vol'] as num?)?.toDouble() ?? 0.8,
-        soundOn: j['snd'] as bool? ?? true,
-        reducedMotion: j['rm'] as bool? ?? false,
-        correctDelayMs: (j['cd'] as num?)?.toInt() ?? 350,
-        wrongDelayMs: (j['wd'] as num?)?.toInt() ?? 2800,
-      );
+    volume: (j['vol'] as num?)?.toDouble() ?? 0.8,
+    soundOn: j['snd'] as bool? ?? true,
+    reducedMotion: j['rm'] as bool? ?? false,
+    correctDelayMs: (j['cd'] as num?)?.toInt() ?? 350,
+    wrongDelayMs: (j['wd'] as num?)?.toInt() ?? 2800,
+    musicOn: j['mus'] as bool? ?? true,
+    musicVolume: (j['mvol'] as num?)?.toDouble() ?? 0.5,
+  );
 }
 
 enum BattleMode {
@@ -82,30 +82,19 @@ class ActiveBattle {
   final List<String> componentIds;
   final int correctCount;
 
-  Map<String, Object?> toJson() => {
-        't': trialId,
-        'm': mode.key,
-        'h': hearts,
-        'e': enemyHp,
-        'a': answered,
-        'g': gemsDelta,
-        's': seed,
-        'q': questionIndex,
-        'c': componentIds,
-        'ok': correctCount,
-      };
+  Map<String, Object?> toJson() => {'t': trialId, 'm': mode.key, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount};
   factory ActiveBattle.fromJson(Map<String, Object?> j) => ActiveBattle(
-        trialId: j['t'] as String,
-        mode: BattleMode.fromKey(j['m'] as String),
-        hearts: (j['h'] as num).toInt(),
-        enemyHp: (j['e'] as num).toInt(),
-        answered: (j['a'] as num).toInt(),
-        gemsDelta: (j['g'] as num).toInt(),
-        seed: (j['s'] as num).toInt(),
-        questionIndex: (j['q'] as num).toInt(),
-        componentIds: ((j['c'] as List?) ?? const []).cast<String>(),
-        correctCount: (j['ok'] as num?)?.toInt() ?? 0,
-      );
+    trialId: j['t'] as String,
+    mode: BattleMode.fromKey(j['m'] as String),
+    hearts: (j['h'] as num).toInt(),
+    enemyHp: (j['e'] as num).toInt(),
+    answered: (j['a'] as num).toInt(),
+    gemsDelta: (j['g'] as num).toInt(),
+    seed: (j['s'] as num).toInt(),
+    questionIndex: (j['q'] as num).toInt(),
+    componentIds: ((j['c'] as List?) ?? const []).cast<String>(),
+    correctCount: (j['ok'] as num?)?.toInt() ?? 0,
+  );
 }
 
 class SaveData {
@@ -166,61 +155,56 @@ class SaveData {
     Set<String>? introSeen,
     DateTime? createdAt,
     DateTime? updatedAt,
-  }) =>
-      SaveData(
-        schemaVersion: schemaVersion,
-        gems: gems ?? this.gems,
-        purchased: purchased ?? this.purchased,
-        skills: skills ?? this.skills,
-        settings: settings ?? this.settings,
-        mixtaConfig: mixtaConfig ?? this.mixtaConfig,
-        battlesWon: battlesWon ?? this.battlesWon,
-        battlesLost: battlesLost ?? this.battlesLost,
-        lastTransactionId: lastTransactionId ?? this.lastTransactionId,
-        activeBattle: clearActiveBattle ? null : (activeBattle ?? this.activeBattle),
-        lemmaDaily: lemmaDaily ?? this.lemmaDaily,
-        introSeen: introSeen ?? this.introSeen,
-        createdAt: createdAt ?? this.createdAt,
-        updatedAt: updatedAt ?? this.updatedAt,
-      );
+  }) => SaveData(
+    schemaVersion: schemaVersion,
+    gems: gems ?? this.gems,
+    purchased: purchased ?? this.purchased,
+    skills: skills ?? this.skills,
+    settings: settings ?? this.settings,
+    mixtaConfig: mixtaConfig ?? this.mixtaConfig,
+    battlesWon: battlesWon ?? this.battlesWon,
+    battlesLost: battlesLost ?? this.battlesLost,
+    lastTransactionId: lastTransactionId ?? this.lastTransactionId,
+    activeBattle: clearActiveBattle ? null : (activeBattle ?? this.activeBattle),
+    lemmaDaily: lemmaDaily ?? this.lemmaDaily,
+    introSeen: introSeen ?? this.introSeen,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+  );
 
   Map<String, Object?> toJson() => {
-        'schema': schemaVersion,
-        'gems': gems,
-        'purchased': purchased.toList()..sort(),
-        'skills': {for (final e in skills.entries) e.key: e.value.toJson()},
-        'settings': settings.toJson(),
-        'mixta': mixtaConfig,
-        'won': battlesWon,
-        'lost': battlesLost,
-        'tx': lastTransactionId,
-        if (activeBattle != null) 'battle': activeBattle!.toJson(),
-        'lemmaDaily': lemmaDaily,
-        'introSeen': introSeen.toList()..sort(),
-        if (createdAt != null) 'created': createdAt!.toIso8601String(),
-        if (updatedAt != null) 'updated': updatedAt!.toIso8601String(),
-      };
+    'schema': schemaVersion,
+    'gems': gems,
+    'purchased': purchased.toList()..sort(),
+    'skills': {for (final e in skills.entries) e.key: e.value.toJson()},
+    'settings': settings.toJson(),
+    'mixta': mixtaConfig,
+    'won': battlesWon,
+    'lost': battlesLost,
+    'tx': lastTransactionId,
+    if (activeBattle != null) 'battle': activeBattle!.toJson(),
+    'lemmaDaily': lemmaDaily,
+    'introSeen': introSeen.toList()..sort(),
+    if (createdAt != null) 'created': createdAt!.toIso8601String(),
+    if (updatedAt != null) 'updated': updatedAt!.toIso8601String(),
+  };
 
   factory SaveData.fromJson(Map<String, Object?> j) => SaveData(
-        schemaVersion: (j['schema'] as num?)?.toInt() ?? kSchemaVersion,
-        gems: (j['gems'] as num?)?.toInt() ?? 0,
-        purchased: ((j['purchased'] as List?) ?? const []).cast<String>().toSet(),
-        skills: {
-          for (final e in ((j['skills'] as Map?) ?? const {}).entries) e.key as String: SkillRecord.fromJson((e.value as Map).cast<String, Object?>()),
-        },
-        settings: j['settings'] == null ? const Settings() : Settings.fromJson((j['settings'] as Map).cast<String, Object?>()),
-        mixtaConfig: {
-          for (final e in ((j['mixta'] as Map?) ?? const {}).entries) e.key as String: (e.value as List).cast<String>(),
-        },
-        battlesWon: (j['won'] as num?)?.toInt() ?? 0,
-        battlesLost: (j['lost'] as num?)?.toInt() ?? 0,
-        lastTransactionId: (j['tx'] as num?)?.toInt() ?? 0,
-        activeBattle: j['battle'] == null ? null : ActiveBattle.fromJson((j['battle'] as Map).cast<String, Object?>()),
-        lemmaDaily: {for (final e in ((j['lemmaDaily'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
-        introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
-        createdAt: j['created'] == null ? null : DateTime.tryParse(j['created'] as String),
-        updatedAt: j['updated'] == null ? null : DateTime.tryParse(j['updated'] as String),
-      );
+    schemaVersion: (j['schema'] as num?)?.toInt() ?? kSchemaVersion,
+    gems: (j['gems'] as num?)?.toInt() ?? 0,
+    purchased: ((j['purchased'] as List?) ?? const []).cast<String>().toSet(),
+    skills: {for (final e in ((j['skills'] as Map?) ?? const {}).entries) e.key as String: SkillRecord.fromJson((e.value as Map).cast<String, Object?>())},
+    settings: j['settings'] == null ? const Settings() : Settings.fromJson((j['settings'] as Map).cast<String, Object?>()),
+    mixtaConfig: {for (final e in ((j['mixta'] as Map?) ?? const {}).entries) e.key as String: (e.value as List).cast<String>()},
+    battlesWon: (j['won'] as num?)?.toInt() ?? 0,
+    battlesLost: (j['lost'] as num?)?.toInt() ?? 0,
+    lastTransactionId: (j['tx'] as num?)?.toInt() ?? 0,
+    activeBattle: j['battle'] == null ? null : ActiveBattle.fromJson((j['battle'] as Map).cast<String, Object?>()),
+    lemmaDaily: {for (final e in ((j['lemmaDaily'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
+    introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
+    createdAt: j['created'] == null ? null : DateTime.tryParse(j['created'] as String),
+    updatedAt: j['updated'] == null ? null : DateTime.tryParse(j['updated'] as String),
+  );
 }
 
 /// Encodes/decodes saves, applying migrations from older schema versions.

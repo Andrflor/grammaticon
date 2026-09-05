@@ -40,6 +40,7 @@ class ProfileController extends Notifier<SaveData> {
     final audio = ref.read(audioProvider);
     audio.volume = next.settings.volume;
     audio.soundOn = next.settings.soundOn;
+    audio.setMusic(on: next.settings.musicOn, volume: next.settings.musicVolume);
     return _repo.save(next);
   }
 
@@ -48,14 +49,9 @@ class ProfileController extends Notifier<SaveData> {
   /// animation can neither lose nor duplicate the transaction.
   Future<void> applyResolution(Resolution r, ActiveBattle? snapshot) {
     if (r.transaction.id <= state.lastTransactionId) return Future.value(); // already applied
-    return _commit(state.copyWith(
-      gems: r.gemsAfter,
-      skills: r.skillsAfter,
-      lemmaDaily: r.lemmaDailyAfter,
-      lastTransactionId: r.transaction.id,
-      activeBattle: snapshot,
-      clearActiveBattle: snapshot == null,
-    ));
+    return _commit(
+      state.copyWith(gems: r.gemsAfter, skills: r.skillsAfter, lemmaDaily: r.lemmaDailyAfter, lastTransactionId: r.transaction.id, activeBattle: snapshot, clearActiveBattle: snapshot == null),
+    );
   }
 
   /// Buys permanent access. Returns false when not purchasable.
@@ -78,12 +74,9 @@ class ProfileController extends Notifier<SaveData> {
 
   Future<void> setActiveBattle(ActiveBattle? b) => _commit(state.copyWith(activeBattle: b, clearActiveBattle: b == null));
 
-  Future<void> recordBattleEnd({required bool won, required int bonus}) => _commit(state.copyWith(
-        gems: state.gems + bonus,
-        battlesWon: state.battlesWon + (won ? 1 : 0),
-        battlesLost: state.battlesLost + (won ? 0 : 1),
-        clearActiveBattle: true,
-      ));
+  Future<void> recordBattleEnd({required bool won, required int bonus, int penalty = 0}) => _commit(
+    state.copyWith(gems: (state.gems + bonus - penalty).clamp(0, 1 << 30), battlesWon: state.battlesWon + (won ? 1 : 0), battlesLost: state.battlesLost + (won ? 0 : 1), clearActiveBattle: true),
+  );
 
   String exportJson() => _repo.export(state);
 

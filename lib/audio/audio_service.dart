@@ -27,9 +27,16 @@ class AudioService {
   final bool enabled;
   final int _poolSize;
   final List<AudioPlayer> _pool = [];
+  AudioPlayer? _music;
   int _next = 0;
   double volume = 0.8;
   bool soundOn = true;
+  double _musicVolume = 0.5;
+  bool _musicOn = true;
+  bool _musicStarted = false;
+
+  /// Theme music file (assets/audio); user-provided track, looped.
+  static const String themeFile = 'thema.mp3';
 
   Future<void> preload() async {
     if (!enabled) return;
@@ -56,10 +63,41 @@ class AudioService {
     });
   }
 
+  // ----- music -----------------------------------------------------------------
+
+  /// Starts the looping theme (idempotent).
+  Future<void> startMusic() async {
+    if (!enabled || _musicStarted) return;
+    _musicStarted = true;
+    try {
+      final p = _music ??= AudioPlayer();
+      await p.setReleaseMode(ReleaseMode.loop);
+      await p.setVolume(_musicOn ? _musicVolume : 0);
+      await p.play(AssetSource('audio/$themeFile'), volume: _musicOn ? _musicVolume : 0);
+    } catch (e) {
+      debugPrint('Mūsica nōn coepta: $e');
+    }
+  }
+
+  /// Applies music settings; volume 0 or off mutes without stopping the loop.
+  void setMusic({required bool on, required double volume}) {
+    _musicOn = on;
+    _musicVolume = volume;
+    _music?.setVolume(on ? volume : 0).catchError((Object e) => debugPrint('Mūsica: $e'));
+  }
+
+  /// Pauses when the app goes to the background.
+  void pauseMusic() => _music?.pause().catchError((Object e) => debugPrint('Mūsica: $e'));
+  void resumeMusic() {
+    if (_musicStarted) _music?.resume().catchError((Object e) => debugPrint('Mūsica: $e'));
+  }
+
   void dispose() {
     for (final p in _pool) {
       p.dispose();
     }
     _pool.clear();
+    _music?.dispose();
+    _music = null;
   }
 }

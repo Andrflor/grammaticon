@@ -38,7 +38,8 @@ Ville → **Amphitheātrum** → choix d'une épreuve (certāmen) → combat →
 
 * Réponse par souris, toucher ou touches **1–9** ; Échap met en pause ; Espace/Entrée passe la correction.
 * Bonne réponse : attaque, impact, *Recte!*, gemmes qui volent vers le compteur, question suivante après ~350 ms (réglable).
-* Erreur : riposte, perte d'un cœur, pénalité, explication contrastive, délai de lecture réglable ; *Explicā plūs* ouvre l'aide (tableaux, décomposition, forme voisine) et suspend la reprise.
+* Erreur : riposte, perte d'un cœur, pénalité, explication contrastive qui reste affichée jusqu'à *Perge* (ou Espace/Entrée) ; *Explicā plūs* ouvre l'aide (tableaux, décomposition, forme voisine).
+* Défaite : les gemmes gagnées pendant le combat sont perdues et un tribut d'un quart du solde (plafonné à 40) est payé ; achats et maîtrise sont conservés. Le coût est annoncé avant chaque combat.
 * **Exercitātiō** : même contenu sans gemmes ni cœurs ; les réponses aidées ou corrigées sont comptées à part.
 * **Tabula** : maîtrise estimée par compétence, alimentée par les réponses réelles (nombre, diversité des verbes, réussite récente au premier essai, dernière pratique, révision due, fiabilité).
 * Sauvegarde après chaque réponse et chaque achat (`shared_preferences`, schéma versionné, migrations, export/import par le presse-papiers). Un combat interrompu se reprend depuis la ville.

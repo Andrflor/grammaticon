@@ -21,34 +21,40 @@ abstract final class G {
   static const Color gemGreen = Color(0xFF34C759);
   static const Color white = Color(0xFFFFFFFF);
 
-  static TextStyle display(double size, {Color color = gold, double weight = 700, double letterSpacing = 1.2}) => TextStyle(
-        fontFamily: 'Cinzel',
-        fontSize: size,
-        color: color,
-        fontVariations: [FontVariation('wght', weight)],
-        letterSpacing: letterSpacing,
-        height: 1.15,
-      );
+  static TextStyle display(double size, {Color color = gold, double weight = 700, double letterSpacing = 1.2}) =>
+      TextStyle(fontFamily: 'Cinzel', fontSize: size, color: color, fontVariations: [FontVariation('wght', weight)], letterSpacing: letterSpacing, height: 1.15);
 
-  static TextStyle body(double size, {Color color = ink, double weight = 500, FontStyle style = FontStyle.normal, double height = 1.3}) => TextStyle(
-        fontFamily: 'Nunito',
-        fontSize: size,
-        color: color,
-        fontVariations: [FontVariation('wght', weight)],
-        fontStyle: style,
-        height: height,
-      );
+  static TextStyle body(double size, {Color color = ink, double weight = 500, FontStyle style = FontStyle.normal, double height = 1.3}) =>
+      TextStyle(fontFamily: 'Nunito', fontSize: size, color: color, fontVariations: [FontVariation('wght', weight)], fontStyle: style, height: height);
 
   static ThemeData theme() {
-    final base = ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: purple, primary: purple, secondary: gold, surface: marble));
+    final base = ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(seedColor: purple, primary: purple, secondary: gold, surface: marble),
+    );
     return base.copyWith(
       scaffoldBackgroundColor: purpleDark,
       textTheme: base.textTheme.apply(fontFamily: 'Nunito', bodyColor: ink, displayColor: ink),
-      dialogTheme: DialogThemeData(backgroundColor: marble, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20), side: const BorderSide(color: gold, width: 3))),
-      bottomSheetTheme: const BottomSheetThemeData(backgroundColor: marble, shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(24)))),
+      dialogTheme: DialogThemeData(
+        backgroundColor: marble,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(color: gold, width: 3),
+        ),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: marble,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+      ),
       sliderTheme: base.sliderTheme.copyWith(activeTrackColor: gold, thumbColor: gold, inactiveTrackColor: marbleDark),
-      switchTheme: SwitchThemeData(thumbColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? gold : marbleDark), trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? purple : inkSoft)),
-      snackBarTheme: SnackBarThemeData(backgroundColor: purpleDark, contentTextStyle: body(15, color: goldLight, weight: 700)),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? gold : marbleDark),
+        trackColor: WidgetStateProperty.resolveWith((s) => s.contains(WidgetState.selected) ? purple : inkSoft),
+      ),
+      snackBarTheme: SnackBarThemeData(
+        backgroundColor: purpleDark,
+        contentTextStyle: body(15, color: goldLight, weight: 700),
+      ),
     );
   }
 }

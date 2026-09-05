@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,32 +23,34 @@ Future<void> main() async {
   await audio.preload();
   audio.volume = save.settings.volume;
   audio.soundOn = save.settings.soundOn;
-  runApp(ProviderScope(
-    overrides: [
-      analyzerProvider.overrideWithValue(analyzer),
-      saveRepositoryProvider.overrideWithValue(repo),
-      initialSaveProvider.overrideWithValue(save),
-      audioProvider.overrideWithValue(audio),
-    ],
-    child: const GrammaticonApp(),
-  ));
+  audio.setMusic(on: save.settings.musicOn, volume: save.settings.musicVolume);
+  unawaited(audio.startMusic());
+  runApp(
+    ProviderScope(
+      overrides: [analyzerProvider.overrideWithValue(analyzer), saveRepositoryProvider.overrideWithValue(repo), initialSaveProvider.overrideWithValue(save), audioProvider.overrideWithValue(audio)],
+      child: const GrammaticonApp(),
+    ),
+  );
 }
 
 class _Splash extends StatelessWidget {
   const _Splash();
   @override
   Widget build(BuildContext context) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: G.theme(),
-        home: Scaffold(
-          backgroundColor: G.purpleDark,
-          body: Center(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Text('GRAMMATICON', style: G.display(40)),
-              const SizedBox(height: 12),
-              Text('Fōrmae parantur…', style: G.body(18, color: G.goldLight)),
-            ]),
-          ),
+    debugShowCheckedModeBanner: false,
+    theme: G.theme(),
+    home: Scaffold(
+      backgroundColor: G.purpleDark,
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('GRAMMATICON', style: G.display(40)),
+            const SizedBox(height: 12),
+            Text('Fōrmae parantur…', style: G.body(18, color: G.goldLight)),
+          ],
         ),
-      );
+      ),
+    ),
+  );
 }

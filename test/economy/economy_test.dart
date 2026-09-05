@@ -31,4 +31,11 @@ void main() {
     expect(eco.victoryBonus(catchUp: false), 6);
     expect(eco.victoryBonus(catchUp: true), 12);
   });
+  test('defeat forfeits the fight gains plus a bounded tribute, never below zero', () {
+    expect(eco.defeatPenalty(balance: 45, fightDelta: -5), 12); // ceil(45 * 0.25)
+    expect(eco.defeatPenalty(balance: 60, fightDelta: 20), 30); // 20 + ceil(40 * 0.25)
+    expect(eco.defeatPenalty(balance: 1000, fightDelta: 0), 40); // capped tribute
+    expect(eco.defeatPenalty(balance: 0, fightDelta: 0), 0);
+    expect(eco.defeatPenalty(balance: 3, fightDelta: 10), 3); // never below zero
+  });
 }

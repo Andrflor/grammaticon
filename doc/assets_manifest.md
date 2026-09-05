@@ -30,5 +30,8 @@ Chaîne retenue : **sprites fixes + animation procédurale** (Flame) : respirati
 
 Pour remplacer un personnage par une séquence ou un fichier Rive : conserver le pivot bas-centre et la hauteur relative (≈ 42 % de la hauteur de l'écran, bornée 140–520 px), exposer les états `idle`, `attack`, `hurt`, `victory`, `defeat`.
 
+## Musique
+`thema.mp3` (2 min 17, stéréo, 128 kb/s, 2,2 Mo) : thème du jeu fourni par l'auteur, joué en boucle dès le lancement, coupé quand l'application passe en arrière-plan ; interrupteur et volume dédiés dans les Optiōnēs.
+
 ## Sons (`assets/audio/`)
 Synthétisés par SoX (`recte`, `errat`, `impetus`, `ictus`, `gemma`, `numerus`, `victoria`, `clades`, `tactus`, `emptio`, `vulnus`), 44,1 kHz mono, 30 ms–1 s. À remplacer par des sons produits, en conservant les noms.

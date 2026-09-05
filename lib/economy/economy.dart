@@ -12,6 +12,9 @@ class EconomyConfig {
     this.catchUpMultiplier = 2,
     this.minBalance = 0,
     this.startingGems = 0,
+    this.defeatLosesFightGains = true,
+    this.defeatTributeRatio = 0.25,
+    this.defeatTributeMax = 40,
   });
 
   final Map<MasteryTier, int> gains;
@@ -34,6 +37,15 @@ class EconomyConfig {
   final int catchUpMultiplier;
   final int minBalance;
   final int startingGems;
+
+  /// On defeat the gems won during the fight are forfeited…
+  final bool defeatLosesFightGains;
+
+  /// …and a tribute of this share of the remaining balance is paid,
+  final double defeatTributeRatio;
+
+  /// capped so that a long history of work is never wiped out.
+  final int defeatTributeMax;
 }
 
 const kEconomy = EconomyConfig();
@@ -82,4 +94,18 @@ class Economy {
   }
 
   int victoryBonus({required bool catchUp}) => catchUp ? cfg.victoryBonus * cfg.catchUpMultiplier : cfg.victoryBonus;
+
+  /// Gems lost on defeat: the fight's net gains (if positive) plus a bounded
+  /// tribute on what remains. Never takes the balance below [EconomyConfig.minBalance].
+  int defeatPenalty({required int balance, required int fightDelta}) {
+    var penalty = cfg.defeatLosesFightGains && fightDelta > 0 ? fightDelta : 0;
+    final remaining = balance - penalty;
+    final tribute = (remaining * cfg.defeatTributeRatio).ceil().clamp(0, cfg.defeatTributeMax);
+    penalty += tribute;
+    if (balance - penalty < cfg.minBalance) penalty = balance - cfg.minBalance;
+    return penalty < 0 ? 0 : penalty;
+  }
+
+  /// Human-readable rule for the intro and cards.
+  String defeatRule() => 'Clādēs: gemmae certāminis āmittuntur et quārta pars summae (ad ${cfg.defeatTributeMax}) tribūtum solvitur.';
 }

@@ -16,12 +16,14 @@ void main() {
 
   (ProviderContainer, MemorySaveStore) make({SaveData? initial}) {
     final store = MemorySaveStore();
-    final c = ProviderContainer(overrides: [
-      analyzerProvider.overrideWithValue(analyzer),
-      saveRepositoryProvider.overrideWithValue(SaveRepository(store)),
-      initialSaveProvider.overrideWithValue(initial ?? SaveData(createdAt: DateTime(2026, 1, 1))),
-      audioProvider.overrideWithValue(AudioService(enabled: false)),
-    ]);
+    final c = ProviderContainer(
+      overrides: [
+        analyzerProvider.overrideWithValue(analyzer),
+        saveRepositoryProvider.overrideWithValue(SaveRepository(store)),
+        initialSaveProvider.overrideWithValue(initial ?? SaveData(createdAt: DateTime(2026, 1, 1))),
+        audioProvider.overrideWithValue(AudioService(enabled: false)),
+      ],
+    );
     return (c, store);
   }
 
@@ -114,7 +116,9 @@ void main() {
   });
 
   test('defeat after losing all hearts; retry keeps gems and purchases', () async {
-    final (c, _) = make(initial: SaveData(gems: 50, purchased: {'ind-imperf-act'}, introSeen: {'ind-imperf-act'}));
+    final (c, _) = make(
+      initial: SaveData(gems: 50, purchased: {'ind-imperf-act'}, introSeen: {'ind-imperf-act'}),
+    );
     final ctrl = c.read(battleProvider.notifier);
     final t = Trials.byId('ind-imperf-act');
     ctrl.start(t, BattleMode.certamen);
@@ -126,11 +130,15 @@ void main() {
       ctrl.answer(q.id, wrong);
       ctrl.proceed();
     }
-    expect(c.read(battleProvider)!.phase, BattlePhase.defeat);
+    var s = c.read(battleProvider)!;
+    expect(s.phase, BattlePhase.defeat);
     final gemsAfter = c.read(profileProvider).gems;
     // −1 at tier nova, then −2 once the skill is discēns.
     expect(gemsAfter, 50 - 1 - 2 * (t.hearts - 1));
+    // Defeat costs a bounded tribute (a quarter of the balance here), paid on retry/finish.
+    expect(s.defeatPenalty, (gemsAfter * 0.25).ceil());
     ctrl.retry();
+    expect(c.read(profileProvider).gems, gemsAfter - (gemsAfter * 0.25).ceil());
     expect(c.read(battleProvider)!.phase, BattlePhase.question);
     expect(c.read(profileProvider).purchased, contains('ind-imperf-act'));
     expect(c.read(profileProvider).battlesLost, 1);

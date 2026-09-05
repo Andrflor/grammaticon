@@ -20,14 +20,7 @@ import '../../persistence/save_data.dart';
 import '../help/help_sheet.dart';
 import '../widgets/roman_widgets.dart';
 
-const _enemyNames = {
-  'statua': 'Statua Animāta',
-  'gladiator': 'Gladiātor Thrāx',
-  'leo': 'Leō Āfricānus',
-  'sphinx': 'Sphinx Aegyptia',
-  'cyclops': 'Cyclōps',
-  'hydra': 'Hydra Lernaea',
-};
+const _enemyNames = {'statua': 'Statua Animāta', 'gladiator': 'Gladiātor Thrāx', 'leo': 'Leō Āfricānus', 'sphinx': 'Sphinx Aegyptia', 'cyclops': 'Cyclōps', 'hydra': 'Hydra Lernaea'};
 
 /// The arena: one fight (certāmen) or training session (exercitātiō).
 class BattleScreen extends HookConsumerWidget {
@@ -153,6 +146,7 @@ class BattleScreen extends HookConsumerWidget {
         }
         return false;
       }
+
       HardwareKeyboard.instance.addHandler(handler);
       return () => HardwareKeyboard.instance.removeHandler(handler);
     }, [route]);
@@ -166,27 +160,44 @@ class BattleScreen extends HookConsumerWidget {
         autofocus: true,
         child: Scaffold(
           backgroundColor: G.purpleDark,
-          body: Stack(fit: StackFit.expand, children: [
-            GameWidget(game: game),
-            if (state != null) ...[
-              _Hud(state: state, onLeave: leave, onPause: () => state.paused ? ctrl.resume() : ctrl.pause()),
-              _Center(state: state, cardKey: cardKey, trial: trial),
-              if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro),
-              if (state.paused) _PauseOverlay(onResume: ctrl.resume, onLeave: leave),
-              if (state.isOver) _ResultOverlay(state: state, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
+          body: Stack(
+            fit: StackFit.expand,
+            children: [
+              GameWidget(game: game),
+              if (state != null) ...[
+                _Hud(state: state, onLeave: leave, onPause: () => state.paused ? ctrl.resume() : ctrl.pause()),
+                _Center(state: state, cardKey: cardKey, trial: trial),
+                if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro, training: state.isTraining),
+                if (state.paused) _PauseOverlay(onResume: ctrl.resume, onLeave: leave),
+                if (state.isOver) _ResultOverlay(state: state, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
+              ],
+              for (final f in flights.value) _GemFlight(key: ValueKey(f.id), spec: f),
             ],
-            for (final f in flights.value) _GemFlight(key: ValueKey(f.id), spec: f),
-          ]),
+          ),
         ),
       ),
     );
   }
 
   static final Map<LogicalKeyboardKey, int> _digits = {
-      LogicalKeyboardKey.digit1: 1, LogicalKeyboardKey.digit2: 2, LogicalKeyboardKey.digit3: 3, LogicalKeyboardKey.digit4: 4, LogicalKeyboardKey.digit5: 5,
-      LogicalKeyboardKey.digit6: 6, LogicalKeyboardKey.digit7: 7, LogicalKeyboardKey.digit8: 8, LogicalKeyboardKey.digit9: 9,
-      LogicalKeyboardKey.numpad1: 1, LogicalKeyboardKey.numpad2: 2, LogicalKeyboardKey.numpad3: 3, LogicalKeyboardKey.numpad4: 4, LogicalKeyboardKey.numpad5: 5,
-      LogicalKeyboardKey.numpad6: 6, LogicalKeyboardKey.numpad7: 7, LogicalKeyboardKey.numpad8: 8, LogicalKeyboardKey.numpad9: 9,
+    LogicalKeyboardKey.digit1: 1,
+    LogicalKeyboardKey.digit2: 2,
+    LogicalKeyboardKey.digit3: 3,
+    LogicalKeyboardKey.digit4: 4,
+    LogicalKeyboardKey.digit5: 5,
+    LogicalKeyboardKey.digit6: 6,
+    LogicalKeyboardKey.digit7: 7,
+    LogicalKeyboardKey.digit8: 8,
+    LogicalKeyboardKey.digit9: 9,
+    LogicalKeyboardKey.numpad1: 1,
+    LogicalKeyboardKey.numpad2: 2,
+    LogicalKeyboardKey.numpad3: 3,
+    LogicalKeyboardKey.numpad4: 4,
+    LogicalKeyboardKey.numpad5: 5,
+    LogicalKeyboardKey.numpad6: 6,
+    LogicalKeyboardKey.numpad7: 7,
+    LogicalKeyboardKey.numpad8: 8,
+    LogicalKeyboardKey.numpad9: 9,
   };
 
   static int? _digitOf(LogicalKeyboardKey k) => _digits[k];
@@ -215,44 +226,57 @@ class _Hud extends ConsumerWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 0),
-        child: Column(children: [
-          Row(children: [
-            RomanButton(label: '', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onLeave),
-            const SizedBox(width: 6),
-            RomanButton(label: '', icon: state.paused ? Icons.play_arrow : Icons.pause, style: RomanButtonStyle.ghost, dense: true, onPressed: state.isOver ? null : onPause),
-            const SizedBox(width: 10),
-            if (!state.isTraining)
-              Row(children: [
-                for (var i = 0; i < state.maxHearts; i++)
-                  Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30)),
-              ])
-            else
-              const StatChip('Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark),
-            const Spacer(),
-            Expanded(
-              flex: 3,
-              child: Column(children: [
-                Text(enemyName, style: G.display(14, color: G.goldLight)),
-                const SizedBox(height: 3),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Stack(children: [
-                    Container(height: 14, color: const Color(0xAA200A40)),
-                    AnimatedFractionallySizedBox(
-                      duration: const Duration(milliseconds: 350),
-                      curve: Curves.easeOutCubic,
-                      widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
-                      child: Container(height: 14, decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)]))),
-                    ),
-                  ]),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                RomanButton(label: '', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onLeave),
+                const SizedBox(width: 6),
+                RomanButton(label: '', icon: state.paused ? Icons.play_arrow : Icons.pause, style: RomanButtonStyle.ghost, dense: true, onPressed: state.isOver ? null : onPause),
+                const SizedBox(width: 10),
+                if (!state.isTraining)
+                  Row(
+                    children: [
+                      for (var i = 0; i < state.maxHearts; i++)
+                        Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30)),
+                    ],
+                  )
+                else
+                  const StatChip('Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark),
+                const Spacer(),
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: [
+                      Text(enemyName, style: G.display(14, color: G.goldLight)),
+                      const SizedBox(height: 3),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Stack(
+                          children: [
+                            Container(height: 14, color: const Color(0xAA200A40)),
+                            AnimatedFractionallySizedBox(
+                              duration: const Duration(milliseconds: 350),
+                              curve: Curves.easeOutCubic,
+                              widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
+                              child: Container(
+                                height: 14,
+                                decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)])),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text('${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
+                    ],
+                  ),
                 ),
-                Text('${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
-              ]),
+                const Spacer(),
+                AnimatedGemCounter(count: gems, size: 24, isFlightTarget: true),
+              ],
             ),
-            const Spacer(),
-            AnimatedGemCounter(count: gems, size: 24, isFlightTarget: true),
-          ]),
-        ]),
+          ],
+        ),
       ),
     );
   }
@@ -278,101 +302,142 @@ class _Center extends ConsumerWidget {
     final surfaceSize = (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
 
     return SafeArea(
-      child: Column(children: [
-        const SizedBox(height: 64),
-        // Question card
-        RomanPanel(
-          key: cardKey,
-          width: min(w - 24, 760),
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-          child: Column(children: [
-            Row(children: [
-              Expanded(child: Text('${trial.name} · ${state.answered}/${state.enemyMaxHp}', style: G.body(12, color: G.inkSoft, weight: 700))),
-              RomanButton(
-                label: 'Auxilium',
-                icon: Icons.help_outline,
-                style: RomanButtonStyle.neutral,
-                dense: true,
-                onPressed: () async {
-                  if (state.phase == BattlePhase.question) ctrl.markHelpUsed();
-                  ctrl.openExplanation();
-                  await showHelpSheet(context, ref, lemmaId: q.lemmaId, form: state.phase == BattlePhase.question ? null : q.target, note: state.phase == BattlePhase.question ? 'Auxilium ante respōnsum: haec respōnsiō "adiūta" numerābitur (praemium minus, nūlla poena).' : null);
-                  ctrl.closeExplanation();
-                },
-              ),
-            ]),
-            const SizedBox(height: 6),
-            Text(q.surface, textAlign: TextAlign.center, style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: 2)),
-            const SizedBox(height: 4),
-            Text(q.prompt, style: G.body(compact ? 16 : 20, color: G.inkSoft, weight: 700)),
-            if (q.ambiguous) Text('Plūrēs respōnsiōnēs rēctae fierī possunt.', style: G.body(12, color: G.inkSoft, style: FontStyle.italic)),
-          ]),
-        ),
-        const SizedBox(height: 10),
-        // Feedback
-        SizedBox(
-          height: compact ? 44 : 52,
-          child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 180),
-            transitionBuilder: (c, a) => ScaleTransition(scale: CurvedAnimation(parent: a, curve: Curves.easeOutBack), child: c),
-            child: showFeedback
-                ? Row(key: ValueKey(outcome.sequence), mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text(outcome.correct ? 'RECTE!' : 'ERRAT…', style: G.display(compact ? 26 : 34, color: outcome.correct ? G.green : G.red)),
-                    if (!state.isTraining && outcome.gemsDelta != 0) ...[
-                      const SizedBox(width: 12),
-                      Text('${outcome.gemsDelta > 0 ? '+' : ''}${outcome.gemsDelta}', style: G.display(compact ? 22 : 28, color: outcome.gemsDelta > 0 ? G.goldLight : const Color(0xFFFF8A94))),
-                      const SizedBox(width: 4),
-                      Image.asset('assets/images/gem.png', width: 26, height: 26),
-                    ],
-                  ])
-                : const SizedBox.shrink(),
-          ),
-        ),
-        const Spacer(),
-        // Wrong-answer explanation
-        if (showFeedback && !outcome.correct)
-          Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
-            child: RomanPanel(
-              width: min(w - 24, 760),
-              color: const Color(0xFFFFF4F5),
-              borderColor: G.red,
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(outcome.explanation.headline, style: G.body(15, weight: 800, color: G.purpleDark)),
+      child: Column(
+        children: [
+          const SizedBox(height: 64),
+          // Question card
+          RomanPanel(
+            key: cardKey,
+            width: min(w - 24, 760),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text('${trial.name} · ${state.answered}/${state.enemyMaxHp}', style: G.body(12, color: G.inkSoft, weight: 700)),
+                    ),
+                    RomanButton(
+                      label: 'Auxilium',
+                      icon: Icons.help_outline,
+                      style: RomanButtonStyle.neutral,
+                      dense: true,
+                      onPressed: () async {
+                        if (state.phase == BattlePhase.question) ctrl.markHelpUsed();
+                        ctrl.openExplanation();
+                        await showHelpSheet(
+                          context,
+                          ref,
+                          lemmaId: q.lemmaId,
+                          form: state.phase == BattlePhase.question ? null : q.target,
+                          note: state.phase == BattlePhase.question ? 'Auxilium ante respōnsum: haec respōnsiō "adiūta" numerābitur (praemium minus, nūlla poena).' : null,
+                        );
+                        ctrl.closeExplanation();
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  q.surface,
+                  textAlign: TextAlign.center,
+                  style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: 2),
+                ),
                 const SizedBox(height: 4),
-                Text(outcome.explanation.detail, style: G.body(14)),
-                if (outcome.explanation.also.isNotEmpty) Text('Etiam: ${outcome.explanation.also.take(3).join(' · ')}', style: G.body(12, color: G.inkSoft, style: FontStyle.italic)),
-                const SizedBox(height: 8),
-                Row(children: [
-                  RomanButton(
-                    label: 'Explicā plūs',
-                    icon: Icons.menu_book,
-                    style: RomanButtonStyle.neutral,
-                    dense: true,
-                    onPressed: () async {
-                      ctrl.openExplanation();
-                      await showHelpSheet(context, ref, lemmaId: q.lemmaId, form: q.target);
-                      ctrl.closeExplanation();
-                    },
+                Text(q.prompt, style: G.body(compact ? 16 : 20, color: G.inkSoft, weight: 700)),
+                if (q.ambiguous)
+                  Text(
+                    'Plūrēs respōnsiōnēs rēctae fierī possunt.',
+                    style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
                   ),
-                  const SizedBox(width: 8),
-                  RomanButton(label: 'Perge', icon: Icons.arrow_forward, style: RomanButtonStyle.gold, dense: true, onPressed: ctrl.proceed),
-                ]),
-              ]),
+              ],
             ),
           ),
-        if (showFeedback && outcome.correct && outcome.explanation.also.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 6),
-            child: Text('Etiam: ${outcome.explanation.also.take(2).join(' · ')}', style: G.body(12, color: G.goldLight, style: FontStyle.italic)),
+          const SizedBox(height: 10),
+          // Feedback
+          SizedBox(
+            height: compact ? 44 : 52,
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 180),
+              transitionBuilder: (c, a) => ScaleTransition(
+                scale: CurvedAnimation(parent: a, curve: Curves.easeOutBack),
+                child: c,
+              ),
+              child: showFeedback
+                  ? Row(
+                      key: ValueKey(outcome.sequence),
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(outcome.correct ? 'RECTE!' : 'ERRAT…', style: G.display(compact ? 26 : 34, color: outcome.correct ? G.green : G.red)),
+                        if (!state.isTraining && outcome.gemsDelta != 0) ...[
+                          const SizedBox(width: 12),
+                          Text('${outcome.gemsDelta > 0 ? '+' : ''}${outcome.gemsDelta}', style: G.display(compact ? 22 : 28, color: outcome.gemsDelta > 0 ? G.goldLight : const Color(0xFFFF8A94))),
+                          const SizedBox(width: 4),
+                          Image.asset('assets/images/gem.png', width: 26, height: 26),
+                        ],
+                      ],
+                    )
+                  : const SizedBox.shrink(),
+            ),
           ),
-        // Choices (stable order while the question is shown)
-        Padding(
-          padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
-          child: _Choices(q: q, state: state, onPick: (i) => ctrl.answer(q.id, i)),
-        ),
-      ]),
+          const Spacer(),
+          // Wrong-answer explanation
+          if (showFeedback && !outcome.correct)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
+              child: RomanPanel(
+                width: min(w - 24, 760),
+                color: const Color(0xFFFFF4F5),
+                borderColor: G.red,
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(outcome.explanation.headline, style: G.body(15, weight: 800, color: G.purpleDark)),
+                    const SizedBox(height: 4),
+                    Text(outcome.explanation.detail, style: G.body(14)),
+                    if (outcome.explanation.also.isNotEmpty)
+                      Text(
+                        'Etiam: ${outcome.explanation.also.take(3).join(' · ')}',
+                        style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
+                      ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        RomanButton(
+                          label: 'Explicā plūs',
+                          icon: Icons.menu_book,
+                          style: RomanButtonStyle.neutral,
+                          dense: true,
+                          onPressed: () async {
+                            ctrl.openExplanation();
+                            await showHelpSheet(context, ref, lemmaId: q.lemmaId, form: q.target);
+                            ctrl.closeExplanation();
+                          },
+                        ),
+                        const SizedBox(width: 8),
+                        RomanButton(label: 'Perge', icon: Icons.arrow_forward, style: RomanButtonStyle.gold, onPressed: ctrl.proceed),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          if (showFeedback && outcome.correct && outcome.explanation.also.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Text(
+                'Etiam: ${outcome.explanation.also.take(2).join(' · ')}',
+                style: G.body(12, color: G.goldLight, style: FontStyle.italic),
+              ),
+            ),
+          // Choices (stable order while the question is shown)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+            child: _Choices(q: q, state: state, onPick: (i) => ctrl.answer(q.id, i)),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -456,32 +521,58 @@ class _ChoiceButton extends HookWidget {
 
 // ---------------------------------------------------------------- overlays
 
-class _IntroOverlay extends StatelessWidget {
-  const _IntroOverlay({required this.trial, required this.onStart});
+class _IntroOverlay extends ConsumerWidget {
+  const _IntroOverlay({required this.trial, required this.onStart, required this.training});
   final Trial trial;
   final VoidCallback onStart;
+  final bool training;
   @override
-  Widget build(BuildContext context) => _Dim(
-        child: RomanPanel(
-          width: min(MediaQuery.sizeOf(context).width - 32, 640),
-          child: SingleChildScrollView(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-              Text(trial.name, style: G.display(24, color: G.purple)),
-              Text(trial.subtitle, style: G.body(14, color: G.inkSoft, weight: 700)),
-              const SizedBox(height: 10),
-              Text(trial.intro, style: G.body(16, height: 1.45)),
-              const SizedBox(height: 10),
-              for (final e in trial.examples)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 3),
-                  child: RomanPanel(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8), color: Colors.white, borderColor: G.marbleDark, shadow: false, radius: 12, child: Text(e, style: G.body(17, weight: 700, color: G.purpleDark))),
+  Widget build(BuildContext context, WidgetRef ref) => _Dim(
+    child: RomanPanel(
+      width: min(MediaQuery.sizeOf(context).width - 32, 640),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(trial.name, style: G.display(24, color: G.purple)),
+            Text(trial.subtitle, style: G.body(14, color: G.inkSoft, weight: 700)),
+            const SizedBox(height: 10),
+            Text(trial.intro, style: G.body(16, height: 1.45)),
+            const SizedBox(height: 10),
+            for (final e in trial.examples)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                child: RomanPanel(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  color: Colors.white,
+                  borderColor: G.marbleDark,
+                  shadow: false,
+                  radius: 12,
+                  child: Text(e, style: G.body(17, weight: 700, color: G.purpleDark)),
                 ),
-              const SizedBox(height: 14),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [RomanButton(label: 'Incipe!', icon: Icons.play_arrow, style: RomanButtonStyle.gold, onPressed: onStart)]),
-            ]),
-          ),
+              ),
+            const SizedBox(height: 14),
+            if (!training)
+              Row(
+                children: [
+                  const Icon(Icons.warning_amber, color: G.redDark, size: 18),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text('${trial.hearts} corda. ${ref.read(answerResolverProvider).economy.defeatRule()}', style: G.body(13, color: G.redDark, weight: 700)),
+                  ),
+                ],
+              ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [RomanButton(label: 'Incipe!', icon: Icons.play_arrow, style: RomanButtonStyle.gold, onPressed: onStart)],
+            ),
+          ],
         ),
-      );
+      ),
+    ),
+  );
 }
 
 class _PauseOverlay extends StatelessWidget {
@@ -490,19 +581,26 @@ class _PauseOverlay extends StatelessWidget {
   final VoidCallback onLeave;
   @override
   Widget build(BuildContext context) => _Dim(
-        child: RomanPanel(
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Text('Pausa', style: G.display(28, color: G.purple)),
-            const SizedBox(height: 8),
-            Text('Certāmen suspēnsum est.', style: G.body(16)),
-            const SizedBox(height: 16),
-            Wrap(spacing: 10, runSpacing: 10, children: [
+    child: RomanPanel(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text('Pausa', style: G.display(28, color: G.purple)),
+          const SizedBox(height: 8),
+          Text('Certāmen suspēnsum est.', style: G.body(16)),
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            children: [
               RomanButton(label: 'Perge', icon: Icons.play_arrow, style: RomanButtonStyle.gold, onPressed: onResume),
               RomanButton(label: 'Relinque', icon: Icons.exit_to_app, style: RomanButtonStyle.neutral, onPressed: onLeave),
-            ]),
-          ]),
-        ),
-      );
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
 }
 
 class _ResultOverlay extends ConsumerWidget {
@@ -520,49 +618,68 @@ class _ResultOverlay extends ConsumerWidget {
     return _Dim(
       child: RomanPanel(
         width: min(MediaQuery.sizeOf(context).width - 32, 560),
-        child: Column(mainAxisSize: MainAxisSize.min, children: [
-          Text(won ? 'VICTŌRIA!' : 'CLĀDĒS', style: G.display(32, color: won ? G.green : G.red)),
-          const SizedBox(height: 6),
-          Text(won ? 'Adversārius victus est.' : 'Corda āmissa sunt. Emptiōnēs et perītiae manent: iterum temptā!', style: G.body(16), textAlign: TextAlign.center),
-          const SizedBox(height: 14),
-          _line('Respōnsa rēcta', '${state.correctCount} / ${state.answered}'),
-          if (!state.isTraining) _line('Gemmae certāminis', '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
-          if (!state.isTraining && won) _line('Praemium victōriae', '+${state.victoryBonus}'),
-          const SizedBox(height: 10),
-          Text('Perītiae', style: G.display(15, color: G.goldDark)),
-          for (final s in state.trial.skillIds)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 3),
-              child: Row(children: [
-                Expanded(child: Text(Skills.byId(s).name, style: G.body(14, weight: 700))),
-                MasteryBadge(startTiers[s] ?? MasteryTier.nova, dense: true),
-                const Padding(padding: EdgeInsets.symmetric(horizontal: 6), child: Icon(Icons.arrow_forward, size: 16)),
-                MasteryBadge((save.skills[s] ?? const SkillRecord()).tier(cfg), dense: true),
-              ]),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(won ? 'VICTŌRIA!' : 'CLĀDĒS', style: G.display(32, color: won ? G.green : G.red)),
+            const SizedBox(height: 6),
+            Text(won ? 'Adversārius victus est.' : 'Corda āmissa sunt. Emptiōnēs et perītiae manent: iterum temptā!', style: G.body(16), textAlign: TextAlign.center),
+            const SizedBox(height: 14),
+            _line('Respōnsa rēcta', '${state.correctCount} / ${state.answered}'),
+            if (!state.isTraining) _line('Gemmae certāminis', '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
+            if (!state.isTraining && won) _line('Praemium victōriae', '+${state.victoryBonus}'),
+            if (!state.isTraining && !won) _line('Tribūtum clādis', '−${state.defeatPenalty}'),
+            if (!state.isTraining && !won)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  'Gemmae certāminis āmittuntur et quārta pars summae solvitur. Emptiōnēs manent.',
+                  style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
+                ),
+              ),
+            const SizedBox(height: 10),
+            Text('Perītiae', style: G.display(15, color: G.goldDark)),
+            for (final s in state.trial.skillIds)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 3),
+                child: Row(
+                  children: [
+                    Expanded(child: Text(Skills.byId(s).name, style: G.body(14, weight: 700))),
+                    MasteryBadge(startTiers[s] ?? MasteryTier.nova, dense: true),
+                    const Padding(padding: EdgeInsets.symmetric(horizontal: 6), child: Icon(Icons.arrow_forward, size: 16)),
+                    MasteryBadge((save.skills[s] ?? const SkillRecord()).tier(cfg), dense: true),
+                  ],
+                ),
+              ),
+            const SizedBox(height: 16),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              alignment: WrapAlignment.center,
+              children: [
+                RomanButton(label: 'Redī in Amphitheātrum', icon: Icons.stadium, style: RomanButtonStyle.gold, onPressed: onLeave),
+                RomanButton(label: 'Iterum', icon: Icons.replay, style: RomanButtonStyle.primary, onPressed: onRetry),
+              ],
             ),
-          const SizedBox(height: 16),
-          Wrap(spacing: 10, runSpacing: 10, alignment: WrapAlignment.center, children: [
-            RomanButton(label: 'Redī in Amphitheātrum', icon: Icons.stadium, style: RomanButtonStyle.gold, onPressed: onLeave),
-            RomanButton(label: 'Iterum', icon: Icons.replay, style: RomanButtonStyle.primary, onPressed: onRetry),
-          ]),
-        ]),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _line(String k, String v) => Row(children: [Expanded(child: Text(k, style: G.body(15))), Text(v, style: G.body(16, weight: 800))]);
+  Widget _line(String k, String v) => Row(
+    children: [
+      Expanded(child: Text(k, style: G.body(15))),
+      Text(v, style: G.body(16, weight: 800)),
+    ],
+  );
 }
 
 class _Dim extends StatelessWidget {
   const _Dim({required this.child});
   final Widget child;
   @override
-  Widget build(BuildContext context) => Container(
-        color: const Color(0xAA1A0A30),
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(16),
-        child: child,
-      );
+  Widget build(BuildContext context) => Container(color: const Color(0xAA1A0A30), alignment: Alignment.center, padding: const EdgeInsets.all(16), child: child);
 }
 
 // ---------------------------------------------------------------- flying gems
@@ -592,23 +709,30 @@ class _GemFlight extends HookWidget {
       child: AnimatedBuilder(
         animation: c,
         builder: (context, _) {
-          return Stack(children: [
-            for (var i = 0; i < spec.count; i++)
-              Builder(builder: (context) {
-                final delay = i * 0.06;
-                final t = ((c.value - delay) / (1 - delay)).clamp(0.0, 1.0);
-                final e = Curves.easeInOutCubic.transform(t);
-                final start = spec.from + offsets[i];
-                final ctrl = Offset((start.dx + spec.to.dx) / 2, min(start.dy, spec.to.dy) - 140);
-                final p = _bezier(start, ctrl, spec.to, e);
-                final scale = 1.1 - 0.6 * e;
-                return Positioned(
-                  left: p.dx - 14,
-                  top: p.dy - 14,
-                  child: Opacity(opacity: t < 0.95 ? 1 : (1 - (t - 0.95) / 0.05), child: Transform.scale(scale: scale, child: Image.asset('assets/images/gem.png', width: 28, height: 28))),
-                );
-              }),
-          ]);
+          return Stack(
+            children: [
+              for (var i = 0; i < spec.count; i++)
+                Builder(
+                  builder: (context) {
+                    final delay = i * 0.06;
+                    final t = ((c.value - delay) / (1 - delay)).clamp(0.0, 1.0);
+                    final e = Curves.easeInOutCubic.transform(t);
+                    final start = spec.from + offsets[i];
+                    final ctrl = Offset((start.dx + spec.to.dx) / 2, min(start.dy, spec.to.dy) - 140);
+                    final p = _bezier(start, ctrl, spec.to, e);
+                    final scale = 1.1 - 0.6 * e;
+                    return Positioned(
+                      left: p.dx - 14,
+                      top: p.dy - 14,
+                      child: Opacity(
+                        opacity: (t < 0.95 ? 1.0 : 1 - (t - 0.95) / 0.05).clamp(0.0, 1.0),
+                        child: Transform.scale(scale: scale, child: Image.asset('assets/images/gem.png', width: 28, height: 28)),
+                      ),
+                    );
+                  },
+                ),
+            ],
+          );
         },
       ),
     );

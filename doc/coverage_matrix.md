@@ -96,6 +96,7 @@ Sources : A&G = Allen & Greenough, *New Latin Grammar* (1903, éd. DCC). Collati
 | Réponses aidées / corrigées | `AnswerQuality`, `aidedGain` | « help before answering marks the answer as aided », « aided answers never raise the tier » |
 | Solde ≥ 0, achats permanents, pas d'achat automatique, déduction unique | `Economy.applyToBalance`, `ProfileController.purchase` | « purchase deducts once… » |
 | Pas d'impasse | prime de victoire bornée, doublée en rattrapage | « victory pays a bounded bonus », « no economic dead end » |
+| Enjeu de la défaite | gains du combat perdus + tribut d'un quart du solde plafonné à 40, annoncé avant le combat ; achats et maîtrise conservés | `economy_test` « defeat forfeits… », « defeat after losing all hearts » |
 | Sauvegarde après chaque réponse/achat, schéma versionné, migrations, reprise, export/import | `SaveCodec`, `SaveRepository`, `ActiveBattle` | `save_test`, « snapshot is saved mid-fight and can be resumed » |
 | Entrée unique par question (touches maintenues, doubles clics, événements tardifs) | latch `questionId` + `KeyDownEvent` seulement | `widget_test` « held key / repeat must not answer twice » |
 

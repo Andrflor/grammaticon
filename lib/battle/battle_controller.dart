@@ -17,14 +17,7 @@ import 'answer_resolver.dart';
 enum BattlePhase { intro, question, correct, wrong, victory, defeat }
 
 class AnswerOutcome {
-  const AnswerOutcome({
-    required this.sequence,
-    required this.question,
-    required this.chosenValue,
-    required this.correct,
-    required this.resolution,
-    required this.explanation,
-  });
+  const AnswerOutcome({required this.sequence, required this.question, required this.chosenValue, required this.correct, required this.resolution, required this.explanation});
 
   /// Monotonic counter so the UI can react once per outcome.
   final int sequence;
@@ -59,6 +52,7 @@ class BattleState {
     this.explanationOpen = false,
     this.paused = false,
     this.victoryBonus = 0,
+    this.defeatPenalty = 0,
     this.recentLemmas = const [],
     this.recentSurfaces = const [],
     this.resumed = false,
@@ -86,6 +80,9 @@ class BattleState {
   final bool explanationOpen;
   final bool paused;
   final int victoryBonus;
+
+  /// Gems that will be lost if this fight ends in defeat (computed when it does).
+  final int defeatPenalty;
   final List<String> recentLemmas;
   final List<String> recentSurfaces;
   final bool resumed;
@@ -110,48 +107,49 @@ class BattleState {
     bool? explanationOpen,
     bool? paused,
     int? victoryBonus,
+    int? defeatPenalty,
     List<String>? recentLemmas,
     List<String>? recentSurfaces,
     int? outcomeCount,
-  }) =>
-      BattleState(
-        trial: trial,
-        mode: mode,
-        componentIds: componentIds,
-        phase: phase ?? this.phase,
-        seed: seed,
-        question: clearQuestion ? null : (question ?? this.question),
-        hearts: hearts ?? this.hearts,
-        maxHearts: maxHearts,
-        enemyHp: enemyHp ?? this.enemyHp,
-        enemyMaxHp: enemyMaxHp,
-        answered: answered ?? this.answered,
-        correctCount: correctCount ?? this.correctCount,
-        gemsDelta: gemsDelta ?? this.gemsDelta,
-        questionIndex: questionIndex ?? this.questionIndex,
-        helpUsed: helpUsed ?? this.helpUsed,
-        last: last ?? this.last,
-        explanationOpen: explanationOpen ?? this.explanationOpen,
-        paused: paused ?? this.paused,
-        victoryBonus: victoryBonus ?? this.victoryBonus,
-        recentLemmas: recentLemmas ?? this.recentLemmas,
-        recentSurfaces: recentSurfaces ?? this.recentSurfaces,
-        resumed: resumed,
-        outcomeCount: outcomeCount ?? this.outcomeCount,
-      );
+  }) => BattleState(
+    trial: trial,
+    mode: mode,
+    componentIds: componentIds,
+    phase: phase ?? this.phase,
+    seed: seed,
+    question: clearQuestion ? null : (question ?? this.question),
+    hearts: hearts ?? this.hearts,
+    maxHearts: maxHearts,
+    enemyHp: enemyHp ?? this.enemyHp,
+    enemyMaxHp: enemyMaxHp,
+    answered: answered ?? this.answered,
+    correctCount: correctCount ?? this.correctCount,
+    gemsDelta: gemsDelta ?? this.gemsDelta,
+    questionIndex: questionIndex ?? this.questionIndex,
+    helpUsed: helpUsed ?? this.helpUsed,
+    last: last ?? this.last,
+    explanationOpen: explanationOpen ?? this.explanationOpen,
+    paused: paused ?? this.paused,
+    victoryBonus: victoryBonus ?? this.victoryBonus,
+    defeatPenalty: defeatPenalty ?? this.defeatPenalty,
+    recentLemmas: recentLemmas ?? this.recentLemmas,
+    recentSurfaces: recentSurfaces ?? this.recentSurfaces,
+    resumed: resumed,
+    outcomeCount: outcomeCount ?? this.outcomeCount,
+  );
 
   ActiveBattle snapshot() => ActiveBattle(
-        trialId: trial.id,
-        mode: mode,
-        hearts: hearts,
-        enemyHp: enemyHp,
-        answered: answered,
-        gemsDelta: gemsDelta,
-        seed: seed,
-        questionIndex: questionIndex,
-        componentIds: componentIds,
-        correctCount: correctCount,
-      );
+    trialId: trial.id,
+    mode: mode,
+    hearts: hearts,
+    enemyHp: enemyHp,
+    answered: answered,
+    gemsDelta: gemsDelta,
+    seed: seed,
+    questionIndex: questionIndex,
+    componentIds: componentIds,
+    correctCount: correctCount,
+  );
 }
 
 final battleProvider = NotifierProvider<BattleController, BattleState?>(BattleController.new);
@@ -226,7 +224,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null || !s.isOver) return;
     _timer?.cancel();
     final won = s.phase == BattlePhase.victory;
-    await _profile.recordBattleEnd(won: won, bonus: won ? s.victoryBonus : 0);
+    await _profile.recordBattleEnd(won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
     state = null;
   }
 
@@ -260,14 +258,7 @@ class BattleController extends Notifier<BattleState?> {
     final quality = s.helpUsed ? AnswerQuality.adiuta : AnswerQuality.autonoma;
 
     final save = ref.read(profileProvider);
-    final res = ref.read(answerResolverProvider).resolve(
-          save: save,
-          q: q,
-          chosenValue: chosen,
-          quality: quality,
-          mode: s.mode,
-          now: DateTime.now(),
-        );
+    final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, mode: s.mode, now: DateTime.now());
     final explanation = Explanations.build(q: q, chosenValue: chosen, correct: res.correct, gen: _gen);
 
     final hearts = res.correct || s.isTraining ? s.hearts : s.hearts - 1;
@@ -291,18 +282,16 @@ class BattleController extends Notifier<BattleState?> {
       recentLemmas: recentL,
       recentSurfaces: recentS,
       outcomeCount: s.outcomeCount + 1,
-      last: AnswerOutcome(
-        sequence: s.outcomeCount + 1,
-        question: q,
-        chosenValue: chosen,
-        correct: res.correct,
-        resolution: res,
-        explanation: explanation,
-      ),
+      last: AnswerOutcome(sequence: s.outcomeCount + 1, question: q, chosenValue: chosen, correct: res.correct, resolution: res, explanation: explanation),
     );
     final over = enemyHp <= 0 || (hearts <= 0 && !s.isTraining);
     if (over && enemyHp <= 0) {
       next = next.copyWith(victoryBonus: _computeVictoryBonus(save, s));
+    } else if (over && !s.isTraining) {
+      final eco = ref.read(answerResolverProvider).economy;
+      next = next.copyWith(
+        defeatPenalty: eco.defeatPenalty(balance: res.gemsAfter, fightDelta: next.gemsDelta),
+      );
     }
     // Persist first: the transaction and the arena snapshot together.
     _profile.applyResolution(res, over ? null : next.snapshot());
@@ -320,12 +309,14 @@ class BattleController extends Notifier<BattleState?> {
     return eco.victoryBonus(catchUp: catchUp);
   }
 
+  /// Correct answers advance automatically after a short delay; after an
+  /// error the explanation stays on screen until the player proceeds.
   void _schedule(BattlePhase target) {
     _timer?.cancel();
     final s = state;
     if (s == null) return;
-    final ms = s.phase == BattlePhase.correct ? _settings.correctDelayMs : _settings.wrongDelayMs;
-    _timer = Timer(Duration(milliseconds: ms), () => _advance(target));
+    if (s.phase == BattlePhase.wrong) return;
+    _timer = Timer(Duration(milliseconds: _settings.correctDelayMs), () => _advance(target));
   }
 
   void _advance(BattlePhase target) {
@@ -401,7 +392,13 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null) return;
     final trial = s.trial;
     final mode = s.mode;
-    _profile.recordBattleEnd(won: false, bonus: 0);
+    _timer?.cancel();
+    if (s.isOver) {
+      final won = s.phase == BattlePhase.victory;
+      _profile.recordBattleEnd(won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
+    } else {
+      _profile.setActiveBattle(null);
+    }
     start(trial, mode);
   }
 }

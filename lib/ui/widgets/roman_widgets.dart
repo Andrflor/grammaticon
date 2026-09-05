@@ -29,7 +29,7 @@ class RomanPanel extends StatelessWidget {
       );
 }
 
-enum RomanButtonStyle { primary, gold, ghost, success, danger, neutral }
+enum RomanButtonStyle { primary, gold, ghost, success, danger, neutral, outline, locked }
 
 /// Large, generous button (min height 56) with an optional key-number badge.
 class RomanButton extends StatelessWidget {
@@ -50,11 +50,14 @@ class RomanButton extends StatelessWidget {
         RomanButtonStyle.success => G.green,
         RomanButtonStyle.danger => G.red,
         RomanButtonStyle.neutral => G.marbleDark,
+        RomanButtonStyle.outline => Colors.white,
+        RomanButtonStyle.locked => const Color(0xFF8A7E70),
       };
   Color get _fg => switch (style) {
         RomanButtonStyle.gold => G.purpleDark,
         RomanButtonStyle.ghost => G.goldLight,
         RomanButtonStyle.neutral => G.ink,
+        RomanButtonStyle.outline => G.purple,
         _ => Colors.white,
       };
   Color get _border => switch (style) {
@@ -63,12 +66,15 @@ class RomanButton extends StatelessWidget {
         RomanButtonStyle.ghost => G.gold,
         RomanButtonStyle.success => const Color(0xFF7CF0A0),
         RomanButtonStyle.danger => const Color(0xFFFF8A94),
-        RomanButtonStyle.neutral => G.gold,
+        RomanButtonStyle.neutral => G.goldDark,
+        RomanButtonStyle.outline => G.purple,
+        RomanButtonStyle.locked => const Color(0xFFB0A493),
       };
 
   @override
   Widget build(BuildContext context) {
-    final disabled = onPressed == null;
+    // Locked buttons are a deliberate state, not a faded control.
+    final disabled = onPressed == null && style != RomanButtonStyle.locked;
     final child = Row(
       mainAxisSize: expand ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -79,6 +85,7 @@ class RomanButton extends StatelessWidget {
             height: 30,
             alignment: Alignment.center,
             decoration: BoxDecoration(color: G.gold, borderRadius: BorderRadius.circular(8), border: Border.all(color: G.goldLight, width: 2)),
+            // badge
             child: Text(badge!, style: G.body(16, color: G.purpleDark, weight: 800)),
           ),
           const SizedBox(width: 12),
@@ -278,3 +285,45 @@ Future<bool> confirmLatin(BuildContext context, {required String title, required
   );
   return r ?? false;
 }
+
+
+/// Panel header: gold medallion with an icon, title and optional subtitle.
+class PanelHeader extends StatelessWidget {
+  const PanelHeader({super.key, required this.icon, required this.title, this.subtitle, this.trailing});
+  final IconData icon;
+  final String title;
+  final String? subtitle;
+  final Widget? trailing;
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Row(children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(shape: BoxShape.circle, color: G.gold, border: Border.all(color: G.goldLight, width: 3), boxShadow: const [BoxShadow(color: Color(0x33000000), blurRadius: 4, offset: Offset(0, 2))]),
+            child: Icon(icon, color: G.purpleDark, size: 24),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(title, style: G.display(19, color: G.purple)),
+              if (subtitle case final st?) Text(st, style: G.body(13, color: G.inkSoft)),
+            ]),
+          ),
+          if (trailing != null) trailing!,
+        ]),
+      );
+}
+
+/// Centres content in a readable column on wide screens.
+class ContentColumn extends StatelessWidget {
+  const ContentColumn({super.key, required this.child, this.maxWidth = 760});
+  final Widget child;
+  final double maxWidth;
+  @override
+  Widget build(BuildContext context) => Center(child: ConstrainedBox(constraints: BoxConstraints(maxWidth: maxWidth), child: child));
+}
+
+/// Purple-to-dark gradient used behind every secondary screen.
+const kScreenGradient = BoxDecoration(gradient: LinearGradient(colors: [G.purpleDark, Color(0xFF2A1148)], begin: Alignment.topCenter, end: Alignment.bottomCenter));

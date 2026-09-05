@@ -128,8 +128,11 @@ void main() {
     await tester.tap(find.byIcon(Icons.settings));
     await tester.pumpAndSettle();
     expect(find.text('Optiōnēs'), findsOneWidget);
-    expect(find.textContaining('rēctē +8'), findsOneWidget);
-    expect(find.text('Exportā (in tabellam)'), findsOneWidget);
+    expect(find.text('Gemmae: praemia et poenae'), findsOneWidget);
+    expect(find.text('+8'), findsOneWidget);
+    expect(find.text('−4').evaluate().isNotEmpty || find.text('-4').evaluate().isNotEmpty, isTrue);
+    await tester.scrollUntilVisible(find.text('Exportā in tabellam'), 200, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Exportā in tabellam'), findsOneWidget);
     expect(find.text('Dēlē omnia'), findsOneWidget);
   });
 }

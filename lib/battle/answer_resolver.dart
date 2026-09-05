@@ -39,14 +39,7 @@ class AnswerResolver {
   final Economy economy;
   final MasteryConfig mastery;
 
-  Resolution resolve({
-    required SaveData save,
-    required Question q,
-    required String chosenValue,
-    required AnswerQuality quality,
-    required BattleMode mode,
-    required DateTime now,
-  }) {
+  Resolution resolve({required SaveData save, required Question q, required String chosenValue, required AnswerQuality quality, required BattleMode mode, required DateTime now}) {
     final correct = q.isCorrect(chosenValue);
     final primary = save.skills[q.primarySkill] ?? const SkillRecord();
     final tierBefore = primary.rewardTier(mastery);
@@ -55,22 +48,10 @@ class AnswerResolver {
     final satCount = save.lemmaDaily[satKey] ?? 0;
     final saturated = satCount >= economy.cfg.lemmaSaturation;
 
-    final rawDelta = mode == BattleMode.exercitatio
-        ? 0
-        : economy.rewardFor(tierBefore: tierBefore, correct: correct, quality: quality, lemmaSaturated: saturated);
+    final rawDelta = mode == BattleMode.exercitatio ? 0 : economy.rewardFor(tierBefore: tierBefore, correct: correct, quality: quality, lemmaSaturated: saturated);
     final gemsAfter = economy.applyToBalance(save.gems, rawDelta);
-    final reason = mode == BattleMode.exercitatio
-        ? 'exercitātiō: sine gemmīs'
-        : economy.reasonFor(tierBefore: tierBefore, correct: correct, quality: quality, lemmaSaturated: saturated);
-    final tx = Transaction(
-      id: save.lastTransactionId + 1,
-      delta: gemsAfter - save.gems,
-      reason: reason,
-      tierBefore: tierBefore,
-      skillId: q.primarySkill,
-      lemmaId: q.lemmaId,
-      quality: quality,
-    );
+    final reason = mode == BattleMode.exercitatio ? 'exercitātiō: sine gemmīs' : economy.reasonFor(tierBefore: tierBefore, correct: correct, quality: quality, lemmaSaturated: saturated);
+    final tx = Transaction(id: save.lastTransactionId + 1, delta: gemsAfter - save.gems, reason: reason, tierBefore: tierBefore, skillId: q.primarySkill, lemmaId: q.lemmaId, quality: quality);
 
     // Each observed skill is updated exactly once.
     final skills = Map<String, SkillRecord>.from(save.skills);

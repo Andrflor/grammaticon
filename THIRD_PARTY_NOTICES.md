@@ -13,6 +13,9 @@ Les fichiers `tool/corpus/collatinus_data/*` (lemmes.la, modeles.la, morphos.fr,
 * Cinzel (Natanael Gama) — SIL Open Font License 1.1 — `assets/fonts/OFL_Cinzel.txt`.
 * Nunito (Vernon Adams et al.) — SIL Open Font License 1.1 — `assets/fonts/OFL_Nunito.txt`.
 
+## Musique
+`assets/audio/thema.mp3` : thème fourni par l'auteur du projet (génération Replicate, fichier `replicate-prediction-9k3t3d78qdrmr0d0ea29ej41q0.wav`, réencodé en MP3 128 kb/s). Droits et conditions de réutilisation : ceux de l'auteur du projet.
+
 ## Images et sons
 Tous les visuels (`assets/images/*.png`, générés par `tool/assets/generate_art.py`) et sons (`assets/audio/*.wav`, synthétisés avec SoX) ont été produits dans ce dépôt et sont placés sous CC0. Ce sont des ressources provisoires (voir `doc/assets_manifest.md`).
 
