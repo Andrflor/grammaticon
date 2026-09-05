@@ -1,0 +1,103 @@
+# Matrice de couverture — conjugaison latine
+
+Chaîne vérifiée pour chaque catégorie : **données** (lexique, `lib/linguistics/lexicon/verbs.dart`) → **génération/analyse** (`lib/linguistics/engine/`) → **épreuve** (`lib/pedagogy/trials.dart`) → **test** (`test/`). Les formes composées sont générées avec accord (genre, nombre) et toutes les analyses d'une même forme sont conservées dans l'index (`Analyzer`).
+
+Sources : A&G = Allen & Greenough, *New Latin Grammar* (1903, éd. DCC). Collatinus = contrôle croisé de développement (`tool/corpus/verify_collatinus.py`, rapport `tool/corpus/out/collatinus_report.md`).
+
+## Conjugaisons régulières
+
+| Catégorie | Verbes représentatifs | Génération | Épreuves | Tests |
+|---|---|---|---|---|
+| 1re conjugaison | amō, laudō, vocō, portō, ōrō, pugnō, ambulō, stō, iuvō, lavō | règles A&G §184 (`presentSystemRegular`, `perfectSystemActive`) | tous les paliers `ind-*`, `subj-*`, `imp-*`, non personnels, `mx-*` | `gold_paradigms_test` « amō » (6 tests), Collatinus |
+| 2e conjugaison | moneō, habeō, videō, teneō, doceō, dēleō, iubeō, maneō, sedeō, timeō, moveō | A&G §185 | idem | « moneō », Collatinus |
+| 3e conjugaison | regō, dūcō, dīcō, mittō, legō, scrībō, vincō, pōnō, agō, petō, crēdō, cadō, currō, vīvō, reddō, gerō, vertō | A&G §186 | idem | « regō », Collatinus |
+| 3e en -iō | capiō, faciō, cōnficiō, iaciō, rapiō, fugiō, cupiō | A&G §188 | idem | « capiō », Collatinus |
+| 4e conjugaison | audiō, veniō, dormiō, sentiō, sciō, aperiō | A&G §187 | idem | « audiō », Collatinus |
+| Particularités de thème | perfaits redoublés (stetī, cecidī, dedī), en -sī (rēxī, mānsī), à voyelle longue (vīdī, lēgī), en -uī, -īvī | parties principales explicites ; thèmes dérivés | tous | « every principal part appears », Collatinus |
+| Impératifs dīc, dūc, fac ; dō à *a* bref | dīcō, dūcō, faciō, dō, circumdō | `overrides`, drapeau `shortA` | `imp-praes`, `fam-minora` | « imperatives dīc, dūc, fac », « dō (§202) » |
+| Verbes sans supin | timeō | `hasSupine: false` → pas de participe parfait/futur, ni composés | tous | « verbs without supine lack the participial system » |
+| Intransitifs | veniō, pugnō, ambulō, maneō, sedeō, cadō, currō, vīvō, stō, dormiō | passif impersonnel (3 sg, neutre) seulement ; périphrastique passive impersonnelle | tous (`excludeIntransitivePassive` dans les paliers passifs) | « intransitive verbs have only impersonal passives » |
+
+## Formes personnelles (toutes conjugaisons)
+
+| Mode / temps | Voix | Génération | Épreuve | Test |
+|---|---|---|---|---|
+| Indicatif présent, imparfait, futur | act./pass. | tables A&G | `ind-praes-act`… `ind-fut-pass` | gold amō/moneō/regō/capiō/audiō |
+| Indicatif parfait, plus-que-parfait, futur antérieur | act. | thème du parfait + désinences | `ind-perf-act`, `ind-plusq-act`, `ind-futex-act` | gold |
+| Indicatif parfait, PQP, futur antérieur | pass. (composé) | PPP + sum/eram/erō, accord m/f/n, sg/pl ; variantes *fuī* | `ind-perf-pass`, `ind-plusq-pass`, `ind-futex-pass` | « composite passive with agreement » |
+| Subjonctif présent, imparfait | act./pass. | tables A&G ; imparfait = infinitif + désinence | `subj-praes-act`… `subj-imperf-pass` | gold |
+| Subjonctif parfait, PQP | act. / pass. composé | thème du parfait ; PPP + sim/essem (variantes *fuerim*, *forem*) | `subj-perf-*`, `subj-plusq-*` | gold |
+| Impératif présent 2 sg/pl | act./pass. | A&G §163 | `imp-praes` | « imperatives » |
+| Impératif futur 2 sg, 3 sg, 2 pl (act.), 3 pl ; passif 2 sg, 3 sg, 3 pl | act./pass. | A&G §163 ; aucun 2 pl passif futur inventé | `imp-fut` | « no 2 pl future passive imperative anywhere » |
+
+## Formes non personnelles et périphrases
+
+| Catégorie | Génération | Épreuve | Test |
+|---|---|---|---|
+| Infinitifs présent (act./pass.), parfait (act. ; pass. composé avec accord nom./acc.), futur (act. composé ; pass. supin + īrī) | `compositeInfinitives` | `infinitivi` | gold « infinitives… », « amātum esse is nominative neuter or accusative masculine » |
+| Participes présent (3e décl. complète, abl. -e/-ī), parfait passif, futur actif (1re/2e décl. complètes) | `declineParticiple`, `declineBonus` | `participia` | gold |
+| Gérondif (gén., dat., acc., abl.) et gérondif/adjectif verbal (déclinaison complète, variante -undus III/IV) | `gerundStem`, `undusVariants` | `gerundium` | gold |
+| Supin (-um, -ū) | `supineStemForms` | `supinum` | gold |
+| Conjugaison périphrastique active (participe futur + sum : 6 temps ind., 4 subj., infinitifs) | `periphrastic(activa)` | `periph-act` | « periphrastic conjugations (§195) » |
+| Conjugaison périphrastique passive (gérondif + sum) | `periphrastic(passiva)` | `periph-pass` | idem |
+| Aucune personne demandée aux infinitifs/participes | `Dimension` filtrées par le générateur | tous | `question_generator_test` « non-finite trials never ask person or number » |
+
+## Familles irrégulières, déponents, défectifs, impersonnels
+
+| Catégorie | Verbes | Génération | Épreuve | Test |
+|---|---|---|---|---|
+| sum et composés | sum, absum, adsum, prōsum (prōd- devant voyelle), praesum | gabarit `irregularTemplates['sum']` + préfixes ; forem/fore ; futūrus ; participe *absēns/praesēns* | `fam-sum` | « sum », « compounds of sum » |
+| possum | possum | gabarit ; potēns ; aucun impératif | `fam-sum` | « possum (§198) » |
+| eō et composés | eō, abeō, adeō, redeō, exeō, trānseō, pereō | gabarit ; iī/īstī/īsse ; iēns, euntis ; eundum ; passif impersonnel ītur, personnel pour les composés transitifs | `fam-eo` | « eō (§203) » |
+| ferō et composés | ferō, afferō, auferō, referō, offerō, cōnferō | gabarit (fers, fert, ferris, fer, ferre, ferrī) ; tulī / lātus, abstulī / ablātus… | `fam-fero` | « ferō (§200) » |
+| volō, nōlō, mālō | volō, nōlō, mālō | gabarits (vīs, vult, nōn vīs, māvult ; velim ; vellem ; nōlī) ; absences (impératif, passif, participes) | `fam-volo` | « volō, nōlō, mālō (§199) » |
+| fīō / faciō | fīō, faciō, cōnficiō (régulier) | gabarit fīō ; passif présent de faciō = fīō ; factus sum ; faciendus | `fam-fio` | « fīō and faciō (§204) », « fit belongs to fīō and to the passive of faciō » |
+| edō, dō | edō (ēs, ēst, ēsse, ēssem, ēstur ; edim archaïque), dō | gabarit edō ; `shortA` | `fam-minora` | « edō (§201) », « dō (§202) » |
+| Déponents | hortor, vereor, sequor, loquor, ūtor, patior, morior, gradior, potior, orior, for | morphologie passive, sens actif (`semanticVoice`) ; aucune forme active ; participes présent/futur actifs ; gérondif passif ; moritūrus, oritūrus ; potitur/poterētur ; orior mixte III/IV | `deponentia`, `mx-voces` | « sequor », « hortor, vereor, patior, potior » |
+| Semi-déponents | audeō (ausim), gaudeō, soleō, fīdō, cōnfīdō ; revertor (inverse) | présent actif, parfait composé ; pas de passif présent ; revertī actif | `semideponentia` | « semi-deponents (§192) » |
+| Défectifs | ōdī, meminī (mementō), coepī (coeptus sum), inquam, āiō, quaesō, salvē, avē, for | parfait à sens présent (`semanticTense`) ; formes explicites ; absences documentées | `defectiva` | « defectives (§205–206) » |
+| Impersonnels | licet (licitum est), oportet, decet, pudet, paenitet, taedet, piget, libet, pluit, ningit, tonat | 3 sg seulement ; infinitifs ; participes non générés (documenté) | `impersonalia` | « impersonals (§207–208) » |
+
+## Variantes attestées
+
+| Variante | Génération | Épreuve | Test |
+|---|---|---|---|
+| Parfait 3 pl -ēre | `ruleVariants` | `variantes` | « variants (§163, §181) » |
+| 2 sg passif -re (rare au présent de l'indicatif) | `ruleVariants` (`rara` / `passivumRe`) | `variantes` | idem |
+| Parfaits syncopés (amāstī, amāsse, amārunt, amāram ; audiit, audīsse ; nōsse) | `syncopatedPerfects` (A&G §181) | `variantes` | idem ; Collatinus (`contractions.la`) |
+| Composés avec *fuī* (amātus fuit), *forem* | générateur de composés | `variantes`, tous paliers composés (acceptés à l'analyse) | « composite passive with agreement » |
+| Gérondif -undus | `undusVariants` | `variantes` | « regō », « capiō » |
+| forem / fore ; edim ; ausim ; dīce/dūce archaïques | gabarits / `overrides` marqués `forem`, `archaica` | familles | « sum », « edō », « semi-deponents » |
+
+## Ambiguïtés et politique des macrons
+
+* Les formes sont stockées et affichées avec macrons ; l'index est macron-sensible, un index insensible existe pour l'outillage (`analyzeLoose`). A&G distingue *amāverīs* (subj. parf.) et *amāveris* (fut. ant.) ; les deux analyses sont retenues en lecture insensible (« amāverīs (subjunctive) and amāveris (future perfect) differ by quantity »).
+* Toutes les analyses valides sont conservées : *amāre* (infinitif, impératif passif, 2 sg passif rare), *regere*, *regam* (fut. ind. / prés. subj.), *fit* (fīō / faciō), *es* (sum ind. / impér.), *amātum esse* (nom. n. / acc. m.). Une question n'est posée que si la dimension demandée a ≥ 2 valeurs dans le palier ; si la forme est ambiguë sur cette dimension, toutes les valeurs légitimes sont acceptées et signalées (« ambiguous forms accept every legitimate value », « lemma question on fit accepts both fīō and faciō »).
+* Distinction forme inexistante / non attestée / non usitée / donnée manquante : `AbsenceStatus` (ex. *scī* = nōn ūsitātur, *ēns* = nōn ūsitātur, passif de sum = nōn exstat, gérondif de licet = nōn attestātur) — test « scī is flagged as not used, not as nonexistent ».
+
+## Mélanges (Mixta)
+
+| Épreuve | Composants sélectionnables | Compétence évaluée | Test |
+|---|---|---|---|
+| `mx-tempora-ind-act` / `-pass` | 6 temps de l'indicatif | `mx.tempus.ind` + compétence du temps observé | « mixta questions credit the observed tense skill », « mixta with a component subset only draws from those components » |
+| `mx-tempora-subj` | 4 temps × 2 voix | `mx.tempus.subj` | idem |
+| `mx-modi` | ind., subj., impér., inf. | `mx.modus` | « every trial has a non-empty pool » |
+| `mx-voces` | actif, passif, déponents | `mx.vox` | idem |
+| `mx-familiae` | sum, eō, ferō, volō, fīō, dō/edō | `mx.familia` | idem |
+| `mx-omnia` | personnelles, nominales, périphrastiques, anomales, spéciales | `mx.omnia` (analyse complète) | idem |
+
+## Économie, maîtrise, sauvegarde
+
+| Exigence | Implémentation | Test |
+|---|---|---|
+| Barème configurable, transaction unique par réponse, maîtrise avant réponse | `EconomyConfig`, `AnswerResolver` | `economy_test`, `battle_controller_test` « pays gems once » |
+| Erreur volontaire non rentable | `SkillRecord.rewardTier` (marque haute à décroissance lente) | `mastery_test` « deliberate errors… » |
+| Répétition d'un même mot | saturation `lemmaDaily` | `economy_test` « repeating one lemma stops paying » |
+| Réponses aidées / corrigées | `AnswerQuality`, `aidedGain` | « help before answering marks the answer as aided », « aided answers never raise the tier » |
+| Solde ≥ 0, achats permanents, pas d'achat automatique, déduction unique | `Economy.applyToBalance`, `ProfileController.purchase` | « purchase deducts once… » |
+| Pas d'impasse | prime de victoire bornée, doublée en rattrapage | « victory pays a bounded bonus », « no economic dead end » |
+| Sauvegarde après chaque réponse/achat, schéma versionné, migrations, reprise, export/import | `SaveCodec`, `SaveRepository`, `ActiveBattle` | `save_test`, « snapshot is saved mid-fight and can be resumed » |
+| Entrée unique par question (touches maintenues, doubles clics, événements tardifs) | latch `questionId` + `KeyDownEvent` seulement | `widget_test` « held key / repeat must not answer twice » |
+
+## Structure préparée (non jouable, indiquée comme à venir)
+Forum — `Skills` `d.<1–5>.<cas>.<sg|pl>` (déclinaison → cas → nombre) affichés « Ventūrum » dans la Tabula ; Thermae et Templum visibles dans la ville, désactivés.
