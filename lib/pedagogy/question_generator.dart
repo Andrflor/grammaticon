@@ -139,6 +139,7 @@ class QuestionGenerator implements QuestionSource {
       case Dimension.formaPlena:
         return null;
       case Dimension.analysis:
+      case Dimension.sensus:
         return null;
     }
   }
@@ -170,6 +171,7 @@ class QuestionGenerator implements QuestionSource {
         return analyzer.verb(value).lemma;
       case Dimension.formaPlena:
       case Dimension.analysis:
+      case Dimension.sensus:
         return value;
     }
   }
@@ -224,6 +226,7 @@ class QuestionGenerator implements QuestionSource {
     List<String> recentSurfaces = const [],
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
+    ExposureLedger exposure = const ExposureLedger(),
   }) {
     final entries = pool(trial, componentIds);
     if (entries.isEmpty) return null;
@@ -465,6 +468,8 @@ class QuestionGenerator implements QuestionSource {
         return _firstOf(p, (x) => p.primary(x.selector)?.surface == chosenValue);
       case Dimension.analysis:
         return p.forms.where((f) => analysisKey(f.analysis) == chosenValue && f.isPrimary).firstOrNull;
+      case Dimension.sensus:
+        return null;
       case Dimension.coniugatio:
       case Dimension.declinatio:
         return null;

@@ -14,6 +14,7 @@ import '../coliseum/coliseum_screen.dart';
 import '../forum/forum_screen.dart';
 import '../settings/settings_screen.dart';
 import '../tabula/tabula_screen.dart';
+import '../theatrum/theatrum_screen.dart';
 import '../widgets/roman_widgets.dart';
 
 class _Building {
@@ -33,11 +34,12 @@ class _Building {
 const _buildings = [
   _Building(id: 'templum', name: 'Templum', activity: 'Gallicē → Latīnē · ventūrum', asset: 'assets/images/bld_templum.png', x: 0.50, y: 0.42, width: 0.20, future: true),
   _Building(id: 'amphitheatrum', name: 'Amphitheātrum', activity: 'Coniugātiōnēs', asset: 'assets/images/bld_amphitheatrum.png', x: 0.84, y: 0.56, width: 0.30),
-  _Building(id: 'thermae', name: 'Thermae', activity: 'Latīnē → Gallicē · ventūrum', asset: 'assets/images/bld_thermae.png', x: 0.22, y: 0.74, width: 0.26, future: true),
+  _Building(id: 'theatrum', name: 'Theātrum', activity: 'Latīnē → Gallicē', asset: 'assets/images/bld_theatrum.png', x: 0.22, y: 0.74, width: 0.26),
   _Building(id: 'forum', name: 'Forum', activity: 'Dēclīnātiōnēs', asset: 'assets/images/bld_forum.png', x: 0.68, y: 0.86, width: 0.26),
 ];
 
-/// The Roman city: an interactive scene with four buildings.
+/// The Roman city: an interactive scene with four buildings (three open, the
+/// Templum announced).
 class CityScreen extends HookConsumerWidget {
   const CityScreen({super.key});
 
@@ -53,7 +55,7 @@ class CityScreen extends HookConsumerWidget {
         showLatinSnack(context, '${b.name}: aedificium ventūrum. Nōndum aperītur.');
         return;
       }
-      pushScreen(context, b.id == 'forum' ? const ForumScreen() : const ColiseumScreen());
+      pushScreen(context, switch (b.id) { 'forum' => const ForumScreen(), 'theatrum' => const TheatrumScreen(), _ => const ColiseumScreen() });
     }
 
     final interrupted = save.activeBattle == null ? null : Trials.maybe(save.activeBattle!.trialId);

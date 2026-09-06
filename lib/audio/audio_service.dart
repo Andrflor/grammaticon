@@ -18,7 +18,10 @@ enum Sfx {
   oratio('oratio.wav'),
   plausus('plausus.wav'),
   refutatio('refutatio.wav'),
-  murmur('murmur.wav');
+  murmur('murmur.wav'),
+  // Theatrum
+  tibia('tibia.wav'),
+  sibilus('sibilus.wav');
 
   const Sfx(this.file);
   final String file;

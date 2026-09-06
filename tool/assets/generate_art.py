@@ -128,25 +128,7 @@ def forum():
         b += rect(30 + i*17.5, 288, 17.5, 16, '#e0333f' if i % 2 == 0 else '#ffffff')
     return write('bld_forum', w, h, b, DEFS_COMMON)
 
-def thermae():
-    w, h = 560, 400
-    b = ellipse(280, 372, 250, 28, 'rgba(40,20,60,0.25)')
-    b += rect(60, 330, 440, 36, 'url(#marble)', r=6, extra=STROKE)
-    b += rect(90, 180, 380, 160, 'url(#wall)', r=10, extra=STROKE)
-    # dome
-    b += path('M130,180 Q130,60 280,60 Q430,60 430,180 Z', 'url(#roof)', STROKE)
-    b += ellipse(280, 62, 18, 10, '#e0b24a', STROKE)
-    # arches
-    for x in (140, 240, 340):
-        b += rect(x, 210, 80, 120, '#5a7a90', r=40, extra=STROKE)
-        b += rect(x+8, 218, 64, 104, '#8fd0ff', r=32, extra='opacity="0.6"')
-    # water & steam
-    b += rect(40, 300, 480, 40, 'url(#sea)', r=12, extra='opacity="0.9"')
-    for i, x in enumerate((120, 200, 300, 400)):
-        b += ellipse(x, 150 - i*8, 26, 14, 'rgba(255,255,255,0.75)')
-        b += ellipse(x+18, 130 - i*8, 18, 10, 'rgba(255,255,255,0.6)')
-    b += banner(100, 200, 28, 60, '#1c73b8') + banner(432, 200, 28, 60, '#1c73b8')
-    return write('bld_thermae', w, h, b, DEFS_COMMON)
+# The Thermae building was replaced by the Theatrum (tool/assets/generate_theatrum_art.py).
 
 def templum():
     w, h = 520, 440
@@ -480,7 +462,7 @@ def tabula_icon():
     return write('tabula_icon', w, h, b, DEFS_COMMON)
 
 if __name__ == '__main__':
-    amphitheatrum(); forum(); thermae(); templum(); city_bg(); arena_bg()
+    amphitheatrum(); forum(); templum(); city_bg(); arena_bg()
     for p in ('idle', 'attack', 'hurt', 'victory', 'defeat'):
         hero(p)
     enemy_statua(); enemy_gladiator(); enemy_leo(); enemy_sphinx(); enemy_cyclops(); enemy_hydra()

@@ -243,6 +243,7 @@ class BattleController extends Notifier<BattleState?> {
       recentSurfaces: s.recentSurfaces,
       skills: save.skills,
       cfg: ref.read(masteryConfigProvider),
+      exposure: save.exposure,
     );
     return s.copyWith(question: q, helpUsed: false, explanationOpen: false);
   }

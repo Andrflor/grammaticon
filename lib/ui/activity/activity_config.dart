@@ -10,10 +10,12 @@ import '../../audio/audio_service.dart';
 import '../../game/arena_game.dart';
 import '../../game/encounter_scene.dart';
 import '../../game/forum_game.dart';
+import '../../game/theatrum_game.dart';
 import '../../pedagogy/question_generator.dart';
 import '../../pedagogy/trial.dart';
 import '../help/help_sheet.dart';
 import '../help/noun_help_sheet.dart';
+import '../help/reading_help_sheet.dart';
 
 /// A sound played [delayMs] after an outcome is shown.
 class SoundCue {
@@ -89,6 +91,7 @@ class ActivityConfig {
     required this.showHelp,
     required this.correctCues,
     required this.wrongCues,
+    this.longText = false,
   });
 
   final Activity activity;
@@ -104,6 +107,10 @@ class ActivityConfig {
   final Future<void> Function(BuildContext context, WidgetRef ref, Question q, {required bool revealForm, String? note}) showHelp;
   final List<SoundCue> correctCues;
   final List<SoundCue> wrongCues;
+
+  /// The question surface is a sentence and the choices are sentences
+  /// (Theatrum): wrapping text, one or two choices per row.
+  final bool longText;
 
   String opponentName(String id) => opponentNames[id] ?? 'Adversārius';
   String opponentAsset(String id) => 'assets/images/$opponentAssetPrefix$id.png';
@@ -177,7 +184,50 @@ final ActivityConfig kForumConfig = ActivityConfig(
   wrongCues: const [SoundCue(120, Sfx.refutatio), SoundCue(320, Sfx.murmur)],
 );
 
+final ActivityConfig kTheatrumConfig = ActivityConfig(
+  activity: Activity.theatrum,
+  labels: const ActivityLabels(
+    title: 'Theātrum · Interpretātiō',
+    blurb: 'Ēlige fābulam. Prīma grātīs est; cēterae gemmīs emuntur et in perpetuum manent. Sententia Latīna legitur: interpretātiō Gallica vēra ēligenda est.',
+    encounter: 'Fābula',
+    interrupted: 'Fābula interrupta',
+    resume: 'Redī in theātrum',
+    back: 'Redī in Theātrum',
+    leaveTitle: 'Relinquere scaenam?',
+    leaveBody: 'Fābula servātur: postea redīre poteris.',
+    pausedBody: 'Fābula suspēnsa est.',
+    victoryTitle: 'PLAUSUS!',
+    victoryBody: 'Adversārius ē scaenā cessit; populus tibi plaudit.',
+    defeatTitle: 'FĀBULA ĀMISSA',
+    defeatBody: 'Adversārius scaenam vīcit. Emptiōnēs et perītiae manent: iterum temptā!',
+    gemsLine: 'Gemmae fābulae',
+    penaltyLine: 'Tribūtum fābulae āmissae',
+    hits: 'versūs',
+    opponentResource: 'favor populī',
+    wonTally: 'Fābulae victae',
+    lostTally: 'āmissae',
+    trainingBlurb: 'Exercitātiō: eaedem sententiae sine gemmīs et sine cordibus, ad repetendum. Respōnsa in Tabulā numerantur.',
+  ),
+  heroAsset: 'assets/images/histrio_idle.png',
+  startIcon: Icons.theater_comedy,
+  opponentNames: const {
+    'comoedus': 'Cōmoedus Rīdēns',
+    'tragoedus': 'Tragoedus Cothurnātus',
+    'mimus': 'Mīmus Versicolor',
+    'pantomimus': 'Pantomīmus Ēlegāns',
+    'chorus': 'Chorī Magister',
+    'dominus': 'Dominus Gregis',
+  },
+  opponentAssetPrefix: 'actor_',
+  createScene: (trial, {required reducedMotion}) => TheatrumGame(opponentId: trial.opponentId, reducedMotion: reducedMotion),
+  showHelp: (context, ref, q, {required revealForm, note}) => showReadingHelpSheet(context, ref, q: q, revealForm: revealForm, note: note),
+  correctCues: const [SoundCue(60, Sfx.tibia), SoundCue(320, Sfx.plausus)],
+  wrongCues: const [SoundCue(120, Sfx.refutatio), SoundCue(340, Sfx.sibilus)],
+  longText: true,
+);
+
 ActivityConfig configFor(Activity a) => switch (a) {
       Activity.amphitheatrum => kAmphitheatrumConfig,
       Activity.forum => kForumConfig,
+      Activity.theatrum => kTheatrumConfig,
     };

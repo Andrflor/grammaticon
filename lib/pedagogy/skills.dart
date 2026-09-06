@@ -4,7 +4,7 @@
 /// stable and used as keys in the save file.
 library;
 
-enum SkillBranch { coniugationes, mixta, declinationes }
+enum SkillBranch { coniugationes, mixta, declinationes, lectio }
 
 class Skill {
   const Skill(this.id, this.name, {this.parent, required this.branch, this.hint = '', this.future = false});
@@ -84,6 +84,28 @@ class Skills {
     Skill('d', 'Dēclīnātiōnēs', branch: SkillBranch.declinationes),
   ];
 
+  /// Contextual comprehension (Theatrum): the same grammatical distinctions
+  /// as the two form-recognition trees, read in a sentence and rendered in
+  /// French. Kept apart so that recognising an isolated form and
+  /// understanding it in context are never conflated.
+  static const List<Skill> _lectio = [
+    Skill('l', 'Lēctiō · Theātrum', branch: SkillBranch.lectio),
+    Skill('l.verbum', 'Verbum in sententiā', parent: 'l', branch: SkillBranch.lectio),
+    Skill('l.numerus', 'Numerus', parent: 'l.verbum', branch: SkillBranch.lectio, hint: 'videbit · videbunt'),
+    Skill('l.persona', 'Persōna', parent: 'l.verbum', branch: SkillBranch.lectio, hint: 'peccāvī · peccāstī · peccāvit'),
+    Skill('l.tempus', 'Tempus', parent: 'l.verbum', branch: SkillBranch.lectio, hint: 'erat · est · fuit · erit'),
+    Skill('l.modus', 'Modus', parent: 'l.verbum', branch: SkillBranch.lectio, hint: 'fiat · fit · fac'),
+    Skill('l.vox', 'Vōx', parent: 'l.verbum', branch: SkillBranch.lectio, hint: 'ministrāre · ministrārī'),
+    Skill('l.nomen', 'Nōmen in sententiā', parent: 'l', branch: SkillBranch.lectio),
+    Skill('l.casus', 'Cāsūs et relātiōnēs', parent: 'l.nomen', branch: SkillBranch.lectio, hint: 'Deus hominem · hominem Deus'),
+    Skill('l.congruentia', 'Congruentia', parent: 'l.nomen', branch: SkillBranch.lectio, hint: 'pastor bonus · vitis vēra'),
+    Skill('l.nonfinita', 'Participia et īnfīnītīvī', parent: 'l', branch: SkillBranch.lectio, hint: 'vidēns · nātus · ventūrus · ministrārī'),
+    Skill('l.mx', 'Mixta lēctiōnis', parent: 'l', branch: SkillBranch.lectio),
+    Skill('l.mx.verbum', 'Verbum mixtum', parent: 'l.mx', branch: SkillBranch.lectio),
+    Skill('l.mx.nomen', 'Nōmen mixtum', parent: 'l.mx', branch: SkillBranch.lectio),
+    Skill('l.mx.omnia', 'Omnia mixta', parent: 'l.mx', branch: SkillBranch.lectio),
+  ];
+
   /// Mixed-trial and special skills of the Forum, appended after the
   /// declension tree.
   static const List<Skill> _declTail = [
@@ -111,6 +133,7 @@ class Skills {
       }
     }
     list.addAll(_declTail);
+    list.addAll(_lectio);
     return List.unmodifiable(list);
   }
 

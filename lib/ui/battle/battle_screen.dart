@@ -309,7 +309,10 @@ class _Center extends ConsumerWidget {
     final showFeedback = outcome != null && outcome.question.id == q.id;
     final w = MediaQuery.sizeOf(context).width;
     final compact = w < 600;
-    final surfaceSize = (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
+    // A sentence (Theatrum) wraps at a readable size; an isolated form is
+    // scaled to the width.
+    final long = config.longText;
+    final surfaceSize = long ? (compact ? 17.0 : (q.surface.length > 100 ? 21.0 : 25.0)) : (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
 
     return SafeArea(
       child: Column(
@@ -319,7 +322,7 @@ class _Center extends ConsumerWidget {
           // Question card
           RomanPanel(
             key: cardKey,
-            width: min(w - 24, 760),
+            width: min(w - 24, long ? 900 : 760),
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
             child: Column(
               children: [
@@ -353,7 +356,7 @@ class _Center extends ConsumerWidget {
                 Text(
                   q.surface,
                   textAlign: TextAlign.center,
-                  style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: 2),
+                  style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: long ? 0.3 : 2).copyWith(height: long ? 1.3 : null),
                 ),
                 // Context lines (dictionary entry) never give the answer away.
                 for (final line in q.context) Text(line, textAlign: TextAlign.center, style: G.body(compact ? 13 : 15, color: G.inkSoft, style: FontStyle.italic)),
@@ -394,13 +397,21 @@ class _Center extends ConsumerWidget {
                   : const SizedBox.shrink(),
             ),
           ),
-          const Spacer(),
+          // The lower block (correction and choices) is anchored to the bottom
+          // and scrolls only when sentences do not fit (small screens).
+          Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
           // Wrong-answer explanation
           if (showFeedback && !outcome.correct)
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
               child: RomanPanel(
-                width: min(w - 24, 760),
+                width: min(w - 24, long ? 900 : 760),
                 color: const Color(0xFFFFF4F5),
                 borderColor: G.red,
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
@@ -416,7 +427,10 @@ class _Center extends ConsumerWidget {
                         style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
                       ),
                     const SizedBox(height: 8),
-                    Row(
+                    // Wraps on narrow screens instead of overflowing.
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
                       children: [
                         RomanButton(
                           label: 'Explicā plūs',
@@ -429,7 +443,6 @@ class _Center extends ConsumerWidget {
                             ctrl.closeExplanation();
                           },
                         ),
-                        const SizedBox(width: 8),
                         RomanButton(label: 'Perge', icon: Icons.arrow_forward, style: RomanButtonStyle.gold, onPressed: ctrl.proceed),
                       ],
                     ),
@@ -449,6 +462,11 @@ class _Center extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
             child: _Choices(q: q, state: state, onPick: (i) => ctrl.answer(q.id, i)),
+          ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -471,8 +489,10 @@ class _Choices extends StatelessWidget {
     // Narrow screens: long labels (Nōminātīvus, Plūsquamperfectum) get a full row
     // so they never break mid-word.
     final longest = q.choices.fold(0, (m, c) => max(m, c.label.length));
-    final perRow = w < 600 ? (n <= 2 ? n : (longest > 9 ? 1 : 2)) : (n <= 4 ? n : 3);
-    final bw = ((min(w, 1000) - 24) - (perRow - 1) * 10) / perRow;
+    // Sentences (Theatrum): one per row, two on wide screens.
+    final sentences = longest > 32;
+    final perRow = sentences ? (w < 900 ? 1 : 2) : (w < 600 ? (n <= 2 ? n : (longest > 9 ? 1 : 2)) : (n <= 4 ? n : 3));
+    final bw = ((min(w, sentences ? 1200 : 1000) - 24) - (perRow - 1) * 10) / perRow;
     return Wrap(
       alignment: WrapAlignment.center,
       spacing: 10,
@@ -488,6 +508,7 @@ class _Choices extends StatelessWidget {
               isCorrect: answered && q.correctValues.contains(q.choices[i].value),
               isChosen: answered && outcome.chosenValue == q.choices[i].value,
               wrong: answered && outcome.chosenValue == q.choices[i].value && !outcome.correct,
+              dense: sentences,
               onTap: () => onPick(i),
             ),
           ),
@@ -497,7 +518,7 @@ class _Choices extends StatelessWidget {
 }
 
 class _ChoiceButton extends HookWidget {
-  const _ChoiceButton({required this.index, required this.label, required this.enabled, required this.isCorrect, required this.isChosen, required this.wrong, required this.onTap});
+  const _ChoiceButton({required this.index, required this.label, required this.enabled, required this.isCorrect, required this.isChosen, required this.wrong, required this.onTap, this.dense = false});
   final int index;
   final String label;
   final bool enabled;
@@ -505,6 +526,7 @@ class _ChoiceButton extends HookWidget {
   final bool isChosen;
   final bool wrong;
   final VoidCallback onTap;
+  final bool dense;
 
   @override
   Widget build(BuildContext context) {
@@ -528,6 +550,7 @@ class _ChoiceButton extends HookWidget {
           badge: '${index + 1}',
           style: style,
           expand: true,
+          dense: dense,
           onPressed: enabled ? onTap : null,
           trailing: isCorrect ? const Icon(Icons.check_circle, color: Colors.white) : (wrong ? const Icon(Icons.cancel, color: Colors.white) : null),
         ),

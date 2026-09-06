@@ -3,18 +3,41 @@ library;
 
 import 'dart:convert';
 
+import '../pedagogy/exposure.dart';
 import '../pedagogy/mastery.dart';
 
-const int kSchemaVersion = 2;
+const int kSchemaVersion = 3;
+
+/// Language of the translations shown in the Theatrum. The interface itself
+/// stays Latin. A language is *selectable* only when its content is shipped.
+enum TranslationLanguage {
+  gallice('fr', 'Gallicē'),
+  anglice('en', 'Anglicē');
+
+  const TranslationLanguage(this.code, this.latin);
+  final String code;
+  final String latin;
+  static TranslationLanguage fromCode(String c) => values.firstWhere((e) => e.code == c, orElse: () => gallice);
+}
 
 class Settings {
-  const Settings({this.volume = 0.8, this.soundOn = true, this.reducedMotion = false, this.correctDelayMs = 350, this.wrongDelayMs = 2800, this.musicOn = true, this.musicVolume = 0.5});
+  const Settings({
+    this.volume = 0.8,
+    this.soundOn = true,
+    this.reducedMotion = false,
+    this.correctDelayMs = 350,
+    this.wrongDelayMs = 2800,
+    this.musicOn = true,
+    this.musicVolume = 0.5,
+    this.translationLanguage = TranslationLanguage.gallice,
+  });
 
   final double volume;
   final bool soundOn;
   final bool musicOn;
   final double musicVolume;
   final bool reducedMotion;
+  final TranslationLanguage translationLanguage;
 
   /// Delay before the next question after a correct answer.
   final int correctDelayMs;
@@ -22,7 +45,7 @@ class Settings {
   /// Reading delay after an error before the next question.
   final int wrongDelayMs;
 
-  Settings copyWith({double? volume, bool? soundOn, bool? reducedMotion, int? correctDelayMs, int? wrongDelayMs, bool? musicOn, double? musicVolume}) => Settings(
+  Settings copyWith({double? volume, bool? soundOn, bool? reducedMotion, int? correctDelayMs, int? wrongDelayMs, bool? musicOn, double? musicVolume, TranslationLanguage? translationLanguage}) => Settings(
     volume: volume ?? this.volume,
     soundOn: soundOn ?? this.soundOn,
     reducedMotion: reducedMotion ?? this.reducedMotion,
@@ -30,9 +53,10 @@ class Settings {
     wrongDelayMs: wrongDelayMs ?? this.wrongDelayMs,
     musicOn: musicOn ?? this.musicOn,
     musicVolume: musicVolume ?? this.musicVolume,
+    translationLanguage: translationLanguage ?? this.translationLanguage,
   );
 
-  Map<String, Object?> toJson() => {'vol': volume, 'snd': soundOn, 'rm': reducedMotion, 'cd': correctDelayMs, 'wd': wrongDelayMs, 'mus': musicOn, 'mvol': musicVolume};
+  Map<String, Object?> toJson() => {'vol': volume, 'snd': soundOn, 'rm': reducedMotion, 'cd': correctDelayMs, 'wd': wrongDelayMs, 'mus': musicOn, 'mvol': musicVolume, 'lang': translationLanguage.code};
   factory Settings.fromJson(Map<String, Object?> j) => Settings(
     volume: (j['vol'] as num?)?.toDouble() ?? 0.8,
     soundOn: j['snd'] as bool? ?? true,
@@ -41,6 +65,7 @@ class Settings {
     wrongDelayMs: (j['wd'] as num?)?.toInt() ?? 2800,
     musicOn: j['mus'] as bool? ?? true,
     musicVolume: (j['mvol'] as num?)?.toDouble() ?? 0.5,
+    translationLanguage: TranslationLanguage.fromCode(j['lang'] as String? ?? 'fr'),
   );
 }
 
@@ -123,6 +148,7 @@ class SaveData {
     this.lemmaDaily = const {},
     this.introSeen = const {},
     this.activityStats = const {},
+    this.exposure = const ExposureLedger(),
     this.createdAt,
     this.updatedAt,
   });
@@ -153,6 +179,9 @@ class SaveData {
   /// Per-activity tallies keyed by [Activity.key]; [battlesWon] and
   /// [battlesLost] remain the global totals.
   final Map<String, ActivityStats> activityStats;
+
+  /// Vocabulary met in the Theatrum (exposure, not mastery).
+  final ExposureLedger exposure;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
@@ -170,6 +199,7 @@ class SaveData {
     Map<String, int>? lemmaDaily,
     Set<String>? introSeen,
     Map<String, ActivityStats>? activityStats,
+    ExposureLedger? exposure,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) => SaveData(
@@ -186,6 +216,7 @@ class SaveData {
     lemmaDaily: lemmaDaily ?? this.lemmaDaily,
     introSeen: introSeen ?? this.introSeen,
     activityStats: activityStats ?? this.activityStats,
+    exposure: exposure ?? this.exposure,
     createdAt: createdAt ?? this.createdAt,
     updatedAt: updatedAt ?? this.updatedAt,
   );
@@ -204,6 +235,7 @@ class SaveData {
     'lemmaDaily': lemmaDaily,
     'introSeen': introSeen.toList()..sort(),
     'activities': {for (final e in activityStats.entries) e.key: e.value.toJson()},
+    'expo': exposure.toJson(),
     if (createdAt != null) 'created': createdAt!.toIso8601String(),
     if (updatedAt != null) 'updated': updatedAt!.toIso8601String(),
   };
@@ -222,6 +254,7 @@ class SaveData {
     lemmaDaily: {for (final e in ((j['lemmaDaily'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
     introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
     activityStats: {for (final e in ((j['activities'] as Map?) ?? const {}).entries) e.key as String: ActivityStats.fromJson((e.value as Map).cast<String, Object?>())},
+    exposure: j['expo'] == null ? const ExposureLedger() : ExposureLedger.fromJson((j['expo'] as Map).cast<String, Object?>()),
     createdAt: j['created'] == null ? null : DateTime.tryParse(j['created'] as String),
     updatedAt: j['updated'] == null ? null : DateTime.tryParse(j['updated'] as String),
   );
@@ -244,6 +277,17 @@ class SaveCodec {
       'activities': {
         'amphitheatrum': {'w': (j['won'] as num?)?.toInt() ?? 0, 'l': (j['lost'] as num?)?.toInt() ?? 0},
       },
+    },
+    // 2 -> 3: the Thermae become the Theatrum. No trial, skill or tally ever
+    // carried the Thermae identifier, so nothing is reset; any stray
+    // per-activity record under the old key is renamed rather than dropped.
+    // The exposure ledger and the translation-language setting start with
+    // their defaults (French).
+    2: (j) {
+      final acts = Map<String, Object?>.from((j['activities'] as Map?)?.cast<String, Object?>() ?? const {});
+      if (acts.containsKey('thermae') && !acts.containsKey('theatrum')) acts['theatrum'] = acts.remove('thermae');
+      acts.remove('thermae');
+      return {...j, 'schema': 3, 'activities': acts};
     },
   };
 

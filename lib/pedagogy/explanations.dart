@@ -67,6 +67,7 @@ class Explanations {
       case Dimension.formaPlena:
         return 'Fōrma contracta vel varia: ${a.variant.latin}.';
       case Dimension.analysis:
+      case Dimension.sensus:
         return '';
     }
   }

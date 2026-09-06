@@ -58,7 +58,7 @@ void main() {
         '"battle":{"t":"ind-imperf-act","m":"certamen","h":2,"e":6,"a":5,"g":12,"s":77,"q":5,"c":[],"ok":4},'
         '"lemmaDaily":{"v.ind.praes.act|amo|20260102":2},"introSeen":["ind-praes-act"]}';
     final d = codec.decode(v1);
-    expect(d.schemaVersion, 2);
+    expect(d.schemaVersion, kSchemaVersion); // 1 → 2 → 3
     expect(d.gems, 37);
     expect(d.purchased, {'ind-imperf-act', 'ind-fut-act'});
     expect(d.skills['v.ind.praes.act']!.autonomousCorrect, 3);
@@ -74,7 +74,8 @@ void main() {
     expect(d.activityStats['amphitheatrum']!.won, 4);
     expect(d.activityStats['amphitheatrum']!.lost, 2);
     expect(d.activityStats['forum'], isNull);
-    // Round trip at schema 2 keeps the new field.
+    expect(d.activityStats['theatrum']?.won ?? 0, 0);
+    // Round trip keeps the per-activity field.
     final back = codec.decode(codec.encode(d.copyWith(activityStats: {...d.activityStats, 'forum': const ActivityStats(won: 1)})));
     expect(back.activityStats['forum']!.won, 1);
     expect(back.activityStats['amphitheatrum']!.won, 4);

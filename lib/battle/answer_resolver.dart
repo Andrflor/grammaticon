@@ -19,6 +19,7 @@ class Resolution {
     required this.tierBefore,
     required this.tiersAfter,
     required this.quality,
+    required this.exposureAfter,
   });
 
   final bool correct;
@@ -30,6 +31,9 @@ class Resolution {
   final MasteryTier tierBefore;
   final Map<String, MasteryTier> tiersAfter;
   final AnswerQuality quality;
+
+  /// Vocabulary exposure after this answer (unchanged for isolated forms).
+  final ExposureLedger exposureAfter;
 
   int get delta => gemsAfter - gemsBefore;
 }
@@ -63,6 +67,8 @@ class AnswerResolver {
     if (correct && quality == AnswerQuality.autonoma) daily[satKey] = satCount + 1;
     // Keep the daily map small: drop other days.
     daily.removeWhere((k, _) => !k.endsWith('|$dayKey'));
+    // Words met in a passage are exposure, never mastery: recorded apart.
+    final exposure = q.exposure == null ? save.exposure : save.exposure.record(q.exposure!, autonomousCorrect: correct && quality == AnswerQuality.autonoma);
 
     return Resolution(
       correct: correct,
@@ -74,6 +80,7 @@ class AnswerResolver {
       tierBefore: tierBefore,
       tiersAfter: {for (final s in q.skillIds) s: skills[s]!.tier(mastery)},
       quality: quality,
+      exposureAfter: exposure,
     );
   }
 }

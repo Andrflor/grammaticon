@@ -7,6 +7,8 @@ import '../pedagogy/mastery.dart';
 import '../pedagogy/noun_question_generator.dart';
 import '../pedagogy/progression.dart';
 import '../pedagogy/question_generator.dart';
+import '../pedagogy/reading/reading_content.dart';
+import '../pedagogy/reading/reading_question_source.dart';
 import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
 import '../persistence/save_repository.dart';
@@ -22,11 +24,21 @@ final nounAnalyzerProvider = Provider<NounAnalyzer>((ref) => throw Unimplemented
 
 final nounQuestionGeneratorProvider = Provider<NounQuestionGenerator>((ref) => NounQuestionGenerator(ref.watch(nounAnalyzerProvider)));
 
+/// Curated reading content of the Theatrum (overridden in main and tests).
+final readingLibraryProvider = Provider<ReadingLibrary>((ref) => throw UnimplementedError('readingLibraryProvider must be overridden'));
+
+/// Reading source for the selected translation language. Rebuilt when the
+/// language changes; unavailable languages yield no questions.
+final readingQuestionSourceProvider = Provider<ReadingQuestionSource>(
+  (ref) => ReadingQuestionSource(ref.watch(readingLibraryProvider), language: ref.watch(settingsProvider.select((s) => s.translationLanguage.code))),
+);
+
 /// One question source per activity, dispatched by the trial's activity.
 final questionSourcesProvider = Provider<QuestionSources>(
   (ref) => QuestionSources((a) => switch (a) {
         Activity.amphitheatrum => ref.read(questionGeneratorProvider),
         Activity.forum => ref.read(nounQuestionGeneratorProvider),
+        Activity.theatrum => ref.read(readingQuestionSourceProvider),
       }),
 );
 
@@ -65,7 +77,7 @@ class ProfileController extends Notifier<SaveData> {
   Future<void> applyResolution(Resolution r, ActiveBattle? snapshot) {
     if (r.transaction.id <= state.lastTransactionId) return Future.value(); // already applied
     return _commit(
-      state.copyWith(gems: r.gemsAfter, skills: r.skillsAfter, lemmaDaily: r.lemmaDailyAfter, lastTransactionId: r.transaction.id, activeBattle: snapshot, clearActiveBattle: snapshot == null),
+      state.copyWith(gems: r.gemsAfter, skills: r.skillsAfter, lemmaDaily: r.lemmaDailyAfter, lastTransactionId: r.transaction.id, activeBattle: snapshot, clearActiveBattle: snapshot == null, exposure: r.exposureAfter),
     );
   }
 

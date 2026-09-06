@@ -8,8 +8,11 @@ library;
 
 import 'dart:math';
 
+import 'exposure.dart';
 import 'mastery.dart';
 import 'trials.dart';
+
+export 'exposure.dart' show ExposureLedger, ExposureNote;
 
 class Choice {
   const Choice(this.value, this.label);
@@ -40,6 +43,7 @@ class Question {
     this.componentId,
     this.ambiguous = false,
     this.context = const [],
+    this.exposure,
   });
 
   final String id;
@@ -64,6 +68,9 @@ class Question {
   /// Short lines shown under the form (dictionary entry, hint). Never a
   /// sentence that has not been checked.
   final List<String> context;
+
+  /// Vocabulary met by this question (Theatrum); null for isolated forms.
+  final ExposureNote? exposure;
 
   String get primarySkill => skillIds.first;
   bool isCorrect(String value) => correctValues.contains(value);
@@ -98,6 +105,7 @@ abstract class QuestionSource {
     List<String> recentSurfaces = const [],
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
+    ExposureLedger exposure = const ExposureLedger(),
   });
 
   Explanation explain({required Question q, required String chosenValue, required bool correct});
@@ -123,8 +131,9 @@ class QuestionSources implements QuestionSource {
     List<String> recentSurfaces = const [],
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
+    ExposureLedger exposure = const ExposureLedger(),
   }) =>
-      forTrial(trial).generate(trial: trial, componentIds: componentIds, rng: rng, id: id, recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, skills: skills, cfg: cfg);
+      forTrial(trial).generate(trial: trial, componentIds: componentIds, rng: rng, id: id, recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, skills: skills, cfg: cfg, exposure: exposure);
 
   @override
   Explanation explain({required Question q, required String chosenValue, required bool correct}) =>

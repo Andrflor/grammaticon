@@ -122,5 +122,26 @@ Chaîne : **données** (`lib/linguistics/lexicon/nouns.dart`, 145 noms, A&G §40
 * Une question n'est posée que si la dimension a ≥ 2 valeurs dans le palier (jamais « quelle déclinaison ? » dans une épreuve à une déclinaison). Les formes à réponse unique parmi les choix proposés sont préférées ; une forme dont toutes les réponses proposées seraient justes n'est jamais posée ; sinon toutes les valeurs légitimes sont acceptées et signalées. Une analyse hors du palier (vocatif dans `d1-recti`) n'est jamais refusée, elle n'est simplement pas proposée.
 * Compétences créditées : la cellule de la forme (`d.1.acc.sg`, locatif `d.loc`) ; dans les épreuves mixtes, en plus, la compétence de discrimination ; « quae dēclīnātiō ? » ne crédite que `d.mx.declinatio` (aucune inférence sur le cas).
 
+## Lecture et interprétation (Theatrum)
+
+Chaîne : **corpus** (`assets/corpus/latVUC_vpl.txt`, `fraLSG_vpl.txt`, provenance dans `doc/theatrum_sources.md`) → **contenu rédigé et validé** (`tool/theatrum/items_fr.py` → `python3 tool/theatrum/build_content.py` → `assets/theatrum/passages_la.json` + `renderings_fr.json`) → **source de questions** (`lib/pedagogy/reading/reading_question_source.dart`, sélection orientée couverture) → **épreuves** (`lib/pedagogy/reading/reading_trials.dart`) → **tests** (`test/pedagogy/reading_content_test.dart`, `test/battle/theatrum_encounter_test.dart`, `test/widget_test.dart`). Rien n'est généré à l'exécution : passages, rendus et distracteurs sont des données rédigées, chacune validée (extrait latin exact, rendu Segond exact ou rendu pédagogique identifié, trois distracteurs annotés, distinctions conformes au niveau).
+
+| Épreuve (fābula) | Distinction | Compétence Tabula | Alignement forme isolée | Questions |
+|---|---|---|---|---|
+| `th-numerus` (gratuite) | nombre du verbe et du nom | `l.numerus` | `ind-praes-act` / `d1-recti` (dēsinentiae -t/-nt, -a/-æ) | 12 |
+| `th-persona` | personne (verbe, possessifs) | `l.persona` | `ind-praes-act`, `ind-perf-act` | 12 |
+| `th-casus-recti` | sujet / objet / ablatif | `l.casus` | `d1-recti`, `d2-us-um` | 12 |
+| `th-tempus-praeteritum` | présent · imparfait · parfait | `l.tempus` | `ind-imperf-act`, `ind-perf-act` | 13 |
+| `th-tempus-futurum` | futur · plus-que-parfait · futur antérieur | `l.tempus` | `ind-fut-act`, `ind-plusq-act`, `ind-futex-act` | 11 |
+| `th-casus-obliqui` | génitif · datif · ablatif (-ae, -o, -is/-ibus) | `l.casus` | `d1-omnes`, `d2-omnes`, `d3-consonantia` | 12 |
+| `th-congruentia` | accord adjectif/participe ↔ nom | `l.congruentia` | `d1-omnes`…`d3-i`, `participia` | 12 |
+| `th-modus-imperativus` | impératif ↔ indicatif, nōlī(te) | `l.modus` | `imp-praes`, `fam-volo` | 12 |
+| `th-vox` | actif ↔ passif (-tur, -rī, participe + est) | `l.vox` | `ind-praes-pass`…`ind-perf-pass`, `infinitivi` | 12 |
+| `th-modus-subiunctivus` | subjonctif (souhait, ordre, but) ↔ indicatif | `l.modus` | `subj-praes-act`, `fam-fio` | 12 |
+| `th-nonfinita` | participes (temps, voix, accord), infinitifs, gérondif, ablatif absolu, périphrastique | `l.nonfinita` | `participia`, `infinitivi`, `gerundium`, `periph-act` | 12 |
+| `th-mx-verbum`, `th-mx-nomen`, `th-mx-omnia` | mélanges (composants = épreuves de base) | `l.mx.*` + compétence de la distinction | — | pools des composants |
+
+Les distracteurs portent chacun **une** erreur d'interprétation morphologique contrôlée (nombre, personne, cas, temps, voix, mode, accord, forme nominale) ; la donnée conserve la portion latine, l'analyse correcte, l'analyse simulée, le changement de sens en français, la compétence testée et la compétence de forme (`formSkill`) correspondante des arbres Amphitheātrum/Forum, et l'explication latine servant à la correction et à l'Auxilium. Une réponse ne crédite que la compétence de lecture (`l.*`) : la reconnaissance d'une forme isolée (`v.*`, `d.*`) et sa compréhension en contexte ne sont jamais confondues ; le vocabulaire rencontré est enregistré à part (`ExposureLedger`, panneau *Vocābula Theātrī* de la Tabula). Couverture et lacunes : `doc/theatrum_coverage.md`.
+
 ## Structure préparée (non jouable, indiquée comme à venir)
-Thermae et Templum visibles dans la ville, désactivés. Adjectifs et pronoms : non traités ; le modèle `NounEntry`/`Declinator` (cellules cas × nombre, `overrides`, `absent`) et le contrat `QuestionPayload` sont le point d'extension prévu.
+Templum visible dans la ville, désactivé (sens Gallicē → Latīnē réservé). Anglicē : option visible, non sélectionnable tant que `renderings_en.json` n'existe pas. Adjectifs et pronoms : non traités ; le modèle `NounEntry`/`Declinator` (cellules cas × nombre, `overrides`, `absent`) et le contrat `QuestionPayload` sont le point d'extension prévu.

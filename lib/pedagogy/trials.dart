@@ -1,12 +1,13 @@
 /// Trial (certāmen) catalogue of the Amphitheatrum (verbs) and registry of
 /// every trial of the city. The shared model lives in `trial.dart`; the Forum
-/// catalogue in `noun_trials.dart`.
+/// catalogue in `noun_trials.dart`, the Theatrum's in `reading/reading_trials.dart`.
 library;
 
 import '../linguistics/model/analysis.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/verb.dart';
 import 'noun_trials.dart';
+import 'reading/reading_trials.dart';
 import 'skills.dart';
 import 'trial.dart';
 
@@ -180,7 +181,7 @@ Trial _tense({
 class Trials {
   Trials._();
 
-  static final List<Trial> all = List.unmodifiable([..._build(), ...NounTrials.build()]);
+  static final List<Trial> all = List.unmodifiable([..._build(), ...NounTrials.build(), ...ReadingTrials.build()]);
   static final Map<String, Trial> _byId = {for (final t in all) t.id: t};
   static Trial byId(String id) => _byId[id]!;
   static Trial? maybe(String id) => _byId[id];

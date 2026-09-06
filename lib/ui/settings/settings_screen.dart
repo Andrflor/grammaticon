@@ -7,6 +7,7 @@ import '../../app/theme.dart';
 import '../../audio/audio_service.dart';
 import '../../economy/economy.dart';
 import '../../pedagogy/mastery.dart';
+import '../../persistence/save_data.dart';
 import '../widgets/roman_widgets.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -82,6 +83,41 @@ class SettingsScreen extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(left: 32, top: 4),
               child: Text('Post errōrem explicātiō manet dōnec "Perge" premis (aut spatium / Enter).', style: G.body(13, color: G.inkSoft)),
+            ),
+          ],
+        ),
+      ),
+      RomanPanel(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const PanelHeader(icon: Icons.translate, title: 'Lingua interpretātiōnis', subtitle: 'Theātrum: sententiae Latīnae, interpretātiōnēs in linguā ēlēctā · interfaciēs Latīna manet'),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                for (final lang in TranslationLanguage.values)
+                  Builder(builder: (context) {
+                    final available = ref.watch(readingLibraryProvider).supports(lang.code);
+                    final selected = s.translationLanguage == lang;
+                    return RomanButton(
+                      label: available ? lang.latin : '${lang.latin} · nōndum parāta',
+                      icon: selected ? Icons.check_circle : (available ? Icons.circle_outlined : Icons.lock_clock),
+                      style: selected ? RomanButtonStyle.gold : (available ? RomanButtonStyle.outline : RomanButtonStyle.locked),
+                      dense: true,
+                      onPressed: available && !selected
+                          ? () {
+                              audio.play(Sfx.tactus);
+                              p.updateSettings(s.copyWith(translationLanguage: lang));
+                            }
+                          : null,
+                    );
+                  }),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text('Lingua nōndum parāta ēligī nōn potest: nihil aliā linguā ostenditur.', style: G.body(13, color: G.inkSoft)),
             ),
           ],
         ),
@@ -216,6 +252,7 @@ class SettingsScreen extends ConsumerWidget {
           children: [
             const PanelHeader(icon: Icons.account_balance, title: 'Dē fontibus'),
             _Rule(Icons.menu_book, 'Grammatica: Allen & Greenough, New Latin Grammar (1903), ēditiō Dickinson College Commentaries (CC BY-SA).'),
+            const _Rule(Icons.auto_stories, 'Theātrum: Biblia Sacra Vulgata Clementina (textus 1598, ēditiō Migne 1880) et La Sainte Bible, Louis Segond 1910 — eBible.org, in pūblicō (ēditiō Desclée 1901 postulāta, digitāliter nōn exstat).'),
             const _Rule(Icons.fact_check, 'Fōrmae in ipsō lūdō generantur; cum Collatinō (GPL-3.0) in officīnā tantum comparātae sunt.'),
             const _Rule(Icons.brush, 'Litterae Cinzel et Nunito (OFL). Imāginēs et sonī hīc factī (CC0), prōvīsōriī.'),
           ],

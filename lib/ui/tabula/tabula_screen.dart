@@ -51,11 +51,57 @@ class TabulaScreen extends ConsumerWidget {
                         ],
                       ),
                     ),
+                    const _ExposurePanel(),
                     for (final root in Skills.roots()) _SkillNode(skill: root, depth: 0),
                   ],
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Vocabulary met in the Theatrum: exposure counts, deliberately shown apart
+/// from the mastery tree (meeting a word is not knowing it).
+class _ExposurePanel extends ConsumerWidget {
+  const _ExposurePanel();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final save = ref.watch(profileProvider);
+    final lang = save.settings.translationLanguage;
+    final set = ref.watch(readingLibraryProvider).forLanguage(lang.code);
+    if (set == null) return const SizedBox.shrink();
+    final playable = set.playableLemmas;
+    final led = save.exposure;
+    final met = playable.where((l) => led.of(l).seen > 0).length;
+    final again = playable.where((l) => led.of(l).revisited).length;
+    final tested = playable.where((l) => led.of(l).tested > 0).length;
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: RomanPanel(
+        color: G.purpleDark,
+        borderColor: G.gold,
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Vocābula Theātrī (${lang.latin})', style: G.display(15, color: G.goldLight)),
+            const SizedBox(height: 4),
+            Wrap(
+              spacing: 12,
+              runSpacing: 4,
+              children: [
+                Text('in fābulīs parātīs: ${playable.length}', style: G.body(13, color: Colors.white, weight: 700)),
+                Text('· obvia: $met', style: G.body(13, color: Colors.white)),
+                Text('· iterum aliō locō: $again', style: G.body(13, color: Colors.white)),
+                Text('· dīrēctē interrogāta: $tested', style: G.body(13, color: Colors.white)),
+              ],
+            ),
+            Text('Obviam fierī nōn est scīre: hī numerī perītiam nōn aestimant.', style: G.body(12, color: G.goldLight, style: FontStyle.italic)),
           ],
         ),
       ),

@@ -179,12 +179,164 @@ void main() {
     await tester.pumpWidget(app(MemorySaveStore()));
     await tester.pumpAndSettle();
     expect(find.text('Amphitheātrum'), findsOneWidget);
-    expect(find.text('Thermae'), findsOneWidget);
+    expect(find.text('Theātrum'), findsOneWidget);
+    expect(find.text('Thermae'), findsNothing);
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.text('Tabula perītiārum'), findsOneWidget);
     expect(find.text('Coniugātiōnēs'), findsOneWidget);
     expect(find.textContaining('Nōn aestimāta'), findsWidgets);
+  });
+
+  testWidgets('city → Theatrum → performance with keyboard and mouse; long French choices; Auxilium; correction', (tester) async {
+    tester.view.physicalSize = const Size(1600, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final store = MemorySaveStore();
+    await tester.pumpWidget(app(store, initial: SaveData(gems: 5)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Theātrum'));
+    await tester.pumpAndSettle();
+    expect(find.text('Theātrum · Interpretātiō'), findsOneWidget);
+    expect(find.textContaining('Numerus in sententiā'), findsWidgets);
+    expect(find.text('Fābula'), findsOneWidget); // only the free trial is open
+    expect(find.text('Clausa'), findsWidgets);
+    expect(find.textContaining('Eme · 15'), findsWidgets);
+    expect(find.text('Cōmoedus Rīdēns'), findsNothing); // opponent names appear in the encounter, portraits on the cards
+
+    await tester.tap(find.widgetWithText(InkWell, 'Fābula').first);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(find.text('Incipe!'), findsOneWidget);
+    expect(find.textContaining('In Theātrō sententia Latīna legitur'), findsOneWidget);
+    await tester.tap(find.text('Incipe!'));
+    await tester.pump();
+    final element = tester.element(find.byType(Scaffold).last);
+    final container = ProviderScope.containerOf(element);
+    var s = container.read(battleProvider)!;
+    expect(s.trial.id, 'th-numerus');
+    final q = s.question!;
+    // The Latin passage, its reference and the four French renderings are on screen.
+    expect(find.text(q.surface), findsOneWidget);
+    expect(find.text(q.context.single), findsOneWidget);
+    for (final c in q.choices) {
+      expect(find.text(c.label), findsOneWidget);
+    }
+    expect(find.textContaining('favor populī'), findsOneWidget);
+    expect(find.text('Cōmoedus Rīdēns'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    // Auxilium before answering: vocabulary and a hint, never the French of the passage.
+    await tester.tap(find.text('Auxilium'));
+    await tester.pumpAndSettle();
+    expect(find.text('Vocābula'), findsOneWidget);
+    expect(find.text('Cōnsilium'), findsOneWidget);
+    expect(find.text('Interpretātiō vēra'), findsNothing);
+    expect(container.read(battleProvider)!.helpUsed, isTrue);
+    await tester.tap(find.text('Claude'));
+    await tester.pumpAndSettle();
+    final correct = q.choices.indexWhere((c) => q.correctValues.contains(c.value));
+    await tester.sendKeyEvent(LogicalKeyboardKey(0x30 + correct + 1), character: '${correct + 1}');
+    await tester.pump();
+    s = container.read(battleProvider)!;
+    expect(s.phase, BattlePhase.correct);
+    expect(find.text('RECTE!'), findsOneWidget);
+    expect(container.read(profileProvider).gems, 6); // aided: +1
+    await tester.sendKeyEvent(LogicalKeyboardKey(0x30 + correct + 1), character: '${correct + 1}');
+    await tester.pump();
+    expect(container.read(profileProvider).gems, 6);
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(container.read(battleProvider)!.phase, BattlePhase.question);
+    // Mouse answer, wrong: the existing correction flow with the morphological explanation.
+    final q2 = container.read(battleProvider)!.question!;
+    final wrong = q2.choices.indexWhere((c) => !q2.correctValues.contains(c.value));
+    await tester.tap(find.widgetWithText(InkWell, q2.choices[wrong].label).first);
+    await tester.pump();
+    expect(container.read(battleProvider)!.phase, BattlePhase.wrong);
+    expect(find.text('ERRAT…'), findsOneWidget);
+    expect(find.textContaining('Rēctum:'), findsOneWidget);
+    expect(find.text('Perge'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    // Explicā plūs reveals the analysis and the faithful rendering with its source.
+    await tester.tap(find.text('Explicā plūs'));
+    await tester.pumpAndSettle();
+    expect(find.text('Interpretātiō vēra'), findsOneWidget);
+    expect(find.text('Interpretātiōnēs falsae'), findsOneWidget);
+    expect(find.textContaining('Fōns:'), findsWidgets);
+    await tester.tap(find.text('Claude'));
+    await tester.pumpAndSettle();
+    container.read(battleProvider.notifier).abandon();
+    await tester.pump();
+    expect(store.raw, contains('"l.numerus"'));
+    expect(store.raw, contains('"expo"'));
+  });
+
+  testWidgets('portrait phone: Theatrum performance layout with long text does not overflow', (tester) async {
+    tester.view.physicalSize = const Size(420, 860);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(MemorySaveStore(), initial: SaveData(introSeen: {'th-numerus'})));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Theātrum'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Theātrum'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(InkWell, 'Fābula').first);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    final element = tester.element(find.byType(Scaffold).last);
+    final container = ProviderScope.containerOf(element);
+    final q = container.read(battleProvider)!.question!;
+    expect(find.text(q.surface), findsOneWidget);
+    for (final c in q.choices) {
+      expect(find.text(c.label), findsOneWidget);
+    }
+    expect(tester.takeException(), isNull);
+    // A wrong answer adds the correction panel above the four sentences: still no overflow.
+    final wrong = q.choices.indexWhere((c) => !q.correctValues.contains(c.value));
+    container.read(battleProvider.notifier).answer(q.id, wrong);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Perge'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Anglicē is prepared but unavailable: not selectable in the options, and the Theatrum shows no French', (tester) async {
+    tester.view.physicalSize = const Size(1200, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(MemorySaveStore(), initial: SaveData(settings: const Settings(translationLanguage: TranslationLanguage.anglice))));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Theātrum'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Anglicē: nōndum parāta'), findsOneWidget);
+    expect(find.text('Fābula'), findsNothing);
+    expect(find.textContaining('Numerus in sententiā'), findsNothing);
+    await tester.tap(find.text('Optiōnēs'));
+    await tester.pumpAndSettle();
+    expect(find.text('Lingua interpretātiōnis'), findsOneWidget);
+    expect(find.text('Anglicē · nōndum parāta'), findsOneWidget);
+    expect(find.text('Gallicē'), findsOneWidget);
+    await tester.tap(find.text('Gallicē'));
+    await tester.pumpAndSettle();
+    final element = tester.element(find.text('Gallicē'));
+    expect(ProviderScope.containerOf(element).read(profileProvider).settings.translationLanguage, TranslationLanguage.gallice);
+  });
+
+  testWidgets('Tabula shows the Lēctiō branch and the vocabulary exposure panel apart from mastery', (tester) async {
+    tester.view.physicalSize = const Size(1200, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(MemorySaveStore()));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Tabula'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Fābulae victae'), findsOneWidget);
+    expect(find.textContaining('Vocābula Theātrī'), findsOneWidget);
+    expect(find.textContaining('obvia: 0'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Lēctiō · Theātrum'), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Lēctiō · Theātrum'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Mixta lēctiōnis'), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Verbum in sententiā'), findsOneWidget);
   });
 
   testWidgets('help sheet opens during a question and marks the answer as aided', (tester) async {

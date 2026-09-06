@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/app.dart';
@@ -13,6 +14,7 @@ import 'linguistics/engine/declinator.dart';
 import 'linguistics/engine/noun_analyzer.dart';
 import 'linguistics/lexicon/nouns.dart';
 import 'linguistics/lexicon/verbs.dart';
+import 'pedagogy/reading/reading_content.dart';
 import 'persistence/save_repository.dart';
 
 Future<void> main() async {
@@ -21,6 +23,8 @@ Future<void> main() async {
   // Whole-lexicon index (about 60 000 forms) built once at start-up.
   final analyzer = Analyzer(kVerbs, Conjugator());
   final nounAnalyzer = NounAnalyzer(kNouns, const Declinator());
+  // Curated Theatrum content (Latin passages + shipped translation languages).
+  final reading = await ReadingLibrary.load(rootBundle);
   final repo = SaveRepository(PrefsSaveStore());
   final save = await repo.load();
   final audio = AudioService();
@@ -31,7 +35,14 @@ Future<void> main() async {
   unawaited(audio.startMusic());
   runApp(
     ProviderScope(
-      overrides: [analyzerProvider.overrideWithValue(analyzer), nounAnalyzerProvider.overrideWithValue(nounAnalyzer), saveRepositoryProvider.overrideWithValue(repo), initialSaveProvider.overrideWithValue(save), audioProvider.overrideWithValue(audio)],
+      overrides: [
+        analyzerProvider.overrideWithValue(analyzer),
+        nounAnalyzerProvider.overrideWithValue(nounAnalyzer),
+        readingLibraryProvider.overrideWithValue(reading),
+        saveRepositoryProvider.overrideWithValue(repo),
+        initialSaveProvider.overrideWithValue(save),
+        audioProvider.overrideWithValue(audio),
+      ],
       child: const GrammaticonApp(),
     ),
   );

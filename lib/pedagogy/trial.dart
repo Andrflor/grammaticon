@@ -7,7 +7,8 @@ library;
 /// Playable activities of the city. The key is stable and used in save data.
 enum Activity {
   amphitheatrum('amphitheatrum', 'Amphitheātrum'),
-  forum('forum', 'Forum');
+  forum('forum', 'Forum'),
+  theatrum('theatrum', 'Theātrum');
 
   const Activity(this.key, this.latin);
   final String key;
@@ -30,14 +31,17 @@ enum Dimension {
   forma('Quae fōrma?'),
   lemma('Quod verbum?'),
   formaPlena('Quae fōrma plēna?'),
-  analysis('Quae analysis?');
+  analysis('Quae analysis?'),
+  /// Theatrum: which translation renders the passage faithfully.
+  sensus('Quae interpretātiō rēcta est?');
 
   const Dimension(this.prompt);
   final String prompt;
 }
 
 /// Marker for the predicate that selects the forms of a trial. Each activity
-/// defines its own (verbs: `FormFilter`, nouns: `NounFilter`); the generator
+/// defines its own (verbs: `FormFilter`, nouns: `NounFilter`, reading:
+/// `ReadingFilter`); the generator
 /// of that activity is the only code that reads it.
 abstract class ContentFilter {
   const ContentFilter();

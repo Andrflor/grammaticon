@@ -148,6 +148,7 @@ class NounQuestionGenerator implements QuestionSource {
     List<String> recentSurfaces = const [],
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
+    ExposureLedger exposure = const ExposureLedger(),
   }) {
     final entries = pool(trial, componentIds);
     if (entries.isEmpty) return null;
