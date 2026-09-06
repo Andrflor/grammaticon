@@ -9,7 +9,8 @@ import '../../pedagogy/mastery_view.dart';
 import '../../pedagogy/progression.dart';
 import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
-import '../coliseum/coliseum_screen.dart';
+import '../activity/activity_config.dart';
+import '../trials/trial_selection_screen.dart';
 import '../widgets/roman_widgets.dart';
 
 /// Skill tree with honest mastery estimates fed by real answers.
@@ -42,7 +43,11 @@ class TabulaScreen extends ConsumerWidget {
                         children: [
                           Text('Gradūs:', style: G.body(14, color: G.goldLight, weight: 800)),
                           for (final t in MasteryTier.values) MasteryBadge(t, dense: true),
-                          Text('· Certāmina victa: ${save.battlesWon} · āmissa: ${save.battlesLost}', style: G.body(13, color: Colors.white)),
+                          for (final a in Activity.values)
+                            Text(
+                              '· ${configFor(a).labels.wonTally}: ${save.activityStats[a.key]?.won ?? 0} · ${configFor(a).labels.lostTally}: ${save.activityStats[a.key]?.lost ?? 0}',
+                              style: G.body(13, color: Colors.white),
+                            ),
                         ],
                       ),
                     ),
@@ -181,7 +186,7 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
                   ),
               ],
               const SizedBox(height: 14),
-              Text('Certāmina', style: G.display(16, color: G.goldDark)),
+              Text('Certāmina et contrōversiae', style: G.display(16, color: G.goldDark)),
               const SizedBox(height: 6),
               for (final t in trials) _trialLine(ctx, t, Progression.status(save, t)),
               const SizedBox(height: 12),
@@ -240,7 +245,7 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
               dense: true,
               onPressed: () {
                 Navigator.pop(ctx);
-                pushScreen(context, ColiseumScreen(highlightTrialId: t.id));
+                pushScreen(context, TrialSelectionScreen(activity: t.activity, highlightTrialId: t.id));
               },
             ),
           ],

@@ -1,4 +1,4 @@
-# Matrice de couverture — conjugaison latine
+# Matrice de couverture — conjugaison et déclinaison latines
 
 Chaîne vérifiée pour chaque catégorie : **données** (lexique, `lib/linguistics/lexicon/verbs.dart`) → **génération/analyse** (`lib/linguistics/engine/`) → **épreuve** (`lib/pedagogy/trials.dart`) → **test** (`test/`). Les formes composées sont générées avec accord (genre, nombre) et toutes les analyses d'une même forme sont conservées dans l'index (`Analyzer`).
 
@@ -100,5 +100,27 @@ Sources : A&G = Allen & Greenough, *New Latin Grammar* (1903, éd. DCC). Collati
 | Sauvegarde après chaque réponse/achat, schéma versionné, migrations, reprise, export/import | `SaveCodec`, `SaveRepository`, `ActiveBattle` | `save_test`, « snapshot is saved mid-fight and can be resumed » |
 | Entrée unique par question (touches maintenues, doubles clics, événements tardifs) | latch `questionId` + `KeyDownEvent` seulement | `widget_test` « held key / repeat must not answer twice » |
 
+## Déclinaisons (Forum)
+
+Chaîne : **données** (`lib/linguistics/lexicon/nouns.dart`, 145 noms, A&G §40–§98, §427, §101) → **génération** (`lib/linguistics/engine/declinator.dart`, index `noun_analyzer.dart`) → **épreuve** (`lib/pedagogy/noun_trials.dart`) → **test** (`test/linguistics/gold_nouns_test.dart`, `test/pedagogy/noun_question_generator_test.dart`, `test/battle/forum_encounter_test.dart`). Contrôle croisé : `python3 tool/corpus/verify_collatinus_nouns.py` (rapport `tool/corpus/out/collatinus_nouns_report.md`).
+
+| Catégorie | Noms représentatifs | Génération | Épreuves | Tests |
+|---|---|---|---|---|
+| 1re déclinaison | rosa, puella, via, terra, aqua, īnsula, fēmina… ; masculins poēta, nauta, agricola ; dea, fīlia (-ābus) ; Rōma, Athēnae (pl.), dīvitiae (pl.) | A&G §41–43 | `d1-recti` (gratuite : nom., acc., abl.), `d1-omnes` | « rosa », « dea and fīlia », « Rōma… Athēnae » |
+| 2e déclinaison | servus, dominus, amīcus… ; puer, ager, magister, liber, vir ; fīlius (voc. fīlī, gén. fīliī/fīlī), cōnsilium, imperium ; deus (dī, deōrum/deum, dīs) ; humus, Corinthus (f.) ; castra, arma (pl.) | A&G §45–49 | `d2-us-um`, `d2-omnes` | « servus », « bellum », « puer… vir », « fīlius », « deus » |
+| 3e thèmes consonantiques | rēx, dux, lēx, vōx, pāx, lūx, iūdex, cōnsul, mīles, eques, prīnceps, homō, ōrātor, senātor, honor, amor, labor, arbor (f.), soror, pater/māter/frāter (patrum), lēgiō, ōrātiō, cīvitās (-um/-ium), virtūs, aetās, pēs, lapis, sacerdōs, canis, iuvenis ; neutres corpus, tempus, genus, opus, nōmen, flūmen, carmen, caput, iter, lītus, vulnus, pectus, os (ossium) | A&G §56–64, §71 | `d3-consonantia`, `d3-omnia` | « rēx », « corpus, nōmen, caput, iter », « pater, canis, iuvenis », « cīvitās… os » |
+| 3e thèmes en -i | cīvis, hostis, nāvis (-em/-im, -e/-ī), turris (-im/-em, -ī/-e), ignis (-ī/-e), collis, fīnis, avis, nūbēs, caedēs ; monosyllabes urbs, arx, mōns, pōns, gēns, mēns, mors, ars, pars, dēns, nox ; neutres mare, animal, exemplar, moenia (pl.) | A&G §65–71, §75–76 | `d3-i`, `d3-omnia` | « cīvis, hostis », « monosyllables », « turris, nāvis, ignis », « mare, animal » |
+| 3e irréguliers | vīs (vim, vī ; vīrēs, vīrium), bōs (boum, bōbus/būbus), senex (senis), Iuppiter (Iovis), iter (itineris) | `overrides` par cellule, A&G §79 | `d3-omnia` | « irregular vīs, bōs, senex, Iuppiter » |
+| 4e déclinaison | manus (f.), exercitus, senātus (-ūs/-ī), frūctus, cāsus, portus (-ibus/-ubus), tribus (-ubus), lacus (-ubus), domus (§93 : domō, domōrum, domī), cornū, genū | A&G §89–94 | `d4` | « manus », « cornū », « tribus, lacus, portus… senātus », « domus » |
+| 5e déclinaison | rēs, diēs (m.), spēs, fidēs (sg.), aciēs, merīdiēs (sg.) ; ē brève/longue (reī, diēī) ; pluriel complet pour rēs et diēs seulement | A&G §96–98 | `d5` | « rēs and diēs », « spēs, aciēs… fidēs » |
+| Locatif | Rōmae, Athēnīs, Corinthī, humī, Carthāginī/Carthāgine, rūrī/rūre, domī | généré uniquement pour les noms marqués `locative` (A&G §427) | `d-locativus`, `dmx-omnia` | « locatives », « the locative exists only where declared » |
+| Nombre | singulāria tantum (Rōma, fidēs, Iuppiter…), plūrālia tantum (Athēnae, castra, arma, moenia, dīvitiae) | `NounNumber`, `AbsentForm` (spēs : gén./dat./abl. pl. nōn ūsitātur) | toutes | « singular-only and plural-only… », « spēs, aciēs » |
+| Mélanges | quae dēclīnātiō ? (composants = 5 déclinaisons), cas mixtes, omnia mixta (analyse complète) | `Dimension.declinatio`, entrée de dictionnaire affichée seulement si la désinence est partagée par plusieurs déclinaisons | `dmx-declinatio`, `dmx-casus`, `dmx-omnia` | « declension questions show the dictionary entry only when the ending is shared », « mixed trials credit… » |
+
+### Ambiguïtés des noms
+* Toutes les analyses d'une forme sont conservées dans `NounAnalyzer` (macron-sensible ; index insensible pour l'outillage) : *rosae* = gén. sg., dat. sg., nom. pl., voc. pl. ; *rosā* ≠ *rosa* ; *manus* (nom./voc. sg.) ≠ *manūs* ; *Rōmae* ajoute le locatif.
+* Une question n'est posée que si la dimension a ≥ 2 valeurs dans le palier (jamais « quelle déclinaison ? » dans une épreuve à une déclinaison). Les formes à réponse unique parmi les choix proposés sont préférées ; une forme dont toutes les réponses proposées seraient justes n'est jamais posée ; sinon toutes les valeurs légitimes sont acceptées et signalées. Une analyse hors du palier (vocatif dans `d1-recti`) n'est jamais refusée, elle n'est simplement pas proposée.
+* Compétences créditées : la cellule de la forme (`d.1.acc.sg`, locatif `d.loc`) ; dans les épreuves mixtes, en plus, la compétence de discrimination ; « quae dēclīnātiō ? » ne crédite que `d.mx.declinatio` (aucune inférence sur le cas).
+
 ## Structure préparée (non jouable, indiquée comme à venir)
-Forum — `Skills` `d.<1–5>.<cas>.<sg|pl>` (déclinaison → cas → nombre) affichés « Ventūrum » dans la Tabula ; Thermae et Templum visibles dans la ville, désactivés.
+Thermae et Templum visibles dans la ville, désactivés. Adjectifs et pronoms : non traités ; le modèle `NounEntry`/`Declinator` (cellules cas × nombre, `overrides`, `absent`) et le contrat `QuestionPayload` sont le point d'extension prévu.

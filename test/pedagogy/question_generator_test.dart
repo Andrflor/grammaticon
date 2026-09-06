@@ -15,8 +15,10 @@ void main() {
 
   List<String> comps(Trial t) => t.components.map((c) => c.id).toList();
 
+  final verbTrials = Trials.ofActivity(Activity.amphitheatrum);
+
   test('every trial has a non-empty pool and produces questions', () {
-    for (final t in Trials.all) {
+    for (final t in verbTrials) {
       final pool = gen.pool(t, comps(t));
       expect(pool, isNotEmpty, reason: t.id);
       final rng = Random(7);
@@ -43,9 +45,9 @@ void main() {
     for (var i = 0; i < 60; i++) {
       final q = gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i')!;
       expect(q.dimension, isNot(anyOf(Dimension.tempus, Dimension.modus, Dimension.vox)));
-      expect(q.target.analysis.tense, Tense.praesens);
-      expect(q.target.analysis.voice, Voice.activum);
-      expect(q.target.analysis.mood, Mood.indicativus);
+      expect(q.verb.target.analysis.tense, Tense.praesens);
+      expect(q.verb.target.analysis.voice, Voice.activum);
+      expect(q.verb.target.analysis.mood, Mood.indicativus);
     }
   });
 
@@ -66,7 +68,7 @@ void main() {
     for (var i = 0; i < 40; i++) {
       final q = gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i')!;
       expect(q.dimension, isNot(anyOf(Dimension.persona, Dimension.numerus)));
-      expect(q.target.analysis.mood, Mood.infinitivus);
+      expect(q.verb.target.analysis.mood, Mood.infinitivus);
     }
   });
 
@@ -81,8 +83,7 @@ void main() {
       prompt: '',
       surface: e.form.surface,
       lemmaId: 'rego',
-      target: e.form,
-      analyses: analyzer.analyze('regam'),
+      payload: VerbQuestionPayload(target: e.form, analyses: analyzer.analyze('regam')),
       choices: const [],
       correctValues: analyzer.analyze('regam').map((f) => f.analysis.mood.key).toSet(),
       skillIds: const ['mx.modus'],
@@ -121,7 +122,7 @@ void main() {
     final rng = Random(9);
     for (var i = 0; i < 30; i++) {
       final q = gen.generate(trial: t, componentIds: const ['ind.praes.act', 'ind.perf.act'], rng: rng, id: '$i')!;
-      expect(q.target.analysis.tense, anyOf(Tense.praesens, Tense.perfectum));
+      expect(q.verb.target.analysis.tense, anyOf(Tense.praesens, Tense.perfectum));
     }
   });
 
@@ -134,7 +135,7 @@ void main() {
       if (c.dimension == Dimension.formaPlena) q = c;
     }
     expect(q, isNotNull);
-    expect(q!.target.isPrimary, isFalse);
+    expect(q!.verb.target.isPrimary, isFalse);
     expect(q.correctValues.length, 1);
   });
 
@@ -167,7 +168,16 @@ void main() {
         if (c.skillId != null) expect(Skills.maybe(c.skillId!), isNotNull, reason: '${t.id} component ${c.id}');
       }
     }
-    expect(Trials.all.where((t) => t.isFree).length, 1);
+    // One free introductory trial per activity.
+    for (final a in Activity.values) {
+      expect(Trials.ofActivity(a).where((t) => t.isFree).length, 1, reason: a.key);
+      // Prerequisites never cross activities.
+      for (final t in Trials.ofActivity(a)) {
+        for (final p in t.prerequisites) {
+          expect(Trials.byId(p).activity, a, reason: '${t.id} prereq $p');
+        }
+      }
+    }
   });
 
   test('prerequisite graph is acyclic and reachable from the free trial', () {

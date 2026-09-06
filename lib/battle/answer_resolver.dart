@@ -5,7 +5,7 @@ library;
 
 import '../economy/economy.dart';
 import '../pedagogy/mastery.dart';
-import '../pedagogy/question_generator.dart';
+import '../pedagogy/question.dart';
 import '../persistence/save_data.dart';
 
 class Resolution {

@@ -1,31 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:latin_game/app/providers.dart';
-import 'package:latin_game/audio/audio_service.dart';
 import 'package:latin_game/battle/battle_controller.dart';
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
 import 'package:latin_game/pedagogy/progression.dart';
 import 'package:latin_game/pedagogy/trials.dart';
 import 'package:latin_game/persistence/save_data.dart';
 import 'package:latin_game/persistence/save_repository.dart';
 
-void main() {
-  final analyzer = Analyzer(kVerbs, Conjugator());
+import '../support/test_env.dart';
 
-  (ProviderContainer, MemorySaveStore) make({SaveData? initial}) {
-    final store = MemorySaveStore();
-    final c = ProviderContainer(
-      overrides: [
-        analyzerProvider.overrideWithValue(analyzer),
-        saveRepositoryProvider.overrideWithValue(SaveRepository(store)),
-        initialSaveProvider.overrideWithValue(initial ?? SaveData(createdAt: DateTime(2026, 1, 1))),
-        audioProvider.overrideWithValue(AudioService(enabled: false)),
-      ],
-    );
-    return (c, store);
-  }
+void main() {
+  (ProviderContainer, MemorySaveStore) make({SaveData? initial}) => testContainer(initial: initial);
 
   test('a correct answer damages the enemy, pays gems once and saves', () async {
     final (c, store) = make();

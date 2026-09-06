@@ -97,12 +97,35 @@ enum Casus {
   accusativus('acc', 'Accūsātīvus'),
   genetivus('gen', 'Genetīvus'),
   dativus('dat', 'Datīvus'),
-  ablativus('abl', 'Ablātīvus');
+  ablativus('abl', 'Ablātīvus'),
+  /// Locative: only for nouns where it is attested (A&G §427); never part
+  /// of verbal paradigms.
+  locativus('loc', 'Locātīvus');
 
   const Casus(this.key, this.latin);
   final String key;
   final String latin;
   static Casus fromKey(String k) => values.firstWhere((m) => m.key == k);
+
+  /// The six cases of every paradigm (locative excluded).
+  static const List<Casus> ordinary = [nominativus, vocativus, accusativus, genetivus, dativus, ablativus];
+}
+
+/// Noun declensions (A&G §37).
+enum Declension {
+  prima('d1', 'Prīma'),
+  secunda('d2', 'Secunda'),
+  tertia('d3', 'Tertia'),
+  quarta('d4', 'Quārta'),
+  quinta('d5', 'Quīnta');
+
+  const Declension(this.key, this.latin);
+  final String key;
+  final String latin;
+
+  /// 1-based ordinal used in skill ids (`d.3.acc.sg`).
+  int get ordinal => index + 1;
+  static Declension fromKey(String k) => values.firstWhere((m) => m.key == k);
 }
 
 enum Conjugation {

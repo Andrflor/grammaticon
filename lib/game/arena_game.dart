@@ -3,18 +3,19 @@ import 'dart:ui';
 
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
-import 'package:flame/game.dart';
 import 'package:flame/particles.dart';
-import 'package:flutter/material.dart' show Colors, Curves;
+import 'package:flutter/material.dart' show Curves;
 
-/// Flame scene of the arena: background, hero, enemy, impacts and particles.
-/// The scene only *represents* outcomes already resolved by the battle
-/// controller; it never decides anything.
-class ArenaGame extends FlameGame {
-  ArenaGame({required this.enemyId, this.reducedMotion = false});
+import 'encounter_scene.dart';
+
+export 'encounter_scene.dart' show Fighter;
+
+/// Flame scene of the arena (Amphitheatrum): background, hero, enemy, impacts
+/// and particles. Implements the shared [EncounterScene] contract.
+class ArenaGame extends EncounterScene {
+  ArenaGame({required this.enemyId, super.reducedMotion = false});
 
   final String enemyId;
-  bool reducedMotion;
 
   late final SpriteComponent _bg;
   late final Fighter hero;
@@ -58,7 +59,8 @@ class ArenaGame extends FlameGame {
   // ----- choreography -----------------------------------------------------------------
 
   /// Hero lunges, strikes, enemy flashes and recoils with an impact burst.
-  void heroAttack() {
+  @override
+  void playerStrikes() {
     if (!_ready) return;
     final dx = enemy.position.x - hero.position.x;
     hero.swapSprite(_sprites['hero_attack']!, const Duration(milliseconds: 520));
@@ -78,7 +80,8 @@ class ArenaGame extends FlameGame {
   }
 
   /// Enemy lunges, hero flashes red and recoils.
-  void enemyAttack() {
+  @override
+  void opponentStrikes() {
     if (!_ready) return;
     final dx = hero.position.x - enemy.position.x;
     Future<void>.delayed(const Duration(milliseconds: 60), () {
@@ -98,6 +101,7 @@ class ArenaGame extends FlameGame {
     });
   }
 
+  @override
   void victory() {
     if (!_ready) return;
     hero.swapSprite(_sprites['hero_victory']!, const Duration(days: 1));
@@ -108,12 +112,14 @@ class ArenaGame extends FlameGame {
     }
   }
 
+  @override
   void defeat() {
     if (!_ready) return;
     hero.swapSprite(_sprites['hero_defeat']!, const Duration(days: 1));
     if (!reducedMotion) hero.add(MoveByEffect(Vector2(0, 26), EffectController(duration: 0.4, curve: Curves.easeIn)));
   }
 
+  @override
   void resetPoses() {
     if (!_ready) return;
     hero.resetIdle();
@@ -173,70 +179,5 @@ class ArenaGame extends FlameGame {
         },
       ),
     ));
-  }
-}
-
-/// A sprite that breathes, can swap its pose temporarily, flash and recoil.
-class Fighter extends SpriteComponent {
-  Fighter({required this.idle, required this.facingRight, super.priority}) : super(sprite: idle, anchor: Anchor.bottomCenter);
-
-  final Sprite idle;
-  final bool facingRight;
-  Vector2 _base = Vector2.zero();
-  double _t = 0;
-  int _poseToken = 0;
-  bool _defeated = false;
-
-  void setBase(Vector2 base, double height) {
-    _base = base.clone();
-    position = base.clone();
-    final ratio = idle.srcSize.x / idle.srcSize.y;
-    size = Vector2(height * ratio, height);
-  }
-
-  @override
-  void update(double dt) {
-    super.update(dt);
-    if (_defeated) return;
-    _t += dt;
-    // Breathing: gentle vertical scale around the feet.
-    final k = 1 + sin(_t * 2.2) * 0.012;
-    scale = Vector2(1, k);
-  }
-
-  void swapSprite(Sprite s, Duration d) {
-    final token = ++_poseToken;
-    sprite = s;
-    if (d.inDays > 0) return;
-    Future<void>.delayed(d, () {
-      if (_poseToken == token && isMounted) sprite = idle;
-    });
-  }
-
-  void resetIdle() {
-    _poseToken++;
-    sprite = idle;
-    _defeated = false;
-    paint.colorFilter = null;
-    opacity = 1;
-    position = _base.clone();
-  }
-
-  void flash({Color color = Colors.white}) {
-    paint.colorFilter = ColorFilter.mode(color.withValues(alpha: 0.75), BlendMode.srcATop);
-    Future<void>.delayed(const Duration(milliseconds: 110), () {
-      if (isMounted) paint.colorFilter = null;
-    });
-  }
-
-  void recoil(Vector2 d) {
-    add(MoveByEffect(d, EffectController(duration: 0.08, reverseDuration: 0.16, curve: Curves.easeOut)));
-  }
-
-  void defeated() {
-    _defeated = true;
-    add(OpacityEffect.to(0.35, EffectController(duration: 0.6)));
-    add(MoveByEffect(Vector2(0, 30), EffectController(duration: 0.6, curve: Curves.easeIn)));
-    add(RotateEffect.by(facingRight ? -0.35 : 0.35, EffectController(duration: 0.6)));
   }
 }

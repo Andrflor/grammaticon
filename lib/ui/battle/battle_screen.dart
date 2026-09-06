@@ -11,18 +11,18 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../audio/audio_service.dart';
 import '../../battle/battle_controller.dart';
-import '../../game/arena_game.dart';
 import '../../pedagogy/mastery.dart';
-import '../../pedagogy/question_generator.dart';
+import '../../pedagogy/mastery_view.dart';
+import '../../pedagogy/question.dart';
 import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
 import '../../persistence/save_data.dart';
-import '../help/help_sheet.dart';
+import '../activity/activity_config.dart';
 import '../widgets/roman_widgets.dart';
 
-const _enemyNames = {'statua': 'Statua Animāta', 'gladiator': 'Gladiātor Thrāx', 'leo': 'Leō Āfricānus', 'sphinx': 'Sphinx Aegyptia', 'cyclops': 'Cyclōps', 'hydra': 'Hydra Lernaea'};
-
-/// The arena: one fight (certāmen) or training session (exercitātiō).
+/// One encounter: a fight in the arena or a debate in the Forum (certāmen /
+/// contrōversia), or a training session (exercitātiō). Activity-specific
+/// presentation comes from the trial's [ActivityConfig].
 class BattleScreen extends HookConsumerWidget {
   const BattleScreen({super.key, required this.trial, required this.mode, this.resume});
   final Trial trial;
@@ -34,18 +34,20 @@ class BattleScreen extends HookConsumerWidget {
     final settings = ref.watch(settingsProvider);
     final ctrl = ref.read(battleProvider.notifier);
     final audio = ref.read(audioProvider);
-    final game = useMemoized(() => ArenaGame(enemyId: trial.enemyId, reducedMotion: settings.reducedMotion), [trial.enemyId]);
+    final config = configFor(trial.activity);
+    // The scene instance is stable across rebuilds (keyed by the trial).
+    final game = useMemoized(() => config.createScene(trial, reducedMotion: settings.reducedMotion), [trial.id]);
     game.reducedMotion = settings.reducedMotion;
     final cardKey = useMemoized(() => GlobalKey(debugLabel: 'questionCard'));
     final flights = useState<List<_GemFlightSpec>>(const []);
     final timers = useRef(<Timer>[]);
     final startTiers = useRef<Map<String, MasteryTier>>({});
 
-    // Start (or resume) the fight once.
+    // Start (or resume) the encounter once.
     useEffect(() {
       final save = ref.read(profileProvider);
       final cfg = ref.read(masteryConfigProvider);
-      startTiers.value = {for (final s in trial.skillIds) s: (save.skills[s] ?? const SkillRecord()).tier(cfg)};
+      startTiers.value = {for (final s in trial.skillIds) s: MasterySummary.forSkill(save, s, cfg).tier};
       Future.microtask(() => ctrl.start(trial, mode, resume: resume));
       return () {
         for (final t in timers.value) {
@@ -70,9 +72,10 @@ class BattleScreen extends HookConsumerWidget {
       final o = next.last;
       if (o != null && o.sequence != prev?.last?.sequence) {
         if (o.correct) {
-          game.heroAttack();
-          later(60, () => audio.play(Sfx.impetus));
-          later(170, () => audio.play(Sfx.ictus));
+          game.playerStrikes();
+          for (final cue in config.correctCues) {
+            later(cue.delayMs, () => audio.play(cue.sfx));
+          }
           if (o.gemsDelta > 0 && !settings.reducedMotion) {
             final from = _centerOf(cardKey);
             final to = _centerOf(GemTarget.key);
@@ -84,8 +87,10 @@ class BattleScreen extends HookConsumerWidget {
             }
           }
         } else {
-          game.enemyAttack();
-          later(170, () => audio.play(Sfx.vulnus));
+          game.opponentStrikes();
+          for (final cue in config.wrongCues) {
+            later(cue.delayMs, () => audio.play(cue.sfx));
+          }
         }
       }
       if (prev?.phase != next.phase) {
@@ -103,7 +108,7 @@ class BattleScreen extends HookConsumerWidget {
         await ctrl.finish();
       } else if (s != null) {
         ctrl.pause();
-        final ok = await confirmLatin(context, title: 'Relinquere arēnam?', body: 'Certāmen servātur: postea redīre poteris.', yes: 'Relinque', no: 'Mane');
+        final ok = await confirmLatin(context, title: config.labels.leaveTitle, body: config.labels.leaveBody, yes: 'Relinque', no: 'Mane');
         if (!ok) {
           ctrl.resume();
           return;
@@ -165,11 +170,11 @@ class BattleScreen extends HookConsumerWidget {
             children: [
               GameWidget(game: game),
               if (state != null) ...[
-                _Hud(state: state, onLeave: leave, onPause: () => state.paused ? ctrl.resume() : ctrl.pause()),
-                _Center(state: state, cardKey: cardKey, trial: trial),
+                _Hud(state: state, config: config, onLeave: leave, onPause: () => state.paused ? ctrl.resume() : ctrl.pause()),
+                _Center(state: state, cardKey: cardKey, trial: trial, config: config),
                 if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro, training: state.isTraining),
-                if (state.paused) _PauseOverlay(onResume: ctrl.resume, onLeave: leave),
-                if (state.isOver) _ResultOverlay(state: state, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
+                if (state.paused) _PauseOverlay(body: config.labels.pausedBody, onResume: ctrl.resume, onLeave: leave),
+                if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
               ],
               for (final f in flights.value) _GemFlight(key: ValueKey(f.id), spec: f),
             ],
@@ -214,15 +219,43 @@ class BattleScreen extends HookConsumerWidget {
 // ---------------------------------------------------------------- HUD
 
 class _Hud extends ConsumerWidget {
-  const _Hud({required this.state, required this.onLeave, required this.onPause});
+  const _Hud({required this.state, required this.config, required this.onLeave, required this.onPause});
   final BattleState state;
+  final ActivityConfig config;
   final VoidCallback onLeave;
   final VoidCallback onPause;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final gems = ref.watch(profileProvider.select((s) => s.gems));
-    final enemyName = _enemyNames[state.trial.enemyId] ?? 'Adversārius';
+    final enemyName = config.opponentName(state.trial.opponentId);
+    // The opponent's remaining resource: health in the arena, resolve in the Forum.
+    final resource = config.labels.opponentResource;
+    final compact = MediaQuery.sizeOf(context).width < 600;
+    final bar = Column(
+      children: [
+        Text(enemyName, style: G.display(14, color: G.goldLight), maxLines: 1, overflow: TextOverflow.ellipsis),
+        const SizedBox(height: 3),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Stack(
+            children: [
+              Container(height: 14, color: const Color(0xAA200A40)),
+              AnimatedFractionallySizedBox(
+                duration: const Duration(milliseconds: 350),
+                curve: Curves.easeOutCubic,
+                widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
+                child: Container(
+                  height: 14,
+                  decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)])),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Text('${resource == null ? '' : '$resource '}${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
+      ],
+    );
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 0),
@@ -242,39 +275,15 @@ class _Hud extends ConsumerWidget {
                     ],
                   )
                 else
-                  const StatChip('Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark),
+                  Flexible(child: StatChip(compact ? 'Exercitātiō' : 'Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark)),
                 const Spacer(),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      Text(enemyName, style: G.display(14, color: G.goldLight)),
-                      const SizedBox(height: 3),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Stack(
-                          children: [
-                            Container(height: 14, color: const Color(0xAA200A40)),
-                            AnimatedFractionallySizedBox(
-                              duration: const Duration(milliseconds: 350),
-                              curve: Curves.easeOutCubic,
-                              widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
-                              child: Container(
-                                height: 14,
-                                decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)])),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Text('${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
-                    ],
-                  ),
-                ),
-                const Spacer(),
+                // Wide screens: the opponent bar sits between the hearts and the gems.
+                if (!compact) ...[Expanded(flex: 3, child: bar), const Spacer()],
                 AnimatedGemCounter(count: gems, size: 24, isFlightTarget: true),
               ],
             ),
+            // Narrow screens: the bar takes its own line under the controls.
+            if (compact) Padding(padding: const EdgeInsets.fromLTRB(40, 4, 40, 0), child: bar),
           ],
         ),
       ),
@@ -285,10 +294,11 @@ class _Hud extends ConsumerWidget {
 // ---------------------------------------------------------------- question, choices, feedback
 
 class _Center extends ConsumerWidget {
-  const _Center({required this.state, required this.cardKey, required this.trial});
+  const _Center({required this.state, required this.cardKey, required this.trial, required this.config});
   final BattleState state;
   final GlobalKey cardKey;
   final Trial trial;
+  final ActivityConfig config;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -304,7 +314,8 @@ class _Center extends ConsumerWidget {
     return SafeArea(
       child: Column(
         children: [
-          const SizedBox(height: 64),
+          // Room for the HUD (two lines on narrow screens).
+          SizedBox(height: compact ? 108 : 64),
           // Question card
           RomanPanel(
             key: cardKey,
@@ -323,14 +334,15 @@ class _Center extends ConsumerWidget {
                       style: RomanButtonStyle.neutral,
                       dense: true,
                       onPressed: () async {
-                        if (state.phase == BattlePhase.question) ctrl.markHelpUsed();
+                        final open = state.phase == BattlePhase.question;
+                        if (open) ctrl.markHelpUsed();
                         ctrl.openExplanation();
-                        await showHelpSheet(
+                        await config.showHelp(
                           context,
                           ref,
-                          lemmaId: q.lemmaId,
-                          form: state.phase == BattlePhase.question ? null : q.target,
-                          note: state.phase == BattlePhase.question ? 'Auxilium ante respōnsum: haec respōnsiō "adiūta" numerābitur (praemium minus, nūlla poena).' : null,
+                          q,
+                          revealForm: !open,
+                          note: open ? 'Auxilium ante respōnsum: haec respōnsiō "adiūta" numerābitur (praemium minus, nūlla poena).' : null,
                         );
                         ctrl.closeExplanation();
                       },
@@ -343,6 +355,8 @@ class _Center extends ConsumerWidget {
                   textAlign: TextAlign.center,
                   style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: 2),
                 ),
+                // Context lines (dictionary entry) never give the answer away.
+                for (final line in q.context) Text(line, textAlign: TextAlign.center, style: G.body(compact ? 13 : 15, color: G.inkSoft, style: FontStyle.italic)),
                 const SizedBox(height: 4),
                 Text(q.prompt, style: G.body(compact ? 16 : 20, color: G.inkSoft, weight: 700)),
                 if (q.ambiguous)
@@ -411,7 +425,7 @@ class _Center extends ConsumerWidget {
                           dense: true,
                           onPressed: () async {
                             ctrl.openExplanation();
-                            await showHelpSheet(context, ref, lemmaId: q.lemmaId, form: q.target);
+                            await config.showHelp(context, ref, q, revealForm: true);
                             ctrl.closeExplanation();
                           },
                         ),
@@ -454,7 +468,10 @@ class _Choices extends StatelessWidget {
     final answered = state.phase != BattlePhase.question && outcome != null && outcome.question.id == q.id;
     final w = MediaQuery.sizeOf(context).width;
     final n = q.choices.length;
-    final perRow = w < 600 ? (n <= 2 ? n : 2) : (n <= 4 ? n : 3);
+    // Narrow screens: long labels (Nōminātīvus, Plūsquamperfectum) get a full row
+    // so they never break mid-word.
+    final longest = q.choices.fold(0, (m, c) => max(m, c.label.length));
+    final perRow = w < 600 ? (n <= 2 ? n : (longest > 9 ? 1 : 2)) : (n <= 4 ? n : 3);
     final bw = ((min(w, 1000) - 24) - (perRow - 1) * 10) / perRow;
     return Wrap(
       alignment: WrapAlignment.center,
@@ -576,7 +593,8 @@ class _IntroOverlay extends ConsumerWidget {
 }
 
 class _PauseOverlay extends StatelessWidget {
-  const _PauseOverlay({required this.onResume, required this.onLeave});
+  const _PauseOverlay({required this.body, required this.onResume, required this.onLeave});
+  final String body;
   final VoidCallback onResume;
   final VoidCallback onLeave;
   @override
@@ -587,7 +605,7 @@ class _PauseOverlay extends StatelessWidget {
         children: [
           Text('Pausa', style: G.display(28, color: G.purple)),
           const SizedBox(height: 8),
-          Text('Certāmen suspēnsum est.', style: G.body(16)),
+          Text(body, style: G.body(16)),
           const SizedBox(height: 16),
           Wrap(
             spacing: 10,
@@ -604,8 +622,9 @@ class _PauseOverlay extends StatelessWidget {
 }
 
 class _ResultOverlay extends ConsumerWidget {
-  const _ResultOverlay({required this.state, required this.startTiers, required this.onLeave, required this.onRetry});
+  const _ResultOverlay({required this.state, required this.config, required this.startTiers, required this.onLeave, required this.onRetry});
   final BattleState state;
+  final ActivityConfig config;
   final Map<String, MasteryTier> startTiers;
   final VoidCallback onLeave;
   final VoidCallback onRetry;
@@ -615,25 +634,26 @@ class _ResultOverlay extends ConsumerWidget {
     final won = state.phase == BattlePhase.victory;
     final save = ref.watch(profileProvider);
     final cfg = ref.watch(masteryConfigProvider);
+    final labels = config.labels;
     return _Dim(
       child: RomanPanel(
         width: min(MediaQuery.sizeOf(context).width - 32, 560),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(won ? 'VICTŌRIA!' : 'CLĀDĒS', style: G.display(32, color: won ? G.green : G.red)),
+            Text(won ? labels.victoryTitle : labels.defeatTitle, style: G.display(32, color: won ? G.green : G.red)),
             const SizedBox(height: 6),
-            Text(won ? 'Adversārius victus est.' : 'Corda āmissa sunt. Emptiōnēs et perītiae manent: iterum temptā!', style: G.body(16), textAlign: TextAlign.center),
+            Text(won ? labels.victoryBody : labels.defeatBody, style: G.body(16), textAlign: TextAlign.center),
             const SizedBox(height: 14),
             _line('Respōnsa rēcta', '${state.correctCount} / ${state.answered}'),
-            if (!state.isTraining) _line('Gemmae certāminis', '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
+            if (!state.isTraining) _line(labels.gemsLine, '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
             if (!state.isTraining && won) _line('Praemium victōriae', '+${state.victoryBonus}'),
-            if (!state.isTraining && !won) _line('Tribūtum clādis', '−${state.defeatPenalty}'),
+            if (!state.isTraining && !won) _line(labels.penaltyLine, '−${state.defeatPenalty}'),
             if (!state.isTraining && !won)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  'Gemmae certāminis āmittuntur et quārta pars summae solvitur. Emptiōnēs manent.',
+                  '${labels.gemsLine} āmittuntur et quārta pars summae solvitur. Emptiōnēs manent.',
                   style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
                 ),
               ),
@@ -647,7 +667,7 @@ class _ResultOverlay extends ConsumerWidget {
                     Expanded(child: Text(Skills.byId(s).name, style: G.body(14, weight: 700))),
                     MasteryBadge(startTiers[s] ?? MasteryTier.nova, dense: true),
                     const Padding(padding: EdgeInsets.symmetric(horizontal: 6), child: Icon(Icons.arrow_forward, size: 16)),
-                    MasteryBadge((save.skills[s] ?? const SkillRecord()).tier(cfg), dense: true),
+                    MasteryBadge(MasterySummary.forSkill(save, s, cfg).tier, dense: true),
                   ],
                 ),
               ),
@@ -657,7 +677,7 @@ class _ResultOverlay extends ConsumerWidget {
               runSpacing: 10,
               alignment: WrapAlignment.center,
               children: [
-                RomanButton(label: 'Redī in Amphitheātrum', icon: Icons.stadium, style: RomanButtonStyle.gold, onPressed: onLeave),
+                RomanButton(label: labels.back, icon: Icons.stadium, style: RomanButtonStyle.gold, onPressed: onLeave),
                 RomanButton(label: 'Iterum', icon: Icons.replay, style: RomanButtonStyle.primary, onPressed: onRetry),
               ],
             ),

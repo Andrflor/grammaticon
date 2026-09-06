@@ -2,7 +2,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../audio/audio_service.dart';
 import '../linguistics/engine/analyzer.dart';
+import '../linguistics/engine/noun_analyzer.dart';
 import '../pedagogy/mastery.dart';
+import '../pedagogy/noun_question_generator.dart';
 import '../pedagogy/progression.dart';
 import '../pedagogy/question_generator.dart';
 import '../pedagogy/trials.dart';
@@ -14,6 +16,19 @@ import '../battle/answer_resolver.dart';
 final analyzerProvider = Provider<Analyzer>((ref) => throw UnimplementedError('analyzerProvider must be overridden'));
 
 final questionGeneratorProvider = Provider<QuestionGenerator>((ref) => QuestionGenerator(ref.watch(analyzerProvider)));
+
+/// Whole-noun-lexicon analyzer (overridden in main and tests).
+final nounAnalyzerProvider = Provider<NounAnalyzer>((ref) => throw UnimplementedError('nounAnalyzerProvider must be overridden'));
+
+final nounQuestionGeneratorProvider = Provider<NounQuestionGenerator>((ref) => NounQuestionGenerator(ref.watch(nounAnalyzerProvider)));
+
+/// One question source per activity, dispatched by the trial's activity.
+final questionSourcesProvider = Provider<QuestionSources>(
+  (ref) => QuestionSources((a) => switch (a) {
+        Activity.amphitheatrum => ref.read(questionGeneratorProvider),
+        Activity.forum => ref.read(nounQuestionGeneratorProvider),
+      }),
+);
 
 final saveRepositoryProvider = Provider<SaveRepository>((ref) => throw UnimplementedError('saveRepositoryProvider must be overridden'));
 
@@ -74,9 +89,22 @@ class ProfileController extends Notifier<SaveData> {
 
   Future<void> setActiveBattle(ActiveBattle? b) => _commit(state.copyWith(activeBattle: b, clearActiveBattle: b == null));
 
-  Future<void> recordBattleEnd({required bool won, required int bonus, int penalty = 0}) => _commit(
-    state.copyWith(gems: (state.gems + bonus - penalty).clamp(0, 1 << 30), battlesWon: state.battlesWon + (won ? 1 : 0), battlesLost: state.battlesLost + (won ? 0 : 1), clearActiveBattle: true),
-  );
+  /// Records the end of an encounter: global and per-activity tallies, bonus
+  /// or penalty applied once, snapshot cleared.
+  Future<void> recordBattleEnd({required Activity activity, required bool won, required int bonus, int penalty = 0}) {
+    final stats = Map<String, ActivityStats>.from(state.activityStats);
+    final cur = stats[activity.key] ?? const ActivityStats();
+    stats[activity.key] = ActivityStats(won: cur.won + (won ? 1 : 0), lost: cur.lost + (won ? 0 : 1));
+    return _commit(
+      state.copyWith(
+        gems: (state.gems + bonus - penalty).clamp(0, 1 << 30),
+        battlesWon: state.battlesWon + (won ? 1 : 0),
+        battlesLost: state.battlesLost + (won ? 0 : 1),
+        activityStats: stats,
+        clearActiveBattle: true,
+      ),
+    );
+  }
 
   String exportJson() => _repo.export(state);
 

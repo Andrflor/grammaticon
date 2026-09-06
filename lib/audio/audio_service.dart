@@ -13,7 +13,12 @@ enum Sfx {
   clades('clades.wav'),
   tactus('tactus.wav'),
   emptio('emptio.wav'),
-  vulnus('vulnus.wav');
+  vulnus('vulnus.wav'),
+  // Forum
+  oratio('oratio.wav'),
+  plausus('plausus.wav'),
+  refutatio('refutatio.wav'),
+  murmur('murmur.wav');
 
   const Sfx(this.file);
   final String file;

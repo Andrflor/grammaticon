@@ -5,11 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../app/providers.dart';
 import '../audio/audio_service.dart';
-import '../linguistics/model/analysis.dart';
-import '../pedagogy/explanations.dart';
 import '../pedagogy/mastery.dart';
+import '../pedagogy/mastery_view.dart';
 import '../pedagogy/progression.dart';
-import '../pedagogy/question_generator.dart';
+import '../pedagogy/question.dart';
 import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
 import 'answer_resolver.dart';
@@ -28,7 +27,7 @@ class AnswerOutcome {
   final Explanation explanation;
 
   int get gemsDelta => resolution.delta;
-  FormEntry? get contrast => explanation.contrast;
+  String? get contrastSurface => explanation.contrastSurface;
 }
 
 class BattleState {
@@ -154,8 +153,10 @@ class BattleState {
 
 final battleProvider = NotifierProvider<BattleController, BattleState?>(BattleController.new);
 
-/// Drives one fight. Every answer is resolved exactly once, by
-/// [AnswerResolver], and persisted before any animation starts.
+/// Drives one encounter (a fight in the Amphitheatrum, a debate in the Forum).
+/// The controller is activity-neutral: questions and corrections come from the
+/// [QuestionSource] of the trial's activity. Every answer is resolved exactly
+/// once, by [AnswerResolver], and persisted before any animation starts.
 class BattleController extends Notifier<BattleState?> {
   Timer? _timer;
   Random? _rng;
@@ -166,7 +167,7 @@ class BattleController extends Notifier<BattleState?> {
     return null;
   }
 
-  QuestionGenerator get _gen => ref.read(questionGeneratorProvider);
+  QuestionSource get _source => ref.read(questionSourcesProvider);
   ProfileController get _profile => ref.read(profileProvider.notifier);
   Settings get _settings => ref.read(settingsProvider);
   AudioService get _audio => ref.read(audioProvider);
@@ -224,7 +225,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null || !s.isOver) return;
     _timer?.cancel();
     final won = s.phase == BattlePhase.victory;
-    await _profile.recordBattleEnd(won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
+    await _profile.recordBattleEnd(activity: s.trial.activity, won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
     state = null;
   }
 
@@ -233,7 +234,7 @@ class BattleController extends Notifier<BattleState?> {
   BattleState _withNewQuestion(BattleState s) {
     final save = ref.read(profileProvider);
     final rng = _rng!;
-    final q = _gen.generate(
+    final q = _source.generate(
       trial: s.trial,
       componentIds: s.componentIds,
       rng: Random(rng.nextInt(1 << 20) ^ s.seed),
@@ -259,7 +260,7 @@ class BattleController extends Notifier<BattleState?> {
 
     final save = ref.read(profileProvider);
     final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, mode: s.mode, now: DateTime.now());
-    final explanation = Explanations.build(q: q, chosenValue: chosen, correct: res.correct, gen: _gen);
+    final explanation = _source.explain(q: q, chosenValue: chosen, correct: res.correct);
 
     final hearts = res.correct || s.isTraining ? s.hearts : s.hearts - 1;
     final enemyHp = res.correct ? s.enemyHp - 1 : s.enemyHp;
@@ -304,7 +305,8 @@ class BattleController extends Notifier<BattleState?> {
     if (s.isTraining) return 0;
     final eco = ref.read(answerResolverProvider).economy;
     final cheapest = Progression.cheapestPurchasable(save);
-    final tier = (save.skills[s.trial.primarySkill] ?? const SkillRecord()).rewardTier(ref.read(masteryConfigProvider));
+    // The trial's skill may be an aggregate (a whole declension): use the summary.
+    final tier = MasterySummary.forSkill(save, s.trial.primarySkill, ref.read(masteryConfigProvider)).tier;
     final catchUp = cheapest != null && save.gems < cheapest && tier == MasteryTier.perita;
     return eco.victoryBonus(catchUp: catchUp);
   }
@@ -395,7 +397,7 @@ class BattleController extends Notifier<BattleState?> {
     _timer?.cancel();
     if (s.isOver) {
       final won = s.phase == BattlePhase.victory;
-      _profile.recordBattleEnd(won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
+      _profile.recordBattleEnd(activity: s.trial.activity, won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
     } else {
       _profile.setActiveBattle(null);
     }

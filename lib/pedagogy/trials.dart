@@ -1,30 +1,16 @@
-/// Trial (certāmen) catalogue of the Amphitheatrum: what is asked, on which
-/// forms, at what price and after which prerequisites.
+/// Trial (certāmen) catalogue of the Amphitheatrum (verbs) and registry of
+/// every trial of the city. The shared model lives in `trial.dart`; the Forum
+/// catalogue in `noun_trials.dart`.
 library;
 
 import '../linguistics/model/analysis.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/verb.dart';
+import 'noun_trials.dart';
+import 'skills.dart';
+import 'trial.dart';
 
-/// A dimension of analysis the player may be asked about.
-enum Dimension {
-  persona('Quae persōna?'),
-  numerus('Quī numerus?'),
-  tempus('Quod tempus?'),
-  tempusSensus('Quod tempus sēnsū?'),
-  modus('Quī modus?'),
-  vox('Quae vōx?'),
-  coniugatio('Quae coniugātiō?'),
-  genus('Quod genus?'),
-  casus('Quī cāsus?'),
-  forma('Quae fōrma?'),
-  lemma('Quod verbum?'),
-  formaPlena('Quae fōrma plēna?'),
-  analysis('Quae analysis?');
-
-  const Dimension(this.prompt);
-  final String prompt;
-}
+export 'trial.dart';
 
 /// Kinds of non-finite / special forms for the [Dimension.forma] question.
 enum FormKind {
@@ -61,7 +47,7 @@ enum FormKind {
 }
 
 /// Predicate over (verb, form) pairs. Null fields do not filter.
-class FormFilter {
+class FormFilter extends ContentFilter {
   const FormFilter({
     this.moods,
     this.tenses,
@@ -145,68 +131,6 @@ class FormFilter {
       );
 }
 
-/// Selectable component of a Mixta trial.
-class TrialComponent {
-  const TrialComponent(this.id, this.name, this.filter, {this.skillId});
-  final String id;
-  final String name;
-  final FormFilter filter;
-
-  /// Skill credited when the answer concerns this component (in addition to the
-  /// discrimination skill of the trial).
-  final String? skillId;
-}
-
-class Trial {
-  const Trial({
-    required this.id,
-    required this.name,
-    required this.subtitle,
-    required this.skillIds,
-    required this.price,
-    required this.prerequisites,
-    required this.filter,
-    required this.dimensions,
-    required this.intro,
-    required this.examples,
-    required this.enemyId,
-    this.components = const [],
-    this.minComponents = 2,
-    this.questionsToWin = 10,
-    this.hearts = 3,
-    this.group = 'Indicātīvus',
-  });
-
-  final String id;
-  final String name;
-  final String subtitle;
-
-  /// First id is the primary skill (drives rewards).
-  final List<String> skillIds;
-  final int price;
-  final List<String> prerequisites;
-  final FormFilter filter;
-  final List<Dimension> dimensions;
-
-  /// Short introduction in simple Latin.
-  final String intro;
-
-  /// Contrasting examples shown in the introduction.
-  final List<String> examples;
-  final String enemyId;
-  final List<TrialComponent> components;
-  final int minComponents;
-  final int questionsToWin;
-  final int hearts;
-
-  /// Display group in the Amphitheatrum.
-  final String group;
-
-  bool get isMixta => components.isNotEmpty;
-  bool get isFree => price == 0;
-  String get primarySkill => skillIds.first;
-}
-
 // ---------------------------------------------------------------------------
 
 const _regularConj = {Conjugation.prima, Conjugation.secunda, Conjugation.tertia, Conjugation.tertiaIo, Conjugation.quarta};
@@ -246,32 +170,39 @@ Trial _tense({
     dimensions: composite ? _finDimsComposite : _finDims,
     intro: intro,
     examples: examples,
-    enemyId: enemy,
+    opponentId: enemy,
     group: mood.latin,
   );
 }
 
+/// Registry of every trial of the city (both activities). Ids are unique
+/// across activities; prerequisites may only point inside the same activity.
 class Trials {
   Trials._();
 
-  static final List<Trial> all = List.unmodifiable(_build());
+  static final List<Trial> all = List.unmodifiable([..._build(), ...NounTrials.build()]);
   static final Map<String, Trial> _byId = {for (final t in all) t.id: t};
   static Trial byId(String id) => _byId[id]!;
   static Trial? maybe(String id) => _byId[id];
 
-  /// Trials that credit [skillId] (directly or via a component).
+  static List<Trial> ofActivity(Activity a) => all.where((t) => t.activity == a).toList();
+
+  /// Trials that credit [skillId]: directly, via a component, or because the
+  /// trial's skill is an ancestor of [skillId] (noun trials list the
+  /// declension, questions credit its cells).
   static List<Trial> forSkill(String skillId) => all
-      .where((t) => t.skillIds.contains(skillId) || t.components.any((c) => c.skillId == skillId))
+      .where((t) => t.skillIds.contains(skillId) || t.components.any((c) => c.skillId == skillId) || t.skillIds.any((s) => Skills.leaves(s).contains(skillId)))
       .toList();
 
-  static List<String> get groups {
+  static List<String> groupsOf(Activity a) {
     final seen = <String>[];
     for (final t in all) {
-      if (!seen.contains(t.group)) seen.add(t.group);
+      if (t.activity == a && !seen.contains(t.group)) seen.add(t.group);
     }
     return seen;
   }
 
+  /// Verb trials of the Amphitheatrum.
   static List<Trial> _build() => [
         // ----------------------------------------------------------- Indicātīvus āctīvum
         _tense(
@@ -508,7 +439,7 @@ class Trials {
           dimensions: const [Dimension.numerus, Dimension.vox, Dimension.coniugatio, Dimension.lemma],
           intro: 'Imperātīvus iubet. Praesēns āctīvum: amā, amāte; rege, regite; audī, audīte. Passīvum: amāre, amāminī. Cavē: amāre est etiam īnfīnītīvus. Irregulāria: dīc, dūc, fac, fer.',
           examples: ['amā · amāte', 'rege · regite · dīc · fac', 'amāre (imp. pass.) = amāre (īnf.)'],
-          enemyId: 'statua',
+          opponentId: 'statua',
           group: 'Imperātīvus',
         ),
         Trial(
@@ -522,7 +453,7 @@ class Trials {
           dimensions: const [Dimension.persona, Dimension.numerus, Dimension.vox, Dimension.lemma],
           intro: 'Imperātīvus futūrus in lēgibus et praeceptīs: amātō (tū vel ille), amātōte (vōs), amantō (illī). Passīvum: amātor, amantor.',
           examples: ['amātō · amātōte · amantō', 'regitō · reguntō', 'amātor (pass.) ≠ amātō (act.)'],
-          enemyId: 'gladiator',
+          opponentId: 'gladiator',
           group: 'Imperātīvus',
         ),
         // ----------------------------------------------------------- Fōrmae nōminālēs
@@ -537,7 +468,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.vox, Dimension.coniugatio, Dimension.lemma],
           intro: 'Īnfīnītīvus nōmen āctiōnis est: tempus et vōcem habet, persōnam nōn habet. Praesēns amāre / amārī; perfectum amāvisse / amātus esse; futūrum amātūrus esse / amātum īrī.',
           examples: ['amāre · amārī', 'amāvisse · amātus esse', 'amātūrus esse · amātum īrī'],
-          enemyId: 'sphinx',
+          opponentId: 'sphinx',
           group: 'Fōrmae nōminālēs',
         ),
         Trial(
@@ -551,7 +482,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.vox, Dimension.casus, Dimension.genus, Dimension.numerus],
           intro: 'Participium adiectīvum verbāle est: dēclīnātur ut adiectīvum. Praesēns āctīvum amāns, amantis; perfectum passīvum amātus, -a, -um; futūrum āctīvum amātūrus, -a, -um.',
           examples: ['amāns · amantis · amantēs', 'amātus · amāta · amātum', 'amātūrus · amātūra · amātūrum'],
-          enemyId: 'sphinx',
+          opponentId: 'sphinx',
           group: 'Fōrmae nōminālēs',
         ),
         Trial(
@@ -565,7 +496,7 @@ class Trials {
           dimensions: const [Dimension.forma, Dimension.casus, Dimension.genus, Dimension.numerus],
           intro: 'Gerundium nōmen verbāle neutrum est (amandī, amandō, amandum, amandō): cāsūs īnfīnītīvī supplet. Gerundīvum adiectīvum passīvum est (amandus, -a, -um): "quī amārī dēbet".',
           examples: ['ars amandī (gerundium)', 'puella amanda (gerundīvum)', 'amandum (ger. acc.) = amandum (gdv. n.)'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Fōrmae nōminālēs',
         ),
         Trial(
@@ -579,7 +510,7 @@ class Trials {
           dimensions: const [Dimension.forma, Dimension.casus],
           intro: 'Supīnum duōs cāsūs habet: accūsātīvum in -um post verba mōtūs (venit amātum) et ablātīvum in -ū post adiectīva (mīrābile dictū). Discerne supīnum ā participiō et gerundiō.',
           examples: ['amātum (supīnum) = amātum (participium n.)', 'dictū · audītū · vīsū', 'ad amandum (gerundium) ≠ amātum (supīnum)'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Fōrmae nōminālēs',
         ),
         Trial(
@@ -593,7 +524,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus],
           intro: 'Coniugātiō periphrastica āctīva: participium futūrī + sum. Significat "amātūrus sum" = amāre in animō habeō, mox amābō.',
           examples: ['amātūrus sum · amātūrus eram · amātūrus erō', 'amātūrī sint · amātūra esset', 'amātūrus erat ≠ amātus erat'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Coniugātiō periphrastica',
         ),
         Trial(
@@ -607,7 +538,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus],
           intro: 'Coniugātiō periphrastica passīva: gerundīvum + sum. Significat necessitātem: "amandus sum" = amārī dēbeō. Agēns datīvō pōnitur: mihi amandus es.',
           examples: ['amandus sum · amandus eram · amandus erit', 'Carthāgō dēlenda est', 'amandus erat ≠ amātus erat'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Coniugātiō periphrastica',
         ),
         // ----------------------------------------------------------- Verba anōmala
@@ -622,7 +553,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Verbum sum thema mūtat: es-/s- in praesentī (sum, es, est, sumus), era- in imperfectō, er- in futūrō, fu- in perfectō. Possum = pot- + sum: possum, potes, potest; poteram; potuī. Prōsum: prōd- ante vōcālem.',
           examples: ['sum · es · est · sumus · estis · sunt', 'eram · erō · fuī · sim · essem', 'possum · potes · prōdest · abest'],
-          enemyId: 'statua',
+          opponentId: 'statua',
           group: 'Verba anōmala',
         ),
         Trial(
@@ -636,7 +567,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Eō: thema ī-/e-: eō, īs, it, īmus, ītis, eunt. Imperfectum ībam, futūrum ībō (ut prīma coniugātiō!), perfectum iī (īstī, iit), participium iēns, euntis, gerundium eundī.',
           examples: ['eō · īs · it · eunt', 'ībam · ībō · iī · īstī', 'iēns · euntis · eundum · itum est'],
-          enemyId: 'gladiator',
+          opponentId: 'gladiator',
           group: 'Verba anōmala',
         ),
         Trial(
@@ -650,7 +581,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.vox, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Ferō vōcālem āmittit: fers, fert, fertis; ferris, fertur; fer, ferte; ferre, ferrī, ferrem. Tria themata: fer-, tul-, lāt-. Composita: auferō, abstulī, ablātum; referō, rettulī, relātum.',
           examples: ['ferō · fers · fert · ferimus · fertis · ferunt', 'ferre · ferrī · ferrem · fer', 'tulī · lātus · abstulī · ablātus'],
-          enemyId: 'leo',
+          opponentId: 'leo',
           group: 'Verba anōmala',
         ),
         Trial(
@@ -664,7 +595,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Volō, vīs, vult, volumus, vultis, volunt. Subiūnctīvus velim, imperfectum vellem, īnfīnītīvus velle. Nōlō = nōn volō (nōn vīs, nōn vult) cum imperātīvō nōlī, nōlīte. Mālō = magis volō (māvīs, māvult).',
           examples: ['volō · vīs · vult · volunt', 'velim · vellem · velle', 'nōlī · nōlīte · māvult · mālim'],
-          enemyId: 'sphinx',
+          opponentId: 'sphinx',
           group: 'Verba anōmala',
         ),
         Trial(
@@ -678,7 +609,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.vox, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Fīō, fīs, fit, fīmus, fītis, fīunt: fōrma āctīva, sēnsus passīvus: passīvum praesentis verbī faciō. Imperfectum fīēbam, futūrum fīam, subiūnctīvus fīam / fierem, īnfīnītīvus fierī. Perfectum factus sum.',
           examples: ['fit = facitur', 'fīēbat · fīet · fīat · fieret', 'factus est · fierī · fac'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Verba anōmala',
         ),
         Trial(
@@ -692,7 +623,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Dō habet a brevem: damus, datis, dabam, darem (sed dās, dā, dāns). Edō fōrmās habet similēs verbō sum: ēs, ēst, ēstis, ēsse, ēssem — cum ē longā, quae discernit ēst (edit) ab est (sum).',
           examples: ['dō · dās · dat · damus · datis · dant', 'edō · ēs · ēst · edimus · ēstis · edunt', 'ēst (edō) ≠ est (sum)'],
-          enemyId: 'gladiator',
+          opponentId: 'gladiator',
           group: 'Verba anōmala',
         ),
         // ----------------------------------------------------------- Verba speciālia
@@ -707,7 +638,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.coniugatio, Dimension.lemma],
           intro: 'Dēpōnentia fōrmam passīvam, sēnsum āctīvum habent: sequor = "sequor aliquem". Participium praesentis (sequēns) et futūrī (secūtūrus) āctīva sunt; gerundīvum (sequendus) passīvum manet.',
           examples: ['sequor · sequeris · sequitur (praes.)', 'secūtus sum · secūtus eram (perf.)', 'sequere! (imp.) · sequī (īnf.)'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Verba speciālia',
         ),
         Trial(
@@ -721,7 +652,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Sēmidēpōnentia āctīva sunt in praesentī (audeō, gaudeō, soleō, fīdō), dēpōnentia in perfectō (ausus sum, gāvīsus sum, solitus sum). Revertor contrā: praesēns dēpōnēns, perfectum āctīvum revertī.',
           examples: ['audeō · audēbam · audēbō', 'ausus sum · ausus eram · ausus esse', 'revertor · revertī (perf. act.)'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Verba speciālia',
         ),
         Trial(
@@ -735,7 +666,7 @@ class Trials {
           dimensions: const [Dimension.tempusSensus, Dimension.tempus, Dimension.persona, Dimension.numerus, Dimension.lemma],
           intro: 'Dēfectīva fōrmās quāsdam nōn habent. Ōdī et meminī perfectum sōlum habent, sed sēnsū praesentī: ōdī = "ōdiō habeō", ōderam = "ōdiō habēbam". Coepī perfectum tantum (praesēns: incipiō). Inquam, āiō, quaesō paucās fōrmās habent.',
           examples: ['ōdī (perf. fōrmā, praes. sēnsū)', 'meminī · mementō · meminisse', 'coepit · inquit · ait · quaesō'],
-          enemyId: 'sphinx',
+          opponentId: 'sphinx',
           group: 'Verba speciālia',
         ),
         Trial(
@@ -749,7 +680,7 @@ class Trials {
           dimensions: const [Dimension.tempus, Dimension.modus, Dimension.lemma],
           intro: 'Impersōnālia tertiam persōnam singulārem sōlam habent: licet, licēbat, licuit; pluit, pluēbat. Nūllus imperātīvus, nūllum participium ūsitātum.',
           examples: ['licet · licēbat · licuit · liceat', 'oportet · oportuit · oportēre', 'pluit · ningit · tonat'],
-          enemyId: 'statua',
+          opponentId: 'statua',
           group: 'Verba speciālia',
         ),
         Trial(
@@ -769,7 +700,7 @@ class Trials {
           dimensions: const [Dimension.formaPlena, Dimension.tempus, Dimension.persona, Dimension.numerus],
           intro: 'Fōrmae variae attestātae: perfectum contractum (amāstī = amāvistī, audiit = audīvit, nōsse = nōvisse); tertia plūrālis -ēre (amāvēre = amāvērunt); secunda passīva -re (amābāre = amābāris); gerundīvum -undus (dīcundus); perfectum passīvum cum fuī (amātus fuit).',
           examples: ['amāstī = amāvistī · amāsse = amāvisse', 'amāvēre = amāvērunt', 'amābāre = amābāris · dīcundus = dīcendus'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Verba speciālia',
         ),
         // ----------------------------------------------------------- Mixta
@@ -785,7 +716,7 @@ class Trials {
           components: [for (final t in Tense.values) TrialComponent('ind.${t.key}.act', t.latin, _fin(Mood.indicativus, t, Voice.activum), skillId: 'v.ind.${t.key}.act')],
           intro: 'Nunc tempus nōn datur: id agnōscere dēbēs. Quaere signa: -ba- imperfectum, -b- futūrum (I–II), thema perfectī, -era- plūsquamperfectum, -eri- futūrum exāctum.',
           examples: ['amat · amābat · amābit', 'amāvit · amāverat · amāverit', 'regit ≠ reget ≠ rēxit'],
-          enemyId: 'leo',
+          opponentId: 'leo',
           group: 'Mixta',
         ),
         Trial(
@@ -800,7 +731,7 @@ class Trials {
           components: [for (final t in Tense.values) TrialComponent('ind.${t.key}.pass', t.latin, _fin(Mood.indicativus, t, Voice.passivum), skillId: 'v.ind.${t.key}.pass')],
           intro: 'Tempora passīva mixta: fōrmae simplicēs (amātur, amābātur, amābitur) et compositae (amātus est, erat, erit). Tempus fōrmae compositae ex auxiliārī sūmitur.',
           examples: ['amātur · amābātur · amābitur', 'amātus est · amātus erat · amātus erit', 'amātus est (perf.) ≠ amātur (praes.)'],
-          enemyId: 'leo',
+          opponentId: 'leo',
           group: 'Mixta',
         ),
         Trial(
@@ -819,7 +750,7 @@ class Trials {
           ],
           intro: 'Quattuor tempora subiūnctīvī mixta: praesēns (amem), imperfectum (amārem), perfectum (amāverim), plūsquamperfectum (amāvissem), āctīva et passīva.',
           examples: ['amem · amārem · amāverim · amāvissem', 'amer · amārer · amātus sim · amātus essem', 'amāverim (subj.) ≠ amāverō (ind.)'],
-          enemyId: 'sphinx',
+          opponentId: 'sphinx',
           group: 'Mixta',
         ),
         Trial(
@@ -839,7 +770,7 @@ class Trials {
           ],
           intro: 'Modī mixtī: agnōsce indicātīvum, subiūnctīvum, imperātīvum, īnfīnītīvum. Cavē fōrmās ambiguās: regam (fut. ind. / praes. subj.), amāre (īnf. / imp. pass.).',
           examples: ['amat · amet · amā · amāre', 'regit · regat · rege · regere', 'regam: futūrum aut subiūnctīvus'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Mixta',
         ),
         Trial(
@@ -858,7 +789,7 @@ class Trials {
           ],
           intro: 'Vōcēs mixtae: fōrma āctīva, fōrma passīva, dēpōnēns (fōrma passīva, sēnsus āctīvus). Dēsinentiae -r, -ris, -tur, -mur, -minī, -ntur passīvum fōrmāle ostendunt.',
           examples: ['amat (act.) · amātur (pass.) · sequitur (dep.)', 'amāvit · amātus est · secūtus est', 'sequeris: fōrma passīva, sēnsus āctīvus'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Mixta',
         ),
         Trial(
@@ -880,7 +811,7 @@ class Trials {
           ],
           intro: 'Verba anōmala mixta: cui verbō fōrma pertinet? Cavē paria: est (sum) / ēst (edō); it (eō) / fit (fīō); vīs (volō) / īs (eō); ferrem / vellem / essem.',
           examples: ['est · ēst · it · fit', 'vīs · īs · fers · dās', 'ferrem · vellem · essem · īrem'],
-          enemyId: 'cyclops',
+          opponentId: 'cyclops',
           group: 'Mixta',
         ),
         Trial(
@@ -901,7 +832,7 @@ class Trials {
           ],
           intro: 'Omnia mixta: quaelibet fōrma cuiuslibet verbī. Analysis complēta rogātur: modus, tempus, vōx, persōna, numerus — aut genus fōrmae nōminālis.',
           examples: ['amāverint · secūtī essent · ferendum erat', 'iēns · fierī · dīcundus · ōderat', 'omnia quae didicistī'],
-          enemyId: 'hydra',
+          opponentId: 'hydra',
           group: 'Mixta',
         ),
       ];

@@ -1,8 +1,9 @@
-/// Builds questions from the analysed lexicon for a given trial.
+/// Builds verb questions from the analysed lexicon for a given trial
+/// (Amphitheatrum).
 ///
 /// The generator never decides whether an answer is right: it records every
 /// legitimate value of the asked dimension in [Question.correctValues], and the
-/// battle engine compares the chosen value against that set.
+/// encounter engine compares the chosen value against that set.
 library;
 
 import 'dart:math';
@@ -12,59 +13,29 @@ import '../linguistics/engine/conjugator.dart';
 import '../linguistics/model/analysis.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/verb.dart';
+import 'explanations.dart';
 import 'mastery.dart';
+import 'question.dart';
 import 'skills.dart';
 import 'trials.dart';
 
-class Choice {
-  const Choice(this.value, this.label);
-  final String value;
-  final String label;
+export 'question.dart';
 
-  Map<String, Object?> toJson() => {'v': value, 'l': label};
-}
-
-class Question {
-  const Question({
-    required this.id,
-    required this.trialId,
-    required this.dimension,
-    required this.prompt,
-    required this.surface,
-    required this.lemmaId,
-    required this.target,
-    required this.analyses,
-    required this.choices,
-    required this.correctValues,
-    required this.skillIds,
-    this.componentId,
-    this.ambiguous = false,
-  });
-
-  final String id;
-  final String trialId;
-  final Dimension dimension;
-  final String prompt;
-  final String surface;
-  final String lemmaId;
+/// Verb-specific detail of a question: the form it was drawn for and every
+/// analysis of its surface.
+class VerbQuestionPayload extends QuestionPayload {
+  const VerbQuestionPayload({required this.target, required this.analyses});
 
   /// The analysis the form was drawn for.
   final FormEntry target;
 
-  /// Every analysis of [surface] in the lexicon.
+  /// Every analysis of the surface in the verb lexicon.
   final List<FormEntry> analyses;
-  final List<Choice> choices;
-  final Set<String> correctValues;
+}
 
-  /// Skills credited by this question; the first one drives rewards.
-  final List<String> skillIds;
-  final String? componentId;
-
-  /// More than one choice is legitimate (all are accepted).
-  final bool ambiguous;
-
-  String get primarySkill => skillIds.first;
-  bool isCorrect(String value) => correctValues.contains(value);
+extension VerbQuestion on Question {
+  /// The verb payload; only valid for Amphitheatrum questions.
+  VerbQuestionPayload get verb => payload as VerbQuestionPayload;
 }
 
 /// Pool entry: a verb, one of its forms and the component it came from.
@@ -75,7 +46,7 @@ class PoolEntry {
   final String? componentId;
 }
 
-class QuestionGenerator {
+class QuestionGenerator implements QuestionSource {
   QuestionGenerator(this.analyzer);
   final Analyzer analyzer;
   final Map<String, List<PoolEntry>> _pools = {};
@@ -92,19 +63,22 @@ class QuestionGenerator {
 
   List<PoolEntry> _buildPool(Trial t, List<String> componentIds) {
     final out = <PoolEntry>[];
+    // Only verb trials reach this generator, so the filters are verb filters.
+    final filter = t.filter as FormFilter;
     final comps = t.isMixta ? t.components.where((c) => componentIds.contains(c.id)).toList() : const <TrialComponent>[];
     for (final v in analyzer.verbs) {
       final p = analyzer.paradigmOf(v.id);
       if (comps.isEmpty) {
-        if (!t.filter.matchesVerb(v)) continue;
+        if (!filter.matchesVerb(v)) continue;
         for (final f in p.forms) {
-          if (t.filter.matchesForm(v, f)) out.add(PoolEntry(v, f, null));
+          if (filter.matchesForm(v, f)) out.add(PoolEntry(v, f, null));
         }
       } else {
         for (final c in comps) {
-          if (!c.filter.matchesVerb(v)) continue;
+          final cf = c.filter as FormFilter;
+          if (!cf.matchesVerb(v)) continue;
           for (final f in p.forms) {
-            if (c.filter.matchesForm(v, f)) out.add(PoolEntry(v, f, c.id));
+            if (cf.matchesForm(v, f)) out.add(PoolEntry(v, f, c.id));
           }
         }
       }
@@ -152,6 +126,8 @@ class QuestionGenerator {
         return a.voice?.key;
       case Dimension.coniugatio:
         return v.conjugation.key;
+      case Dimension.declinatio:
+        return null;
       case Dimension.genus:
         return a.gender?.key;
       case Dimension.casus:
@@ -182,6 +158,8 @@ class QuestionGenerator {
         return Voice.fromKey(value).latin;
       case Dimension.coniugatio:
         return Conjugation.fromKey(value).latin;
+      case Dimension.declinatio:
+        return Declension.fromKey(value).latin;
       case Dimension.genus:
         return Gender.fromKey(value).latin;
       case Dimension.casus:
@@ -232,7 +210,11 @@ class QuestionGenerator {
 
   // ----- generation ------------------------------------------------------------------
 
+  @override
+  Explanation explain({required Question q, required String chosenValue, required bool correct}) => Explanations.build(q: q, chosenValue: chosenValue, correct: correct, gen: this);
+
   /// Generates one question, or null when the trial pool is empty.
+  @override
   Question? generate({
     required Trial trial,
     required List<String> componentIds,
@@ -317,8 +299,7 @@ class QuestionGenerator {
       prompt: dim.prompt,
       surface: e.form.surface,
       lemmaId: e.verb.id,
-      target: e.form,
-      analyses: analyzer.analyze(e.form.surface),
+      payload: VerbQuestionPayload(target: e.form, analyses: analyzer.analyze(e.form.surface)),
       choices: choices,
       correctValues: correct,
       skillIds: skillIds,
@@ -440,6 +421,8 @@ class QuestionGenerator {
         return Voice.fromKey(v).index;
       case Dimension.coniugatio:
         return Conjugation.fromKey(v).index;
+      case Dimension.declinatio:
+        return Declension.fromKey(v).index;
       case Dimension.genus:
         return Gender.fromKey(v).index;
       case Dimension.casus:
@@ -454,7 +437,7 @@ class QuestionGenerator {
   /// Form of the same verb that would match the chosen (wrong) value, used in
   /// feedback: "amāvit is the perfect; amābat is the imperfect".
   FormEntry? contrastForm(Question q, String chosenValue) {
-    final a = q.target.analysis;
+    final a = q.verb.target.analysis;
     final p = analyzer.paradigmOf(q.lemmaId);
     switch (q.dimension) {
       case Dimension.persona:
@@ -483,6 +466,7 @@ class QuestionGenerator {
       case Dimension.analysis:
         return p.forms.where((f) => analysisKey(f.analysis) == chosenValue && f.isPrimary).firstOrNull;
       case Dimension.coniugatio:
+      case Dimension.declinatio:
         return null;
     }
   }
@@ -494,13 +478,5 @@ class QuestionGenerator {
     return null;
   }
 
-  T _weightedPick<T>(List<T> items, List<double> weights, Random rng) {
-    final total = weights.fold(0.0, (a, b) => a + b);
-    var r = rng.nextDouble() * total;
-    for (var i = 0; i < items.length; i++) {
-      r -= weights[i];
-      if (r <= 0) return items[i];
-    }
-    return items.last;
-  }
+  T _weightedPick<T>(List<T> items, List<double> weights, Random rng) => weightedPick(items, weights, rng);
 }

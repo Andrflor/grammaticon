@@ -75,7 +75,7 @@ Future<void> showHelpSheet(BuildContext context, WidgetRef ref, {required String
             const SizedBox(height: 14),
             Text(t.title, style: G.display(16, color: G.goldDark)),
             const SizedBox(height: 6),
-            _HelpTableView(t, highlight: form?.surface),
+            HelpTableView(t, highlight: form?.surface),
             if (t.note.isNotEmpty) Text(t.note, style: G.body(12, color: G.inkSoft, style: FontStyle.italic)),
           ],
           if (paradigm.absent.isNotEmpty) ...[
@@ -113,10 +113,14 @@ class _Piece extends StatelessWidget {
       ]);
 }
 
-class _HelpTableView extends StatelessWidget {
-  const _HelpTableView(this.t, {this.highlight});
+/// Paradigm table with an optional highlighted surface. A cell may list
+/// several surfaces separated by " / "; any of them matches.
+class HelpTableView extends StatelessWidget {
+  const HelpTableView(this.t, {super.key, this.highlight});
   final HelpTable t;
   final String? highlight;
+
+  bool _matches(String cell) => highlight != null && (cell == highlight || cell.split(' / ').contains(highlight));
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -137,8 +141,8 @@ class _HelpTableView extends StatelessWidget {
                 for (final c in r.cells)
                   Container(
                     padding: const EdgeInsets.all(6),
-                    color: highlight != null && c == highlight ? G.goldLight : null,
-                    child: Text(c, style: G.body(14, weight: highlight != null && c == highlight ? 800 : 600, color: c.startsWith('—') || c.startsWith('(') ? G.inkSoft : G.ink)),
+                    color: _matches(c) ? G.goldLight : null,
+                    child: Text(c, style: G.body(14, weight: _matches(c) ? 800 : 600, color: c.startsWith('—') || c.startsWith('(') ? G.inkSoft : G.ink)),
                   ),
               ]),
           ],

@@ -9,6 +9,9 @@ import 'app/theme.dart';
 import 'audio/audio_service.dart';
 import 'linguistics/engine/analyzer.dart';
 import 'linguistics/engine/conjugator.dart';
+import 'linguistics/engine/declinator.dart';
+import 'linguistics/engine/noun_analyzer.dart';
+import 'linguistics/lexicon/nouns.dart';
 import 'linguistics/lexicon/verbs.dart';
 import 'persistence/save_repository.dart';
 
@@ -17,6 +20,7 @@ Future<void> main() async {
   runApp(const _Splash());
   // Whole-lexicon index (about 60 000 forms) built once at start-up.
   final analyzer = Analyzer(kVerbs, Conjugator());
+  final nounAnalyzer = NounAnalyzer(kNouns, const Declinator());
   final repo = SaveRepository(PrefsSaveStore());
   final save = await repo.load();
   final audio = AudioService();
@@ -27,7 +31,7 @@ Future<void> main() async {
   unawaited(audio.startMusic());
   runApp(
     ProviderScope(
-      overrides: [analyzerProvider.overrideWithValue(analyzer), saveRepositoryProvider.overrideWithValue(repo), initialSaveProvider.overrideWithValue(save), audioProvider.overrideWithValue(audio)],
+      overrides: [analyzerProvider.overrideWithValue(analyzer), nounAnalyzerProvider.overrideWithValue(nounAnalyzer), saveRepositoryProvider.overrideWithValue(repo), initialSaveProvider.overrideWithValue(save), audioProvider.overrideWithValue(audio)],
       child: const GrammaticonApp(),
     ),
   );

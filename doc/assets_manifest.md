@@ -19,6 +19,10 @@ Tous les fichiers ci-dessous sont **provisoires**, générés procéduralement p
 | `enemy_sphinx.png` | 500×540 | oui | bas-centre | adversaire | Sphinx à némès. |
 | `enemy_cyclops.png` | 500×560 | oui | bas-centre | adversaire | Cyclope à massue. |
 | `enemy_hydra.png` | 560×560 | oui | bas-centre | adversaire final | Hydre à quatre têtes. |
+| `forum_bg.png` | 1920×1080 | non | centre (`cover`) | fond du Forum | Colonnade de basilique, public sur les marches, deux rostres ; ligne de sol vers 86 % de la hauteur ; la zone sous la carte de question (≈ 40–45 % de la hauteur) reste sobre car la ligne *RECTE!/ERRAT…* s'y affiche. Généré par `tool/assets/generate_forum_art.py`. |
+| `orator_idle.png` `orator_gesture.png` `orator_hurt.png` `orator_victory.png` `orator_defeat.png` | 420×540 | oui | bas-centre (pieds) | protagoniste du Forum | Même garçon romain en toge à bande pourpre, rouleau en main, laurier ; pose `gesture` = bras tendu, bouche ouverte. Même cadrage que `hero_*`. |
+| `rhetor_rhetor.png` `rhetor_senator.png` `rhetor_causidicus.png` `rhetor_philosophus.png` `rhetor_censor.png` | 480×540 | oui | bas-centre | orateurs adverses | Rhéteur grec (chiton bleu, rouleau), sénateur âgé (toge, bâton), avocat rusé (manteau vert, tablette), philosophe stoïcien (chauve, barbe, bâton), censeur (toge pourpre, faisceaux). |
+| `argumentum.png` | 128×128 | oui | centre | projectile d'argument | Rouleau de parchemin doré, animé en arc vers l'adversaire. |
 | `gem.png` `gem_green.png` | 128×128 | oui | centre | monnaie, effets | Gemme facettée magenta / verte. |
 | `heart.png` `heart_empty.png` | 96×96 | oui | centre | points de vie | Cœur plein / vide. |
 | `impact.png` | 256×256 | oui | centre | impact d'attaque | Étoile d'impact jaune/blanche. |
@@ -34,4 +38,7 @@ Pour remplacer un personnage par une séquence ou un fichier Rive : conserver le
 `thema.mp3` (2 min 17, stéréo, 128 kb/s, 2,2 Mo) : thème du jeu fourni par l'auteur, joué en boucle dès le lancement, coupé quand l'application passe en arrière-plan ; interrupteur et volume dédiés dans les Optiōnēs.
 
 ## Sons (`assets/audio/`)
-Synthétisés par SoX (`recte`, `errat`, `impetus`, `ictus`, `gemma`, `numerus`, `victoria`, `clades`, `tactus`, `emptio`, `vulnus`), 44,1 kHz mono, 30 ms–1 s. À remplacer par des sons produits, en conservant les noms.
+Synthétisés par SoX (`recte`, `errat`, `impetus`, `ictus`, `gemma`, `numerus`, `victoria`, `clades`, `tactus`, `emptio`, `vulnus`), 44,1 kHz mono, 30 ms–1 s. Forum (`tool/assets/generate_sfx.sh`) : `oratio` (envol de l'argument), `plausus` (applaudissements), `refutatio` (réfutation), `murmur` (murmure du public). À remplacer par des sons produits, en conservant les noms.
+
+## Chorégraphie du Forum
+Même chaîne que l'arène (sprites fixes + effets Flame, `lib/game/forum_game.dart`) : bonne réponse = pas en avant + pose `gesture`, rouleau `argumentum` en arc (Bézier), flash et recul de l'adversaire, étincelles dorées, applaudissements (particules montantes depuis les marches) ; erreur = anneau rouge de réfutation vers l'orateur, flash rouge, pose `hurt`, murmure (particules grises descendantes) ; victoire = pluie de lauriers ; défaite = murmure lourd. Effets brefs (< 0,7 s) pour préserver la lisibilité de la question.

@@ -6,26 +6,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:latin_game/app/app.dart';
 import 'package:latin_game/app/providers.dart';
-import 'package:latin_game/audio/audio_service.dart';
 import 'package:latin_game/battle/battle_controller.dart';
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
 import 'package:latin_game/persistence/save_data.dart';
 import 'package:latin_game/persistence/save_repository.dart';
 
-void main() {
-  final analyzer = Analyzer(kVerbs, Conjugator());
+import 'support/test_env.dart';
 
-  Widget app(MemorySaveStore store, {SaveData? initial}) => ProviderScope(
-        overrides: [
-          analyzerProvider.overrideWithValue(analyzer),
-          saveRepositoryProvider.overrideWithValue(SaveRepository(store)),
-          initialSaveProvider.overrideWithValue(initial ?? SaveData(createdAt: DateTime(2026, 1, 1))),
-          audioProvider.overrideWithValue(AudioService(enabled: false)),
-        ],
-        child: const GrammaticonApp(),
-      );
+void main() {
+  Widget app(MemorySaveStore store, {SaveData? initial}) => testScope(store, initial: initial, child: const GrammaticonApp());
 
   testWidgets('city → Amphitheatrum → fight with keyboard', (tester) async {
     tester.view.physicalSize = const Size(1600, 900);
@@ -77,6 +65,111 @@ void main() {
     container.read(battleProvider.notifier).abandon();
     await tester.pump();
     expect(store.raw, contains('"gems":8'));
+  });
+
+  testWidgets('city → Forum → debate with keyboard; the wallet is shared', (tester) async {
+    tester.view.physicalSize = const Size(1600, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final store = MemorySaveStore();
+    await tester.pumpWidget(app(store, initial: SaveData(gems: 5)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Forum'));
+    await tester.pumpAndSettle();
+    expect(find.text('Forum · Dēclīnātiōnēs'), findsOneWidget);
+    expect(find.textContaining('Prīma dēclīnātiō'), findsWidgets);
+    expect(find.text('Contrōversia'), findsOneWidget); // only the free trial is open
+    expect(find.text('Clausa'), findsWidgets);
+    expect(find.textContaining('Eme · 20'), findsWidgets); // next trials are purchasable
+
+    await tester.tap(find.widgetWithText(InkWell, 'Contrōversia').first);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(find.text('Incipe!'), findsOneWidget);
+    expect(find.textContaining('Prīma dēclīnātiō nōmina in -a'), findsOneWidget);
+    await tester.tap(find.text('Incipe!'));
+    await tester.pump();
+    final element = tester.element(find.byType(Scaffold).last);
+    final container = ProviderScope.containerOf(element);
+    var s = container.read(battleProvider)!;
+    expect(s.trial.id, 'd1-recti');
+    final q = s.question!;
+    // Dictionary entry and Latin prompt are on screen; the opponent bar shows resolve.
+    expect(find.text(q.surface), findsOneWidget);
+    expect(find.textContaining(', f.').evaluate().isNotEmpty || find.textContaining(', m.').evaluate().isNotEmpty, isTrue);
+    expect(find.textContaining('cōnstantia'), findsOneWidget);
+    expect(find.text('Rhētor Graecus'), findsOneWidget);
+    final correct = q.choices.indexWhere((c) => q.correctValues.contains(c.value));
+    await tester.sendKeyEvent(LogicalKeyboardKey(0x30 + correct + 1), character: '${correct + 1}');
+    await tester.pump();
+    s = container.read(battleProvider)!;
+    expect(s.phase, BattlePhase.correct);
+    expect(find.text('RECTE!'), findsOneWidget);
+    expect(container.read(profileProvider).gems, 13);
+    // Repeat must not pay twice.
+    await tester.sendKeyEvent(LogicalKeyboardKey(0x30 + correct + 1), character: '${correct + 1}');
+    await tester.pump();
+    expect(container.read(profileProvider).gems, 13);
+    await tester.pump(const Duration(milliseconds: 500));
+    expect(container.read(battleProvider)!.phase, BattlePhase.question);
+    // Mouse answer on the next question.
+    final q2 = container.read(battleProvider)!.question!;
+    final wrong = q2.choices.indexWhere((c) => !q2.correctValues.contains(c.value));
+    await tester.tap(find.widgetWithText(InkWell, q2.choices[wrong].label).first);
+    await tester.pump();
+    expect(container.read(battleProvider)!.phase, BattlePhase.wrong);
+    expect(find.text('ERRAT…'), findsOneWidget);
+    expect(find.textContaining('Rēctum:'), findsOneWidget);
+    expect(find.text('Perge'), findsOneWidget);
+    container.read(battleProvider.notifier).abandon();
+    await tester.pump();
+    expect(store.raw, contains('"d.1.'));
+  });
+
+  testWidgets('portrait phone: Forum selection and debate layout', (tester) async {
+    tester.view.physicalSize = const Size(420, 860);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(MemorySaveStore(), initial: SaveData(introSeen: {'d1-recti'})));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Forum'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Forum'));
+    await tester.pumpAndSettle();
+    expect(find.text('Forum · Dēclīnātiōnēs'), findsOneWidget);
+    await tester.tap(find.widgetWithText(InkWell, 'Contrōversia').first);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    final element = tester.element(find.byType(Scaffold).last);
+    final container = ProviderScope.containerOf(element);
+    final q = container.read(battleProvider)!.question!;
+    expect(find.text(q.surface), findsOneWidget);
+    for (final c in q.choices) {
+      expect(find.text(c.label), findsOneWidget);
+    }
+    expect(tester.takeException(), isNull); // no overflow on a phone
+  });
+
+  testWidgets('Tabula lists the declension tree with unevaluated skills', (tester) async {
+    tester.view.physicalSize = const Size(1200, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(app(MemorySaveStore()));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Tabula'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Contrōversiae victae'), findsOneWidget);
+    // Roots are expanded by default: the declension tree follows the verb tree.
+    await tester.scrollUntilVisible(find.text('Dēclīnātiōnēs'), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Dēclīnātiōnēs'), findsOneWidget);
+    expect(find.text('Ventūrum: structūra parāta, nōndum lūditur.'), findsNothing);
+    await tester.scrollUntilVisible(find.text('Mixta dēclīnātiōnum'), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Prīma dēclīnātiō'), findsOneWidget);
+    expect(find.text('Locātīvus'), findsOneWidget);
+    // Unpractised skills stay unevaluated.
+    await tester.tap(find.text('Prīma dēclīnātiō'));
+    await tester.pumpAndSettle();
+    expect(find.text('Accūsātīvus'), findsOneWidget);
   });
 
   testWidgets('portrait phone layout lists the buildings and opens the Tabula', (tester) async {

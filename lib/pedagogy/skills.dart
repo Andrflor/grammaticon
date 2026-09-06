@@ -80,8 +80,18 @@ class Skills {
     Skill('mx.vox', 'Discrīmen vōcum', parent: 'mx', branch: SkillBranch.mixta),
     Skill('mx.familia', 'Discrīmen verbōrum anōmalōrum', parent: 'mx', branch: SkillBranch.mixta),
     Skill('mx.omnia', 'Omnia mixta', parent: 'mx', branch: SkillBranch.mixta),
-    // ----- Declinationes (future) -----
-    Skill('d', 'Dēclīnātiōnēs', branch: SkillBranch.declinationes, future: true),
+    // ----- Declinationes (Forum) -----
+    Skill('d', 'Dēclīnātiōnēs', branch: SkillBranch.declinationes),
+  ];
+
+  /// Mixed-trial and special skills of the Forum, appended after the
+  /// declension tree.
+  static const List<Skill> _declTail = [
+    Skill('d.loc', 'Locātīvus', parent: 'd', branch: SkillBranch.declinationes, hint: 'Rōmae, domī, Carthāginī, rūrī'),
+    Skill('d.mx', 'Mixta dēclīnātiōnum', parent: 'd', branch: SkillBranch.declinationes),
+    Skill('d.mx.declinatio', 'Discrīmen dēclīnātiōnum', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'rosīs (I) · servīs (II) · rēgibus (III)'),
+    Skill('d.mx.casus', 'Discrīmen cāsuum mixtōrum', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'cāsūs omnium dēclīnātiōnum'),
+    Skill('d.mx.omnia', 'Omnia mixta', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'analysis complēta'),
   ];
 
   static final List<Skill> all = _buildAll();
@@ -89,16 +99,18 @@ class Skills {
   static List<Skill> _buildAll() {
     final list = List<Skill>.from(_base);
     const decl = ['Prīma', 'Secunda', 'Tertia', 'Quārta', 'Quīnta'];
+    const hints = ['rosa, rosae', 'servus, puer, bellum', 'rēx, cīvis, corpus, mare', 'manus, cornū', 'rēs, diēs'];
     const cases = [('nom', 'Nōminātīvus'), ('voc', 'Vocātīvus'), ('acc', 'Accūsātīvus'), ('gen', 'Genetīvus'), ('dat', 'Datīvus'), ('abl', 'Ablātīvus')];
     for (var i = 0; i < 5; i++) {
       final d = 'd.${i + 1}';
-      list.add(Skill(d, '${decl[i]} dēclīnātiō', parent: 'd', branch: SkillBranch.declinationes, future: true));
+      list.add(Skill(d, '${decl[i]} dēclīnātiō', parent: 'd', branch: SkillBranch.declinationes, hint: hints[i]));
       for (final (ck, cn) in cases) {
-        list.add(Skill('$d.$ck', cn, parent: d, branch: SkillBranch.declinationes, future: true));
-        list.add(Skill('$d.$ck.sg', 'Singulāris', parent: '$d.$ck', branch: SkillBranch.declinationes, future: true));
-        list.add(Skill('$d.$ck.pl', 'Plūrālis', parent: '$d.$ck', branch: SkillBranch.declinationes, future: true));
+        list.add(Skill('$d.$ck', cn, parent: d, branch: SkillBranch.declinationes));
+        list.add(Skill('$d.$ck.sg', 'Singulāris', parent: '$d.$ck', branch: SkillBranch.declinationes));
+        list.add(Skill('$d.$ck.pl', 'Plūrālis', parent: '$d.$ck', branch: SkillBranch.declinationes));
       }
     }
+    list.addAll(_declTail);
     return List.unmodifiable(list);
   }
 
@@ -117,4 +129,17 @@ class Skills {
 
   /// Skill id for a finite tense/voice combination, e.g. `v.ind.praes.act`.
   static String finite(String moodKey, String tenseKey, String voiceKey) => 'v.$moodKey.$tenseKey.$voiceKey';
+
+  /// Skill id of a noun cell, e.g. `d.1.acc.sg` (declension ordinal 1–5).
+  static String nounCell(int declension, String caseKey, String numberKey) => 'd.$declension.$caseKey.$numberKey';
+
+  /// True when [ancestorId] is [id] or one of its ancestors.
+  static bool isWithin(String id, String ancestorId) {
+    String? cur = id;
+    while (cur != null) {
+      if (cur == ancestorId) return true;
+      cur = _byId[cur]?.parent;
+    }
+    return false;
+  }
 }

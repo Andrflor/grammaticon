@@ -46,6 +46,53 @@ void main() {
     final d = codec.decode('{"gems": 5, "purchased": ["ind-imperf-act"]}');
     expect(d.gems, 5);
     expect(d.schemaVersion, kSchemaVersion);
+    expect(d.activityStats['amphitheatrum']?.won, 0);
+  });
+
+  test('schema 1 (Amphitheatrum only) migrates to 2: gems, purchases, skills, snapshot kept; tallies seeded', () {
+    const codec = SaveCodec();
+    const v1 = '{"schema":1,"gems":37,"purchased":["ind-imperf-act","ind-fut-act"],'
+        '"skills":{"v.ind.praes.act":{"ac":3,"aw":1,"aidc":0,"aidw":0,"corc":0,"est":0.7,"hw":0.7,"recent":[],"lemmas":["amo","rego"],"days":["20260102"],"last":1767312000000}},'
+        '"settings":{"vol":0.5,"snd":true,"rm":false,"cd":350,"wd":2800,"mus":true,"mvol":0.5},'
+        '"mixta":{"mx-tempora-ind-act":["ind.praes.act","ind.perf.act"]},"won":4,"lost":2,"tx":21,'
+        '"battle":{"t":"ind-imperf-act","m":"certamen","h":2,"e":6,"a":5,"g":12,"s":77,"q":5,"c":[],"ok":4},'
+        '"lemmaDaily":{"v.ind.praes.act|amo|20260102":2},"introSeen":["ind-praes-act"]}';
+    final d = codec.decode(v1);
+    expect(d.schemaVersion, 2);
+    expect(d.gems, 37);
+    expect(d.purchased, {'ind-imperf-act', 'ind-fut-act'});
+    expect(d.skills['v.ind.praes.act']!.autonomousCorrect, 3);
+    expect(d.skills['v.ind.praes.act']!.lemmas, {'amo', 'rego'});
+    expect(d.mixtaConfig['mx-tempora-ind-act'], ['ind.praes.act', 'ind.perf.act']);
+    expect(d.battlesWon, 4);
+    expect(d.battlesLost, 2);
+    expect(d.lastTransactionId, 21);
+    expect(d.activeBattle!.trialId, 'ind-imperf-act');
+    expect(d.activeBattle!.enemyHp, 6);
+    expect(d.introSeen, {'ind-praes-act'});
+    // Every earlier encounter was an Amphitheatrum fight; the Forum starts at zero.
+    expect(d.activityStats['amphitheatrum']!.won, 4);
+    expect(d.activityStats['amphitheatrum']!.lost, 2);
+    expect(d.activityStats['forum'], isNull);
+    // Round trip at schema 2 keeps the new field.
+    final back = codec.decode(codec.encode(d.copyWith(activityStats: {...d.activityStats, 'forum': const ActivityStats(won: 1)})));
+    expect(back.activityStats['forum']!.won, 1);
+    expect(back.activityStats['amphitheatrum']!.won, 4);
+  });
+
+  test('Forum purchases, noun skills and a Forum snapshot survive a round trip', () async {
+    final repo = SaveRepository(MemorySaveStore());
+    final d = SaveData(
+      gems: 9,
+      purchased: const {'ind-imperf-act', 'd1-omnes'},
+      skills: {'d.1.acc.sg': const SkillRecord().apply(Observation(at: DateTime(2026, 2, 1), correct: true, lemmaId: 'rosa', quality: AnswerQuality.autonoma, trialId: 'd1-recti'), const MasteryConfig())},
+      activeBattle: const ActiveBattle(trialId: 'd1-recti', mode: BattleMode.certamen, hearts: 3, enemyHp: 8, answered: 2, gemsDelta: 16, seed: 5, questionIndex: 2, componentIds: [], correctCount: 2),
+    );
+    await repo.save(d);
+    final back = await repo.load();
+    expect(back.purchased, {'ind-imperf-act', 'd1-omnes'});
+    expect(back.skills['d.1.acc.sg']!.lemmas, {'rosa'});
+    expect(back.activeBattle!.trialId, 'd1-recti');
   });
 
   test('corrupt save falls back to a fresh profile', () async {

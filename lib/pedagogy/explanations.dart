@@ -1,4 +1,4 @@
-/// Latin feedback texts built from a resolved answer.
+/// Latin feedback texts built from a resolved verb answer (Amphitheatrum).
 library;
 
 import '../linguistics/model/analysis.dart';
@@ -6,31 +6,15 @@ import '../linguistics/model/grammar.dart';
 import 'question_generator.dart';
 import 'trials.dart';
 
-class Explanation {
-  const Explanation({required this.headline, required this.detail, this.contrast, this.also = const []});
-
-  /// One line: what the form is.
-  final String headline;
-
-  /// Short contrast with the chosen (wrong) answer, or a confirmation.
-  final String detail;
-
-  /// Form of the same verb matching the wrong choice (amāvit for "perfectum").
-  final FormEntry? contrast;
-
-  /// Other legitimate analyses of the surface (ambiguity).
-  final List<String> also;
-}
-
 class Explanations {
   const Explanations._();
 
   static Explanation build({required Question q, required String chosenValue, required bool correct, required QuestionGenerator gen}) {
-    final a = q.target.analysis;
+    final a = q.verb.target.analysis;
     final lemma = gen.analyzer.verb(q.lemmaId);
     final headline = '${q.surface} — ${QuestionGenerator.analysisLabel(a)} (${lemma.lemma})';
 
-    final others = q.analyses
+    final others = q.verb.analyses
         .where((f) => f.analysis != a && (f.analysis.lemmaId != a.lemmaId || QuestionGenerator.analysisKey(f.analysis) != QuestionGenerator.analysisKey(a)))
         .map((f) => '${QuestionGenerator.analysisLabel(f.analysis)} (${gen.analyzer.verb(f.analysis.lemmaId).lemma})${f.analysis.isPrimary ? '' : ' · ${f.analysis.variant.latin}'}')
         .toSet()
@@ -50,12 +34,12 @@ class Explanations {
     }
     final why = _why(q);
     if (why.isNotEmpty) detail += ' $why';
-    return Explanation(headline: headline, detail: detail, contrast: contrast, also: others);
+    return Explanation(headline: headline, detail: detail, contrastSurface: contrast?.surface, also: others);
   }
 
   /// One-sentence rule of thumb for the target analysis.
   static String _why(Question q) {
-    final a = q.target.analysis;
+    final a = q.verb.target.analysis;
     switch (q.dimension) {
       case Dimension.tempus:
       case Dimension.tempusSensus:
@@ -68,6 +52,8 @@ class Explanations {
         return a.voice == Voice.passivum ? 'Dēsinentiae -r, -ris, -tur, -mur, -minī, -ntur passīvum ostendunt.' : 'Dēsinentiae -ō/-m, -s, -t, -mus, -tis, -nt āctīvum ostendunt.';
       case Dimension.modus:
         return _moodHint(a);
+      case Dimension.declinatio:
+        return '';
       case Dimension.coniugatio:
         return 'Vōcālis thematica coniugātiōnem ostendit: -ā- (I), -ē- (II), -e/-i/-u- (III), -i- (III -iō), -ī- (IV).';
       case Dimension.genus:

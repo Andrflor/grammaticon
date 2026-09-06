@@ -5,7 +5,7 @@ import 'dart:convert';
 
 import '../pedagogy/mastery.dart';
 
-const int kSchemaVersion = 1;
+const int kSchemaVersion = 2;
 
 class Settings {
   const Settings({this.volume = 0.8, this.soundOn = true, this.reducedMotion = false, this.correctDelayMs = 350, this.wrongDelayMs = 2800, this.musicOn = true, this.musicVolume = 0.5});
@@ -52,6 +52,17 @@ enum BattleMode {
   final String key;
   final String latin;
   static BattleMode fromKey(String k) => values.firstWhere((e) => e.key == k);
+}
+
+/// Encounters won and lost in one activity (the Amphitheatrum's fights, the
+/// Forum's debates). The gem balance itself is shared.
+class ActivityStats {
+  const ActivityStats({this.won = 0, this.lost = 0});
+  final int won;
+  final int lost;
+
+  Map<String, Object?> toJson() => {'w': won, 'l': lost};
+  factory ActivityStats.fromJson(Map<String, Object?> j) => ActivityStats(won: (j['w'] as num?)?.toInt() ?? 0, lost: (j['l'] as num?)?.toInt() ?? 0);
 }
 
 /// Snapshot of a fight in progress, so that closing the app mid-fight resumes
@@ -111,6 +122,7 @@ class SaveData {
     this.activeBattle,
     this.lemmaDaily = const {},
     this.introSeen = const {},
+    this.activityStats = const {},
     this.createdAt,
     this.updatedAt,
   });
@@ -137,6 +149,10 @@ class SaveData {
 
   /// Trial ids whose introduction has been read.
   final Set<String> introSeen;
+
+  /// Per-activity tallies keyed by [Activity.key]; [battlesWon] and
+  /// [battlesLost] remain the global totals.
+  final Map<String, ActivityStats> activityStats;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
@@ -153,6 +169,7 @@ class SaveData {
     bool clearActiveBattle = false,
     Map<String, int>? lemmaDaily,
     Set<String>? introSeen,
+    Map<String, ActivityStats>? activityStats,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) => SaveData(
@@ -168,6 +185,7 @@ class SaveData {
     activeBattle: clearActiveBattle ? null : (activeBattle ?? this.activeBattle),
     lemmaDaily: lemmaDaily ?? this.lemmaDaily,
     introSeen: introSeen ?? this.introSeen,
+    activityStats: activityStats ?? this.activityStats,
     createdAt: createdAt ?? this.createdAt,
     updatedAt: updatedAt ?? this.updatedAt,
   );
@@ -185,6 +203,7 @@ class SaveData {
     if (activeBattle != null) 'battle': activeBattle!.toJson(),
     'lemmaDaily': lemmaDaily,
     'introSeen': introSeen.toList()..sort(),
+    'activities': {for (final e in activityStats.entries) e.key: e.value.toJson()},
     if (createdAt != null) 'created': createdAt!.toIso8601String(),
     if (updatedAt != null) 'updated': updatedAt!.toIso8601String(),
   };
@@ -202,6 +221,7 @@ class SaveData {
     activeBattle: j['battle'] == null ? null : ActiveBattle.fromJson((j['battle'] as Map).cast<String, Object?>()),
     lemmaDaily: {for (final e in ((j['lemmaDaily'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
     introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
+    activityStats: {for (final e in ((j['activities'] as Map?) ?? const {}).entries) e.key as String: ActivityStats.fromJson((e.value as Map).cast<String, Object?>())},
     createdAt: j['created'] == null ? null : DateTime.tryParse(j['created'] as String),
     updatedAt: j['updated'] == null ? null : DateTime.tryParse(j['updated'] as String),
   );
@@ -215,6 +235,16 @@ class SaveCodec {
   static final Map<int, Map<String, Object?> Function(Map<String, Object?>)> migrations = {
     // 0 -> 1: pre-release saves without a schema field.
     0: (j) => {...j, 'schema': 1},
+    // 1 -> 2: the Forum arrives. Every earlier encounter was fought in the
+    // Amphitheatrum, so the global tallies seed its per-activity record; gems,
+    // purchases, skills and the snapshot are untouched.
+    1: (j) => {
+      ...j,
+      'schema': 2,
+      'activities': {
+        'amphitheatrum': {'w': (j['won'] as num?)?.toInt() ?? 0, 'l': (j['lost'] as num?)?.toInt() ?? 0},
+      },
+    },
   };
 
   String encode(SaveData d) => jsonEncode(d.toJson());

@@ -8,8 +8,10 @@ import '../../app/theme.dart';
 import '../../audio/audio_service.dart';
 import '../../battle/battle_controller.dart';
 import '../../pedagogy/trials.dart';
+import '../activity/activity_config.dart';
 import '../battle/battle_screen.dart';
 import '../coliseum/coliseum_screen.dart';
+import '../forum/forum_screen.dart';
 import '../settings/settings_screen.dart';
 import '../tabula/tabula_screen.dart';
 import '../widgets/roman_widgets.dart';
@@ -32,7 +34,7 @@ const _buildings = [
   _Building(id: 'templum', name: 'Templum', activity: 'Gallicē → Latīnē · ventūrum', asset: 'assets/images/bld_templum.png', x: 0.50, y: 0.42, width: 0.20, future: true),
   _Building(id: 'amphitheatrum', name: 'Amphitheātrum', activity: 'Coniugātiōnēs', asset: 'assets/images/bld_amphitheatrum.png', x: 0.84, y: 0.56, width: 0.30),
   _Building(id: 'thermae', name: 'Thermae', activity: 'Latīnē → Gallicē · ventūrum', asset: 'assets/images/bld_thermae.png', x: 0.22, y: 0.74, width: 0.26, future: true),
-  _Building(id: 'forum', name: 'Forum', activity: 'Dēclīnātiōnēs · ventūrum', asset: 'assets/images/bld_forum.png', x: 0.68, y: 0.86, width: 0.26, future: true),
+  _Building(id: 'forum', name: 'Forum', activity: 'Dēclīnātiōnēs', asset: 'assets/images/bld_forum.png', x: 0.68, y: 0.86, width: 0.26),
 ];
 
 /// The Roman city: an interactive scene with four buildings.
@@ -51,8 +53,11 @@ class CityScreen extends HookConsumerWidget {
         showLatinSnack(context, '${b.name}: aedificium ventūrum. Nōndum aperītur.');
         return;
       }
-      pushScreen(context, const ColiseumScreen());
+      pushScreen(context, b.id == 'forum' ? const ForumScreen() : const ColiseumScreen());
     }
+
+    final interrupted = save.activeBattle == null ? null : Trials.maybe(save.activeBattle!.trialId);
+    final interruptedLabels = interrupted == null ? null : configFor(interrupted.activity).labels;
 
     return Scaffold(
       body: LayoutBuilder(builder: (context, c) {
@@ -92,16 +97,14 @@ class CityScreen extends HookConsumerWidget {
                   ],
                 ),
                 const Spacer(),
-                if (save.activeBattle != null && battle == null)
+                if (interrupted != null && interruptedLabels != null && battle == null)
                   RomanPanel(
                     color: G.purpleDark,
                     child: Wrap(crossAxisAlignment: WrapCrossAlignment.center, spacing: 12, runSpacing: 8, children: [
-                      Text('Certāmen interruptum: ${Trials.maybe(save.activeBattle!.trialId)?.name ?? ''}', style: G.body(16, color: G.goldLight, weight: 700)),
-                      RomanButton(label: 'Redī in arēnam', style: RomanButtonStyle.gold, dense: true, onPressed: () {
+                      Text('${interruptedLabels.interrupted}: ${interrupted.name}', style: G.body(16, color: G.goldLight, weight: 700)),
+                      RomanButton(label: interruptedLabels.resume, style: RomanButtonStyle.gold, dense: true, onPressed: () {
                         final ab = save.activeBattle!;
-                        final t = Trials.maybe(ab.trialId);
-                        if (t == null) return;
-                        pushScreen(context, BattleScreen(trial: t, mode: ab.mode, resume: ab));
+                        pushScreen(context, BattleScreen(trial: interrupted, mode: ab.mode, resume: ab));
                       }),
                       RomanButton(label: 'Omitte', style: RomanButtonStyle.neutral, dense: true, onPressed: () => ref.read(profileProvider.notifier).setActiveBattle(null)),
                     ]),
