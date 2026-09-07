@@ -44,15 +44,14 @@ class TrialSelectionScreen extends ConsumerWidget {
               child: ContentColumn(
                 maxWidth: 1480,
                 child: ListView(
-                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
+                  padding: const EdgeInsets.fromLTRB(16, 6, 16, 32),
                   children: [
-                    if (!wide) Padding(padding: const EdgeInsets.fromLTRB(0, 6, 0, 4), child: Align(alignment: Alignment.centerLeft, child: bubble)),
-                    for (final g in groups)
-                      _GroupSection(
-                        title: g,
-                        trials: trials.where((t) => t.group == g).toList(),
-                        highlightTrialId: highlightTrialId,
+                    if (!wide)
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 6, 0, 4),
+                        child: Align(alignment: Alignment.centerLeft, child: bubble),
                       ),
+                    for (final g in groups) _GroupSection(title: g, trials: trials.where((t) => t.group == g).toList(), highlightTrialId: highlightTrialId),
                   ],
                 ),
               ),
@@ -80,43 +79,45 @@ class _GroupSectionState extends State<_GroupSection> {
 
   @override
   Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SectionTitle(widget.title, open: _open, onTap: () => setState(() => _open = !_open)),
-          if (_open)
-            LayoutBuilder(
-              builder: (context, c) {
-                const gap = 18.0;
-                final cols = (c.maxWidth / 340).floor().clamp(1, 4);
-                final rows = <List<Trial>>[];
-                for (var i = 0; i < widget.trials.length; i += cols) {
-                  rows.add(widget.trials.sublist(i, (i + cols).clamp(0, widget.trials.length)));
-                }
-                return Column(
-                  children: [
-                    for (final row in rows)
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: gap),
-                        child: IntrinsicHeight(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              for (final (i, t) in row.indexed) ...[
-                                if (i > 0) const SizedBox(width: gap),
-                                Expanded(child: TrialCard(trial: t, highlighted: t.id == widget.highlightTrialId)),
-                              ],
-                              // Keep the last row's cards the same width as the others.
-                              for (var i = row.length; i < cols; i++) ...[const SizedBox(width: gap), const Expanded(child: SizedBox.shrink())],
-                            ],
-                          ),
-                        ),
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: [
+      SectionTitle(widget.title, open: _open, onTap: () => setState(() => _open = !_open)),
+      if (_open)
+        LayoutBuilder(
+          builder: (context, c) {
+            const gap = 18.0;
+            final cols = (c.maxWidth / 340).floor().clamp(1, 4);
+            final rows = <List<Trial>>[];
+            for (var i = 0; i < widget.trials.length; i += cols) {
+              rows.add(widget.trials.sublist(i, (i + cols).clamp(0, widget.trials.length)));
+            }
+            return Column(
+              children: [
+                for (final row in rows)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: gap),
+                    child: IntrinsicHeight(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          for (final (i, t) in row.indexed) ...[
+                            if (i > 0) const SizedBox(width: gap),
+                            Expanded(
+                              child: TrialCard(trial: t, highlighted: t.id == widget.highlightTrialId),
+                            ),
+                          ],
+                          // Keep the last row's cards the same width as the others.
+                          for (var i = row.length; i < cols; i++) ...[const SizedBox(width: gap), const Expanded(child: SizedBox.shrink())],
+                        ],
                       ),
-                  ],
-                );
-              },
-            ),
-        ],
-      );
+                    ),
+                  ),
+              ],
+            );
+          },
+        ),
+    ],
+  );
 }
 
 class TrialCard extends ConsumerWidget {
@@ -146,193 +147,210 @@ class TrialCard extends ConsumerWidget {
       TrialAccess.locked => const [Color(0xFF6A5A75), Color(0xFF4E4057)],
     };
 
+    // The frame is a solid gold box; the body is clipped inside it with a
+    // smaller radius, so the header band meets the frame without a seam.
+    final frame = highlighted
+        ? const [Color(0xFFFFF0B0), Color(0xFFF0C860)]
+        : locked
+        ? const [Color(0xFFE9D9B4), Color(0xFFCDB584)]
+        : const [Color(0xFFF3D27A), Color(0xFFCB9A34)];
     return AnimatedContainer(
       duration: const Duration(milliseconds: 160),
+      padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
-        color: locked ? const Color(0xFFEFE6D6) : G.marble,
+        gradient: LinearGradient(colors: frame, begin: Alignment.topCenter, end: Alignment.bottomCenter),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: highlighted ? G.goldLight : (locked ? G.goldPale : G.gold), width: 3),
         boxShadow: [
-          const BoxShadow(color: Color(0x40200A40), blurRadius: 14, offset: Offset(0, 6)),
+          const BoxShadow(color: Color(0x59200A40), blurRadius: 16, offset: Offset(0, 7)),
           if (highlighted) const BoxShadow(color: Color(0x99FFE08A), blurRadius: 22, spreadRadius: 2),
         ],
       ),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Header band with the opponent's portrait.
-          Container(
-            constraints: const BoxConstraints(minHeight: 118),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  right: 4,
-                  top: 6,
-                  bottom: 4,
-                  width: 104,
-                  child: Opacity(
-                    opacity: locked ? 0.45 : 1,
-                    child: ColorFiltered(
-                      colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
-                      child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.bottomRight),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(13),
+        child: ColoredBox(
+          color: locked ? const Color(0xFFEFE6D6) : G.marble,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Header band with the opponent's portrait.
+              Container(
+                constraints: const BoxConstraints(minHeight: 118),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      right: 4,
+                      top: 6,
+                      bottom: 4,
+                      width: 104,
+                      child: Opacity(
+                        opacity: locked ? 0.45 : 1,
+                        child: ColorFiltered(
+                          colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
+                          child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.bottomRight),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(14, 12, 112, 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        trial.name,
-                        style: G.display(16, color: Colors.white, letterSpacing: 1.0),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        trial.subtitle,
-                        style: G.body(14, color: const Color(0xFFF3C86A), weight: 700),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: badgeColor,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: const Color(0xCCFFFFFF), width: 2),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(badgeIcon, size: 15, color: Colors.white),
-                            const SizedBox(width: 5),
-                            Text(status.access.latin, style: G.body(13, color: Colors.white, weight: 800)),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Skills worked and estimated mastery, as bars.
-                  for (final sm in summaries) _MasteryBar(summary: sm, named: summaries.length > 1),
-                  if (trial.isMixta)
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 6),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: StatChip('Mixta: ${Progression.componentsFor(save, trial).length}/${trial.components.length} partēs', icon: Icons.tune, color: G.purple, textColor: Colors.white),
-                      ),
-                    ),
-                  if (!accessible) ...[
-                    const SizedBox(height: 2),
-                    Row(
-                      children: [
-                        Image.asset('assets/images/gem.png', width: 22, height: 22),
-                        const SizedBox(width: 6),
-                        Flexible(
-                          child: Text(
-                            '${trial.price}${status.affordable ? '' : '  (habēs ${save.gems})'}',
-                            overflow: TextOverflow.ellipsis,
-                            style: G.body(16, weight: 800, color: status.affordable ? G.ink : G.redDark),
-                          ),
-                        ),
-                      ],
-                    ),
-                    if (status.missing.isNotEmpty) ...[
-                      const SizedBox(height: 4),
-                      Row(
+                      padding: const EdgeInsets.fromLTRB(14, 12, 112, 12),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.key_off, size: 16, color: G.redDark),
-                          const SizedBox(width: 4),
-                          Expanded(
-                            child: Text('Prius: ${status.missing.map((m) => m.name).join(', ')}', style: G.body(13, color: G.redDark, weight: 700)),
+                          Text(
+                            trial.name,
+                            style: G.display(16, color: Colors.white, letterSpacing: 1.0),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          Text(
+                            trial.subtitle,
+                            style: G.body(14, color: const Color(0xFFF3C86A), weight: 700),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 8),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: badgeColor,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: const Color(0xCCFFFFFF), width: 2),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(badgeIcon, size: 15, color: Colors.white),
+                                const SizedBox(width: 5),
+                                Text(status.access.latin, style: G.body(13, color: Colors.white, weight: 800)),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ],
-                  const Spacer(),
-                  const SizedBox(height: 10),
-                  Row(
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      RomanButton(
-                        label: 'i',
-                        style: RomanButtonStyle.outline,
-                        dense: true,
-                        circular: true,
-                        onPressed: () => showTrialSheet(context, trial, canTrain: accessible),
-                      ),
-                      const SizedBox(width: 10),
-                      if (accessible)
-                        Expanded(
-                          child: RomanButton(
-                            label: config.labels.encounter,
-                            style: RomanButtonStyle.primary,
-                            dense: true,
-                            expand: true,
-                            icon: config.startIcon,
-                            onPressed: () {
-                              audio.play(Sfx.tactus);
-                              pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.certamen));
-                            },
+                      // Skills worked and estimated mastery, as bars.
+                      for (final sm in summaries) _MasteryBar(summary: sm, named: summaries.length > 1),
+                      if (trial.isMixta)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: StatChip('Mixta: ${Progression.componentsFor(save, trial).length}/${trial.components.length} partēs', icon: Icons.tune, color: G.purple, textColor: Colors.white),
                           ),
-                        )
-                      else if (status.access == TrialAccess.purchasable)
-                        Expanded(
-                          child: RomanButton(
-                            label: 'Eme · ${trial.price}',
-                            style: status.affordable ? RomanButtonStyle.gold : RomanButtonStyle.locked,
-                            dense: true,
-                            expand: true,
-                            leading: Image.asset('assets/images/gem.png', width: 22, height: 22),
-                            onPressed: status.affordable
-                                ? () async {
-                                    final ok = await confirmLatin(context, title: 'Emere ${trial.name}?', body: 'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.', yes: 'Eme');
-                                    if (!ok) return;
-                                    final done = await ref.read(profileProvider.notifier).purchase(trial);
-                                    if (!context.mounted) return;
-                                    if (done) {
-                                      audio.play(Sfx.emptio);
-                                      showLatinSnack(context, '${trial.name} aperta est!');
-                                    } else {
-                                      showLatinSnack(context, 'Emptiō nōn facta.');
-                                    }
-                                  }
-                                : null,
-                          ),
-                        )
-                      else
-                        const Expanded(
-                          child: RomanButton(label: 'Clausa', style: RomanButtonStyle.locked, dense: true, expand: true, icon: Icons.lock),
                         ),
+                      if (!accessible) ...[
+                        const SizedBox(height: 2),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/gem.png', width: 22, height: 22),
+                            const SizedBox(width: 6),
+                            Flexible(
+                              child: Text(
+                                '${trial.price}${status.affordable ? '' : '  (habēs ${save.gems})'}',
+                                overflow: TextOverflow.ellipsis,
+                                style: G.body(16, weight: 800, color: status.affordable ? G.ink : G.redDark),
+                              ),
+                            ),
+                          ],
+                        ),
+                        if (status.missing.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(Icons.key_off, size: 16, color: G.redDark),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Text('Prius: ${status.missing.map((m) => m.name).join(', ')}', style: G.body(13, color: G.redDark, weight: 700)),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ],
+                      const Spacer(),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          RomanButton(
+                            label: 'i',
+                            style: RomanButtonStyle.outline,
+                            dense: true,
+                            circular: true,
+                            onPressed: () => showTrialSheet(context, trial, canTrain: accessible),
+                          ),
+                          const SizedBox(width: 10),
+                          if (accessible)
+                            Expanded(
+                              child: RomanButton(
+                                label: config.labels.encounter,
+                                style: RomanButtonStyle.primary,
+                                dense: true,
+                                expand: true,
+                                icon: config.startIcon,
+                                onPressed: () {
+                                  audio.play(Sfx.tactus);
+                                  pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.certamen));
+                                },
+                              ),
+                            )
+                          else if (status.access == TrialAccess.purchasable)
+                            Expanded(
+                              child: RomanButton(
+                                label: 'Eme · ${trial.price}',
+                                style: status.affordable ? RomanButtonStyle.gold : RomanButtonStyle.locked,
+                                dense: true,
+                                expand: true,
+                                leading: Image.asset('assets/images/gem.png', width: 22, height: 22),
+                                onPressed: status.affordable
+                                    ? () async {
+                                        final ok = await confirmLatin(
+                                          context,
+                                          title: 'Emere ${trial.name}?',
+                                          body: 'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.',
+                                          yes: 'Eme',
+                                        );
+                                        if (!ok) return;
+                                        final done = await ref.read(profileProvider.notifier).purchase(trial);
+                                        if (!context.mounted) return;
+                                        if (done) {
+                                          audio.play(Sfx.emptio);
+                                          showLatinSnack(context, '${trial.name} aperta est!');
+                                        } else {
+                                          showLatinSnack(context, 'Emptiō nōn facta.');
+                                        }
+                                      }
+                                    : null,
+                              ),
+                            )
+                          else
+                            const Expanded(
+                              child: RomanButton(label: 'Clausa', style: RomanButtonStyle.locked, dense: true, expand: true, icon: Icons.lock),
+                            ),
+                        ],
+                      ),
+                      if (accessible && trial.isMixta) ...[
+                        const SizedBox(height: 8),
+                        RomanButton(label: 'Partēs mixtae', style: RomanButtonStyle.gold, dense: true, icon: Icons.tune, expand: true, onPressed: () => showMixtaConfig(context, ref, trial)),
+                      ],
                     ],
                   ),
-                  if (accessible && trial.isMixta) ...[
-                    const SizedBox(height: 8),
-                    RomanButton(label: 'Partēs mixtae', style: RomanButtonStyle.gold, dense: true, icon: Icons.tune, expand: true, onPressed: () => showMixtaConfig(context, ref, trial)),
-                  ],
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -354,7 +372,12 @@ class _MasteryBar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (named) Text(Skills.byId(sm.skillId).name, style: G.body(13, weight: 700, color: G.inkSoft), overflow: TextOverflow.ellipsis),
+          if (named)
+            Text(
+              Skills.byId(sm.skillId).name,
+              style: G.body(13, weight: 700, color: G.inkSoft),
+              overflow: TextOverflow.ellipsis,
+            ),
           Row(
             children: [
               Expanded(
@@ -363,13 +386,21 @@ class _MasteryBar extends StatelessWidget {
                   child: Stack(
                     children: [
                       Container(height: 13, color: const Color(0xFFC9C6C4)),
-                      FractionallySizedBox(widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0), child: Container(height: 13, color: color)),
+                      FractionallySizedBox(
+                        widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
+                        child: Container(height: 13, color: color),
+                      ),
                     ],
                   ),
                 ),
               ),
               const SizedBox(width: 10),
-              Text(label, style: G.body(14, weight: 800, color: sm.evaluated ? color : G.ink), maxLines: 1, overflow: TextOverflow.ellipsis),
+              Text(
+                label,
+                style: G.body(14, weight: 800, color: sm.evaluated ? color : G.ink),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           ),
         ],
