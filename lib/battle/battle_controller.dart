@@ -236,6 +236,8 @@ class BattleController extends Notifier<BattleState?> {
   BattleState _withNewQuestion(BattleState s) {
     final save = ref.read(profileProvider);
     final rng = _rng!;
+    final cfg = ref.read(masteryConfigProvider);
+    final now = DateTime.now();
     final q = _source.generate(
       trial: s.trial,
       componentIds: s.componentIds,
@@ -243,8 +245,8 @@ class BattleController extends Notifier<BattleState?> {
       id: '${s.seed}-${s.questionIndex}',
       recentLemmas: s.recentLemmas,
       recentSurfaces: s.recentSurfaces,
-      skills: save.skills,
-      cfg: ref.read(masteryConfigProvider),
+      skills: {for (final e in save.skills.entries) e.key: e.value.asOf(now, cfg)},
+      cfg: cfg,
       exposure: save.exposure,
       recall: save.errata.recall(s.seed),
     );

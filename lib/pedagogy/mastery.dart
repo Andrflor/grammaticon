@@ -50,6 +50,7 @@ class MasteryConfig {
     this.reviewDaysDiscens = 2,
     this.reviewDaysFamiliaris = 5,
     this.reviewDaysPerita = 14,
+    this.decayPerDay = 0.02,
   });
 
   final double alpha;
@@ -63,6 +64,10 @@ class MasteryConfig {
   final int reviewDaysDiscens;
   final int reviewDaysFamiliaris;
   final int reviewDaysPerita;
+
+  /// Loss of estimate per day of absence beyond the review delay of the
+  /// tier: the bar recedes, and the tier with it once a threshold is crossed.
+  final double decayPerDay;
 }
 
 class Observation {
@@ -135,9 +140,46 @@ class SkillRecord {
 
   static String dayKey(DateTime d) => '${d.year}${d.month.toString().padLeft(2, '0')}${d.day.toString().padLeft(2, '0')}';
 
+  /// Days of absence allowed before the estimate starts to recede, by tier.
+  int? _graceDays(MasteryConfig cfg) => switch (_tierOf(estimate, cfg, requireRecent: true)) {
+        MasteryTier.nova => null,
+        MasteryTier.discens => cfg.reviewDaysDiscens,
+        MasteryTier.familiaris => cfg.reviewDaysFamiliaris,
+        MasteryTier.perita => cfg.reviewDaysPerita,
+      };
+
+  /// The record as it stands at [now]: beyond the review delay of its tier,
+  /// the estimate recedes by [MasteryConfig.decayPerDay] for each day of
+  /// absence, down to zero. Nothing is stored; the decay is derived from
+  /// [lastPractice] and becomes the starting point of the next observation.
+  SkillRecord asOf(DateTime now, MasteryConfig cfg) {
+    final est = estimate;
+    final last = lastPractice;
+    final grace = _graceDays(cfg);
+    if (est == null || last == null || grace == null) return this;
+    final overdue = now.difference(last).inDays - grace;
+    if (overdue <= 0) return this;
+    final decayed = (est - cfg.decayPerDay * overdue).clamp(0.0, 1.0);
+    return SkillRecord(
+      autonomousCorrect: autonomousCorrect,
+      autonomousWrong: autonomousWrong,
+      aidedCorrect: aidedCorrect,
+      aidedWrong: aidedWrong,
+      correctedCorrect: correctedCorrect,
+      estimate: decayed,
+      highWater: highWater,
+      recent: recent,
+      lemmas: lemmas,
+      sessionDays: sessionDays,
+      lastPractice: lastPractice,
+    );
+  }
+
   SkillRecord apply(Observation o, MasteryConfig cfg) {
     var ac = autonomousCorrect, aw = autonomousWrong, aidC = aidedCorrect, aidW = aidedWrong, corC = correctedCorrect;
-    var est = estimate;
+    // A long absence is not forgiven by the next answer: it starts from the
+    // receded estimate.
+    var est = asOf(o.at, cfg).estimate;
     var hw = highWater;
     switch (o.quality) {
       case AnswerQuality.autonoma:

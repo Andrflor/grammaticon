@@ -43,7 +43,7 @@ class MasterySummary {
     now ??= DateTime.now();
     final leaves = Skills.leaves(skillId);
     if (leaves.length == 1 && leaves.first == skillId) {
-      final r = save.skills[skillId] ?? const SkillRecord();
+      final r = (save.skills[skillId] ?? const SkillRecord()).asOf(now, cfg);
       return MasterySummary(
         skillId: skillId,
         tier: r.tier(cfg),
@@ -68,7 +68,7 @@ class MasterySummary {
     var due = false;
     final days = <String>{};
     for (final id in leaves) {
-      final r = save.skills[id];
+      final r = save.skills[id]?.asOf(now, cfg);
       if (r == null || r.autonomousCount == 0) continue;
       evaluated++;
       n += r.autonomousCount;

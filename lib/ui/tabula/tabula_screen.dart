@@ -277,7 +277,6 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
         if (!leaf && sum.totalLeaves > 1) Text('${sum.evaluatedLeaves}/${sum.totalLeaves}', style: G.body(root ? 16 : 14, color: G.inkSoft, weight: 700)),
         if (sum.evaluated) Text(sum.estimateText, style: G.body(root ? 19 : 17, weight: 800, color: tierColor(sum.tier))),
         MasteryBadge(sum.tier, dense: !root || compact),
-        if (sum.reviewDue) const Icon(Icons.history, color: G.red, size: 20),
       ],
     ];
 
@@ -379,7 +378,6 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
                 _row('Diēs exercitātiōnis', '${sum.sessions}'),
                 _row('Prīma respōnsiō recēns rēcta', sum.recentFirstTry == null ? '—' : '${(sum.recentFirstTry! * 100).round()} %'),
                 _row('Ultima exercitātiō', date(sum.lastPractice)),
-                _row('Repetītiō dēbita', sum.reviewDue ? 'Ita' : 'Nōn'),
                 _row('Fīdūcia aestimātiōnis', sum.reliability.latin),
                 if (sum.reliability == Reliability.incerta)
                   Text(

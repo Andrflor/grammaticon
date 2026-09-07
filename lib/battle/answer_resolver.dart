@@ -49,7 +49,7 @@ class AnswerResolver {
 
   Resolution resolve({required SaveData save, required Question q, required String chosenValue, required AnswerQuality quality, required BattleMode mode, required DateTime now, int battleSeed = 0}) {
     final correct = q.isCorrect(chosenValue);
-    final primary = save.skills[q.primarySkill] ?? const SkillRecord();
+    final primary = (save.skills[q.primarySkill] ?? const SkillRecord()).asOf(now, mastery);
     final tierBefore = primary.rewardTier(mastery);
     final dayKey = SkillRecord.dayKey(now);
     final satKey = '${q.primarySkill}|${q.lemmaId}|$dayKey';
