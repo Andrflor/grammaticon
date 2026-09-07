@@ -13,6 +13,7 @@ import '../linguistics/engine/conjugator.dart';
 import '../linguistics/model/analysis.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/verb.dart';
+import 'errata.dart';
 import 'explanations.dart';
 import 'mastery.dart';
 import 'question.dart';
@@ -245,6 +246,7 @@ class QuestionGenerator implements QuestionSource {
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
+    Recall recall = Recall.none,
   }) {
     final entries = pool(trial, componentIds);
     if (entries.isEmpty) return null;
@@ -302,7 +304,10 @@ class QuestionGenerator implements QuestionSource {
     // more, and so do forms whose skill is unknown, weak or due for review.
     final seenLemmas = primaryRecord?.lemmas ?? const <String>{};
     final now = DateTime.now();
-    final formWeights = [for (final e in fresh) (seenLemmas.contains(e.verb.id) ? 1.0 : 2.0) * selectionWeight(skills[_creditedSkill(trial, e)], cfg, now)];
+    // Forms and cells missed in earlier fights come back more often.
+    final formWeights = [
+      for (final e in fresh) (seenLemmas.contains(e.verb.id) ? 1.0 : 2.0) * selectionWeight(skills[_creditedSkill(trial, e)], cfg, now) * recall.boost(_formKey(e), _cellKey(e)),
+    ];
     PoolEntry? chosen;
     var chosenAmbiguous = true;
     for (var attempt = 0; attempt < 12; attempt++) {
@@ -363,8 +368,12 @@ class QuestionGenerator implements QuestionSource {
       skillIds: skillIds,
       componentId: e.componentId,
       ambiguous: ambiguous,
+      errata: ErrataNote(formKey: _formKey(e), cellKey: _cellKey(e), analysis: analysisLabel(e.form.analysis)),
     );
   }
+
+  static String _formKey(PoolEntry e) => verbFormKey(e.verb.id, e.form.analysis.selector);
+  static String _cellKey(PoolEntry e) => verbCellKey(e.form.analysis.selector);
 
   /// Finest skill whose record steers the selection of [e]: in Mixta trials
   /// the tense/voice skill of the form (each component has its own history)

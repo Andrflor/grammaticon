@@ -20,6 +20,7 @@ class Resolution {
     required this.tiersAfter,
     required this.quality,
     required this.exposureAfter,
+    required this.errataAfter,
   });
 
   final bool correct;
@@ -35,6 +36,9 @@ class Resolution {
   /// Vocabulary exposure after this answer (unchanged for isolated forms).
   final ExposureLedger exposureAfter;
 
+  /// Error ledger after this answer: a miss recorded, or a fix counted.
+  final ErrorLedger errataAfter;
+
   int get delta => gemsAfter - gemsBefore;
 }
 
@@ -43,7 +47,7 @@ class AnswerResolver {
   final Economy economy;
   final MasteryConfig mastery;
 
-  Resolution resolve({required SaveData save, required Question q, required String chosenValue, required AnswerQuality quality, required BattleMode mode, required DateTime now}) {
+  Resolution resolve({required SaveData save, required Question q, required String chosenValue, required AnswerQuality quality, required BattleMode mode, required DateTime now, int battleSeed = 0}) {
     final correct = q.isCorrect(chosenValue);
     final primary = save.skills[q.primarySkill] ?? const SkillRecord();
     final tierBefore = primary.rewardTier(mastery);
@@ -69,6 +73,17 @@ class AnswerResolver {
     daily.removeWhere((k, _) => !k.endsWith('|$dayKey'));
     // Words met in a passage are exposure, never mastery: recorded apart.
     final exposure = q.exposure == null ? save.exposure : save.exposure.record(q.exposure!, autonomousCorrect: correct && quality == AnswerQuality.autonoma);
+    // The missed form itself is remembered, with what it was taken for; an
+    // autonomous correct answer on a missed form counts towards retiring it.
+    var errata = save.errata;
+    if (q.errata != null) {
+      if (!correct) {
+        final chosenLabel = q.choices.where((c) => c.value == chosenValue).map((c) => c.label).firstOrNull ?? chosenValue;
+        errata = errata.miss(q.errata!, lemmaId: q.lemmaId, surface: q.surface, chosenLabel: chosenLabel, trialId: q.trialId, now: now, battleSeed: battleSeed);
+      } else if (quality == AnswerQuality.autonoma) {
+        errata = errata.fix(q.errata!.formKey);
+      }
+    }
 
     return Resolution(
       correct: correct,
@@ -81,6 +96,7 @@ class AnswerResolver {
       tiersAfter: {for (final s in q.skillIds) s: skills[s]!.tier(mastery)},
       quality: quality,
       exposureAfter: exposure,
+      errataAfter: errata,
     );
   }
 }

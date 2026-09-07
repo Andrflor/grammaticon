@@ -114,6 +114,7 @@ class ReadingQuestionSource implements QuestionSource {
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
+    Recall recall = Recall.none,
   }) {
     final all = pool(trial, componentIds);
     if (all.isEmpty) return null;

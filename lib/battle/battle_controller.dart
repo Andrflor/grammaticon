@@ -246,6 +246,7 @@ class BattleController extends Notifier<BattleState?> {
       skills: save.skills,
       cfg: ref.read(masteryConfigProvider),
       exposure: save.exposure,
+      recall: save.errata.recall(s.seed),
     );
     return s.copyWith(question: q, helpUsed: false, explanationOpen: false);
   }
@@ -262,7 +263,7 @@ class BattleController extends Notifier<BattleState?> {
     final quality = s.helpUsed ? AnswerQuality.adiuta : AnswerQuality.autonoma;
 
     final save = ref.read(profileProvider);
-    final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, mode: s.mode, now: DateTime.now());
+    final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, mode: s.mode, now: DateTime.now(), battleSeed: s.seed);
     final explanation = _source.explain(q: q, chosenValue: chosen, correct: res.correct);
 
     final hearts = res.correct || s.isTraining ? s.hearts : s.hearts - 1;

@@ -727,6 +727,7 @@ class _ResultOverlay extends ConsumerWidget {
             _line('Respōnsa rēcta', '${state.correctCount} / ${state.answered}'),
             if (!state.isTraining) _line(labels.gemsLine, '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
             if (!state.isTraining && won) _line('Praemium victōriae', '+${state.victoryBonus}'),
+            if (save.errata.forTrial(state.trial.id).isNotEmpty) _line('Repetenda (errāta aperta)', '${save.errata.forTrial(state.trial.id).length}'),
             if (!state.isTraining && !won) _line(labels.penaltyLine, '−${state.defeatPenalty}'),
             if (!state.isTraining && !won)
               Padding(

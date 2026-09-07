@@ -3,6 +3,7 @@ library;
 
 import 'dart:convert';
 
+import '../pedagogy/errata.dart';
 import '../pedagogy/exposure.dart';
 import '../pedagogy/mastery.dart';
 
@@ -149,6 +150,7 @@ class SaveData {
     this.introSeen = const {},
     this.activityStats = const {},
     this.exposure = const ExposureLedger(),
+    this.errata = const ErrorLedger(),
     this.createdAt,
     this.updatedAt,
   });
@@ -182,6 +184,9 @@ class SaveData {
 
   /// Vocabulary met in the Theatrum (exposure, not mastery).
   final ExposureLedger exposure;
+
+  /// Forms missed and not yet corrected (recall and error analysis).
+  final ErrorLedger errata;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
@@ -200,6 +205,7 @@ class SaveData {
     Set<String>? introSeen,
     Map<String, ActivityStats>? activityStats,
     ExposureLedger? exposure,
+    ErrorLedger? errata,
     DateTime? createdAt,
     DateTime? updatedAt,
   }) => SaveData(
@@ -217,6 +223,7 @@ class SaveData {
     introSeen: introSeen ?? this.introSeen,
     activityStats: activityStats ?? this.activityStats,
     exposure: exposure ?? this.exposure,
+    errata: errata ?? this.errata,
     createdAt: createdAt ?? this.createdAt,
     updatedAt: updatedAt ?? this.updatedAt,
   );
@@ -236,6 +243,7 @@ class SaveData {
     'introSeen': introSeen.toList()..sort(),
     'activities': {for (final e in activityStats.entries) e.key: e.value.toJson()},
     'expo': exposure.toJson(),
+    'errata': errata.toJson(),
     if (createdAt != null) 'created': createdAt!.toIso8601String(),
     if (updatedAt != null) 'updated': updatedAt!.toIso8601String(),
   };
@@ -255,6 +263,7 @@ class SaveData {
     introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
     activityStats: {for (final e in ((j['activities'] as Map?) ?? const {}).entries) e.key as String: ActivityStats.fromJson((e.value as Map).cast<String, Object?>())},
     exposure: j['expo'] == null ? const ExposureLedger() : ExposureLedger.fromJson((j['expo'] as Map).cast<String, Object?>()),
+    errata: j['errata'] == null ? const ErrorLedger() : ErrorLedger.fromJson((j['errata'] as Map).cast<String, Object?>()),
     createdAt: j['created'] == null ? null : DateTime.tryParse(j['created'] as String),
     updatedAt: j['updated'] == null ? null : DateTime.tryParse(j['updated'] as String),
   );

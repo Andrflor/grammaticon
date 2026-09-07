@@ -5,6 +5,7 @@ import '../../app/app.dart';
 import '../../app/providers.dart';
 import '../../audio/audio_service.dart';
 import '../../app/theme.dart';
+import '../../pedagogy/errata.dart';
 import '../../pedagogy/mastery.dart';
 import '../../pedagogy/mastery_view.dart';
 import '../../pedagogy/progression.dart';
@@ -54,6 +55,7 @@ class TabulaScreen extends ConsumerWidget {
                         ],
                       ),
                     ),
+                    const _ErrataPanel(),
                     const _ExposurePanel(),
                     for (final root in Skills.roots()) _SkillNode(skill: root, depth: 0),
                   ],
@@ -62,6 +64,93 @@ class TabulaScreen extends ConsumerWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Error analysis: the forms actually missed, grouped by paradigm cell with
+/// the usual confusion. These come back more often in the next fights until
+/// answered correctly twice.
+class _ErrataPanel extends ConsumerWidget {
+  const _ErrataPanel();
+
+  static const int _maxGroups = 10;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final led = ref.watch(profileProvider.select((s) => s.errata));
+    final groups = led.groups();
+    final light = G.body(16, color: Colors.white);
+    final strong = G.body(16, color: Colors.white, weight: 800);
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: RomanPanel(
+        color: G.purpleDeep,
+        padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(child: Text('Errāta', style: G.display(18, color: G.goldLight, letterSpacing: 1.0))),
+                StatChip('${led.openCount} aperta', icon: Icons.error_outline, color: led.isEmpty ? G.green : G.red, textColor: Colors.white),
+              ],
+            ),
+            const SizedBox(height: 4),
+            if (led.isEmpty)
+              Text(led.retired == 0 ? 'Nūllum errātum adhūc.' : 'Omnia errāta corrēcta sunt (${led.retired}).', style: light)
+            else ...[
+              Text.rich(
+                TextSpan(children: [
+                  TextSpan(text: 'Fōrmae errātae: ${led.openCount}', style: strong),
+                  TextSpan(text: '  ·  Corrēcta: ${led.retired}', style: light),
+                ]),
+              ),
+              const SizedBox(height: 8),
+              for (final g in groups.take(_maxGroups)) _ErrataRow(g),
+              if (groups.length > _maxGroups) Text('… et ${groups.length - _maxGroups} aliae cellae.', style: G.body(13, color: G.goldLight)),
+              const SizedBox(height: 6),
+              Text(
+                'Fōrmae errātae in certāminibus proximīs saepius redeunt (nōn in eōdem), dōnec bis rēctē respōnsae sint.',
+                style: G.body(14, color: G.goldLight, style: FontStyle.italic),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// One cell of the error analysis: analysis, missed forms, usual confusion.
+class _ErrataRow extends StatelessWidget {
+  const _ErrataRow(this.g);
+  final ErrataGroup g;
+
+  @override
+  Widget build(BuildContext context) {
+    final forms = g.surfaces.take(4).join(', ') + (g.surfaces.length > 4 ? '…' : '');
+    final conf = g.topConfusion;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(g.activity == 'v' ? Icons.stadium : Icons.account_balance, size: 16, color: G.goldLight),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text.rich(
+              TextSpan(children: [
+                TextSpan(text: forms, style: G.body(15, color: Colors.white, weight: 800)),
+                TextSpan(text: '  ·  ${g.analysis}', style: G.body(14, color: Colors.white)),
+                if (conf != null) TextSpan(text: '  ·  prō: $conf', style: G.body(14, color: G.goldLight, style: FontStyle.italic)),
+              ]),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text('×${g.misses}', style: G.body(14, color: G.goldLight, weight: 800)),
+        ],
       ),
     );
   }

@@ -77,7 +77,7 @@ class ProfileController extends Notifier<SaveData> {
   Future<void> applyResolution(Resolution r, ActiveBattle? snapshot) {
     if (r.transaction.id <= state.lastTransactionId) return Future.value(); // already applied
     return _commit(
-      state.copyWith(gems: r.gemsAfter, skills: r.skillsAfter, lemmaDaily: r.lemmaDailyAfter, lastTransactionId: r.transaction.id, activeBattle: snapshot, clearActiveBattle: snapshot == null, exposure: r.exposureAfter),
+      state.copyWith(gems: r.gemsAfter, skills: r.skillsAfter, lemmaDaily: r.lemmaDailyAfter, lastTransactionId: r.transaction.id, activeBattle: snapshot, clearActiveBattle: snapshot == null, exposure: r.exposureAfter, errata: r.errataAfter),
     );
   }
 

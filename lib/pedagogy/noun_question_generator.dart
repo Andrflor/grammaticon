@@ -16,6 +16,7 @@ import '../linguistics/engine/noun_analyzer.dart';
 import '../linguistics/help/declension_help.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/noun.dart';
+import 'errata.dart';
 import 'mastery.dart';
 import 'noun_trials.dart';
 import 'question.dart';
@@ -149,6 +150,7 @@ class NounQuestionGenerator implements QuestionSource {
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
+    Recall recall = Recall.none,
   }) {
     final entries = pool(trial, componentIds);
     if (entries.isEmpty) return null;
@@ -181,7 +183,10 @@ class NounQuestionGenerator implements QuestionSource {
     // unknown, weak or due for review.
     final seen = _seenLemmas(trial.primarySkill, skills);
     final now = DateTime.now();
-    final weights = [for (final e in fresh) (seen.contains(e.noun.id) ? 1.0 : 2.0) * selectionWeight(skills[e.form.analysis.skillId], cfg, now)];
+    // Forms and cells missed in earlier fights come back more often.
+    final weights = [
+      for (final e in fresh) (seen.contains(e.noun.id) ? 1.0 : 2.0) * selectionWeight(skills[e.form.analysis.skillId], cfg, now) * recall.boost(_formKey(e), _cellKey(e)),
+    ];
     NounPoolEntry? chosen;
     Set<String>? chosenCorrect;
     NounPoolEntry? fallback;
@@ -226,8 +231,12 @@ class NounQuestionGenerator implements QuestionSource {
       componentId: e.componentId,
       ambiguous: ambiguous,
       context: _context(trial, dim, e),
+      errata: ErrataNote(formKey: _formKey(e), cellKey: _cellKey(e), analysis: e.form.analysis.describe(withDeclension: true)),
     );
   }
+
+  static String _formKey(NounPoolEntry e) => nounFormKey(e.noun.id, e.form.analysis.selector);
+  static String _cellKey(NounPoolEntry e) => nounCellKey(e.form.analysis.declension.index + 1, e.form.analysis.selector);
 
   /// Every value of [dim] among all analyses of the surface (all lemmas).
   Set<String> _correctValues(Dimension dim, NounPoolEntry e) {

@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:latin_game/pedagogy/errata.dart';
 import 'package:latin_game/pedagogy/mastery.dart';
 import 'package:latin_game/persistence/save_data.dart';
 import 'package:latin_game/persistence/save_repository.dart';
@@ -22,6 +23,15 @@ void main() {
       activeBattle: const ActiveBattle(trialId: 'ind-praes-act', mode: BattleMode.certamen, hearts: 2, enemyHp: 5, answered: 6, gemsDelta: 20, seed: 99, questionIndex: 6, componentIds: [], correctCount: 5),
       lemmaDaily: {'v.ind.praes.act|amo|20260102': 2},
       introSeen: {'ind-praes-act'},
+      errata: const ErrorLedger().miss(
+        const ErrataNote(formKey: 'v|amo|ind.praes.act.2.pl', cellKey: 'v|ind.praes.act.2.pl', analysis: 'secunda plūrālis · indicātīvus praesēns · āctīvum'),
+        lemmaId: 'amo',
+        surface: 'amātis',
+        chosenLabel: 'Secunda singulāris',
+        trialId: 'ind-praes-act',
+        now: DateTime(2026, 1, 3),
+        battleSeed: 99,
+      ),
     );
     await repo.save(d);
     final back = await repo.load();
@@ -38,6 +48,8 @@ void main() {
     expect(back.activeBattle!.seed, 99);
     expect(back.lemmaDaily['v.ind.praes.act|amo|20260102'], 2);
     expect(back.introSeen, {'ind-praes-act'});
+    expect(back.errata.items['v|amo|ind.praes.act.2.pl']!.confusions, {'Secunda singulāris': 1});
+    expect(back.errata.items['v|amo|ind.praes.act.2.pl']!.lastBattle, 99);
     expect(back.schemaVersion, kSchemaVersion);
   });
 

@@ -8,10 +8,12 @@ library;
 
 import 'dart:math';
 
+import 'errata.dart';
 import 'exposure.dart';
 import 'mastery.dart';
 import 'trials.dart';
 
+export 'errata.dart' show ErrataNote, ErrorLedger, Recall;
 export 'exposure.dart' show ExposureLedger, ExposureNote;
 
 class Choice {
@@ -44,6 +46,7 @@ class Question {
     this.ambiguous = false,
     this.context = const [],
     this.exposure,
+    this.errata,
   });
 
   final String id;
@@ -71,6 +74,10 @@ class Question {
 
   /// Vocabulary met by this question (Theatrum); null for isolated forms.
   final ExposureNote? exposure;
+
+  /// Keys under which a miss on this question is remembered (isolated forms);
+  /// null when the question is not about one form (Theatrum).
+  final ErrataNote? errata;
 
   String get primarySkill => skillIds.first;
   bool isCorrect(String value) => correctValues.contains(value);
@@ -106,6 +113,7 @@ abstract class QuestionSource {
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
+    Recall recall = Recall.none,
   });
 
   Explanation explain({required Question q, required String chosenValue, required bool correct});
@@ -132,8 +140,9 @@ class QuestionSources implements QuestionSource {
     Map<String, SkillRecord> skills = const {},
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
+    Recall recall = Recall.none,
   }) =>
-      forTrial(trial).generate(trial: trial, componentIds: componentIds, rng: rng, id: id, recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, skills: skills, cfg: cfg, exposure: exposure);
+      forTrial(trial).generate(trial: trial, componentIds: componentIds, rng: rng, id: id, recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, skills: skills, cfg: cfg, exposure: exposure, recall: recall);
 
   @override
   Explanation explain({required Question q, required String chosenValue, required bool correct}) =>
