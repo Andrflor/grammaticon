@@ -33,7 +33,6 @@ class AnswerOutcome {
 class BattleState {
   const BattleState({
     required this.trial,
-    required this.mode,
     required this.componentIds,
     required this.phase,
     required this.seed,
@@ -59,7 +58,6 @@ class BattleState {
   });
 
   final Trial trial;
-  final BattleMode mode;
   final List<String> componentIds;
   final BattlePhase phase;
   final int seed;
@@ -89,7 +87,6 @@ class BattleState {
 
   bool get isOver => phase == BattlePhase.victory || phase == BattlePhase.defeat;
   bool get acceptsInput => phase == BattlePhase.question && !paused;
-  bool get isTraining => mode == BattleMode.exercitatio;
 
   BattleState copyWith({
     BattlePhase? phase,
@@ -112,7 +109,6 @@ class BattleState {
     int? outcomeCount,
   }) => BattleState(
     trial: trial,
-    mode: mode,
     componentIds: componentIds,
     phase: phase ?? this.phase,
     seed: seed,
@@ -139,7 +135,6 @@ class BattleState {
 
   ActiveBattle snapshot() => ActiveBattle(
     trialId: trial.id,
-    mode: mode,
     hearts: hearts,
     enemyHp: enemyHp,
     answered: answered,
@@ -174,7 +169,7 @@ class BattleController extends Notifier<BattleState?> {
 
   // ----- lifecycle --------------------------------------------------------------
 
-  void start(Trial trial, BattleMode mode, {ActiveBattle? resume}) {
+  void start(Trial trial, {ActiveBattle? resume}) {
     _timer?.cancel();
     final save = ref.read(profileProvider);
     final componentIds = resume?.componentIds ?? Progression.componentsFor(save, trial);
@@ -183,8 +178,7 @@ class BattleController extends Notifier<BattleState?> {
     final showIntro = resume == null && !save.introSeen.contains(trial.id);
     var s = BattleState(
       trial: trial,
-      mode: mode,
-      componentIds: componentIds,
+        componentIds: componentIds,
       phase: showIntro ? BattlePhase.intro : BattlePhase.question,
       seed: seed,
       hearts: resume?.hearts ?? trial.hearts,
@@ -265,10 +259,10 @@ class BattleController extends Notifier<BattleState?> {
     final quality = s.helpUsed ? AnswerQuality.adiuta : AnswerQuality.autonoma;
 
     final save = ref.read(profileProvider);
-    final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, mode: s.mode, now: DateTime.now(), battleSeed: s.seed);
+    final res = ref.read(answerResolverProvider).resolve(save: save, q: q, chosenValue: chosen, quality: quality, now: DateTime.now(), battleSeed: s.seed);
     final explanation = _source.explain(q: q, chosenValue: chosen, correct: res.correct);
 
-    final hearts = res.correct || s.isTraining ? s.hearts : s.hearts - 1;
+    final hearts = res.correct ? s.hearts : s.hearts - 1;
     final enemyHp = res.correct ? s.enemyHp - 1 : s.enemyHp;
     final recentL = [...s.recentLemmas, q.lemmaId];
     while (recentL.length > 3) {
@@ -291,10 +285,10 @@ class BattleController extends Notifier<BattleState?> {
       outcomeCount: s.outcomeCount + 1,
       last: AnswerOutcome(sequence: s.outcomeCount + 1, question: q, chosenValue: chosen, correct: res.correct, resolution: res, explanation: explanation),
     );
-    final over = enemyHp <= 0 || (hearts <= 0 && !s.isTraining);
+    final over = enemyHp <= 0 || hearts <= 0;
     if (over && enemyHp <= 0) {
       next = next.copyWith(victoryBonus: _computeVictoryBonus(save, s));
-    } else if (over && !s.isTraining) {
+    } else if (over) {
       final eco = ref.read(answerResolverProvider).economy;
       next = next.copyWith(
         defeatPenalty: eco.defeatPenalty(balance: res.gemsAfter, fightDelta: next.gemsDelta),
@@ -308,7 +302,6 @@ class BattleController extends Notifier<BattleState?> {
   }
 
   int _computeVictoryBonus(SaveData save, BattleState s) {
-    if (s.isTraining) return 0;
     final eco = ref.read(answerResolverProvider).economy;
     final cheapest = Progression.cheapestPurchasable(save);
     // The trial's skill may be an aggregate (a whole declension): use the summary.
@@ -347,7 +340,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s.phase != BattlePhase.correct && s.phase != BattlePhase.wrong) return;
     if (s.explanationOpen) return;
     _timer?.cancel();
-    final over = s.enemyHp <= 0 || (s.hearts <= 0 && !s.isTraining);
+    final over = s.enemyHp <= 0 || s.hearts <= 0;
     _advance(over ? (s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.defeat) : BattlePhase.question);
   }
 
@@ -372,7 +365,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null) return;
     state = s.copyWith(explanationOpen: false);
     if (s.phase == BattlePhase.correct || s.phase == BattlePhase.wrong) {
-      final over = s.enemyHp <= 0 || (s.hearts <= 0 && !s.isTraining);
+      final over = s.enemyHp <= 0 || s.hearts <= 0;
       _schedule(over ? (s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.defeat) : BattlePhase.question);
     }
   }
@@ -389,7 +382,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null || !s.paused) return;
     state = s.copyWith(paused: false);
     if (s.phase == BattlePhase.correct || s.phase == BattlePhase.wrong) {
-      final over = s.enemyHp <= 0 || (s.hearts <= 0 && !s.isTraining);
+      final over = s.enemyHp <= 0 || s.hearts <= 0;
       _schedule(over ? (s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.defeat) : BattlePhase.question);
     }
   }
@@ -399,7 +392,6 @@ class BattleController extends Notifier<BattleState?> {
     final s = state;
     if (s == null) return;
     final trial = s.trial;
-    final mode = s.mode;
     _timer?.cancel();
     if (s.isOver) {
       final won = s.phase == BattlePhase.victory;
@@ -407,6 +399,6 @@ class BattleController extends Notifier<BattleState?> {
     } else {
       _profile.setActiveBattle(null);
     }
-    start(trial, mode);
+    start(trial);
   }
 }

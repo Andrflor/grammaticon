@@ -51,6 +51,7 @@ class MasteryConfig {
     this.reviewDaysFamiliaris = 5,
     this.reviewDaysPerita = 14,
     this.decayPerDay = 0.02,
+    this.graceDoublings = 3,
   });
 
   final double alpha;
@@ -68,6 +69,10 @@ class MasteryConfig {
   /// Loss of estimate per day of absence beyond the review delay of the
   /// tier: the bar recedes, and the tier with it once a threshold is crossed.
   final double decayPerDay;
+
+  /// The review delay doubles with each further day of practice, this many
+  /// times at most: a skill refreshed several times holds for months.
+  final int graceDoublings;
 }
 
 class Observation {
@@ -140,13 +145,20 @@ class SkillRecord {
 
   static String dayKey(DateTime d) => '${d.year}${d.month.toString().padLeft(2, '0')}${d.day.toString().padLeft(2, '0')}';
 
-  /// Days of absence allowed before the estimate starts to recede, by tier.
-  int? _graceDays(MasteryConfig cfg) => switch (_tierOf(estimate, cfg, requireRecent: true)) {
-        MasteryTier.nova => null,
-        MasteryTier.discens => cfg.reviewDaysDiscens,
-        MasteryTier.familiaris => cfg.reviewDaysFamiliaris,
-        MasteryTier.perita => cfg.reviewDaysPerita,
-      };
+  /// Days of absence allowed before the estimate starts to recede: the review
+  /// delay of the tier, doubled for each further distinct day of practice
+  /// (spaced repetition: what has been refreshed often holds longer).
+  int? graceDays(MasteryConfig cfg) {
+    final base = switch (_tierOf(estimate, cfg, requireRecent: true)) {
+      MasteryTier.nova => null,
+      MasteryTier.discens => cfg.reviewDaysDiscens,
+      MasteryTier.familiaris => cfg.reviewDaysFamiliaris,
+      MasteryTier.perita => cfg.reviewDaysPerita,
+    };
+    if (base == null) return null;
+    final doublings = (sessionDays.length - 1).clamp(0, cfg.graceDoublings);
+    return base << doublings;
+  }
 
   /// The record as it stands at [now]: beyond the review delay of its tier,
   /// the estimate recedes by [MasteryConfig.decayPerDay] for each day of
@@ -155,7 +167,7 @@ class SkillRecord {
   SkillRecord asOf(DateTime now, MasteryConfig cfg) {
     final est = estimate;
     final last = lastPractice;
-    final grace = _graceDays(cfg);
+    final grace = graceDays(cfg);
     if (est == null || last == null || grace == null) return this;
     final overdue = now.difference(last).inDays - grace;
     if (overdue <= 0) return this;

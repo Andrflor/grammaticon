@@ -11,7 +11,6 @@ import '../../pedagogy/mastery_view.dart';
 import '../../pedagogy/progression.dart';
 import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
-import '../../persistence/save_data.dart';
 import '../activity/activity_config.dart';
 import '../battle/battle_screen.dart';
 import '../widgets/roman_widgets.dart';
@@ -384,7 +383,7 @@ class TrialCard extends ConsumerWidget {
                               dense: true,
                               circular: true,
                               sound: Sfx.folium,
-                              onPressed: () => showTrialSheet(context, trial, canTrain: accessible),
+                              onPressed: () => showTrialSheet(context, trial),
                             ),
                             const SizedBox(width: 10),
                             if (accessible)
@@ -397,7 +396,7 @@ class TrialCard extends ConsumerWidget {
                                   icon: config.startIcon,
                                   sound: null,
                                   onPressed: () {
-                                    pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.certamen));
+                                    pushScreen(context, BattleScreen(trial: trial));
                                   },
                                 ),
                               )
@@ -527,7 +526,7 @@ class _MasteryBar extends StatelessWidget {
 }
 
 /// Introduction sheet: what the trial teaches, with contrasting examples.
-void showTrialSheet(BuildContext context, Trial trial, {bool canTrain = false}) {
+void showTrialSheet(BuildContext context, Trial trial) {
   final labels = configFor(trial.activity).labels;
   showModalBottomSheet<void>(
     context: context,
@@ -578,35 +577,6 @@ void showTrialSheet(BuildContext context, Trial trial, {bool canTrain = false}) 
           Text('Pretium: ${trial.isFree ? 'grātīs' : '${trial.price} gemmae'} · ${trial.questionsToWin} ${labels.hits} · ${trial.hearts} corda', style: G.body(14, color: G.inkSoft, weight: 700)),
           const SizedBox(height: 6),
           Text(const Economy(kEconomy).defeatRule(), style: G.body(13, color: G.redDark, weight: 700)),
-          if (canTrain) ...[
-            const SizedBox(height: 16),
-            RomanPanel(
-              color: Colors.white,
-              borderColor: G.goldPale,
-              borderWidth: 2,
-              shadow: false,
-              radius: 12,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(labels.trainingBlurb, style: G.body(13, color: G.inkSoft)),
-                  ),
-                  const SizedBox(width: 10),
-                  RomanButton(
-                    label: 'Exercē',
-                    icon: Icons.school,
-                    style: RomanButtonStyle.outline,
-                    dense: true,
-                    sound: null,
-                    onPressed: () {
-                      Navigator.pop(ctx);
-                      pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.exercitatio));
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ],
           const SizedBox(height: 20),
         ],
       ),

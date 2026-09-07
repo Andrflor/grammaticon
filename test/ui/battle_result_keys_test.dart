@@ -21,7 +21,7 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     // One heart left: a single wrong answer ends the fight.
-    final resume = ActiveBattle(trialId: trialId, mode: BattleMode.certamen, hearts: 1, enemyHp: 10, answered: 0, gemsDelta: 0, seed: 20260907, questionIndex: 0, componentIds: const [], correctCount: 0);
+    final resume = ActiveBattle(trialId: trialId, hearts: 1, enemyHp: 10, answered: 0, gemsDelta: 0, seed: 20260907, questionIndex: 0, componentIds: const [], correctCount: 0);
     await tester.pumpWidget(testScope(
       MemorySaveStore(),
       initial: SaveData(gems: 40, introSeen: {trialId}),
@@ -30,7 +30,7 @@ void main() {
         home: Scaffold(
           body: Builder(
             builder: (ctx) => TextButton(
-              onPressed: () => Navigator.of(ctx).push(MaterialPageRoute(builder: (_) => BattleScreen(trial: Trials.byId(trialId), mode: BattleMode.certamen, resume: resume))),
+              onPressed: () => Navigator.of(ctx).push(MaterialPageRoute(builder: (_) => BattleScreen(trial: Trials.byId(trialId), resume: resume))),
               child: const Text('go'),
             ),
           ),
@@ -85,7 +85,7 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     // One hit point left: a single correct answer wins the fight.
-    final resume = ActiveBattle(trialId: trialId, mode: BattleMode.certamen, hearts: 3, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9);
+    final resume = ActiveBattle(trialId: trialId, hearts: 3, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9);
     await tester.pumpWidget(testScope(
       MemorySaveStore(),
       initial: SaveData(gems: 40, introSeen: {trialId}),
@@ -94,7 +94,7 @@ void main() {
         home: Scaffold(
           body: Builder(
             builder: (ctx) => TextButton(
-              onPressed: () => Navigator.of(ctx).push(MaterialPageRoute(builder: (_) => BattleScreen(trial: Trials.byId(trialId), mode: BattleMode.certamen, resume: resume))),
+              onPressed: () => Navigator.of(ctx).push(MaterialPageRoute(builder: (_) => BattleScreen(trial: Trials.byId(trialId), resume: resume))),
               child: const Text('go'),
             ),
           ),

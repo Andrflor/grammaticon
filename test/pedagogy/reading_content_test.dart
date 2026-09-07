@@ -188,11 +188,11 @@ void main() {
     const resolver = AnswerResolver();
     const save = SaveData();
     for (final v in ['c1', 'c2']) {
-      final r = resolver.resolve(save: save, q: q, chosenValue: v, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: DateTime(2026, 9, 6));
+      final r = resolver.resolve(save: save, q: q, chosenValue: v, quality: AnswerQuality.autonoma, now: DateTime(2026, 9, 6));
       expect(r.correct, isTrue, reason: v);
       expect(r.delta, 8);
     }
-    final wrong = resolver.resolve(save: save, q: q, chosenValue: e.renderings.distractors[0].id, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: DateTime(2026, 9, 6));
+    final wrong = resolver.resolve(save: save, q: q, chosenValue: e.renderings.distractors[0].id, quality: AnswerQuality.autonoma, now: DateTime(2026, 9, 6));
     expect(wrong.correct, isFalse);
     // In the shipped data no distractor is a mere paraphrase of the faithful
     // rendering: each one names the misread span and the changed meaning.

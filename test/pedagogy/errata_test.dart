@@ -93,7 +93,7 @@ void main() {
       final q = unambiguous();
       final wrong = q.choices.firstWhere((c) => !q.correctValues.contains(c.value));
       final save = SaveData(createdAt: t0);
-      final r = resolver.resolve(save: save, q: q, chosenValue: wrong.value, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: t0, battleSeed: 42);
+      final r = resolver.resolve(save: save, q: q, chosenValue: wrong.value, quality: AnswerQuality.autonoma, now: t0, battleSeed: 42);
       expect(r.correct, isFalse);
       final e = r.errataAfter.items[q.errata!.formKey]!;
       expect(e.formKey, 'd|${q.lemmaId}|${q.noun.target.analysis.selector}');
@@ -112,15 +112,15 @@ void main() {
       final wrong = q.choices.firstWhere((c) => !q.correctValues.contains(c.value));
       final right = q.correctValues.first;
       var save = SaveData(createdAt: t0);
-      var r = resolver.resolve(save: save, q: q, chosenValue: wrong.value, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: t0, battleSeed: 1);
+      var r = resolver.resolve(save: save, q: q, chosenValue: wrong.value, quality: AnswerQuality.autonoma, now: t0, battleSeed: 1);
       save = save.copyWith(errata: r.errataAfter, lastTransactionId: 1);
-      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.adiuta, mode: BattleMode.certamen, now: t0, battleSeed: 2);
+      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.adiuta, now: t0, battleSeed: 2);
       expect(r.errataAfter.items[q.errata!.formKey]!.fixes, 0, reason: 'aided answers do not fix');
       save = save.copyWith(errata: r.errataAfter);
-      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: t0, battleSeed: 2);
+      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.autonoma, now: t0, battleSeed: 2);
       expect(r.errataAfter.items[q.errata!.formKey]!.fixes, 1);
       save = save.copyWith(errata: r.errataAfter);
-      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: t0, battleSeed: 3);
+      r = resolver.resolve(save: save, q: q, chosenValue: right, quality: AnswerQuality.autonoma, now: t0, battleSeed: 3);
       expect(r.errataAfter.isEmpty, isTrue);
       expect(r.errataAfter.retired, 1);
     });
@@ -129,7 +129,7 @@ void main() {
       expect(Trials.ofActivity(Activity.theatrum), isNotEmpty);
       // Reading questions describe a passage, not one form: nothing to remember by form.
       final q = Question(id: 'x', trialId: 't', dimension: Dimension.sensus, prompt: '', surface: '', lemmaId: '', choices: const [Choice('a', 'a'), Choice('b', 'b')], correctValues: const {'a'}, skillIds: const ['l.numerus'], payload: const _NoPayload());
-      final r = resolver.resolve(save: SaveData(createdAt: t0), q: q, chosenValue: 'b', quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: t0);
+      final r = resolver.resolve(save: SaveData(createdAt: t0), q: q, chosenValue: 'b', quality: AnswerQuality.autonoma, now: t0);
       expect(r.errataAfter.isEmpty, isTrue);
     });
   });

@@ -15,7 +15,7 @@ void main() {
   test('a correct answer damages the enemy, pays gems once and saves', () async {
     final (c, store) = make();
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     ctrl.beginAfterIntro();
     var s = c.read(battleProvider)!;
     expect(s.phase, BattlePhase.question);
@@ -50,7 +50,7 @@ void main() {
   test('a wrong answer costs a heart and a gem, never below zero', () async {
     final (c, _) = make();
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     ctrl.beginAfterIntro();
     final s0 = c.read(battleProvider)!;
     final q = s0.question!;
@@ -65,29 +65,10 @@ void main() {
     c.dispose();
   });
 
-  test('training mode never changes gems or hearts but records observations', () async {
-    final (c, _) = make();
-    final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.exercitatio);
-    ctrl.beginAfterIntro();
-    for (var i = 0; i < 4; i++) {
-      final s = c.read(battleProvider)!;
-      final q = s.question!;
-      final wrong = q.choices.indexWhere((ch) => !q.correctValues.contains(ch.value));
-      ctrl.answer(q.id, wrong);
-      ctrl.proceed();
-    }
-    final s = c.read(battleProvider)!;
-    expect(s.hearts, s.maxHearts);
-    expect(c.read(profileProvider).gems, 0);
-    expect(c.read(profileProvider).skills['v.ind.praes.act']!.autonomousWrong, 4);
-    c.dispose();
-  });
-
   test('help before answering marks the answer as aided', () async {
     final (c, _) = make();
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     ctrl.beginAfterIntro();
     final q = c.read(battleProvider)!.question!;
     ctrl.markHelpUsed();
@@ -106,7 +87,7 @@ void main() {
     );
     final ctrl = c.read(battleProvider.notifier);
     final t = Trials.byId('ind-imperf-act');
-    ctrl.start(t, BattleMode.certamen);
+    ctrl.start(t);
     for (var i = 0; i < t.hearts; i++) {
       final s = c.read(battleProvider)!;
       expect(s.phase, BattlePhase.question);
@@ -134,7 +115,7 @@ void main() {
     final (c, _) = make();
     final ctrl = c.read(battleProvider.notifier);
     final t = Trials.byId('ind-praes-act');
-    ctrl.start(t, BattleMode.certamen);
+    ctrl.start(t);
     ctrl.beginAfterIntro();
     for (var i = 0; i < t.questionsToWin; i++) {
       final s = c.read(battleProvider)!;
@@ -159,7 +140,7 @@ void main() {
   test('snapshot is saved mid-fight and can be resumed', () async {
     final (c, store) = make();
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     ctrl.beginAfterIntro();
     final q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, q.choices.indexWhere((ch) => q.correctValues.contains(ch.value)));
@@ -171,7 +152,7 @@ void main() {
     // Resume in a fresh container.
     final (c2, _) = make(initial: saved);
     final ctrl2 = c2.read(battleProvider.notifier);
-    ctrl2.start(Trials.byId(saved.activeBattle!.trialId), saved.activeBattle!.mode, resume: saved.activeBattle);
+    ctrl2.start(Trials.byId(saved.activeBattle!.trialId), resume: saved.activeBattle);
     final s2 = c2.read(battleProvider)!;
     expect(s2.enemyHp, 9);
     expect(s2.answered, 1);

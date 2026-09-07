@@ -20,7 +20,7 @@ void main() {
       battlesWon: 3,
       battlesLost: 1,
       lastTransactionId: 17,
-      activeBattle: const ActiveBattle(trialId: 'ind-praes-act', mode: BattleMode.certamen, hearts: 2, enemyHp: 5, answered: 6, gemsDelta: 20, seed: 99, questionIndex: 6, componentIds: [], correctCount: 5),
+      activeBattle: const ActiveBattle(trialId: 'ind-praes-act', hearts: 2, enemyHp: 5, answered: 6, gemsDelta: 20, seed: 99, questionIndex: 6, componentIds: [], correctCount: 5),
       lemmaDaily: {'v.ind.praes.act|amo|20260102': 2},
       introSeen: {'ind-praes-act'},
       errata: const ErrorLedger().miss(
@@ -99,7 +99,7 @@ void main() {
       gems: 9,
       purchased: const {'ind-imperf-act', 'd1-omnes'},
       skills: {'d.1.acc.sg': const SkillRecord().apply(Observation(at: DateTime(2026, 2, 1), correct: true, lemmaId: 'rosa', quality: AnswerQuality.autonoma, trialId: 'd1-recti'), const MasteryConfig())},
-      activeBattle: const ActiveBattle(trialId: 'd1-recti', mode: BattleMode.certamen, hearts: 3, enemyHp: 8, answered: 2, gemsDelta: 16, seed: 5, questionIndex: 2, componentIds: [], correctCount: 2),
+      activeBattle: const ActiveBattle(trialId: 'd1-recti', hearts: 3, enemyHp: 8, answered: 2, gemsDelta: 16, seed: 5, questionIndex: 2, componentIds: [], correctCount: 2),
     );
     await repo.save(d);
     final back = await repo.load();

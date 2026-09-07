@@ -24,7 +24,7 @@ void main() {
     final ctrl = c.read(battleProvider.notifier);
     final t = Trials.byId('th-numerus');
     expect(t.activity, Activity.theatrum);
-    ctrl.start(t, BattleMode.certamen);
+    ctrl.start(t);
     expect(c.read(battleProvider)!.phase, BattlePhase.intro);
     ctrl.beginAfterIntro();
     var s = c.read(battleProvider)!;
@@ -66,7 +66,7 @@ void main() {
   test('a rebuttal costs a heart, applies the existing penalty and shows the morphological correction', () {
     final (c, _) = testContainer(initial: SaveData(gems: 10, introSeen: {'th-numerus'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('th-numerus'), BattleMode.certamen);
+    ctrl.start(Trials.byId('th-numerus'));
     final q = c.read(battleProvider)!.question!;
     final wrong = wrongIndex(q);
     ctrl.answer(q.id, wrong);
@@ -90,7 +90,7 @@ void main() {
   test('help before answering marks the answer as aided: reduced reward, no penalty, mastery unchanged in tier', () {
     final (c, _) = testContainer(initial: SaveData(introSeen: {'th-numerus'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('th-numerus'), BattleMode.certamen);
+    ctrl.start(Trials.byId('th-numerus'));
     final q = c.read(battleProvider)!.question!;
     ctrl.markHelpUsed();
     ctrl.answer(q.id, correctIndex(q));
@@ -104,15 +104,15 @@ void main() {
   test('the three activities share one wallet and keep distinct tallies', () async {
     final (c, _) = testContainer(initial: SaveData(gems: 10, introSeen: {'ind-praes-act', 'd1-recti', 'th-numerus'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     var q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     ctrl.abandon();
-    ctrl.start(Trials.byId('d1-recti'), BattleMode.certamen);
+    ctrl.start(Trials.byId('d1-recti'));
     q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     ctrl.abandon();
-    ctrl.start(Trials.byId('th-numerus'), BattleMode.certamen);
+    ctrl.start(Trials.byId('th-numerus'));
     q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     expect(c.read(profileProvider).gems, 34);
@@ -156,7 +156,7 @@ void main() {
   test('a performance is snapshotted mid-way and resumes into the same Theatrum trial and question', () async {
     final (c, store) = testContainer(initial: SaveData(introSeen: {'th-numerus'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('th-numerus'), BattleMode.certamen);
+    ctrl.start(Trials.byId('th-numerus'));
     final q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     ctrl.proceed();
@@ -166,7 +166,7 @@ void main() {
     expect(saved.activeBattle!.trialId, 'th-numerus');
     final (c2, _) = testContainer(initial: saved);
     final ctrl2 = c2.read(battleProvider.notifier);
-    ctrl2.start(Trials.byId(saved.activeBattle!.trialId), saved.activeBattle!.mode, resume: saved.activeBattle);
+    ctrl2.start(Trials.byId(saved.activeBattle!.trialId), resume: saved.activeBattle);
     final s2 = c2.read(battleProvider)!;
     expect(s2.enemyHp, 9);
     expect(s2.question!.surface, q2.surface, reason: 'deterministic seed: the same passage comes back');
@@ -178,7 +178,7 @@ void main() {
     final t = Trials.byId('th-mx-verbum');
     final (c, _) = testContainer(initial: SaveData(gems: 0, purchased: {t.id}, introSeen: {t.id}, mixtaConfig: {t.id: ['numerus', 'tempus']}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(t, BattleMode.exercitatio);
+    ctrl.start(t);
     for (var i = 0; i < 9; i++) {
       final s = c.read(battleProvider)!;
       final q = s.question!;
@@ -186,7 +186,6 @@ void main() {
       expect(['th-numerus', 'th-tempus-praeteritum', 'th-tempus-futurum'], contains(q.reading.entry.item.trialId));
       expect(q.primarySkill, 'l.mx.verbum');
       ctrl.answer(q.id, correctIndex(q));
-      expect(c.read(profileProvider).gems, 0, reason: 'training pays nothing');
       ctrl.proceed();
     }
     c.dispose();
@@ -198,7 +197,7 @@ void main() {
     expect(src.language, 'en');
     expect(src.available, isFalse);
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('th-numerus'), BattleMode.certamen);
+    ctrl.start(Trials.byId('th-numerus'));
     expect(c.read(battleProvider)!.question, isNull);
     c.dispose();
   });

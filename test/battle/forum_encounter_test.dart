@@ -25,7 +25,7 @@ void main() {
     final ctrl = c.read(battleProvider.notifier);
     final t = Trials.byId('d1-recti');
     expect(t.activity, Activity.forum);
-    ctrl.start(t, BattleMode.certamen);
+    ctrl.start(t);
     expect(c.read(battleProvider)!.phase, BattlePhase.intro);
     ctrl.beginAfterIntro();
     var s = c.read(battleProvider)!;
@@ -57,7 +57,7 @@ void main() {
   test('a rebuttal costs a heart and shows a noun correction with the ending', () {
     final (c, _) = testContainer(initial: SaveData(introSeen: {'d1-recti'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('d1-recti'), BattleMode.certamen);
+    ctrl.start(Trials.byId('d1-recti'));
     final q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, wrongIndex(q));
     final s = c.read(battleProvider)!;
@@ -92,11 +92,11 @@ void main() {
     final resolver = c.read(answerResolverProvider);
     final save = c.read(profileProvider);
     for (final v in ['nom', 'gen', 'dat']) {
-      final r = resolver.resolve(save: save, q: q, chosenValue: v, quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: DateTime(2026, 3, 1));
+      final r = resolver.resolve(save: save, q: q, chosenValue: v, quality: AnswerQuality.autonoma, now: DateTime(2026, 3, 1));
       expect(r.correct, isTrue, reason: v);
       expect(r.delta, 8, reason: v);
     }
-    final wrong = resolver.resolve(save: save, q: q, chosenValue: 'acc', quality: AnswerQuality.autonoma, mode: BattleMode.certamen, now: DateTime(2026, 3, 1));
+    final wrong = resolver.resolve(save: save, q: q, chosenValue: 'acc', quality: AnswerQuality.autonoma, now: DateTime(2026, 3, 1));
     expect(wrong.correct, isFalse);
     // The generator itself never draws rosae as a case question when it has a
     // less ambiguous form available, and never offers only correct choices.
@@ -112,13 +112,13 @@ void main() {
     final (c, _) = testContainer(initial: SaveData(gems: 10, introSeen: {'ind-praes-act', 'd1-recti'}));
     final ctrl = c.read(battleProvider.notifier);
     // One correct verb answer…
-    ctrl.start(Trials.byId('ind-praes-act'), BattleMode.certamen);
+    ctrl.start(Trials.byId('ind-praes-act'));
     var q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     expect(c.read(profileProvider).gems, 18);
     ctrl.abandon();
     // …then a Forum debate spends from and earns into the same wallet.
-    ctrl.start(Trials.byId('d1-recti'), BattleMode.certamen);
+    ctrl.start(Trials.byId('d1-recti'));
     q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     final save = c.read(profileProvider);
@@ -163,7 +163,7 @@ void main() {
   test('a Forum debate is snapshotted and resumes into the Forum trial', () async {
     final (c, store) = testContainer(initial: SaveData(introSeen: {'d2-us-um'}, purchased: {'d2-us-um'}));
     final ctrl = c.read(battleProvider.notifier);
-    ctrl.start(Trials.byId('d2-us-um'), BattleMode.certamen);
+    ctrl.start(Trials.byId('d2-us-um'));
     final q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     await Future<void>.delayed(Duration.zero);
@@ -173,7 +173,7 @@ void main() {
     final ctrl2 = c2.read(battleProvider.notifier);
     final t = Trials.byId(saved.activeBattle!.trialId);
     expect(t.activity, Activity.forum);
-    ctrl2.start(t, saved.activeBattle!.mode, resume: saved.activeBattle);
+    ctrl2.start(t, resume: saved.activeBattle);
     final s2 = c2.read(battleProvider)!;
     expect(s2.enemyHp, 9);
     expect(s2.question!.payload, isA<NounQuestionPayload>());

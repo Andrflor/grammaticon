@@ -70,16 +70,6 @@ class Settings {
   );
 }
 
-enum BattleMode {
-  certamen('certamen', 'Certāmen'),
-  exercitatio('exercitatio', 'Exercitātiō');
-
-  const BattleMode(this.key, this.latin);
-  final String key;
-  final String latin;
-  static BattleMode fromKey(String k) => values.firstWhere((e) => e.key == k);
-}
-
 /// Encounters won and lost in one activity (the Amphitheatrum's fights, the
 /// Forum's debates). The gem balance itself is shared.
 class ActivityStats {
@@ -97,7 +87,6 @@ class ActivityStats {
 class ActiveBattle {
   const ActiveBattle({
     required this.trialId,
-    required this.mode,
     required this.hearts,
     required this.enemyHp,
     required this.answered,
@@ -109,7 +98,6 @@ class ActiveBattle {
   });
 
   final String trialId;
-  final BattleMode mode;
   final int hearts;
   final int enemyHp;
   final int answered;
@@ -119,10 +107,9 @@ class ActiveBattle {
   final List<String> componentIds;
   final int correctCount;
 
-  Map<String, Object?> toJson() => {'t': trialId, 'm': mode.key, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount};
+  Map<String, Object?> toJson() => {'t': trialId, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount};
   factory ActiveBattle.fromJson(Map<String, Object?> j) => ActiveBattle(
     trialId: j['t'] as String,
-    mode: BattleMode.fromKey(j['m'] as String),
     hearts: (j['h'] as num).toInt(),
     enemyHp: (j['e'] as num).toInt(),
     answered: (j['a'] as num).toInt(),
@@ -258,7 +245,8 @@ class SaveData {
     battlesWon: (j['won'] as num?)?.toInt() ?? 0,
     battlesLost: (j['lost'] as num?)?.toInt() ?? 0,
     lastTransactionId: (j['tx'] as num?)?.toInt() ?? 0,
-    activeBattle: j['battle'] == null ? null : ActiveBattle.fromJson((j['battle'] as Map).cast<String, Object?>()),
+    // A snapshot of the former training mode is dropped: there is no fight to resume.
+    activeBattle: j['battle'] == null || (j['battle'] as Map)['m'] == 'exercitatio' ? null : ActiveBattle.fromJson((j['battle'] as Map).cast<String, Object?>()),
     lemmaDaily: {for (final e in ((j['lemmaDaily'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
     introSeen: ((j['introSeen'] as List?) ?? const []).cast<String>().toSet(),
     activityStats: {for (final e in ((j['activities'] as Map?) ?? const {}).entries) e.key as String: ActivityStats.fromJson((e.value as Map).cast<String, Object?>())},

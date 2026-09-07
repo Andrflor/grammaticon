@@ -79,26 +79,51 @@ void main() {
       r = r.apply(_o(true, lemma: lemmas[i % 5], day: 1 + i ~/ 10), cfg);
     }
     expect(r.tier(cfg), MasteryTier.perita);
+    // Two distinct days of practice: the 14-day delay of perīta has doubled once.
+    final grace = r.graceDays(cfg)!;
+    expect(grace, cfg.reviewDaysPerita * 2);
     final last = r.lastPractice!;
-    // Within the 14-day delay of perīta: nothing moves.
-    expect(r.asOf(last.add(const Duration(days: 14)), cfg).estimate, r.estimate);
+    // Within the delay: nothing moves.
+    expect(r.asOf(last.add(Duration(days: grace)), cfg).estimate, r.estimate);
     // One day late: two points lost, still green.
-    final d15 = r.asOf(last.add(const Duration(days: 15)), cfg);
-    expect(d15.estimate, closeTo(r.estimate! - cfg.decayPerDay, 1e-9));
-    expect(d15.tier(cfg), MasteryTier.perita);
+    final late1 = r.asOf(last.add(Duration(days: grace + 1)), cfg);
+    expect(late1.estimate, closeTo(r.estimate! - cfg.decayPerDay, 1e-9));
+    expect(late1.tier(cfg), MasteryTier.perita);
     // Long enough late: below 85 % it is familiāris, below 60 % discēns.
-    final d24 = r.asOf(last.add(const Duration(days: 24)), cfg);
-    expect(d24.estimate, lessThan(cfg.peritaThreshold));
-    expect(d24.tier(cfg), MasteryTier.familiaris);
-    final d40 = r.asOf(last.add(const Duration(days: 40)), cfg);
-    expect(d40.estimate, lessThan(cfg.familiarisThreshold));
-    expect(d40.tier(cfg), MasteryTier.discens);
+    final late10 = r.asOf(last.add(Duration(days: grace + 10)), cfg);
+    expect(late10.estimate, lessThan(cfg.peritaThreshold));
+    expect(late10.tier(cfg), MasteryTier.familiaris);
+    final late26 = r.asOf(last.add(Duration(days: grace + 26)), cfg);
+    expect(late26.estimate, lessThan(cfg.familiarisThreshold));
+    expect(late26.tier(cfg), MasteryTier.discens);
     // Never below zero, never nova: the answers were given.
     final far = r.asOf(last.add(const Duration(days: 400)), cfg);
     expect(far.estimate, 0);
     expect(far.tier(cfg), MasteryTier.discens);
     // Nothing is stored: the raw record is untouched.
     expect(r.estimate, greaterThan(cfg.peritaThreshold));
+  });
+
+  test('the delay before receding doubles with each further day of practice, up to the cap', () {
+    var r = const SkillRecord();
+    const lemmas = ['amo', 'moneo', 'rego', 'audio', 'capio'];
+    // Twelve answers on one day: perīta, one session, base delay.
+    for (var i = 0; i < 12; i++) {
+      r = r.apply(_o(true, lemma: lemmas[i % 5], day: 1), cfg);
+    }
+    expect(r.tier(cfg), MasteryTier.perita);
+    expect(r.graceDays(cfg), 14);
+    r = r.apply(_o(true, day: 2), cfg);
+    expect(r.graceDays(cfg), 28);
+    r = r.apply(_o(true, day: 3), cfg);
+    expect(r.graceDays(cfg), 56);
+    r = r.apply(_o(true, day: 4), cfg);
+    expect(r.graceDays(cfg), 112);
+    r = r.apply(_o(true, day: 5), cfg);
+    expect(r.graceDays(cfg), 112, reason: 'capped after ${cfg.graceDoublings} doublings');
+    // Still within four months of the last practice: the bar holds.
+    expect(r.asOf(r.lastPractice!.add(const Duration(days: 112)), cfg).estimate, r.estimate);
+    expect(r.asOf(r.lastPractice!.add(const Duration(days: 113)), cfg).estimate, lessThan(r.estimate!));
   });
 
   test('the delay before receding depends on the tier: discēns after 2 days, familiāris after 5', () {

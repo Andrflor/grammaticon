@@ -20,13 +20,12 @@ import '../../persistence/save_data.dart';
 import '../activity/activity_config.dart';
 import '../widgets/roman_widgets.dart';
 
-/// One encounter: a fight in the arena or a debate in the Forum (certāmen /
-/// contrōversia), or a training session (exercitātiō). Activity-specific
-/// presentation comes from the trial's [ActivityConfig].
+/// One encounter: a fight in the arena, a debate in the Forum or a performance
+/// in the Theatrum. Every encounter is played for real: there is no training
+/// mode. Activity-specific presentation comes from the trial's [ActivityConfig].
 class BattleScreen extends HookConsumerWidget {
-  const BattleScreen({super.key, required this.trial, required this.mode, this.resume});
+  const BattleScreen({super.key, required this.trial, this.resume});
   final Trial trial;
-  final BattleMode mode;
   final ActiveBattle? resume;
 
   @override
@@ -48,7 +47,7 @@ class BattleScreen extends HookConsumerWidget {
       final save = ref.read(profileProvider);
       final cfg = ref.read(masteryConfigProvider);
       startTiers.value = {for (final s in trial.skillIds) s: MasterySummary.forSkill(save, s, cfg).tier};
-      Future.microtask(() => ctrl.start(trial, mode, resume: resume));
+      Future.microtask(() => ctrl.start(trial, resume: resume));
       return () {
         for (final t in timers.value) {
           t.cancel();
@@ -186,7 +185,7 @@ class BattleScreen extends HookConsumerWidget {
               if (state != null) ...[
                 _Hud(state: state, config: config, onLeave: leave, onPause: () => state.paused ? ctrl.resume() : ctrl.pause()),
                 _Center(state: state, cardKey: cardKey, trial: trial, config: config),
-                if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro, training: state.isTraining),
+                if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro),
                 if (state.paused) _PauseOverlay(body: config.labels.pausedBody, onResume: ctrl.resume, onLeave: leave),
                 if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
               ],
@@ -277,11 +276,8 @@ class _Hud extends ConsumerWidget {
         const SizedBox(width: 6),
         RomanButton(label: '', icon: state.paused ? Icons.play_arrow : Icons.pause, style: RomanButtonStyle.ghost, dense: true, onPressed: state.isOver ? null : onPause),
         const SizedBox(width: 10),
-        if (!state.isTraining)
-          for (var i = 0; i < state.maxHearts; i++)
-            Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30))
-        else
-          Flexible(child: StatChip(compact ? 'Exercitātiō' : 'Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark)),
+        for (var i = 0; i < state.maxHearts; i++)
+          Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30)),
       ],
     );
     return SafeArea(
@@ -440,7 +436,7 @@ class _Center extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(outcome.correct ? 'RECTE!' : 'ERRAT…', style: G.display(compact ? 26 : 34, color: outcome.correct ? G.green : G.red)),
-                        if (!state.isTraining && outcome.gemsDelta != 0) ...[
+                        if (outcome.gemsDelta != 0) ...[
                           const SizedBox(width: 12),
                           Text('${outcome.gemsDelta > 0 ? '+' : ''}${outcome.gemsDelta}', style: G.display(compact ? 22 : 28, color: outcome.gemsDelta > 0 ? G.goldLight : const Color(0xFFFF8A94))),
                           const SizedBox(width: 4),
@@ -618,10 +614,9 @@ class _ChoiceButton extends HookWidget {
 // ---------------------------------------------------------------- overlays
 
 class _IntroOverlay extends ConsumerWidget {
-  const _IntroOverlay({required this.trial, required this.onStart, required this.training});
+  const _IntroOverlay({required this.trial, required this.onStart});
   final Trial trial;
   final VoidCallback onStart;
-  final bool training;
   @override
   Widget build(BuildContext context, WidgetRef ref) => _Dim(
     child: RomanPanel(
@@ -649,16 +644,15 @@ class _IntroOverlay extends ConsumerWidget {
                 ),
               ),
             const SizedBox(height: 14),
-            if (!training)
-              Row(
-                children: [
-                  const Icon(Icons.warning_amber, color: G.redDark, size: 18),
-                  const SizedBox(width: 6),
-                  Expanded(
-                    child: Text('${trial.hearts} corda. ${ref.read(answerResolverProvider).economy.defeatRule()}', style: G.body(13, color: G.redDark, weight: 700)),
-                  ),
-                ],
-              ),
+            Row(
+              children: [
+                const Icon(Icons.warning_amber, color: G.redDark, size: 18),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text('${trial.hearts} corda. ${ref.read(answerResolverProvider).economy.defeatRule()}', style: G.body(13, color: G.redDark, weight: 700)),
+                ),
+              ],
+            ),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -725,11 +719,11 @@ class _ResultOverlay extends ConsumerWidget {
             Text(won ? labels.victoryBody : labels.defeatBody, style: G.body(16), textAlign: TextAlign.center),
             const SizedBox(height: 14),
             _line('Respōnsa rēcta', '${state.correctCount} / ${state.answered}'),
-            if (!state.isTraining) _line(labels.gemsLine, '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
-            if (!state.isTraining && won) _line('Praemium victōriae', '+${state.victoryBonus}'),
+            _line(labels.gemsLine, '${state.gemsDelta >= 0 ? '+' : ''}${state.gemsDelta}'),
+            if (won) _line('Praemium victōriae', '+${state.victoryBonus}'),
             if (save.errata.forTrial(state.trial.id).isNotEmpty) _line('Repetenda (errāta aperta)', '${save.errata.forTrial(state.trial.id).length}'),
-            if (!state.isTraining && !won) _line(labels.penaltyLine, '−${state.defeatPenalty}'),
-            if (!state.isTraining && !won)
+            if (!won) _line(labels.penaltyLine, '−${state.defeatPenalty}'),
+            if (!won)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(

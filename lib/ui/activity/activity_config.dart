@@ -47,7 +47,6 @@ class ActivityLabels {
     required this.opponentResource,
     required this.wonTally,
     required this.lostTally,
-    required this.trainingBlurb,
   });
 
   /// Selection screen title, e.g. "Amphitheātrum · Coniugātiōnēs".
@@ -79,7 +78,6 @@ class ActivityLabels {
   final String? opponentResource;
   final String wonTally;
   final String lostTally;
-  final String trainingBlurb;
 }
 
 class ActivityConfig {
@@ -141,7 +139,6 @@ final ActivityConfig kAmphitheatrumConfig = ActivityConfig(
     opponentResource: null,
     wonTally: 'Certāmina victa',
     lostTally: 'āmissa',
-    trainingBlurb: 'Exercitātiō: eaedem quaestiōnēs sine gemmīs et sine cordibus, ad repetendum. Respōnsa in Tabulā numerantur.',
   ),
   heroAsset: 'assets/images/hero_idle.png',
   startIcon: Icons.sports_martial_arts,
@@ -175,7 +172,6 @@ final ActivityConfig kForumConfig = ActivityConfig(
     opponentResource: 'cōnstantia',
     wonTally: 'Contrōversiae victae',
     lostTally: 'āmissae',
-    trainingBlurb: 'Exercitātiō: eaedem quaestiōnēs sine gemmīs et sine cordibus, ad repetendum. Respōnsa in Tabulā numerantur.',
   ),
   heroAsset: 'assets/images/orator_idle.png',
   startIcon: Icons.record_voice_over,
@@ -209,7 +205,6 @@ final ActivityConfig kTheatrumConfig = ActivityConfig(
     opponentResource: 'favor populī',
     wonTally: 'Fābulae victae',
     lostTally: 'āmissae',
-    trainingBlurb: 'Exercitātiō: eaedem sententiae sine gemmīs et sine cordibus, ad repetendum. Respōnsa in Tabulā numerantur.',
   ),
   heroAsset: 'assets/images/histrio_idle.png',
   startIcon: Icons.theater_comedy,

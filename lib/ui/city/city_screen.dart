@@ -109,7 +109,7 @@ class CityScreen extends HookConsumerWidget {
                       Text('${interruptedLabels.interrupted}: ${interrupted.name}', style: G.body(16, color: G.goldLight, weight: 700)),
                       RomanButton(label: interruptedLabels.resume, style: RomanButtonStyle.gold, dense: true, sound: null, onPressed: () {
                         final ab = save.activeBattle!;
-                        pushScreen(context, BattleScreen(trial: interrupted, mode: ab.mode, resume: ab));
+                        pushScreen(context, BattleScreen(trial: interrupted, resume: ab));
                       }),
                       RomanButton(label: 'Omitte', style: RomanButtonStyle.neutral, dense: true, onPressed: () => ref.read(profileProvider.notifier).setActiveBattle(null)),
                     ]),
