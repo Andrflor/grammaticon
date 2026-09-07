@@ -42,9 +42,11 @@ class TrialSelectionScreen extends ConsumerWidget {
             TopBar(title: config.labels.title, gems: save.gems, center: wide ? bubble : null),
             Expanded(
               child: ContentColumn(
-                maxWidth: 1480,
+                // Four cards of ~305 px on a wide screen, leaving the painted
+                // banners visible on both sides as on the mock-up.
+                maxWidth: 1310,
                 child: ListView(
-                  padding: const EdgeInsets.fromLTRB(16, 6, 16, 32),
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
                   children: [
                     if (!wide)
                       Padding(
@@ -85,8 +87,8 @@ class _GroupSectionState extends State<_GroupSection> {
       if (_open)
         LayoutBuilder(
           builder: (context, c) {
-            const gap = 18.0;
-            final cols = (c.maxWidth / 340).floor().clamp(1, 4);
+            const gap = 14.0;
+            final cols = (c.maxWidth / 300).floor().clamp(1, 4);
             final rows = <List<Trial>>[];
             for (var i = 0; i < widget.trials.length; i += cols) {
               rows.add(widget.trials.sublist(i, (i + cols).clamp(0, widget.trials.length)));
@@ -135,96 +137,118 @@ class TrialCard extends ConsumerWidget {
     final summaries = [for (final s in trial.skillIds) MasterySummary.forSkill(save, s, cfg)];
     final accessible = status.access == TrialAccess.accessible;
     final locked = status.access == TrialAccess.locked;
+    // Long names ("Indicātīvus plūsquamperfectum") get a tighter title so the
+    // word is never broken next to the portrait; Cinzel is a wide face.
+    final longName = trial.name.length > 24 || trial.name.split(' ').any((w) => w.length > 13);
+    final titleStyle = (longName ? G.display(12, color: Colors.white, letterSpacing: 0.4) : G.display(16, color: Colors.white, letterSpacing: 1.5)).copyWith(
+      shadows: const [Shadow(color: Color(0x80000000), offset: Offset(0, 1), blurRadius: 2)],
+    );
 
     final (Color badgeColor, IconData badgeIcon) = switch (status.access) {
-      TrialAccess.accessible => (const Color(0xFF2EAA4E), Icons.lock_open),
-      TrialAccess.purchasable => (const Color(0xFFEAA249), Icons.lock),
-      TrialAccess.locked => (const Color(0xFF625A5C), Icons.lock),
+      TrialAccess.accessible => (const Color(0xFF22B15C), Icons.lock_open_outlined),
+      TrialAccess.purchasable => (const Color(0xFFEAA249), Icons.lock_outline),
+      TrialAccess.locked => (const Color(0xFF625A5C), Icons.lock_outline),
     };
+    // Colours sampled on the mock-up: violet, amber and greyed purple bands.
     final headerColors = switch (status.access) {
-      TrialAccess.accessible => const [Color(0xFF7B47D3), Color(0xFF542CA0)],
-      TrialAccess.purchasable => const [Color(0xFFD9A53C), Color(0xFFB07A22)],
-      TrialAccess.locked => const [Color(0xFF6A5A75), Color(0xFF4E4057)],
+      TrialAccess.accessible => const [Color(0xFF6D39C6), Color(0xFF6A3FB0)],
+      TrialAccess.purchasable => const [Color(0xFFE2AA48), Color(0xFFB57F2A)],
+      TrialAccess.locked => const [Color(0xFF6F5E7C), Color(0xFF4C3D55)],
     };
 
     // The frame is a solid gold box; the body is clipped inside it with a
-    // smaller radius, so the header band meets the frame without a seam.
+    // smaller radius, so the header band meets the frame without a seam. A
+    // thin darker ring (a spread-only shadow) separates the gold from the
+    // painting, and the card casts a soft shadow on it.
     final frame = highlighted
         ? const [Color(0xFFFFF0B0), Color(0xFFF0C860)]
         : locked
-        ? const [Color(0xFFE9D9B4), Color(0xFFCDB584)]
-        : const [Color(0xFFF3D27A), Color(0xFFCB9A34)];
+        ? const [Color(0xFFE9DBBC), Color(0xFFC9B283)]
+        : const [Color(0xFFF7DA8E), Color(0xFFDDA544)];
+    final ring = locked ? const Color(0x99826A4A) : const Color(0xB3A06E1E);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 160),
       padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: frame, begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          const BoxShadow(color: Color(0x59200A40), blurRadius: 16, offset: Offset(0, 7)),
+          BoxShadow(color: ring, spreadRadius: 1),
+          const BoxShadow(color: Color(0x66200A40), blurRadius: 18, offset: Offset(0, 8)),
+          const BoxShadow(color: Color(0x40200A40), blurRadius: 4, offset: Offset(0, 2)),
           if (highlighted) const BoxShadow(color: Color(0x99FFE08A), blurRadius: 22, spreadRadius: 2),
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(13),
+        borderRadius: BorderRadius.circular(17),
         child: ColoredBox(
           color: locked ? const Color(0xFFEFE6D6) : G.marble,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Header band with the opponent's portrait.
+              // Header band with the opponent's portrait. The Stack clips the
+              // portrait, which stands taller than the band, so the figure
+              // looks planted behind the cream body rather than floating.
               Container(
-                constraints: const BoxConstraints(minHeight: 118),
+                constraints: const BoxConstraints(minHeight: 112),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 ),
                 child: Stack(
+                  clipBehavior: Clip.hardEdge,
                   children: [
+                    // Sheen along the top edge of the band.
+                    const Positioned.fill(
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0x2CFFFFFF), Color(0x00FFFFFF)], stops: [0, 0.4], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                        ),
+                      ),
+                    ),
+                    // The figures fill their images almost edge to edge, so
+                    // the box runs well below the band: legs and paws are cut
+                    // by the cream body, as on the mock-up.
                     Positioned(
-                      right: 4,
-                      top: 6,
-                      bottom: 4,
-                      width: 104,
+                      right: 6,
+                      top: 4,
+                      bottom: -52,
+                      width: 112,
                       child: Opacity(
                         opacity: locked ? 0.45 : 1,
                         child: ColorFiltered(
                           colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
-                          child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.bottomRight),
+                          child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.topRight),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(14, 12, 112, 12),
+                      padding: const EdgeInsets.fromLTRB(14, 9, 110, 9),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            trial.name,
-                            style: G.display(16, color: Colors.white, letterSpacing: 1.0),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                          Text(trial.name, style: titleStyle, maxLines: 2, overflow: TextOverflow.ellipsis),
                           Text(
                             trial.subtitle,
                             style: G.body(14, color: const Color(0xFFF3C86A), weight: 700),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 8),
+                          const SizedBox(height: 6),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 2),
                             decoration: BoxDecoration(
                               color: badgeColor,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: const Color(0xCCFFFFFF), width: 2),
+                              border: Border.all(color: const Color(0xE6FFFFFF), width: 2),
+                              boxShadow: const [BoxShadow(color: Color(0x40000000), blurRadius: 4, offset: Offset(0, 2))],
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(badgeIcon, size: 15, color: Colors.white),
                                 const SizedBox(width: 5),
-                                Text(status.access.latin, style: G.body(13, color: Colors.white, weight: 800)),
+                                Text(status.access.latin, style: G.body(12, color: Colors.white, weight: 700)),
                               ],
                             ),
                           ),
@@ -234,9 +258,16 @@ class TrialCard extends ConsumerWidget {
                   ],
                 ),
               ),
+              // Shadow the band casts on the cream body.
+              const DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [Color(0x30200A40), Color(0x00200A40)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                ),
+                child: SizedBox(height: 10),
+              ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
+                  padding: const EdgeInsets.fromLTRB(14, 4, 14, 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -280,7 +311,7 @@ class TrialCard extends ConsumerWidget {
                         ],
                       ],
                       const Spacer(),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 6),
                       Row(
                         children: [
                           RomanButton(
@@ -380,15 +411,32 @@ class _MasteryBar extends StatelessWidget {
             ),
           Row(
             children: [
+              // Pill-shaped gauge: a recessed grey rail and a glossy fill.
               Expanded(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(7),
+                  borderRadius: BorderRadius.circular(6),
                   child: Stack(
                     children: [
-                      Container(height: 13, color: const Color(0xFFC9C6C4)),
+                      Container(
+                        height: 12,
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFC4BFB9), Color(0xFFD9D4CE)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                        ),
+                      ),
                       FractionallySizedBox(
                         widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
-                        child: Container(height: 13, color: color),
+                        child: Container(
+                          height: 12,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6),
+                            gradient: LinearGradient(
+                              colors: [Color.lerp(color, Colors.white, 0.22)!, color, Color.lerp(color, Colors.black, 0.12)!],
+                              stops: const [0, 0.55, 1],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -397,7 +445,7 @@ class _MasteryBar extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 label,
-                style: G.body(14, weight: 800, color: sm.evaluated ? color : G.ink),
+                style: G.body(14, weight: 700, color: sm.evaluated ? color : G.ink),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

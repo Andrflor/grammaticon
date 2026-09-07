@@ -52,6 +52,9 @@ class ActivityLabels {
 
   /// Selection screen title, e.g. "Amphitheātrum · Coniugātiōnēs".
   final String title;
+
+  /// One short line spoken by the hero on the selection screen ("Ēlige
+  /// certāmen."); prices and rules are on the cards and in the info sheet.
   final String blurb;
 
   /// Name of one encounter (button label): Certāmen / Contrōversia.
@@ -120,7 +123,7 @@ final ActivityConfig kAmphitheatrumConfig = ActivityConfig(
   activity: Activity.amphitheatrum,
   labels: const ActivityLabels(
     title: 'Amphitheātrum · Coniugātiōnēs',
-    blurb: 'Ēlige certāmen. Prīmum grātīs est; cētera gemmīs emuntur et in perpetuum manent.',
+    blurb: 'Ēlige certāmen.',
     encounter: 'Certāmen',
     interrupted: 'Certāmen interruptum',
     resume: 'Redī in arēnam',
@@ -154,7 +157,7 @@ final ActivityConfig kForumConfig = ActivityConfig(
   activity: Activity.forum,
   labels: const ActivityLabels(
     title: 'Forum · Dēclīnātiōnēs',
-    blurb: 'Ēlige contrōversiam. Prīma grātīs est; cēterae gemmīs emuntur et in perpetuum manent.',
+    blurb: 'Ēlige contrōversiam.',
     encounter: 'Contrōversia',
     interrupted: 'Contrōversia interrupta',
     resume: 'Redī in forum',
@@ -188,7 +191,7 @@ final ActivityConfig kTheatrumConfig = ActivityConfig(
   activity: Activity.theatrum,
   labels: const ActivityLabels(
     title: 'Theātrum · Interpretātiō',
-    blurb: 'Ēlige fābulam. Prīma grātīs est; cēterae gemmīs emuntur et in perpetuum manent. Sententia Latīna legitur: interpretātiō Gallica vēra ēligenda est.',
+    blurb: 'Ēlige fābulam.',
     encounter: 'Fābula',
     interrupted: 'Fābula interrupta',
     resume: 'Redī in theātrum',

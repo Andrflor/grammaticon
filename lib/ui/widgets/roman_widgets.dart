@@ -9,10 +9,18 @@ const Color kHeadingGold = Color(0xFFF6D77A);
 /// Dark purple shadow that keeps the gold headings legible over the painted
 /// backgrounds (banners, columns) without boxing them in.
 const List<Shadow> kHeadingShadow = [
-  Shadow(color: Color(0xF02A0F45), offset: Offset(0, 1), blurRadius: 2),
-  Shadow(color: Color(0xB3200A40), blurRadius: 8),
-  Shadow(color: Color(0x80200A40), blurRadius: 18),
+  Shadow(color: Color(0xFF24103F), offset: Offset(0, 2), blurRadius: 3),
+  Shadow(color: Color(0xE6200A40), blurRadius: 10),
+  Shadow(color: Color(0xB3200A40), blurRadius: 24),
 ];
+
+/// Radius of the pills and buttons (the mock-ups round them generously).
+const double kButtonRadius = 16;
+
+/// Deep purple of the primary buttons and the pill of light purple around
+/// them, sampled on the mock-up cards.
+const Color kButtonPurple = Color(0xFF542C9D);
+const Color kButtonPurpleEdge = Color(0xFF7E4BCC);
 
 /// Painted marble background of a secondary screen, filling the whole body.
 class ScreenBackground extends StatelessWidget {
@@ -102,8 +110,8 @@ class RomanButton extends StatelessWidget {
   final Widget? trailing;
 
   Color get _bg => switch (style) {
-    RomanButtonStyle.primary => const Color(0xFF4E22A0),
-    RomanButtonStyle.gold => const Color(0xFFE6BE55),
+    RomanButtonStyle.primary => kButtonPurple,
+    RomanButtonStyle.gold => const Color(0xFFE4B84F),
     RomanButtonStyle.ghost => G.purpleNight,
     RomanButtonStyle.success => G.green,
     RomanButtonStyle.danger => G.red,
@@ -121,13 +129,13 @@ class RomanButton extends StatelessWidget {
     _ => Colors.white,
   };
   Color get _border => switch (style) {
-    RomanButtonStyle.primary => const Color(0xFF8E62D8),
-    RomanButtonStyle.gold => const Color(0xFFC99A2E),
+    RomanButtonStyle.primary => kButtonPurpleEdge,
+    RomanButtonStyle.gold => const Color(0xFFF6DC8C),
     RomanButtonStyle.ghost => G.gold,
     RomanButtonStyle.success => const Color(0xFF7CF0A0),
     RomanButtonStyle.danger => const Color(0xFFFF8A94),
     RomanButtonStyle.neutral => G.goldDark,
-    RomanButtonStyle.outline => G.purpleRoyal,
+    RomanButtonStyle.outline => const Color(0xFF4A1A9E),
     RomanButtonStyle.locked => const Color(0xFFA39A92),
     RomanButtonStyle.chosen => const Color(0xFFE6C77A),
   };
@@ -138,7 +146,7 @@ class RomanButton extends StatelessWidget {
     final disabled = onPressed == null && style != RomanButtonStyle.locked;
     final iconSize = dense ? 20.0 : 22.0;
     final hasLabel = label.isNotEmpty;
-    final labelStyle = circular ? G.body(dense ? 20 : 22, color: _fg, weight: 900, height: 1) : G.body(dense ? 15 : 18, color: _fg, weight: 800);
+    final labelStyle = circular ? G.body(dense ? 20 : 22, color: _fg, weight: 900, height: 1) : G.body(dense ? 15 : 18, color: _fg, weight: 700);
     final child = Row(
       mainAxisSize: expand ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -166,24 +174,44 @@ class RomanButton extends StatelessWidget {
         if (trailing != null) ...[const SizedBox(width: 8), trailing!],
       ],
     );
-    final radius = BorderRadius.circular(circular ? 999 : 14);
+    final radius = BorderRadius.circular(circular ? 999 : kButtonRadius);
     final side = dense ? 44.0 : 56.0;
+    // Bevel: a light sheen at the top and a darker foot, so the buttons read
+    // as raised like the mock-up's rather than as flat tiles. The overlay is
+    // translucent, so the ink splash below stays visible. White buttons stay
+    // plain white.
+    final bevel = style == RomanButtonStyle.outline
+        ? null
+        : const LinearGradient(
+            colors: [Color(0x30FFFFFF), Color(0x00FFFFFF), Color(0x24000000)],
+            stops: [0, 0.45, 1],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          );
     return Opacity(
       opacity: disabled ? 0.55 : 1,
-      child: Material(
-        color: _bg,
-        borderRadius: radius,
-        child: InkWell(
-          onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
           borderRadius: radius,
-          child: Container(
-            constraints: circular ? BoxConstraints.tightFor(width: side, height: side) : BoxConstraints(minHeight: side, minWidth: hasLabel ? (dense ? 44 : 120) : side),
-            padding: circular ? EdgeInsets.zero : EdgeInsets.symmetric(horizontal: dense ? 14 : 18, vertical: dense ? 8 : 12),
-            decoration: BoxDecoration(
-              borderRadius: radius,
-              border: Border.all(color: _border, width: 2.5),
+          boxShadow: const [BoxShadow(color: Color(0x4D200A40), blurRadius: 6, offset: Offset(0, 3))],
+        ),
+        child: Material(
+          color: _bg,
+          borderRadius: radius,
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: onPressed,
+            borderRadius: radius,
+            child: Container(
+              constraints: circular ? BoxConstraints.tightFor(width: side, height: side) : BoxConstraints(minHeight: side, minWidth: hasLabel ? (dense ? 44 : 120) : side),
+              padding: circular ? EdgeInsets.zero : EdgeInsets.symmetric(horizontal: dense ? 16 : 18, vertical: dense ? 8 : 12),
+              decoration: BoxDecoration(
+                borderRadius: radius,
+                gradient: bevel,
+                border: Border.all(color: _border, width: 2.5),
+              ),
+              child: child,
             ),
-            child: child,
           ),
         ),
       ),
@@ -198,9 +226,9 @@ class GemTarget {
 
 BoxDecoration _pillDecoration() => BoxDecoration(
   color: G.purpleNight,
-  borderRadius: BorderRadius.circular(16),
+  borderRadius: BorderRadius.circular(kButtonRadius),
   border: Border.all(color: G.gold, width: 2.5),
-  boxShadow: const [BoxShadow(color: Color(0x40200A40), blurRadius: 8, offset: Offset(0, 3))],
+  boxShadow: const [BoxShadow(color: Color(0x4D200A40), blurRadius: 8, offset: Offset(0, 3))],
 );
 
 /// Gem icon with an animated counter.
@@ -335,7 +363,7 @@ class StatChip extends StatelessWidget {
 /// Section heading: chevron, Cinzel title and a gold rule running to the
 /// right edge. With [onTap] the heading folds and unfolds its section.
 class SectionTitle extends StatelessWidget {
-  const SectionTitle(this.text, {super.key, this.color = kHeadingGold, this.size = 24, this.open = true, this.onTap});
+  const SectionTitle(this.text, {super.key, this.color = kHeadingGold, this.size = 26, this.open = true, this.onTap});
   final String text;
   final Color color;
   final double size;
@@ -352,7 +380,7 @@ class SectionTitle extends StatelessWidget {
           flex: 3,
           child: Text(
             text,
-            style: G.display(size, color: color).copyWith(shadows: kHeadingShadow),
+            style: G.display(size, color: color, letterSpacing: 2.0).copyWith(shadows: kHeadingShadow),
             overflow: TextOverflow.ellipsis,
           ),
         ),
@@ -393,12 +421,14 @@ class TopBar extends StatelessWidget {
   /// Widget shown between the title and the gem counter (e.g. a speech bubble).
   final Widget? center;
   final Color titleColor;
-  TextStyle get _titleStyle => G.display(24, color: titleColor, letterSpacing: 1.6).copyWith(shadows: kHeadingShadow);
+  // Lighter and more widely tracked than the section headings, as on the
+  // mock-ups, where the screen title is an inscription rather than a banner.
+  TextStyle get _titleStyle => G.display(21, color: titleColor, weight: 600, letterSpacing: 2.6).copyWith(shadows: kHeadingShadow);
   @override
   Widget build(BuildContext context) => SafeArea(
     bottom: false,
     child: Padding(
-      padding: const EdgeInsets.fromLTRB(12, 10, 14, 6),
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 6),
       child: Row(
         children: [
           RomanButton(label: 'Redī', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onBack ?? () => Navigator.of(context).maybePop()),
@@ -438,22 +468,23 @@ class SpeechBubble extends StatelessWidget {
       alignment: Alignment.centerLeft,
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 44, top: 6),
-          padding: const EdgeInsets.fromLTRB(52, 12, 22, 12),
+          margin: const EdgeInsets.only(left: 48, top: 14),
+          padding: const EdgeInsets.fromLTRB(58, 15, 26, 15),
           decoration: BoxDecoration(
-            color: G.purpleDeep,
+            gradient: const LinearGradient(colors: [Color(0xFF43236B), G.purpleDeep], begin: Alignment.topCenter, end: Alignment.bottomCenter),
             borderRadius: BorderRadius.circular(18),
             border: Border.all(color: G.gold, width: 2.5),
-            boxShadow: const [BoxShadow(color: Color(0x40200A40), blurRadius: 10, offset: Offset(0, 4))],
+            boxShadow: const [BoxShadow(color: Color(0x59200A40), blurRadius: 12, offset: Offset(0, 5))],
           ),
           child: Text(
             text,
-            style: G.body(16, color: const Color(0xFFF6EFE0), weight: 700),
+            style: G.body(17, color: const Color(0xFFF6EFE0), weight: 700),
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
         ),
-        Positioned(left: 0, bottom: -6, child: Image.asset(heroAsset, height: 84, fit: BoxFit.contain)),
+        // The hero stands in front of the bubble's left edge, head above it.
+        Positioned(left: 0, bottom: -4, child: Image.asset(heroAsset, height: 98, fit: BoxFit.contain)),
       ],
     ),
   );
