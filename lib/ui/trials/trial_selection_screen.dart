@@ -630,26 +630,41 @@ void showMixtaConfig(BuildContext context, WidgetRef ref, Trial trial) {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text('Saltem ${trial.minComponents} partēs. Discrīmen vērum tunc rogātur cum plūrēs partēs miscentur.', style: G.body(14, color: G.inkSoft)),
+                if (trial.components.any((c) => c.requires != null)) ...[
+                  const SizedBox(height: 4),
+                  Text('Pars clausa aperītur cum certāmen eius emptum est.', style: G.body(13, color: G.inkSoft, style: FontStyle.italic)),
+                ],
                 const SizedBox(height: 8),
                 for (final c in trial.components)
-                  CheckboxListTile(
-                    value: selected.contains(c.id),
-                    activeColor: G.purple,
-                    title: Text(c.name, style: G.body(15, weight: 700)),
-                    onChanged: (v) => setState(() {
-                      if (v == true) {
-                        selected.add(c.id);
-                      } else if (selected.length > trial.minComponents) {
-                        selected.remove(c.id);
-                      }
-                    }),
-                  ),
+                  if (Progression.isComponentUnlocked(save, c))
+                    CheckboxListTile(
+                      value: selected.contains(c.id),
+                      activeColor: G.purple,
+                      title: Text(c.name, style: G.body(15, weight: 700)),
+                      onChanged: (v) => setState(() {
+                        if (v == true) {
+                          selected.add(c.id);
+                        } else if (selected.length > trial.minComponents) {
+                          selected.remove(c.id);
+                        }
+                      }),
+                    )
+                  else
+                    // Locked: the tense has not been learnt yet.
+                    CheckboxListTile(
+                      value: false,
+                      enabled: false,
+                      title: Text(c.name, style: G.body(15, weight: 700, color: G.inkSoft)),
+                      subtitle: Text('Clausa · ${Trials.byId(c.requires!).name}', style: G.body(12, color: G.inkSoft)),
+                      secondary: const Icon(Icons.lock, size: 18, color: G.inkSoft),
+                      onChanged: null,
+                    ),
               ],
             ),
           ),
         ),
         actions: [
-          RomanButton(label: 'Omnēs', style: RomanButtonStyle.neutral, dense: true, onPressed: () => setState(() => selected.addAll(trial.components.map((c) => c.id)))),
+          RomanButton(label: 'Omnēs', style: RomanButtonStyle.neutral, dense: true, onPressed: () => setState(() => selected.addAll(Progression.unlockedComponents(save, trial).map((c) => c.id)))),
           RomanButton(
             label: 'Servā',
             style: RomanButtonStyle.gold,

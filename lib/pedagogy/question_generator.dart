@@ -116,12 +116,16 @@ class QuestionGenerator implements QuestionSource {
         return a.person?.key;
       case Dimension.numerus:
         return a.isFinite || a.mood == Mood.participium || a.mood == Mood.gerundivum ? a.number?.key : null;
+      case Dimension.personaNumerus:
+        return a.isFinite && a.person != null && a.number != null ? '${a.person!.key}.${a.number!.key}' : null;
       case Dimension.tempus:
         return a.tense?.key;
       case Dimension.tempusSensus:
         return a.effectiveSemanticTense?.key;
       case Dimension.modus:
         return a.mood.key;
+      case Dimension.tempusModus:
+        return a.tense == null ? null : tempusModusKey(a.mood, a.tense!);
       case Dimension.vox:
         return a.voice?.key;
       case Dimension.coniugatio:
@@ -150,11 +154,17 @@ class QuestionGenerator implements QuestionSource {
         return Person.fromKey(value).latin;
       case Dimension.numerus:
         return Numerus.fromKey(value).latin;
+      case Dimension.personaNumerus:
+        final k = value.split('.');
+        return '${Person.fromKey(k[0]).latin} ${Numerus.fromKey(k[1]).latin.toLowerCase()}';
       case Dimension.tempus:
       case Dimension.tempusSensus:
         return Tense.fromKey(value).latin;
       case Dimension.modus:
         return Mood.fromKey(value).latin;
+      case Dimension.tempusModus:
+        final (m, t) = tempusModusOf(value);
+        return '${m.latin} · ${t.latin.toLowerCase()}';
       case Dimension.vox:
         return Voice.fromKey(value).latin;
       case Dimension.coniugatio:
@@ -174,6 +184,14 @@ class QuestionGenerator implements QuestionSource {
       case Dimension.sensus:
         return value;
     }
+  }
+
+  /// Value of [Dimension.tempusModus]: `mood.tense`.
+  static String tempusModusKey(Mood m, Tense t) => '${m.key}.${t.key}';
+
+  static (Mood, Tense) tempusModusOf(String key) {
+    final i = key.indexOf('.');
+    return (Mood.fromKey(key.substring(0, i)), Tense.fromKey(key.substring(i + 1)));
   }
 
   /// Compact analysis descriptor used as the value of [Dimension.analysis].
@@ -247,10 +265,27 @@ class QuestionGenerator implements QuestionSource {
       }
       if ((values[d]?.length ?? 0) >= 2) dims.add(d);
     }
+    // Person and number are first asked apart; once the skill is familiar
+    // they are also asked together (the paradigm cell), and once it is
+    // expert only together.
+    final combined = dims.contains(Dimension.persona) && dims.contains(Dimension.numerus) && tier.index >= MasteryTier.familiaris.index;
+    if (combined) {
+      dims.add(Dimension.personaNumerus);
+      if (tier == MasteryTier.perita) dims.removeWhere((d) => d == Dimension.persona || d == Dimension.numerus);
+    }
     if (dims.isEmpty) return null;
 
-    // Weighted pick: lemma questions are less frequent.
-    final weights = [for (final d in dims) d == Dimension.lemma ? 0.5 : 1.0];
+    // Weighted pick: lemma questions are less frequent; while the combined
+    // cell question is being introduced, the separate ones step back.
+    final weights = [
+      for (final d in dims)
+        switch (d) {
+          Dimension.lemma => 0.5,
+          Dimension.persona || Dimension.numerus when combined => 0.5,
+          Dimension.personaNumerus => 1.2,
+          _ => 1.0,
+        },
+    ];
     final dim = _weightedPick(dims, weights, rng);
 
     // Candidate forms with a value for this dimension, avoiding recent lemmas
@@ -263,12 +298,15 @@ class QuestionGenerator implements QuestionSource {
     if (fresh.length < 4) fresh = candidates.where((e) => !recentSurfaces.contains(e.form.surface)).toList();
     if (fresh.isEmpty) fresh = candidates;
 
-    // Diversity: lemmas with fewer observations in the primary skill weigh more.
+    // Diversity: lemmas with fewer observations in the primary skill weigh
+    // more, and so do forms whose skill is unknown, weak or due for review.
     final seenLemmas = primaryRecord?.lemmas ?? const <String>{};
+    final now = DateTime.now();
+    final formWeights = [for (final e in fresh) (seenLemmas.contains(e.verb.id) ? 1.0 : 2.0) * selectionWeight(skills[_creditedSkill(trial, e)], cfg, now)];
     PoolEntry? chosen;
     var chosenAmbiguous = true;
     for (var attempt = 0; attempt < 12; attempt++) {
-      final e = _weightedPick(fresh, [for (final e in fresh) seenLemmas.contains(e.verb.id) ? 1.0 : 2.0], rng);
+      final e = _weightedPick(fresh, formWeights, rng);
       final correct = _correctValues(dim, e);
       if (correct.length == 1) {
         chosen = e;
@@ -287,12 +325,29 @@ class QuestionGenerator implements QuestionSource {
 
     final skillIds = <String>[trial.primarySkill];
     final comp = trial.components.where((c) => c.id == e.componentId).firstOrNull;
-    if (comp?.skillId != null && !skillIds.contains(comp!.skillId)) skillIds.add(comp.skillId!);
-    // Mixta questions also credit the tense skill actually observed.
+    // A component's conjugation skill (v.ind.perf.act…) measures endings: it
+    // is not credited when the question asks the tense or the mood.
+    final asksRecognition = dim == Dimension.tempus || dim == Dimension.modus || dim == Dimension.tempusModus;
+    bool isEndingSkill(String s) => s.startsWith('v.ind.') || s.startsWith('v.subj.') || s.startsWith('v.imp.');
+    if (comp?.skillId != null && !skillIds.contains(comp!.skillId) && !(asksRecognition && isEndingSkill(comp.skillId!))) skillIds.add(comp.skillId!);
+    // Mixta questions also credit the skill actually observed, by what the
+    // question asks: recognising the tense or the mood belongs to the
+    // "Tempora et modī" tree, endings of person and number to the tense's
+    // conjugation skill. The two are different abilities and never mixed.
     final a = e.form.analysis;
-    if (trial.isMixta && a.isFinite && a.tense != null && a.voice != null && a.periphrasis == Periphrasis.nulla && a.mood != Mood.imperativus) {
-      final s = Skills.finite(a.mood.key, a.tense!.key, a.voice!.key);
-      if (Skills.maybe(s) != null && !skillIds.contains(s)) skillIds.add(s);
+    if (trial.isMixta && !trial.skillIds.first.startsWith('tm.') && a.tense != null && a.periphrasis == Periphrasis.nulla) {
+      String? extra;
+      switch (dim) {
+        case Dimension.tempus:
+          extra = Skills.tenseRecognition(a.mood.key, a.voice?.key);
+        case Dimension.modus:
+          extra = 'tm.modus.omnia';
+        case Dimension.tempusModus:
+          extra = 'tm.ambo';
+        default:
+          if (a.isFinite && a.voice != null && a.mood != Mood.imperativus) extra = Skills.finite(a.mood.key, a.tense!.key, a.voice!.key);
+      }
+      if (extra != null && Skills.maybe(extra) != null && !skillIds.contains(extra)) skillIds.add(extra);
     }
 
     return Question(
@@ -309,6 +364,22 @@ class QuestionGenerator implements QuestionSource {
       componentId: e.componentId,
       ambiguous: ambiguous,
     );
+  }
+
+  /// Finest skill whose record steers the selection of [e]: in Mixta trials
+  /// the tense/voice skill of the form (each component has its own history)
+  /// or the component skill, else the trial's primary skill.
+  String _creditedSkill(Trial trial, PoolEntry e) {
+    if (trial.isMixta) {
+      final a = e.form.analysis;
+      if (a.isFinite && a.tense != null && a.voice != null && a.periphrasis == Periphrasis.nulla && a.mood != Mood.imperativus) {
+        final s = Skills.finite(a.mood.key, a.tense!.key, a.voice!.key);
+        if (Skills.maybe(s) != null) return s;
+      }
+      final comp = trial.components.where((c) => c.id == e.componentId).firstOrNull;
+      if (comp?.skillId != null) return comp!.skillId!;
+    }
+    return trial.primarySkill;
   }
 
   Set<String> _correctValues(Dimension dim, PoolEntry e) {
@@ -381,8 +452,50 @@ class QuestionGenerator implements QuestionSource {
           return score(x).compareTo(score(y));
         });
         values = [...correct.take(2), ...others.take(4 - min(2, correct.length))];
-      default:
+      case Dimension.tempusModus:
+        // Neighbours of the right answer: same mood other tense, same tense
+        // other mood, both changed; drawn from what the trial mixes.
+        final (mood, tense) = tempusModusOf(correct.first);
         final others = poolVals.where((v) => !correct.contains(v)).toList()..shuffle(rng);
+        int score(String v) {
+          final (m, t) = tempusModusOf(v);
+          if (m == mood) return 0;
+          if (t == tense) return 1;
+          return 2;
+        }
+        others.sort((x, y) => score(x).compareTo(score(y)));
+        // One of each kind when available, then whatever is left.
+        final picked = <String>[];
+        for (final kind in [0, 1, 2]) {
+          final v = others.where((v) => score(v) == kind && !picked.contains(v)).firstOrNull;
+          if (v != null) picked.add(v);
+        }
+        for (final v in others) {
+          if (picked.length >= 4 - correct.length) break;
+          if (!picked.contains(v)) picked.add(v);
+        }
+        values = [...correct, ...picked];
+        values.sort((x, y) => _canonicalIndex(dim, x).compareTo(_canonicalIndex(dim, y)));
+        return [for (final v in values) Choice(v, labelOf(dim, v))];
+      default:
+        if (trial.fixedChoices && (dim == Dimension.tempus || dim == Dimension.modus)) {
+          // The whole scale, in canonical order, whatever subset is mixed.
+          final scale = dim == Dimension.tempus ? _tenseScale(e, trial) : _moodScale(trial);
+          values = {...scale, ...correct}.toList()..sort((x, y) => _canonicalIndex(dim, x).compareTo(_canonicalIndex(dim, y)));
+          return [for (final v in values) Choice(v, labelOf(dim, v))];
+        }
+        final others = poolVals.where((v) => !correct.contains(v)).toList()..shuffle(rng);
+        if (dim == Dimension.personaNumerus) {
+          // Neighbouring cells first: same number, then same person.
+          final target = correct.first.split('.');
+          others.sort((x, y) {
+            int score(String v) {
+              final k = v.split('.');
+              return (k[1] == target[1] ? -2 : 0) + (k[0] == target[0] ? -1 : 0);
+            }
+            return score(x).compareTo(score(y));
+          });
+        }
         final max = switch (dim) {
           Dimension.persona => 3,
           Dimension.numerus => 2,
@@ -404,6 +517,24 @@ class QuestionGenerator implements QuestionSource {
     ];
   }
 
+  /// Every tense the target's mood has in the paradigm (six for the
+  /// indicative, four for the subjunctive, three for the infinitive).
+  List<String> _tenseScale(PoolEntry e, Trial trial) {
+    final mood = e.form.analysis.mood;
+    final p = analyzer.paradigmOf(e.verb.id);
+    final out = <String>{};
+    for (final f in p.forms) {
+      if (f.analysis.mood == mood && f.analysis.tense != null && f.analysis.periphrasis == Periphrasis.nulla) out.add(f.analysis.tense!.key);
+    }
+    return out.toList();
+  }
+
+  /// Every mood the trial covers (its filter's moods), whatever is mixed.
+  List<String> _moodScale(Trial trial) {
+    final moods = (trial.filter as FormFilter).moods ?? Mood.values.toSet();
+    return [for (final m in moods) m.key];
+  }
+
   Analysis _analysisFromKey(String lemmaId, String key) {
     final p = analyzer.paradigmOf(lemmaId);
     return p.forms.firstWhere((f) => analysisKey(f.analysis) == key).analysis;
@@ -415,11 +546,17 @@ class QuestionGenerator implements QuestionSource {
         return Person.fromKey(v).index;
       case Dimension.numerus:
         return Numerus.fromKey(v).index;
+      case Dimension.personaNumerus:
+        final k = v.split('.');
+        return Numerus.fromKey(k[1]).index * 3 + Person.fromKey(k[0]).index;
       case Dimension.tempus:
       case Dimension.tempusSensus:
         return Tense.fromKey(v).index;
       case Dimension.modus:
         return Mood.fromKey(v).index;
+      case Dimension.tempusModus:
+        final (m, t) = tempusModusOf(v);
+        return m.index * 10 + t.index;
       case Dimension.vox:
         return Voice.fromKey(v).index;
       case Dimension.coniugatio:
@@ -447,12 +584,18 @@ class QuestionGenerator implements QuestionSource {
         return p.primary(a.copyWith(person: Person.fromKey(chosenValue)).selector);
       case Dimension.numerus:
         return p.primary(a.copyWith(number: Numerus.fromKey(chosenValue)).selector);
+      case Dimension.personaNumerus:
+        final k = chosenValue.split('.');
+        return p.primary(a.copyWith(person: Person.fromKey(k[0]), number: Numerus.fromKey(k[1])).selector);
       case Dimension.tempus:
         return p.primary(a.copyWith(tense: Tense.fromKey(chosenValue)).selector) ?? _firstOf(p, (x) => x.tense?.key == chosenValue && x.mood == a.mood && x.voice == a.voice);
       case Dimension.tempusSensus:
         return null;
       case Dimension.modus:
         return p.primary(a.copyWith(mood: Mood.fromKey(chosenValue)).selector) ?? _firstOf(p, (x) => x.mood.key == chosenValue && x.tense == a.tense && x.voice == a.voice);
+      case Dimension.tempusModus:
+        final (m, t) = tempusModusOf(chosenValue);
+        return p.primary(a.copyWith(mood: m, tense: t).selector) ?? _firstOf(p, (x) => x.mood == m && x.tense == t && x.voice == a.voice && x.periphrasis == Periphrasis.nulla);
       case Dimension.vox:
         return p.primary(a.copyWith(voice: Voice.fromKey(chosenValue)).selector) ?? _firstOf(p, (x) => x.voice?.key == chosenValue && x.mood == a.mood && x.tense == a.tense && x.person == a.person && x.number == a.number);
       case Dimension.genus:

@@ -20,9 +20,13 @@ enum Activity {
 enum Dimension {
   persona('Quae persōna?'),
   numerus('Quī numerus?'),
+  /// Person and number together (asked once the skill is familiar).
+  personaNumerus('Quae persōna et quī numerus?'),
   tempus('Quod tempus?'),
   tempusSensus('Quod tempus sēnsū?'),
   modus('Quī modus?'),
+  /// Tense and mood answered together ("Subiūnctīvus · imperfectum").
+  tempusModus('Quod tempus, quī modus?'),
   vox('Quae vōx?'),
   coniugatio('Quae coniugātiō?'),
   declinatio('Quae dēclīnātiō?'),
@@ -49,7 +53,7 @@ abstract class ContentFilter {
 
 /// Selectable component of a Mixta trial.
 class TrialComponent {
-  const TrialComponent(this.id, this.name, this.filter, {this.skillId});
+  const TrialComponent(this.id, this.name, this.filter, {this.skillId, this.requires});
   final String id;
   final String name;
   final ContentFilter filter;
@@ -57,6 +61,10 @@ class TrialComponent {
   /// Skill credited when the answer concerns this component (in addition to the
   /// discrimination skill of the trial).
   final String? skillId;
+
+  /// Trial that must be accessible before this component may be mixed in
+  /// (the tense one has learnt before one is asked to recognise it).
+  final String? requires;
 }
 
 class Trial {
@@ -79,6 +87,7 @@ class Trial {
     this.hearts = 3,
     this.group = 'Indicātīvus',
     this.showDictionaryEntry = false,
+    this.fixedChoices = false,
   });
 
   final String id;
@@ -112,6 +121,11 @@ class Trial {
 
   /// Introductory trials show the dictionary entry under the form.
   final bool showDictionaryEntry;
+
+  /// Tense and mood questions always offer the whole scale (every tense of
+  /// the mood, every mood of the trial) in canonical order, whatever subset
+  /// is mixed: recognising is not eliminating, and key 1 stays "Praesēns".
+  final bool fixedChoices;
 
   bool get isMixta => components.isNotEmpty;
   bool get isFree => price == 0;

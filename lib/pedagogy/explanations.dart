@@ -46,12 +46,15 @@ class Explanations {
         return _tenseHint(a);
       case Dimension.persona:
       case Dimension.numerus:
+      case Dimension.personaNumerus:
         return _personHint(a);
       case Dimension.vox:
         if (a.effectiveSemanticVoice != a.voice) return 'Fōrma passīva, sēnsus āctīvus: verbum dēpōnēns.';
         return a.voice == Voice.passivum ? 'Dēsinentiae -r, -ris, -tur, -mur, -minī, -ntur passīvum ostendunt.' : 'Dēsinentiae -ō/-m, -s, -t, -mus, -tis, -nt āctīvum ostendunt.';
       case Dimension.modus:
         return _moodHint(a);
+      case Dimension.tempusModus:
+        return [_moodHint(a), _tenseHint(a)].where((s) => s.isNotEmpty).join(' ');
       case Dimension.declinatio:
         return '';
       case Dimension.coniugatio:

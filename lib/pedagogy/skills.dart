@@ -4,7 +4,7 @@
 /// stable and used as keys in the save file.
 library;
 
-enum SkillBranch { coniugationes, mixta, declinationes, lectio }
+enum SkillBranch { coniugationes, temporaModi, mixta, declinationes, lectio }
 
 class Skill {
   const Skill(this.id, this.name, {this.parent, required this.branch, this.hint = '', this.future = false});
@@ -72,6 +72,19 @@ class Skills {
     Skill('v.def', 'Dēfectīva', parent: 'v.specialia', branch: SkillBranch.coniugationes, hint: 'ōdī, meminī, coepī, inquam'),
     Skill('v.impers', 'Impersōnālia', parent: 'v.specialia', branch: SkillBranch.coniugationes, hint: 'licet, oportet, pluit'),
     Skill('v.variantes', 'Variantēs fōrmārum', parent: 'v.specialia', branch: SkillBranch.coniugationes, hint: 'amāstī, amāvēre, amābāre'),
+    // ----- Tempora et modī: recognising tense and mood, apart from the
+    // endings of person and number trained in the conjugation tree -----
+    Skill('tm', 'Tempora et modī', branch: SkillBranch.temporaModi),
+    Skill('tm.tempus', 'Agnitiō temporum', parent: 'tm', branch: SkillBranch.temporaModi),
+    Skill('tm.tempus.ind.act', 'Tempora indicātīvī āctīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amat · amābat · amābit · amāvit'),
+    Skill('tm.tempus.ind.pass', 'Tempora indicātīvī passīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amātur · amābātur · amātus est'),
+    Skill('tm.tempus.subj.act', 'Tempora subiūnctīvī āctīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amet · amāret · amāverit · amāvisset'),
+    Skill('tm.tempus.subj.pass', 'Tempora subiūnctīvī passīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amētur · amārētur · amātus sit'),
+    Skill('tm.tempus.inf', 'Tempora īnfīnītīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amāre · amāvisse · amātūrus esse'),
+    Skill('tm.modus', 'Agnitiō modōrum', parent: 'tm', branch: SkillBranch.temporaModi),
+    Skill('tm.modus.praes', 'Modī praesentis', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amat · amet · amā · amāre'),
+    Skill('tm.modus.omnia', 'Modī omnium temporum', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amāverat · amāvisset · amātō · amāvisse'),
+    Skill('tm.ambo', 'Tempus et modus simul', parent: 'tm', branch: SkillBranch.temporaModi, hint: 'amāret: subiūnctīvus imperfectum'),
     // ----- Mixta -----
     Skill('mx', 'Mixta', branch: SkillBranch.mixta),
     Skill('mx.tempus.ind', 'Discrīmen temporum indicātīvī', parent: 'mx', branch: SkillBranch.mixta),
@@ -152,6 +165,13 @@ class Skills {
 
   /// Skill id for a finite tense/voice combination, e.g. `v.ind.praes.act`.
   static String finite(String moodKey, String tenseKey, String voiceKey) => 'v.$moodKey.$tenseKey.$voiceKey';
+
+  /// Tense-recognition skill for a mood/voice, e.g. `tm.tempus.ind.act`, or
+  /// null when no such skill exists (imperative, participles…).
+  static String? tenseRecognition(String moodKey, String? voiceKey) {
+    final id = moodKey == 'inf' ? 'tm.tempus.inf' : 'tm.tempus.$moodKey.$voiceKey';
+    return _byId.containsKey(id) ? id : null;
+  }
 
   /// Skill id of a noun cell, e.g. `d.1.acc.sg` (declension ordinal 1–5).
   static String nounCell(int declension, String caseKey, String numberKey) => 'd.$declension.$caseKey.$numberKey';

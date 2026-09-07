@@ -218,4 +218,28 @@ void main() {
     }
     expect(reached.length, forum.length);
   });
+
+  test('a weak cell is drawn more often than strong ones', () {
+    final t = Trials.byId('d1-omnes');
+    final weak = List.generate(10, (i) => i).fold(
+      const SkillRecord(),
+      (r, i) => r.apply(Observation(at: DateTime(2026, 1, 1 + i), correct: false, lemmaId: 'l$i', quality: AnswerQuality.autonoma, trialId: 't'), const MasteryConfig()),
+    );
+    final strong = List.generate(15, (i) => i).fold(
+      const SkillRecord(),
+      (r, i) => r.apply(Observation(at: DateTime(2026, 1, 1 + i), correct: true, lemmaId: 'l$i', quality: AnswerQuality.autonoma, trialId: 't'), const MasteryConfig()),
+    );
+    final skills = {for (final l in Skills.leaves('d.1')) l: strong}..['d.1.abl.pl'] = weak;
+    final rng = Random(9);
+    var ablPl = 0, total = 0;
+    for (var i = 0; i < 400; i++) {
+      final q = gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i', skills: skills);
+      if (q == null) continue;
+      total++;
+      if (q.noun.target.analysis.selector == 'abl.pl') ablPl++;
+    }
+    // Twelve cells: a uniform draw gives about one in twelve.
+    expect(ablPl / total, greaterThan(1.5 / 12), reason: 'abl. pl. drawn $ablPl of $total');
+  });
+
 }

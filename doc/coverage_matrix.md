@@ -75,11 +75,24 @@ Sources : A&G = Allen & Greenough, *New Latin Grammar* (1903, éd. DCC). Collati
 * Toutes les analyses valides sont conservées : *amāre* (infinitif, impératif passif, 2 sg passif rare), *regere*, *regam* (fut. ind. / prés. subj.), *fit* (fīō / faciō), *es* (sum ind. / impér.), *amātum esse* (nom. n. / acc. m.). Une question n'est posée que si la dimension demandée a ≥ 2 valeurs dans le palier ; si la forme est ambiguë sur cette dimension, toutes les valeurs légitimes sont acceptées et signalées (« ambiguous forms accept every legitimate value », « lemma question on fit accepts both fīō and faciō »).
 * Distinction forme inexistante / non attestée / non usitée / donnée manquante : `AbsenceStatus` (ex. *scī* = nōn ūsitātur, *ēns* = nōn ūsitātur, passif de sum = nōn exstat, gérondif de licet = nōn attestātur) — test « scī is flagged as not used, not as nonexistent ».
 
+## Tempora et modī (reconnaissance du temps et du mode)
+
+Groupe de l'Amphithéâtre placé avant les Mixta et exigé par elles. Une seule dimension interrogée par épreuve, grille de réponses fixe (toute l'échelle du mode dans l'ordre canonique, même si deux temps seulement sont mélangés), composants déverrouillés à mesure que l'épreuve du temps correspondant est achetée (`TrialComponent.requires`, `Progression.unlockedComponents`). Les compétences `tm.*` (branche « Tempora et modī » de la Tabula) sont distinctes des compétences de conjugaison `v.*`, qui mesurent les désinences de personne et de nombre : une question de temps ou de mode ne crédite jamais `v.*`, une question de personne ne crédite jamais `tm.*`, y compris dans les Mixta.
+
+| Épreuve | Question | Composants | Compétence | Test |
+|---|---|---|---|---|
+| `tm-tempora-ind-act` / `-pass` | quod tempus ? (indicatif, une voix) | 6 temps, chacun exige `ind-<t>-<voix>` | `tm.tempus.ind.act` / `.pass` | `tempora_modi_test` « tense trials ask the tense only », « fixed grid », « components unlock » |
+| `tm-tempora-subj-act` / `-pass` | quod tempus ? (subjonctif, une voix) | 4 temps, chacun exige `subj-<t>-<voix>` | `tm.tempus.subj.act` / `.pass` | idem |
+| `tm-tempora-inf` | quod tempus ? (infinitif actif) | présent, parfait, futur | `tm.tempus.inf` | idem |
+| `tm-modi-praes` | quī modus ? (présent actif seulement) | ind., subj., impér., inf., chacun exige son épreuve | `tm.modus.praes` | « mood trials ask the mood only » |
+| `tm-modi-omnia` | quī modus ? (tous temps, actif) | 4 modes | `tm.modus.omnia` | idem |
+| `tm-ambo` | quod tempus, quī modus ? réponse combinée (`Dimension.tempusModus`, distracteurs voisins : même mode autre temps, même temps autre mode, les deux changés) | 4 modes | `tm.ambo` | « combined tense and mood », regam accepté comme futur ind. et présent subj. |
+
 ## Mélanges (Mixta)
 
 | Épreuve | Composants sélectionnables | Compétence évaluée | Test |
 |---|---|---|---|
-| `mx-tempora-ind-act` / `-pass` | 6 temps de l'indicatif | `mx.tempus.ind` + compétence du temps observé | « mixta questions credit the observed tense skill », « mixta with a component subset only draws from those components » |
+| `mx-tempora-ind-act` / `-pass` | 6 temps de l'indicatif (exigent `tm-tempora-ind-*`) | `mx.tempus.ind` + `tm.tempus.ind.*` quand le temps est demandé, `v.ind.<t>.<voix>` quand la personne ou le nombre l'est | « mixta questions credit the observed tense skill », « mixta with a component subset only draws from those components » |
 | `mx-tempora-subj` | 4 temps × 2 voix | `mx.tempus.subj` | idem |
 | `mx-modi` | ind., subj., impér., inf. | `mx.modus` | « every trial has a non-empty pool » |
 | `mx-voces` | actif, passif, déponents | `mx.vox` | idem |

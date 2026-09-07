@@ -83,6 +83,17 @@ class Observation {
       );
 }
 
+/// Weight of a form for question selection, from the record of the skill it
+/// would credit: unknown skills are drawn twice as often as mastered ones,
+/// weak skills up to three times, and a skill due for review half as much
+/// again. Never zero: mastered material keeps appearing.
+double selectionWeight(SkillRecord? r, MasteryConfig cfg, DateTime now) {
+  if (r == null || r.autonomousCount == 0 || r.estimate == null) return 2.0;
+  var w = 1.0 + 2.0 * (1.0 - r.estimate!.clamp(0.0, 1.0));
+  if (r.reviewDue(now, cfg)) w *= 1.5;
+  return w;
+}
+
 /// Immutable record of one skill.
 class SkillRecord {
   const SkillRecord({

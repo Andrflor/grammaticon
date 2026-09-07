@@ -5,6 +5,7 @@ import 'package:latin_game/linguistics/engine/analyzer.dart';
 import 'package:latin_game/linguistics/engine/conjugator.dart';
 import 'package:latin_game/linguistics/lexicon/verbs.dart';
 import 'package:latin_game/linguistics/model/grammar.dart';
+import 'package:latin_game/pedagogy/mastery.dart';
 import 'package:latin_game/pedagogy/question_generator.dart';
 import 'package:latin_game/pedagogy/skills.dart';
 import 'package:latin_game/pedagogy/trials.dart';
@@ -195,4 +196,81 @@ void main() {
     }
     expect(reached.length, Trials.all.length, reason: 'unreachable: ${Trials.all.where((t) => !reached.contains(t.id)).map((t) => t.id)}');
   });
+
+  /// A record with [n] autonomous correct answers on distinct lemmas.
+  SkillRecord recordOf(int n) => List.generate(n, (i) => i).fold(
+        const SkillRecord(),
+        (r, i) => r.apply(Observation(at: DateTime(2026, 1, 1 + i), correct: true, lemmaId: 'l$i', quality: AnswerQuality.autonoma, trialId: 't'), const MasteryConfig()),
+      );
+
+  test('person and number are asked apart at first, together once familiar, only together once expert', () {
+    final t = Trials.byId('ind-praes-act');
+    const cfg = MasteryConfig();
+    Set<Dimension> dimsSeen(Map<String, SkillRecord> skills, int seed) {
+      final rng = Random(seed);
+      return {for (var i = 0; i < 80; i++) gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i', skills: skills)!.dimension};
+    }
+
+    // Nova: never the combined question.
+    expect(dimsSeen(const {}, 1), isNot(contains(Dimension.personaNumerus)));
+
+    // Familiāris: the three coexist.
+    final familiar = recordOf(6);
+    expect(familiar.tier(cfg), MasteryTier.familiaris);
+    final atFamiliar = dimsSeen({t.primarySkill: familiar}, 2);
+    expect(atFamiliar, containsAll([Dimension.personaNumerus, Dimension.persona, Dimension.numerus]));
+
+    // Perīta: person and number only together.
+    final expert = recordOf(15);
+    expect(expert.tier(cfg), MasteryTier.perita);
+    final atExpert = dimsSeen({t.primarySkill: expert}, 3);
+    expect(atExpert, contains(Dimension.personaNumerus));
+    expect(atExpert, isNot(anyOf(contains(Dimension.persona), contains(Dimension.numerus))));
+  });
+
+  test('combined person/number questions offer paradigm cells in order, accept the cell and contrast a neighbour', () {
+    final t = Trials.byId('ind-praes-act');
+    final rng = Random(5);
+    var seen = 0;
+    for (var i = 0; i < 120 && seen < 20; i++) {
+      final q = gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i', skills: {t.primarySkill: recordOf(15)})!;
+      if (q.dimension != Dimension.personaNumerus) continue;
+      seen++;
+      final a = q.verb.target.analysis;
+      expect(q.correctValues, contains('${a.person!.key}.${a.number!.key}'), reason: q.surface);
+      expect(q.choices.length, 4, reason: q.surface);
+      expect(q.choices.map((c) => c.value).toSet().length, 4);
+      // Labels read like paradigm cells and follow the paradigm order (singular before plural).
+      expect(q.choices.first.label, matches(RegExp(r'^(Prīma|Secunda|Tertia) (singulāris|plūrālis)$')));
+      final order = [for (final c in q.choices) Numerus.fromKey(c.value.split('.')[1]).index * 3 + Person.fromKey(c.value.split('.')[0]).index];
+      expect(order, List.of(order)..sort());
+      final wrong = q.choices.firstWhere((c) => !q.correctValues.contains(c.value));
+      final contrast = gen.contrastForm(q, wrong.value);
+      expect(contrast, isNotNull, reason: '${q.surface} vs ${wrong.label}');
+      expect(contrast!.surface, isNot(q.surface));
+    }
+    expect(seen, greaterThan(0));
+  });
+
+  test('in a mixed trial, forms of a weak tense skill are drawn more often than forms of a strong one', () {
+    final t = Trials.byId('mx-tempora-ind-act');
+    final ids = comps(t);
+    final strong = recordOf(15);
+    final weak = List.generate(10, (i) => i).fold(
+      const SkillRecord(),
+      (r, i) => r.apply(Observation(at: DateTime(2026, 1, 1 + i), correct: false, lemmaId: 'l$i', quality: AnswerQuality.autonoma, trialId: 't'), const MasteryConfig()),
+    );
+    final skills = {for (final id in Skills.leaves('v.ind')) id: strong}..['v.ind.fut.act'] = weak;
+    final rng = Random(11);
+    var fut = 0, total = 0;
+    for (var i = 0; i < 400; i++) {
+      final q = gen.generate(trial: t, componentIds: ids, rng: rng, id: '$i', skills: skills);
+      if (q == null) continue;
+      total++;
+      if (q.verb.target.analysis.tense == Tense.futurum) fut++;
+    }
+    final tenses = t.components.length;
+    expect(fut / total, greaterThan(1.4 / tenses), reason: 'future drawn $fut of $total with $tenses components');
+  });
+
 }

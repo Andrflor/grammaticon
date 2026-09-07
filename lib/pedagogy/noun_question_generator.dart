@@ -177,14 +177,17 @@ class NounQuestionGenerator implements QuestionSource {
 
     // Prefer forms with a single correct offered answer; never accept a form
     // where every offered choice would be correct. Lemmas with fewer
-    // observations weigh more (diversity).
+    // observations weigh more (diversity), and so do cells whose skill is
+    // unknown, weak or due for review.
     final seen = _seenLemmas(trial.primarySkill, skills);
+    final now = DateTime.now();
+    final weights = [for (final e in fresh) (seen.contains(e.noun.id) ? 1.0 : 2.0) * selectionWeight(skills[e.form.analysis.skillId], cfg, now)];
     NounPoolEntry? chosen;
     Set<String>? chosenCorrect;
     NounPoolEntry? fallback;
     Set<String>? fallbackCorrect;
     for (var attempt = 0; attempt < 16; attempt++) {
-      final e = weightedPick(fresh, [for (final e in fresh) seen.contains(e.noun.id) ? 1.0 : 2.0], rng);
+      final e = weightedPick(fresh, weights, rng);
       final correct = _correctValues(dim, e);
       if (correct.isEmpty) continue;
       final offeredCorrect = offered == null ? correct : correct.intersection(offered);

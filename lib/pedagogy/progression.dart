@@ -53,13 +53,21 @@ class Progression {
     return best;
   }
 
-  /// Component ids in force for a Mixta trial (all when unconfigured).
+  /// Components the player may mix in: those whose required trial (if any)
+  /// is accessible. One only recognises the tenses one has learnt.
+  static List<TrialComponent> unlockedComponents(SaveData save, Trial t) =>
+      t.components.where((c) => c.requires == null || isAccessible(save, Trials.byId(c.requires!))).toList();
+
+  static bool isComponentUnlocked(SaveData save, TrialComponent c) => c.requires == null || isAccessible(save, Trials.byId(c.requires!));
+
+  /// Component ids in force for a Mixta trial (every unlocked one when
+  /// unconfigured or when the configuration has too few left).
   static List<String> componentsFor(SaveData save, Trial t) {
     if (!t.isMixta) return const [];
+    final unlocked = unlockedComponents(save, t).map((c) => c.id).toList();
     final cfg = save.mixtaConfig[t.id];
-    final valid = t.components.map((c) => c.id).toSet();
-    final chosen = cfg == null ? <String>[] : cfg.where(valid.contains).toList();
-    if (chosen.length < t.minComponents) return t.components.map((c) => c.id).toList();
+    final chosen = cfg == null ? <String>[] : cfg.where(unlocked.contains).toList();
+    if (chosen.length < t.minComponents) return unlocked;
     return chosen;
   }
 }
