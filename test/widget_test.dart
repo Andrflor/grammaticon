@@ -167,8 +167,11 @@ void main() {
     expect(find.text('Prīma dēclīnātiō'), findsOneWidget);
     expect(find.text('Locātīvus'), findsOneWidget);
     // Unpractised skills stay unevaluated.
+    await tester.ensureVisible(find.text('Prīma dēclīnātiō'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Prīma dēclīnātiō'));
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('Accūsātīvus'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Accūsātīvus'), findsOneWidget);
   });
 
@@ -184,6 +187,7 @@ void main() {
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.text('Tabula perītiārum'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Coniugātiōnēs'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Coniugātiōnēs'), findsOneWidget);
     expect(find.textContaining('Nōn aestimāta'), findsWidgets);
   });
@@ -331,8 +335,12 @@ void main() {
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.textContaining('Fābulae victae'), findsOneWidget);
-    expect(find.textContaining('Vocābula Theātrī'), findsOneWidget);
+    expect(find.textContaining('Vocābula Vulgātae'), findsOneWidget);
     expect(find.textContaining('obvia: 0'), findsOneWidget);
+    // Vocabulary acquisition by frequency band, with the gradus that gates selection.
+    expect(find.textContaining('Gradus 1 /'), findsOneWidget);
+    expect(find.textContaining('Gradus I'), findsWidgets);
+    expect(find.textContaining('clausus'), findsWidgets);
     await tester.scrollUntilVisible(find.text('Lēctiō · Theātrum'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Lēctiō · Theātrum'), findsOneWidget);
     await tester.scrollUntilVisible(find.text('Mixta lēctiōnis'), 300, scrollable: find.byType(Scrollable).first);

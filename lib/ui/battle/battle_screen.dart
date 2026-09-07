@@ -312,7 +312,7 @@ class _Center extends ConsumerWidget {
     // A sentence (Theatrum) wraps at a readable size; an isolated form is
     // scaled to the width.
     final long = config.longText;
-    final surfaceSize = long ? (compact ? 17.0 : (q.surface.length > 100 ? 21.0 : 25.0)) : (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
+    final surfaceSize = long ? (compact ? (q.surface.length > 140 ? 15.0 : 17.0) : (q.surface.length > 160 ? 19.0 : (q.surface.length > 100 ? 21.0 : 25.0))) : (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
 
     return SafeArea(
       child: Column(

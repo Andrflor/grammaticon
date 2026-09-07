@@ -21,6 +21,7 @@ import '../skills.dart';
 import '../trial.dart';
 import 'reading_content.dart';
 import 'reading_trials.dart';
+import 'vocab_progress.dart';
 
 /// Reading-specific detail of a question.
 class ReadingQuestionPayload extends QuestionPayload {
@@ -114,8 +115,19 @@ class ReadingQuestionSource implements QuestionSource {
     MasteryConfig cfg = const MasteryConfig(),
     ExposureLedger exposure = const ExposureLedger(),
   }) {
-    final entries = pool(trial, componentIds);
-    if (entries.isEmpty) return null;
+    final all = pool(trial, componentIds);
+    if (all.isEmpty) return null;
+    // Progressive vocabulary: only items within the player's vocabulary
+    // gradus are offered; the next band opens when the current one is
+    // largely known. Wider bands are admitted only when too few remain.
+    final level = VocabProgress.compute(set!, exposure).level;
+    var entries = all.where((e) => e.item.band <= level).toList();
+    var widen = level;
+    while (entries.length < 5 && widen < set!.corpus.bandCount) {
+      widen++;
+      entries = all.where((e) => e.item.band <= widen).toList();
+    }
+    if (entries.isEmpty) entries = all;
     var fresh = entries.where((e) => !recentSurfaces.contains(e.passage.text) && !recentLemmas.contains(e.item.target.lemmaId)).toList();
     if (fresh.length < 3) fresh = entries.where((e) => !recentSurfaces.contains(e.passage.text)).toList();
     if (fresh.isEmpty) fresh = entries;

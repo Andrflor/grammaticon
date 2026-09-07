@@ -221,7 +221,8 @@ class StatChip extends StatelessWidget {
         decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(20)),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           if (icon != null) ...[Icon(icon, size: 14, color: textColor), const SizedBox(width: 4)],
-          Text(label, style: G.body(13, color: textColor, weight: 700)),
+          // Never overflows its parent: long labels are clipped with an ellipsis.
+          Flexible(child: Text(label, style: G.body(13, color: textColor, weight: 700), maxLines: 1, overflow: TextOverflow.ellipsis)),
         ]),
       );
 }

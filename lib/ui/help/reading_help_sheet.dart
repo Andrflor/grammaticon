@@ -102,11 +102,11 @@ Future<void> showReadingHelpSheet(BuildContext context, WidgetRef ref, {required
               padding: const EdgeInsets.symmetric(vertical: 2),
               child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SizedBox(width: 130, child: Text(w.form, style: G.body(15, weight: 800, color: G.purpleDark))),
-                Expanded(child: Text('${w.lemma}${(r.glosses[w.lemma] ?? '').isEmpty ? '' : ' — ${r.glosses[w.lemma]}'}', style: G.body(14))),
+                Expanded(child: Text('${w.lemma}${(entry.gloss(w.lemma) ?? '').isEmpty ? '' : ' — ${entry.gloss(w.lemma)}'}', style: G.body(14))),
               ]),
             ),
           const SizedBox(height: 20),
-          Text('Fontēs: ${library.corpus.edition.title} · ${r.glosses.isEmpty ? '' : ''}${entry.renderings.correct.first.source == 'LSG' ? 'Louis Segond 1910' : 'Louis Segond 1910 (versus), interpretātiō paedagōgica (sententia)'}.', style: G.body(11, color: G.inkSoft)),
+          Text('Fontēs: ${library.corpus.edition.title} · ${entry.renderings.correct.first.source == 'LSG' ? 'Louis Segond 1910' : 'Louis Segond 1910 (versus), interpretātiō paedagōgica (sententia)'} · glōssae: Collatinus (GPL) et auctōrēs lūdī.', style: G.body(11, color: G.inkSoft)),
         ],
       ),
     ),

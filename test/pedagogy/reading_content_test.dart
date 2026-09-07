@@ -46,11 +46,11 @@ void main() {
       expect(ids.add(e.item.id), isTrue, reason: e.item.id);
       expect(e.item.status, 'validated');
       expect(e.passage.verse, contains(e.passage.text));
-      expect(e.passage.text.length, lessThanOrEqualTo(160));
+      expect(e.passage.text.length, lessThanOrEqualTo(240));
       expect(e.passage.text, contains(e.item.target.span), reason: e.item.id);
       expect(e.passage.words, isNotEmpty);
       for (final w in e.passage.words) {
-        expect(e.renderings.glosses[w.lemma], isNotNull, reason: '${e.item.id}: gloss for ${w.lemma}');
+        expect(e.gloss(w.lemma), isNotNull, reason: '${e.item.id}: gloss for ${w.lemma}');
       }
       expect(e.renderings.correct, isNotEmpty);
       expect(e.renderings.distractors.length, 3, reason: e.item.id);
@@ -222,7 +222,15 @@ void main() {
   test('coverage-oriented selection prefers unseen items and unmet vocabulary, and stops neglecting rare words', () {
     final src = ReadingQuestionSource(lib, language: 'fr');
     final t = Trials.byId('th-tempus-praeteritum');
-    final pool = src.pool(t, const []);
+    // Within the bands a beginner is offered (the gate opens band 1 and widens
+    // only until five items are available, exactly as the source does).
+    final full = src.pool(t, const []);
+    var widen = 1;
+    while (full.where((e) => e.item.band <= widen).length < 5 && widen < set.corpus.bandCount) {
+      widen++;
+    }
+    final pool = full.where((e) => e.item.band <= widen).toList();
+    expect(pool.length, greaterThanOrEqualTo(5));
     // Mark every item but one as played many times with all its vocabulary met twice.
     var ledger = const ExposureLedger();
     final rare = pool.last;

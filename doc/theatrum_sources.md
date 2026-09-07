@@ -36,3 +36,11 @@ Rapport machine : `python3 tool/corpus/bible/corpus.py align` → `tool/corpus/o
 * `assets/theatrum/renderings_en.json` — **n'existe pas** : Anglicē est préparé (option visible, non sélectionnable) mais sans contenu.
 
 Reconstruction : `python3 tool/corpus/bible/corpus.py inventory && python3 tool/theatrum/build_content.py` (les sources sont dans `tool/theatrum/items_fr.py`).
+
+## Lexiques du vocabulaire (Collatinus) et licence
+
+Le vocabulaire du corpus est résolu par `tool/corpus/bible/lemmatize.py` avec les lexiques Collatinus (`lemmes.la`, `lem_ext.la` : 81 928 lemmes ; `lemmes.fr`, `lem_ext.fr` : 81 653 sens français ; modèles de flexion, irréguliers, assimilations, contractions). Résultat sur le corpus : 46 388 formes distinctes, dont 41 5xx résolues, ~4 400 formes de noms propres (dont ~2 600 sans lemme dans les lexiques : elles restent des entrées à part entière, une par forme) et ~350 formes non résolues (mots grecs tardifs : *synagoga, hypocrita, gazophylacium, eleemosyna* ; composés numéraux : *quartadecima* ; lettres hébraïques des acrostiches). Toutes restent au dénominateur du rapport de couverture.
+
+**Licence.** Les fichiers Collatinus sont sous GPL (v2 ou ultérieure ; dépôt sous GPL-3.0). Les données embarquées qui en dérivent (lemme, analyse, glose de chaque mot des passages jouables) sont distribuées sous GPL-3.0 avec attribution ; voir `THIRD_PARTY_NOTICES.md`. **Décision à prendre avant toute publication du jeu** : accepter que les assets du Theatrum soient GPL (et, selon l'interprétation retenue, l'application combinée), ou remplacer les gloses par une source sous licence permissive (aucune source latin→français prête à l'emploi n'a été identifiée ; Whitaker's Words et Lewis & Short sont en anglais).
+
+**Ce qui n'est pas inventé.** Une analyse n'est enregistrée que si le lexique génère la forme avec cette analyse ; une forme de contraste (« *videbit* » pour un *videbunt* lu au singulier) n'est affichée que si le lexique la produit ; les explications latines sont rendues par des gabarits fixes à partir de ces traits validés ; le texte français de chaque choix est écrit par un auteur et vérifié mécaniquement (extrait exact de Segond ou rendu pédagogique déclaré ; modification minimale pour les distracteurs).

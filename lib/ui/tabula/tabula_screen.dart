@@ -7,6 +7,7 @@ import '../../app/theme.dart';
 import '../../pedagogy/mastery.dart';
 import '../../pedagogy/mastery_view.dart';
 import '../../pedagogy/progression.dart';
+import '../../pedagogy/reading/vocab_progress.dart';
 import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
 import '../activity/activity_config.dart';
@@ -78,8 +79,8 @@ class _ExposurePanel extends ConsumerWidget {
     final playable = set.playableLemmas;
     final led = save.exposure;
     final met = playable.where((l) => led.of(l).seen > 0).length;
-    final again = playable.where((l) => led.of(l).revisited).length;
     final tested = playable.where((l) => led.of(l).tested > 0).length;
+    final vp = VocabProgress.compute(set, led);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: RomanPanel(
@@ -89,7 +90,15 @@ class _ExposurePanel extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Vocābula Theātrī (${lang.latin})', style: G.display(15, color: G.goldLight)),
+            Wrap(
+              spacing: 10,
+              runSpacing: 6,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                Text('Vocābula Vulgātae (${lang.latin})', style: G.display(15, color: G.goldLight)),
+                StatChip('Gradus ${vp.level} / ${vp.bands.length}', icon: Icons.stairs, color: G.gold, textColor: G.purpleDark),
+              ],
+            ),
             const SizedBox(height: 4),
             Wrap(
               spacing: 12,
@@ -97,16 +106,49 @@ class _ExposurePanel extends ConsumerWidget {
               children: [
                 Text('in fābulīs parātīs: ${playable.length}', style: G.body(13, color: Colors.white, weight: 700)),
                 Text('· obvia: $met', style: G.body(13, color: Colors.white)),
-                Text('· iterum aliō locō: $again', style: G.body(13, color: Colors.white)),
                 Text('· dīrēctē interrogāta: $tested', style: G.body(13, color: Colors.white)),
               ],
             ),
-            Text('Obviam fierī nōn est scīre: hī numerī perītiam nōn aestimant.', style: G.body(12, color: G.goldLight, style: FontStyle.italic)),
+            const SizedBox(height: 6),
+            for (final b in [...vp.bands, if (vp.names.total > 0) vp.names]) _BandRow(b: b, open: b.band == 0 || b.band <= vp.level),
+            const SizedBox(height: 4),
+            Text('Obvium: vīsum; nōtum: bis in aliō locō vīsum aut rēctē interrogātum; firmum: bis rēctē interrogātum. Gradus proximus aperītur cum sexāgintā centēsimae vocābulōrum gradūs nōta sunt. Hī numerī perītiam grammaticam nōn aestimant.', style: G.body(12, color: G.goldLight, style: FontStyle.italic)),
           ],
         ),
       ),
     );
   }
+}
+
+/// One vocabulary band: known / met / total with a bar.
+class _BandRow extends StatelessWidget {
+  const _BandRow({required this.b, required this.open});
+  final BandProgress b;
+  final bool open;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 3),
+        child: Row(
+          children: [
+            SizedBox(width: 104, child: Text(b.latin, style: G.body(12, color: open ? Colors.white : G.goldLight, weight: 700), maxLines: 1, overflow: TextOverflow.ellipsis)),
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: Stack(
+                  children: [
+                    Container(height: 12, color: const Color(0x66200A40)),
+                    FractionallySizedBox(widthFactor: b.metShare.clamp(0.0, 1.0), child: Container(height: 12, color: G.purpleLight)),
+                    FractionallySizedBox(widthFactor: b.knownShare.clamp(0.0, 1.0), child: Container(height: 12, color: G.gold)),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Text('${b.nota + b.firma}/${b.total}${open ? '' : ' · clausus'}', style: G.body(12, color: Colors.white)),
+          ],
+        ),
+      );
 }
 
 class _SkillNode extends ConsumerStatefulWidget {

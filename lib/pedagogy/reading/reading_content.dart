@@ -109,6 +109,7 @@ class ReadingItem {
     required this.note,
     required this.status,
     required this.version,
+    this.band = 1,
   });
 
   final String id;
@@ -132,6 +133,10 @@ class ReadingItem {
   final String status;
   final String version;
 
+  /// Vocabulary band (1 = most frequent words … n = rarest), from the
+  /// highest-band common lemma of the passage. Drives progressive vocabulary.
+  final int band;
+
   factory ReadingItem.fromJson(Map<String, Object?> j) => ReadingItem(
         id: j['id'] as String,
         passageId: j['passage'] as String,
@@ -143,6 +148,7 @@ class ReadingItem {
         note: j['note'] as String? ?? '',
         status: j['status'] as String? ?? 'draft',
         version: j['version'] as String? ?? '',
+        band: (j['band'] as num?)?.toInt() ?? 1,
       );
 }
 
@@ -229,7 +235,8 @@ class ItemRenderings {
   final String verse;
   final String verseRef;
 
-  /// Lemma → gloss in the translation language.
+  /// Lemma → gloss in the translation language (item-specific; the dataset
+  /// also carries a shared gloss table, see [ReadingRenderings.glosses]).
   final Map<String, String> glosses;
 
   factory ItemRenderings.fromJson(String itemId, Map<String, Object?> j) => ItemRenderings(
@@ -243,7 +250,7 @@ class ItemRenderings {
 }
 
 class ReadingCorpus {
-  const ReadingCorpus({required this.datasetId, required this.version, required this.edition, required this.passages, required this.items, required this.bookNames});
+  const ReadingCorpus({required this.datasetId, required this.version, required this.edition, required this.passages, required this.items, required this.bookNames, this.lemmaBands = const {}, this.bandLimits = const []});
   final String datasetId;
   final String version;
   final TextEdition edition;
@@ -252,6 +259,13 @@ class ReadingCorpus {
 
   /// Book code → Latin book name.
   final Map<String, String> bookNames;
+
+  /// Common lemma → vocabulary band (names and unresolved words are absent: band 0).
+  final Map<String, int> lemmaBands;
+
+  /// Frequency-rank limits of the bands (band n covers ranks up to limits[n-1]).
+  final List<int> bandLimits;
+  int get bandCount => bandLimits.isEmpty ? 1 : bandLimits.length + 1;
 
   factory ReadingCorpus.parse(String json) {
     final j = (jsonDecode(json) as Map).cast<String, Object?>();
@@ -263,6 +277,8 @@ class ReadingCorpus {
       passages: {for (final p in (j['passages'] as List)) (p as Map)['id'] as String: ReadingPassage.fromJson(p.cast<String, Object?>())},
       items: {for (final i in (j['items'] as List)) (i as Map)['id'] as String: ReadingItem.fromJson(i.cast<String, Object?>())},
       bookNames: {for (final e in ((j['books'] as Map?) ?? const {}).entries) e.key as String: e.value as String},
+      lemmaBands: {for (final e in ((j['lemmaBands'] as Map?) ?? const {}).entries) e.key as String: (e.value as num).toInt()},
+      bandLimits: ((ds['bands'] as List?) ?? const []).map((x) => (x as num).toInt()).toList(),
     );
   }
 
@@ -275,12 +291,15 @@ class ReadingCorpus {
 }
 
 class ReadingRenderings {
-  const ReadingRenderings({required this.datasetId, required this.version, required this.language, required this.edition, required this.items});
+  const ReadingRenderings({required this.datasetId, required this.version, required this.language, required this.edition, required this.items, this.glosses = const {}});
   final String datasetId;
   final String version;
   final String language;
   final TextEdition edition;
   final Map<String, ItemRenderings> items;
+
+  /// Shared lemma → gloss table of the language (Collatinus-derived or authored).
+  final Map<String, String> glosses;
 
   factory ReadingRenderings.parse(String json) {
     final j = (jsonDecode(json) as Map).cast<String, Object?>();
@@ -291,16 +310,21 @@ class ReadingRenderings {
       language: ds['language'] as String,
       edition: TextEdition.fromJson((ds['edition'] as Map).cast<String, Object?>()),
       items: {for (final e in (j['items'] as Map).entries) e.key as String: ItemRenderings.fromJson(e.key as String, (e.value as Map).cast<String, Object?>())},
+      glosses: {for (final e in ((j['glosses'] as Map?) ?? const {}).entries) e.key as String: e.value as String},
     );
   }
 }
 
 /// One playable item joined across the Latin corpus and a language.
 class ReadingEntry {
-  const ReadingEntry({required this.item, required this.passage, required this.renderings});
+  const ReadingEntry({required this.item, required this.passage, required this.renderings, this.sharedGlosses = const {}});
   final ReadingItem item;
   final ReadingPassage passage;
   final ItemRenderings renderings;
+  final Map<String, String> sharedGlosses;
+
+  /// French meaning of a lemma of the passage (item gloss first, then the shared table).
+  String? gloss(String lemma) => renderings.glosses[lemma] ?? sharedGlosses[lemma];
 }
 
 /// Content of one translation language, ready to play.
@@ -309,7 +333,7 @@ class ReadingSet {
       : entries = List.unmodifiable([
           for (final it in corpus.items.values)
             if (renderings.items[it.id] != null && corpus.passages[it.passageId] != null && it.status == 'validated')
-              ReadingEntry(item: it, passage: corpus.passages[it.passageId]!, renderings: renderings.items[it.id]!),
+              ReadingEntry(item: it, passage: corpus.passages[it.passageId]!, renderings: renderings.items[it.id]!, sharedGlosses: renderings.glosses),
         ]);
 
   final String language;
