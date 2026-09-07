@@ -38,6 +38,7 @@ python3 tool/assets/generate_forum_art.py            # régénère les visuels d
 python3 tool/assets/generate_theatrum_art.py         # régénère les visuels du Theatrum
 bash tool/assets/generate_sfx.sh                     # régénère les sons du Forum (SoX)
 bash tool/assets/generate_theatrum_sfx.sh            # régénère les sons du Theatrum (SoX)
+bash tool/assets/generate_menu_sfx.sh                # régénère les sons des menus et de la navigation (SoX)
 python3 tool/corpus/bible/corpus.py align            # alignement Clémentine ↔ Segond (livres, psaumes, versets)
 python3 tool/corpus/bible/corpus.py inventory        # inventaire des formes latines du corpus
 python3 tool/corpus/bible/corpus.py show MAT 5:8     # affiche un verset dans les deux textes

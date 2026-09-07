@@ -383,6 +383,7 @@ class TrialCard extends ConsumerWidget {
                               style: RomanButtonStyle.outline,
                               dense: true,
                               circular: true,
+                              sound: Sfx.folium,
                               onPressed: () => showTrialSheet(context, trial, canTrain: accessible),
                             ),
                             const SizedBox(width: 10),
@@ -394,8 +395,8 @@ class TrialCard extends ConsumerWidget {
                                   dense: true,
                                   expand: true,
                                   icon: config.startIcon,
+                                  sound: null,
                                   onPressed: () {
-                                    audio.play(Sfx.tactus);
                                     pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.certamen));
                                   },
                                 ),
@@ -596,6 +597,7 @@ void showTrialSheet(BuildContext context, Trial trial, {bool canTrain = false}) 
                     icon: Icons.school,
                     style: RomanButtonStyle.outline,
                     dense: true,
+                    sound: null,
                     onPressed: () {
                       Navigator.pop(ctx);
                       pushScreen(context, BattleScreen(trial: trial, mode: BattleMode.exercitatio));

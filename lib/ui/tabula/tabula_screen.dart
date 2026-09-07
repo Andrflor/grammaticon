@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../app/app.dart';
 import '../../app/providers.dart';
+import '../../audio/audio_service.dart';
 import '../../app/theme.dart';
 import '../../pedagogy/mastery.dart';
 import '../../pedagogy/mastery_view.dart';
@@ -204,7 +205,14 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
             radius: root ? 16 : 12,
             shadow: root,
             child: InkWell(
-              onTap: leaf ? () => _showSkill(context, s, sum) : () => setState(() => _open = !_open),
+              onTap: () {
+                AudioService.current?.play(leaf ? Sfx.folium : Sfx.tactus);
+                if (leaf) {
+                  _showSkill(context, s, sum);
+                } else {
+                  setState(() => _open = !_open);
+                }
+              },
               borderRadius: BorderRadius.circular(10),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),

@@ -29,9 +29,9 @@ class SettingsScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             PanelHeader(
-              icon: Icons.music_note,
+              icon: s.soundOn ? Icons.volume_up : Icons.volume_off,
               title: 'Sonus',
-              subtitle: 'Mūsica et sonī certāminis',
+              subtitle: 'Sonī certāminis et mūsica · interruptor omnia tacet',
               trailing: _Toggle(
                 value: s.soundOn,
                 onChanged: (v) {
@@ -41,8 +41,8 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ),
             _SliderRow(
-              icon: s.volume == 0 ? Icons.volume_off : Icons.volume_up,
-              label: 'Volūmen',
+              icon: s.volume == 0 ? Icons.notifications_off : Icons.notifications_active,
+              label: 'Sonī',
               valueText: '${(s.volume * 100).round()} %',
               value: s.volume,
               min: 0,
@@ -51,6 +51,17 @@ class SettingsScreen extends ConsumerWidget {
               enabled: s.soundOn,
               onChanged: (v) => p.updateSettings(s.copyWith(volume: v)),
               onChangeEnd: (_) => audio.play(Sfx.gemma),
+            ),
+            _SliderRow(
+              icon: s.musicVolume == 0 ? Icons.music_off : Icons.music_note,
+              label: 'Mūsica',
+              valueText: '${(s.musicVolume * 100).round()} %',
+              value: s.musicVolume,
+              min: 0,
+              max: 1,
+              divisions: 20,
+              enabled: s.soundOn,
+              onChanged: (v) => p.updateSettings(s.copyWith(musicVolume: v, musicOn: true)),
             ),
           ],
         ),
@@ -108,7 +119,6 @@ class SettingsScreen extends ConsumerWidget {
                         dense: true,
                         onPressed: available && !selected
                             ? () {
-                                audio.play(Sfx.tactus);
                                 p.updateSettings(s.copyWith(translationLanguage: lang));
                               }
                             : null,

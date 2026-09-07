@@ -21,7 +21,11 @@ enum Sfx {
   murmur('murmur.wav'),
   // Theatrum
   tibia('tibia.wav'),
-  sibilus('sibilus.wav');
+  sibilus('sibilus.wav'),
+  // Menus and navigation (tool/assets/generate_menu_sfx.sh)
+  tuba('tuba.wav'),
+  folium('folium.wav'),
+  vetitum('vetitum.wav');
 
   const Sfx(this.file);
   final String file;
@@ -32,16 +36,30 @@ enum Sfx {
 class AudioService {
   AudioService({this.enabled = true, int poolSize = 4}) : _poolSize = poolSize; // ignore: prefer_initializing_formals
 
+  /// The app-wide instance, for shared widgets (buttons, section titles)
+  /// that have no provider access. Null in tests: they stay silent.
+  static AudioService? current;
+
   final bool enabled;
   final int _poolSize;
   final List<AudioPlayer> _pool = [];
   AudioPlayer? _music;
   int _next = 0;
+  /// Effects volume.
   double volume = 0.8;
-  bool soundOn = true;
+  bool _soundOn = true;
   double _musicVolume = 0.5;
   bool _musicOn = true;
   bool _musicStarted = false;
+
+  /// Master switch: off silences both effects and music.
+  bool get soundOn => _soundOn;
+  set soundOn(bool v) {
+    _soundOn = v;
+    _applyMusicVolume();
+  }
+
+  double get _effectiveMusicVolume => (_soundOn && _musicOn) ? _musicVolume : 0;
 
   /// Theme music file (assets/audio); user-provided track, looped.
   static const String themeFile = 'thema.mp3';
@@ -80,8 +98,8 @@ class AudioService {
     try {
       final p = _music ??= AudioPlayer();
       await p.setReleaseMode(ReleaseMode.loop);
-      await p.setVolume(_musicOn ? _musicVolume : 0);
-      await p.play(AssetSource('audio/$themeFile'), volume: _musicOn ? _musicVolume : 0);
+      await p.setVolume(_effectiveMusicVolume);
+      await p.play(AssetSource('audio/$themeFile'), volume: _effectiveMusicVolume);
     } catch (e) {
       debugPrint('Mūsica nōn coepta: $e');
     }
@@ -91,7 +109,11 @@ class AudioService {
   void setMusic({required bool on, required double volume}) {
     _musicOn = on;
     _musicVolume = volume;
-    _music?.setVolume(on ? volume : 0).catchError((Object e) => debugPrint('Mūsica: $e'));
+    _applyMusicVolume();
+  }
+
+  void _applyMusicVolume() {
+    _music?.setVolume(_effectiveMusicVolume).catchError((Object e) => debugPrint('Mūsica: $e'));
   }
 
   /// Pauses when the app goes to the background.

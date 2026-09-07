@@ -50,11 +50,12 @@ class CityScreen extends HookConsumerWidget {
     final battle = ref.watch(battleProvider);
 
     void open(_Building b) {
-      audio.play(Sfx.tactus);
       if (b.future) {
+        audio.play(Sfx.vetitum);
         showLatinSnack(context, '${b.name}: aedificium ventūrum. Nōndum aperītur.');
         return;
       }
+      audio.play(Sfx.tactus);
       pushScreen(context, switch (b.id) { 'forum' => const ForumScreen(), 'theatrum' => const TheatrumScreen(), _ => const ColiseumScreen() });
     }
 
@@ -84,15 +85,17 @@ class CityScreen extends HookConsumerWidget {
                       child: Text('GRAMMATICON', style: G.display(portrait ? 20 : 26)),
                     ),
                     Row(mainAxisSize: MainAxisSize.min, children: [
-                      AnimatedGemCounter(count: save.gems, size: portrait ? 22 : 28),
+                      // Same 46 px pill height as the top bars and the arena HUD.
+                      AnimatedGemCounter(count: save.gems, size: 34),
                       const SizedBox(width: 8),
-                      RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () {
-                        audio.play(Sfx.tactus);
-                        pushScreen(context, const TabulaScreen());
-                      }),
+                      SizedBox(
+                        height: kPillHeight,
+                        child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () {
+                          pushScreen(context, const TabulaScreen());
+                        }),
+                      ),
                       const SizedBox(width: 8),
                       RomanButton(label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, onPressed: () {
-                        audio.play(Sfx.tactus);
                         pushScreen(context, const SettingsScreen());
                       }),
                     ]),
@@ -104,7 +107,7 @@ class CityScreen extends HookConsumerWidget {
                     color: G.purpleDark,
                     child: Wrap(crossAxisAlignment: WrapCrossAlignment.center, spacing: 12, runSpacing: 8, children: [
                       Text('${interruptedLabels.interrupted}: ${interrupted.name}', style: G.body(16, color: G.goldLight, weight: 700)),
-                      RomanButton(label: interruptedLabels.resume, style: RomanButtonStyle.gold, dense: true, onPressed: () {
+                      RomanButton(label: interruptedLabels.resume, style: RomanButtonStyle.gold, dense: true, sound: null, onPressed: () {
                         final ab = save.activeBattle!;
                         pushScreen(context, BattleScreen(trial: interrupted, mode: ab.mode, resume: ab));
                       }),

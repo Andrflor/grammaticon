@@ -204,6 +204,7 @@ class BattleController extends Notifier<BattleState?> {
     s = _withNewQuestion(s);
     state = s;
     _profile.setActiveBattle(s.snapshot());
+    _audio.play(showIntro ? Sfx.folium : Sfx.tuba);
   }
 
   void beginAfterIntro() {
@@ -211,6 +212,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null || s.phase != BattlePhase.intro) return;
     _profile.markIntroSeen(s.trial.id);
     state = s.copyWith(phase: BattlePhase.question);
+    _audio.play(Sfx.tuba);
   }
 
   void abandon() {

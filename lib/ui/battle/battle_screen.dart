@@ -117,7 +117,8 @@ class BattleScreen extends HookConsumerWidget {
       if (context.mounted) Navigator.of(context).pop();
     }
 
-    // Keyboard: digits 1–9 answer, Escape pauses, Space/Enter proceeds. Only
+    // Keyboard: digits 1–9 answer, Escape pauses, Space/Enter proceeds; on the
+    // result screen Space/Enter retries and Escape leaves. Only
     // KeyDownEvent counts (held keys repeat, releases never answer), and only
     // while this route is on top (no dialog or help sheet open).
     final route = ModalRoute.of(context);
@@ -128,6 +129,19 @@ class BattleScreen extends HookConsumerWidget {
         final s = ref.read(battleProvider);
         if (s == null) return false;
         final k = e.logicalKey;
+        final proceedKey = k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.enter || k == LogicalKeyboardKey.numpadEnter;
+        // Result screen: Space/Enter is "Iterum", Escape returns to the activity.
+        if (s.isOver) {
+          if (proceedKey) {
+            ctrl.retry();
+            return true;
+          }
+          if (k == LogicalKeyboardKey.escape) {
+            leave();
+            return true;
+          }
+          return false;
+        }
         if (k == LogicalKeyboardKey.escape) {
           if (s.paused) {
             ctrl.resume();
@@ -136,7 +150,7 @@ class BattleScreen extends HookConsumerWidget {
           }
           return true;
         }
-        if (k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.enter) {
+        if (proceedKey) {
           if (s.phase == BattlePhase.intro) {
             ctrl.beginAfterIntro();
           } else {
@@ -256,31 +270,38 @@ class _Hud extends ConsumerWidget {
         Text('${resource == null ? '' : '$resource '}${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
       ],
     );
+    final controls = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        RomanButton(label: '', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onLeave),
+        const SizedBox(width: 6),
+        RomanButton(label: '', icon: state.paused ? Icons.play_arrow : Icons.pause, style: RomanButtonStyle.ghost, dense: true, onPressed: state.isOver ? null : onPause),
+        const SizedBox(width: 10),
+        if (!state.isTraining)
+          for (var i = 0; i < state.maxHearts; i++)
+            Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30))
+        else
+          Flexible(child: StatChip(compact ? 'Exercitātiō' : 'Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark)),
+      ],
+    );
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 0),
         child: Column(
           children: [
-            Row(
-              children: [
-                RomanButton(label: '', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onLeave),
-                const SizedBox(width: 6),
-                RomanButton(label: '', icon: state.paused ? Icons.play_arrow : Icons.pause, style: RomanButtonStyle.ghost, dense: true, onPressed: state.isOver ? null : onPause),
-                const SizedBox(width: 10),
-                if (!state.isTraining)
-                  Row(
-                    children: [
-                      for (var i = 0; i < state.maxHearts; i++)
-                        Padding(padding: const EdgeInsets.only(right: 2), child: Image.asset(i < state.hearts ? 'assets/images/heart.png' : 'assets/images/heart_empty.png', width: 30, height: 30)),
-                    ],
-                  )
-                else
-                  Flexible(child: StatChip(compact ? 'Exercitātiō' : 'Exercitātiō · sine gemmīs', icon: Icons.school, color: G.gold, textColor: G.purpleDark)),
-                const Spacer(),
-                // Wide screens: the opponent bar sits between the hearts and the gems.
-                if (!compact) ...[Expanded(flex: 3, child: bar), const Spacer()],
-                AnimatedGemCounter(count: gems, size: 24, isFlightTarget: true),
-              ],
+            SizedBox(
+              height: _HudLayout.height,
+              child: CustomMultiChildLayout(
+                delegate: _HudLayout(),
+                children: [
+                  LayoutId(id: _HudSlot.left, child: controls),
+                  // Wide screens: the opponent bar sits between the hearts and the gems,
+                  // centred on the screen whatever the width of either side.
+                  if (!compact) LayoutId(id: _HudSlot.center, child: bar),
+                  // Size 34 gives the counter the same 46 px pill height as the ghost buttons.
+                  LayoutId(id: _HudSlot.right, child: AnimatedGemCounter(count: gems, size: 34, isFlightTarget: true)),
+                ],
+              ),
             ),
             // Narrow screens: the bar takes its own line under the controls.
             if (compact) Padding(padding: const EdgeInsets.fromLTRB(40, 4, 40, 0), child: bar),
@@ -289,6 +310,38 @@ class _Hud extends ConsumerWidget {
       ),
     );
   }
+}
+
+enum _HudSlot { left, center, right }
+
+/// Three-slot HUD row: the side slots take their natural width, the centre
+/// slot is given the same margin on both sides (the wider of the two sides),
+/// so it is centred on the screen rather than between unequal neighbours.
+class _HudLayout extends MultiChildLayoutDelegate {
+  _HudLayout();
+
+  /// Tall enough for the 46 px pills and for the three-line opponent bar.
+  static const double height = 56;
+  static const double _gap = 12;
+  static const double _maxCenterWidth = 640;
+
+  @override
+  void performLayout(Size size) {
+    final left = layoutChild(_HudSlot.left, BoxConstraints.loose(size));
+    final right = layoutChild(_HudSlot.right, BoxConstraints.loose(size));
+    positionChild(_HudSlot.left, Offset(0, (size.height - left.height) / 2));
+    positionChild(_HudSlot.right, Offset(size.width - right.width, (size.height - right.height) / 2));
+    if (!hasChild(_HudSlot.center)) {
+      return;
+    }
+    final side = max(left.width, right.width) + _gap;
+    final width = (size.width - 2 * side).clamp(0.0, _maxCenterWidth);
+    final center = layoutChild(_HudSlot.center, BoxConstraints(minWidth: width, maxWidth: width, maxHeight: size.height));
+    positionChild(_HudSlot.center, Offset((size.width - center.width) / 2, (size.height - center.height) / 2));
+  }
+
+  @override
+  bool shouldRelayout(covariant _HudLayout old) => false;
 }
 
 // ---------------------------------------------------------------- question, choices, feedback
@@ -318,7 +371,7 @@ class _Center extends ConsumerWidget {
       child: Column(
         children: [
           // Room for the HUD (two lines on narrow screens).
-          SizedBox(height: compact ? 108 : 64),
+          SizedBox(height: compact ? 132 : 72),
           // Question card
           RomanPanel(
             key: cardKey,
@@ -336,6 +389,7 @@ class _Center extends ConsumerWidget {
                       icon: Icons.help_outline,
                       style: RomanButtonStyle.neutral,
                       dense: true,
+                      sound: Sfx.folium,
                       onPressed: () async {
                         final open = state.phase == BattlePhase.question;
                         if (open) ctrl.markHelpUsed();
@@ -437,6 +491,7 @@ class _Center extends ConsumerWidget {
                           icon: Icons.menu_book,
                           style: RomanButtonStyle.neutral,
                           dense: true,
+                          sound: Sfx.folium,
                           onPressed: () async {
                             ctrl.openExplanation();
                             await config.showHelp(context, ref, q, revealForm: true);
@@ -551,6 +606,7 @@ class _ChoiceButton extends HookWidget {
           style: style,
           expand: true,
           dense: dense,
+          sound: null,
           onPressed: enabled ? onTap : null,
           trailing: isCorrect ? const Icon(Icons.check_circle, color: Colors.white) : (wrong ? const Icon(Icons.cancel, color: Colors.white) : null),
         ),
@@ -606,7 +662,7 @@ class _IntroOverlay extends ConsumerWidget {
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [RomanButton(label: 'Incipe!', icon: Icons.play_arrow, style: RomanButtonStyle.gold, onPressed: onStart)],
+              children: [RomanButton(label: 'Incipe!', icon: Icons.play_arrow, style: RomanButtonStyle.gold, sound: null, onPressed: onStart)],
             ),
           ],
         ),

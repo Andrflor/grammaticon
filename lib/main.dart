@@ -28,6 +28,7 @@ Future<void> main() async {
   final repo = SaveRepository(PrefsSaveStore());
   final save = await repo.load();
   final audio = AudioService();
+  AudioService.current = audio;
   await audio.preload();
   audio.volume = save.settings.volume;
   audio.soundOn = save.settings.soundOn;

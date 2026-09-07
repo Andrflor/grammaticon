@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
+import '../../audio/audio_service.dart';
 import '../../pedagogy/mastery.dart';
 
 /// Gold of the headings written directly on the painted background.
@@ -163,9 +164,14 @@ class RomanButton extends StatelessWidget {
     this.dense = false,
     this.circular = false,
     this.trailing,
+    this.sound = Sfx.tactus,
   });
   final String label;
   final VoidCallback? onPressed;
+
+  /// Cue played on tap before [onPressed]; null for buttons whose action
+  /// already has its own sound (answers, "Incipe!").
+  final Sfx? sound;
   final RomanButtonStyle style;
   final IconData? icon;
 
@@ -215,6 +221,13 @@ class RomanButton extends StatelessWidget {
     // The ghost style is the top-bar pill: a 46 px stadium with a 3 px gold
     // rim and larger gold text, as on the mock-up's Redī.
     final pill = style == RomanButtonStyle.ghost;
+    final locked = onPressed == null && style == RomanButtonStyle.locked;
+    final onTap = onPressed == null
+        ? (locked ? () => AudioService.current?.play(Sfx.vetitum) : null)
+        : () {
+            if (sound != null) AudioService.current?.play(sound!);
+            onPressed!();
+          };
     final iconSize = pill ? 24.0 : (dense ? 20.0 : 22.0);
     final hasLabel = label.isNotEmpty;
     final labelStyle = circular ? G.body(dense ? 20 : 22, color: _fg, weight: 900, height: 1) : G.body(pill ? 21 : (dense ? 15 : 18), color: _fg, weight: 700);
@@ -266,7 +279,7 @@ class RomanButton extends StatelessWidget {
           borderRadius: radius,
           clipBehavior: Clip.antiAlias,
           child: InkWell(
-            onTap: onPressed,
+            onTap: onTap,
             borderRadius: radius,
             child: Container(
               constraints: circular ? BoxConstraints.tightFor(width: side, height: side) : BoxConstraints(minHeight: side, minWidth: hasLabel ? (dense ? 44 : 120) : side),
@@ -301,7 +314,9 @@ BoxDecoration _pillDecoration() => BoxDecoration(
 /// Counter digits: gilt Cinzel, scaled to the gem (34 px gem, 25 px digits).
 double _counterSize(double size) => size * 0.72;
 
-EdgeInsets _pillPadding(double size) => EdgeInsets.symmetric(horizontal: size >= 30 ? 16 : 12, vertical: 4);
+/// Top-bar pills (size >= 30) come out exactly [kPillHeight] tall, like the
+/// ghost buttons beside them: 34 px gem + 2 × 3 px padding + 2 × 3 px rim.
+EdgeInsets _pillPadding(double size) => EdgeInsets.symmetric(horizontal: size >= 30 ? 16 : 12, vertical: size >= 30 ? (kPillHeight - size - 6) / 2 : 4);
 
 /// Gem icon with an animated counter.
 class GemCounter extends StatelessWidget {
@@ -474,7 +489,10 @@ class SectionTitle extends StatelessWidget {
       child: onTap == null
           ? row
           : InkWell(
-              onTap: onTap,
+              onTap: () {
+                AudioService.current?.play(Sfx.tactus);
+                onTap!();
+              },
               borderRadius: BorderRadius.circular(8),
               child: Padding(padding: const EdgeInsets.symmetric(vertical: 2), child: row),
             ),
