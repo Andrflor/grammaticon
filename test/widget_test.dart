@@ -76,7 +76,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Forum'));
     await tester.pumpAndSettle();
-    expect(find.text('Forum · Dēclīnātiōnēs'), findsOneWidget);
+    expect(find.text('Forum · Dēclīnātiōnēs'.toUpperCase()), findsOneWidget); // top-bar inscription
     expect(find.textContaining('Prīma dēclīnātiō'), findsWidgets);
     expect(find.text('Contrōversia'), findsOneWidget); // only the free trial is open
     expect(find.text('Clausa'), findsWidgets);
@@ -136,7 +136,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Forum'));
     await tester.pumpAndSettle();
-    expect(find.text('Forum · Dēclīnātiōnēs'), findsOneWidget);
+    expect(find.text('Forum · Dēclīnātiōnēs'.toUpperCase()), findsOneWidget); // top-bar inscription
     await tester.tap(find.widgetWithText(InkWell, 'Contrōversia').first);
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
@@ -186,7 +186,7 @@ void main() {
     expect(find.text('Thermae'), findsNothing);
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
-    expect(find.text('Tabula perītiārum'), findsOneWidget);
+    expect(find.text('Tabula perītiārum'.toUpperCase()), findsOneWidget); // top-bar inscription
     await tester.scrollUntilVisible(find.text('Coniugātiōnēs'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Coniugātiōnēs'), findsOneWidget);
     expect(find.textContaining('Nōn aestimāta'), findsWidgets);
@@ -201,7 +201,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Theātrum'));
     await tester.pumpAndSettle();
-    expect(find.text('Theātrum · Interpretātiō'), findsOneWidget);
+    expect(find.text('Theātrum · Interpretātiō'.toUpperCase()), findsOneWidget); // top-bar inscription
     expect(find.textContaining('Numerus in sententiā'), findsWidgets);
     expect(find.text('Fābula'), findsOneWidget); // only the free trial is open
     expect(find.text('Clausa'), findsWidgets);
@@ -380,7 +380,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byIcon(Icons.settings));
     await tester.pumpAndSettle();
-    expect(find.text('Optiōnēs'), findsOneWidget);
+    expect(find.text('Optiōnēs'.toUpperCase()), findsOneWidget); // top-bar inscription
     // The panels above it are tall with the test font: bring the table into view first.
     await tester.scrollUntilVisible(find.text('Gemmae: praemia et poenae'), 200, scrollable: find.byType(Scrollable).first);
     expect(find.text('Gemmae: praemia et poenae'), findsOneWidget);
