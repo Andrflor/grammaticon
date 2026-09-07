@@ -21,9 +21,10 @@ class TabulaScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final save = ref.watch(profileProvider);
+    final light = G.body(16, color: Colors.white);
     return Scaffold(
-      body: Container(
-        decoration: kScreenGradient,
+      body: ScreenBackground(
+        asset: 'assets/images/tabula_bg.png',
         child: Column(
           children: [
             TopBar(title: 'Tabula perītiārum', gems: save.gems),
@@ -33,21 +34,21 @@ class TabulaScreen extends ConsumerWidget {
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
                   children: [
+                    // Legend of the tiers and the tallies of the three activities.
                     RomanPanel(
-                      color: G.purpleDark,
-                      borderColor: G.gold,
-                      padding: const EdgeInsets.all(12),
+                      color: G.purpleDeep,
+                      padding: const EdgeInsets.fromLTRB(18, 10, 18, 12),
                       child: Wrap(
                         spacing: 10,
-                        runSpacing: 6,
+                        runSpacing: 8,
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
-                          Text('Gradūs:', style: G.body(14, color: G.goldLight, weight: 800)),
+                          Text('Gradūs:', style: G.body(16, color: const Color(0xFFF3E9D2), weight: 800)),
                           for (final t in MasteryTier.values) MasteryBadge(t, dense: true),
                           for (final a in Activity.values)
                             Text(
                               '· ${configFor(a).labels.wonTally}: ${save.activityStats[a.key]?.won ?? 0} · ${configFor(a).labels.lostTally}: ${save.activityStats[a.key]?.lost ?? 0}',
-                              style: G.body(13, color: Colors.white),
+                              style: light,
                             ),
                         ],
                       ),
@@ -79,40 +80,39 @@ class _ExposurePanel extends ConsumerWidget {
     final playable = set.playableLemmas;
     final led = save.exposure;
     final met = playable.where((l) => led.of(l).seen > 0).length;
+    final repeated = playable.where((l) => led.of(l).seen > 1).length;
     final tested = playable.where((l) => led.of(l).tested > 0).length;
     final vp = VocabProgress.compute(set, led);
+    final light = G.body(16, color: Colors.white);
+    final strong = G.body(16, color: Colors.white, weight: 800);
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 10),
       child: RomanPanel(
-        color: G.purpleDark,
-        borderColor: G.gold,
-        padding: const EdgeInsets.all(12),
+        color: G.purpleDeep,
+        padding: const EdgeInsets.fromLTRB(18, 12, 18, 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Wrap(
-              spacing: 10,
-              runSpacing: 6,
-              crossAxisAlignment: WrapCrossAlignment.center,
+            Row(
               children: [
-                Text('Vocābula Vulgātae (${lang.latin})', style: G.display(15, color: G.goldLight)),
+                Expanded(child: Text('Vocābula Theātrī (${lang.latin})', style: G.display(18, color: G.goldLight, letterSpacing: 1.0))),
                 StatChip('Gradus ${vp.level} / ${vp.bands.length}', icon: Icons.stairs, color: G.gold, textColor: G.purpleDark),
               ],
             ),
             const SizedBox(height: 4),
-            Wrap(
-              spacing: 12,
-              runSpacing: 4,
-              children: [
-                Text('in fābulīs parātīs: ${playable.length}', style: G.body(13, color: Colors.white, weight: 700)),
-                Text('· obvia: $met', style: G.body(13, color: Colors.white)),
-                Text('· dīrēctē interrogāta: $tested', style: G.body(13, color: Colors.white)),
-              ],
+            Text.rich(
+              TextSpan(children: [
+                TextSpan(text: 'Parāta: ${playable.length}', style: strong),
+                TextSpan(text: '  ·  Obvia: $met  ·  Iterāta: $repeated  ·  Interrogāta: $tested', style: light),
+              ]),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 8),
             for (final b in [...vp.bands, if (vp.names.total > 0) vp.names]) _BandRow(b: b, open: b.band == 0 || b.band <= vp.level),
-            const SizedBox(height: 4),
-            Text('Obvium: vīsum; nōtum: bis in aliō locō vīsum aut rēctē interrogātum; firmum: bis rēctē interrogātum. Gradus proximus aperītur cum sexāgintā centēsimae vocābulōrum gradūs nōta sunt. Hī numerī perītiam grammaticam nōn aestimant.', style: G.body(12, color: G.goldLight, style: FontStyle.italic)),
+            const SizedBox(height: 6),
+            Text(
+              'Obviam fierī nōn est scīre: obvium vīsum est; nōtum bis in aliō locō vīsum aut rēctē interrogātum; firmum bis rēctē interrogātum. Hī numerī perītiam grammaticam nōn aestimant.',
+              style: G.body(14, color: G.goldLight, style: FontStyle.italic),
+            ),
           ],
         ),
       ),
@@ -127,11 +127,13 @@ class _BandRow extends StatelessWidget {
   final bool open;
 
   @override
-  Widget build(BuildContext context) => Padding(
+  Widget build(BuildContext context) {
+    final compact = MediaQuery.sizeOf(context).width < 720;
+    return Padding(
         padding: const EdgeInsets.symmetric(vertical: 3),
         child: Row(
           children: [
-            SizedBox(width: 104, child: Text(b.latin, style: G.body(12, color: open ? Colors.white : G.goldLight, weight: 700), maxLines: 1, overflow: TextOverflow.ellipsis)),
+            SizedBox(width: compact ? 92 : 136, child: Text(b.latin, style: G.body(13, color: open ? Colors.white : G.goldLight, weight: 700), maxLines: 1, overflow: TextOverflow.ellipsis)),
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
@@ -144,11 +146,13 @@ class _BandRow extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 8),
-            Text('${b.nota + b.firma}/${b.total}${open ? '' : ' · clausus'}', style: G.body(12, color: Colors.white)),
+            const SizedBox(width: 10),
+            Text('${b.nota + b.firma}/${b.total}${open || compact ? '' : ' · clausus'}', style: G.body(13, color: Colors.white, weight: 700)),
+            if (!open && compact) ...[const SizedBox(width: 4), const Icon(Icons.lock, size: 14, color: G.goldLight)],
           ],
         ),
       );
+  }
 }
 
 class _SkillNode extends ConsumerStatefulWidget {
@@ -170,58 +174,71 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
     final children = Skills.children(s.id);
     final leaf = children.isEmpty;
     final sum = MasterySummary.forSkill(save, s.id, cfg);
-    final indent = widget.depth * 14.0;
+    final root = widget.depth == 0;
+    // Nested rows sit 24 px inside their parent on both sides (relative to the
+    // parent row, which is itself already inset).
+    final inset = root ? 0.0 : 24.0;
+    final chevronColor = root ? G.purpleTitle : G.purpleRoyal;
+    // On phones the figures go under the name instead of crowding the row.
+    final compact = MediaQuery.sizeOf(context).width < 720;
+
+    final stats = <Widget>[
+      if (!s.future) ...[
+        if (!leaf && sum.totalLeaves > 1) Text('${sum.evaluatedLeaves}/${sum.totalLeaves}', style: G.body(root ? 16 : 14, color: G.inkSoft, weight: 700)),
+        if (sum.evaluated) Text(sum.estimateText, style: G.body(root ? 19 : 17, weight: 800, color: tierColor(sum.tier))),
+        MasteryBadge(sum.tier, dense: !root || compact),
+        if (sum.reviewDue) const Icon(Icons.history, color: G.red, size: 20),
+      ],
+    ];
 
     return Padding(
-      padding: EdgeInsets.only(left: indent, top: 8),
+      padding: EdgeInsets.only(left: inset, right: inset, top: root ? 10 : 8),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           RomanPanel(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-            color: s.future ? const Color(0xFFE9E0CC) : (leaf ? Colors.white : G.marble),
-            borderColor: widget.depth == 0 ? G.gold : G.marbleDark,
-            radius: 14,
-            shadow: widget.depth == 0,
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: root ? 9 : 7),
+            color: s.future ? const Color(0xFFEFE6D4) : G.marble,
+            borderColor: root ? G.gold : G.goldPale,
+            borderWidth: root ? 3 : 2,
+            radius: root ? 16 : 12,
+            shadow: root,
             child: InkWell(
               onTap: leaf ? () => _showSkill(context, s, sum) : () => setState(() => _open = !_open),
-              child: Row(
-                children: [
-                  if (!leaf) Icon(_open ? Icons.expand_more : Icons.chevron_right, color: G.purple),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(s.name, style: widget.depth == 0 ? G.display(20, color: G.purple) : G.body(16, weight: 800)),
-                        if (s.hint.isNotEmpty) Text(s.hint, style: G.body(13, color: G.inkSoft)),
-                        if (s.future)
-                          Text(
-                            'Ventūrum: structūra parāta, nōndum lūditur.',
-                            style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
-                          ),
-                      ],
+              borderRadius: BorderRadius.circular(10),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                child: Row(
+                  children: [
+                    Icon(
+                      leaf ? Icons.chevron_right : (_open ? Icons.expand_more : Icons.chevron_right),
+                      color: leaf ? G.goldDark : chevronColor,
+                      size: root ? 28 : 24,
                     ),
-                  ),
-                  const SizedBox(width: 8),
-                  if (!s.future) ...[
-                    if (!leaf && sum.totalLeaves > 1)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: Text('${sum.evaluatedLeaves}/${sum.totalLeaves}', style: G.body(13, color: G.inkSoft, weight: 700)),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(s.name, style: root ? G.display(22, color: G.purpleTitle, letterSpacing: 1.0) : G.body(14, weight: 800)),
+                          if (s.hint.isNotEmpty) Text(s.hint, style: G.body(13, color: G.inkSoft)),
+                          if (s.future)
+                            Text(
+                              'Ventūrum: structūra parāta, nōndum lūditur.',
+                              style: G.body(12, color: G.inkSoft, style: FontStyle.italic),
+                            ),
+                          if (compact && stats.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Wrap(spacing: 10, runSpacing: 4, crossAxisAlignment: WrapCrossAlignment.center, children: stats),
+                            ),
+                        ],
                       ),
-                    if (sum.evaluated)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: Text(sum.estimateText, style: G.body(15, weight: 800, color: tierColor(sum.tier))),
-                      ),
-                    MasteryBadge(sum.tier, dense: true),
-                    if (sum.reviewDue)
-                      const Padding(
-                        padding: EdgeInsets.only(left: 6),
-                        child: Icon(Icons.history, color: G.red, size: 20),
-                      ),
+                    ),
+                    if (!compact)
+                      for (final w in stats) ...[const SizedBox(width: 10), w],
                   ],
-                ],
+                ),
               ),
             ),
           ),
@@ -249,7 +266,7 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
               Row(
                 children: [
                   Expanded(
-                    child: Text(s.name, style: G.display(22, color: G.purple)),
+                    child: Text(s.name, style: G.display(22, color: G.purpleTitle)),
                   ),
                   MasteryBadge(sum.tier),
                 ],
@@ -298,15 +315,16 @@ class _SkillNodeState extends ConsumerState<_SkillNode> {
   Widget _trialLine(BuildContext ctx, Trial t, TrialStatus st) {
     final color = switch (st.access) {
       TrialAccess.accessible => G.green,
-      TrialAccess.purchasable => G.gold,
-      TrialAccess.locked => G.inkSoft,
+      TrialAccess.purchasable => G.amber,
+      TrialAccess.locked => G.grey,
     };
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: RomanPanel(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         color: Colors.white,
-        borderColor: G.marbleDark,
+        borderColor: G.goldPale,
+        borderWidth: 2,
         radius: 12,
         shadow: false,
         child: Row(

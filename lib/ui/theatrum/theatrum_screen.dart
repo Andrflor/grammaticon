@@ -25,8 +25,8 @@ class TheatrumScreen extends ConsumerWidget {
     }
     final save = ref.watch(profileProvider);
     return Scaffold(
-      body: Container(
-        decoration: kScreenGradient,
+      body: ScreenBackground(
+        asset: 'assets/images/certamina_bg.png',
         child: Column(
           children: [
             TopBar(title: 'Theātrum · Interpretātiō', gems: save.gems),
@@ -38,7 +38,7 @@ class TheatrumScreen extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('${lang.latin}: nōndum parāta', style: G.display(22, color: G.purple)),
+                      Text('${lang.latin}: nōndum parāta', style: G.display(22, color: G.purpleTitle)),
                       const SizedBox(height: 8),
                       Text(
                         'Interpretātiōnēs ${lang.latin.toLowerCase()} in hāc versiōne nōn continentur. Nihil aliā linguā ostenditur: ēlige linguam parātam in Optiōnibus.',

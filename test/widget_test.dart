@@ -335,8 +335,8 @@ void main() {
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.textContaining('Fābulae victae'), findsOneWidget);
-    expect(find.textContaining('Vocābula Vulgātae'), findsOneWidget);
-    expect(find.textContaining('obvia: 0'), findsOneWidget);
+    expect(find.textContaining('Vocābula Theātrī'), findsOneWidget);
+    expect(find.textContaining('Obvia: 0'), findsOneWidget);
     // Vocabulary acquisition by frequency band, with the gradus that gates selection.
     expect(find.textContaining('Gradus 1 /'), findsOneWidget);
     expect(find.textContaining('Gradus I'), findsWidgets);
@@ -381,6 +381,8 @@ void main() {
     await tester.tap(find.byIcon(Icons.settings));
     await tester.pumpAndSettle();
     expect(find.text('Optiōnēs'), findsOneWidget);
+    // The panels above it are tall with the test font: bring the table into view first.
+    await tester.scrollUntilVisible(find.text('Gemmae: praemia et poenae'), 200, scrollable: find.byType(Scrollable).first);
     expect(find.text('Gemmae: praemia et poenae'), findsOneWidget);
     expect(find.text('+8'), findsOneWidget);
     expect(find.text('−4').evaluate().isNotEmpty || find.text('-4').evaluate().isNotEmpty, isTrue);
