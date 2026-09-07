@@ -95,7 +95,7 @@ class CityScreen extends HookConsumerWidget {
                         }),
                       ),
                       const SizedBox(width: 8),
-                      RomanButton(label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, onPressed: () {
+                      RomanButton(label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, circular: true, onPressed: () {
                         pushScreen(context, const SettingsScreen());
                       }),
                     ]),
