@@ -121,22 +121,88 @@ void main() {
     expect(Trials.byId('tm-tempora-inf').group, 'Tempora āctīva');
   });
 
-  test('the mood ladder and the combined ladder', () {
-    final first = Trials.byId('tm-modi-ind-subj');
-    expect(Trials.byId('tm-modi-praes').prerequisites, contains('tm-modi-ind-subj'));
-    expect(Trials.byId('tm-modi-omnia').prerequisites, contains('tm-modi-praes'));
-    final q = gen.generate(trial: first, componentIds: comps(first), rng: Random(2), id: 'm')!;
-    expect(q.choices.map((c) => c.value).toList(), ['ind', 'subj']);
-    final ambo1 = Trials.byId('tm-ambo-ind-subj');
-    expect(Trials.byId('tm-ambo').prerequisites, contains('tm-ambo-ind-subj'));
-    expect(ambo1.primarySkill, isNot(Trials.byId('tm-ambo').primarySkill));
-    expect(Skills.byId(ambo1.primarySkill).parent, 'tm.ambo');
-    expect(Skills.byId(Trials.byId('tm-ambo').primarySkill).parent, 'tm.ambo');
-    expect(first.primarySkill, isNot(Trials.byId('tm-modi-praes').primarySkill));
-    for (var i = 0; i < 40; i++) {
-      final q = gen.generate(trial: ambo1, componentIds: comps(ambo1), rng: Random(i), id: 'a$i')!;
-      expect(q.verb.target.analysis.mood, anyOf(Mood.indicativus, Mood.subiunctivus));
+  test('the mood ladder: one confusion at a time, grid of exactly the moods mixed, forms only from the cells', () {
+    final steps = ModiLadder.steps;
+    expect(steps.where((s) => s.cells.length == 2).length, greaterThanOrEqualTo(6), reason: 'pairs of confusable moods first');
+    expect(steps.first.key, 'ind-subj-praes');
+    expect(steps.map((s) => s.key), containsAll(['ind-subj-imperf', 'fut-subj-praes', 'ind-imp', 'inf-imp', 'inf-subj-imperf', 'ind-subj-plusq', 'ind-subj-perf', 'praes', 'omnia']));
+    expect(ModiLadder.trialId(steps.last), 'tm-modi-omnia');
+    expect(ModiLadder.trialId(ModiLadder.byKey('praes')), 'tm-modi-praes');
+    for (var i = 0; i < steps.length; i++) {
+      final step = steps[i];
+      final t = Trials.byId(ModiLadder.trialId(step));
+      expect(t.group, 'Modī');
+      expect(t.dimensions, [Dimension.modus]);
+      expect(t.skillIds, [ModiLadder.skillId(step)]);
+      expect(Skills.isLeaf(t.primarySkill), isTrue);
+      expect(Skills.byId(t.primarySkill).parent, 'tm.modus');
+      for (var j = 0; j < i; j++) {
+        expect(t.primarySkill, isNot(Trials.byId(ModiLadder.trialId(steps[j])).primarySkill));
+      }
+      for (final k in step.after) {
+        expect(steps.indexWhere((s) => s.key == k), inInclusiveRange(0, i - 1), reason: '${t.id} builds on $k');
+        expect(t.prerequisites, contains(ModiLadder.trialId(ModiLadder.byKey(k))));
+      }
+      final rng = Random(i);
+      for (var n = 0; n < 20; n++) {
+        final q = gen.generate(trial: t, componentIds: comps(t), rng: rng, id: 'm$i-$n')!;
+        expect(q.dimension, Dimension.modus);
+        expect(q.choices.map((c) => c.value).toSet(), step.moods.map((m) => m.key).toSet(), reason: t.id);
+        final a = q.verb.target.analysis;
+        final cell = step.cells.firstWhere((c) => c.mood == a.mood);
+        if (cell.tenses != null) expect(a.tense, isIn(cell.tenses!), reason: '${t.id} drew ${q.verb.target.surface}');
+      }
     }
+    // The classic confusions are there: reget an regat, amāre an amā, amāre an amāret.
+    final fs = ModiLadder.byKey('fut-subj-praes');
+    expect(fs.cells.map((c) => c.mood), [Mood.indicativus, Mood.subiunctivus]);
+    expect(fs.cells[0].tenses, {Tense.futurum});
+    expect(fs.cells[1].tenses, {Tense.praesens});
+    expect(ModiLadder.byKey('inf-subj-imperf').cells.map((c) => c.mood), [Mood.infinitivus, Mood.subiunctivus]);
+  });
+
+  test('the combined ladder: cells grow with what the tense and mood ladders taught', () {
+    final steps = AmboLadder.steps;
+    expect(steps.map((s) => s.key), ['praes-imperf', 'praesentis', 'perfecti', 'ind-subj', 'imp-inf', 'omnia']);
+    expect(AmboLadder.trialId(steps.last), 'tm-ambo');
+    expect(AmboLadder.trialId(AmboLadder.byKey('ind-subj')), 'tm-ambo-ind-subj');
+    for (var i = 0; i < steps.length; i++) {
+      final step = steps[i];
+      final t = Trials.byId(AmboLadder.trialId(step));
+      expect(t.group, 'Tempora et modī');
+      expect(t.dimensions, [Dimension.tempusModus]);
+      expect(t.skillIds, [AmboLadder.skillId(step)]);
+      expect(Skills.byId(t.primarySkill).parent, 'tm.ambo');
+      for (var j = 0; j < i; j++) {
+        expect(t.primarySkill, isNot(Trials.byId(AmboLadder.trialId(steps[j])).primarySkill));
+      }
+      for (final k in step.after) {
+        expect(steps.indexWhere((s) => s.key == k), inInclusiveRange(0, i - 1));
+        expect(t.prerequisites, contains(AmboLadder.trialId(AmboLadder.byKey(k))));
+      }
+      // Every prerequisite exists; the tense and mood steps it rests on are real trials.
+      for (final p in t.prerequisites) {
+        expect(Trials.maybe(p), isNotNull, reason: '${t.id} requires $p');
+      }
+      final rng = Random(i);
+      final cellKeys = {
+        for (final c in step.cells)
+          for (final tn in c.tenses ?? Tense.values) QuestionGenerator.tempusModusKey(c.mood, tn),
+      };
+      for (var n = 0; n < 20; n++) {
+        final q = gen.generate(trial: t, componentIds: comps(t), rng: rng, id: 'a$i-$n')!;
+        expect(q.dimension, Dimension.tempusModus);
+        // Answer and distractors come from the cells of the step only.
+        for (final c in q.choices) {
+          expect(cellKeys, contains(c.value), reason: '${t.id} offered ${c.value}');
+        }
+      }
+    }
+    // The first step is four cells: amat, amābat, amet, amāret.
+    final first = AmboLadder.steps.first;
+    expect(first.cells.expand((c) => c.tenses!).length, 4);
+    // The Mixta still point at the historical ids.
+    expect(Trials.byId('mx-modi').prerequisites, containsAll(['tm-modi-omnia', 'tm-ambo']));
   });
 
   test('fixed grid: two mixed tenses of the last step still offer the whole scale in canonical order', () {

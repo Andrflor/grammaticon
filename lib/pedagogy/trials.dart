@@ -181,7 +181,6 @@ const _temporaGroup = 'Tempora āctīva';
 const _temporaPassGroup = 'Tempora passīva';
 const _modiGroup = 'Modī';
 const _amboGroup = 'Tempora et modī';
-const _fourMoods = {Mood.indicativus, Mood.subiunctivus, Mood.imperativus, Mood.infinitivus};
 
 /// Tense-recognition trial: one step of the ladder of a mood and voice, with
 /// its own skill leaf. The only question is the tense, the answer grid is
@@ -209,6 +208,45 @@ Trial _tempora(Mood mood, Voice voice, TmStep step) {
     group: voice == Voice.activum ? _temporaGroup : _temporaPassGroup,
   );
 }
+
+FormFilter _cellFilter(ModusCell c) => FormFilter(moods: {c.mood}, tenses: c.tenses, voices: const {Voice.activum}, conjugations: _regularConj);
+
+/// Mood-recognition trial: one step of ModiLadder, with its own skill leaf.
+/// The only question is the mood, the grid is exactly the moods mixed.
+Trial _modi(CellStep step) => Trial(
+      id: ModiLadder.trialId(step),
+      name: step.name,
+      subtitle: step.subtitle,
+      skillIds: [ModiLadder.skillId(step)],
+      price: step.price,
+      prerequisites: [for (final k in step.after) ModiLadder.trialId(ModiLadder.byKey(k)), ...step.requires],
+      filter: FormFilter(moods: step.moods, tenses: step.tenses, voices: const {Voice.activum}, conjugations: _regularConj),
+      dimensions: const [Dimension.modus],
+      fixedChoices: true,
+      components: [for (final c in step.cells) TrialComponent(c.mood.key, c.mood.latin, _cellFilter(c), requires: c.requires)],
+      intro: step.intro,
+      examples: step.examples,
+      opponentId: 'cyclops',
+      group: _modiGroup,
+    );
+
+/// Combined trial: one step of AmboLadder, tense and mood in one answer,
+/// distractors drawn from the cells the step mixes.
+Trial _ambo(CellStep step) => Trial(
+      id: AmboLadder.trialId(step),
+      name: step.name,
+      subtitle: step.subtitle,
+      skillIds: [AmboLadder.skillId(step)],
+      price: step.price,
+      prerequisites: [for (final k in step.after) AmboLadder.trialId(AmboLadder.byKey(k)), ...step.requires],
+      filter: FormFilter(moods: step.moods, tenses: step.tenses, voices: const {Voice.activum}, conjugations: _regularConj),
+      dimensions: const [Dimension.tempusModus],
+      components: [for (final c in step.cells) TrialComponent(c.mood.key, c.mood.latin, _cellFilter(c), requires: c.requires)],
+      intro: step.intro,
+      examples: step.examples,
+      opponentId: 'hydra',
+      group: _amboGroup,
+    );
 
 /// Registry of every trial of the city (both activities). Ids are unique
 /// across activities; prerequisites may only point inside the same activity.
@@ -769,102 +807,15 @@ class Trials {
             ),
         ],
         // ----------------------------------------------------------- Modī
-        // Recognising the mood only: first the one hard contrast (indicative
-        // against subjunctive, both present), then the four moods in the
-        // present, then the four moods at every tense.
-        Trial(
-          id: 'tm-modi-ind-subj',
-          name: 'Indicātīvus an subiūnctīvus',
-          subtitle: 'praesēns',
-          skillIds: const ['tm.modus.duo'],
-          price: 10,
-          prerequisites: const ['subj-praes-act'],
-          filter: const FormFilter(moods: {Mood.indicativus, Mood.subiunctivus}, tenses: {Tense.praesens}, voices: {Voice.activum}, conjugations: _regularConj),
-          dimensions: const [Dimension.modus],
-          fixedChoices: true,
-          components: [
-            for (final (m, req) in [(Mood.indicativus, 'ind-praes-act'), (Mood.subiunctivus, 'subj-praes-act')])
-              TrialComponent(m.key, m.latin, FormFilter(moods: {m}, tenses: const {Tense.praesens}, voices: const {Voice.activum}, conjugations: _regularConj), requires: req),
-          ],
-          intro: 'Nunc ūnum rogātur: quī modus? Duo tantum, ambō praesentia: indicātīvus dīcit (amat, regit), subiūnctīvus vōcālem mūtat (amet, regat). Prīma coniugātiō ā in e vertit, cēterae in a.',
-          examples: ['amat · amet', 'regit · regat', 'audit · audiat'],
-          opponentId: 'cyclops',
-          group: _modiGroup,
-        ),
-        Trial(
-          id: 'tm-modi-praes',
-          name: 'Modī praesentis',
-          subtitle: 'indicātīvus · subiūnctīvus · imperātīvus · īnfīnītīvus',
-          skillIds: const ['tm.modus.praes'],
-          price: 15,
-          prerequisites: const ['tm-modi-ind-subj', 'imp-praes'],
-          filter: const FormFilter(moods: _fourMoods, tenses: {Tense.praesens}, voices: {Voice.activum}, conjugations: _regularConj),
-          dimensions: const [Dimension.modus],
-          fixedChoices: true,
-          components: [
-            for (final (m, req) in [(Mood.indicativus, 'ind-praes-act'), (Mood.subiunctivus, 'subj-praes-act'), (Mood.imperativus, 'imp-praes'), (Mood.infinitivus, 'infinitivi')])
-              TrialComponent(m.key, m.latin, FormFilter(moods: {m}, tenses: const {Tense.praesens}, voices: const {Voice.activum}, conjugations: _regularConj), requires: req),
-          ],
-          intro: 'Quī modus? Omnia praesentia sunt, ut sōlus modus discernātur. Indicātīvus dīcit (amat), subiūnctīvus vōcālem mūtat (amet), imperātīvus iubet (amā), īnfīnītīvus persōnam nōn habet (amāre).',
-          examples: ['amat · amet · amā · amāre', 'regit · regat · rege · regere', 'audit · audiat · audī · audīre'],
-          opponentId: 'cyclops',
-          group: _modiGroup,
-        ),
-        Trial(
-          id: 'tm-modi-omnia',
-          name: 'Modī omnium temporum',
-          subtitle: 'indicātīvus · subiūnctīvus · imperātīvus · īnfīnītīvus',
-          skillIds: const ['tm.modus.omnia'],
-          price: 25,
-          prerequisites: const ['tm-modi-praes', 'subj-plusq-act', 'imp-fut', 'infinitivi'],
-          filter: const FormFilter(moods: _fourMoods, voices: {Voice.activum}, conjugations: _regularConj),
-          dimensions: const [Dimension.modus],
-          fixedChoices: true,
-          components: [
-            for (final m in _fourMoods) TrialComponent(m.key, m.latin, FormFilter(moods: {m}, voices: const {Voice.activum}, conjugations: _regularConj)),
-          ],
-          intro: 'Quī modus, quōcumque tempore? Cavē fōrmās ambiguās: regam (futūrum indicātīvī / praesēns subiūnctīvī), amāverit (futūrum exāctum / perfectum subiūnctīvī). Ambae respōnsiōnēs tunc accipiuntur.',
-          examples: ['amābat · amāret · amātō · amāvisse', 'rēxerat · rēxisset · regitō · rēxisse', 'regam: futūrum aut subiūnctīvus'],
-          opponentId: 'cyclops',
-          group: _modiGroup,
-        ),
+        // Recognising the mood only, on the ladder of ModiLadder: one
+        // confusion at a time (amat an amet, reget an regat, amā an amāre…),
+        // then the four moods in the present, then at every tense.
+        for (final step in ModiLadder.steps) _modi(step),
         // ----------------------------------------------------------- Tempora et modī
-        // Tense and mood in one answer: first indicative and subjunctive
-        // only, then the four moods.
-        Trial(
-          id: 'tm-ambo-ind-subj',
-          name: 'Tempora et modī',
-          subtitle: 'indicātīvus · subiūnctīvus',
-          skillIds: const ['tm.ambo.duo'],
-          price: 30,
-          prerequisites: const ['tm-tempora-ind-act', 'tm-tempora-subj-act', 'tm-modi-omnia'],
-          filter: const FormFilter(moods: {Mood.indicativus, Mood.subiunctivus}, voices: {Voice.activum}, conjugations: _regularConj),
-          dimensions: const [Dimension.tempusModus],
-          components: [
-            for (final m in [Mood.indicativus, Mood.subiunctivus]) TrialComponent(m.key, m.latin, FormFilter(moods: {m}, voices: const {Voice.activum}, conjugations: _regularConj)),
-          ],
-          intro: 'Tempus et modus ūnā respōnsiōne, in duōbus modīs: "subiūnctīvus · imperfectum". Prīmum modum quaere (vōcālis, -re-, -isse-), deinde tempus. Cavē regam et amāverit, quae utrīusque modī sunt.',
-          examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'regam: futūrum aut subiūnctīvus'],
-          opponentId: 'hydra',
-          group: _amboGroup,
-        ),
-        Trial(
-          id: 'tm-ambo',
-          name: 'Tempora et modī omnēs',
-          subtitle: 'quattuor modī · omnia tempora',
-          skillIds: const ['tm.ambo.omnia'],
-          price: 40,
-          prerequisites: const ['tm-ambo-ind-subj', 'tm-modi-omnia'],
-          filter: const FormFilter(moods: _fourMoods, voices: {Voice.activum}, conjugations: _regularConj),
-          dimensions: const [Dimension.tempusModus],
-          components: [
-            for (final m in _fourMoods) TrialComponent(m.key, m.latin, FormFilter(moods: {m}, voices: const {Voice.activum}, conjugations: _regularConj)),
-          ],
-          intro: 'Tempus et modus ūnā respōnsiōne, in quattuor modīs. Prīmum modum quaere (vōcālis, -re-, -isse-, dēsinentia imperātīvī, -re īnfīnītīvī), deinde tempus.',
-          examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'amāvisse: īnfīnītīvus · perfectum'],
-          opponentId: 'hydra',
-          group: _amboGroup,
-        ),
+        // Tense and mood in one answer, on the ladder of AmboLadder: four
+        // cells first, then each system, then the two moods entire, then the
+        // imperative and infinitive, then everything.
+        for (final step in AmboLadder.steps) _ambo(step),
         // ----------------------------------------------------------- Mixta
         Trial(
           id: 'mx-tempora-ind-act',

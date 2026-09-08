@@ -341,3 +341,270 @@ class TmLadders {
     ),
   ];
 }
+
+// =============================================================================
+// Modī and Tempora et modī: ladders of cells (mood × tenses).
+// =============================================================================
+
+/// One mood with the tenses drawn from it (null = every tense of the mood).
+class ModusCell {
+  const ModusCell(this.mood, [this.tenses]);
+  final Mood mood;
+  final Set<Tense>? tenses;
+
+  /// Conjugation trial that must be accessible before the cell may be mixed
+  /// in, when the cell is a single tense (else the step's prerequisites hold).
+  String? get requires {
+    if (tenses == null || tenses!.length != 1) return null;
+    final t = tenses!.first;
+    return switch (mood) {
+      Mood.imperativus => t == Tense.praesens ? 'imp-praes' : 'imp-fut',
+      Mood.infinitivus => 'infinitivi',
+      _ => '${mood.key}-${t.key}-act',
+    };
+  }
+}
+
+/// A step of the mood ladder or of the combined ladder.
+class CellStep {
+  const CellStep({
+    required this.key,
+    required this.name,
+    required this.subtitle,
+    required this.cells,
+    required this.after,
+    required this.requires,
+    required this.price,
+    required this.intro,
+    required this.examples,
+  });
+  final String key;
+  final String name;
+  final String subtitle;
+  final List<ModusCell> cells;
+
+  /// Keys of the steps of the same ladder that must be accessible first.
+  final List<String> after;
+
+  /// Other trials (conjugation, tense or mood recognition) needed first.
+  final List<String> requires;
+  final int price;
+  final String intro;
+  final List<String> examples;
+
+  String get hint => examples.first;
+  Set<Mood> get moods => {for (final c in cells) c.mood};
+
+  /// Union of the tenses drawn, null when some cell draws every tense.
+  Set<Tense>? get tenses => cells.any((c) => c.tenses == null) ? null : {for (final c in cells) ...c.tenses!};
+}
+
+const _ind = Mood.indicativus, _subj = Mood.subiunctivus, _imp = Mood.imperativus, _inf = Mood.infinitivus;
+const _tP = Tense.praesens, _tI = Tense.imperfectum, _tF = Tense.futurum, _tPf = Tense.perfectum, _tPq = Tense.plusquamperfectum, _tFx = Tense.futurumExactum;
+
+/// Recognising the mood only, on a fixed grid of the moods mixed. The
+/// confusions first, one tense at a time (amat an amet, amābat an amāret,
+/// reget an regat…), then the four moods in the present, then at every tense.
+class ModiLadder {
+  ModiLadder._();
+
+  static const parentSkill = 'tm.modus';
+  static String skillId(CellStep s) => '$parentSkill.${s.key}';
+  static String trialId(CellStep s) => 'tm-modi-${s.key}';
+  static CellStep byKey(String key) => steps.firstWhere((s) => s.key == key);
+
+  static const steps = [
+    CellStep(
+      key: 'ind-subj-praes',
+      name: 'Indicātīvus an subiūnctīvus',
+      subtitle: 'praesēns',
+      cells: [ModusCell(_ind, {_tP}), ModusCell(_subj, {_tP})],
+      after: [],
+      requires: ['subj-praes-act'],
+      price: 10,
+      intro: 'Nunc ūnum rogātur: quī modus? Duo tantum, ambō praesentia: indicātīvus dīcit (amat, regit), subiūnctīvus vōcālem mūtat (amet, regat). Prīma coniugātiō ā in e vertit, cēterae in a.',
+      examples: ['amat · amet', 'regit · regat', 'audit · audiat'],
+    ),
+    CellStep(
+      key: 'ind-subj-imperf',
+      name: 'Indicātīvus an subiūnctīvus',
+      subtitle: 'imperfectum',
+      cells: [ModusCell(_ind, {_tI}), ModusCell(_subj, {_tI})],
+      after: ['ind-subj-praes'],
+      requires: ['subj-imperf-act'],
+      price: 10,
+      intro: 'Imperfectum utrīusque modī: indicātīvus -ba- (amābat, regēbat), subiūnctīvus īnfīnītīvum + dēsinentiam (amāret, regeret).',
+      examples: ['amābat · amāret', 'regēbat · regeret', 'audiēbat · audīret'],
+    ),
+    CellStep(
+      key: 'fut-subj-praes',
+      name: 'Futūrum an praesēns subiūnctīvī',
+      subtitle: 'indicātīvus · subiūnctīvus',
+      cells: [ModusCell(_ind, {_tF}), ModusCell(_subj, {_tP})],
+      after: ['ind-subj-praes'],
+      requires: ['ind-fut-act', 'subj-praes-act'],
+      price: 15,
+      intro: 'Futūrum indicātīvī an praesēns subiūnctīvī? In prīmā et secundā clārum: amābit ≠ amet. In tertiā et quārtā ūna vōcālis distat: reget ≠ regat, audiet ≠ audiat. Prīma persōna regam ambigua est: ambae respōnsiōnēs accipiuntur.',
+      examples: ['amābit · amet', 'reget · regat', 'regam: futūrum aut subiūnctīvus'],
+    ),
+    CellStep(
+      key: 'ind-imp',
+      name: 'Indicātīvus an imperātīvus',
+      subtitle: 'praesēns',
+      cells: [ModusCell(_ind, {_tP}), ModusCell(_imp, {_tP})],
+      after: ['ind-subj-praes'],
+      requires: ['imp-praes'],
+      price: 10,
+      intro: 'Indicātīvus an imperātīvus? Imperātīvus secundae persōnae dēsinentiam persōnae nōn habet (amā, rege, audī) aut -te (amāte); indicātīvus -s, -tis (amās, amātis).',
+      examples: ['amās · amā', 'regitis · regite', 'audīs · audī'],
+    ),
+    CellStep(
+      key: 'inf-imp',
+      name: 'Īnfīnītīvus an imperātīvus',
+      subtitle: 'praesēns',
+      cells: [ModusCell(_inf, {_tP}), ModusCell(_imp, {_tP})],
+      after: ['ind-imp'],
+      requires: ['infinitivi', 'imp-praes'],
+      price: 10,
+      intro: 'Īnfīnītīvus an imperātīvus? Īnfīnītīvus -re habet (amāre, regere), imperātīvus sine -re (amā, rege). Cavē: audīre ≠ audī.',
+      examples: ['amāre · amā', 'regere · rege', 'audīre · audī'],
+    ),
+    CellStep(
+      key: 'inf-subj-imperf',
+      name: 'Īnfīnītīvus an subiūnctīvus imperfectum',
+      subtitle: 'īnfīnītīvus · subiūnctīvus',
+      cells: [ModusCell(_inf, {_tP}), ModusCell(_subj, {_tI})],
+      after: ['ind-subj-imperf', 'inf-imp'],
+      requires: ['infinitivi', 'subj-imperf-act'],
+      price: 15,
+      intro: 'Īnfīnītīvus an imperfectum subiūnctīvī? Ex īnfīnītīvō fit imperfectum: amāre + -m, -s, -t (amārem, amārēs, amāret). Sine dēsinentiā persōnae īnfīnītīvus manet.',
+      examples: ['amāre · amāret', 'regere · regeret', 'audīre · audīret'],
+    ),
+    CellStep(
+      key: 'ind-subj-plusq',
+      name: 'Indicātīvus an subiūnctīvus',
+      subtitle: 'plūsquamperfectum',
+      cells: [ModusCell(_ind, {_tPq}), ModusCell(_subj, {_tPq})],
+      after: ['ind-subj-imperf'],
+      requires: ['ind-plusq-act', 'subj-plusq-act'],
+      price: 15,
+      intro: 'Plūsquamperfectum utrīusque modī, idem thema perfectī: indicātīvus -era- (amāverat), subiūnctīvus -isse- (amāvisset).',
+      examples: ['amāverat · amāvisset', 'rēxerat · rēxisset', 'audīverat · audīvisset'],
+    ),
+    CellStep(
+      key: 'ind-subj-perf',
+      name: 'Indicātīvus an subiūnctīvus',
+      subtitle: 'perfectum',
+      cells: [ModusCell(_ind, {_tPf}), ModusCell(_subj, {_tPf})],
+      after: ['ind-subj-plusq'],
+      requires: ['subj-perf-act'],
+      price: 15,
+      intro: 'Perfectum utrīusque modī: indicātīvus dēsinentiās suās habet (amāvit, amāvistī), subiūnctīvus -eri- (amāverit, amāverīs).',
+      examples: ['amāvit · amāverit', 'rēxit · rēxerit', 'amāvistī · amāverīs'],
+    ),
+    CellStep(
+      key: 'praes',
+      name: 'Modī praesentis',
+      subtitle: 'indicātīvus · subiūnctīvus · imperātīvus · īnfīnītīvus',
+      cells: [ModusCell(_ind, {_tP}), ModusCell(_subj, {_tP}), ModusCell(_imp, {_tP}), ModusCell(_inf, {_tP})],
+      after: ['ind-subj-praes', 'ind-imp', 'inf-imp'],
+      requires: ['imp-praes', 'infinitivi'],
+      price: 20,
+      intro: 'Quī modus? Omnia praesentia sunt, ut sōlus modus discernātur. Indicātīvus dīcit (amat), subiūnctīvus vōcālem mūtat (amet), imperātīvus iubet (amā), īnfīnītīvus persōnam nōn habet (amāre).',
+      examples: ['amat · amet · amā · amāre', 'regit · regat · rege · regere', 'audit · audiat · audī · audīre'],
+    ),
+    CellStep(
+      key: 'omnia',
+      name: 'Modī omnium temporum',
+      subtitle: 'indicātīvus · subiūnctīvus · imperātīvus · īnfīnītīvus',
+      cells: [ModusCell(_ind), ModusCell(_subj), ModusCell(_imp), ModusCell(_inf)],
+      after: ['fut-subj-praes', 'inf-subj-imperf', 'ind-subj-perf', 'praes'],
+      requires: ['imp-fut', 'ind-futex-act', 'subj-plusq-act'],
+      price: 25,
+      intro: 'Quī modus, quōcumque tempore? Cavē fōrmās ambiguās: regam (futūrum indicātīvī / praesēns subiūnctīvī), amāverit (futūrum exāctum / perfectum subiūnctīvī). Ambae respōnsiōnēs tunc accipiuntur.',
+      examples: ['amābat · amāret · amātō · amāvisse', 'rēxerat · rēxisset · regitō · rēxisse', 'regam: futūrum aut subiūnctīvus'],
+    ),
+  ];
+}
+
+/// Tense and mood in one answer. The cells grow with what the tense and mood
+/// ladders have taught: four cells first, then each system of the indicative
+/// and subjunctive, then those two moods entire, then the imperative and
+/// infinitive with their tenses, then everything.
+class AmboLadder {
+  AmboLadder._();
+
+  static const parentSkill = 'tm.ambo';
+  static String skillId(CellStep s) => '$parentSkill.${s.key}';
+  static String trialId(CellStep s) => s.key == 'omnia' ? 'tm-ambo' : 'tm-ambo-${s.key}';
+  static CellStep byKey(String key) => steps.firstWhere((s) => s.key == key);
+
+  static const steps = [
+    CellStep(
+      key: 'praes-imperf',
+      name: 'Praesēns et imperfectum',
+      subtitle: 'indicātīvus · subiūnctīvus',
+      cells: [ModusCell(_ind, {_tP, _tI}), ModusCell(_subj, {_tP, _tI})],
+      after: [],
+      requires: ['tm-tempora-ind-act-praes-imperf', 'tm-tempora-subj-act-praes-imperf', 'tm-modi-ind-subj-praes', 'tm-modi-ind-subj-imperf'],
+      price: 20,
+      intro: 'Tempus et modus ūnā respōnsiōne, in quattuor cellīs: amat, amābat, amet, amāret. Prīmum modum quaere (vōcālis subiūnctīvī, -re-), deinde tempus (-ba-).',
+      examples: ['amat: indicātīvus · praesēns', 'amāret: subiūnctīvus · imperfectum', 'regat ≠ regit ≠ regeret'],
+    ),
+    CellStep(
+      key: 'praesentis',
+      name: 'Systēma praesentis',
+      subtitle: 'indicātīvus · subiūnctīvus',
+      cells: [ModusCell(_ind, {_tP, _tI, _tF}), ModusCell(_subj, {_tP, _tI})],
+      after: ['praes-imperf'],
+      requires: ['tm-tempora-ind-act-praes-imperf-fut', 'tm-modi-fut-subj-praes'],
+      price: 25,
+      intro: 'Systēma praesentis utrīusque modī: futūrum accēdit. Cavē reget (futūrum indicātīvī) ≠ regat (praesēns subiūnctīvī); regam ambiguum est, ambae respōnsiōnēs accipiuntur.',
+      examples: ['reget: indicātīvus · futūrum', 'regat: subiūnctīvus · praesēns', 'regam: futūrum aut praesēns subiūnctīvī'],
+    ),
+    CellStep(
+      key: 'perfecti',
+      name: 'Systēma perfectī',
+      subtitle: 'indicātīvus · subiūnctīvus',
+      cells: [ModusCell(_ind, {_tPf, _tPq, _tFx}), ModusCell(_subj, {_tPf, _tPq})],
+      after: ['praes-imperf'],
+      requires: ['tm-tempora-ind-act-perf-plusq-futex', 'tm-tempora-subj-act-perf-plusq', 'tm-modi-ind-subj-plusq', 'tm-modi-ind-subj-perf'],
+      price: 25,
+      intro: 'Systēma perfectī utrīusque modī: amāvit, amāverat, amāverit; amāverit, amāvisset. Cavē amāverit: futūrum exāctum indicātīvī aut perfectum subiūnctīvī, ambae respōnsiōnēs accipiuntur; amāverō ≠ amāverim.',
+      examples: ['amāverat: indicātīvus · plūsquamperfectum', 'amāvisset: subiūnctīvus · plūsquamperfectum', 'amāverit: futūrum exāctum aut perfectum subiūnctīvī'],
+    ),
+    CellStep(
+      key: 'ind-subj',
+      name: 'Indicātīvus et subiūnctīvus',
+      subtitle: 'omnia tempora',
+      cells: [ModusCell(_ind), ModusCell(_subj)],
+      after: ['praesentis', 'perfecti'],
+      requires: ['tm-tempora-ind-act', 'tm-tempora-subj-act'],
+      price: 30,
+      intro: 'Tempus et modus ūnā respōnsiōne, omnibus temporibus duōrum modōrum: "subiūnctīvus · imperfectum". Prīmum modum quaere (vōcālis, -re-, -isse-), deinde tempus.',
+      examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'regam: futūrum aut subiūnctīvus'],
+    ),
+    CellStep(
+      key: 'imp-inf',
+      name: 'Imperātīvus et īnfīnītīvus',
+      subtitle: 'cum temporibus suīs',
+      cells: [ModusCell(_imp, {_tP, _tF}), ModusCell(_inf, {_tP, _tPf, _tF})],
+      after: [],
+      requires: ['imp-fut', 'tm-tempora-inf', 'tm-modi-inf-imp'],
+      price: 20,
+      intro: 'Imperātīvus et īnfīnītīvus cum temporibus suīs: amā (praesēns), amātō (futūrum); amāre (praesēns), amāvisse (perfectum), amātūrus esse (futūrum).',
+      examples: ['amātō: imperātīvus · futūrum', 'amāvisse: īnfīnītīvus · perfectum', 'amā ≠ amāre'],
+    ),
+    CellStep(
+      key: 'omnia',
+      name: 'Tempora et modī omnēs',
+      subtitle: 'quattuor modī · omnia tempora',
+      cells: [ModusCell(_ind), ModusCell(_subj), ModusCell(_imp), ModusCell(_inf)],
+      after: ['ind-subj', 'imp-inf'],
+      requires: ['tm-modi-omnia'],
+      price: 40,
+      intro: 'Tempus et modus ūnā respōnsiōne, in quattuor modīs. Prīmum modum quaere (vōcālis, -re-, -isse-, dēsinentia imperātīvī, -re īnfīnītīvī), deinde tempus.',
+      examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'amāvisse: īnfīnītīvus · perfectum'],
+    ),
+  ];
+}

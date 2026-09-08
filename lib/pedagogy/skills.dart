@@ -86,13 +86,10 @@ class Skills {
     Skill('tm.tempus.subj.act', 'Tempora subiūnctīvī āctīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amet · amāret · amāverit · amāvisset'),
     Skill('tm.tempus.subj.pass', 'Tempora subiūnctīvī passīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amētur · amārētur · amātus sit'),
     Skill('tm.tempus.inf', 'Tempora īnfīnītīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amāre · amāvisse · amātūrus esse'),
+    // Leaves of the mood ladder and of the combined ladder are generated
+    // from ModiLadder and AmboLadder.
     Skill('tm.modus', 'Agnitiō modōrum', parent: 'tm', branch: SkillBranch.temporaModi),
-    Skill('tm.modus.duo', 'Indicātīvus an subiūnctīvus', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amat · amet'),
-    Skill('tm.modus.praes', 'Modī praesentis', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amat · amet · amā · amāre'),
-    Skill('tm.modus.omnia', 'Modī omnium temporum', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amāverat · amāvisset · amātō · amāvisse'),
     Skill('tm.ambo', 'Tempus et modus simul', parent: 'tm', branch: SkillBranch.temporaModi, hint: 'amāret: subiūnctīvus imperfectum'),
-    Skill('tm.ambo.duo', 'Indicātīvus et subiūnctīvus', parent: 'tm.ambo', branch: SkillBranch.temporaModi, hint: 'amāret: subiūnctīvus imperfectum'),
-    Skill('tm.ambo.omnia', 'Quattuor modī', parent: 'tm.ambo', branch: SkillBranch.temporaModi, hint: 'amāvisse: īnfīnītīvus perfectum'),
     // ----- Mixta -----
     Skill('mx', 'Mixta', branch: SkillBranch.mixta),
     Skill('mx.tempus.ind', 'Discrīmen temporum indicātīvī', parent: 'mx', branch: SkillBranch.mixta),
@@ -158,6 +155,13 @@ class Skills {
       for (final step in TmLadders.of(mood, voice)) {
         list.add(Skill(TmLadders.skillId(mood, voice, step), step.name, parent: TmLadders.parentSkill(mood, voice), branch: SkillBranch.temporaModi, hint: step.hint));
       }
+    }
+    for (final step in ModiLadder.steps) {
+      final sub = step.subtitle.contains(' · ') ? '' : ' · ${step.subtitle}';
+      list.add(Skill(ModiLadder.skillId(step), '${step.name}$sub', parent: ModiLadder.parentSkill, branch: SkillBranch.temporaModi, hint: step.hint));
+    }
+    for (final step in AmboLadder.steps) {
+      list.add(Skill(AmboLadder.skillId(step), step.name, parent: AmboLadder.parentSkill, branch: SkillBranch.temporaModi, hint: step.hint));
     }
     list.addAll(_lectio);
     return List.unmodifiable(list);
