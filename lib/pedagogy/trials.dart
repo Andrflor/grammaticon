@@ -176,14 +176,21 @@ Trial _tense({
   );
 }
 
-const _tmGroup = 'Tempora et modī';
+const _temporaGroup = 'Tempora';
+const _modiGroup = 'Modī';
+const _amboGroup = 'Tempora et modī';
 const _fourMoods = {Mood.indicativus, Mood.subiunctivus, Mood.imperativus, Mood.infinitivus};
 
-/// Tense-recognition trial of one mood and voice: the only question is the
-/// tense, the answer grid is the whole scale of the mood, and each tense can
-/// be mixed in only once its own trial is accessible.
+const _roman = ['I', 'II', 'III', 'IV'];
+
+/// Tense-recognition trial of one mood and voice, step [step] of its ladder
+/// with its own skill leaf [skill] under the mood/voice: the only question is
+/// the tense, the answer grid is exactly the [tenses] mixed, and each tense
+/// can be mixed in only once its own trial is accessible.
 Trial _tempora({
   required String id,
+  required int step,
+  required String skill,
   required Mood mood,
   required Voice voice,
   required List<Tense> tenses,
@@ -192,22 +199,26 @@ Trial _tempora({
   required String intro,
   required List<String> examples,
   required String enemy,
-}) => Trial(
-      id: id,
-      name: 'Tempora ${mood == Mood.indicativus ? 'indicātīvī' : 'subiūnctīvī'}',
-      subtitle: voice.latin.toLowerCase(),
-      skillIds: ['tm.tempus.${mood.key}.${voice.key}'],
-      price: price,
-      prerequisites: prereq,
-      filter: FormFilter(moods: {mood}, voices: {voice}, conjugations: _regularConj, excludeIntransitivePassive: true),
-      dimensions: const [Dimension.tempus],
-      fixedChoices: true,
-      components: [for (final t in tenses) TrialComponent('${mood.key}.${t.key}.${voice.key}', t.latin, _fin(mood, t, voice), requires: '${mood.key}-${t.key}-${voice.key}')],
-      intro: intro,
-      examples: examples,
-      opponentId: enemy,
-      group: _tmGroup,
-    );
+}) {
+  final scale = mood == Mood.subiunctivus ? 4 : Tense.values.length;
+  final full = tenses.length == scale;
+  return Trial(
+    id: id,
+    name: 'Tempora ${mood == Mood.indicativus ? 'indicātīvī' : 'subiūnctīvī'} ${_roman[step - 1]}',
+    subtitle: '${voice.latin.toLowerCase()} · ${full ? 'omnia tempora' : tenses.map((t) => t.latin.toLowerCase()).join(' · ')}',
+    skillIds: ['tm.tempus.${mood.key}.${voice.key}.$skill'],
+    price: price,
+    prerequisites: prereq,
+    filter: FormFilter(moods: {mood}, tenses: tenses.toSet(), voices: {voice}, conjugations: _regularConj, excludeIntransitivePassive: true),
+    dimensions: const [Dimension.tempus],
+    fixedChoices: true,
+    components: [for (final t in tenses) TrialComponent('${mood.key}.${t.key}.${voice.key}', t.latin, _fin(mood, t, voice), requires: '${mood.key}-${t.key}-${voice.key}')],
+    intro: intro,
+    examples: examples,
+    opponentId: enemy,
+    group: _temporaGroup,
+  );
+}
 
 /// Registry of every trial of the city (both activities). Ids are unique
 /// across activities; prerequisites may only point inside the same activity.
@@ -737,51 +748,192 @@ class Trials {
           opponentId: 'cyclops',
           group: 'Verba speciālia',
         ),
-        // ----------------------------------------------------------- Tempora et modī
-        // Recognising the tense or the mood of a form, and nothing else: one
-        // question, a fixed answer grid, components unlocked as the tenses are
-        // learnt. The ramp towards the Mixta, which require these.
+        // ----------------------------------------------------------- Tempora
+        // Recognising the tense of a form, and nothing else: one question, a
+        // fixed answer grid of the tenses mixed. Each mood and voice climbs
+        // the same ladder: praesēns and imperfectum, then the present system,
+        // then the perfect system, then every tense. The subjunctive has no
+        // future, so its ladder has three steps. The last step keeps the
+        // historical id (the Mixta and tm-ambo point at it).
+        _tempora(
+          id: 'tm-tempora-ind-act-1',
+          step: 1,
+          skill: 'duo',
+          mood: Mood.indicativus,
+          voice: Voice.activum,
+          tenses: const [Tense.praesens, Tense.imperfectum],
+          price: 10,
+          prereq: const ['ind-imperf-act'],
+          intro: 'Nunc ūnum rogātur: quod tempus? Persōna et numerus nōn quaeruntur. Duo tantum tempora: praesēns sine signō (amat), imperfectum cum -ba- (amābat).',
+          examples: ['amat · amābat', 'regit · regēbat', 'audit · audiēbat'],
+          enemy: 'statua',
+        ),
+        _tempora(
+          id: 'tm-tempora-ind-act-2',
+          step: 2,
+          skill: 'praesentis',
+          mood: Mood.indicativus,
+          voice: Voice.activum,
+          tenses: const [Tense.praesens, Tense.imperfectum, Tense.futurum],
+          price: 15,
+          prereq: const ['tm-tempora-ind-act-1', 'ind-fut-act'],
+          intro: 'Systēma praesentis complētum: praesēns, imperfectum, futūrum. Signa: nūllum praesēns, -ba- imperfectum, -b- (I–II) aut -a-/-ē- (III–IV) futūrum. Cavē: regit ≠ reget.',
+          examples: ['amat · amābat · amābit', 'regit · regēbat · reget', 'audit · audiēbat · audiet'],
+          enemy: 'statua',
+        ),
+        _tempora(
+          id: 'tm-tempora-ind-act-3',
+          step: 3,
+          skill: 'perfecti',
+          mood: Mood.indicativus,
+          voice: Voice.activum,
+          tenses: const [Tense.perfectum, Tense.plusquamperfectum, Tense.futurumExactum],
+          price: 15,
+          prereq: const ['tm-tempora-ind-act-2', 'ind-plusq-act', 'ind-futex-act'],
+          intro: 'Systēma perfectī: omnia ā themate perfectī. Perfectum dēsinentiās suās habet (-ī, -istī, -it), plūsquamperfectum -era- (amāverat), futūrum exāctum -eri- (amāverit).',
+          examples: ['amāvit · amāverat · amāverit', 'rēxit · rēxerat · rēxerit', 'amāverat ≠ amāverit'],
+          enemy: 'statua',
+        ),
         _tempora(
           id: 'tm-tempora-ind-act',
+          step: 4,
+          skill: 'omnia',
           mood: Mood.indicativus,
           voice: Voice.activum,
           tenses: Tense.values,
-          price: 10,
-          prereq: const ['ind-imperf-act'],
-          intro: 'Nunc ūnum rogātur: quod tempus? Persōna et numerus nōn quaeruntur. Ēlige tempora quae iam didicistī et misce ea. Signa: nūllum signum praesēns, -ba- imperfectum, -b-/-a-/-ē- futūrum, thema perfectī perfectum, -era- plūsquamperfectum, -eri- futūrum exāctum.',
+          price: 20,
+          prereq: const ['tm-tempora-ind-act-3'],
+          intro: 'Omnia sex tempora indicātīvī mixta. Signa: nūllum signum praesēns, -ba- imperfectum, -b-/-a-/-ē- futūrum, thema perfectī perfectum, -era- plūsquamperfectum, -eri- futūrum exāctum.',
           examples: ['amat · amābat · amābit', 'amāvit · amāverat · amāverit', 'regit ≠ reget ≠ rēxit'],
           enemy: 'statua',
         ),
         _tempora(
+          id: 'tm-tempora-ind-pass-1',
+          step: 1,
+          skill: 'duo',
+          mood: Mood.indicativus,
+          voice: Voice.passivum,
+          tenses: const [Tense.praesens, Tense.imperfectum],
+          price: 15,
+          prereq: const ['ind-imperf-pass'],
+          intro: 'Quod tempus passīvī? Praesēns (amātur) et imperfectum (amābātur): idem signum -ba- quod in āctīvō, dēsinentiae passīvae.',
+          examples: ['amātur · amābātur', 'regitur · regēbātur', 'audītur · audiēbātur'],
+          enemy: 'statua',
+        ),
+        _tempora(
+          id: 'tm-tempora-ind-pass-2',
+          step: 2,
+          skill: 'praesentis',
+          mood: Mood.indicativus,
+          voice: Voice.passivum,
+          tenses: const [Tense.praesens, Tense.imperfectum, Tense.futurum],
+          price: 20,
+          prereq: const ['tm-tempora-ind-pass-1', 'ind-fut-pass'],
+          intro: 'Systēma praesentis passīvī: amātur, amābātur, amābitur. Cavē tertiam: regitur (praesēns) ≠ regētur (futūrum).',
+          examples: ['amātur · amābātur · amābitur', 'regitur · regēbātur · regētur', 'audītur · audiēbātur · audiētur'],
+          enemy: 'statua',
+        ),
+        _tempora(
+          id: 'tm-tempora-ind-pass-3',
+          step: 3,
+          skill: 'perfecti',
+          mood: Mood.indicativus,
+          voice: Voice.passivum,
+          tenses: const [Tense.perfectum, Tense.plusquamperfectum, Tense.futurumExactum],
+          price: 20,
+          prereq: const ['tm-tempora-ind-pass-2', 'ind-plusq-pass', 'ind-futex-pass'],
+          intro: 'Systēma perfectī passīvī: fōrmae compositae, participium perfectī cum auxiliārī. Tempus ex auxiliārī sūmitur: est perfectum, erat plūsquamperfectum, erit futūrum exāctum.',
+          examples: ['amātus est · amātus erat · amātus erit', 'rēctus est · rēctus erat · rēctus erit', 'amātus erat ≠ amātus erit'],
+          enemy: 'statua',
+        ),
+        _tempora(
           id: 'tm-tempora-ind-pass',
+          step: 4,
+          skill: 'omnia',
           mood: Mood.indicativus,
           voice: Voice.passivum,
           tenses: Tense.values,
-          price: 15,
-          prereq: const ['ind-imperf-pass'],
-          intro: 'Quod tempus passīvī? Fōrmae simplicēs (amātur, amābātur, amābitur) et compositae (amātus est, erat, erit): in compositīs tempus ex auxiliārī sūmitur.',
+          price: 25,
+          prereq: const ['tm-tempora-ind-pass-3'],
+          intro: 'Omnia tempora passīvī mixta: simplicia (amātur, amābātur, amābitur) et composita (amātus est, erat, erit). In compositīs tempus ex auxiliārī sūmitur.',
           examples: ['amātur · amābātur · amābitur', 'amātus est · amātus erat · amātus erit', 'amātus est (perf.) ≠ amātur (praes.)'],
           enemy: 'statua',
         ),
         _tempora(
+          id: 'tm-tempora-subj-act-1',
+          step: 1,
+          skill: 'duo',
+          mood: Mood.subiunctivus,
+          voice: Voice.activum,
+          tenses: const [Tense.praesens, Tense.imperfectum],
+          price: 15,
+          prereq: const ['subj-imperf-act'],
+          intro: 'Quod tempus subiūnctīvī? Praesēns vōcālem mūtat (amet, regat), imperfectum īnfīnītīvum + dēsinentiam habet (amāret, regeret).',
+          examples: ['amet · amāret', 'regat · regeret', 'audiat · audīret'],
+          enemy: 'sphinx',
+        ),
+        _tempora(
+          id: 'tm-tempora-subj-act-2',
+          step: 2,
+          skill: 'perfecti',
+          mood: Mood.subiunctivus,
+          voice: Voice.activum,
+          tenses: const [Tense.perfectum, Tense.plusquamperfectum],
+          price: 20,
+          prereq: const ['tm-tempora-subj-act-1', 'subj-plusq-act'],
+          intro: 'Systēma perfectī subiūnctīvī: perfectum thema perfectī + -eri- (amāverit), plūsquamperfectum -isse- (amāvisset).',
+          examples: ['amāverit · amāvisset', 'rēxerit · rēxisset', 'amāverit ≠ amāvisset'],
+          enemy: 'sphinx',
+        ),
+        _tempora(
           id: 'tm-tempora-subj-act',
+          step: 3,
+          skill: 'omnia',
           mood: Mood.subiunctivus,
           voice: Voice.activum,
           tenses: const [Tense.praesens, Tense.imperfectum, Tense.perfectum, Tense.plusquamperfectum],
-          price: 15,
-          prereq: const ['subj-imperf-act'],
-          intro: 'Quod tempus subiūnctīvī? Praesēns vōcālem mūtat (amet, regat), imperfectum īnfīnītīvum + dēsinentiam (amāret), perfectum thema perfectī + -eri- (amāverit), plūsquamperfectum -isse- (amāvisset).',
+          price: 25,
+          prereq: const ['tm-tempora-subj-act-2'],
+          intro: 'Quattuor tempora subiūnctīvī mixta. Praesēns vōcālem mūtat (amet, regat), imperfectum īnfīnītīvum + dēsinentiam (amāret), perfectum thema perfectī + -eri- (amāverit), plūsquamperfectum -isse- (amāvisset).',
           examples: ['amet · amāret', 'amāverit · amāvisset', 'regat ≠ regeret ≠ rēxerit'],
           enemy: 'sphinx',
         ),
         _tempora(
+          id: 'tm-tempora-subj-pass-1',
+          step: 1,
+          skill: 'duo',
+          mood: Mood.subiunctivus,
+          voice: Voice.passivum,
+          tenses: const [Tense.praesens, Tense.imperfectum],
+          price: 20,
+          prereq: const ['subj-imperf-pass'],
+          intro: 'Quod tempus subiūnctīvī passīvī? Simplicia ambō: amētur (praesēns), amārētur (imperfectum).',
+          examples: ['amētur · amārētur', 'regātur · regerētur', 'audiātur · audīrētur'],
+          enemy: 'sphinx',
+        ),
+        _tempora(
+          id: 'tm-tempora-subj-pass-2',
+          step: 2,
+          skill: 'perfecti',
+          mood: Mood.subiunctivus,
+          voice: Voice.passivum,
+          tenses: const [Tense.perfectum, Tense.plusquamperfectum],
+          price: 25,
+          prereq: const ['tm-tempora-subj-pass-1', 'subj-plusq-pass'],
+          intro: 'Systēma perfectī subiūnctīvī passīvī: composita, participium cum auxiliārī subiūnctīvō. amātus sit perfectum, amātus esset plūsquamperfectum.',
+          examples: ['amātus sit · amātus esset', 'rēctus sit · rēctus esset', 'amātus sit ≠ amātus esset'],
+          enemy: 'sphinx',
+        ),
+        _tempora(
           id: 'tm-tempora-subj-pass',
+          step: 3,
+          skill: 'omnia',
           mood: Mood.subiunctivus,
           voice: Voice.passivum,
           tenses: const [Tense.praesens, Tense.imperfectum, Tense.perfectum, Tense.plusquamperfectum],
-          price: 20,
-          prereq: const ['subj-imperf-pass'],
-          intro: 'Quod tempus subiūnctīvī passīvī? Simplicia: amētur, amārētur. Composita: amātus sit (perfectum), amātus esset (plūsquamperfectum).',
+          price: 30,
+          prereq: const ['tm-tempora-subj-pass-2'],
+          intro: 'Quattuor tempora subiūnctīvī passīvī mixta. Simplicia: amētur, amārētur. Composita: amātus sit (perfectum), amātus esset (plūsquamperfectum).',
           examples: ['amētur · amārētur', 'amātus sit · amātus esset', 'amātus sit (subj.) ≠ amātus est (ind.)'],
           enemy: 'sphinx',
         ),
@@ -802,7 +954,30 @@ class Trials {
           intro: 'Quod tempus īnfīnītīvī? Praesēns -re (amāre), perfectum -isse (amāvisse), futūrum participium futūrī + esse (amātūrus esse).',
           examples: ['amāre · amāvisse · amātūrus esse', 'regere · rēxisse · rēctūrus esse', 'amāvisse ≠ amāre'],
           opponentId: 'sphinx',
-          group: _tmGroup,
+          group: _temporaGroup,
+        ),
+        // ----------------------------------------------------------- Modī
+        // Recognising the mood only: first the one hard contrast (indicative
+        // against subjunctive, both present), then the four moods in the
+        // present, then the four moods at every tense.
+        Trial(
+          id: 'tm-modi-ind-subj',
+          name: 'Indicātīvus an subiūnctīvus',
+          subtitle: 'praesēns',
+          skillIds: const ['tm.modus.duo'],
+          price: 10,
+          prerequisites: const ['subj-praes-act'],
+          filter: const FormFilter(moods: {Mood.indicativus, Mood.subiunctivus}, tenses: {Tense.praesens}, voices: {Voice.activum}, conjugations: _regularConj),
+          dimensions: const [Dimension.modus],
+          fixedChoices: true,
+          components: [
+            for (final (m, req) in [(Mood.indicativus, 'ind-praes-act'), (Mood.subiunctivus, 'subj-praes-act')])
+              TrialComponent(m.key, m.latin, FormFilter(moods: {m}, tenses: const {Tense.praesens}, voices: const {Voice.activum}, conjugations: _regularConj), requires: req),
+          ],
+          intro: 'Nunc ūnum rogātur: quī modus? Duo tantum, ambō praesentia: indicātīvus dīcit (amat, regit), subiūnctīvus vōcālem mūtat (amet, regat). Prīma coniugātiō ā in e vertit, cēterae in a.',
+          examples: ['amat · amet', 'regit · regat', 'audit · audiat'],
+          opponentId: 'cyclops',
+          group: _modiGroup,
         ),
         Trial(
           id: 'tm-modi-praes',
@@ -810,7 +985,7 @@ class Trials {
           subtitle: 'indicātīvus · subiūnctīvus · imperātīvus · īnfīnītīvus',
           skillIds: const ['tm.modus.praes'],
           price: 15,
-          prerequisites: const ['subj-praes-act', 'imp-praes'],
+          prerequisites: const ['tm-modi-ind-subj', 'imp-praes'],
           filter: const FormFilter(moods: _fourMoods, tenses: {Tense.praesens}, voices: {Voice.activum}, conjugations: _regularConj),
           dimensions: const [Dimension.modus],
           fixedChoices: true,
@@ -818,10 +993,10 @@ class Trials {
             for (final (m, req) in [(Mood.indicativus, 'ind-praes-act'), (Mood.subiunctivus, 'subj-praes-act'), (Mood.imperativus, 'imp-praes'), (Mood.infinitivus, 'infinitivi')])
               TrialComponent(m.key, m.latin, FormFilter(moods: {m}, tenses: const {Tense.praesens}, voices: const {Voice.activum}, conjugations: _regularConj), requires: req),
           ],
-          intro: 'Nunc ūnum rogātur: quī modus? Omnia praesentia sunt, ut sōlus modus discernātur. Indicātīvus dīcit (amat), subiūnctīvus vōcālem mūtat (amet), imperātīvus iubet (amā), īnfīnītīvus persōnam nōn habet (amāre).',
+          intro: 'Quī modus? Omnia praesentia sunt, ut sōlus modus discernātur. Indicātīvus dīcit (amat), subiūnctīvus vōcālem mūtat (amet), imperātīvus iubet (amā), īnfīnītīvus persōnam nōn habet (amāre).',
           examples: ['amat · amet · amā · amāre', 'regit · regat · rege · regere', 'audit · audiat · audī · audīre'],
           opponentId: 'cyclops',
-          group: _tmGroup,
+          group: _modiGroup,
         ),
         Trial(
           id: 'tm-modi-omnia',
@@ -839,24 +1014,44 @@ class Trials {
           intro: 'Quī modus, quōcumque tempore? Cavē fōrmās ambiguās: regam (futūrum indicātīvī / praesēns subiūnctīvī), amāverit (futūrum exāctum / perfectum subiūnctīvī). Ambae respōnsiōnēs tunc accipiuntur.',
           examples: ['amābat · amāret · amātō · amāvisse', 'rēxerat · rēxisset · regitō · rēxisse', 'regam: futūrum aut subiūnctīvus'],
           opponentId: 'cyclops',
-          group: _tmGroup,
+          group: _modiGroup,
+        ),
+        // ----------------------------------------------------------- Tempora et modī
+        // Tense and mood in one answer: first indicative and subjunctive
+        // only, then the four moods.
+        Trial(
+          id: 'tm-ambo-ind-subj',
+          name: 'Tempora et modī',
+          subtitle: 'indicātīvus · subiūnctīvus',
+          skillIds: const ['tm.ambo.duo'],
+          price: 30,
+          prerequisites: const ['tm-tempora-ind-act', 'tm-tempora-subj-act', 'tm-modi-omnia'],
+          filter: const FormFilter(moods: {Mood.indicativus, Mood.subiunctivus}, voices: {Voice.activum}, conjugations: _regularConj),
+          dimensions: const [Dimension.tempusModus],
+          components: [
+            for (final m in [Mood.indicativus, Mood.subiunctivus]) TrialComponent(m.key, m.latin, FormFilter(moods: {m}, voices: const {Voice.activum}, conjugations: _regularConj)),
+          ],
+          intro: 'Tempus et modus ūnā respōnsiōne, in duōbus modīs: "subiūnctīvus · imperfectum". Prīmum modum quaere (vōcālis, -re-, -isse-), deinde tempus. Cavē regam et amāverit, quae utrīusque modī sunt.',
+          examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'regam: futūrum aut subiūnctīvus'],
+          opponentId: 'hydra',
+          group: _amboGroup,
         ),
         Trial(
           id: 'tm-ambo',
-          name: 'Tempora et modī',
-          subtitle: 'tempus et modus simul',
-          skillIds: const ['tm.ambo'],
+          name: 'Tempora et modī omnēs',
+          subtitle: 'quattuor modī · omnia tempora',
+          skillIds: const ['tm.ambo.omnia'],
           price: 40,
-          prerequisites: const ['tm-tempora-ind-act', 'tm-tempora-subj-act', 'tm-modi-omnia'],
+          prerequisites: const ['tm-ambo-ind-subj', 'tm-modi-omnia'],
           filter: const FormFilter(moods: _fourMoods, voices: {Voice.activum}, conjugations: _regularConj),
           dimensions: const [Dimension.tempusModus],
           components: [
             for (final m in _fourMoods) TrialComponent(m.key, m.latin, FormFilter(moods: {m}, voices: const {Voice.activum}, conjugations: _regularConj)),
           ],
-          intro: 'Tempus et modus ūnā respōnsiōne: "subiūnctīvus · imperfectum". Prīmum modum quaere (vōcālis, -re-, -isse-, dēsinentia imperātīvī, -re īnfīnītīvī), deinde tempus.',
+          intro: 'Tempus et modus ūnā respōnsiōne, in quattuor modīs. Prīmum modum quaere (vōcālis, -re-, -isse-, dēsinentia imperātīvī, -re īnfīnītīvī), deinde tempus.',
           examples: ['amāret: subiūnctīvus · imperfectum', 'amāverat: indicātīvus · plūsquamperfectum', 'amāvisse: īnfīnītīvus · perfectum'],
           opponentId: 'hydra',
-          group: _tmGroup,
+          group: _amboGroup,
         ),
         // ----------------------------------------------------------- Mixta
         Trial(

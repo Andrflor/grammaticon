@@ -348,7 +348,7 @@ class QuestionGenerator implements QuestionSource {
         case Dimension.modus:
           extra = 'tm.modus.omnia';
         case Dimension.tempusModus:
-          extra = 'tm.ambo';
+          extra = 'tm.ambo.omnia';
         default:
           if (a.isFinite && a.voice != null && a.mood != Mood.imperativus) extra = Skills.finite(a.mood.key, a.tense!.key, a.voice!.key);
       }
@@ -528,7 +528,14 @@ class QuestionGenerator implements QuestionSource {
 
   /// Every tense the target's mood has in the paradigm (six for the
   /// indicative, four for the subjunctive, three for the infinitive).
+  /// The tenses the trial mixes (its components), so that a two-tense step
+  /// shows two cells; without components, every tense of the mood.
   List<String> _tenseScale(PoolEntry e, Trial trial) {
+    final fromComponents = <String>{
+      for (final c in trial.components)
+        if (c.filter is FormFilter) ...?(c.filter as FormFilter).tenses?.map((t) => t.key),
+    };
+    if (fromComponents.isNotEmpty) return fromComponents.toList();
     final mood = e.form.analysis.mood;
     final p = analyzer.paradigmOf(e.verb.id);
     final out = <String>{};

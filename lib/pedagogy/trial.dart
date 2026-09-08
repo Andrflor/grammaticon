@@ -82,7 +82,6 @@ class Trial {
     required this.opponentId,
     this.activity = Activity.amphitheatrum,
     this.components = const [],
-    this.minComponents = 2,
     this.questionsToWin = 10,
     this.hearts = 3,
     this.group = 'Indicātīvus',
@@ -112,7 +111,6 @@ class Trial {
   final String opponentId;
   final Activity activity;
   final List<TrialComponent> components;
-  final int minComponents;
   final int questionsToWin;
   final int hearts;
 

@@ -144,11 +144,12 @@ class SettingsScreen extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: G.marbleDark, width: 1.5),
               ),
-              clipBehavior: Clip.antiAlias,
+              // Rows are rounded inside the border instead of clipped: Impeller
+              // on OpenGL ES does not anti-alias clips.
               child: Column(
                 children: [
                   Container(
-                    color: G.purpleRoyal,
+                    decoration: const BoxDecoration(color: G.purpleRoyal, borderRadius: BorderRadius.vertical(top: Radius.circular(10.5))),
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 9),
                     child: Row(
                       children: [
@@ -160,7 +161,10 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   for (final (i, t) in MasteryTier.values.indexed)
                     Container(
-                      color: i.isOdd ? G.parchment : Colors.white,
+                      decoration: BoxDecoration(
+                        color: i.isOdd ? G.parchment : Colors.white,
+                        borderRadius: i == MasteryTier.values.length - 1 ? const BorderRadius.vertical(bottom: Radius.circular(10.5)) : null,
+                      ),
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
                       child: Row(
                         children: [

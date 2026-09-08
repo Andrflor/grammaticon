@@ -9,6 +9,7 @@ import 'package:latin_game/pedagogy/mastery.dart';
 import 'package:latin_game/pedagogy/progression.dart';
 import 'package:latin_game/pedagogy/question.dart';
 import 'package:latin_game/pedagogy/reading/reading_question_source.dart';
+import 'package:latin_game/pedagogy/reading/reading_trials.dart';
 import 'package:latin_game/pedagogy/trials.dart';
 import 'package:latin_game/persistence/save_data.dart';
 import 'package:latin_game/persistence/save_repository.dart';
@@ -174,16 +175,18 @@ void main() {
     c2.dispose();
   });
 
-  test('mixed trials draw only from the selected components and credit the mixed skill first', () {
+  test('mixed trials draw from their components and credit the mixed skill first', () {
     final t = Trials.byId('th-mx-verbum');
-    final (c, _) = testContainer(initial: SaveData(gems: 0, purchased: {t.id}, introSeen: {t.id}, mixtaConfig: {t.id: ['numerus', 'tempus']}));
+    final (c, _) = testContainer(initial: SaveData(gems: 0, purchased: {t.id}, introSeen: {t.id}));
     final ctrl = c.read(battleProvider.notifier);
     ctrl.start(t);
+    final componentIds = t.components.map((c) => c.id).toList();
+    final trialIds = t.components.expand((c) => (c.filter as ReadingFilter).trialIds!).toSet();
     for (var i = 0; i < 9; i++) {
       final s = c.read(battleProvider)!;
       final q = s.question!;
-      expect(['numerus', 'tempus'], contains(q.componentId));
-      expect(['th-numerus', 'th-tempus-praeteritum', 'th-tempus-futurum'], contains(q.reading.entry.item.trialId));
+      expect(componentIds, contains(q.componentId));
+      expect(trialIds, contains(q.reading.entry.item.trialId));
       expect(q.primarySkill, 'l.mx.verbum');
       ctrl.answer(q.id, correctIndex(q));
       ctrl.proceed();

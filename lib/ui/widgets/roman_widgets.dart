@@ -277,7 +277,8 @@ class RomanButton extends StatelessWidget {
         child: Material(
           color: _bg,
           borderRadius: radius,
-          clipBehavior: Clip.antiAlias,
+          // No clip: Impeller on OpenGL ES draws clips without anti-aliasing;
+          // the InkWell shapes its own ink with the same radius.
           child: InkWell(
             onTap: onTap,
             borderRadius: radius,

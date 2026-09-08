@@ -89,12 +89,6 @@ class ProfileController extends Notifier<SaveData> {
     return true;
   }
 
-  Future<void> setMixtaComponents(Trial t, List<String> ids) {
-    final valid = t.components.map((c) => c.id).toSet();
-    final chosen = ids.where(valid.contains).toList();
-    return _commit(state.copyWith(mixtaConfig: {...state.mixtaConfig, t.id: chosen}));
-  }
-
   Future<void> updateSettings(Settings s) => _commit(state.copyWith(settings: s));
 
   Future<void> markIntroSeen(String trialId) => _commit(state.copyWith(introSeen: {...state.introSeen, trialId}));

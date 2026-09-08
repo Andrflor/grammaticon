@@ -17,7 +17,7 @@ import '../widgets/roman_widgets.dart';
 
 /// Trial selection of one activity (the Amphitheatrum's certāmina, the
 /// Forum's contrōversiae): free introductory trial, visible locked trials with
-/// prices and prerequisites, permanent purchases, Mixta configuration.
+/// prices and prerequisites, permanent purchases.
 class TrialSelectionScreen extends ConsumerWidget {
   const TrialSelectionScreen({super.key, required this.activity, this.highlightTrialId});
   final Activity activity;
@@ -193,11 +193,13 @@ class TrialCard extends ConsumerWidget {
       TrialAccess.locked => const [Color(0xFF6F5E7C), Color(0xFF4C3D55)],
     };
 
-    // The frame is a 4 px gilt box (a diagonal metal gradient); the body is
-    // clipped inside it with a smaller radius, so the header band meets the
-    // frame without a seam. A 1 px darker ring, drawn as a real box (a
-    // zero-blur shadow is aliased on Impeller), separates the gold from the
-    // painting, and the card casts a soft shadow on it.
+    // The frame is a 4 px gilt box (a diagonal metal gradient); the body sits
+    // inside it with a smaller radius, so the header band meets the frame
+    // without a seam. Nothing is clipped: Impeller on OpenGL ES (the Linux
+    // desktop) does not anti-alias clips, so rounded corners are drawn by the
+    // decorations themselves. A 1 px darker ring, drawn as a real box (a
+    // zero-blur shadow is aliased too), separates the gold from the painting,
+    // and the card casts a soft shadow on it.
     final frame = highlighted
         ? const [Color(0xFFFFF4C0), Color(0xFFFFFAE0), Color(0xFFF5D470), Color(0xFFE0B040)]
         : locked
@@ -246,205 +248,192 @@ class TrialCard extends ConsumerWidget {
           gradient: LinearGradient(colors: frame, stops: const [0, 0.35, 0.72, 1], begin: Alignment.topLeft, end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(20),
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: ColoredBox(
-            color: locked ? const Color(0xFFEFE6D6) : G.marble,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        // Header band (98 px on the mock-up) with the opponent's
-                        // portrait. The inner Stack clips the portrait, which
-                        // stands taller than the band, so the figure looks
-                        // planted behind the cream body rather than floating.
-                        Container(
-                          constraints: const BoxConstraints(minHeight: 98),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                          ),
-                          child: Stack(
-                            clipBehavior: Clip.hardEdge,
-                            children: [
-                              // Sheen along the top edge of the band.
-                              const Positioned.fill(
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(colors: [Color(0x24FFFFFF), Color(0x00FFFFFF)], stops: [0, 0.4], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                                  ),
-                                ),
-                              ),
-                              // The figures fill their images almost edge to
-                              // edge, so the box runs well below the band: legs
-                              // and paws are cut by the cream body.
-                              Positioned(
-                                right: 6,
-                                top: 4,
-                                bottom: -52,
-                                width: 112,
-                                child: Opacity(
-                                  opacity: locked ? 0.45 : 1,
-                                  child: ColorFiltered(
-                                    colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
-                                    child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.topRight),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                // Room at the bottom for the part of the badge
-                                // that stays inside the band.
-                                padding: const EdgeInsets.fromLTRB(inset, 8, _portraitSlot, 26),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(trial.name, style: titleStyle, maxLines: 2, overflow: TextOverflow.ellipsis),
-                                    Text(
-                                      trial.subtitle,
-                                      style: G.body(13, color: const Color(0xFFF3C86A), weight: 700),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+        child: DecoratedBox(
+          decoration: BoxDecoration(color: locked ? const Color(0xFFEFE6D6) : G.marble, borderRadius: BorderRadius.circular(16)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // Header band (98 px on the mock-up) with the opponent's
+                      // portrait. The inner Stack clips the portrait, which
+                      // stands taller than the band, so the figure looks
+                      // planted behind the cream body rather than floating.
+                      Container(
+                        constraints: const BoxConstraints(minHeight: 98),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                          borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
                         ),
-                        // Shadow the band casts on the cream body.
-                        const DecoratedBox(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [Color(0x30200A40), Color(0x00200A40)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                          ),
-                          child: SizedBox(height: badgeOverhang),
-                        ),
-                      ],
-                    ),
-                    Positioned(left: inset, bottom: 0, child: badge),
-                  ],
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(inset, 3, inset, 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        // Skills worked and estimated mastery, as bars.
-                        for (final sm in summaries) _MasteryBar(summary: sm, named: summaries.length > 1),
-                        if (trial.isMixta)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 6),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: StatChip('Mixta: ${Progression.componentsFor(save, trial).length}/${trial.components.length} partēs', icon: Icons.tune, color: G.purple, textColor: Colors.white),
+                        child: Stack(
+                          clipBehavior: Clip.hardEdge,
+                          children: [
+                            // Sheen along the top edge of the band.
+                            const Positioned.fill(
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(colors: [Color(0x24FFFFFF), Color(0x00FFFFFF)], stops: [0, 0.4], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                ),
+                              ),
                             ),
-                          ),
-                        if (!accessible) ...[
-                          const SizedBox(height: 2),
-                          Row(
-                            children: [
-                              Image.asset('assets/images/gem.png', width: 20, height: 20),
-                              const SizedBox(width: 6),
-                              Flexible(
-                                child: Text(
-                                  '${trial.price}${status.affordable ? '' : '  (habēs ${save.gems})'}',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: G.body(13, weight: 700, color: status.affordable ? G.ink : G.redDark),
+                            // The figures fill their images almost edge to
+                            // edge, so the box runs well below the band: legs
+                            // and paws are cut by the cream body.
+                            Positioned(
+                              right: 6,
+                              top: 4,
+                              bottom: -52,
+                              width: 112,
+                              child: Opacity(
+                                opacity: locked ? 0.45 : 1,
+                                child: ColorFiltered(
+                                  colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
+                                  child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.topRight),
                                 ),
                               ),
-                            ],
-                          ),
-                          if (status.missing.isNotEmpty) ...[
-                            const SizedBox(height: 4),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Icon(Icons.key_off, size: 16, color: G.redDark),
-                                const SizedBox(width: 4),
-                                Expanded(
-                                  child: Text('Prius: ${status.missing.map((m) => m.name).join(', ')}', style: G.body(13, color: G.redDark, weight: 700)),
-                                ),
-                              ],
+                            ),
+                            Padding(
+                              // Room at the bottom for the part of the badge
+                              // that stays inside the band.
+                              padding: const EdgeInsets.fromLTRB(inset, 8, _portraitSlot, 26),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(trial.name, style: titleStyle, maxLines: 2, overflow: TextOverflow.ellipsis),
+                                  Text(
+                                    trial.subtitle,
+                                    style: G.body(13, color: const Color(0xFFF3C86A), weight: 700),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
-                        ],
-                        const Spacer(),
-                        const SizedBox(height: 8),
+                        ),
+                      ),
+                      // Shadow the band casts on the cream body.
+                      const DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0x30200A40), Color(0x00200A40)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                        ),
+                        child: SizedBox(height: badgeOverhang),
+                      ),
+                    ],
+                  ),
+                  Positioned(left: inset, bottom: 0, child: badge),
+                ],
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(inset, 3, inset, 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // Skills worked and estimated mastery, as bars.
+                      for (final sm in summaries) _MasteryBar(summary: sm, named: summaries.length > 1),
+                      if (!accessible) ...[
+                        const SizedBox(height: 2),
                         Row(
                           children: [
-                            RomanButton(
-                              label: 'i',
-                              style: RomanButtonStyle.outline,
-                              dense: true,
-                              circular: true,
-                              sound: Sfx.folium,
-                              onPressed: () => showTrialSheet(context, trial),
-                            ),
-                            const SizedBox(width: 10),
-                            if (accessible)
-                              Expanded(
-                                child: RomanButton(
-                                  label: config.labels.encounter,
-                                  style: RomanButtonStyle.primary,
-                                  dense: true,
-                                  expand: true,
-                                  icon: config.startIcon,
-                                  sound: null,
-                                  onPressed: () {
-                                    pushScreen(context, BattleScreen(trial: trial));
-                                  },
-                                ),
-                              )
-                            else if (status.access == TrialAccess.purchasable)
-                              Expanded(
-                                child: RomanButton(
-                                  label: 'Eme · ${trial.price}',
-                                  style: status.affordable ? RomanButtonStyle.gold : RomanButtonStyle.locked,
-                                  dense: true,
-                                  expand: true,
-                                  leading: Image.asset('assets/images/gem.png', width: 20, height: 20),
-                                  onPressed: status.affordable
-                                      ? () async {
-                                          final ok = await confirmLatin(
-                                            context,
-                                            title: 'Emere ${trial.name}?',
-                                            body: 'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.',
-                                            yes: 'Eme',
-                                          );
-                                          if (!ok) return;
-                                          final done = await ref.read(profileProvider.notifier).purchase(trial);
-                                          if (!context.mounted) return;
-                                          if (done) {
-                                            audio.play(Sfx.emptio);
-                                            showLatinSnack(context, '${trial.name} aperta est!');
-                                          } else {
-                                            showLatinSnack(context, 'Emptiō nōn facta.');
-                                          }
-                                        }
-                                      : null,
-                                ),
-                              )
-                            else
-                              const Expanded(
-                                child: RomanButton(label: 'Clausa', style: RomanButtonStyle.locked, dense: true, expand: true, icon: Icons.lock),
+                            Image.asset('assets/images/gem.png', width: 20, height: 20),
+                            const SizedBox(width: 6),
+                            Flexible(
+                              child: Text(
+                                '${trial.price}${status.affordable ? '' : '  (habēs ${save.gems})'}',
+                                overflow: TextOverflow.ellipsis,
+                                style: G.body(13, weight: 700, color: status.affordable ? G.ink : G.redDark),
                               ),
+                            ),
                           ],
                         ),
-                        if (accessible && trial.isMixta) ...[
-                          const SizedBox(height: 8),
-                          RomanButton(label: 'Partēs mixtae', style: RomanButtonStyle.gold, dense: true, icon: Icons.tune, expand: true, onPressed: () => showMixtaConfig(context, ref, trial)),
+                        if (status.missing.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Icon(Icons.key_off, size: 16, color: G.redDark),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Text('Prius: ${status.missing.map((m) => m.name).join(', ')}', style: G.body(13, color: G.redDark, weight: 700)),
+                              ),
+                            ],
+                          ),
                         ],
                       ],
-                    ),
+                      const Spacer(),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          RomanButton(
+                            label: 'i',
+                            style: RomanButtonStyle.outline,
+                            dense: true,
+                            circular: true,
+                            sound: Sfx.folium,
+                            onPressed: () => showTrialSheet(context, trial),
+                          ),
+                          const SizedBox(width: 10),
+                          if (accessible)
+                            Expanded(
+                              child: RomanButton(
+                                label: config.labels.encounter,
+                                style: RomanButtonStyle.primary,
+                                dense: true,
+                                expand: true,
+                                icon: config.startIcon,
+                                sound: null,
+                                onPressed: () {
+                                  pushScreen(context, BattleScreen(trial: trial));
+                                },
+                              ),
+                            )
+                          else if (status.access == TrialAccess.purchasable)
+                            Expanded(
+                              child: RomanButton(
+                                label: 'Eme · ${trial.price}',
+                                style: status.affordable ? RomanButtonStyle.gold : RomanButtonStyle.locked,
+                                dense: true,
+                                expand: true,
+                                leading: Image.asset('assets/images/gem.png', width: 20, height: 20),
+                                onPressed: status.affordable
+                                    ? () async {
+                                        final ok = await confirmLatin(
+                                          context,
+                                          title: 'Emere ${trial.name}?',
+                                          body: 'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.',
+                                          yes: 'Eme',
+                                        );
+                                        if (!ok) return;
+                                        final done = await ref.read(profileProvider.notifier).purchase(trial);
+                                        if (!context.mounted) return;
+                                        if (done) {
+                                          audio.play(Sfx.emptio);
+                                          showLatinSnack(context, '${trial.name} aperta est!');
+                                        } else {
+                                          showLatinSnack(context, 'Emptiō nōn facta.');
+                                        }
+                                      }
+                                    : null,
+                              ),
+                            )
+                          else
+                            const Expanded(
+                              child: RomanButton(label: 'Clausa', style: RomanButtonStyle.locked, dense: true, expand: true, icon: Icons.lock),
+                            ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -479,35 +468,34 @@ class _MasteryBar extends StatelessWidget {
             ),
           Row(
             children: [
-              // Pill-shaped gauge: a recessed grey rail and a glossy fill.
+              // Pill-shaped gauge: a recessed grey rail and a glossy fill. Both
+              // are rounded boxes rather than a clipped stack (see TrialCard).
               Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 12,
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(colors: [Color(0xFFC4BFB9), Color(0xFFD9D4CE)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                        ),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 12,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(colors: [Color(0xFFC4BFB9), Color(0xFFD9D4CE)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
-                      FractionallySizedBox(
-                        widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
-                        child: Container(
-                          height: 12,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            gradient: LinearGradient(
-                              colors: [Color.lerp(color, Colors.white, 0.22)!, color, Color.lerp(color, Colors.black, 0.12)!],
-                              stops: const [0, 0.55, 1],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                            ),
+                    ),
+                    FractionallySizedBox(
+                      widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
+                      child: Container(
+                        height: 12,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: LinearGradient(
+                            colors: [Color.lerp(color, Colors.white, 0.22)!, color, Color.lerp(color, Colors.black, 0.12)!],
+                            stops: const [0, 0.55, 1],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(width: 10),
@@ -578,72 +566,6 @@ void showTrialSheet(BuildContext context, Trial trial) {
           const SizedBox(height: 6),
           Text(const Economy(kEconomy).defeatRule(), style: G.body(13, color: G.redDark, weight: 700)),
           const SizedBox(height: 20),
-        ],
-      ),
-    ),
-  );
-}
-
-/// Component picker for Mixta trials (at least [Trial.minComponents]).
-void showMixtaConfig(BuildContext context, WidgetRef ref, Trial trial) {
-  final save = ref.read(profileProvider);
-  final selected = Progression.componentsFor(save, trial).toSet();
-  showDialog<void>(
-    context: context,
-    builder: (ctx) => StatefulBuilder(
-      builder: (ctx, setState) => AlertDialog(
-        title: Text('Ēlige partēs · ${trial.name}', style: G.display(18, color: G.purpleTitle)),
-        content: SizedBox(
-          width: 420,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Saltem ${trial.minComponents} partēs. Discrīmen vērum tunc rogātur cum plūrēs partēs miscentur.', style: G.body(14, color: G.inkSoft)),
-                if (trial.components.any((c) => c.requires != null)) ...[
-                  const SizedBox(height: 4),
-                  Text('Pars clausa aperītur cum certāmen eius emptum est.', style: G.body(13, color: G.inkSoft, style: FontStyle.italic)),
-                ],
-                const SizedBox(height: 8),
-                for (final c in trial.components)
-                  if (Progression.isComponentUnlocked(save, c))
-                    CheckboxListTile(
-                      value: selected.contains(c.id),
-                      activeColor: G.purple,
-                      title: Text(c.name, style: G.body(15, weight: 700)),
-                      onChanged: (v) => setState(() {
-                        if (v == true) {
-                          selected.add(c.id);
-                        } else if (selected.length > trial.minComponents) {
-                          selected.remove(c.id);
-                        }
-                      }),
-                    )
-                  else
-                    // Locked: the tense has not been learnt yet.
-                    CheckboxListTile(
-                      value: false,
-                      enabled: false,
-                      title: Text(c.name, style: G.body(15, weight: 700, color: G.inkSoft)),
-                      subtitle: Text('Clausa · ${Trials.byId(c.requires!).name}', style: G.body(12, color: G.inkSoft)),
-                      secondary: const Icon(Icons.lock, size: 18, color: G.inkSoft),
-                      onChanged: null,
-                    ),
-              ],
-            ),
-          ),
-        ),
-        actions: [
-          RomanButton(label: 'Omnēs', style: RomanButtonStyle.neutral, dense: true, onPressed: () => setState(() => selected.addAll(Progression.unlockedComponents(save, trial).map((c) => c.id)))),
-          RomanButton(
-            label: 'Servā',
-            style: RomanButtonStyle.gold,
-            dense: true,
-            onPressed: () {
-              ref.read(profileProvider.notifier).setMixtaComponents(trial, trial.components.map((c) => c.id).where(selected.contains).toList());
-              Navigator.pop(ctx);
-            },
-          ),
         ],
       ),
     ),

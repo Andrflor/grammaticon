@@ -249,22 +249,21 @@ class _Hud extends ConsumerWidget {
       children: [
         Text(enemyName, style: G.display(14, color: G.goldLight), maxLines: 1, overflow: TextOverflow.ellipsis),
         const SizedBox(height: 3),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Stack(
-            children: [
-              Container(height: 14, color: const Color(0xAA200A40)),
-              AnimatedFractionallySizedBox(
-                duration: const Duration(milliseconds: 350),
-                curve: Curves.easeOutCubic,
-                widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
-                child: Container(
-                  height: 14,
-                  decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)])),
-                ),
+        // Rounded boxes, not a clipped stack: Impeller on OpenGL ES does not
+        // anti-alias clips.
+        Stack(
+          children: [
+            Container(height: 14, decoration: const BoxDecoration(color: Color(0xAA200A40), borderRadius: BorderRadius.all(Radius.circular(8)))),
+            AnimatedFractionallySizedBox(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeOutCubic,
+              widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
+              child: Container(
+                height: 14,
+                decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)]), borderRadius: BorderRadius.all(Radius.circular(8))),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         Text('${resource == null ? '' : '$resource '}${state.enemyHp} / ${state.enemyMaxHp}', style: G.body(11, color: Colors.white, weight: 700)),
       ],

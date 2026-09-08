@@ -128,7 +128,6 @@ class SaveData {
     this.purchased = const {},
     this.skills = const {},
     this.settings = const Settings(),
-    this.mixtaConfig = const {},
     this.battlesWon = 0,
     this.battlesLost = 0,
     this.lastTransactionId = 0,
@@ -150,8 +149,6 @@ class SaveData {
   final Map<String, SkillRecord> skills;
   final Settings settings;
 
-  /// Selected component ids per Mixta trial.
-  final Map<String, List<String>> mixtaConfig;
   final int battlesWon;
   final int battlesLost;
 
@@ -182,7 +179,6 @@ class SaveData {
     Set<String>? purchased,
     Map<String, SkillRecord>? skills,
     Settings? settings,
-    Map<String, List<String>>? mixtaConfig,
     int? battlesWon,
     int? battlesLost,
     int? lastTransactionId,
@@ -201,7 +197,6 @@ class SaveData {
     purchased: purchased ?? this.purchased,
     skills: skills ?? this.skills,
     settings: settings ?? this.settings,
-    mixtaConfig: mixtaConfig ?? this.mixtaConfig,
     battlesWon: battlesWon ?? this.battlesWon,
     battlesLost: battlesLost ?? this.battlesLost,
     lastTransactionId: lastTransactionId ?? this.lastTransactionId,
@@ -221,7 +216,6 @@ class SaveData {
     'purchased': purchased.toList()..sort(),
     'skills': {for (final e in skills.entries) e.key: e.value.toJson()},
     'settings': settings.toJson(),
-    'mixta': mixtaConfig,
     'won': battlesWon,
     'lost': battlesLost,
     'tx': lastTransactionId,
@@ -241,7 +235,6 @@ class SaveData {
     purchased: ((j['purchased'] as List?) ?? const []).cast<String>().toSet(),
     skills: {for (final e in ((j['skills'] as Map?) ?? const {}).entries) e.key as String: SkillRecord.fromJson((e.value as Map).cast<String, Object?>())},
     settings: j['settings'] == null ? const Settings() : Settings.fromJson((j['settings'] as Map).cast<String, Object?>()),
-    mixtaConfig: {for (final e in ((j['mixta'] as Map?) ?? const {}).entries) e.key as String: (e.value as List).cast<String>()},
     battlesWon: (j['won'] as num?)?.toInt() ?? 0,
     battlesLost: (j['lost'] as num?)?.toInt() ?? 0,
     lastTransactionId: (j['tx'] as num?)?.toInt() ?? 0,

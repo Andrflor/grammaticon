@@ -60,14 +60,9 @@ class Progression {
 
   static bool isComponentUnlocked(SaveData save, TrialComponent c) => c.requires == null || isAccessible(save, Trials.byId(c.requires!));
 
-  /// Component ids in force for a Mixta trial (every unlocked one when
-  /// unconfigured or when the configuration has too few left).
+  /// Component ids in force for a Mixta trial: every unlocked one.
   static List<String> componentsFor(SaveData save, Trial t) {
     if (!t.isMixta) return const [];
-    final unlocked = unlockedComponents(save, t).map((c) => c.id).toList();
-    final cfg = save.mixtaConfig[t.id];
-    final chosen = cfg == null ? <String>[] : cfg.where(unlocked.contains).toList();
-    if (chosen.length < t.minComponents) return unlocked;
-    return chosen;
+    return unlockedComponents(save, t).map((c) => c.id).toList();
   }
 }

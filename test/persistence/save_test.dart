@@ -16,7 +16,6 @@ void main() {
         'v.ind.praes.act': const SkillRecord().apply(Observation(at: DateTime(2026, 1, 2), correct: true, lemmaId: 'amo', quality: AnswerQuality.autonoma, trialId: 'ind-praes-act'), const MasteryConfig()),
       },
       settings: const Settings(volume: 0.3, soundOn: false, reducedMotion: true),
-      mixtaConfig: {'mx-tempora-ind-act': ['ind.praes.act', 'ind.perf.act']},
       battlesWon: 3,
       battlesLost: 1,
       lastTransactionId: 17,
@@ -41,7 +40,6 @@ void main() {
     expect(back.settings.volume, 0.3);
     expect(back.settings.soundOn, isFalse);
     expect(back.settings.reducedMotion, isTrue);
-    expect(back.mixtaConfig['mx-tempora-ind-act'], ['ind.praes.act', 'ind.perf.act']);
     expect(back.battlesWon, 3);
     expect(back.lastTransactionId, 17);
     expect(back.activeBattle!.hearts, 2);
@@ -75,7 +73,6 @@ void main() {
     expect(d.purchased, {'ind-imperf-act', 'ind-fut-act'});
     expect(d.skills['v.ind.praes.act']!.autonomousCorrect, 3);
     expect(d.skills['v.ind.praes.act']!.lemmas, {'amo', 'rego'});
-    expect(d.mixtaConfig['mx-tempora-ind-act'], ['ind.praes.act', 'ind.perf.act']);
     expect(d.battlesWon, 4);
     expect(d.battlesLost, 2);
     expect(d.lastTransactionId, 21);
