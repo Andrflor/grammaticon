@@ -157,7 +157,7 @@ class BattleScreen extends HookConsumerWidget {
           }
           return true;
         }
-        final digit = _digitOf(k) ?? int.tryParse(e.character ?? '');
+        final digit = _digitOf(e);
         if (digit != null && digit >= 1 && digit <= 9 && s.question != null && s.acceptsInput) {
           ctrl.answer(s.question!.id, digit - 1);
           return true;
@@ -197,28 +197,26 @@ class BattleScreen extends HookConsumerWidget {
     );
   }
 
-  static final Map<LogicalKeyboardKey, int> _digits = {
-    LogicalKeyboardKey.digit1: 1,
-    LogicalKeyboardKey.digit2: 2,
-    LogicalKeyboardKey.digit3: 3,
-    LogicalKeyboardKey.digit4: 4,
-    LogicalKeyboardKey.digit5: 5,
-    LogicalKeyboardKey.digit6: 6,
-    LogicalKeyboardKey.digit7: 7,
-    LogicalKeyboardKey.digit8: 8,
-    LogicalKeyboardKey.digit9: 9,
-    LogicalKeyboardKey.numpad1: 1,
-    LogicalKeyboardKey.numpad2: 2,
-    LogicalKeyboardKey.numpad3: 3,
-    LogicalKeyboardKey.numpad4: 4,
-    LogicalKeyboardKey.numpad5: 5,
-    LogicalKeyboardKey.numpad6: 6,
-    LogicalKeyboardKey.numpad7: 7,
-    LogicalKeyboardKey.numpad8: 8,
-    LogicalKeyboardKey.numpad9: 9,
-  };
+  static const _row = [PhysicalKeyboardKey.digit1, PhysicalKeyboardKey.digit2, PhysicalKeyboardKey.digit3, PhysicalKeyboardKey.digit4, PhysicalKeyboardKey.digit5, PhysicalKeyboardKey.digit6, PhysicalKeyboardKey.digit7, PhysicalKeyboardKey.digit8, PhysicalKeyboardKey.digit9];
+  static const _numpad = [PhysicalKeyboardKey.numpad1, PhysicalKeyboardKey.numpad2, PhysicalKeyboardKey.numpad3, PhysicalKeyboardKey.numpad4, PhysicalKeyboardKey.numpad5, PhysicalKeyboardKey.numpad6, PhysicalKeyboardKey.numpad7, PhysicalKeyboardKey.numpad8, PhysicalKeyboardKey.numpad9];
 
-  static int? _digitOf(LogicalKeyboardKey k) => _digits[k];
+  /// The digit 1–9 a key press stands for, or null.
+  ///
+  /// The physical key comes first so that the number row answers whatever the
+  /// layout (on an AZERTY keyboard the unshifted row types `&é"'(-è_ç`, and
+  /// its logical keys and characters are not digits); the logical key and the
+  /// typed character cover keyboards without a standard row (remapped or
+  /// on-screen).
+  static int? _digitOf(KeyEvent e) {
+    var i = _row.indexOf(e.physicalKey);
+    if (i < 0) i = _numpad.indexOf(e.physicalKey);
+    if (i >= 0) return i + 1;
+    final k = e.logicalKey;
+    if (k.keyId >= LogicalKeyboardKey.digit1.keyId && k.keyId <= LogicalKeyboardKey.digit9.keyId) return k.keyId - LogicalKeyboardKey.digit0.keyId;
+    if (k.keyId >= LogicalKeyboardKey.numpad1.keyId && k.keyId <= LogicalKeyboardKey.numpad9.keyId) return k.keyId - LogicalKeyboardKey.numpad0.keyId;
+    final c = int.tryParse(e.character ?? '');
+    return c != null && c >= 1 && c <= 9 ? c : null;
+  }
 
   static Offset? _centerOf(GlobalKey key) {
     final ctx = key.currentContext;
