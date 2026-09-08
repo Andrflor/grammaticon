@@ -4,6 +4,8 @@
 /// stable and used as keys in the save file.
 library;
 
+import 'tm_steps.dart';
+
 enum SkillBranch { coniugationes, temporaModi, mixta, declinationes, lectio }
 
 class Skill {
@@ -76,26 +78,13 @@ class Skills {
     // endings of person and number trained in the conjugation tree -----
     Skill('tm', 'Tempora et modī', branch: SkillBranch.temporaModi),
     Skill('tm.tempus', 'Agnitiō temporum', parent: 'tm', branch: SkillBranch.temporaModi),
-    // Each mood/voice is a ladder of steps, one leaf per step: recognising
-    // praesēns against imperfectum is not recognising every tense.
+    // Each mood/voice is a ladder of steps, one leaf per step (generated
+    // from TmLadders): recognising praesēns against imperfectum is not
+    // recognising every tense.
     Skill('tm.tempus.ind.act', 'Tempora indicātīvī āctīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amat · amābat · amābit · amāvit'),
-    Skill('tm.tempus.ind.act.duo', 'Praesēns et imperfectum', parent: 'tm.tempus.ind.act', branch: SkillBranch.temporaModi, hint: 'amat · amābat'),
-    Skill('tm.tempus.ind.act.praesentis', 'Systēma praesentis', parent: 'tm.tempus.ind.act', branch: SkillBranch.temporaModi, hint: 'amat · amābat · amābit'),
-    Skill('tm.tempus.ind.act.perfecti', 'Systēma perfectī', parent: 'tm.tempus.ind.act', branch: SkillBranch.temporaModi, hint: 'amāvit · amāverat · amāverit'),
-    Skill('tm.tempus.ind.act.omnia', 'Omnia tempora', parent: 'tm.tempus.ind.act', branch: SkillBranch.temporaModi, hint: 'amat · amābat · amābit · amāvit · amāverat · amāverit'),
     Skill('tm.tempus.ind.pass', 'Tempora indicātīvī passīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amātur · amābātur · amātus est'),
-    Skill('tm.tempus.ind.pass.duo', 'Praesēns et imperfectum', parent: 'tm.tempus.ind.pass', branch: SkillBranch.temporaModi, hint: 'amātur · amābātur'),
-    Skill('tm.tempus.ind.pass.praesentis', 'Systēma praesentis', parent: 'tm.tempus.ind.pass', branch: SkillBranch.temporaModi, hint: 'amātur · amābātur · amābitur'),
-    Skill('tm.tempus.ind.pass.perfecti', 'Systēma perfectī', parent: 'tm.tempus.ind.pass', branch: SkillBranch.temporaModi, hint: 'amātus est · erat · erit'),
-    Skill('tm.tempus.ind.pass.omnia', 'Omnia tempora', parent: 'tm.tempus.ind.pass', branch: SkillBranch.temporaModi, hint: 'amātur · amābātur · amābitur · amātus est · erat · erit'),
     Skill('tm.tempus.subj.act', 'Tempora subiūnctīvī āctīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amet · amāret · amāverit · amāvisset'),
-    Skill('tm.tempus.subj.act.duo', 'Praesēns et imperfectum', parent: 'tm.tempus.subj.act', branch: SkillBranch.temporaModi, hint: 'amet · amāret'),
-    Skill('tm.tempus.subj.act.perfecti', 'Systēma perfectī', parent: 'tm.tempus.subj.act', branch: SkillBranch.temporaModi, hint: 'amāverit · amāvisset'),
-    Skill('tm.tempus.subj.act.omnia', 'Omnia tempora', parent: 'tm.tempus.subj.act', branch: SkillBranch.temporaModi, hint: 'amet · amāret · amāverit · amāvisset'),
     Skill('tm.tempus.subj.pass', 'Tempora subiūnctīvī passīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amētur · amārētur · amātus sit'),
-    Skill('tm.tempus.subj.pass.duo', 'Praesēns et imperfectum', parent: 'tm.tempus.subj.pass', branch: SkillBranch.temporaModi, hint: 'amētur · amārētur'),
-    Skill('tm.tempus.subj.pass.perfecti', 'Systēma perfectī', parent: 'tm.tempus.subj.pass', branch: SkillBranch.temporaModi, hint: 'amātus sit · amātus esset'),
-    Skill('tm.tempus.subj.pass.omnia', 'Omnia tempora', parent: 'tm.tempus.subj.pass', branch: SkillBranch.temporaModi, hint: 'amētur · amārētur · amātus sit · amātus esset'),
     Skill('tm.tempus.inf', 'Tempora īnfīnītīvī', parent: 'tm.tempus', branch: SkillBranch.temporaModi, hint: 'amāre · amāvisse · amātūrus esse'),
     Skill('tm.modus', 'Agnitiō modōrum', parent: 'tm', branch: SkillBranch.temporaModi),
     Skill('tm.modus.duo', 'Indicātīvus an subiūnctīvus', parent: 'tm.modus', branch: SkillBranch.temporaModi, hint: 'amat · amet'),
@@ -165,6 +154,11 @@ class Skills {
       }
     }
     list.addAll(_declTail);
+    for (final (mood, voice) in TmLadders.ladders) {
+      for (final step in TmLadders.of(mood, voice)) {
+        list.add(Skill(TmLadders.skillId(mood, voice, step), step.name, parent: TmLadders.parentSkill(mood, voice), branch: SkillBranch.temporaModi, hint: step.hint));
+      }
+    }
     list.addAll(_lectio);
     return List.unmodifiable(list);
   }

@@ -12,6 +12,7 @@ import 'package:latin_game/linguistics/model/grammar.dart';
 import 'package:latin_game/pedagogy/progression.dart';
 import 'package:latin_game/pedagogy/question_generator.dart';
 import 'package:latin_game/pedagogy/skills.dart';
+import 'package:latin_game/pedagogy/tm_steps.dart';
 import 'package:latin_game/pedagogy/trials.dart';
 import 'package:latin_game/persistence/save_data.dart';
 
@@ -19,20 +20,18 @@ void main() {
   final analyzer = Analyzer(kVerbs, Conjugator());
   final gen = QuestionGenerator(analyzer);
   List<String> comps(Trial t) => t.components.map((c) => c.id).toList();
-  const tmGroups = ['Tempora', 'Modī', 'Tempora et modī'];
+  const tmGroups = ['Tempora āctīva', 'Tempora passīva', 'Modī', 'Tempora et modī'];
   final tm = Trials.ofActivity(Activity.amphitheatrum).where((t) => tmGroups.contains(t.group)).toList();
 
   test('the three groups exist in order, sit before Mixta and credit only recognition skills', () {
     expect(tm.map((t) => t.id), containsAll(['tm-tempora-ind-act', 'tm-tempora-ind-pass', 'tm-tempora-subj-act', 'tm-tempora-subj-pass', 'tm-tempora-inf', 'tm-modi-praes', 'tm-modi-omnia', 'tm-ambo']));
     final groups = Trials.groupsOf(Activity.amphitheatrum);
-    expect(groups.indexOf('Tempora'), lessThan(groups.indexOf('Modī')));
+    expect(groups.indexOf('Tempora āctīva'), lessThan(groups.indexOf('Tempora passīva')));
+    expect(groups.indexOf('Tempora passīva'), lessThan(groups.indexOf('Modī')));
     expect(groups.indexOf('Modī'), lessThan(groups.indexOf('Tempora et modī')));
     expect(groups.indexOf('Tempora et modī'), lessThan(groups.indexOf('Mixta')));
     for (final t in tm) {
       expect(t.id, startsWith('tm-'), reason: t.id);
-    }
-    for (final t in tm.where((t) => t.id.startsWith('tm-tempora-') && t.id != 'tm-tempora-inf')) {
-      expect(t.group, 'Tempora', reason: t.id);
     }
     for (final t in tm.where((t) => t.id.startsWith('tm-modi-'))) {
       expect(t.group, 'Modī', reason: t.id);
@@ -60,26 +59,36 @@ void main() {
     }
   });
 
-  test('the tense ladder: each step adds tenses, requires the previous step and the tenses it adds, and shows only what it mixes', () {
-    const ladders = {
-      'tm-tempora-ind-act': ['tm-tempora-ind-act-1', 'tm-tempora-ind-act-2', 'tm-tempora-ind-act-3', 'tm-tempora-ind-act'],
-      'tm-tempora-ind-pass': ['tm-tempora-ind-pass-1', 'tm-tempora-ind-pass-2', 'tm-tempora-ind-pass-3', 'tm-tempora-ind-pass'],
-      'tm-tempora-subj-act': ['tm-tempora-subj-act-1', 'tm-tempora-subj-act-2', 'tm-tempora-subj-act'],
-      'tm-tempora-subj-pass': ['tm-tempora-subj-pass-1', 'tm-tempora-subj-pass-2', 'tm-tempora-subj-pass'],
-    };
-    for (final steps in ladders.values) {
-      for (var i = 0; i < steps.length; i++) {
-        final t = Trials.byId(steps[i]);
-        // One skill leaf per step, all under the mood/voice skill: mastery of
-        // "praesēns against imperfectum" does not stand for every tense.
-        expect(t.skillIds.length, 1);
-        expect(Skills.isLeaf(t.primarySkill), isTrue, reason: t.id);
-        expect(Skills.byId(t.primarySkill).parent, 'tm.tempus.${t.id.split('-')[2]}.${t.id.split('-')[3]}', reason: t.id);
-        for (var j = 0; j < i; j++) {
-          expect(t.primarySkill, isNot(Trials.byId(steps[j]).primarySkill), reason: '${t.id} shares a skill with ${steps[j]}');
-        }
+  test('the tense ladders: pairs of confusable tenses first, each step with its own skill leaf, the grid being exactly what it mixes', () {
+    for (final (mood, voice) in TmLadders.ladders) {
+      final ladder = TmLadders.of(mood, voice);
+      expect(ladder.length, greaterThanOrEqualTo(5), reason: '${mood.key} ${voice.key}');
+      // Pairs come first and outnumber the rest; the last step mixes every tense.
+      final pairs = ladder.where((s) => s.tenses.length == 2).length;
+      expect(pairs, greaterThanOrEqualTo(4), reason: '${mood.key} ${voice.key}: the progression rests on confusions');
+      expect(ladder.first.tenses, [Tense.praesens, Tense.imperfectum]);
+      expect(ladder.last.isLast, isTrue);
+      expect(ladder.last.tenses.length, mood == Mood.subiunctivus ? 4 : 6);
+      for (var i = 0; i < ladder.length; i++) {
+        final step = ladder[i];
+        final t = Trials.byId(TmLadders.trialId(mood, voice, step));
+        expect(t.group, voice == Voice.activum ? 'Tempora āctīva' : 'Tempora passīva');
         expect(t.fixedChoices, isTrue);
-        if (i > 0) expect(t.prerequisites, contains(steps[i - 1]), reason: '${t.id} needs the previous step');
+        expect(t.dimensions, [Dimension.tempus]);
+        // One skill leaf per step under the mood/voice skill; no two steps share one.
+        expect(t.skillIds, [TmLadders.skillId(mood, voice, step)]);
+        expect(Skills.isLeaf(t.primarySkill), isTrue, reason: t.id);
+        expect(Skills.byId(t.primarySkill).parent, TmLadders.parentSkill(mood, voice));
+        expect(Skills.byId(t.primarySkill).name, step.name);
+        for (var j = 0; j < i; j++) {
+          expect(t.primarySkill, isNot(Trials.byId(TmLadders.trialId(mood, voice, ladder[j])).primarySkill));
+        }
+        // The steps it builds on come earlier in the ladder and are prerequisites.
+        for (final k in step.after) {
+          final idx = ladder.indexWhere((s) => s.key == k);
+          expect(idx, inInclusiveRange(0, i - 1), reason: '${t.id} builds on $k');
+          expect(t.prerequisites, contains(TmLadders.trialId(mood, voice, ladder[idx])));
+        }
         // Every tense mixed is learnt beforehand: once the step is purchasable, its trial is accessible.
         final learnt = <String>{};
         void close(String id) {
@@ -92,18 +101,24 @@ void main() {
         for (final c in t.components) {
           expect(Progression.isComponentUnlocked(save, c), isTrue, reason: '${t.id} mixes ${c.id} before its trial is learnt');
         }
-        // The grid is exactly what the step mixes.
+        // The grid is exactly what the step mixes, in canonical order.
         final q = gen.generate(trial: t, componentIds: comps(t), rng: Random(i), id: 'g$i')!;
-        expect(q.choices.map((c) => c.value).toSet(), t.components.map((c) => c.id.split('.')[1]).toSet(), reason: t.id);
+        expect(q.choices.map((c) => c.value).toList(), step.tenses.map((t) => t.key).toList(), reason: t.id);
+        expect(q.verb.target.analysis.tense, isIn(step.tenses));
       }
     }
-    // First steps: two cells only.
-    expect(Trials.byId('tm-tempora-ind-act-1').components.length, 2);
-    expect(Trials.byId('tm-tempora-subj-pass-1').components.length, 2);
-    // Present system, then perfect system.
-    expect(comps(Trials.byId('tm-tempora-ind-act-2')), ['ind.praes.act', 'ind.imperf.act', 'ind.fut.act']);
-    expect(comps(Trials.byId('tm-tempora-ind-act-3')), ['ind.perf.act', 'ind.plusq.act', 'ind.futex.act']);
-    expect(comps(Trials.byId('tm-tempora-subj-act-2')), ['subj.perf.act', 'subj.plusq.act']);
+    // The confusions named by the pedagogy are all there, in the indicative and the subjunctive.
+    final ind = TmLadders.indActive.map((s) => s.key).toList();
+    expect(ind, containsAll(['praes-imperf', 'praes-fut', 'praes-perf', 'perf-plusq', 'imperf-plusq', 'plusq-futex', 'fut-futex', 'praes-imperf-fut', 'perf-plusq-futex', 'omnia']));
+    expect(TmLadders.indPassive.map((s) => s.key), ind, reason: 'the passive climbs the same ladder');
+    final subj = TmLadders.subjActive.map((s) => s.key).toList();
+    expect(subj, ['praes-imperf', 'praes-perf', 'perf-plusq', 'imperf-plusq', 'omnia']);
+    expect(TmLadders.subjPassive.map((s) => s.key), subj);
+    // The historical ids survive on the last steps (the Mixta point at them).
+    expect(TmLadders.trialId(Mood.indicativus, Voice.activum, TmLadders.indActive.last), 'tm-tempora-ind-act');
+    expect(TmLadders.trialId(Mood.subiunctivus, Voice.passivum, TmLadders.subjPassive.last), 'tm-tempora-subj-pass');
+    // The infinitive sits with the active tenses.
+    expect(Trials.byId('tm-tempora-inf').group, 'Tempora āctīva');
   });
 
   test('the mood ladder and the combined ladder', () {
