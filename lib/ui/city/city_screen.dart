@@ -67,40 +67,14 @@ class CityScreen extends HookConsumerWidget {
         final portrait = c.maxWidth < c.maxHeight;
         return Stack(fit: StackFit.expand, children: [
           Image.asset('assets/images/city_bg.png', fit: BoxFit.cover, alignment: Alignment.bottomCenter),
-          if (portrait) _PortraitCity(onOpen: open) else _StageCity(onOpen: open),
-          // HUD
+          if (portrait) _PortraitCity(onOpen: open, narrow: c.maxWidth < 700) else _StageCity(onOpen: open),
+          // HUD: Tabula flush left, the title centred on the screen, the cog and
+          // the gems flush right in the same place as on every other screen.
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.fromLTRB(kHudSidePadding, kHudTopPadding, kHudSidePadding, 12),
               child: Column(children: [
-                Wrap(
-                  alignment: WrapAlignment.spaceBetween,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: [
-                    RomanPanel(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      color: G.purpleDark,
-                      child: Text('GRAMMATICON', style: G.display(portrait ? 20 : 26)),
-                    ),
-                    Row(mainAxisSize: MainAxisSize.min, children: [
-                      // Same 46 px pill height as the top bars and the arena HUD.
-                      AnimatedGemCounter(count: save.gems, size: 34),
-                      const SizedBox(width: 8),
-                      SizedBox(
-                        height: kPillHeight,
-                        child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () {
-                          pushScreen(context, const TabulaScreen());
-                        }),
-                      ),
-                      const SizedBox(width: 8),
-                      RomanButton(label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, circular: true, onPressed: () {
-                        pushScreen(context, const SettingsScreen());
-                      }),
-                    ]),
-                  ],
-                ),
+                _CityHud(narrow: c.maxWidth < 700, gems: save.gems),
                 const Spacer(),
                 if (interrupted != null && interruptedLabels != null && battle == null)
                   RomanPanel(
@@ -122,6 +96,42 @@ class CityScreen extends HookConsumerWidget {
     );
   }
 }
+
+class _CityHud extends StatelessWidget {
+  const _CityHud({required this.narrow, required this.gems});
+  final bool narrow;
+  final int gems;
+
+  @override
+  Widget build(BuildContext context) {
+    final tabula = SizedBox(
+      height: kPillHeight,
+      child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () => pushScreen(context, const TabulaScreen())),
+    );
+    final right = Row(mainAxisSize: MainAxisSize.min, children: [
+      SettingsButton(onPressed: () => pushScreen(context, const SettingsScreen())),
+      const SizedBox(width: kHudGap),
+      // Same 46 px pill height as the top bars and the arena HUD.
+      AnimatedGemCounter(count: gems, size: 34),
+    ]);
+    final title = RomanPanel(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      color: G.purpleDark,
+      child: Text('GRAMMATICON', style: G.display(narrow ? 20 : 26)),
+    );
+    if (narrow) {
+      // Phone: the title takes its own line under the pills.
+      return Column(children: [
+        HudRow(height: kPillHeight, left: tabula, right: right),
+        Padding(padding: const EdgeInsets.only(top: 10), child: title),
+      ]);
+    }
+    return HudRow(left: tabula, right: right, center: Center(child: title));
+  }
+}
+
+/// Height of the HUD (pills and title) that the portrait list must clear.
+double _cityHudHeight(bool narrow) => kHudTopPadding + (narrow ? kPillHeight + 10 + 48 : HudRow.defaultHeight) + 12;
 
 class _StageCity extends StatelessWidget {
   const _StageCity({required this.onOpen});
@@ -152,12 +162,13 @@ class _StageCity extends StatelessWidget {
 }
 
 class _PortraitCity extends StatelessWidget {
-  const _PortraitCity({required this.onOpen});
+  const _PortraitCity({required this.onOpen, required this.narrow});
   final void Function(_Building) onOpen;
+  final bool narrow;
   @override
   Widget build(BuildContext context) => SafeArea(
         child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 90, 16, 24),
+          padding: EdgeInsets.fromLTRB(16, _cityHudHeight(narrow) + 20, 16, 24),
           children: [
             for (final b in _buildings)
               Padding(

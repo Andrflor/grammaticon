@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../../app/theme.dart';
@@ -81,6 +83,14 @@ const double kButtonRadius = 12;
 
 /// Height of the top-bar pills (Redī, gem counter): full stadiums of 46 px.
 const double kPillHeight = 46;
+
+/// Margins of the top HUD row, the same on every screen so that the gem
+/// counter (always the rightmost pill) never moves from one screen to the next.
+const double kHudSidePadding = 24;
+const double kHudTopPadding = 8;
+
+/// Gap between the cog and the gem counter.
+const double kHudGap = 8;
 
 /// Deep purple of the primary buttons and the pill of light purple around
 /// them, sampled on the mock-up cards.
@@ -553,6 +563,84 @@ class _ChevronPainter extends CustomPainter {
   bool shouldRepaint(covariant _ChevronPainter old) => old.open != open;
 }
 
+/// Ghost cog opening the Optiōnēs. It stands just left of the gem counter on
+/// every screen except the Optiōnēs themselves and the trials.
+class SettingsButton extends StatelessWidget {
+  const SettingsButton({super.key, required this.onPressed});
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) => RomanButton(label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, circular: true, onPressed: onPressed);
+}
+
+enum _HudSlot { left, center, right }
+
+/// Three-slot HUD row: the side slots take their natural width and sit flush
+/// with the edges, the centre slot is given the same margin on both sides (the
+/// wider of the two sides), so it is centred on the screen rather than between
+/// unequal neighbours. Every slot is centred on the 46 px pill band at the top
+/// of the row, so the pills (and the gems) sit at the same height as in
+/// [TopBar]; taller centre content simply extends below the band.
+class HudRow extends StatelessWidget {
+  const HudRow({super.key, this.left, this.center, this.right, this.height = HudRow.defaultHeight, this.maxCenterWidth = 640});
+  final Widget? left;
+  final Widget? center;
+  final Widget? right;
+  final double height;
+  final double maxCenterWidth;
+
+  /// Tall enough for the 46 px pills and for the three-line opponent bar.
+  static const double defaultHeight = 56;
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+    height: height,
+    child: CustomMultiChildLayout(
+      delegate: _HudLayout(maxCenterWidth),
+      children: [
+        if (left != null) LayoutId(id: _HudSlot.left, child: left!),
+        if (center != null) LayoutId(id: _HudSlot.center, child: center!),
+        if (right != null) LayoutId(id: _HudSlot.right, child: right!),
+      ],
+    ),
+  );
+}
+
+class _HudLayout extends MultiChildLayoutDelegate {
+  _HudLayout(this.maxCenterWidth);
+  final double maxCenterWidth;
+  static const double _gap = 12;
+
+  /// Top of a child of height [h] centred on the pill band.
+  static double _top(double h) => max(0, (kPillHeight - h) / 2);
+
+  @override
+  void performLayout(Size size) {
+    var leftWidth = 0.0;
+    var rightWidth = 0.0;
+    if (hasChild(_HudSlot.left)) {
+      final left = layoutChild(_HudSlot.left, BoxConstraints.loose(size));
+      leftWidth = left.width;
+      positionChild(_HudSlot.left, Offset(0, _top(left.height)));
+    }
+    if (hasChild(_HudSlot.right)) {
+      final right = layoutChild(_HudSlot.right, BoxConstraints.loose(size));
+      rightWidth = right.width;
+      positionChild(_HudSlot.right, Offset(size.width - right.width, _top(right.height)));
+    }
+    if (!hasChild(_HudSlot.center)) {
+      return;
+    }
+    final side = max(leftWidth, rightWidth) + _gap;
+    final width = (size.width - 2 * side).clamp(0.0, maxCenterWidth);
+    final center = layoutChild(_HudSlot.center, BoxConstraints(minWidth: width, maxWidth: width, maxHeight: size.height));
+    positionChild(_HudSlot.center, Offset((size.width - center.width) / 2, _top(center.height)));
+  }
+
+  @override
+  bool shouldRelayout(covariant _HudLayout old) => old.maxCenterWidth != maxCenterWidth;
+}
+
 /// Top bar with back button, title, an optional centre widget and gem counter.
 ///
 /// Pills and title sit on one line at the top. The centre widget (the hero's
@@ -561,11 +649,15 @@ class _ChevronPainter extends CustomPainter {
 /// mock-up; otherwise it follows the title. On narrow screens the title moves
 /// under the pills instead of being cut to a few letters.
 class TopBar extends StatelessWidget {
-  const TopBar({super.key, required this.title, this.gems, this.trailing = const [], this.onBack, this.center, this.titleColor = kHeadingGold});
+  const TopBar({super.key, required this.title, this.gems, this.trailing = const [], this.onBack, this.onSettings, this.center, this.titleColor = kHeadingGold});
   final String title;
   final int? gems;
   final List<Widget> trailing;
   final VoidCallback? onBack;
+
+  /// Opens the Optiōnēs from the cog left of the gems; null hides the cog
+  /// (on the Optiōnēs themselves).
+  final VoidCallback? onSettings;
 
   /// Widget shown between the title and the gem counter (e.g. a speech bubble).
   final Widget? center;
@@ -577,7 +669,6 @@ class TopBar extends StatelessWidget {
   /// Vertical offset of [center] below the top of the pills.
   static const double centerDrop = 22;
   static const double _centerHeight = 72;
-  static const double _sidePadding = 24;
 
   static const double _titleSize = 20;
   static const double _titleSpacing = 1.4;
@@ -602,17 +693,21 @@ class TopBar extends StatelessWidget {
   /// Width of the gem pill for [count] gems.
   static double _gemsWidth(int count) => 2 * 16 + 2 * 3 + 34 + 8 + measureText('$count', Inscription.style(_counterSize(34), letterSpacing: 1.0));
 
+  /// Width of the cog and its gap before the gems.
+  double get _settingsWidth => onSettings == null ? 0 : kPillHeight + kHudGap;
+
   @override
   Widget build(BuildContext context) {
     final back = RomanButton(label: 'Redī', icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onBack ?? () => Navigator.of(context).maybePop());
     final tail = [
-      for (final w in trailing) _onPill(w),
-      if (gems != null) ...[const SizedBox(width: 12), AnimatedGemCounter(count: gems!, size: 34)],
+      for (final w in trailing) ...[_onPill(w), const SizedBox(width: 12)],
+      if (onSettings != null) ...[SettingsButton(onPressed: onSettings!), const SizedBox(width: kHudGap)],
+      if (gems != null) AnimatedGemCounter(count: gems!, size: 34),
     ];
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(_sidePadding, 8, _sidePadding, 0),
+        padding: const EdgeInsets.fromLTRB(kHudSidePadding, kHudTopPadding, kHudSidePadding, 0),
         child: LayoutBuilder(
           builder: (context, c) {
             final w = c.maxWidth;
@@ -639,7 +734,7 @@ class TopBar extends StatelessWidget {
             // Centre the bubble on the screen, pushed right only if the title
             // would run under it, and kept clear of the gem pill.
             final titleEnd = _backWidth + 30 + measureText(title.toUpperCase(), Inscription.style(_titleSize, letterSpacing: _titleSpacing));
-            final regionEnd = gems == null ? w : w - _gemsWidth(gems!) - 12;
+            final regionEnd = (gems == null ? w : w - _gemsWidth(gems!)) - _settingsWidth - 12;
             final minLeft = titleEnd + 16;
             final maxLeft = regionEnd - centerWidth - 16;
             var left = (w - centerWidth) / 2;

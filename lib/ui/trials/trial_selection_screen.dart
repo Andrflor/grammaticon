@@ -13,6 +13,7 @@ import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
 import '../activity/activity_config.dart';
 import '../battle/battle_screen.dart';
+import '../settings/settings_screen.dart';
 import '../widgets/roman_widgets.dart';
 
 /// Trial selection of one activity (the Amphitheatrum's certāmina, the
@@ -48,6 +49,7 @@ class TrialSelectionScreen extends ConsumerWidget {
             TopBar(
               title: config.labels.title,
               gems: save.gems,
+              onSettings: () => pushScreen(context, const SettingsScreen()),
               center: wide ? bubble : null,
             ),
             Expanded(

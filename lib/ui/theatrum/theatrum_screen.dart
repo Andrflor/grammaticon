@@ -29,7 +29,7 @@ class TheatrumScreen extends ConsumerWidget {
         asset: 'assets/images/certamina_bg.png',
         child: Column(
           children: [
-            TopBar(title: 'Theātrum · Interpretātiō', gems: save.gems),
+            TopBar(title: 'Theātrum · Interpretātiō', gems: save.gems, onSettings: () => pushScreen(context, const SettingsScreen())),
             Expanded(
               child: Center(
                 child: RomanPanel(

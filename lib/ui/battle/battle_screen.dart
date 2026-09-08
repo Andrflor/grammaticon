@@ -281,22 +281,18 @@ class _Hud extends ConsumerWidget {
     );
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 8, 10, 0),
+        padding: const EdgeInsets.fromLTRB(kHudSidePadding, kHudTopPadding, kHudSidePadding, 0),
         child: Column(
           children: [
-            SizedBox(
-              height: _HudLayout.height,
-              child: CustomMultiChildLayout(
-                delegate: _HudLayout(),
-                children: [
-                  LayoutId(id: _HudSlot.left, child: controls),
-                  // Wide screens: the opponent bar sits between the hearts and the gems,
-                  // centred on the screen whatever the width of either side.
-                  if (!compact) LayoutId(id: _HudSlot.center, child: bar),
-                  // Size 34 gives the counter the same 46 px pill height as the ghost buttons.
-                  LayoutId(id: _HudSlot.right, child: AnimatedGemCounter(count: gems, size: 34, isFlightTarget: true)),
-                ],
-              ),
+            HudRow(
+              left: controls,
+              // Wide screens: the opponent bar sits between the hearts and the gems,
+              // centred on the screen whatever the width of either side.
+              center: compact ? null : bar,
+              // Size 34 gives the counter the same 46 px pill height as the ghost
+              // buttons, in the same place as on every other screen. No cog here:
+              // the Optiōnēs are not opened from inside a trial.
+              right: AnimatedGemCounter(count: gems, size: 34, isFlightTarget: true),
             ),
             // Narrow screens: the bar takes its own line under the controls.
             if (compact) Padding(padding: const EdgeInsets.fromLTRB(40, 4, 40, 0), child: bar),
@@ -305,38 +301,6 @@ class _Hud extends ConsumerWidget {
       ),
     );
   }
-}
-
-enum _HudSlot { left, center, right }
-
-/// Three-slot HUD row: the side slots take their natural width, the centre
-/// slot is given the same margin on both sides (the wider of the two sides),
-/// so it is centred on the screen rather than between unequal neighbours.
-class _HudLayout extends MultiChildLayoutDelegate {
-  _HudLayout();
-
-  /// Tall enough for the 46 px pills and for the three-line opponent bar.
-  static const double height = 56;
-  static const double _gap = 12;
-  static const double _maxCenterWidth = 640;
-
-  @override
-  void performLayout(Size size) {
-    final left = layoutChild(_HudSlot.left, BoxConstraints.loose(size));
-    final right = layoutChild(_HudSlot.right, BoxConstraints.loose(size));
-    positionChild(_HudSlot.left, Offset(0, (size.height - left.height) / 2));
-    positionChild(_HudSlot.right, Offset(size.width - right.width, (size.height - right.height) / 2));
-    if (!hasChild(_HudSlot.center)) {
-      return;
-    }
-    final side = max(left.width, right.width) + _gap;
-    final width = (size.width - 2 * side).clamp(0.0, _maxCenterWidth);
-    final center = layoutChild(_HudSlot.center, BoxConstraints(minWidth: width, maxWidth: width, maxHeight: size.height));
-    positionChild(_HudSlot.center, Offset((size.width - center.width) / 2, (size.height - center.height) / 2));
-  }
-
-  @override
-  bool shouldRelayout(covariant _HudLayout old) => false;
 }
 
 // ---------------------------------------------------------------- question, choices, feedback

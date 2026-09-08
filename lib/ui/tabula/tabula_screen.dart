@@ -14,6 +14,7 @@ import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
 import '../activity/activity_config.dart';
 import '../trials/trial_selection_screen.dart';
+import '../settings/settings_screen.dart';
 import '../widgets/roman_widgets.dart';
 
 /// Skill tree with honest mastery estimates fed by real answers.
@@ -29,7 +30,7 @@ class TabulaScreen extends ConsumerWidget {
         asset: 'assets/images/tabula_bg.png',
         child: Column(
           children: [
-            TopBar(title: 'Tabula perītiārum', gems: save.gems),
+            TopBar(title: 'Tabula perītiārum', gems: save.gems, onSettings: () => pushScreen(context, const SettingsScreen())),
             Expanded(
               child: ContentColumn(
                 maxWidth: 960,
