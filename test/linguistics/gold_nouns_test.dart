@@ -3,10 +3,10 @@
 // not reuse the declinator's rules, so they check linguistic correctness
 // rather than internal consistency.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/linguistics/engine/declinator.dart';
-import 'package:latin_game/linguistics/engine/noun_analyzer.dart';
-import 'package:latin_game/linguistics/lexicon/nouns.dart';
-import 'package:latin_game/linguistics/model/grammar.dart';
+import 'package:grammaticon/linguistics/engine/declinator.dart';
+import 'package:grammaticon/linguistics/engine/noun_analyzer.dart';
+import 'package:grammaticon/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/linguistics/model/grammar.dart';
 
 const _d = Declinator();
 NounParadigm _p(String id) => _d.decline(kNouns.firstWhere((n) => n.id == id));

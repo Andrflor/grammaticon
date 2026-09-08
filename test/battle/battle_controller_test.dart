@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/app/providers.dart';
-import 'package:latin_game/battle/battle_controller.dart';
-import 'package:latin_game/pedagogy/progression.dart';
-import 'package:latin_game/pedagogy/trials.dart';
-import 'package:latin_game/persistence/save_data.dart';
-import 'package:latin_game/persistence/save_repository.dart';
+import 'package:grammaticon/app/providers.dart';
+import 'package:grammaticon/battle/battle_controller.dart';
+import 'package:grammaticon/pedagogy/progression.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
+import 'package:grammaticon/persistence/save_data.dart';
+import 'package:grammaticon/persistence/save_repository.dart';
 
 import '../support/test_env.dart';
 

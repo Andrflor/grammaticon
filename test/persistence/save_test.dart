@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/pedagogy/errata.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
-import 'package:latin_game/persistence/save_data.dart';
-import 'package:latin_game/persistence/save_repository.dart';
+import 'package:grammaticon/pedagogy/errata.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
+import 'package:grammaticon/persistence/save_data.dart';
+import 'package:grammaticon/persistence/save_repository.dart';
 
 void main() {
   test('save round trip keeps every field', () async {

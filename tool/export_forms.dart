@@ -3,8 +3,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
 
 void main(List<String> args) {
   final out = args.isEmpty ? 'tool/corpus/out/forms_export.json' : args[0];

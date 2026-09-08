@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
 // Prints the paradigm of a noun: dart run tool/dump_declension.dart rosa [rex ...]
-import 'package:latin_game/linguistics/engine/declinator.dart';
-import 'package:latin_game/linguistics/engine/noun_analyzer.dart';
-import 'package:latin_game/linguistics/lexicon/nouns.dart';
-import 'package:latin_game/linguistics/model/grammar.dart';
+import 'package:grammaticon/linguistics/engine/declinator.dart';
+import 'package:grammaticon/linguistics/engine/noun_analyzer.dart';
+import 'package:grammaticon/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/linguistics/model/grammar.dart';
 
 void main(List<String> args) {
   final an = NounAnalyzer(kNouns, const Declinator());

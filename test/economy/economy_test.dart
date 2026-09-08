@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/economy/economy.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
+import 'package:grammaticon/economy/economy.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
 
 void main() {
   const eco = Economy(kEconomy);

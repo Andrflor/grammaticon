@@ -1,7 +1,7 @@
 // Dev tool: measures the time to build the whole-lexicon index.
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/linguistics/engine/analyzer.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
 
 void main() {
   final sw = Stopwatch()..start();

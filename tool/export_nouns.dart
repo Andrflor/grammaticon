@@ -3,9 +3,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:latin_game/linguistics/engine/conjugator.dart' show stripMacrons;
-import 'package:latin_game/linguistics/engine/declinator.dart';
-import 'package:latin_game/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart' show stripMacrons;
+import 'package:grammaticon/linguistics/engine/declinator.dart';
+import 'package:grammaticon/linguistics/lexicon/nouns.dart';
 
 void main(List<String> args) {
   final out = args.isEmpty ? 'tool/corpus/out/nouns_export.json' : args[0];

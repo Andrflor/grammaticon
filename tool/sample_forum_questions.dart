@@ -3,12 +3,12 @@
 // Usage: dart run tool/sample_forum_questions.dart [trialId] [count]
 import 'dart:math';
 
-import 'package:latin_game/linguistics/engine/declinator.dart';
-import 'package:latin_game/linguistics/engine/noun_analyzer.dart';
-import 'package:latin_game/linguistics/lexicon/nouns.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
-import 'package:latin_game/pedagogy/noun_question_generator.dart';
-import 'package:latin_game/pedagogy/trials.dart';
+import 'package:grammaticon/linguistics/engine/declinator.dart';
+import 'package:grammaticon/linguistics/engine/noun_analyzer.dart';
+import 'package:grammaticon/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
+import 'package:grammaticon/pedagogy/noun_question_generator.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
 
 void main(List<String> args) {
   final gen = NounQuestionGenerator(NounAnalyzer(kNouns, const Declinator()));

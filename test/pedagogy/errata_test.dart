@@ -1,13 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/battle/answer_resolver.dart';
-import 'package:latin_game/linguistics/model/grammar.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
-import 'package:latin_game/pedagogy/noun_question_generator.dart';
-import 'package:latin_game/pedagogy/question_generator.dart';
-import 'package:latin_game/pedagogy/trials.dart';
-import 'package:latin_game/persistence/save_data.dart';
+import 'package:grammaticon/battle/answer_resolver.dart';
+import 'package:grammaticon/linguistics/model/grammar.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
+import 'package:grammaticon/pedagogy/noun_question_generator.dart';
+import 'package:grammaticon/pedagogy/question_generator.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
+import 'package:grammaticon/persistence/save_data.dart';
 
 import '../support/test_env.dart';
 

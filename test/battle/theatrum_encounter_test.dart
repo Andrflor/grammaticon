@@ -2,17 +2,17 @@
 // wallet, mastery rules and persistence as the arena and the Forum; reading
 // questions; vocabulary exposure recorded apart from mastery.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/app/providers.dart';
-import 'package:latin_game/battle/battle_controller.dart';
-import 'package:latin_game/pedagogy/exposure.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
-import 'package:latin_game/pedagogy/progression.dart';
-import 'package:latin_game/pedagogy/question.dart';
-import 'package:latin_game/pedagogy/reading/reading_question_source.dart';
-import 'package:latin_game/pedagogy/reading/reading_trials.dart';
-import 'package:latin_game/pedagogy/trials.dart';
-import 'package:latin_game/persistence/save_data.dart';
-import 'package:latin_game/persistence/save_repository.dart';
+import 'package:grammaticon/app/providers.dart';
+import 'package:grammaticon/battle/battle_controller.dart';
+import 'package:grammaticon/pedagogy/exposure.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
+import 'package:grammaticon/pedagogy/progression.dart';
+import 'package:grammaticon/pedagogy/question.dart';
+import 'package:grammaticon/pedagogy/reading/reading_question_source.dart';
+import 'package:grammaticon/pedagogy/reading/reading_trials.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
+import 'package:grammaticon/persistence/save_data.dart';
+import 'package:grammaticon/persistence/save_repository.dart';
 
 import '../support/test_env.dart';
 

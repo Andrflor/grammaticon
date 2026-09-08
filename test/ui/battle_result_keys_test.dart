@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/app/theme.dart';
-import 'package:latin_game/battle/battle_controller.dart';
-import 'package:latin_game/pedagogy/trials.dart';
-import 'package:latin_game/persistence/save_data.dart';
-import 'package:latin_game/persistence/save_repository.dart';
-import 'package:latin_game/ui/battle/battle_screen.dart';
+import 'package:grammaticon/app/theme.dart';
+import 'package:grammaticon/battle/battle_controller.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
+import 'package:grammaticon/persistence/save_data.dart';
+import 'package:grammaticon/persistence/save_repository.dart';
+import 'package:grammaticon/ui/battle/battle_screen.dart';
 
 import '../support/test_env.dart';
 

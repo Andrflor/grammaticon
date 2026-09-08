@@ -4,10 +4,10 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/pedagogy/exposure.dart';
-import 'package:latin_game/pedagogy/reading/reading_question_source.dart';
-import 'package:latin_game/pedagogy/reading/vocab_progress.dart';
-import 'package:latin_game/pedagogy/trials.dart';
+import 'package:grammaticon/pedagogy/exposure.dart';
+import 'package:grammaticon/pedagogy/reading/reading_question_source.dart';
+import 'package:grammaticon/pedagogy/reading/vocab_progress.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
 
 import '../support/test_env.dart';
 

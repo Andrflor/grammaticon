@@ -2,10 +2,10 @@
 // *New Latin Grammar* (1903), DCC edition. They do not reuse the generator's
 // rules, so they check linguistic correctness rather than internal consistency.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
-import 'package:latin_game/linguistics/model/grammar.dart';
+import 'package:grammaticon/linguistics/engine/analyzer.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/linguistics/model/grammar.dart';
 
 final _conj = Conjugator();
 Paradigm _p(String id) => _conj.conjugate(kVerbs.firstWhere((v) => v.id == id));

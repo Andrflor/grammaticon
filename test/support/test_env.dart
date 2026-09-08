@@ -4,17 +4,17 @@ import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:latin_game/app/providers.dart';
-import 'package:latin_game/audio/audio_service.dart';
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/engine/declinator.dart';
-import 'package:latin_game/linguistics/engine/noun_analyzer.dart';
-import 'package:latin_game/linguistics/lexicon/nouns.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
-import 'package:latin_game/pedagogy/reading/reading_content.dart';
-import 'package:latin_game/persistence/save_data.dart';
-import 'package:latin_game/persistence/save_repository.dart';
+import 'package:grammaticon/app/providers.dart';
+import 'package:grammaticon/audio/audio_service.dart';
+import 'package:grammaticon/linguistics/engine/analyzer.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/engine/declinator.dart';
+import 'package:grammaticon/linguistics/engine/noun_analyzer.dart';
+import 'package:grammaticon/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/pedagogy/reading/reading_content.dart';
+import 'package:grammaticon/persistence/save_data.dart';
+import 'package:grammaticon/persistence/save_repository.dart';
 
 final Analyzer testAnalyzer = Analyzer(kVerbs, Conjugator());
 final NounAnalyzer testNounAnalyzer = NounAnalyzer(kNouns, const Declinator());

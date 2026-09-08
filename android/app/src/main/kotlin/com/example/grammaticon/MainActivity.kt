@@ -1,4 +1,4 @@
-package com.example.latin_game
+package com.example.grammaticon
 
 import io.flutter.embedding.android.FlutterActivity
 

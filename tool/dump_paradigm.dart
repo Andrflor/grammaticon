@@ -1,7 +1,7 @@
 // Dev tool: prints the paradigm of one verb.
 // Usage: dart run tool/dump_paradigm.dart amo [selectorPattern]
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
 
 void main(List<String> args) {
   final id = args.isEmpty ? 'amo' : args[0];

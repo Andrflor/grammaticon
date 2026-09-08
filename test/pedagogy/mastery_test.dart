@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
 
 Observation _o(bool c, {String lemma = 'amo', AnswerQuality q = AnswerQuality.autonoma, int day = 1}) =>
     Observation(at: DateTime(2026, 1, day, 10), correct: c, lemmaId: lemma, quality: q, trialId: 't');

@@ -1,14 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:latin_game/linguistics/engine/analyzer.dart';
-import 'package:latin_game/linguistics/engine/conjugator.dart';
-import 'package:latin_game/linguistics/lexicon/verbs.dart';
-import 'package:latin_game/linguistics/model/grammar.dart';
-import 'package:latin_game/pedagogy/mastery.dart';
-import 'package:latin_game/pedagogy/question_generator.dart';
-import 'package:latin_game/pedagogy/skills.dart';
-import 'package:latin_game/pedagogy/trials.dart';
+import 'package:grammaticon/linguistics/engine/analyzer.dart';
+import 'package:grammaticon/linguistics/engine/conjugator.dart';
+import 'package:grammaticon/linguistics/lexicon/verbs.dart';
+import 'package:grammaticon/linguistics/model/grammar.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
+import 'package:grammaticon/pedagogy/question_generator.dart';
+import 'package:grammaticon/pedagogy/skills.dart';
+import 'package:grammaticon/pedagogy/trials.dart';
 
 void main() {
   final analyzer = Analyzer(kVerbs, Conjugator());
