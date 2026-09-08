@@ -19,7 +19,11 @@ import '../widgets/roman_widgets.dart';
 /// Forum's contrōversiae): free introductory trial, visible locked trials with
 /// prices and prerequisites, permanent purchases.
 class TrialSelectionScreen extends ConsumerWidget {
-  const TrialSelectionScreen({super.key, required this.activity, this.highlightTrialId});
+  const TrialSelectionScreen({
+    super.key,
+    required this.activity,
+    this.highlightTrialId,
+  });
   final Activity activity;
 
   /// Trial to highlight when arriving from the Tabula.
@@ -32,27 +36,48 @@ class TrialSelectionScreen extends ConsumerWidget {
     final groups = Trials.groupsOf(activity);
     final trials = Trials.ofActivity(activity);
     final wide = MediaQuery.sizeOf(context).width >= 1100;
-    final bubble = SpeechBubble(text: config.labels.blurb, heroAsset: config.heroAsset);
+    final bubble = SpeechBubble(
+      text: config.labels.blurb,
+      heroAsset: config.heroAsset,
+    );
     return Scaffold(
       body: ScreenBackground(
         asset: 'assets/images/certamina_bg.png',
         child: Column(
           children: [
-            TopBar(title: config.labels.title, gems: save.gems, center: wide ? bubble : null),
+            TopBar(
+              title: config.labels.title,
+              gems: save.gems,
+              center: wide ? bubble : null,
+            ),
             Expanded(
               child: ContentColumn(
                 // Four cards of ~310 px on a wide screen, leaving the painted
                 // banners visible on both sides as on the mock-up.
                 maxWidth: 1305,
                 child: ListView(
-                  padding: EdgeInsets.fromLTRB(16, wide ? 0 : SpeechBubble.heroOverflow + 4, 16, 32),
+                  padding: EdgeInsets.fromLTRB(
+                    16,
+                    wide ? 0 : SpeechBubble.heroOverflow + 4,
+                    16,
+                    32,
+                  ),
                   children: [
                     if (!wide)
                       Padding(
                         padding: const EdgeInsets.fromLTRB(4, 0, 4, 4),
-                        child: Align(alignment: Alignment.centerLeft, child: bubble),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: bubble,
+                        ),
                       ),
-                    for (final g in groups) _GroupSection(title: g, trials: trials.where((t) => t.group == g).toList(), highlightTrialId: highlightTrialId, topPadding: wide ? 6 : 16),
+                    for (final g in groups)
+                      _GroupSection(
+                        title: g,
+                        trials: trials.where((t) => t.group == g).toList(),
+                        highlightTrialId: highlightTrialId,
+                        topPadding: wide ? 6 : 16,
+                      ),
                   ],
                 ),
               ),
@@ -67,7 +92,12 @@ class TrialSelectionScreen extends ConsumerWidget {
 /// One group of trials under a folding heading, laid out in rows of equal
 /// height (four cards on a wide screen).
 class _GroupSection extends StatefulWidget {
-  const _GroupSection({required this.title, required this.trials, this.highlightTrialId, this.topPadding = 16});
+  const _GroupSection({
+    required this.title,
+    required this.trials,
+    this.highlightTrialId,
+    this.topPadding = 16,
+  });
   final String title;
   final List<Trial> trials;
   final String? highlightTrialId;
@@ -83,7 +113,12 @@ class _GroupSectionState extends State<_GroupSection> {
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      SectionTitle(widget.title, open: _open, topPadding: widget.topPadding, onTap: () => setState(() => _open = !_open)),
+      SectionTitle(
+        widget.title,
+        open: _open,
+        topPadding: widget.topPadding,
+        onTap: () => setState(() => _open = !_open),
+      ),
       if (_open)
         LayoutBuilder(
           builder: (context, c) {
@@ -91,7 +126,12 @@ class _GroupSectionState extends State<_GroupSection> {
             final cols = (c.maxWidth / 300).floor().clamp(1, 4);
             final rows = <List<Trial>>[];
             for (var i = 0; i < widget.trials.length; i += cols) {
-              rows.add(widget.trials.sublist(i, (i + cols).clamp(0, widget.trials.length)));
+              rows.add(
+                widget.trials.sublist(
+                  i,
+                  (i + cols).clamp(0, widget.trials.length),
+                ),
+              );
             }
             return Column(
               children: [
@@ -105,11 +145,18 @@ class _GroupSectionState extends State<_GroupSection> {
                           for (final (i, t) in row.indexed) ...[
                             if (i > 0) const SizedBox(width: gap),
                             Expanded(
-                              child: TrialCard(trial: t, highlighted: t.id == widget.highlightTrialId, width: (c.maxWidth - gap * (cols - 1)) / cols),
+                              child: TrialCard(
+                                trial: t,
+                                highlighted: t.id == widget.highlightTrialId,
+                                width: (c.maxWidth - gap * (cols - 1)) / cols,
+                              ),
                             ),
                           ],
                           // Keep the last row's cards the same width as the others.
-                          for (var i = row.length; i < cols; i++) ...[const SizedBox(width: gap), const Expanded(child: SizedBox.shrink())],
+                          for (var i = row.length; i < cols; i++) ...[
+                            const SizedBox(width: gap),
+                            const Expanded(child: SizedBox.shrink()),
+                          ],
                         ],
                       ),
                     ),
@@ -123,7 +170,12 @@ class _GroupSectionState extends State<_GroupSection> {
 }
 
 class TrialCard extends ConsumerWidget {
-  const TrialCard({super.key, required this.trial, this.highlighted = false, this.width});
+  const TrialCard({
+    super.key,
+    required this.trial,
+    this.highlighted = false,
+    this.width,
+  });
   final Trial trial;
   final bool highlighted;
 
@@ -144,16 +196,23 @@ class TrialCard extends ConsumerWidget {
     fontVariations: const [FontVariation('wght', 700)],
     letterSpacing: size >= 16 ? 1.2 : 0.4,
     height: 1.35,
-    shadows: const [Shadow(color: Color(0x80000000), offset: Offset(0, 1), blurRadius: 2)],
+    shadows: const [
+      Shadow(color: Color(0x80000000), offset: Offset(0, 1), blurRadius: 2),
+    ],
   );
 
   /// 16 px Cinzel, stepping down to 13 px until the name fits on two lines
   /// beside the portrait without breaking a word ("plūsquamperfectum").
   TextStyle _fitTitle() {
-    final maxWidth = width == null ? null : width! - 2 * (_ring + _frame) - _inset - _portraitSlot;
+    final maxWidth = width == null
+        ? null
+        : width! - 2 * (_ring + _frame) - _inset - _portraitSlot;
     for (final size in const [16.0, 15.0, 14.0, 13.0]) {
       final style = _titleStyle(size);
-      if (maxWidth == null || size == 13.0 || _fitsTwoLines(trial.name, style, maxWidth)) return style;
+      if (maxWidth == null ||
+          size == 13.0 ||
+          _fitsTwoLines(trial.name, style, maxWidth))
+        return style;
     }
     return _titleStyle(13);
   }
@@ -164,7 +223,9 @@ class TrialCard extends ConsumerWidget {
       textDirection: TextDirection.ltr,
       maxLines: 2,
     )..layout(maxWidth: maxWidth);
-    final fits = !painter.didExceedMaxLines && text.split(' ').every((w) => measureText(w, style) <= maxWidth);
+    final fits =
+        !painter.didExceedMaxLines &&
+        text.split(' ').every((w) => measureText(w, style) <= maxWidth);
     painter.dispose();
     return fits;
   }
@@ -176,13 +237,18 @@ class TrialCard extends ConsumerWidget {
     final status = Progression.status(save, trial);
     final audio = ref.read(audioProvider);
     final config = configFor(trial.activity);
-    final summaries = [for (final s in trial.skillIds) MasterySummary.forSkill(save, s, cfg)];
+    final summaries = [
+      for (final s in trial.skillIds) MasterySummary.forSkill(save, s, cfg),
+    ];
     final accessible = status.access == TrialAccess.accessible;
     final locked = status.access == TrialAccess.locked;
     final titleStyle = _fitTitle();
 
     final (Color badgeColor, IconData badgeIcon) = switch (status.access) {
-      TrialAccess.accessible => (const Color(0xFF22B15C), Icons.lock_open_outlined),
+      TrialAccess.accessible => (
+        const Color(0xFF22B15C),
+        Icons.lock_open_outlined,
+      ),
       TrialAccess.purchasable => (const Color(0xFFEAA249), Icons.lock_outline),
       TrialAccess.locked => (const Color(0xFF625A5C), Icons.lock_outline),
     };
@@ -201,10 +267,25 @@ class TrialCard extends ConsumerWidget {
     // zero-blur shadow is aliased too), separates the gold from the painting,
     // and the card casts a soft shadow on it.
     final frame = highlighted
-        ? const [Color(0xFFFFF4C0), Color(0xFFFFFAE0), Color(0xFFF5D470), Color(0xFFE0B040)]
+        ? const [
+            Color(0xFFFFF4C0),
+            Color(0xFFFFFAE0),
+            Color(0xFFF5D470),
+            Color(0xFFE0B040),
+          ]
         : locked
-        ? const [Color(0xFFD9CBAA), Color(0xFFEDE2C8), Color(0xFFC9B58C), Color(0xFFAE9970)]
-        : const [Color(0xFFE9BE5E), Color(0xFFFBE7A3), Color(0xFFE2B04C), Color(0xFFC48E33)];
+        ? const [
+            Color(0xFFD9CBAA),
+            Color(0xFFEDE2C8),
+            Color(0xFFC9B58C),
+            Color(0xFFAE9970),
+          ]
+        : const [
+            Color(0xFFE9BE5E),
+            Color(0xFFFBE7A3),
+            Color(0xFFE2B04C),
+            Color(0xFFC48E33),
+          ];
     final ring = locked ? const Color(0x99826A4A) : const Color(0xB3A06E1E);
     // The status badge straddles the lower edge of the band, as on the mock-up.
     const badgeOverhang = 10.0;
@@ -213,20 +294,33 @@ class TrialCard extends ConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 3),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color.lerp(badgeColor, Colors.white, 0.12)!, badgeColor, Color.lerp(badgeColor, Colors.black, 0.08)!],
+          colors: [
+            Color.lerp(badgeColor, Colors.white, 0.12)!,
+            badgeColor,
+            Color.lerp(badgeColor, Colors.black, 0.08)!,
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: const Color(0xF2FFFFFF), width: 2),
-        boxShadow: const [BoxShadow(color: Color(0x40000000), blurRadius: 4, offset: Offset(0, 2))],
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x40000000),
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+        ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(badgeIcon, size: 17, color: Colors.white),
           const SizedBox(width: 6),
-          Text(status.access.latin, style: G.body(13, color: Colors.white, weight: 700)),
+          Text(
+            status.access.latin,
+            style: G.body(13, color: Colors.white, weight: 700),
+          ),
         ],
       ),
     );
@@ -236,20 +330,41 @@ class TrialCard extends ConsumerWidget {
         color: ring,
         borderRadius: BorderRadius.circular(20 + _ring),
         boxShadow: [
-          const BoxShadow(color: Color(0x66200A40), blurRadius: 18, offset: Offset(0, 8)),
-          const BoxShadow(color: Color(0x40200A40), blurRadius: 4, offset: Offset(0, 2)),
-          if (highlighted) const BoxShadow(color: Color(0x99FFE08A), blurRadius: 22, spreadRadius: 2),
+          const BoxShadow(
+            color: Color(0x66200A40),
+            blurRadius: 18,
+            offset: Offset(0, 8),
+          ),
+          const BoxShadow(
+            color: Color(0x40200A40),
+            blurRadius: 4,
+            offset: Offset(0, 2),
+          ),
+          if (highlighted)
+            const BoxShadow(
+              color: Color(0x99FFE08A),
+              blurRadius: 22,
+              spreadRadius: 2,
+            ),
         ],
       ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 160),
         padding: const EdgeInsets.all(_frame),
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: frame, stops: const [0, 0.35, 0.72, 1], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          gradient: LinearGradient(
+            colors: frame,
+            stops: const [0, 0.35, 0.72, 1],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
           borderRadius: BorderRadius.circular(20),
         ),
         child: DecoratedBox(
-          decoration: BoxDecoration(color: locked ? const Color(0xFFEFE6D6) : G.marble, borderRadius: BorderRadius.circular(16)),
+          decoration: BoxDecoration(
+            color: locked ? const Color(0xFFEFE6D6) : G.marble,
+            borderRadius: BorderRadius.circular(16),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -266,8 +381,14 @@ class TrialCard extends ConsumerWidget {
                       Container(
                         constraints: const BoxConstraints(minHeight: 98),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: headerColors, begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                          borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+                          gradient: LinearGradient(
+                            colors: headerColors,
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(16),
+                          ),
                         ),
                         child: Stack(
                           clipBehavior: Clip.hardEdge,
@@ -276,8 +397,18 @@ class TrialCard extends ConsumerWidget {
                             const Positioned.fill(
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [Color(0x24FFFFFF), Color(0x00FFFFFF)], stops: [0, 0.4], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0x24FFFFFF),
+                                      Color(0x00FFFFFF),
+                                    ],
+                                    stops: [0, 0.4],
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                  ),
+                                  borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(16),
+                                  ),
                                 ),
                               ),
                             ),
@@ -292,23 +423,49 @@ class TrialCard extends ConsumerWidget {
                               child: Opacity(
                                 opacity: locked ? 0.45 : 1,
                                 child: ColorFiltered(
-                                  colorFilter: locked ? const ColorFilter.mode(Color(0xFF8E7E9C), BlendMode.srcATop) : const ColorFilter.mode(Colors.transparent, BlendMode.dst),
-                                  child: Image.asset(config.opponentAsset(trial.opponentId), fit: BoxFit.contain, alignment: Alignment.topRight),
+                                  colorFilter: locked
+                                      ? const ColorFilter.mode(
+                                          Color(0xFF8E7E9C),
+                                          BlendMode.srcATop,
+                                        )
+                                      : const ColorFilter.mode(
+                                          Colors.transparent,
+                                          BlendMode.dst,
+                                        ),
+                                  child: Image.asset(
+                                    config.opponentAsset(trial.opponentId),
+                                    fit: BoxFit.contain,
+                                    alignment: Alignment.topRight,
+                                  ),
                                 ),
                               ),
                             ),
                             Padding(
                               // Room at the bottom for the part of the badge
                               // that stays inside the band.
-                              padding: const EdgeInsets.fromLTRB(inset, 8, _portraitSlot, 26),
+                              padding: const EdgeInsets.fromLTRB(
+                                inset,
+                                8,
+                                _portraitSlot,
+                                26,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Text(trial.name, style: titleStyle, maxLines: 2, overflow: TextOverflow.ellipsis),
+                                  Text(
+                                    trial.name,
+                                    style: titleStyle,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                   Text(
                                     trial.subtitle,
-                                    style: G.body(13, color: const Color(0xFFF3C86A), weight: 700),
+                                    style: G.body(
+                                      13,
+                                      color: const Color(0xFFF3C86A),
+                                      weight: 700,
+                                    ),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -321,7 +478,11 @@ class TrialCard extends ConsumerWidget {
                       // Shadow the band casts on the cream body.
                       const DecoratedBox(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [Color(0x30200A40), Color(0x00200A40)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                          gradient: LinearGradient(
+                            colors: [Color(0x30200A40), Color(0x00200A40)],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
                         ),
                         child: SizedBox(height: badgeOverhang),
                       ),
@@ -337,18 +498,27 @@ class TrialCard extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // Skills worked and estimated mastery, as bars.
-                      for (final sm in summaries) _MasteryBar(summary: sm, named: summaries.length > 1),
+                      for (final sm in summaries)
+                        _MasteryBar(summary: sm, named: summaries.length > 1),
                       if (!accessible) ...[
                         const SizedBox(height: 2),
                         Row(
                           children: [
-                            Image.asset('assets/images/gem.png', width: 20, height: 20),
+                            Image.asset(
+                              'assets/images/gem.png',
+                              width: 20,
+                              height: 20,
+                            ),
                             const SizedBox(width: 6),
                             Flexible(
                               child: Text(
                                 '${trial.price}${status.affordable ? '' : '  (habēs ${save.gems})'}',
                                 overflow: TextOverflow.ellipsis,
-                                style: G.body(13, weight: 700, color: status.affordable ? G.ink : G.redDark),
+                                style: G.body(
+                                  13,
+                                  weight: 700,
+                                  color: status.affordable ? G.ink : G.redDark,
+                                ),
                               ),
                             ),
                           ],
@@ -358,10 +528,21 @@ class TrialCard extends ConsumerWidget {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Icon(Icons.key_off, size: 16, color: G.redDark),
+                              const Icon(
+                                Icons.key_off,
+                                size: 16,
+                                color: G.redDark,
+                              ),
                               const SizedBox(width: 4),
                               Expanded(
-                                child: Text('Prius: ${status.missing.map((m) => m.name).join(', ')}', style: G.body(13, color: G.redDark, weight: 700)),
+                                child: Text(
+                                  'Prius: ${status.missing.map((m) => m.name).join(', ')}',
+                                  style: G.body(
+                                    13,
+                                    color: G.redDark,
+                                    weight: 700,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -390,7 +571,10 @@ class TrialCard extends ConsumerWidget {
                                 icon: config.startIcon,
                                 sound: null,
                                 onPressed: () {
-                                  pushScreen(context, BattleScreen(trial: trial));
+                                  pushScreen(
+                                    context,
+                                    BattleScreen(trial: trial),
+                                  );
                                 },
                               ),
                             )
@@ -398,26 +582,41 @@ class TrialCard extends ConsumerWidget {
                             Expanded(
                               child: RomanButton(
                                 label: 'Eme · ${trial.price}',
-                                style: status.affordable ? RomanButtonStyle.gold : RomanButtonStyle.locked,
+                                style: status.affordable
+                                    ? RomanButtonStyle.gold
+                                    : RomanButtonStyle.locked,
                                 dense: true,
                                 expand: true,
-                                leading: Image.asset('assets/images/gem.png', width: 20, height: 20),
+                                leading: Image.asset(
+                                  'assets/images/gem.png',
+                                  width: 20,
+                                  height: 20,
+                                ),
                                 onPressed: status.affordable
                                     ? () async {
                                         final ok = await confirmLatin(
                                           context,
                                           title: 'Emere ${trial.name}?',
-                                          body: 'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.',
+                                          body:
+                                              'Pretium: ${trial.price} gemmae. Habēs ${save.gems}. Aditus perpetuus erit.',
                                           yes: 'Eme',
                                         );
                                         if (!ok) return;
-                                        final done = await ref.read(profileProvider.notifier).purchase(trial);
+                                        final done = await ref
+                                            .read(profileProvider.notifier)
+                                            .purchase(trial);
                                         if (!context.mounted) return;
                                         if (done) {
                                           audio.play(Sfx.emptio);
-                                          showLatinSnack(context, '${trial.name} aperta est!');
+                                          showLatinSnack(
+                                            context,
+                                            '${trial.name} aperta est!',
+                                          );
                                         } else {
-                                          showLatinSnack(context, 'Emptiō nōn facta.');
+                                          showLatinSnack(
+                                            context,
+                                            'Emptiō nōn facta.',
+                                          );
                                         }
                                       }
                                     : null,
@@ -425,7 +624,13 @@ class TrialCard extends ConsumerWidget {
                             )
                           else
                             const Expanded(
-                              child: RomanButton(label: 'Clausa', style: RomanButtonStyle.locked, dense: true, expand: true, icon: Icons.lock),
+                              child: RomanButton(
+                                label: 'Clausa',
+                                style: RomanButtonStyle.locked,
+                                dense: true,
+                                expand: true,
+                                icon: Icons.lock,
+                              ),
                             ),
                         ],
                       ),
@@ -451,10 +656,14 @@ class _MasteryBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final sm = summary;
     final color = sm.evaluated ? tierColor(sm.tier) : G.grey;
-    final label = sm.evaluated ? '${tierLabel(sm.tier)} · ${sm.estimateText}' : tierLabel(MasteryTier.nova);
+    final label = sm.evaluated
+        ? '${tierLabel(sm.tier)} · ${sm.estimateText}'
+        : tierLabel(MasteryTier.nova);
     // The label is a deep shade of the tier colour (the mock-up's "Perīta ·
     // 100 %" is forest green on cream), not the bright fill of the bar.
-    final labelColor = sm.evaluated ? Color.lerp(color, Colors.black, 0.38)! : G.ink;
+    final labelColor = sm.evaluated
+        ? Color.lerp(color, Colors.black, 0.38)!
+        : G.ink;
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
       child: Column(
@@ -468,35 +677,10 @@ class _MasteryBar extends StatelessWidget {
             ),
           Row(
             children: [
-              // Pill-shaped gauge: a recessed grey rail and a glossy fill. Both
-              // are rounded boxes rather than a clipped stack (see TrialCard).
+              // Pill-shaped gauge: a recessed grey rail and a glossy fill, both
+              // stadium shapes rather than a clipped stack (see TrialCard).
               Expanded(
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 12,
-                      decoration: const BoxDecoration(
-                        gradient: LinearGradient(colors: [Color(0xFFC4BFB9), Color(0xFFD9D4CE)], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                      ),
-                    ),
-                    FractionallySizedBox(
-                      widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
-                      child: Container(
-                        height: 12,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          gradient: LinearGradient(
-                            colors: [Color.lerp(color, Colors.white, 0.22)!, color, Color.lerp(color, Colors.black, 0.12)!],
-                            stops: const [0, 0.55, 1],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: ProgressGauge(sm: sm, color: color),
               ),
               const SizedBox(width: 10),
               Text(
@@ -506,6 +690,54 @@ class _MasteryBar extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProgressGauge extends StatelessWidget {
+  const new({super.key, required this.sm, required this.color});
+
+  final MasterySummary sm;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(vertical: 8.0),
+      child: Stack(
+        children: [
+          Container(
+            height: 12,
+            decoration: const ShapeDecoration(
+              shape: StadiumBorder(),
+              gradient: LinearGradient(
+                colors: [Color(0xFFC4BFB9), Color(0xFFD9D4CE)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+          FractionallySizedBox(
+            widthFactor: (sm.estimate ?? 0).clamp(0.0, 1.0),
+            child: Container(
+              height: 12,
+              decoration: ShapeDecoration(
+                shape: const StadiumBorder(),
+                gradient: LinearGradient(
+                  colors: [
+                    Color.lerp(color, Colors.white, 0.22)!,
+                    color,
+                    Color.lerp(color, Colors.black, 0.12)!,
+                  ],
+                  stops: const [0, 0.55, 1],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -527,7 +759,10 @@ void showTrialSheet(BuildContext context, Trial trial) {
         padding: const EdgeInsets.all(20),
         children: [
           Text(trial.name, style: G.display(24, color: G.purpleTitle)),
-          Text(trial.subtitle, style: G.body(15, color: G.inkSoft, weight: 700)),
+          Text(
+            trial.subtitle,
+            style: G.body(15, color: G.inkSoft, weight: 700),
+          ),
           const SizedBox(height: 12),
           Text(trial.intro, style: G.body(16, height: 1.45)),
           const SizedBox(height: 14),
@@ -537,34 +772,64 @@ void showTrialSheet(BuildContext context, Trial trial) {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 3),
               child: RomanPanel(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 color: Colors.white,
                 borderColor: G.goldPale,
                 borderWidth: 2,
                 shadow: false,
                 radius: 12,
-                child: Text(e, style: G.body(17, weight: 700, color: G.purpleDark)),
+                child: Text(
+                  e,
+                  style: G.body(17, weight: 700, color: G.purpleDark),
+                ),
               ),
             ),
           const SizedBox(height: 14),
           Text('Quaestiōnēs', style: G.display(16, color: G.goldDark)),
-          Wrap(spacing: 6, runSpacing: 6, children: [for (final d in trial.dimensions) StatChip(d.prompt)]),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [for (final d in trial.dimensions) StatChip(d.prompt)],
+          ),
           const SizedBox(height: 14),
           Text('Perītiae', style: G.display(16, color: G.goldDark)),
           Wrap(
             spacing: 6,
             runSpacing: 6,
-            children: [for (final s in trial.skillIds) StatChip(Skills.byId(s).name, color: G.purple, textColor: Colors.white)],
+            children: [
+              for (final s in trial.skillIds)
+                StatChip(
+                  Skills.byId(s).name,
+                  color: G.purple,
+                  textColor: Colors.white,
+                ),
+            ],
           ),
           if (trial.prerequisites.isNotEmpty) ...[
             const SizedBox(height: 14),
             Text('Praerequīsīta', style: G.display(16, color: G.goldDark)),
-            Wrap(spacing: 6, runSpacing: 6, children: [for (final p in trial.prerequisites) StatChip(Trials.byId(p).name)]),
+            Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: [
+                for (final p in trial.prerequisites)
+                  StatChip(Trials.byId(p).name),
+              ],
+            ),
           ],
           const SizedBox(height: 14),
-          Text('Pretium: ${trial.isFree ? 'grātīs' : '${trial.price} gemmae'} · ${trial.questionsToWin} ${labels.hits} · ${trial.hearts} corda', style: G.body(14, color: G.inkSoft, weight: 700)),
+          Text(
+            'Pretium: ${trial.isFree ? 'grātīs' : '${trial.price} gemmae'} · ${trial.questionsToWin} ${labels.hits} · ${trial.hearts} corda',
+            style: G.body(14, color: G.inkSoft, weight: 700),
+          ),
           const SizedBox(height: 6),
-          Text(const Economy(kEconomy).defeatRule(), style: G.body(13, color: G.redDark, weight: 700)),
+          Text(
+            const Economy(kEconomy).defeatRule(),
+            style: G.body(13, color: G.redDark, weight: 700),
+          ),
           const SizedBox(height: 20),
         ],
       ),

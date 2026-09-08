@@ -249,18 +249,18 @@ class _Hud extends ConsumerWidget {
       children: [
         Text(enemyName, style: G.display(14, color: G.goldLight), maxLines: 1, overflow: TextOverflow.ellipsis),
         const SizedBox(height: 3),
-        // Rounded boxes, not a clipped stack: Impeller on OpenGL ES does not
+        // Stadium shapes, not a clipped stack: Impeller on OpenGL ES does not
         // anti-alias clips.
         Stack(
           children: [
-            Container(height: 14, decoration: const BoxDecoration(color: Color(0xAA200A40), borderRadius: BorderRadius.all(Radius.circular(8)))),
+            Container(height: 14, decoration: const ShapeDecoration(shape: StadiumBorder(), color: Color(0xAA200A40))),
             AnimatedFractionallySizedBox(
               duration: const Duration(milliseconds: 350),
               curve: Curves.easeOutCubic,
               widthFactor: (state.enemyHp / state.enemyMaxHp).clamp(0.0, 1.0),
               child: Container(
                 height: 14,
-                decoration: const BoxDecoration(gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)]), borderRadius: BorderRadius.all(Radius.circular(8))),
+                decoration: const ShapeDecoration(shape: StadiumBorder(), gradient: LinearGradient(colors: [G.red, Color(0xFFFF8A94)])),
               ),
             ),
           ],

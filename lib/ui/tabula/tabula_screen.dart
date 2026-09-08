@@ -225,13 +225,13 @@ class _BandRow extends StatelessWidget {
           children: [
             SizedBox(width: compact ? 92 : 136, child: Text(b.latin, style: G.body(13, color: open ? Colors.white : G.goldLight, weight: 700), maxLines: 1, overflow: TextOverflow.ellipsis)),
             Expanded(
-              // Rounded boxes, not a clipped stack: Impeller on OpenGL ES does
+              // Stadium shapes, not a clipped stack: Impeller on OpenGL ES does
               // not anti-alias clips.
               child: Stack(
                 children: [
-                  Container(height: 12, decoration: const BoxDecoration(color: Color(0x66200A40), borderRadius: BorderRadius.all(Radius.circular(6)))),
-                  FractionallySizedBox(widthFactor: b.metShare.clamp(0.0, 1.0), child: Container(height: 12, decoration: BoxDecoration(color: G.purpleLight, borderRadius: BorderRadius.circular(6)))),
-                  FractionallySizedBox(widthFactor: b.knownShare.clamp(0.0, 1.0), child: Container(height: 12, decoration: BoxDecoration(color: G.gold, borderRadius: BorderRadius.circular(6)))),
+                  Container(height: 12, decoration: const ShapeDecoration(shape: StadiumBorder(), color: Color(0x66200A40))),
+                  FractionallySizedBox(widthFactor: b.metShare.clamp(0.0, 1.0), child: Container(height: 12, decoration: const ShapeDecoration(shape: StadiumBorder(), color: G.purpleLight))),
+                  FractionallySizedBox(widthFactor: b.knownShare.clamp(0.0, 1.0), child: Container(height: 12, decoration: const ShapeDecoration(shape: StadiumBorder(), color: G.gold))),
                 ],
               ),
             ),
