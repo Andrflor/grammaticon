@@ -72,6 +72,9 @@ class Explanations {
       case Dimension.analysis:
       case Dimension.sensus:
         return '';
+      default:
+        // Forum-only dimensions never reach the verb generator.
+        return '';
     }
   }
 

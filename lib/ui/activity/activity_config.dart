@@ -14,7 +14,7 @@ import '../../game/theatrum_game.dart';
 import '../../pedagogy/question_generator.dart';
 import '../../pedagogy/trial.dart';
 import '../help/help_sheet.dart';
-import '../help/noun_help_sheet.dart';
+import '../help/forum_help_sheet.dart';
 import '../help/reading_help_sheet.dart';
 
 /// A sound played [delayMs] after an outcome is shown.
@@ -153,7 +153,7 @@ final ActivityConfig kAmphitheatrumConfig = ActivityConfig(
 final ActivityConfig kForumConfig = ActivityConfig(
   activity: Activity.forum,
   labels: const ActivityLabels(
-    title: 'Forum · Dēclīnātiōnēs',
+    title: 'Forum · Nōminālia',
     blurb: 'Ēlige contrōversiam.',
     encounter: 'Contrōversia',
     interrupted: 'Contrōversia interrupta',
@@ -175,10 +175,21 @@ final ActivityConfig kForumConfig = ActivityConfig(
   ),
   heroAsset: 'assets/images/orator_idle.png',
   startIcon: Icons.record_voice_over,
-  opponentNames: const {'rhetor': 'Rhētor Graecus', 'senator': 'Senātor Vetus', 'causidicus': 'Causidicus Astūtus', 'philosophus': 'Philosophus Stōicus', 'censor': 'Cēnsor Sevērus'},
+  opponentNames: const {
+    'rhetor': 'Rhētor Graecus',
+    'senator': 'Senātor Vetus',
+    'causidicus': 'Causidicus Astūtus',
+    'philosophus': 'Philosophus Stōicus',
+    'censor': 'Cēnsor Sevērus',
+    'grammaticus': 'Grammaticus Doctus',
+    'poeta': 'Poēta Ēlegāns',
+    'matrona': 'Mātrōna Ērudīta',
+    'sophista': 'Sophista Graeculus',
+    'iurisconsultus': 'Iūriscōnsultus Callidus',
+  },
   opponentAssetPrefix: 'rhetor_',
   createScene: (trial, {required reducedMotion}) => ForumGame(opponentId: trial.opponentId, reducedMotion: reducedMotion),
-  showHelp: (context, ref, q, {required revealForm, note}) => showNounHelpSheet(context, ref, q: q, revealForm: revealForm, note: note),
+  showHelp: (context, ref, q, {required revealForm, note}) => showForumHelpSheet(context, ref, q: q, revealForm: revealForm, note: note),
   correctCues: const [SoundCue(60, Sfx.oratio), SoundCue(300, Sfx.plausus)],
   wrongCues: const [SoundCue(120, Sfx.refutatio), SoundCue(320, Sfx.murmur)],
 );

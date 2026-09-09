@@ -2,9 +2,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../audio/audio_service.dart';
 import '../linguistics/engine/analyzer.dart';
+import '../linguistics/engine/nominal_analyzer.dart';
 import '../linguistics/engine/noun_analyzer.dart';
+import '../linguistics/lexicon/forum_lexicon.dart';
 import '../pedagogy/mastery.dart';
-import '../pedagogy/noun_question_generator.dart';
+import '../pedagogy/forum/forum_question_source.dart';
+import '../pedagogy/forum/syntagmata/syntagmata.dart';
 import '../pedagogy/progression.dart';
 import '../pedagogy/question_generator.dart';
 import '../pedagogy/reading/reading_content.dart';
@@ -22,7 +25,11 @@ final questionGeneratorProvider = Provider<QuestionGenerator>((ref) => QuestionG
 /// Whole-noun-lexicon analyzer (overridden in main and tests).
 final nounAnalyzerProvider = Provider<NounAnalyzer>((ref) => throw UnimplementedError('nounAnalyzerProvider must be overridden'));
 
-final nounQuestionGeneratorProvider = Provider<NounQuestionGenerator>((ref) => NounQuestionGenerator(ref.watch(nounAnalyzerProvider)));
+/// Whole nominal lexicon (nouns, adjectives, pronouns, numerals, adverbs),
+/// built on the noun analyzer.
+final nominalAnalyzerProvider = Provider<NominalAnalyzer>((ref) => buildNominalAnalyzer(nouns: ref.watch(nounAnalyzerProvider)));
+
+final forumQuestionSourceProvider = Provider<ForumQuestionSource>((ref) => ForumQuestionSource(ref.watch(nominalAnalyzerProvider), kSyntagmata));
 
 /// Curated reading content of the Theatrum (overridden in main and tests).
 final readingLibraryProvider = Provider<ReadingLibrary>((ref) => throw UnimplementedError('readingLibraryProvider must be overridden'));
@@ -37,7 +44,7 @@ final readingQuestionSourceProvider = Provider<ReadingQuestionSource>(
 final questionSourcesProvider = Provider<QuestionSources>(
   (ref) => QuestionSources((a) => switch (a) {
         Activity.amphitheatrum => ref.read(questionGeneratorProvider),
-        Activity.forum => ref.read(nounQuestionGeneratorProvider),
+        Activity.forum => ref.read(forumQuestionSourceProvider),
         Activity.theatrum => ref.read(readingQuestionSourceProvider),
       }),
 );

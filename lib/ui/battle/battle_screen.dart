@@ -18,6 +18,7 @@ import '../../pedagogy/skills.dart';
 import '../../pedagogy/trials.dart';
 import '../../persistence/save_data.dart';
 import '../activity/activity_config.dart';
+import '../help/forum_help_sheet.dart' show SyntagmaText;
 import '../widgets/roman_widgets.dart';
 
 /// One encounter: a fight in the arena, a debate in the Forum or a performance
@@ -364,11 +365,16 @@ class _Center extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: 6),
-                Text(
-                  q.surface,
-                  textAlign: TextAlign.center,
-                  style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: long ? 0.3 : 2).copyWith(height: long ? 1.3 : null),
-                ),
+                // A contextual item shows the whole phrase with the asked
+                // word highlighted; an isolated form is scaled to the width.
+                if (q.syntagma != null)
+                  SyntagmaText(q.syntagma!, size: (w / (q.syntagma!.length + 4)).clamp(18.0, compact ? 26.0 : 34.0))
+                else
+                  Text(
+                    q.surface,
+                    textAlign: TextAlign.center,
+                    style: G.display(surfaceSize, color: G.purpleDark, letterSpacing: long ? 0.3 : 2).copyWith(height: long ? 1.3 : null),
+                  ),
                 // Context lines (dictionary entry) never give the answer away.
                 for (final line in q.context) Text(line, textAlign: TextAlign.center, style: G.body(compact ? 13 : 15, color: G.inkSoft, style: FontStyle.italic)),
                 const SizedBox(height: 4),

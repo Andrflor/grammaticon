@@ -1,37 +1,46 @@
-// ignore_for_file: avoid_print
-// Dev tool: samples questions and corrections of the Forum trials.
-// Usage: dart run tool/sample_forum_questions.dart [trialId] [count]
+// Prints sample questions of Forum cards, with the pool size and the
+// dimensions actually asked (a card whose pool has a single value for a
+// dimension never asks it).
+//
+//   dart run tool/sample_forum_questions.dart            # every card, 3 samples
+//   dart run tool/sample_forum_questions.dart syn-ae 12  # one card, 12 samples
+import 'dart:io';
 import 'dart:math';
 
-import 'package:grammaticon/linguistics/engine/declinator.dart';
-import 'package:grammaticon/linguistics/engine/noun_analyzer.dart';
-import 'package:grammaticon/linguistics/lexicon/nouns.dart';
+import 'package:grammaticon/linguistics/lexicon/forum_lexicon.dart';
+import 'package:grammaticon/pedagogy/forum/forum_question_source.dart';
+import 'package:grammaticon/pedagogy/forum/syntagmata/syntagmata.dart';
 import 'package:grammaticon/pedagogy/mastery.dart';
-import 'package:grammaticon/pedagogy/noun_question_generator.dart';
+import 'package:grammaticon/pedagogy/skills.dart';
 import 'package:grammaticon/pedagogy/trials.dart';
 
 void main(List<String> args) {
-  final gen = NounQuestionGenerator(NounAnalyzer(kNouns, const Declinator()));
+  final src = ForumQuestionSource(buildNominalAnalyzer(), kSyntagmata);
   final trials = args.isEmpty ? Trials.ofActivity(Activity.forum) : [Trials.byId(args[0])];
-  final count = args.length > 1 ? int.parse(args[1]) : 4;
-  // A "familiar" record so that analysis questions are eligible.
-  final rec = List.generate(8, (i) => i).fold(const SkillRecord(), (r, i) => r.apply(Observation(at: DateTime(2026, 1, 1 + i), correct: true, lemmaId: 'l$i', quality: AnswerQuality.autonoma, trialId: 't'), const MasteryConfig()));
+  final n = args.length > 1 ? int.parse(args[1]) : 3;
+  final strong = SkillRecord(autonomousCorrect: 20, estimate: 0.95, highWater: 0.95, lemmas: {'a', 'b', 'c', 'd', 'e'}, sessionDays: {'1', '2'}, lastPractice: DateTime.now());
+  var missing = 0;
   for (final t in trials) {
-    print('=== ${t.id} · ${t.name}');
-    final rng = Random(42);
-    final skills = {for (final s in t.skillIds) for (final l in ['$s.nom.sg', '$s.acc.sg', s]) l: rec};
-    for (var i = 0; i < count; i++) {
-      final q = gen.generate(trial: t, componentIds: t.components.map((c) => c.id).toList(), rng: rng, id: '$i', skills: skills);
-      if (q == null) {
-        print('  (null)');
-        continue;
+    final comps = t.components.map((c) => c.id).toList();
+    final pool = src.pool(t, comps);
+    final skills = {for (final l in Skills.leaves(t.primarySkill)) l: strong};
+    final rng = Random(7);
+    final asked = <Dimension>{};
+    final lines = <String>[];
+    for (var i = 0; i < max(n, 40); i++) {
+      final q = src.generate(trial: t, componentIds: comps, rng: rng, id: '$i', skills: skills);
+      if (q == null) continue;
+      asked.add(q.dimension);
+      if (q.followUp != null) asked.add(q.followUp!.dimension);
+      if (lines.length < n) {
+        final where = q.syntagma == null ? q.surface : q.syntagma!;
+        lines.add('    $where  [${q.dimension.name}] → ${q.choices.map((c) => (q.correctValues.contains(c.value) ? '✓' : ' ') + c.label).join(' | ')}${q.followUp == null ? '' : '   ⤷ ${q.followUp!.dimension.name}'}');
       }
-      final wrong = q.choices.firstWhere((c) => !q.correctValues.contains(c.value));
-      final ex = gen.explain(q: q, chosenValue: wrong.value, correct: false);
-      print('  ${q.surface}  ${q.context.join(' | ')}  → ${q.prompt}${q.ambiguous ? ' [ambigua]' : ''}');
-      print('     choices: ${q.choices.map((c) => '${q.correctValues.contains(c.value) ? '*' : ''}${c.label}').join(' · ')}   skills: ${q.skillIds}');
-      print('     ✗ ${ex.headline}');
-      print('       ${ex.detail}${ex.also.isEmpty ? '' : '  Etiam: ${ex.also.join(' · ')}'}');
     }
+    final never = t.dimensions.where((d) => !asked.contains(d)).map((d) => d.name).toList();
+    stdout.writeln('${t.id.padRight(18)} pool ${pool.length.toString().padLeft(5)} · asked ${asked.map((d) => d.name).join(',')}${never.isEmpty ? '' : '   NEVER: ${never.join(',')}'}');
+    if (pool.isEmpty) missing++;
+    lines.forEach(stdout.writeln);
   }
+  if (missing > 0) stderr.writeln('$missing card(s) without content');
 }

@@ -4,7 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:grammaticon/battle/answer_resolver.dart';
 import 'package:grammaticon/linguistics/model/grammar.dart';
 import 'package:grammaticon/pedagogy/mastery.dart';
-import 'package:grammaticon/pedagogy/noun_question_generator.dart';
+import 'package:grammaticon/pedagogy/forum/forum_question_source.dart';
+import 'package:grammaticon/pedagogy/forum/syntagmata/syntagmata.dart';
 import 'package:grammaticon/pedagogy/question_generator.dart';
 import 'package:grammaticon/pedagogy/trials.dart';
 import 'package:grammaticon/persistence/save_data.dart';
@@ -17,12 +18,12 @@ void main() {
 
   group('ErrorLedger', () {
     test('a miss opens an erratum with its confusion; a second miss counts and resets fixes', () {
-      var led = const ErrorLedger().miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0, battleSeed: 1);
+      var led = const ErrorLedger().miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0, battleSeed: 1);
       expect(led.openCount, 1);
       expect(led.items['d|rosa|abl.pl']!.confusions, {'Datīvus': 1});
       led = led.fix('d|rosa|abl.pl');
       expect(led.items['d|rosa|abl.pl']!.fixes, 1);
-      led = led.miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0.add(const Duration(days: 1)), battleSeed: 2);
+      led = led.miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0.add(const Duration(days: 1)), battleSeed: 2);
       final e = led.items['d|rosa|abl.pl']!;
       expect(e.misses, 2);
       expect(e.fixes, 0);
@@ -31,7 +32,7 @@ void main() {
     });
 
     test('two autonomous fixes retire the erratum and count it as corrected', () {
-      var led = const ErrorLedger().miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0, battleSeed: 1);
+      var led = const ErrorLedger().miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0, battleSeed: 1);
       led = led.fix('d|rosa|abl.pl');
       expect(led.openCount, 1);
       led = led.fix('d|rosa|abl.pl');
@@ -43,7 +44,7 @@ void main() {
 
     test('recall covers earlier fights only, never the fight where the error was made', () {
       final led = const ErrorLedger()
-          .miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0, battleSeed: 7)
+          .miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0, battleSeed: 7)
           .miss(const ErrataNote(formKey: 'v|amo|ind.praes.act.2.pl', cellKey: 'v|ind.praes.act.2.pl', analysis: 'secunda plūrālis'), lemmaId: 'amo', surface: 'amātis', chosenLabel: 'Secunda singulāris', trialId: 'ind-praes-act', now: t0, battleSeed: 8);
       final inFight7 = led.recall(7);
       expect(inFight7.forms, {'v|amo|ind.praes.act.2.pl'});
@@ -58,10 +59,10 @@ void main() {
     test('groups by cell, most missed first, with the usual confusion; json round trip', () {
       var led = const ErrorLedger();
       for (var i = 0; i < 3; i++) {
-        led = led.miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: i == 0 ? 'Genetīvus' : 'Datīvus', trialId: 'd1-omnes', now: t0.add(Duration(hours: i)), battleSeed: i);
+        led = led.miss(note, lemmaId: 'rosa', surface: 'rosīs', chosenLabel: i == 0 ? 'Genetīvus' : 'Datīvus', trialId: 'dec-1', now: t0.add(Duration(hours: i)), battleSeed: i);
       }
-      led = led.miss(const ErrataNote(formKey: 'd|puella|abl.pl', cellKey: 'd|1|abl.pl', analysis: 'ablātīvus plūrālis'), lemmaId: 'puella', surface: 'puellīs', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0, battleSeed: 5);
-      led = led.miss(const ErrataNote(formKey: 'd|rosa|gen.sg', cellKey: 'd|1|gen.sg', analysis: 'genetīvus singulāris'), lemmaId: 'rosa', surface: 'rosae', chosenLabel: 'Datīvus', trialId: 'd1-omnes', now: t0, battleSeed: 5);
+      led = led.miss(const ErrataNote(formKey: 'd|puella|abl.pl', cellKey: 'd|1|abl.pl', analysis: 'ablātīvus plūrālis'), lemmaId: 'puella', surface: 'puellīs', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0, battleSeed: 5);
+      led = led.miss(const ErrataNote(formKey: 'd|rosa|gen.sg', cellKey: 'd|1|gen.sg', analysis: 'genetīvus singulāris'), lemmaId: 'rosa', surface: 'rosae', chosenLabel: 'Datīvus', trialId: 'dec-1', now: t0, battleSeed: 5);
       final groups = led.groups();
       expect(groups.map((g) => g.cellKey), ['d|1|abl.pl', 'd|1|gen.sg']);
       expect(groups.first.misses, 4);
@@ -76,9 +77,9 @@ void main() {
   });
 
   group('resolution', () {
-    final gen = NounQuestionGenerator(testNounAnalyzer);
+    final gen = ForumQuestionSource(testNominalAnalyzer, kSyntagmata);
     const resolver = AnswerResolver();
-    final t = Trials.byId('d1-recti');
+    final t = Trials.byId('dec-1');
 
     Question unambiguous() {
       final rng = Random(3);
@@ -96,12 +97,12 @@ void main() {
       final r = resolver.resolve(save: save, q: q, chosenValue: wrong.value, quality: AnswerQuality.autonoma, now: t0, battleSeed: 42);
       expect(r.correct, isFalse);
       final e = r.errataAfter.items[q.errata!.formKey]!;
-      expect(e.formKey, 'd|${q.lemmaId}|${q.noun.target.analysis.selector}');
-      expect(e.cellKey, 'd|1|${q.noun.target.analysis.selector}');
+      expect(e.formKey, 'd|${q.lemmaId}|${q.forum.target.analysis.selector}');
+      expect(e.cellKey, 'd|1|${q.forum.target.analysis.selector}');
       expect(e.surface, q.surface);
       expect(e.confusions, {wrong.label: 1});
       expect(e.lastBattle, 42);
-      expect(e.trialId, 'd1-recti');
+      expect(e.trialId, 'dec-1');
       // The error made in fight 42 is not recalled in fight 42, but is later.
       expect(r.errataAfter.recall(42).isEmpty, isTrue);
       expect(r.errataAfter.recall(43).forms, {e.formKey});
@@ -136,15 +137,15 @@ void main() {
 
   group('recall in generation', () {
     test('a missed noun form is drawn far more often in a later fight', () {
-      final gen = NounQuestionGenerator(testNounAnalyzer);
-      final t = Trials.byId('d1-omnes');
+      final gen = ForumQuestionSource(testNominalAnalyzer, kSyntagmata);
+      final t = Trials.byId('dec-1');
       const recall = Recall(forms: {'d|rosa|abl.pl'}, cells: {'d|1|abl.pl'});
       int count(Recall r, int seed) {
         final rng = Random(seed);
         var n = 0;
         for (var i = 0; i < 300; i++) {
           final q = gen.generate(trial: t, componentIds: const [], rng: rng, id: '$i', recall: r);
-          if (q != null && q.lemmaId == 'rosa' && q.noun.target.analysis.selector == 'abl.pl') n++;
+          if (q != null && q.lemmaId == 'rosa' && q.forum.target.analysis.selector == 'abl.pl') n++;
         }
         return n;
       }

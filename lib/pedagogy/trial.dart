@@ -37,7 +37,26 @@ enum Dimension {
   formaPlena('Quae fōrma plēna?'),
   analysis('Quae analysis?'),
   /// Theatrum: which translation renders the passage faithfully.
-  sensus('Quae interpretātiō rēcta est?');
+  sensus('Quae interpretātiō rēcta est?'),
+  // ----- Forum (nominal system) -----
+  /// Gender and number together (relative pronoun: from the antecedent).
+  genusNumerus('Quod genus, quī numerus?'),
+  /// Class of an adjective (first/second or third; pronominal).
+  classis('Quae classis adiectīvī?'),
+  /// Degree of comparison.
+  gradus('Quī gradus?'),
+  /// Syntactic function of the marked word.
+  functio('Quae fūnctiō in sententiā?'),
+  /// Construction of the phrase (ablative of comparison / quam; in + abl / acc…).
+  constructio('Quae cōnstrūctiō?'),
+  /// To whom a possessive or pronoun refers (suus / eius).
+  relatio('Ad quem refertur?'),
+  /// Which noun the marked adjective agrees with.
+  quodNomen('Cum quō nōmine congruit?'),
+  /// The correlative partner of the marked word.
+  correlativum('Quod correlātīvum respondet?'),
+  /// Value of a numeral.
+  valor('Quantum significat?');
 
   const Dimension(this.prompt);
   final String prompt;
@@ -87,6 +106,8 @@ class Trial {
     this.group = 'Indicātīvus',
     this.showDictionaryEntry = false,
     this.fixedChoices = false,
+    this.chain = const [],
+    this.helpNote = '',
   });
 
   final String id;
@@ -124,6 +145,15 @@ class Trial {
   /// the mood, every mood of the trial) in canonical order, whatever subset
   /// is mixed: recognising is not eliminating, and key 1 stays "Praesēns".
   final bool fixedChoices;
+
+  /// Questions asked in this order on the *same* item, one after the other
+  /// (the relative pronoun: first gender and number from the antecedent,
+  /// then the case from the function). Empty: one question per item.
+  final List<Dimension> chain;
+
+  /// Pedagogical note shown in the help sheet of this trial's questions
+  /// ("seven forms to learn, not thirty").
+  final String helpNote;
 
   bool get isMixta => components.isNotEmpty;
   bool get isFree => price == 0;

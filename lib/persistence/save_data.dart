@@ -7,7 +7,7 @@ import '../pedagogy/errata.dart';
 import '../pedagogy/exposure.dart';
 import '../pedagogy/mastery.dart';
 
-const int kSchemaVersion = 3;
+const int kSchemaVersion = 4;
 
 /// Language of the translations shown in the Theatrum. The interface itself
 /// stays Latin. A language is *selectable* only when its content is shipped.
@@ -250,6 +250,23 @@ class SaveData {
   );
 }
 
+/// Forum trial ids of schema 3 and the card of schema 4 that covers them.
+const Map<String, String> kForumV3TrialIds = {
+  'd1-recti': 'dec-1',
+  'd1-omnes': 'dec-2-mf',
+  'd2-us-um': 'dec-2-n',
+  'd2-omnes': 'dec-2-er',
+  'd3-consonantia': 'dec-3-cons',
+  'd3-i': 'dec-3-i',
+  'd3-omnia': 'dec-3-n',
+  'd4': 'dec-4',
+  'd5': 'dec-5',
+  'd-locativus': 'cas-loci',
+  'dmx-declinatio': 'mx-declinationes',
+  'dmx-casus': 'syn-omnia',
+  'dmx-omnia': 'mx-nominalia',
+};
+
 /// Encodes/decodes saves, applying migrations from older schema versions.
 class SaveCodec {
   const SaveCodec();
@@ -278,6 +295,30 @@ class SaveCodec {
       if (acts.containsKey('thermae') && !acts.containsKey('theatrum')) acts['theatrum'] = acts.remove('thermae');
       acts.remove('thermae');
       return {...j, 'schema': 3, 'activities': acts};
+    },
+    // 3 -> 4: the Forum catalogue is rebuilt around the whole nominal system
+    // (78 cards). Purchases and seen introductions of the old declension
+    // cards are carried to the card that now covers the same ground, so no
+    // gem spent is lost; the old mixed-drill skills (d.mx.*) have no
+    // successor and are dropped; a debate snapshot on an old card resumes on
+    // its successor.
+    3: (j) {
+      const renamed = kForumV3TrialIds;
+      List<String> map(Object? xs) => {for (final x in (xs as List?)?.cast<String>() ?? const <String>[]) renamed[x] ?? x}.toList()..sort();
+      final skills = Map<String, Object?>.from((j['skills'] as Map?)?.cast<String, Object?>() ?? const {})..removeWhere((k, _) => k.startsWith('d.mx'));
+      final battle = (j['battle'] as Map?)?.cast<String, Object?>();
+      final battleTrial = battle?['t'] as String?;
+      // A snapshot on an old card resumes on its successor; the component
+      // selection of the old mixed drills does not carry over.
+      final migratedBattle = battle == null || battleTrial == null || !renamed.containsKey(battleTrial) ? battle : {...battle, 't': renamed[battleTrial], 'c': <String>[]};
+      return {
+        ...j,
+        'schema': 4,
+        'purchased': map(j['purchased']),
+        'introSeen': map(j['introSeen']),
+        'skills': skills,
+        'battle': migratedBattle,
+      };
     },
   };
 

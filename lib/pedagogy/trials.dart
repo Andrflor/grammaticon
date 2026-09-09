@@ -1,12 +1,12 @@
 /// Trial (certāmen) catalogue of the Amphitheatrum (verbs) and registry of
 /// every trial of the city. The shared model lives in `trial.dart`; the Forum
-/// catalogue in `noun_trials.dart`, the Theatrum's in `reading/reading_trials.dart`.
+/// catalogue in `forum/forum_trials.dart`, the Theatrum's in `reading/reading_trials.dart`.
 library;
 
 import '../linguistics/model/analysis.dart';
 import '../linguistics/model/grammar.dart';
 import '../linguistics/model/verb.dart';
-import 'noun_trials.dart';
+import 'forum/forum_trials.dart';
 import 'reading/reading_trials.dart';
 import 'skills.dart';
 import 'tm_steps.dart';
@@ -253,8 +253,20 @@ Trial _ambo(CellStep step) => Trial(
 class Trials {
   Trials._();
 
-  static final List<Trial> all = List.unmodifiable([..._build(), ...NounTrials.build(), ...ReadingTrials.build()]);
-  static final Map<String, Trial> _byId = {for (final t in all) t.id: t};
+  static final List<Trial> all = List.unmodifiable([..._build(), ...ForumTrials.build(), ...ReadingTrials.build()]);
+
+  /// Ids are unique across activities: the save file keys purchases,
+  /// introductions and the encounter snapshot by id alone, so a collision
+  /// between two activities would silently unlock the wrong trial.
+  static final Map<String, Trial> _byId = () {
+    final m = <String, Trial>{};
+    for (final t in all) {
+      final clash = m[t.id];
+      if (clash != null) throw StateError('duplicate trial id ${t.id}: ${clash.activity.key}/${clash.name} and ${t.activity.key}/${t.name}');
+      m[t.id] = t;
+    }
+    return m;
+  }();
   static Trial byId(String id) => _byId[id]!;
   static Trial? maybe(String id) => _byId[id];
 

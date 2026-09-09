@@ -203,6 +203,114 @@ void main() {
     });
   });
 
+  group('LLPSI Familia Rōmāna additions', () {
+    test('ōs, ōris (bouche) is distinct from os, ossis (os): ōra, no genitive plural', () {
+      _six('os_oris', 'sg', ['ōs', 'ōs', 'ōs', 'ōris', 'ōrī', 'ōre']);
+      _six('os_oris', 'pl', ['ōra', 'ōra', 'ōra', '—', 'ōribus', 'ōribus']);
+      expect(_p('os_oris').absenceFor('gen.pl'), AbsenceStatus.nonUsitatur);
+      _six('os', 'sg', ['os', 'os', 'os', 'ossis', 'ossī', 'osse']);
+    });
+    test('Tiberis: pure i-stem, singular only (§75a)', () {
+      _six('tiberis', 'sg', ['Tiberis', 'Tiberis', 'Tiberim', 'Tiberis', 'Tiberī', 'Tiberī']);
+      _none('tiberis', 'nom.pl');
+    });
+    test('mēnsis, pānis, ovis, vestis: parisyllabic i-stems', () {
+      _cell('mensis', 'gen.pl', ['mēnsium', 'mēnsum']);
+      _cell('mensis', 'acc.pl', ['mēnsēs', 'mēnsīs']);
+      _six('mensis', 'sg', ['mēnsis', 'mēnsis', 'mēnsem', 'mēnsis', 'mēnsī', 'mēnse']);
+      _cell('panis', 'gen.pl', ['pānium', 'pānum']);
+      _cell('ovis', 'gen.pl', ['ovium']);
+      _cell('vestis', 'gen.pl', ['vestium']);
+      _cell('auris', 'gen.pl', ['aurium']);
+    });
+    test('frōns (monosyllable) frontium; hiems, parēns are consonant stems (§71, §121a)', () {
+      _cell('frons', 'gen.pl', ['frontium']);
+      _six('hiems', 'sg', ['hiems', 'hiems', 'hiemem', 'hiemis', 'hiemī', 'hieme']);
+      _six('hiems', 'pl', ['hiemēs', 'hiemēs', 'hiemēs', 'hiemum', 'hiemibus', 'hiemibus']);
+      _cell('hiems', 'acc.pl', ['hiemēs']);
+      _six('parens', 'pl', ['parentēs', 'parentēs', 'parentēs', 'parentum', 'parentibus', 'parentibus']);
+      _cell('parens', 'gen.pl', ['parentum', 'parentium']);
+      _cell('infans', 'gen.pl', ['īnfantium']);
+    });
+    test('Venus, Cerēs, Iūnō, Mārs, Apollō: singular only, stems Vener-, Cerer-, Iūnōn-, Mārt-, Apollin-', () {
+      _six('venus', 'sg', ['Venus', 'Venus', 'Venerem', 'Veneris', 'Venerī', 'Venere']);
+      expect(_p('venus').noun.gender, Gender.femininum);
+      _none('venus', 'nom.pl');
+      _six('ceres', 'sg', ['Cerēs', 'Cerēs', 'Cererem', 'Cereris', 'Cererī', 'Cerere']);
+      _six('iuno', 'sg', ['Iūnō', 'Iūnō', 'Iūnōnem', 'Iūnōnis', 'Iūnōnī', 'Iūnōne']);
+      _six('mars', 'sg', ['Mārs', 'Mārs', 'Mārtem', 'Mārtis', 'Mārtī', 'Mārte']);
+      _six('apollo', 'sg', ['Apollō', 'Apollō', 'Apollinem', 'Apollinis', 'Apollinī', 'Apolline']);
+    });
+    test('neuters cor, lac, vēr, ōs, sōl, sāl', () {
+      _six('cor', 'pl', ['corda', 'corda', 'corda', 'cordium', 'cordibus', 'cordibus']);
+      _six('lac', 'sg', ['lac', 'lac', 'lac', 'lactis', 'lactī', 'lacte']);
+      _none('lac', 'nom.pl');
+      _six('ver', 'sg', ['vēr', 'vēr', 'vēr', 'vēris', 'vērī', 'vēre']);
+      _none('ver', 'nom.pl');
+      _none('sol', 'nom.pl');
+      _six('sal', 'sg', ['sāl', 'sāl', 'salem', 'salis', 'salī', 'sale']);
+      _six('latus_n', 'pl', ['latera', 'latera', 'latera', 'laterum', 'lateribus', 'lateribus']);
+    });
+    test('Īdūs: feminine plural only, Īduum, Īdibus; arcus: arcubus (§92c)', () {
+      _six('idus', 'pl', ['Īdūs', 'Īdūs', 'Īdūs', 'Īduum', 'Īdibus', 'Īdibus']);
+      _none('idus', 'nom.sg');
+      expect(_p('idus').noun.gender, Gender.femininum);
+      _cell('arcus', 'dat.pl', ['arcubus']);
+      _six('gradus', 'sg', ['gradus', 'gradus', 'gradum', 'gradūs', 'graduī', 'gradū']);
+      expect(_p('quercus').noun.gender, Gender.femininum);
+    });
+    test('towns Brundisium, Tūsculum, Ōstia, Capua have a locative; regions do not (§427)', () {
+      _cell('brundisium', 'loc.sg', ['Brundisiī']);
+      _cell('brundisium', 'gen.sg', ['Brundisiī', 'Brundisī']);
+      _cell('tusculum', 'loc.sg', ['Tūsculī']);
+      _cell('ostia', 'loc.sg', ['Ōstiae']);
+      _cell('capua', 'loc.sg', ['Capuae']);
+      _none('italia', 'loc.sg');
+      _none('sicilia', 'loc.sg');
+      _none('latium', 'loc.sg');
+      _none('italia', 'nom.pl');
+    });
+    test('faciēs, speciēs: plural nominative/accusative only (§98a)', () {
+      _six('facies', 'sg', ['faciēs', 'faciēs', 'faciem', 'faciēī', 'faciēī', 'faciē']);
+      _six('facies', 'pl', ['faciēs', 'faciēs', 'faciēs', '—', '—', '—']);
+      expect(_p('species').absenceFor('gen.pl'), AbsenceStatus.nonUsitatur);
+      _six('species', 'pl', ['speciēs', 'speciēs', 'speciēs', '—', '—', '—']);
+    });
+    test('names in -ius: vocative -ī (§49b); Quīntus, Sextus do not collide with the ordinals', () {
+      _cell('iulius', 'voc.sg', ['Iūlī']);
+      _cell('cornelius', 'voc.sg', ['Cornēlī']);
+      _cell('mercurius', 'voc.sg', ['Mercurī']);
+      _six('marcus', 'sg', ['Mārcus', 'Mārce', 'Mārcum', 'Mārcī', 'Mārcō', 'Mārcō']);
+      _none('marcus', 'nom.pl');
+      _six('quintus_n', 'sg', ['Quīntus', 'Quīnte', 'Quīntum', 'Quīntī', 'Quīntō', 'Quīntō']);
+      _six('sextus_n', 'sg', ['Sextus', 'Sexte', 'Sextum', 'Sextī', 'Sextō', 'Sextō']);
+    });
+    test('nummus: genitive plural nummum (§49d); caelum singular only; cōpiae, litterae keep both numbers', () {
+      _cell('nummus', 'gen.pl', ['nummōrum', 'nummum']);
+      _none('caelum', 'nom.pl');
+      _six('copia', 'pl', ['cōpiae', 'cōpiae', 'cōpiās', 'cōpiārum', 'cōpiīs', 'cōpiīs']);
+      _six('littera', 'sg', ['littera', 'littera', 'litteram', 'litterae', 'litterae', 'litterā']);
+    });
+    test('ancilla, fluvius, pāstor, uxor, mulier, leō, flōs: regular paradigms', () {
+      _six('ancilla', 'pl', ['ancillae', 'ancillae', 'ancillās', 'ancillārum', 'ancillīs', 'ancillīs']);
+      _six('fluvius', 'sg', ['fluvius', 'fluvī', 'fluvium', 'fluviī', 'fluviō', 'fluviō']);
+      _six('pastor', 'sg', ['pāstor', 'pāstor', 'pāstōrem', 'pāstōris', 'pāstōrī', 'pāstōre']);
+      _six('uxor', 'pl', ['uxōrēs', 'uxōrēs', 'uxōrēs', 'uxōrum', 'uxōribus', 'uxōribus']);
+      _six('mulier', 'sg', ['mulier', 'mulier', 'mulierem', 'mulieris', 'mulierī', 'muliere']);
+      _six('leo', 'sg', ['leō', 'leō', 'leōnem', 'leōnis', 'leōnī', 'leōne']);
+      _six('flos', 'pl', ['flōrēs', 'flōrēs', 'flōrēs', 'flōrum', 'flōribus', 'flōribus']);
+      _six('vinum', 'pl', ['vīna', 'vīna', 'vīna', 'vīnōrum', 'vīnīs', 'vīnīs']);
+    });
+    test('the LLPSI ids are unique across the whole nominal lexicon', () {
+      final ids = kNouns.map((n) => n.id).toList();
+      expect(ids.toSet().length, ids.length);
+      expect(ids, isNot(contains('quintus')));
+      expect(ids, isNot(contains('sextus')));
+      expect(ids, isNot(contains('latus')));
+      expect(kNouns.length, greaterThanOrEqualTo(330));
+    });
+  });
+
   group('no invented forms', () {
     test('the locative exists only where declared', () {
       for (final n in kNouns) {

@@ -169,9 +169,12 @@ void main() {
         if (c.skillId != null) expect(Skills.maybe(c.skillId!), isNotNull, reason: '${t.id} component ${c.id}');
       }
     }
-    // One free introductory trial per activity.
+    // Each activity opens with at least one free trial; the Forum has two
+    // doors, one into the declensions and one into the personal pronouns
+    // (both are entry points, not rewards).
+    const freeTrials = {'amphitheatrum': 1, 'forum': 2, 'theatrum': 1};
     for (final a in Activity.values) {
-      expect(Trials.ofActivity(a).where((t) => t.isFree).length, 1, reason: a.key);
+      expect(Trials.ofActivity(a).where((t) => t.isFree).length, freeTrials[a.key], reason: a.key);
       // Prerequisites never cross activities.
       for (final t in Trials.ofActivity(a)) {
         for (final p in t.prerequisites) {
@@ -179,6 +182,15 @@ void main() {
         }
       }
     }
+  });
+
+  test('trial ids are unique across activities: the save keys purchases by id alone', () {
+    final byId = <String, Trial>{};
+    for (final t in Trials.all) {
+      expect(byId[t.id], isNull, reason: '${t.id} is used by ${byId[t.id]?.activity.key} and ${t.activity.key}');
+      byId[t.id] = t;
+    }
+    expect(byId.length, Trials.all.length);
   });
 
   test('prerequisite graph is acyclic and reachable from the free trial', () {

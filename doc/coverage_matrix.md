@@ -113,27 +113,53 @@ Groupe de l'Amphithéâtre placé avant les Mixta et exigé par elles. Une seule
 | Sauvegarde après chaque réponse/achat, schéma versionné, migrations, reprise, export/import | `SaveCodec`, `SaveRepository`, `ActiveBattle` | `save_test`, « snapshot is saved mid-fight and can be resumed » |
 | Entrée unique par question (touches maintenues, doubles clics, événements tardifs) | latch `questionId` + `KeyDownEvent` seulement | `widget_test` « held key / repeat must not answer twice » |
 
-## Déclinaisons (Forum)
+## Système nominal (Forum)
 
-Chaîne : **données** (`lib/linguistics/lexicon/nouns.dart`, 145 noms, A&G §40–§98, §427, §101) → **génération** (`lib/linguistics/engine/declinator.dart`, index `noun_analyzer.dart`) → **épreuve** (`lib/pedagogy/noun_trials.dart`) → **test** (`test/linguistics/gold_nouns_test.dart`, `test/pedagogy/noun_question_generator_test.dart`, `test/battle/forum_encounter_test.dart`). Contrôle croisé : `python3 tool/corpus/verify_collatinus_nouns.py` (rapport `tool/corpus/out/collatinus_nouns_report.md`).
+Chaîne : **données** (`lib/linguistics/lexicon/` — `nouns.dart` 340 noms, `adjectives.dart`, `pronouns.dart`, `numerals.dart`, `adverbs.dart` ; A&G §40–§152, §214–§218, §427) → **génération** (`declinator.dart` pour les noms, `adjective_declinator.dart` pour les trois degrés, paradigmes explicites pour les pronoms ; index unique `nominal_analyzer.dart`, 612 lexèmes) → **contenu contextuel rédigé** (`lib/pedagogy/forum/syntagmata/`, 763 syntagmes) → **épreuves** (`lib/pedagogy/forum/forum_trials.dart`, 78 cartes en 11 sections) → **source de questions** (`forum_question_source.dart`) → **tests** (`test/linguistics/gold_nouns_test.dart`, `gold_nominals_test.dart`, `test/pedagogy/forum_question_source_test.dart`, `forum_syntagmata_test.dart`, `test/battle/forum_encounter_test.dart`). Outils : `dart run tool/dump_nominal.dart --ids`, `dart run tool/check_syntagmata.dart`, `dart run tool/sample_forum_questions.dart`.
 
-| Catégorie | Noms représentatifs | Génération | Épreuves | Tests |
-|---|---|---|---|---|
-| 1re déclinaison | rosa, puella, via, terra, aqua, īnsula, fēmina… ; masculins poēta, nauta, agricola ; dea, fīlia (-ābus) ; Rōma, Athēnae (pl.), dīvitiae (pl.) | A&G §41–43 | `d1-recti` (gratuite : nom., acc., abl.), `d1-omnes` | « rosa », « dea and fīlia », « Rōma… Athēnae » |
-| 2e déclinaison | servus, dominus, amīcus… ; puer, ager, magister, liber, vir ; fīlius (voc. fīlī, gén. fīliī/fīlī), cōnsilium, imperium ; deus (dī, deōrum/deum, dīs) ; humus, Corinthus (f.) ; castra, arma (pl.) | A&G §45–49 | `d2-us-um`, `d2-omnes` | « servus », « bellum », « puer… vir », « fīlius », « deus » |
-| 3e thèmes consonantiques | rēx, dux, lēx, vōx, pāx, lūx, iūdex, cōnsul, mīles, eques, prīnceps, homō, ōrātor, senātor, honor, amor, labor, arbor (f.), soror, pater/māter/frāter (patrum), lēgiō, ōrātiō, cīvitās (-um/-ium), virtūs, aetās, pēs, lapis, sacerdōs, canis, iuvenis ; neutres corpus, tempus, genus, opus, nōmen, flūmen, carmen, caput, iter, lītus, vulnus, pectus, os (ossium) | A&G §56–64, §71 | `d3-consonantia`, `d3-omnia` | « rēx », « corpus, nōmen, caput, iter », « pater, canis, iuvenis », « cīvitās… os » |
-| 3e thèmes en -i | cīvis, hostis, nāvis (-em/-im, -e/-ī), turris (-im/-em, -ī/-e), ignis (-ī/-e), collis, fīnis, avis, nūbēs, caedēs ; monosyllabes urbs, arx, mōns, pōns, gēns, mēns, mors, ars, pars, dēns, nox ; neutres mare, animal, exemplar, moenia (pl.) | A&G §65–71, §75–76 | `d3-i`, `d3-omnia` | « cīvis, hostis », « monosyllables », « turris, nāvis, ignis », « mare, animal » |
-| 3e irréguliers | vīs (vim, vī ; vīrēs, vīrium), bōs (boum, bōbus/būbus), senex (senis), Iuppiter (Iovis), iter (itineris) | `overrides` par cellule, A&G §79 | `d3-omnia` | « irregular vīs, bōs, senex, Iuppiter » |
-| 4e déclinaison | manus (f.), exercitus, senātus (-ūs/-ī), frūctus, cāsus, portus (-ibus/-ubus), tribus (-ubus), lacus (-ubus), domus (§93 : domō, domōrum, domī), cornū, genū | A&G §89–94 | `d4` | « manus », « cornū », « tribus, lacus, portus… senātus », « domus » |
-| 5e déclinaison | rēs, diēs (m.), spēs, fidēs (sg.), aciēs, merīdiēs (sg.) ; ē brève/longue (reī, diēī) ; pluriel complet pour rēs et diēs seulement | A&G §96–98 | `d5` | « rēs and diēs », « spēs, aciēs… fidēs » |
-| Locatif | Rōmae, Athēnīs, Corinthī, humī, Carthāginī/Carthāgine, rūrī/rūre, domī | généré uniquement pour les noms marqués `locative` (A&G §427) | `d-locativus`, `dmx-omnia` | « locatives », « the locative exists only where declared » |
-| Nombre | singulāria tantum (Rōma, fidēs, Iuppiter…), plūrālia tantum (Athēnae, castra, arma, moenia, dīvitiae) | `NounNumber`, `AbsentForm` (spēs : gén./dat./abl. pl. nōn ūsitātur) | toutes | « singular-only and plural-only… », « spēs, aciēs » |
-| Mélanges | quae dēclīnātiō ? (composants = 5 déclinaisons), cas mixtes, omnia mixta (analyse complète) | `Dimension.declinatio`, entrée de dictionnaire affichée seulement si la désinence est partagée par plusieurs déclinaisons | `dmx-declinatio`, `dmx-casus`, `dmx-omnia` | « declension questions show the dictionary entry only when the ending is shared », « mixed trials credit… » |
+**Principe du catalogue : une carte par confusion, pas par catégorie.** Les prérequis suivent les ambiguïtés réelles du système, non l'ordre du manuel (`dec-3-cons` exige `dec-2-n` parce que la logique du neutre doit être en place ; `adi-3-duo` exige `dec-3-i` parce que les adjectifs de 3e suivent le thème en -i- alors que la plupart des noms de 3e suivent le thème consonantique). Deux portes gratuites : `dec-1` et `pron-ego-tu`.
 
-### Ambiguïtés des noms
-* Toutes les analyses d'une forme sont conservées dans `NounAnalyzer` (macron-sensible ; index insensible pour l'outillage) : *rosae* = gén. sg., dat. sg., nom. pl., voc. pl. ; *rosā* ≠ *rosa* ; *manus* (nom./voc. sg.) ≠ *manūs* ; *Rōmae* ajoute le locatif.
-* Une question n'est posée que si la dimension a ≥ 2 valeurs dans le palier (jamais « quelle déclinaison ? » dans une épreuve à une déclinaison). Les formes à réponse unique parmi les choix proposés sont préférées ; une forme dont toutes les réponses proposées seraient justes n'est jamais posée ; sinon toutes les valeurs légitimes sont acceptées et signalées. Une analyse hors du palier (vocatif dans `d1-recti`) n'est jamais refusée, elle n'est simplement pas proposée.
-* Compétences créditées : la cellule de la forme (`d.1.acc.sg`, locatif `d.loc`) ; dans les épreuves mixtes, en plus, la compétence de discrimination ; « quae dēclīnātiō ? » ne crédite que `d.mx.declinatio` (aucune inférence sur le cas).
+### L'item contextuel
+Les cartes de flexion (sections 1–7) travaillent sur un mot isolé. Les sections 8–11 ne le peuvent pas : le système nominal est massivement syncrétique et « quel cas est *rosae* ? » n'a pas de réponse — trois sont correctes. D'où un second type d'item, le **syntagme** (`lib/pedagogy/forum/syntagma.dart`) : deux à cinq mots, la cible entre accolades, l'antécédent entre crochets, les nominaux candidats entre chevrons.
+
+```
+{ text: 'rosae {spīnae} pungunt',  → nom. pl.
+  text: '{rosae} aqua nocet',      → dat. sg.
+  text: 'spīnae {rosae} pungunt' } → gén. sg.
+```
+
+Un item isolé accepte **toutes** les lectures de sa surface (*rosae* = gén. sg., dat. sg., nom. pl., voc. pl.) ; un item contextuel n'accepte **que** celle que le contexte impose — c'est tout l'intérêt. Chaque item déclare une note latine d'une phrase, affichée en correction. `tool/check_syntagmata.dart` et `forum_syntagmata_test.dart` vérifient que la surface porte réellement la lecture déclarée sous le lemme déclaré, que les candidats sont de vraies formes de leur lemme, et qu'exactement un nominal s'accorde avec la cible sur les items `quodNomen`.
+
+| Section | Cartes | Contenu | Questions |
+|---|---|---|---|
+| 1. Dēclīnātiōnēs | 9 : `dec-1`, `dec-2-mf`, `dec-2-n`, `dec-2-er`, `dec-3-cons`, `dec-3-n`, `dec-3-i`, `dec-4`, `dec-5` | 340 noms, A&G §40–§98 | `casus`, `numerus`, `genus`, `declinatio`, `lemma`, `analysis` |
+| 2. Adiectīva | 6 : `adi-1-2`, `adi-1-2-er`, `adi-3-duo`, `adi-3-una`, `adi-3-tria`, `adi-pron` | bonus, pulcher/miser, fortis, fēlīx/vetus (thème consonantique), ācer, les neuf prōnōminālia (-īus, -ī) | + `classis` |
+| 3. Comparātiō | 5 : `comp-forma`, `comp-flexio`, `comp-irreg`, `comp-adv`, `comp-abl` | -ior/-issimus, -errimus, -illimus ; melior/optimus, plūs ; prior sans positif ; adverbes | + `gradus`, `constructio` |
+| 4. Prōnōmina persōnālia | 6 : `pron-ego-tu`, `pron-nos-vos`, `pron-se`, `pron-me-mihi`, `pron-poss`, `pron-suus-eius` | mē/tē (acc. = abl.), nōs/vōs (nom. = acc.), nōbīs/vōbīs (dat. = abl.) | + `persona`, `functio`, `relatio` |
+| 5. Dēmōnstrātīva | 7 : `pron-is`, `pron-hic`, `pron-ille`, `pron-iste`, `pron-ipse`, `pron-idem`, `pron-dem-omnia` | paradigmes explicites, A&G §146 | `casus`, `numerus`, `genus`, `lemma` |
+| 6. Relātīva et interrogātīva | 6 : `pron-quis`, `pron-qui`, `rel-consensus`, `pron-quis-qui`, `pron-indef`, `pron-corr` | quī/quis, aliquis…nēmō/nihil (défectifs), correlātīva | + `genusNumerus`, `forma`, `correlativum` |
+| 7. Numerālia | 4 : `num-1-3`, `num-card`, `num-ord`, `num-mille` | ūnus/duo/trēs (trois systèmes), indéclinables, centēna, mīlle vs mīlia | + `valor` |
+| 8. Syncretismī | 13 : `syn-ae`, `-a`, `-i`, `-o`, `-um`, `-us`, `-e`, `-es`, `-is`, `-ibus`, `-neutra`, `-quantitas`, `-omnia` | 279 syntagmes ; grille de cas fixe | `casus` (+ `numerus` là où il varie) |
+| 9. Cōnsēnsus | 6 : `con-1-2`, `con-3-1`, `con-distans`, `con-plura`, `con-appositio`, `con-omnia` | 140 syntagmes ; accord distant, appositions | + `quodNomen` |
+| 10. Cāsūs in sententiā | 8 : `cas-verba-{dat,abl,gen}`, `cas-prep-{duplex,abl,acc}`, `cas-loci`, `cas-temporis` | 166 syntagmes ; propriétés lexicales et mécaniques | `casus`, `functio`, `constructio` |
+| 11. Mixta | 8 : `mx-declinationes`, `mx-adiectiva`, `mx-pronomina`, `mx-syncretismi`, `mx-consensus`, `mx-casus`, `mx-instrumenta`, `mx-nominalia` | composants déverrouillés un à un | `analysis` + toutes |
+
+### Cartes à noter
+* `dec-4` : le filtre est **volontairement élargi** aux noms de 2e (*exercitus* ressemble à *servus*) pour forcer la discrimination ; c'est le génitif *exercitūs* qui tranche.
+* `comp-flexio` : le comparatif en `-ior` se décline sur le thème **consonantique** (abl. `-e`, gén. pl. `-um`, neutre pl. `-a`) — l'inverse des adjectifs de 3e ordinaires. *Fortī* mais *fortiōre*.
+* `syn-us` : quatre origines (nom. sg. 2e, nom./gén. sg. 4e, nom./acc. pl. 4e, neutres de 3e *corpus, tempus, genus, opus*) dont la terminaison « crie » 2e masculin.
+* `syn-neutra` : nominatif = accusatif partout, donc **seule la syntaxe tranche** ; prépare directement la lecture réelle.
+* `rel-consensus` : la règle a deux sources, donc **deux questions enchaînées** sur le même item (`Trial.chain`) — d'abord `genusNumerus` (d'où viennent-ils : l'antécédent), puis `casus` (pourquoi celui-là : la fonction dans la subordonnée). Les poser d'un coup masquerait qu'il y a deux opérations. Trois paliers : antécédent adjacent, éloigné, relatif en tête.
+* `con-distans` : *magnam in silvā vīdit umbram*. Question `quodNomen`, trois ou quatre candidats, un seul compatible. Le drill le plus proche de la lecture véritable.
+* `cas-verba-dat` : propriété du lemme, non règle générale ; l'aide signale que ce n'est pas irrégulier mais régulier vu du latin (*pāreō* = « être obéissant à »).
+
+### Ambiguïtés et compétences
+* Toutes les analyses d'une surface sont conservées dans `NominalAnalyzer` (macron-sensible ; index insensible pour l'outillage) : *rosae* (4 lectures), *rosā* ≠ *rosa*, *manus* ≠ *manūs*, *fortius* = neutre comparatif **et** adverbe, *quem* = relatif **et** interrogatif.
+* Une question n'est posée que si la dimension a ≥ 2 valeurs dans le palier ; les formes à réponse unique sont préférées ; une forme dont toutes les réponses proposées seraient justes n'est jamais posée. Sur grille fixe (`fixedChoices`), l'échelle complète des cas est toujours offerte : reconnaître n'est pas éliminer.
+* Une cible en tête de phrase porte la majuscule latine (*Quis clāmat ?*) : le lexique est consulté sur la forme minuscule, l'écran affiche la graphie de la phrase. Les noms propres gardent leur majuscule (`lexiconTarget`).
+* Compétences : une feuille par carte sous sa section (`f.dec.1`, `f.syn.us`, `f.rel.consensus`…), plus la cellule de paradigme du nom (`d.1.acc.sg`, locatif `d.loc`) conservée à part, pour que l'historique d'une cellule survive à toute refonte du catalogue. Dans les cartes mixtes, la compétence du composant est créditée entre les deux.
+* Ids uniques entre activités (`Trials` lève une erreur en cas de collision) : la sauvegarde clé les achats par id seul.
+* Migration schéma 3 → 4 : les achats et introductions des anciennes cartes de déclinaison sont reportés sur la carte qui couvre le même terrain (`kForumV3TrialIds`), aucune gemme dépensée n'est perdue ; les anciennes compétences `d.mx.*` sans successeur sont supprimées.
 
 ## Lecture et interprétation (Theatrum)
 
@@ -159,4 +185,4 @@ Les distracteurs portent chacun **une** erreur d'interprétation morphologique c
 **Vocabulaire** (`tool/corpus/bible/lemmatize.py`, `tool/theatrum/vocab.py`, `lib/pedagogy/reading/vocab_progress.dart`) : chaque forme du corpus est lemmatisée avec les lexiques Collatinus ; les entrées (lemmes communs, noms propres, formes non résolues) forment le dénominateur de la couverture ; une entrée est *enseignée* quand une question validée la contient dans son passage avec sa glose, *interrogée* quand elle est la forme décisive ou la portion d'un distracteur. Les lemmes communs sont rangés en bandes de fréquence (gradūs I–V, `lemmaBands`) ; la question porte la bande de son mot le plus rare ; `ReadingQuestionSource` n'offre que les bandes ouvertes (`VocabProgress.level`, 60 % de mots *nōta* pour ouvrir la suivante) ; la Tabula affiche l'acquisition par gradus (*obvia / nōta / firma*). Seuil d'acceptation : 90 % des entrées enseignées (`vocab.py check`, `test/content/vocabulary_acceptance_test.dart`). Couverture et lacunes : `doc/theatrum_coverage.md`.
 
 ## Structure préparée (non jouable, indiquée comme à venir)
-Templum visible dans la ville, désactivé (sens Gallicē → Latīnē réservé). Anglicē : option visible, non sélectionnable tant que `renderings_en.json` n'existe pas. Adjectifs et pronoms : non traités ; le modèle `NounEntry`/`Declinator` (cellules cas × nombre, `overrides`, `absent`) et le contrat `QuestionPayload` sont le point d'extension prévu.
+Templum visible dans la ville, désactivé (sens Gallicē → Latīnē réservé). Anglicē : option visible, non sélectionnable tant que `renderings_en.json` n'existe pas.

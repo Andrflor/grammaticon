@@ -55,6 +55,7 @@ class BattleState {
     this.recentSurfaces = const [],
     this.resumed = false,
     this.outcomeCount = 0,
+    this.pendingFollowUpOf,
   });
 
   final Trial trial;
@@ -85,6 +86,9 @@ class BattleState {
   final bool resumed;
   final int outcomeCount;
 
+  /// Id of the question just answered whose follow-up must be asked next.
+  final String? pendingFollowUpOf;
+
   bool get isOver => phase == BattlePhase.victory || phase == BattlePhase.defeat;
   bool get acceptsInput => phase == BattlePhase.question && !paused;
 
@@ -107,6 +111,8 @@ class BattleState {
     List<String>? recentLemmas,
     List<String>? recentSurfaces,
     int? outcomeCount,
+    String? pendingFollowUpOf,
+    bool clearPendingFollowUp = false,
   }) => BattleState(
     trial: trial,
     componentIds: componentIds,
@@ -131,6 +137,7 @@ class BattleState {
     recentSurfaces: recentSurfaces ?? this.recentSurfaces,
     resumed: resumed,
     outcomeCount: outcomeCount ?? this.outcomeCount,
+    pendingFollowUpOf: clearPendingFollowUp ? null : (pendingFollowUpOf ?? this.pendingFollowUpOf),
   );
 
   ActiveBattle snapshot() => ActiveBattle(
@@ -232,6 +239,14 @@ class BattleController extends Notifier<BattleState?> {
     final rng = _rng!;
     final cfg = ref.read(masteryConfigProvider);
     final now = DateTime.now();
+    // A chained question (two operations on the same item) comes next
+    // whatever the answer was. It is carried by the question it follows, so
+    // it draws nothing: the generator's stream stays exactly where the
+    // resumed [questionIndex] expects it.
+    final pending = s.last?.question.followUp;
+    if (pending != null && s.last!.question.id == s.pendingFollowUpOf) {
+      return s.copyWith(question: pending, helpUsed: false, explanationOpen: false, clearPendingFollowUp: true);
+    }
     final q = _source.generate(
       trial: s.trial,
       componentIds: s.componentIds,
@@ -284,6 +299,8 @@ class BattleController extends Notifier<BattleState?> {
       recentSurfaces: recentS,
       outcomeCount: s.outcomeCount + 1,
       last: AnswerOutcome(sequence: s.outcomeCount + 1, question: q, chosenValue: chosen, correct: res.correct, resolution: res, explanation: explanation),
+      pendingFollowUpOf: q.followUp == null ? null : q.id,
+      clearPendingFollowUp: q.followUp == null,
     );
     final over = enemyHp <= 0 || hearts <= 0;
     if (over && enemyHp <= 0) {

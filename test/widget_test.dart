@@ -76,11 +76,14 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Forum'));
     await tester.pumpAndSettle();
-    expect(find.text('Forum · Dēclīnātiōnēs'.toUpperCase()), findsWidgets); // top-bar inscription, drawn in two layers
-    expect(find.textContaining('Prīma dēclīnātiō'), findsWidgets);
-    expect(find.text('Contrōversia'), findsOneWidget); // only the free trial is open
+    expect(find.text('Forum · Nōminālia'.toUpperCase()), findsWidgets); // top-bar inscription, drawn in two layers
+    expect(find.textContaining('Dēclīnātiō prīma'), findsWidgets);
+    // The first section is on screen; its only free card is the first
+    // declension. The second free door (the personal pronouns) lives further
+    // down the page, in its own section.
+    expect(find.text('Contrōversia'), findsOneWidget);
     expect(find.text('Clausa'), findsWidgets);
-    expect(find.textContaining('Eme · 20'), findsWidgets); // next trials are purchasable
+    expect(find.textContaining('Eme · 15'), findsWidgets); // next trials are purchasable
 
     await tester.tap(find.widgetWithText(InkWell, 'Contrōversia').first);
     await tester.pump();
@@ -92,11 +95,16 @@ void main() {
     final element = tester.element(find.byType(Scaffold).last);
     final container = ProviderScope.containerOf(element);
     var s = container.read(battleProvider)!;
-    expect(s.trial.id, 'd1-recti');
+    expect(s.trial.id, 'dec-1');
     final q = s.question!;
-    // Dictionary entry and Latin prompt are on screen; the opponent bar shows resolve.
+    // The form and the Latin prompt are on screen; the opponent bar shows resolve.
     expect(find.text(q.surface), findsOneWidget);
-    expect(find.textContaining(', f.').evaluate().isNotEmpty || find.textContaining(', m.').evaluate().isNotEmpty, isTrue);
+    // The dictionary entry is shown under the form, except on a question it
+    // would answer by itself (the entry names the gender).
+    if (q.context.isNotEmpty) {
+      expect(find.text(q.context.single), findsOneWidget);
+      expect(q.context.single, matches(RegExp(r', [mfn]\.$')));
+    }
     expect(find.textContaining('cōnstantia'), findsOneWidget);
     expect(find.text('Rhētor Graecus'), findsOneWidget);
     final correct = q.choices.indexWhere((c) => q.correctValues.contains(c.value));
@@ -130,13 +138,13 @@ void main() {
     tester.view.physicalSize = const Size(420, 860);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(app(MemorySaveStore(), initial: SaveData(introSeen: {'d1-recti'})));
+    await tester.pumpWidget(app(MemorySaveStore(), initial: SaveData(introSeen: {'dec-1'})));
     await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('Forum'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Forum'));
     await tester.pumpAndSettle();
-    expect(find.text('Forum · Dēclīnātiōnēs'.toUpperCase()), findsWidgets); // top-bar inscription, drawn in two layers
+    expect(find.text('Forum · Nōminālia'.toUpperCase()), findsWidgets); // top-bar inscription, drawn in two layers
     await tester.tap(find.widgetWithText(InkWell, 'Contrōversia').first);
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
@@ -159,13 +167,14 @@ void main() {
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.textContaining('Contrōversiae victae'), findsOneWidget);
-    // Roots are expanded by default: the declension tree follows the verb tree.
-    await tester.scrollUntilVisible(find.text('Dēclīnātiōnēs'), 300, scrollable: find.byType(Scrollable).first);
-    expect(find.text('Dēclīnātiōnēs'), findsOneWidget);
+    // Roots are expanded by default: the declension cells follow the verb tree, then the Forum cards.
+    await tester.scrollUntilVisible(find.text('Dēclīnātiōnēs · cellae'), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.text('Dēclīnātiōnēs · cellae'), findsOneWidget);
     expect(find.text('Ventūrum: structūra parāta, nōndum lūditur.'), findsNothing);
-    await tester.scrollUntilVisible(find.text('Mixta dēclīnātiōnum'), 300, scrollable: find.byType(Scrollable).first);
+    await tester.scrollUntilVisible(find.text('Forum · Nōminālia'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Prīma dēclīnātiō'), findsOneWidget);
     expect(find.text('Locātīvus'), findsOneWidget);
+    expect(find.text('Syncretismī'), findsOneWidget);
     // Unpractised skills stay unevaluated.
     await tester.ensureVisible(find.text('Prīma dēclīnātiō'));
     await tester.pumpAndSettle();

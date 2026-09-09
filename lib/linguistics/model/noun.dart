@@ -6,6 +6,7 @@ library;
 
 import 'analysis.dart' show AbsentForm;
 import 'grammar.dart';
+import 'nominal.dart';
 
 /// Whether a noun is declined in both numbers or only one (A&G §101–103).
 enum NounNumber { ambo, singulareTantum, pluraleTantum }
@@ -30,7 +31,7 @@ enum ThirdStem {
 /// Forms are derived from [stem] by the declinator; whatever no rule produces
 /// (irregular nominatives are given directly, other irregular cells go in
 /// [overrides]) is stored explicitly with its source.
-class NounEntry {
+class NounEntry implements Lexeme {
   const NounEntry({
     required this.id,
     required this.lemma,
@@ -49,9 +50,11 @@ class NounEntry {
   });
 
   /// Stable ASCII identifier (`rosa`, `rex`, `iuppiter`).
+  @override
   final String id;
 
   /// Nominative singular (nominative plural for plūrālia tantum) with macrons.
+  @override
   final String lemma;
 
   /// Genitive singular (plural for plūrālia tantum) as printed in the
@@ -77,15 +80,25 @@ class NounEntry {
   final List<AbsentForm> absent;
 
   /// Source references (A&G sections).
+  @override
   final List<String> provenance;
+  @override
   final String notes;
+  @override
   final String glossFr;
+
+  @override
+  WordClass get wordClass => WordClass.nomen;
+
+  @override
+  bool get isProper => lemma[0].toUpperCase() == lemma[0] && lemma[0].toLowerCase() != lemma[0];
 
   bool get isNeuter => gender == Gender.neutrum;
   bool get pluralOnly => number == NounNumber.pluraleTantum;
   bool get singularOnly => number == NounNumber.singulareTantum;
 
   /// Dictionary entry as shown to the player: `rosa, rosae, f.`
+  @override
   String get dictionaryEntry => '$lemma, $genitive, ${gender.abbreviation}';
 
   /// True for second-declension nouns in -ius / -ium (fīlius, cōnsilium).

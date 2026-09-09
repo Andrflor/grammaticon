@@ -47,6 +47,8 @@ class Question {
     this.context = const [],
     this.exposure,
     this.errata,
+    this.syntagma,
+    this.followUp,
   });
 
   final String id;
@@ -78,6 +80,16 @@ class Question {
   /// Keys under which a miss on this question is remembered (isolated forms);
   /// null when the question is not about one form (Theatrum).
   final ErrataNote? errata;
+
+  /// Phrase the surface is taken from, the surface between braces
+  /// (`rosae {spīnae} flōrent`); null for an isolated form. The screen shows
+  /// the phrase with the marked word highlighted instead of the bare surface.
+  final String? syntagma;
+
+  /// Question asked right after this one on the same item, whatever the
+  /// answer (two operations, two questions: genus and number of a relative,
+  /// then its case).
+  final Question? followUp;
 
   String get primarySkill => skillIds.first;
   bool isCorrect(String value) => correctValues.contains(value);

@@ -4,9 +4,10 @@
 /// stable and used as keys in the save file.
 library;
 
+import 'forum/forum_trials.dart';
 import 'tm_steps.dart';
 
-enum SkillBranch { coniugationes, temporaModi, mixta, declinationes, lectio }
+enum SkillBranch { coniugationes, temporaModi, mixta, declinationes, forum, lectio }
 
 class Skill {
   const Skill(this.id, this.name, {this.parent, required this.branch, this.hint = '', this.future = false});
@@ -98,8 +99,10 @@ class Skills {
     Skill('mx.vox', 'Discrīmen vōcum', parent: 'mx', branch: SkillBranch.mixta),
     Skill('mx.familia', 'Discrīmen verbōrum anōmalōrum', parent: 'mx', branch: SkillBranch.mixta),
     Skill('mx.omnia', 'Omnia mixta', parent: 'mx', branch: SkillBranch.mixta),
-    // ----- Declinationes (Forum) -----
-    Skill('d', 'Dēclīnātiōnēs', branch: SkillBranch.declinationes),
+    // ----- Declinationes: the paradigm cells credited by every noun form of
+    // the Forum (kept apart from the cards so that a cell's history survives
+    // any change of the catalogue) -----
+    Skill('d', 'Dēclīnātiōnēs · cellae', branch: SkillBranch.declinationes),
   ];
 
   /// Contextual comprehension (Theatrum): the same grammatical distinctions
@@ -124,15 +127,23 @@ class Skills {
     Skill('l.mx.omnia', 'Omnia mixta', parent: 'l.mx', branch: SkillBranch.lectio),
   ];
 
-  /// Mixed-trial and special skills of the Forum, appended after the
-  /// declension tree.
+  /// The locative cell, appended after the declension tree.
   static const List<Skill> _declTail = [
     Skill('d.loc', 'Locātīvus', parent: 'd', branch: SkillBranch.declinationes, hint: 'Rōmae, domī, Carthāginī, rūrī'),
-    Skill('d.mx', 'Mixta dēclīnātiōnum', parent: 'd', branch: SkillBranch.declinationes),
-    Skill('d.mx.declinatio', 'Discrīmen dēclīnātiōnum', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'rosīs (I) · servīs (II) · rēgibus (III)'),
-    Skill('d.mx.casus', 'Discrīmen cāsuum mixtōrum', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'cāsūs omnium dēclīnātiōnum'),
-    Skill('d.mx.omnia', 'Omnia mixta', parent: 'd.mx', branch: SkillBranch.declinationes, hint: 'analysis complēta'),
   ];
+
+  /// Forum: one node per section, one leaf per card (generated from the
+  /// catalogue), so that every card has its own mastery.
+  static List<Skill> _forum() {
+    final list = <Skill>[const Skill('f', 'Forum · Nōminālia', branch: SkillBranch.forum)];
+    for (final section in ForumSections.all) {
+      list.add(Skill(ForumSections.skillOf(section), section, parent: 'f', branch: SkillBranch.forum));
+    }
+    for (final t in ForumTrials.build()) {
+      list.add(Skill(t.primarySkill, t.name, parent: ForumSections.skillOf(t.group), branch: SkillBranch.forum, hint: t.examples.first));
+    }
+    return list;
+  }
 
   static final List<Skill> all = _buildAll();
 
@@ -151,6 +162,7 @@ class Skills {
       }
     }
     list.addAll(_declTail);
+    list.addAll(_forum());
     for (final (mood, voice) in TmLadders.ladders) {
       for (final step in TmLadders.of(mood, voice)) {
         list.add(Skill(TmLadders.skillId(mood, voice, step), step.name, parent: TmLadders.parentSkill(mood, voice), branch: SkillBranch.temporaModi, hint: step.hint));

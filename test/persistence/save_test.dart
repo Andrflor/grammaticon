@@ -94,15 +94,15 @@ void main() {
     final repo = SaveRepository(MemorySaveStore());
     final d = SaveData(
       gems: 9,
-      purchased: const {'ind-imperf-act', 'd1-omnes'},
-      skills: {'d.1.acc.sg': const SkillRecord().apply(Observation(at: DateTime(2026, 2, 1), correct: true, lemmaId: 'rosa', quality: AnswerQuality.autonoma, trialId: 'd1-recti'), const MasteryConfig())},
-      activeBattle: const ActiveBattle(trialId: 'd1-recti', hearts: 3, enemyHp: 8, answered: 2, gemsDelta: 16, seed: 5, questionIndex: 2, componentIds: [], correctCount: 2),
+      purchased: const {'ind-imperf-act', 'dec-2-mf'},
+      skills: {'d.1.acc.sg': const SkillRecord().apply(Observation(at: DateTime(2026, 2, 1), correct: true, lemmaId: 'rosa', quality: AnswerQuality.autonoma, trialId: 'dec-1'), const MasteryConfig())},
+      activeBattle: const ActiveBattle(trialId: 'dec-1', hearts: 3, enemyHp: 8, answered: 2, gemsDelta: 16, seed: 5, questionIndex: 2, componentIds: [], correctCount: 2),
     );
     await repo.save(d);
     final back = await repo.load();
-    expect(back.purchased, {'ind-imperf-act', 'd1-omnes'});
+    expect(back.purchased, {'ind-imperf-act', 'dec-2-mf'});
     expect(back.skills['d.1.acc.sg']!.lemmas, {'rosa'});
-    expect(back.activeBattle!.trialId, 'd1-recti');
+    expect(back.activeBattle!.trialId, 'dec-1');
   });
 
   test('corrupt save falls back to a fresh profile', () async {

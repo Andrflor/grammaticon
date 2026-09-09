@@ -103,13 +103,13 @@ void main() {
   });
 
   test('the three activities share one wallet and keep distinct tallies', () async {
-    final (c, _) = testContainer(initial: SaveData(gems: 10, introSeen: {'ind-praes-act', 'd1-recti', 'th-numerus'}));
+    final (c, _) = testContainer(initial: SaveData(gems: 10, introSeen: {'ind-praes-act', 'dec-1', 'th-numerus'}));
     final ctrl = c.read(battleProvider.notifier);
     ctrl.start(Trials.byId('ind-praes-act'));
     var q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     ctrl.abandon();
-    ctrl.start(Trials.byId('d1-recti'));
+    ctrl.start(Trials.byId('dec-1'));
     q = c.read(battleProvider)!.question!;
     ctrl.answer(q.id, correctIndex(q));
     ctrl.abandon();
@@ -209,7 +209,7 @@ void main() {
     final repo = SaveRepository(MemorySaveStore());
     final d = SaveData(
       gems: 9,
-      purchased: const {'ind-imperf-act', 'd1-omnes', 'th-persona'},
+      purchased: const {'ind-imperf-act', 'dec-2-mf', 'th-persona'},
       skills: {'l.numerus': const SkillRecord().apply(Observation(at: DateTime(2026, 9, 6), correct: true, lemmaId: 'video', quality: AnswerQuality.autonoma, trialId: 'th-numerus'), const MasteryConfig())},
       exposure: const ExposureLedger(lemmas: {'video': LemmaExposure(seen: 2, passages: ['MAT.5.8', 'JOH.9.25'], tested: 1, testedCorrect: 1)}, items: {'th-numerus|MAT 5:8|videbunt': 1}),
       settings: const Settings(translationLanguage: TranslationLanguage.gallice),
@@ -222,7 +222,7 @@ void main() {
     expect(back.exposure.seenCount('th-numerus|MAT 5:8|videbunt'), 1);
     expect(back.settings.translationLanguage, TranslationLanguage.gallice);
     expect(back.purchased, contains('th-persona'));
-    expect(back.schemaVersion, 3);
+    expect(back.schemaVersion, kSchemaVersion);
 
     const codec = SaveCodec();
     const v2 = '{"schema":2,"gems":37,"purchased":["ind-imperf-act","d1-omnes"],'
@@ -231,11 +231,11 @@ void main() {
         '"battle":{"t":"d1-recti","m":"certamen","h":2,"e":6,"a":5,"g":12,"s":77,"q":5,"c":[],"ok":4},'
         '"lemmaDaily":{},"introSeen":["ind-praes-act"],"activities":{"amphitheatrum":{"w":3,"l":2},"forum":{"w":1,"l":0},"thermae":{"w":0,"l":0}}}';
     final m = codec.decode(v2);
-    expect(m.schemaVersion, 3);
+    expect(m.schemaVersion, kSchemaVersion);
     expect(m.gems, 37);
-    expect(m.purchased, {'ind-imperf-act', 'd1-omnes'});
+    expect(m.purchased, {'ind-imperf-act', 'dec-2-mf'}, reason: 'the old Forum card is carried to its successor (schema 4)');
     expect(m.skills['d.1.acc.sg']!.autonomousCorrect, 3);
-    expect(m.activeBattle!.trialId, 'd1-recti');
+    expect(m.activeBattle!.trialId, 'dec-1');
     expect(m.activityStats['amphitheatrum']!.won, 3);
     expect(m.activityStats['forum']!.won, 1);
     expect(m.activityStats.containsKey('thermae'), isFalse, reason: 'the Thermae identifier is migrated, not kept');

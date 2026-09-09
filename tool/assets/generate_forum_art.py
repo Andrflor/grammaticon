@@ -216,6 +216,39 @@ def rhetor(kind):
         b += _arm(cx-84, -6, _fasces, 'url(#togaPurple)')
         b += _arm(cx+84, -20, _fist, 'url(#togaPurple)')
         b += _head(cx, 170, hair='#3a2a1a', laurel_on=True, mouth='shout', eyes='stern')
+    # ----- opponents of the nominal Forum (declensions, adjectives, pronouns…)
+    elif kind == 'grammaticus':  # schoolmaster: brown cloak, wax tablet, greying beard
+        b += _legs(cx)
+        b += _toga(cx, 'url(#brown)', '#e0b24a')
+        b += _arm(cx-84, 12, _tablet, 'url(#brown)')
+        b += _arm(cx+84, -70, _open_hand, 'url(#brown)')
+        b += _head(cx, 170, hair='#5a4632', beard=True, mouth='flat', eyes='stern')
+    elif kind == 'poeta':     # elegant poet: parchment toga with red hem, laurel, scroll
+        b += _legs(cx)
+        b += _toga(cx, 'url(#parchment)', '#b02a3a')
+        b += _arm(cx-84, 20, _scroll, 'url(#parchment)')
+        b += _arm(cx+84, -110, _open_hand, 'url(#parchment)')
+        b += _head(cx, 170, hair='#c07a3a', laurel_on=True, mouth='speak')
+    elif kind == 'matrona':   # learned matron: red palla with gold hem, letter in hand
+        b += _legs(cx)
+        b += _toga(cx, 'url(#red)', '#e0b24a')
+        b += rect(cx-90, 236, 180, 30, '#e0b24a', r=10, extra=STROKE)
+        b += _arm(cx-84, 6, _scroll, 'url(#red)')
+        b += _arm(cx+84, -35, _open_hand, 'url(#red)')
+        b += _head(cx, 170, hair='#3a2a1a', mouth='smile')
+    elif kind == 'sophista':  # Greek sophist: pale chiton with blue hem, bald, both hands open
+        b += _legs(cx)
+        b += _toga(cx, 'url(#marble)', '#1c73b8')
+        b += _arm(cx-84, -55, _open_hand, 'url(#marble)')
+        b += _arm(cx+84, -55, _open_hand, 'url(#marble)')
+        b += _head(cx, 170, hair='url(#grey)', beard=True, bald=True, mouth='smile', eyes='stern')
+    elif kind == 'iurisconsultus':  # jurist: white toga with crimson stripe, tablet, grey hair
+        b += _legs(cx)
+        b += _toga(cx, 'url(#toga)', '#8a1030')
+        b += rect(cx-8, 262, 16, 160, '#8a1030', r=4)
+        b += _arm(cx-84, 10, _tablet)
+        b += _arm(cx+84, -25, _fist)
+        b += _head(cx, 170, hair='url(#grey)', old=True, mouth='flat', eyes='stern')
     return write(f'rhetor_{kind}', w, h, b, DEFS)
 
 # ---------------------------------------------------------------- argument scroll icon
@@ -228,7 +261,15 @@ def argumentum():
     b += circle(96, 30, 10, '#ffe08a', 'opacity="0.9"')
     return write('argumentum', w, h, b, DEFS)
 
+RHETORES = ('rhetor', 'senator', 'causidicus', 'philosophus', 'censor', 'grammaticus', 'poeta', 'matrona', 'sophista', 'iurisconsultus')
+
 if __name__ == '__main__':
+    import sys
+    if len(sys.argv) > 1:
+        # Render only the named opponents (e.g. new ones), leaving other assets untouched.
+        for k in sys.argv[1:]:
+            rhetor(k)
+        raise SystemExit
     forum_bg()
     for p in ('idle', 'gesture', 'hurt', 'victory', 'defeat'):
         orator(p)

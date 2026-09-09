@@ -146,6 +146,9 @@ class QuestionGenerator implements QuestionSource {
       case Dimension.analysis:
       case Dimension.sensus:
         return null;
+      default:
+        // Forum-only dimensions never reach the verb generator.
+        return null;
     }
   }
 
@@ -183,6 +186,8 @@ class QuestionGenerator implements QuestionSource {
       case Dimension.formaPlena:
       case Dimension.analysis:
       case Dimension.sensus:
+        return value;
+      default:
         return value;
     }
   }
@@ -631,6 +636,8 @@ class QuestionGenerator implements QuestionSource {
         return null;
       case Dimension.coniugatio:
       case Dimension.declinatio:
+        return null;
+      default:
         return null;
     }
   }
