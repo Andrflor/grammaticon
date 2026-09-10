@@ -125,6 +125,7 @@ dico|dīcō|dire
 habeo|habeō|avoir
 '''
 DEFINITIONS={
+ 'praeteritum-praesens':('Praesēns ā praeteritō distinguere',['trait.tempus']),
  'deponens-agens':('Sēnsum actīvum fōrmae dēpōnentis intellegere',['agent-patient','voice']),
  'deponens-forma':('Fōrmam dēpōnentem ad sēnsum actīvum ēligere',['voice']),
  'semideponens-perfectum':('Perfectum sēmidēpōnentis compōnere',['imperfect-perfect']),
@@ -144,8 +145,10 @@ DEFINITIONS={
 }
 for mode in ['lectio','compositio']:
  for key,(name,requires) in DEFINITIONS.items():
-  SKILLS.append(dict(id=f'{mode}.verba.{key}',name=name,visible=False,parent=mode+'.curriculum.verb-meaning',requires=[mode+'.'+s for s in requires]))
+  SKILLS.append(dict(id=f'{mode}.verba.{key}',name=name,visible=False,parent=mode+'.curriculum.verb-meaning',requires=[s if s.startswith('trait.') else mode+'.'+s for s in requires]))
 EXPL={
+ 'verba.praeteritum-praesens':'Praeteritum rem ante tempus praesēns sitam indicat; actiō praesēns et actiō praeterita nōn idem tempus habent.',
+ 'past-anteriority':'Plusquamperfectum actiōnem ante aliud tempus praeteritum sitam exprimit; perfectum simplex hanc relātiōnem nōn per sē exprimit.',
  'verba.deponens-agens':'Fōrma dēpōnēns hīc sēnsum actīvum habet. Terminātiō passīva nōn per sē significat subiectum actiōnem aliēnam patī.',
  'verba.deponens-forma':'Hoc verbum dēpōnēns est. Fōrma in -tur subiectī actiōnem exprimit; fōrma actīva ficta nōn substituenda est.',
  'verba.semideponens-perfectum':'Sēmidēpōnēns in perfectō participium cum esse adhibet, sed sēnsum actīvum servat.',
@@ -195,7 +198,7 @@ for key,form,wrong,present,latin,fr,frnow,words in [
  ('confido','cōnfīsus est','cōnfīdit','cōnfīdit','amīcō','a fait confiance à l’ami','fait confiance à l’ami','amicus'),
 ]:
  add('lectio',2,key,'Ōlim {a.nom} '+latin+' '+form+'.','Autrefois, {a.fr} '+fr+'.',
-   ['{a.fr} '+frnow+' maintenant.','Le sujet nommé subit l’action d’un agent extérieur ; la forme décrit un passif.'],key+' '+words+' sum olim',['imperfect-perfect','verba.deponens-agens'],[['imperfect-perfect'],['verba.deponens-agens']])
+   ['{a.fr} '+frnow+' maintenant.','Le sujet nommé subit l’action d’un agent extérieur ; la forme décrit un passif.'],key+' '+words+' sum olim',['verba.praeteritum-praesens','verba.deponens-agens'],[['verba.praeteritum-praesens'],['verba.deponens-agens']])
  add('compositio',2,key,'Ōlim {a.nom} '+latin+' ___.',form,[wrong],key+' '+words+' sum olim',
    ['verba.semideponens-perfectum'],french='Autrefois, {a.fr} '+fr+'.')
 
@@ -208,7 +211,12 @@ for key,nom,dat,acc,inf,fr,words in [
 ]:
  for necessary in [False,True]:
   modal='oportet' if necessary else 'licet';case=acc if necessary else dat
-  correct=('Il faut que ' if necessary else 'Il est permis que ')+fr+'.'
+  correct=('Il faut que '+fr+'.') if necessary else {
+   'citizen':'Le citoyen a la permission de parler.',
+   'child':'L’enfant a la permission de revenir.',
+   'soldier':'Le soldat a la permission de rester.',
+   'student':'L’élève a la permission de partir.',
+  }[key]
   skill='verba.necessitas-accusativus' if necessary else 'verba.licentia-dativus'
   add('lectio',3,key+str(necessary),case+' '+inf+' '+modal+'.',correct,
     ['La personne nommée donne elle-même cet ordre ou cette permission à quelqu’un d’autre.'],
@@ -238,8 +246,8 @@ for key,obj,fr,words in [('name','nōmen','du nom','nomen'),('journey','iter','d
  add('compositio',4,'memini-'+key,'{a.nom} '+obj+' ___.','meminit',['meminerat'],words+' memini',['verba.perfectum-praesens'],french='{a.fr} se souvient actuellement '+fr+'.')
 for key,inf,fr in [('scribo','scrībere','écrire'),('lego','legere','lire'),('cano','canere','chanter'),('laboro','labōrāre','travailler')]:
  add('lectio',4,'coepi-'+key,'{a.nom} '+inf+' coepit.','{a.fr} a commencé à '+fr+'.',
-   ['{a.fr} commence seulement maintenant ; aucun début antérieur n’est exprimé.'],key+' coepi',['imperfect-perfect'])
- add('compositio',4,'coepi-'+key,'{a.nom} '+inf+' ___.','coepit',['coeperat'],key+' coepi',['imperfect-perfect'],french='{a.fr} a commencé à '+fr+'.')
+   ['{a.fr} commence seulement maintenant ; aucun début antérieur n’est exprimé.'],key+' coepi',['verba.praeteritum-praesens'])
+ add('compositio',4,'coepi-'+key,'{a.nom} '+inf+' ___.','coepit',['coeperat'],key+' coepi',['past-anteriority'],french='{a.fr} a commencé à '+fr+'.')
 # Parenthetic inquit does not turn the quoted first person into reported third person.
 for key,direct,indirect,fr,words in [('come','veniō','venit','viens','venio'),('stay','maneō','manet','reste','maneo'),('hear','audiō','audit','entends','audio'),('wait','exspectō','exspectat','attends','exspecto')]:
  quoted=('J’' if fr[0] in 'aeiou' else 'Je ')+fr
@@ -253,9 +261,12 @@ for key,form,plural,fr in [('eo','ītur','euntur','on va'),('curro','curritur','
  add('lectio',5,key,'Hīc '+form+'.','Ici, '+fr+'.',['Le texte désigne des personnes qui subissent cette action comme sujets du verbe.'],key+' hic',['verba.passivum-impersonale'])
  add('compositio',5,key,'Hīc ___.',form,[plural],key+' hic',['verba.impersonale-numerus'],french='Ici, '+fr+'.')
 
-for key,verb,abl,acc,dat,fr,words in [('utor','ūtitur','gladiō','gladium','gladiō','utilise l’épée','gladius'),('fruor','fruitur','pāce','pācem','pācī','jouit de la paix','pax'),('fungor','fungitur','mūnere','mūnus','mūnerī','s’acquitte de sa charge','munus'),('vescor','vēscitur','cibō','cibum','cibō','se nourrit de nourriture','cibus')]:
+for key,verb,abl,acc,dat,fr,words in [('utor','ūtitur','gladiō','gladium','gladiō','utilise l’épée','gladius'),('fruor','fruitur','pāce','pācem','pācī','jouit de la paix','pax'),('fungor','fungitur','mūnere','mūnus','mūnerī','s’acquitte de sa charge','munus'),('vescor','vēscitur','cibō','cibum','cibō','consomme de la nourriture','cibus')]:
  # Dative and ablative coincide for two nouns: never offer the same surface as
  # a wrong case. The accusative contrasts with all four genuine ablatives.
+ add('lectio',6,key,'{a.nom} '+verb+' '+abl+'.','{a.fr} '+fr+'.',
+   ['La forme verbale a un sens passif : le sujet nommé subit l’action d’un autre agent.'],
+   key+' '+words,['verba.deponens-agens'])
  add('compositio',6,key,'{a.nom} '+verb+' ___.',abl,[acc],key+' '+words,['verba.regimen-ablativi'],french='{a.fr} '+fr+'.')
 for key,verb,dat,acc,nom,fr,reverse,words in [
  ('faveo','favet','amīcō','amīcum','amīcus','est favorable à l’ami','L’ami est favorable {a.to}.','amicus'),
