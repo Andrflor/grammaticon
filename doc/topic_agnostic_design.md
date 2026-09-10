@@ -113,7 +113,7 @@ Une observation conserve la transaction, la date, le design et sa révision, la 
 
 Le design reproduit les deux catalogues actuels : 93 cartes de l’Amphitheatrum et 78 du Forum. Les 890 554 entrées couvrent l’énumération des pools existants et des dimensions applicables, y compris les questions combinées et les enchaînements. Les propositions et corrigés ont été fixés en amont, puis les générateurs ont été supprimés. `export-report.json` conserve les comptes par carte et les correspondances d’identifiants.
 
-Le test de parité conserve les prix, compétences, prérequis, cœurs et objectifs des 171 cartes. Les cours et exemples sont exportés dans les cartes ; les aides sont des données. Le changement intentionnel est le remplacement du tirage de formes et de distracteurs à la volée par la sélection d’entrées entièrement écrites. La mise en page et les scènes ont été adaptées aux composants génériques ; elles ne constituent pas une reproduction graphique pixel pour pixel des anciens écrans.
+Le test de parité conserve les prix, compétences, prérequis, cœurs et objectifs des 171 cartes. Les cours et exemples sont exportés dans les cartes ; les aides sont des données. Le changement intentionnel est le remplacement du tirage de formes et de distracteurs à la volée par la sélection d’entrées entièrement écrites. Le code graphique original est rétabli : ses widgets, mises en page et scènes animées reçoivent désormais leurs contenus, ressources et couleurs du design. Douze captures de référence des six écrans principaux, à deux tailles, sont comparées strictement pixel par pixel dans les tests.
 
 Les grandes banques sont stockées en JSON gzip, avec index et portions de 400 questions. Des dictionnaires de chaînes évitent de répéter les mêmes textes dans une portion. Lire ces références et décompresser les fichiers ne produit aucun contenu nouveau. Une banque ordinaire, comme celles du Cabinet, reste un simple tableau JSON.
 
@@ -128,3 +128,11 @@ Les tests couvrent un design à trois lieux et trois niveaux, français/anglais,
 Le validateur complet a vérifié les 890 554 questions de Grammaticon, leurs propositions et toutes les références des liens. Les compilations Linux des deux designs utilisent le même point d’entrée et n’embarquent que le dossier du design choisi. Les commandes exactes sont dans le README.
 
 Le futur parcours automatique n’est pas implémenté. Ses choix devront eux aussi reposer sur des conditions et destinations déclarées dans le design ; la richesse des données ne garantit pas, à elle seule, la qualité pédagogique d’un parcours.
+
+## Présentation originale pilotée par le design
+
+`presentation.layout: "painted"` utilise les widgets originaux de `lib/ui` et les scènes de `lib/game`. Les adaptateurs de présentation lisent les instantanés du moteur ; ils ne génèrent pas de questions. `theme.paintedPalette` associe chaque jeton de couleur du style original à sa valeur ARGB ; les polices viennent également du thème. Les coordonnées et largeurs des bâtiments, titres, sous-titres, bulles, portraits et sons proviennent des JSON.
+
+`presentation.decorations` conserve les éléments visuels de la ville qui ne portent pas d’activité. `languageControl` décrit les choix du panneau de langue. `progressStatistics` et `collections` décrivent les panneaux de suivi ; leurs chemins de données, membres et conditions de comptage sont explicites. Pour Grammaticon, la collection historique lit les observations conservées dans la sauvegarde antérieure. Elle n’ajoute aucune activité au jeu.
+
+`introductionBlocks` sélectionne les blocs du cours utilisés par l’introduction originale. Les tableaux d’aide restent pré-écrits dans le design ; leur rendu utilise le tableau et la fenêtre déroulante d’origine.

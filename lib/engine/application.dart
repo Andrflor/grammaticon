@@ -8,6 +8,7 @@ import '../app/theme.dart';
 import '../ui/city/city_screen.dart';
 import '../ui/trials/trial_selection_screen.dart';
 import '../ui/battle/battle_screen.dart';
+import '../ui/help/help_sheet.dart' as help_view;
 import '../ui/settings/settings_screen.dart';
 import '../ui/tabula/tabula_screen.dart';
 import '../ui/widgets/roman_widgets.dart';
@@ -16,7 +17,8 @@ import 'session.dart';
 
 /// Shared navigation, interaction and progress screens driven by one design.
 class DesignApp extends StatefulWidget {
-  const DesignApp({super.key, required this.session});
+  const DesignApp({super.key, required this.session, this.audioEnabled = true});
+  final bool audioEnabled;
   final GameSession session;
   @override
   State<DesignApp> createState() => _DesignAppState();
@@ -31,8 +33,8 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
   Timer? advanceTimer;
   AudioPlayer? music;
   AudioPlayer? effects;
-  bool get painted => d.root['presentation']?['layout']=='painted';
-  G get skin => G(theme);
+  bool get painted => d.root['presentation']?['layout'] == 'painted';
+  G get skin => G(theme, onCue: (cue) => unawaited(playCue(cue)));
   Json get theme => object(d.root['theme']);
   Color color(String key) =>
       Color(int.parse(theme['colors'][key] as String, radix: 16));
@@ -61,12 +63,16 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
   }
 
   Future<void> configureAudio() async {
+    if (!widget.audioEnabled) return;
     final settings = object(s.state['settings']);
 
     final id = d.root['presentation']?['music'];
-    if (settings['music'] == true && id != null) {
+    if (settings['music'] == true && settings['sound'] != false && id != null) {
       music ??= AudioPlayer();
-      await music!.setVolume((settings['musicVolume'] as num? ?? settings['volume'] as num? ?? 0.5).toDouble());
+      await music!.setVolume(
+        (settings['musicVolume'] as num? ?? settings['volume'] as num? ?? 0.5)
+            .toDouble(),
+      );
       await music!.setReleaseMode(ReleaseMode.loop);
       await music!.play(
         AssetSource(
@@ -76,6 +82,19 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
     } else {
       if (music != null) await music!.stop();
     }
+  }
+
+  Future<void> playCue(String cue) async {
+    if (!widget.audioEnabled || s.state['settings']['sound'] != true) return;
+    final id = d.root['presentation']?['sounds']?[cue];
+    if (id == null) return;
+    effects ??= AudioPlayer();
+    await effects!.setVolume(
+      (s.state['settings']['volume'] as num? ?? .8).toDouble(),
+    );
+    await effects!.play(
+      AssetSource(d.asset(id as String).replaceFirst(RegExp(r'^assets/'), '')),
+    );
   }
 
   void changed() {
@@ -95,7 +114,7 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
               view[b['lastCorrect'] == true ? 'correctSound' : 'wrongSound'];
           if (asset != null) cues.add({'sound': asset, 'delayMs': 0});
         }
-        if (s.state['settings']['sound'] == true) {
+        if (widget.audioEnabled && s.state['settings']['sound'] == true) {
           for (final cue in cues) {
             unawaited(
               Future<void>.delayed(
@@ -131,7 +150,7 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
   }
 
   ThemeData get appTheme {
-    if(painted)return skin.theme();
+    if (painted) return skin.theme();
     final base = ThemeData(
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
@@ -189,113 +208,224 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
     theme: appTheme,
     home: Builder(
       builder: (context) => CallbackShortcuts(
-        bindings: painted ? {} : {
-          const SingleActivator(LogicalKeyboardKey.escape): () =>
-              s.encounter?['phase'] == 'question'
-              ? s.pause()
-              : s.encounter?['phase'] == 'paused'
-              ? s.resume()
-              : null,
-          const SingleActivator(LogicalKeyboardKey.enter): () =>
-              s.encounter?['phase'] == 'feedback' ? s.advance() : null,
-          for (var i = 0; i < 9; i++)
-            SingleActivator(
-              [
-                LogicalKeyboardKey.digit1,
-                LogicalKeyboardKey.digit2,
-                LogicalKeyboardKey.digit3,
-                LogicalKeyboardKey.digit4,
-                LogicalKeyboardKey.digit5,
-                LogicalKeyboardKey.digit6,
-                LogicalKeyboardKey.digit7,
-                LogicalKeyboardKey.digit8,
-                LogicalKeyboardKey.digit9,
-              ][i],
-            ): () => s.question != null && i < s.question!.choices.length
-                ? s.answer(s.question!.choices[i]['id'] as String)
-                : null,
-        },
+        bindings: painted
+            ? {}
+            : {
+                const SingleActivator(LogicalKeyboardKey.escape): () =>
+                    s.encounter?['phase'] == 'question'
+                    ? s.pause()
+                    : s.encounter?['phase'] == 'paused'
+                    ? s.resume()
+                    : null,
+                const SingleActivator(LogicalKeyboardKey.enter): () =>
+                    s.encounter?['phase'] == 'feedback' ? s.advance() : null,
+                for (var i = 0; i < 9; i++)
+                  SingleActivator(
+                    [
+                      LogicalKeyboardKey.digit1,
+                      LogicalKeyboardKey.digit2,
+                      LogicalKeyboardKey.digit3,
+                      LogicalKeyboardKey.digit4,
+                      LogicalKeyboardKey.digit5,
+                      LogicalKeyboardKey.digit6,
+                      LogicalKeyboardKey.digit7,
+                      LogicalKeyboardKey.digit8,
+                      LogicalKeyboardKey.digit9,
+                    ][i],
+                  ): () => s.question != null && i < s.question!.choices.length
+                      ? s.answer(s.question!.choices[i]['id'] as String)
+                      : null,
+              },
         child: Focus(
           autofocus: true,
-          child: painted ? restoredScreen(context) : Scaffold(
-            appBar: AppBar(
-              title: Text(s.text(d.root['name'])),
-              leading: screen != 'world' || location != null
-                  ? IconButton(
-                      tooltip: s.label('actions.back'),
-                      onPressed: back,
-                      icon: const Icon(Icons.arrow_back),
-                    )
-                  : null,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(44),
-                child: IconTheme(
-                  data: IconThemeData(color: color('onBackground')),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: Text(
-                          '${s.label('labels.currency')} ${s.balance}',
-                          style: TextStyle(color: color('onBackground')),
+          child: painted
+              ? restoredScreen(context)
+              : Scaffold(
+                  appBar: AppBar(
+                    title: Text(s.text(d.root['name'])),
+                    leading: screen != 'world' || location != null
+                        ? IconButton(
+                            tooltip: s.label('actions.back'),
+                            onPressed: back,
+                            icon: const Icon(Icons.arrow_back),
+                          )
+                        : null,
+                    bottom: PreferredSize(
+                      preferredSize: const Size.fromHeight(44),
+                      child: IconTheme(
+                        data: IconThemeData(color: color('onBackground')),
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Text(
+                                '${s.label('labels.currency')} ${s.balance}',
+                                style: TextStyle(color: color('onBackground')),
+                              ),
+                            ),
+                            IconButton(
+                              tooltip: s.label('actions.progress'),
+                              onPressed: () =>
+                                  setState(() => screen = 'progress'),
+                              icon: const Icon(Icons.insights),
+                            ),
+                            IconButton(
+                              tooltip: s.label('actions.errors'),
+                              onPressed: () =>
+                                  setState(() => screen = 'errors'),
+                              icon: const Icon(Icons.history_edu),
+                            ),
+                            IconButton(
+                              tooltip: s.label('actions.settings'),
+                              onPressed: () =>
+                                  setState(() => screen = 'settings'),
+                              icon: const Icon(Icons.settings),
+                            ),
+                            const SizedBox(width: 12),
+                          ],
                         ),
                       ),
-                      IconButton(
-                        tooltip: s.label('actions.progress'),
-                        onPressed: () => setState(() => screen = 'progress'),
-                        icon: const Icon(Icons.insights),
-                      ),
-                      IconButton(
-                        tooltip: s.label('actions.errors'),
-                        onPressed: () => setState(() => screen = 'errors'),
-                        icon: const Icon(Icons.history_edu),
-                      ),
-                      IconButton(
-                        tooltip: s.label('actions.settings'),
-                        onPressed: () => setState(() => screen = 'settings'),
-                        icon: const Icon(Icons.settings),
-                      ),
-                      const SizedBox(width: 12),
-                    ],
+                    ),
+                  ),
+                  body: SafeArea(
+                    child: switch (screen) {
+                      'encounter' => encounter(context),
+                      'progress' => progress(),
+                      'errors' => errors(context),
+                      'settings' => settings(context),
+                      _ => world(context),
+                    },
                   ),
                 ),
-              ),
-            ),
-            body: SafeArea(
-              child: switch (screen) {
-                'encounter' => encounter(context),
-                'progress' => progress(),
-                'errors' => errors(context),
-                'settings' => settings(context),
-                _ => world(context),
-              },
-            ),
-          ),
         ),
       ),
     ),
   );
-  Widget restoredScreen(BuildContext context){
- void settings()=>setState(()=>screen='settings');
- void openCard(ContentNode card){setState((){screen='world';location=card.parent;});}
- if(screen=='encounter'&&s.encounter!=null){
- return BattleScreen(session:s,skin:skin,node:d.cards[s.encounter!['card']]!,onLeave:back,onHelp:showHelp);
- }
- if(screen=='settings')return SettingsScreen(session:s,skin:skin,onBack:back,onAudioChanged:configureAudio);
- if(screen=='progress')return TabulaScreen(session:s,skin:skin,onBack:back,onSettings:settings,onCard:openCard,onErrors:()=>setState(()=>screen='errors'));
- if(screen=='errors')return Scaffold(body:ScreenBackground(asset:d.asset(d.root['presentation']['progressBackground']),child:Column(children:[TopBar(skin:skin,title:s.label('actions.errors'),backLabel:s.label('actions.back'),currencyAsset:d.asset(d.root['presentation']['currency']),gems:s.balance,onBack:back,onSettings:settings),Expanded(child:errors(context))])));
- if(location!=null){
- var place=location!;while(place.parent!=null){place=place.parent!;}
- return TrialSelectionScreen(session:s,skin:skin,place:place,onBack:(){setState(()=>location=null);},onSettings:settings,onStart:(card)async{await s.start(card);if(mounted)setState(()=>screen='encounter');},onInfo:(card)=>showCourse(context,card),requirementText:requirementText);
- }
- return CityScreen(session:s,skin:skin,onOpen:(node)=>setState(()=>location=node),onProgress:()=>setState(()=>screen='progress'),onSettings:settings,onResume:()=>setState(()=>screen='encounter'));
- }
- Future<void> showCourse(BuildContext context,ContentNode card)async{
- final lesson=await d.lesson(card);if(!context.mounted)return;
- await showModalBottomSheet<void>(context:context,isScrollControlled:true,builder:(ctx)=>Padding(padding:const EdgeInsets.all(20),child:SingleChildScrollView(child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[
- Text(s.text(card.data['name']),style:skin.display(24,color:skin.purpleTitle)),Text(s.text(card.data['subtitle']),style:skin.body(14,color:skin.inkSoft)),const SizedBox(height:10),...blocks(lesson),const SizedBox(height:12),RomanButton(skin:skin,label:s.label('actions.close'),style:RomanButtonStyle.gold,onPressed:()=>Navigator.pop(ctx)),
- ]))));
- }
+  Widget restoredScreen(BuildContext context) {
+    void settings() => setState(() => screen = 'settings');
+    void openCard(ContentNode card) {
+      setState(() {
+        screen = 'world';
+        location = card.parent;
+      });
+    }
+
+    if (screen == 'encounter' && s.encounter != null) {
+      return BattleScreen(
+        session: s,
+        skin: skin,
+        node: d.cards[s.encounter!['card']]!,
+        onLeave: back,
+        onHelp: showHelp,
+      );
+    }
+    if (screen == 'settings') {
+      return SettingsScreen(
+        session: s,
+        skin: skin,
+        onBack: back,
+        onAudioChanged: configureAudio,
+      );
+    }
+    if (screen == 'progress') {
+      return TabulaScreen(
+        session: s,
+        skin: skin,
+        onBack: back,
+        onSettings: settings,
+        onCard: openCard,
+        onErrors: () => setState(() => screen = 'errors'),
+      );
+    }
+    if (screen == 'errors') {
+      return Scaffold(
+        body: ScreenBackground(
+          asset: d.asset(d.root['presentation']['progressBackground']),
+          child: Column(
+            children: [
+              TopBar(
+                skin: skin,
+                title: s.label('actions.errors'),
+                backLabel: s.label('actions.back'),
+                currencyAsset: d.asset(d.root['presentation']['currency']),
+                gems: s.balance,
+                onBack: back,
+                onSettings: settings,
+              ),
+              Expanded(child: errors(context)),
+            ],
+          ),
+        ),
+      );
+    }
+    if (location != null) {
+      var place = location!;
+      while (place.parent != null) {
+        place = place.parent!;
+      }
+      return TrialSelectionScreen(
+        session: s,
+        skin: skin,
+        place: place,
+        onBack: () {
+          setState(() => location = null);
+        },
+        onSettings: settings,
+        onStart: (card) async {
+          await s.start(card);
+          if (mounted) setState(() => screen = 'encounter');
+        },
+        onInfo: (card) => showCourse(context, card),
+        requirementText: requirementText,
+      );
+    }
+    return CityScreen(
+      session: s,
+      skin: skin,
+      onOpen: (node) => setState(() => location = node),
+      onProgress: () => setState(() => screen = 'progress'),
+      onSettings: settings,
+      onResume: () => setState(() => screen = 'encounter'),
+    );
+  }
+
+  Future<void> showCourse(BuildContext context, ContentNode card) async {
+    final lesson = await d.lesson(card);
+    if (!context.mounted) return;
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) => Padding(
+        padding: const EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                s.text(card.data['name']),
+                style: skin.display(24, color: skin.purpleTitle),
+              ),
+              Text(
+                s.text(card.data['subtitle']),
+                style: skin.body(14, color: skin.inkSoft),
+              ),
+              const SizedBox(height: 10),
+              ...blocks(lesson),
+              const SizedBox(height: 12),
+              RomanButton(
+                skin: skin,
+                label: s.label('actions.close'),
+                style: RomanButtonStyle.gold,
+                onPressed: () => Navigator.pop(ctx),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   void back() {
     if (screen == 'encounter' && s.encounter?['phase'] == 'question') {
       unawaited(s.pause());
@@ -318,9 +448,17 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
       color: color('primary'),
     ),
   );
-  Widget panel(Widget child) => painted ? Padding(padding:const EdgeInsets.only(bottom:10),child:RomanPanel(skin:skin,child:child)) : Card(
-    child: Padding(padding: EdgeInsets.all(number('spacing')), child: child),
-  );
+  Widget panel(Widget child) => painted
+      ? Padding(
+          padding: const EdgeInsets.only(bottom: 10),
+          child: RomanPanel(skin: skin, child: child),
+        )
+      : Card(
+          child: Padding(
+            padding: EdgeInsets.all(number('spacing')),
+            child: child,
+          ),
+        );
   Widget constrained(Widget child) => Center(
     child: ConstrainedBox(
       constraints: BoxConstraints(maxWidth: number('maxWidth')),
@@ -707,6 +845,16 @@ class _DesignAppState extends State<DesignApp> with WidgetsBindingObserver {
   ) async {
     final content = await d.help(q.data['help'] as String);
     if (!context.mounted) return;
+    if (painted) {
+      await help_view.showHelpSheet(
+        context,
+        s,
+        skin,
+        objects(content),
+        highlight: s.text(q.data['helpHighlight']),
+      );
+      return;
+    }
     await showDialog<void>(
       context: context,
       builder: (context) => Dialog(

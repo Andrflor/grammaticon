@@ -30,14 +30,17 @@ flutter run -d linux --dart-define=GAME_DESIGN=assets/designs/grammaticon/game.j
 lib/main.dart                 choix du design à la compilation, ressources, sauvegarde
 lib/engine/design.dart        structure, références, validation, lecture du catalogue
 lib/engine/session.dart       transactions, accès, sélection, observations et règles déclarées
-lib/engine/application.dart   navigation, interactions, cours, suivi, thème et présentation
+lib/engine/application.dart   navigation et liaison entre design et présentation
+lib/ui/                      écrans et composants graphiques originaux raccordés aux JSON
+lib/game/                    scènes animées originales, ressources fournies par le design
+lib/app/theme.dart           palette et typographie chargées depuis le JSON
 lib/engine/assets.dart        lecture des assets JSON et JSON compressés
 assets/designs/<id>/           design complet et autonome
 ```
 
 Les trois interactions disponibles sont `choice`, `highlightChoice` et `gapChoice`. Les propositions conservent leur ordre écrit dans le design. Les enchaînements suivent des identifiants explicites. Les liens proposés après une erreur viennent exclusivement de `practiceSets`, avec les adresses et identifiants des questions cibles déclarés dans le design.
 
-Les anciens générateurs, modèles linguistiques, catalogues Dart, écrans spécifiques et outils de génération ont été supprimés. Les contenus sources bibliques restent conservés dans leurs dossiers d’assets ; ils ne sont pas chargés par ces deux designs.
+Les anciens générateurs, modèles linguistiques, catalogues Dart et outils de génération ont été supprimés. Le code graphique original est conservé et raccordé au design JSON. Les contenus sources bibliques restent conservés dans leurs dossiers d’assets ; ils ne sont pas chargés par ces deux designs.
 
 ## Vérifier
 
@@ -54,3 +57,9 @@ dart run tool/validate_design.dart assets/designs/compass/game.json --all-questi
 Les grandes banques de Grammaticon sont des **JSON compressés et découpés**, pas des générateurs. Les exemples du second design sont des JSON ordinaires directement éditables. Le format, les règles de migration et les limites sont décrits dans [le contrat de design](doc/topic_agnostic_design.md).
 
 Les sauvegardes sont séparées par identifiant de jeu. Grammaticon reprend l’ancien emplacement et migre les données avec les correspondances déclarées dans son manifeste ; une copie complète de la sauvegarde antérieure est conservée dans le nouveau document.
+
+## Fidélité graphique
+
+Grammaticon utilise les écrans originaux, leurs boutons, cartes, placements, dégradés et animations. `presentation.layout: "painted"` sélectionne cette présentation ; le thème (`theme.paintedPalette`, polices) et ses ressources sont fournis par le JSON.
+
+Douze images de référence issues du code original (`9bc4ad1`) vérifient au pixel près la ville, la sélection, les réglages, le suivi, l’introduction et le combat, à 1600 × 900 et 420 × 900. Les questions et les poses sont figées pour cette comparaison. Les images ne doivent pas être remplacées pour faire passer une régression graphique.

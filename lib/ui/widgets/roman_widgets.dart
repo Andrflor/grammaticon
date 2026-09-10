@@ -1,7 +1,10 @@
 import '../../engine/design.dart';
 import '../../engine/session.dart';
+
 import 'dart:math';
+
 import 'package:flutter/material.dart';
+
 import '../../app/theme.dart';
 
 /// Cinzel inscription written directly on the painting: uppercase, widely
@@ -11,7 +14,14 @@ import '../../app/theme.dart';
 /// OpenGL ES draws shader-painted text without anti-aliasing.
 class Inscription extends StatelessWidget {
   final G skin;
-  const Inscription(this.text, {required this.skin, super.key, required this.size, this.weight = 700, this.letterSpacing = 3.0});
+  const Inscription(
+    this.text, {
+    required this.skin,
+    super.key,
+    required this.size,
+    this.weight = 700,
+    this.letterSpacing = 3.0,
+  });
   final String text;
   final double size;
   final double weight;
@@ -20,23 +30,47 @@ class Inscription extends StatelessWidget {
   static const double lineHeight = 1.15;
 
   /// Plain style with the same metrics, for measuring.
-  static TextStyle style(G skin, double size, {double weight = 700, double letterSpacing = 3.0}) =>
-      TextStyle(fontFamily: skin.headingFont, fontSize: size, color: skin.inscriptionGold[1], fontVariations: [FontVariation('wght', weight)], letterSpacing: letterSpacing, height: lineHeight);
+  static TextStyle style(
+    G skin,
+    double size, {
+    double weight = 700,
+    double letterSpacing = 3.0,
+  }) => TextStyle(
+    fontFamily: skin.headingFont,
+    fontSize: size,
+    color: skin.inscriptionGold[1],
+    fontVariations: [FontVariation('wght', weight)],
+    letterSpacing: letterSpacing,
+    height: lineHeight,
+  );
 
   @override
   Widget build(BuildContext context) {
-    final base = style(skin, size, weight: weight, letterSpacing: letterSpacing);
+    final base = style(
+      skin,
+      size,
+      weight: weight,
+      letterSpacing: letterSpacing,
+    );
     return Stack(
       children: [
         Text(
           text,
-          style: base.copyWith(color: Colors.transparent, shadows: skin.headingShadow),
+          style: base.copyWith(
+            color: Colors.transparent,
+            shadows: skin.headingShadow,
+          ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
         ShaderMask(
           blendMode: BlendMode.srcIn,
-          shaderCallback: (bounds) => LinearGradient(colors: skin.inscriptionGold, stops: [0.2, 0.55, 0.92], begin: Alignment.topCenter, end: Alignment.bottomCenter).createShader(bounds),
+          shaderCallback: (bounds) => LinearGradient(
+            colors: skin.inscriptionGold,
+            stops: [0.2, 0.55, 0.92],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ).createShader(bounds),
           child: Text(
             text,
             style: base.copyWith(color: Colors.white),
@@ -79,15 +113,16 @@ const double kHudGap = 8;
 /// Deep purple of the primary buttons and the pill of light purple around
 /// them, sampled on the mock-up cards.
 
-
-
 /// Fill of the top-bar pills and the gold of their text.
-
-
 
 /// Painted marble background of a secondary screen, filling the whole body.
 class ScreenBackground extends StatelessWidget {
-  const ScreenBackground({super.key, required this.asset, required this.child, this.alignment = Alignment.center});
+  const ScreenBackground({
+    super.key,
+    required this.asset,
+    required this.child,
+    this.alignment = Alignment.center,
+  });
   final String asset;
   final Widget child;
   final Alignment alignment;
@@ -96,7 +131,12 @@ class ScreenBackground extends StatelessWidget {
   Widget build(BuildContext context) => Stack(
     fit: StackFit.expand,
     children: [
-      Image.asset(asset, fit: BoxFit.cover, alignment: alignment, filterQuality: FilterQuality.medium),
+      Image.asset(
+        asset,
+        fit: BoxFit.cover,
+        alignment: alignment,
+        filterQuality: FilterQuality.medium,
+      ),
       child,
     ],
   );
@@ -105,7 +145,8 @@ class ScreenBackground extends StatelessWidget {
 /// Cream panel with a gold frame.
 class RomanPanel extends StatelessWidget {
   final G skin;
-  const RomanPanel({required this.skin, 
+  const RomanPanel({
+    required this.skin,
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(16),
@@ -133,14 +174,32 @@ class RomanPanel extends StatelessWidget {
       color: color ?? skin.marble,
       borderRadius: BorderRadius.circular(radius),
       border: Border.all(color: borderColor ?? skin.gold, width: borderWidth),
-      boxShadow: shadow ? [BoxShadow(color: skin.paint('40200A40'), blurRadius: 14, offset: Offset(0, 6))] : null,
+      boxShadow: shadow
+          ? [
+              BoxShadow(
+                color: skin.paint('40200A40'),
+                blurRadius: 14,
+                offset: Offset(0, 6),
+              ),
+            ]
+          : null,
     ),
     // Transparent Material so list tiles and ink effects inside panels paint correctly.
     child: Material(type: MaterialType.transparency, child: child),
   );
 }
 
-enum RomanButtonStyle { primary, gold, ghost, success, danger, neutral, outline, locked, chosen }
+enum RomanButtonStyle {
+  primary,
+  gold,
+  ghost,
+  success,
+  danger,
+  neutral,
+  outline,
+  locked,
+  chosen,
+}
 
 /// Large, generous button (min height 56) with an optional key-number badge.
 ///
@@ -148,7 +207,8 @@ enum RomanButtonStyle { primary, gold, ghost, success, danger, neutral, outline,
 /// empty [label] draws the icon alone.
 class RomanButton extends StatelessWidget {
   final G skin;
-  const RomanButton({required this.skin, 
+  const RomanButton({
+    required this.skin,
     super.key,
     required this.label,
     this.onPressed,
@@ -161,6 +221,7 @@ class RomanButton extends StatelessWidget {
     this.circular = false,
     this.trailing,
     this.sound,
+    this.cue = 'tap',
   });
   final String label;
   final VoidCallback? onPressed;
@@ -168,6 +229,7 @@ class RomanButton extends StatelessWidget {
   /// Cue played on tap before [onPressed]; null for buttons whose action
   /// already has its own sound (answers, "Incipe!").
   final VoidCallback? sound;
+  final String? cue;
   final RomanButtonStyle style;
   final IconData? icon;
 
@@ -219,14 +281,20 @@ class RomanButton extends StatelessWidget {
     final pill = style == RomanButtonStyle.ghost;
     final locked = onPressed == null && style == RomanButtonStyle.locked;
     final onTap = onPressed == null
-        ? (locked ? () => null : null)
+        ? (locked ? () => skin.onCue?.call('rejected') : null)
         : () {
-            if (sound != null) sound!();
+            if (sound != null) {
+              sound!();
+            } else if (cue != null) {
+              skin.onCue?.call(cue!);
+            }
             onPressed!();
           };
     final iconSize = pill ? 24.0 : (dense ? 20.0 : 22.0);
     final hasLabel = label.isNotEmpty;
-    final labelStyle = circular ? skin.body(dense ? 20 : 22, color: _fg, weight: 900, height: 1) : skin.body(pill ? 21 : (dense ? 15 : 18), color: _fg, weight: 700);
+    final labelStyle = circular
+        ? skin.body(dense ? 20 : 22, color: _fg, weight: 900, height: 1)
+        : skin.body(pill ? 21 : (dense ? 15 : 18), color: _fg, weight: 700);
     final child = Row(
       mainAxisSize: expand ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -241,12 +309,18 @@ class RomanButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               border: Border.all(color: skin.goldLight, width: 2),
             ),
-            child: Text(badge!, style: skin.body(16, color: skin.purpleDark, weight: 800)),
+            child: Text(
+              badge!,
+              style: skin.body(16, color: skin.purpleDark, weight: 800),
+            ),
           ),
           SizedBox(width: 12),
         ],
         if (leading != null) ...[leading!, if (hasLabel) SizedBox(width: 8)],
-        if (icon != null) ...[Icon(icon, color: _fg, size: iconSize), if (hasLabel) SizedBox(width: 8)],
+        if (icon != null) ...[
+          Icon(icon, color: _fg, size: iconSize),
+          if (hasLabel) SizedBox(width: 8),
+        ],
         if (hasLabel)
           Flexible(
             child: Text(label, textAlign: TextAlign.center, style: labelStyle),
@@ -254,7 +328,9 @@ class RomanButton extends StatelessWidget {
         if (trailing != null) ...[SizedBox(width: 8), trailing!],
       ],
     );
-    final radius = BorderRadius.circular(circular || pill ? 999 : kButtonRadius);
+    final radius = BorderRadius.circular(
+      circular || pill ? 999 : kButtonRadius,
+    );
     final side = pill ? kPillHeight : (dense ? 40.0 : 56.0);
     // Bevel: a light sheen at the top and a darker foot, so the buttons read
     // as raised like the mock-up's rather than as flat tiles. The overlay is
@@ -262,13 +338,28 @@ class RomanButton extends StatelessWidget {
     // plain white.
     final bevel = style == RomanButtonStyle.outline
         ? null
-        : LinearGradient(colors: [skin.paint('30FFFFFF'), skin.paint('00FFFFFF'), skin.paint('24000000')], stops: [0, 0.45, 1], begin: Alignment.topCenter, end: Alignment.bottomCenter);
+        : LinearGradient(
+            colors: [
+              skin.paint('30FFFFFF'),
+              skin.paint('00FFFFFF'),
+              skin.paint('24000000'),
+            ],
+            stops: [0, 0.45, 1],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          );
     return Opacity(
       opacity: disabled ? 0.55 : 1,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: radius,
-          boxShadow: [BoxShadow(color: skin.paint('4D200A40'), blurRadius: 6, offset: Offset(0, 3))],
+          boxShadow: [
+            BoxShadow(
+              color: skin.paint('4D200A40'),
+              blurRadius: 6,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Material(
           color: _bg,
@@ -279,8 +370,18 @@ class RomanButton extends StatelessWidget {
             onTap: onTap,
             borderRadius: radius,
             child: Container(
-              constraints: circular ? BoxConstraints.tightFor(width: side, height: side) : BoxConstraints(minHeight: side, minWidth: hasLabel ? (dense ? 44 : 120) : side),
-              padding: circular ? EdgeInsets.zero : EdgeInsets.symmetric(horizontal: pill ? 22 : (dense ? 16 : 18), vertical: dense ? 6 : 12),
+              constraints: circular
+                  ? BoxConstraints.tightFor(width: side, height: side)
+                  : BoxConstraints(
+                      minHeight: side,
+                      minWidth: hasLabel ? (dense ? 44 : 120) : side,
+                    ),
+              padding: circular
+                  ? EdgeInsets.zero
+                  : EdgeInsets.symmetric(
+                      horizontal: pill ? 22 : (dense ? 16 : 18),
+                      vertical: dense ? 6 : 12,
+                    ),
               decoration: BoxDecoration(
                 borderRadius: radius,
                 gradient: bevel,
@@ -295,7 +396,6 @@ class RomanButton extends StatelessWidget {
   }
 }
 
-
 enum _HudSlot { left, center, right }
 
 /// Three-slot HUD row: the side slots take their natural width and sit flush
@@ -305,7 +405,14 @@ enum _HudSlot { left, center, right }
 /// of the row, so the pills (and the gems) sit at the same height as in
 /// [TopBar]; taller centre content simply extends below the band.
 class HudRow extends StatelessWidget {
-  const HudRow({super.key, this.left, this.center, this.right, this.height = HudRow.defaultHeight, this.maxCenterWidth = 640});
+  const HudRow({
+    super.key,
+    this.left,
+    this.center,
+    this.right,
+    this.height = HudRow.defaultHeight,
+    this.maxCenterWidth = 640,
+  });
   final Widget? left;
   final Widget? center;
   final Widget? right;
@@ -349,19 +456,29 @@ class _HudLayout extends MultiChildLayoutDelegate {
     if (hasChild(_HudSlot.right)) {
       final right = layoutChild(_HudSlot.right, BoxConstraints.loose(size));
       rightWidth = right.width;
-      positionChild(_HudSlot.right, Offset(size.width - right.width, _top(right.height)));
+      positionChild(
+        _HudSlot.right,
+        Offset(size.width - right.width, _top(right.height)),
+      );
     }
     if (!hasChild(_HudSlot.center)) {
       return;
     }
     final side = max(leftWidth, rightWidth) + _gap;
     final width = (size.width - 2 * side).clamp(0.0, maxCenterWidth);
-    final center = layoutChild(_HudSlot.center, BoxConstraints(minWidth: width, maxWidth: width, maxHeight: size.height));
-    positionChild(_HudSlot.center, Offset((size.width - center.width) / 2, _top(center.height)));
+    final center = layoutChild(
+      _HudSlot.center,
+      BoxConstraints(minWidth: width, maxWidth: width, maxHeight: size.height),
+    );
+    positionChild(
+      _HudSlot.center,
+      Offset((size.width - center.width) / 2, _top(center.height)),
+    );
   }
 
   @override
-  bool shouldRelayout(covariant _HudLayout old) => old.maxCenterWidth != maxCenterWidth;
+  bool shouldRelayout(covariant _HudLayout old) =>
+      old.maxCenterWidth != maxCenterWidth;
 }
 
 /// Top bar with back button, title, an optional centre widget and gem counter.
@@ -372,9 +489,21 @@ class _HudLayout extends MultiChildLayoutDelegate {
 /// mock-up; otherwise it follows the title. On narrow screens the title moves
 /// under the pills instead of being cut to a few letters.
 class TopBar extends StatelessWidget {
- final String backLabel, currencyAsset;
+  final String backLabel, currencyAsset;
   final G skin;
-  const TopBar({required this.skin, super.key, required this.title, required this.backLabel, required this.currencyAsset, this.gems, this.trailing = const [], this.onBack, this.onSettings, this.center, this.titleColor});
+  const TopBar({
+    required this.skin,
+    super.key,
+    required this.title,
+    required this.backLabel,
+    required this.currencyAsset,
+    this.gems,
+    this.trailing = const [],
+    this.onBack,
+    this.onSettings,
+    this.center,
+    this.titleColor,
+  });
   final String title;
   final int? gems;
   final List<Widget> trailing;
@@ -403,7 +532,12 @@ class TopBar extends StatelessWidget {
     height: kPillHeight,
     child: Align(
       alignment: Alignment.centerLeft,
-      child: Inscription(title.toUpperCase(), skin: skin,  size: _titleSize, letterSpacing: _titleSpacing),
+      child: Inscription(
+        title.toUpperCase(),
+        skin: skin,
+        size: _titleSize,
+        letterSpacing: _titleSpacing,
+      ),
     ),
   );
 
@@ -413,26 +547,68 @@ class TopBar extends StatelessWidget {
   );
 
   /// Width of the Redī pill: padding, rim, icon, gap and label.
-  double get _backWidth => 2 * 22 + 2 * 3 + 24 + 8 + measureText(backLabel, skin.body(21, weight: 700));
+  double get _backWidth =>
+      2 * 22 +
+      2 * 3 +
+      24 +
+      8 +
+      measureText(backLabel, skin.body(21, weight: 700));
 
   /// Width of the gem pill for [count] gems.
-  double _gemsWidth(int count) => 2 * 16 + 2 * 3 + 34 + 8 + measureText('$count', Inscription.style(skin, 34 * 0.72, letterSpacing: 1.0));
+  double _gemsWidth(int count) =>
+      2 * 16 +
+      2 * 3 +
+      34 +
+      8 +
+      measureText(
+        '$count',
+        Inscription.style(skin, 34 * 0.72, letterSpacing: 1.0),
+      );
 
   /// Width of the cog and its gap before the gems.
   double get _settingsWidth => onSettings == null ? 0 : kPillHeight + kHudGap;
 
   @override
   Widget build(BuildContext context) {
-    final back = RomanButton(skin: skin, label: backLabel, icon: Icons.arrow_back, style: RomanButtonStyle.ghost, dense: true, onPressed: onBack ?? () => Navigator.of(context).maybePop());
+    final back = RomanButton(
+      skin: skin,
+      label: backLabel,
+      icon: Icons.arrow_back,
+      style: RomanButtonStyle.ghost,
+      dense: true,
+      onPressed: onBack ?? () => Navigator.of(context).maybePop(),
+    );
     final tail = [
       for (final w in trailing) ...[_onPill(w), SizedBox(width: 12)],
-      if (onSettings != null) ...[RomanButton(skin: skin, label: '', icon: Icons.settings, style: RomanButtonStyle.ghost, dense: true, circular: true, onPressed: onSettings!), SizedBox(width: kHudGap)],
-      if (gems != null) CurrencyCounter(skin: skin, asset: currencyAsset, count: gems!, size: 34),
+      if (onSettings != null) ...[
+        RomanButton(
+          skin: skin,
+          label: '',
+          icon: Icons.settings,
+          style: RomanButtonStyle.ghost,
+          dense: true,
+          circular: true,
+          onPressed: onSettings!,
+        ),
+        SizedBox(width: kHudGap),
+      ],
+      if (gems != null)
+        CurrencyCounter(
+          skin: skin,
+          asset: currencyAsset,
+          count: gems!,
+          size: 34,
+        ),
     ];
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(kHudSidePadding, kHudTopPadding, kHudSidePadding, 0),
+        padding: EdgeInsets.fromLTRB(
+          kHudSidePadding,
+          kHudTopPadding,
+          kHudSidePadding,
+          0,
+        ),
         child: LayoutBuilder(
           builder: (context, c) {
             final w = c.maxWidth;
@@ -442,7 +618,15 @@ class TopBar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(children: [back, Spacer(), ...tail]),
-                  Padding(padding: EdgeInsets.only(top: 10), child: Inscription(title.toUpperCase(), skin: skin,  size: 17, letterSpacing: 1.2)),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Inscription(
+                      title.toUpperCase(),
+                      skin: skin,
+                      size: 17,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
                 ],
               );
             }
@@ -458,8 +642,21 @@ class TopBar extends StatelessWidget {
             if (center == null) return row;
             // Centre the bubble on the screen, pushed right only if the title
             // would run under it, and kept clear of the gem pill.
-            final titleEnd = _backWidth + 30 + measureText(title.toUpperCase(), Inscription.style(skin, _titleSize, letterSpacing: _titleSpacing));
-            final regionEnd = (gems == null ? w : w - _gemsWidth(gems!)) - _settingsWidth - 12;
+            final titleEnd =
+                _backWidth +
+                30 +
+                measureText(
+                  title.toUpperCase(),
+                  Inscription.style(
+                    skin,
+                    _titleSize,
+                    letterSpacing: _titleSpacing,
+                  ),
+                );
+            final regionEnd =
+                (gems == null ? w : w - _gemsWidth(gems!)) -
+                _settingsWidth -
+                12;
             final minLeft = titleEnd + 16;
             final maxLeft = regionEnd - centerWidth - 16;
             var left = (w - centerWidth) / 2;
@@ -472,7 +669,12 @@ class TopBar extends StatelessWidget {
                 clipBehavior: Clip.none,
                 children: [
                   row,
-                  Positioned(left: left, top: centerDrop, width: centerWidth, child: center!),
+                  Positioned(
+                    left: left,
+                    top: centerDrop,
+                    width: centerWidth,
+                    child: center!,
+                  ),
                 ],
               ),
             );
@@ -487,7 +689,13 @@ class TopBar extends StatelessWidget {
 /// the figure standing in front of its left end, head above the rim.
 class SpeechBubble extends StatelessWidget {
   final G skin;
-  const SpeechBubble({required this.skin, super.key, required this.text, required this.heroAsset, this.maxWidth = 520});
+  const SpeechBubble({
+    required this.skin,
+    super.key,
+    required this.text,
+    required this.heroAsset,
+    this.maxWidth = 520,
+  });
   final String text;
   final String heroAsset;
   final double maxWidth;
@@ -498,7 +706,10 @@ class SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ConstrainedBox(
-    constraints: BoxConstraints(maxWidth: maxWidth, minWidth: maxWidth < 376 ? maxWidth : 376),
+    constraints: BoxConstraints(
+      maxWidth: maxWidth,
+      minWidth: maxWidth < 376 ? maxWidth : 376,
+    ),
     child: Stack(
       clipBehavior: Clip.none,
       // Pass the width constraints on, so the bubble fills the slot the top
@@ -509,10 +720,25 @@ class SpeechBubble extends StatelessWidget {
           constraints: BoxConstraints(minHeight: 72),
           padding: EdgeInsets.fromLTRB(112, 20, 40, 20),
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [skin.paint('FF3F2266'), skin.purpleDeep, skin.paint('FF33194F')], stops: [0, 0.4, 1], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            gradient: LinearGradient(
+              colors: [
+                skin.paint('FF3F2266'),
+                skin.purpleDeep,
+                skin.paint('FF33194F'),
+              ],
+              stops: [0, 0.4, 1],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: skin.gold, width: 3),
-            boxShadow: [BoxShadow(color: skin.paint('59200A40'), blurRadius: 12, offset: Offset(0, 5))],
+            boxShadow: [
+              BoxShadow(
+                color: skin.paint('59200A40'),
+                blurRadius: 12,
+                offset: Offset(0, 5),
+              ),
+            ],
           ),
           child: Text(
             text,
@@ -525,18 +751,28 @@ class SpeechBubble extends StatelessWidget {
           left: -16,
           top: -heroOverflow,
           bottom: -10,
-          child: Image.asset(heroAsset, fit: BoxFit.contain, alignment: Alignment.bottomLeft),
+          child: Image.asset(
+            heroAsset,
+            fit: BoxFit.contain,
+            alignment: Alignment.bottomLeft,
+          ),
         ),
       ],
     ),
   );
 }
 
-
 /// Panel header: gold medallion with an icon, title and optional subtitle.
 class PanelHeader extends StatelessWidget {
   final G skin;
-  const PanelHeader({required this.skin, super.key, required this.icon, required this.title, this.subtitle, this.trailing});
+  const PanelHeader({
+    required this.skin,
+    super.key,
+    required this.icon,
+    required this.title,
+    this.subtitle,
+    this.trailing,
+  });
   final IconData icon;
   final String title;
   final String? subtitle;
@@ -554,7 +790,13 @@ class PanelHeader extends StatelessWidget {
             shape: BoxShape.circle,
             color: skin.paint('FFE9C25A'),
             border: Border.all(color: skin.paint('FFF7DE8E'), width: 3),
-            boxShadow: [BoxShadow(color: skin.paint('33000000'), blurRadius: 4, offset: Offset(0, 2))],
+            boxShadow: [
+              BoxShadow(
+                color: skin.paint('33000000'),
+                blurRadius: 4,
+                offset: Offset(0, 2),
+              ),
+            ],
           ),
           child: Icon(icon, color: skin.purpleDark, size: 26),
         ),
@@ -563,7 +805,14 @@ class PanelHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: skin.display(22, color: skin.purpleTitle, letterSpacing: 1.0)),
+              Text(
+                title,
+                style: skin.display(
+                  22,
+                  color: skin.purpleTitle,
+                  letterSpacing: 1.0,
+                ),
+              ),
               if (subtitle case final st?)
                 Padding(
                   padding: EdgeInsets.only(top: 2),
@@ -592,13 +841,27 @@ class ContentColumn extends StatelessWidget {
   );
 }
 
-
 /// Stadium pill of the gem counter: dark purple lit from above, 3 px gold rim.
 BoxDecoration _pillDecoration(G skin) => BoxDecoration(
-  gradient: LinearGradient(colors: [skin.paint('FF3B2062'), skin.paint('FF2B1444'), skin.paint('FF26113D')], stops: [0, 0.35, 1], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+  gradient: LinearGradient(
+    colors: [
+      skin.paint('FF3B2062'),
+      skin.paint('FF2B1444'),
+      skin.paint('FF26113D'),
+    ],
+    stops: [0, 0.35, 1],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  ),
   borderRadius: BorderRadius.circular(999),
   border: Border.all(color: skin.gold, width: 3),
-  boxShadow: [BoxShadow(color: skin.paint('59200A40'), blurRadius: 8, offset: Offset(0, 3))],
+  boxShadow: [
+    BoxShadow(
+      color: skin.paint('59200A40'),
+      blurRadius: 8,
+      offset: Offset(0, 3),
+    ),
+  ],
 );
 
 /// Counter digits: gilt Cinzel, scaled to the gem (34 px gem, 25 px digits).
@@ -606,16 +869,28 @@ double _counterSize(double size) => size * 0.72;
 
 /// Top-bar pills (size >= 30) come out exactly [kPillHeight] tall, like the
 /// ghost buttons beside them: 34 px gem + 2 × 3 px padding + 2 × 3 px rim.
-EdgeInsets _pillPadding(double size) => EdgeInsets.symmetric(horizontal: size >= 30 ? 16 : 12, vertical: size >= 30 ? (kPillHeight - size - 6) / 2 : 4);
+EdgeInsets _pillPadding(double size) => EdgeInsets.symmetric(
+  horizontal: size >= 30 ? 16 : 12,
+  vertical: size >= 30 ? (kPillHeight - size - 6) / 2 : 4,
+);
 
 /// Animated counter that tweens from the previous value to the new one.
-class GemTarget {static final GlobalKey key=GlobalKey(debugLabel:"gemCounter");}
+class GemTarget {
+  static final GlobalKey key = GlobalKey(debugLabel: "gemCounter");
+}
 
 class CurrencyCounter extends StatefulWidget {
-  const CurrencyCounter({super.key, required this.skin, required this.asset, required this.count, this.size = 28, this.isFlightTarget = false});
+  const CurrencyCounter({
+    super.key,
+    required this.skin,
+    required this.asset,
+    required this.count,
+    this.size = 28,
+    this.isFlightTarget = false,
+  });
   final G skin;
- final String asset;
- final int count;
+  final String asset;
+  final int count;
   final double size;
 
   /// Only one counter on screen may be the target of flying gems.
@@ -648,20 +923,32 @@ class _CurrencyCounterState extends State<CurrencyCounter> {
           tween: Tween(begin: _from.toDouble(), end: widget.count.toDouble()),
           duration: const Duration(milliseconds: 600),
           curve: Curves.easeOutCubic,
-          builder: (context, value, _) => Inscription('${value.round()}', skin: widget.skin, size: _counterSize(widget.size), letterSpacing: 1.0),
+          builder: (context, value, _) => Inscription(
+            '${value.round()}',
+            skin: widget.skin,
+            size: _counterSize(widget.size),
+            letterSpacing: 1.0,
+          ),
         ),
       ],
     ),
   );
 }
 
-
 /// Section heading as on the mock-up: a shallow gold chevron, the title as an
 /// uppercase gilt inscription and a short gold rule. With [onTap] the heading
 /// folds and unfolds its section.
 class SectionTitle extends StatelessWidget {
- final G skin;
-  const SectionTitle(this.text, {required this.skin, super.key, this.size = 24, this.open = true, this.onTap, this.topPadding = 16});
+  final G skin;
+  const SectionTitle(
+    this.text, {
+    required this.skin,
+    super.key,
+    this.size = 24,
+    this.open = true,
+    this.onTap,
+    this.topPadding = 16,
+  });
   final String text;
   final double size;
   final bool open;
@@ -673,11 +960,19 @@ class SectionTitle extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 2, top: 3),
-          child: _Chevron(skin:skin,open: open),
+          child: _Chevron(skin: skin, open: open),
         ),
         const SizedBox(width: 18),
         // The title has priority over the rule, which only takes what is left.
-        Flexible(flex: 3, child: Inscription(text.toUpperCase(),skin:skin, size: size, letterSpacing: 3.5)),
+        Flexible(
+          flex: 3,
+          child: Inscription(
+            text.toUpperCase(),
+            skin: skin,
+            size: size,
+            letterSpacing: 3.5,
+          ),
+        ),
         const SizedBox(width: 24),
         Flexible(
           child: Container(
@@ -686,7 +981,13 @@ class SectionTitle extends StatelessWidget {
             margin: const EdgeInsets.only(top: 6),
             decoration: const BoxDecoration(
               color: Color(0xFFF7DE8C),
-              boxShadow: [BoxShadow(color: Color(0xCC200A40), blurRadius: 3, offset: Offset(0, 1))],
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xCC200A40),
+                  blurRadius: 3,
+                  offset: Offset(0, 1),
+                ),
+              ],
             ),
           ),
         ),
@@ -698,11 +999,13 @@ class SectionTitle extends StatelessWidget {
           ? row
           : InkWell(
               onTap: () {
-                
                 onTap!();
               },
               borderRadius: BorderRadius.circular(8),
-              child: Padding(padding: const EdgeInsets.symmetric(vertical: 2), child: row),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 2),
+                child: row,
+              ),
             ),
     );
   }
@@ -711,18 +1014,18 @@ class SectionTitle extends StatelessWidget {
 /// Wide, shallow chevron (21 × 10, 3 px round stroke) with a soft shadow,
 /// pointing down when the section is open and right when folded.
 class _Chevron extends StatelessWidget {
- final G skin;
+  final G skin;
   const _Chevron({required this.skin, required this.open});
   final bool open;
   @override
   Widget build(BuildContext context) => CustomPaint(
     size: const Size(22, 22),
-    painter: _ChevronPainter(skin:skin,open: open),
+    painter: _ChevronPainter(skin: skin, open: open),
   );
 }
 
 class _ChevronPainter extends CustomPainter {
- final G skin;
+  final G skin;
   const _ChevronPainter({required this.skin, required this.open});
   final bool open;
 
@@ -762,21 +1065,127 @@ class _ChevronPainter extends CustomPainter {
   bool shouldRepaint(covariant _ChevronPainter old) => old.open != open;
 }
 
-
 class LevelBadge extends StatelessWidget {
- const LevelBadge({super.key,required this.session,required this.skin,required this.level,this.dense=false});
- final GameSession session;
- final G skin;
- final int level;
- final bool dense;
- @override
- Widget build(BuildContext context){
- final item=objects(session.mastery['levels'])[level];
- return Container(padding:EdgeInsets.symmetric(horizontal:dense?11:13,vertical:dense?3:4),decoration:BoxDecoration(color:Color(int.parse(item['color'],radix:16)),borderRadius:BorderRadius.circular(20),boxShadow:const [BoxShadow(color:Color(0x22000000),blurRadius:3,offset:Offset(0,1))]),child:Text(session.text(item['name']),style:skin.body(dense?12:13,color:Colors.white,weight:800),maxLines:1,overflow:TextOverflow.ellipsis));
- }
+  const LevelBadge({
+    super.key,
+    required this.session,
+    required this.skin,
+    required this.level,
+    this.dense = false,
+  });
+  final GameSession session;
+  final G skin;
+  final int level;
+  final bool dense;
+  @override
+  Widget build(BuildContext context) {
+    final item = objects(session.mastery['levels'])[level];
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: dense ? 11 : 13,
+        vertical: dense ? 3 : 4,
+      ),
+      decoration: BoxDecoration(
+        color: Color(int.parse(item['color'], radix: 16)),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x22000000),
+            blurRadius: 3,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      child: Text(
+        session.text(item['displayName'] ?? item['name']),
+        style: skin.body(dense ? 12 : 13, color: Colors.white, weight: 800),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+  }
 }
 
-void showSnack(BuildContext context,String text){ScaffoldMessenger.of(context)..hideCurrentSnackBar()..showSnackBar(SnackBar(content:Text(text),duration:const Duration(seconds:2)));}
-Future<bool> confirmAction(BuildContext context,{required G skin,required String title,required String body,required String yes,required String no})async{
- return await showDialog<bool>(context:context,builder:(ctx)=>AlertDialog(title:Text(title,style:skin.display(20,color:skin.purpleTitle)),content:Text(body,style:skin.body(16)),actions:[RomanButton(skin:skin,label:no,style:RomanButtonStyle.neutral,dense:true,onPressed:()=>Navigator.pop(ctx,false)),RomanButton(skin:skin,label:yes,style:RomanButtonStyle.gold,dense:true,onPressed:()=>Navigator.pop(ctx,true))]))??false;
+void showSnack(BuildContext context, String text) {
+  ScaffoldMessenger.of(context)
+    ..hideCurrentSnackBar()
+    ..showSnackBar(
+      SnackBar(content: Text(text), duration: const Duration(seconds: 2)),
+    );
+}
+
+Future<bool> confirmAction(
+  BuildContext context, {
+  required G skin,
+  required String title,
+  required String body,
+  required String yes,
+  required String no,
+}) async {
+  return await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text(title, style: skin.display(20, color: skin.purpleTitle)),
+          content: Text(body, style: skin.body(16)),
+          actions: [
+            RomanButton(
+              skin: skin,
+              label: no,
+              style: RomanButtonStyle.neutral,
+              dense: true,
+              onPressed: () => Navigator.pop(ctx, false),
+            ),
+            RomanButton(
+              skin: skin,
+              label: yes,
+              style: RomanButtonStyle.gold,
+              dense: true,
+              onPressed: () => Navigator.pop(ctx, true),
+            ),
+          ],
+        ),
+      ) ??
+      false;
+}
+
+class StatChip extends StatelessWidget {
+  final G skin;
+  const StatChip(
+    this.label, {
+    required this.skin,
+    super.key,
+    this.icon,
+    required this.color,
+    required this.textColor,
+  });
+  final String label;
+  final IconData? icon;
+  final Color color;
+  final Color textColor;
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+    decoration: BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(20),
+    ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (icon != null) ...[
+          Icon(icon, size: 14, color: textColor),
+          const SizedBox(width: 4),
+        ],
+        // Never overflows its parent: long labels are clipped with an ellipsis.
+        Flexible(
+          child: Text(
+            label,
+            style: skin.body(13, color: textColor, weight: 700),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
+    ),
+  );
 }

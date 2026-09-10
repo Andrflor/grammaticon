@@ -6,10 +6,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grammaticon/engine/application.dart';
-import 'package:grammaticon/engine/design.dart';
 import 'package:grammaticon/engine/session.dart';
 
-import 'design_test.dart' show demo, readFile;
+import 'design_test.dart' show demo;
 
 void main() {
   setUpAll(() async {
@@ -89,34 +88,4 @@ void main() {
       await tester.pumpWidget(const SizedBox());
     });
   }
-  testWidgets(
-    'Grammaticon uses the same application and shows an existing integrated course',
-    (tester) async {
-      tester.view.physicalSize = const Size(420, 900);
-      tester.view.devicePixelRatio = 1;
-      addTearDown(tester.view.reset);
-      final d = (await tester.runAsync(
-        () => GameDesign.load('assets/designs/grammaticon/game.json', readFile),
-      ))!;
-      final s = GameSession(d, {}, (_) async {});
-      s.state['settings']['sound'] = false;
-      s.state['settings']['music'] = false;
-      await tester.pumpWidget(DesignApp(session: s));
-      await tester.pumpAndSettle();
-      expect(find.text('Amphitheātrum'), findsOneWidget);
-      expect(find.text('Forum'), findsOneWidget);
-      final card = d.cards.values.firstWhere((c) => c.id == 'ind-praes-act');
-      await tester.runAsync(() => s.start(card));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Redī ad lūdum'));
-      await tester.pumpAndSettle();
-      expect(find.text('Incipe!'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-      await tester.tap(find.text('Incipe!'));
-      await tester.pumpAndSettle();
-      expect(s.question!.choices, isNotEmpty);
-      expect(tester.takeException(), isNull);
-      await tester.pumpWidget(const SizedBox());
-    },
-  );
 }

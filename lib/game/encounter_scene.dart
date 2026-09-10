@@ -26,7 +26,8 @@ abstract class EncounterScene extends FlameGame {
 
 /// A sprite that breathes, can swap its pose temporarily, flash and recoil.
 class Fighter extends SpriteComponent {
-  Fighter({required this.idle, required this.facingRight, super.priority}) : super(sprite: idle, anchor: Anchor.bottomCenter);
+  Fighter({required this.idle, required this.facingRight, super.priority})
+    : super(sprite: idle, anchor: Anchor.bottomCenter);
 
   final Sprite idle;
   final bool facingRight;
@@ -74,20 +75,42 @@ class Fighter extends SpriteComponent {
   }
 
   void flash({Color color = Colors.white}) {
-    paint.colorFilter = ColorFilter.mode(color.withValues(alpha: 0.75), BlendMode.srcATop);
+    paint.colorFilter = ColorFilter.mode(
+      color.withValues(alpha: 0.75),
+      BlendMode.srcATop,
+    );
     Future<void>.delayed(const Duration(milliseconds: 110), () {
       if (isMounted) paint.colorFilter = null;
     });
   }
 
   void recoil(Vector2 d) {
-    add(MoveByEffect(d, EffectController(duration: 0.08, reverseDuration: 0.16, curve: Curves.easeOut)));
+    add(
+      MoveByEffect(
+        d,
+        EffectController(
+          duration: 0.08,
+          reverseDuration: 0.16,
+          curve: Curves.easeOut,
+        ),
+      ),
+    );
   }
 
   void defeated() {
     _defeated = true;
     add(OpacityEffect.to(0.35, EffectController(duration: 0.6)));
-    add(MoveByEffect(Vector2(0, 30), EffectController(duration: 0.6, curve: Curves.easeIn)));
-    add(RotateEffect.by(facingRight ? -0.35 : 0.35, EffectController(duration: 0.6)));
+    add(
+      MoveByEffect(
+        Vector2(0, 30),
+        EffectController(duration: 0.6, curve: Curves.easeIn),
+      ),
+    );
+    add(
+      RotateEffect.by(
+        facingRight ? -0.35 : 0.35,
+        EffectController(duration: 0.6),
+      ),
+    );
   }
 }

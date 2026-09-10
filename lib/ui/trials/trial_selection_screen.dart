@@ -1,40 +1,87 @@
 import 'package:flutter/material.dart';
+
 import '../../engine/design.dart';
 import '../../engine/session.dart';
 import '../../app/theme.dart';
 import '../widgets/roman_widgets.dart';
 
 class TrialCard extends StatelessWidget {
- const TrialCard({super.key,required this.session,required this.skin,required this.trial,required this.place,required this.width,required this.onStart,required this.onInfo,required this.requirementText,this.highlighted=false});
- final GameSession session;
- final G skin;
- final ContentNode trial,place;
- final double width;
- final bool highlighted;
- final void Function(ContentNode) onStart,onInfo;
- final String Function(Json) requirementText;
- static const double _ring=1,_frame=4,_inset=17,_portraitSlot=110;
- TextStyle _titleStyle(double size)=>TextStyle(fontFamily:skin.headingFont,fontSize:size,color:Colors.white,fontVariations:const [FontVariation('wght',700)],letterSpacing:size>=16?1.2:.4,height:1.35,shadows:[Shadow(color:skin.paint('80000000'),offset:const Offset(0,1),blurRadius:2)]);
- TextStyle _fitTitle(){
- final maxWidth=width-2*(_ring+_frame)-_inset-_portraitSlot;
- final text=session.text(trial.data['name']);
- for(final size in [16.0,15.0,14.0,13.0]){
- final style=_titleStyle(size);
- final painter=TextPainter(text:TextSpan(text:text,style:style),textDirection:TextDirection.ltr,maxLines:2)..layout(maxWidth:maxWidth);
- final fits=!painter.didExceedMaxLines&&text.split(' ').every((w)=>measureText(w,style)<=maxWidth);painter.dispose();
- if(fits||size==13)return style;
- }return _titleStyle(13);
- }
- @override
- Widget build(BuildContext context){
- final accessible=session.unlocked(trial);
- final eligible=session.meets(trial.requirements);
- final affordable=session.balance>=trial.price;
- final locked=!accessible&&!eligible;
- final access=accessible?'accessible':eligible?'purchasable':'locked';
- final titleStyle=_fitTitle();
- final badgeColor=skin.paint(accessible?'FF22B15C':locked?'FF625A5C':'FFEAA249');
- final badgeIcon=accessible?Icons.lock_open_outlined:Icons.lock_outline;
+  const TrialCard({
+    super.key,
+    required this.session,
+    required this.skin,
+    required this.trial,
+    required this.place,
+    required this.width,
+    required this.onStart,
+    required this.onInfo,
+    required this.requirementText,
+    this.highlighted = false,
+  });
+  final GameSession session;
+  final G skin;
+  final ContentNode trial, place;
+  final double width;
+  final bool highlighted;
+  final void Function(ContentNode) onStart, onInfo;
+  final String Function(Json) requirementText;
+  static const double _ring = 1, _frame = 4, _inset = 17, _portraitSlot = 110;
+  TextStyle _titleStyle(double size) => TextStyle(
+    fontFamily: skin.headingFont,
+    fontSize: size,
+    color: Colors.white,
+    fontVariations: const [FontVariation('wght', 700)],
+    letterSpacing: size >= 16 ? 1.2 : .4,
+    height: 1.35,
+    shadows: [
+      Shadow(
+        color: skin.paint('80000000'),
+        offset: const Offset(0, 1),
+        blurRadius: 2,
+      ),
+    ],
+  );
+  TextStyle _fitTitle() {
+    final maxWidth = width - 2 * (_ring + _frame) - _inset - _portraitSlot;
+    final text = session.text(trial.data['name']);
+    for (final size in [16.0, 15.0, 14.0, 13.0]) {
+      final style = _titleStyle(size);
+      final painter = TextPainter(
+        text: TextSpan(text: text, style: style),
+        textDirection: TextDirection.ltr,
+        maxLines: 2,
+      )..layout(maxWidth: maxWidth);
+      final fits =
+          !painter.didExceedMaxLines &&
+          text.split(' ').every((w) => measureText(w, style) <= maxWidth);
+      painter.dispose();
+      if (fits || size == 13) return style;
+    }
+    return _titleStyle(13);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final accessible = session.unlocked(trial);
+    final eligible = session.meets(trial.requirements);
+    final affordable = session.balance >= trial.price;
+    final locked = !accessible && !eligible;
+    final access = accessible
+        ? 'accessible'
+        : eligible
+        ? 'purchasable'
+        : 'locked';
+    final titleStyle = _fitTitle();
+    final badgeColor = skin.paint(
+      accessible
+          ? 'FF22B15C'
+          : locked
+          ? 'FF625A5C'
+          : 'FFEAA249',
+    );
+    final badgeIcon = accessible
+        ? Icons.lock_open_outlined
+        : Icons.lock_outline;
     // Colours sampled on the mock-up: violet, amber and greyed purple bands.
     final headerColors = switch (access) {
       'accessible' => [skin.paint('FF6A37C4'), skin.paint('FF6840AE')],
@@ -216,7 +263,9 @@ class TrialCard extends StatelessWidget {
                                           BlendMode.dst,
                                         ),
                                   child: Image.asset(
-                                    session.design.asset(trial.data['presentation']['opponent']),
+                                    session.design.asset(
+                                      trial.data['presentation']['opponent'],
+                                    ),
                                     fit: BoxFit.contain,
                                     alignment: Alignment.topRight,
                                   ),
@@ -262,7 +311,10 @@ class TrialCard extends StatelessWidget {
                       DecoratedBox(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [skin.paint('30200A40'), skin.paint('00200A40')],
+                            colors: [
+                              skin.paint('30200A40'),
+                              skin.paint('00200A40'),
+                            ],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           ),
@@ -281,13 +333,21 @@ class TrialCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // Skills worked and estimated mastery, as bars.
-                      for(final id in strings(trial.data['skills'])) SkillGauge(session:session,skin:skin,id:id,named:strings(trial.data['skills']).length>1),
+                      for (final id in strings(trial.data['skills']))
+                        SkillGauge(
+                          session: session,
+                          skin: skin,
+                          id: id,
+                          named: strings(trial.data['skills']).length > 1,
+                        ),
                       if (!accessible) ...[
                         SizedBox(height: 2),
                         Row(
                           children: [
                             Image.asset(
-                              session.design.asset(session.design.root['presentation']['currency']),
+                              session.design.asset(
+                                session.design.root['presentation']['currency'],
+                              ),
                               width: 20,
                               height: 20,
                             ),
@@ -332,16 +392,101 @@ class TrialCard extends StatelessWidget {
                       ],
                       Spacer(),
                       SizedBox(height: 8),
-                      Row(children:[
- RomanButton(skin:skin,label:'i',style:RomanButtonStyle.outline,dense:true,circular:true,onPressed:()=>onInfo(trial)),
- SizedBox(width:10),
- Expanded(child:RomanButton(skin:skin,
- label:accessible?session.text(place.data['presentation']['labels']['encounter']):eligible?'${session.label('actions.buy')} · ${trial.price}':session.label('state.locked'),
- style:accessible?RomanButtonStyle.primary:eligible&&affordable?RomanButtonStyle.gold:RomanButtonStyle.locked,dense:true,expand:true,
- icon:accessible?(place.data['presentation']['startIcon']=='speak'?Icons.record_voice_over:Icons.sports_martial_arts):!eligible?Icons.lock:null,
- leading:!accessible&&eligible?Image.asset(session.design.asset(session.design.root['presentation']['currency']),width:20,height:20):null,
- onPressed:session.busy?null:accessible?()=>onStart(trial):session.purchasable(trial)?()=>session.buy(trial):null)),
- ]),
+                      Row(
+                        children: [
+                          RomanButton(
+                            skin: skin,
+                            label: 'i',
+                            style: RomanButtonStyle.outline,
+                            dense: true,
+                            circular: true,
+                            onPressed: () => onInfo(trial),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: RomanButton(
+                              skin: skin,
+                              label: accessible
+                                  ? session.text(
+                                      place
+                                          .data['presentation']['labels']['encounter'],
+                                    )
+                                  : eligible
+                                  ? '${session.label('actions.buy')} · ${trial.price}'
+                                  : session.label('state.locked'),
+                              style: accessible
+                                  ? RomanButtonStyle.primary
+                                  : eligible && affordable
+                                  ? RomanButtonStyle.gold
+                                  : RomanButtonStyle.locked,
+                              dense: true,
+                              expand: true,
+                              icon: accessible
+                                  ? (place.data['presentation']['startIcon'] ==
+                                            'speak'
+                                        ? Icons.record_voice_over
+                                        : Icons.sports_martial_arts)
+                                  : !eligible
+                                  ? Icons.lock
+                                  : null,
+                              leading: !accessible && eligible
+                                  ? Image.asset(
+                                      session.design.asset(
+                                        session
+                                            .design
+                                            .root['presentation']['currency'],
+                                      ),
+                                      width: 20,
+                                      height: 20,
+                                    )
+                                  : null,
+                              onPressed: session.busy
+                                  ? null
+                                  : accessible
+                                  ? () => onStart(trial)
+                                  : session.purchasable(trial)
+                                  ? () async {
+                                      String text(String key) => session
+                                          .label(key)
+                                          .replaceAll(
+                                            '{name}',
+                                            session.text(trial.data['name']),
+                                          )
+                                          .replaceAll(
+                                            '{price}',
+                                            '${trial.price}',
+                                          )
+                                          .replaceAll(
+                                            '{balance}',
+                                            '${session.balance}',
+                                          );
+                                      final ok = await confirmAction(
+                                        context,
+                                        skin: skin,
+                                        title: text('purchase.title'),
+                                        body: text('purchase.body'),
+                                        yes: session.label('actions.buy'),
+                                        no: session.label('actions.no'),
+                                      );
+                                      if (!ok) return;
+                                      await session.buy(trial);
+                                      final done = session.unlocked(trial);
+                                      if (!context.mounted) return;
+                                      if (done) skin.onCue?.call('purchase');
+                                      showSnack(
+                                        context,
+                                        text(
+                                          done
+                                              ? 'purchase.success'
+                                              : 'purchase.failure',
+                                        ),
+                                      );
+                                    }
+                                  : null,
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -355,32 +500,52 @@ class TrialCard extends StatelessWidget {
 }
 
 class TrialSelectionScreen extends StatelessWidget {
- const TrialSelectionScreen({super.key,required this.session,required this.skin,required this.place,required this.onStart,required this.onInfo,required this.onBack,required this.onSettings,required this.requirementText,this.highlightTrialId});
- final GameSession session;
- final G skin;
- final ContentNode place;
- final VoidCallback onBack,onSettings;
- final void Function(ContentNode) onStart,onInfo;
- final String Function(Json) requirementText;
- final String? highlightTrialId;
- @override
- Widget build(BuildContext context){
- final config=object(place.data['presentation']);
- final groups=place.children;
+  const TrialSelectionScreen({
+    super.key,
+    required this.session,
+    required this.skin,
+    required this.place,
+    required this.onStart,
+    required this.onInfo,
+    required this.onBack,
+    required this.onSettings,
+    required this.requirementText,
+    this.highlightTrialId,
+  });
+  final GameSession session;
+  final G skin;
+  final ContentNode place;
+  final VoidCallback onBack, onSettings;
+  final void Function(ContentNode) onStart, onInfo;
+  final String Function(Json) requirementText;
+  final String? highlightTrialId;
+  @override
+  Widget build(BuildContext context) {
+    final config = object(place.data['presentation']);
+    final groups = place.children;
     final wide = MediaQuery.sizeOf(context).width >= 1100;
-    final bubble = SpeechBubble(skin:skin,
+    final bubble = SpeechBubble(
+      skin: skin,
       text: session.text(config['labels']['blurb']),
       heroAsset: session.design.asset(config['hero']),
     );
     return Scaffold(
       body: ScreenBackground(
-        asset: session.design.asset(session.design.root['presentation']['selectionBackground']),
+        asset: session.design.asset(
+          session.design.root['presentation']['selectionBackground'],
+        ),
         child: Column(
           children: [
-            TopBar(skin:skin,backLabel:session.label('actions.back'),currencyAsset:session.design.asset(session.design.root['presentation']['currency']),
+            TopBar(
+              skin: skin,
+              backLabel: session.label('actions.back'),
+              currencyAsset: session.design.asset(
+                session.design.root['presentation']['currency'],
+              ),
               title: session.text(config['labels']['title']),
               gems: session.balance,
-              onSettings: onSettings, onBack:onBack,
+              onSettings: onSettings,
+              onBack: onBack,
               center: wide ? bubble : null,
             ),
             Expanded(
@@ -406,7 +571,13 @@ class TrialSelectionScreen extends StatelessWidget {
                       ),
                     for (final g in groups)
                       _GroupSection(
- session:session,skin:skin,place:place,onStart:onStart,onInfo:onInfo,requirementText:requirementText,                        title: session.text(g.data['name']),
+                        session: session,
+                        skin: skin,
+                        place: place,
+                        onStart: onStart,
+                        onInfo: onInfo,
+                        requirementText: requirementText,
+                        title: session.text(g.data['name']),
                         trials: g.children,
                         highlightTrialId: highlightTrialId,
                         topPadding: wide ? 6 : 16,
@@ -425,12 +596,18 @@ class TrialSelectionScreen extends StatelessWidget {
 /// One group of trials under a folding heading, laid out in rows of equal
 /// height (four cards on a wide screen).
 class _GroupSection extends StatefulWidget {
- final GameSession session;
- final G skin;
- final ContentNode place;
- final void Function(ContentNode) onStart,onInfo;
- final String Function(Json) requirementText;
-  const _GroupSection({required this.session,required this.skin,required this.place,required this.onStart,required this.onInfo,required this.requirementText,
+  final GameSession session;
+  final G skin;
+  final ContentNode place;
+  final void Function(ContentNode) onStart, onInfo;
+  final String Function(Json) requirementText;
+  const _GroupSection({
+    required this.session,
+    required this.skin,
+    required this.place,
+    required this.onStart,
+    required this.onInfo,
+    required this.requirementText,
     required this.title,
     required this.trials,
     this.highlightTrialId,
@@ -452,7 +629,8 @@ class _GroupSectionState extends State<_GroupSection> {
     crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       SectionTitle(
- skin:widget.skin,        widget.title,
+        skin: widget.skin,
+        widget.title,
         open: _open,
         topPadding: widget.topPadding,
         onTap: () => setState(() => _open = !_open),
@@ -484,8 +662,15 @@ class _GroupSectionState extends State<_GroupSection> {
                             if (i > 0) const SizedBox(width: gap),
                             Expanded(
                               child: TrialCard(
- session:widget.session,skin:widget.skin,place:widget.place,onStart:widget.onStart,onInfo:widget.onInfo,requirementText:widget.requirementText,                                trial: t,
-                                highlighted: t.address == widget.highlightTrialId,
+                                session: widget.session,
+                                skin: widget.skin,
+                                place: widget.place,
+                                onStart: widget.onStart,
+                                onInfo: widget.onInfo,
+                                requirementText: widget.requirementText,
+                                trial: t,
+                                highlighted:
+                                    t.address == widget.highlightTrialId,
                                 width: (c.maxWidth - gap * (cols - 1)) / cols,
                               ),
                             ),
@@ -507,25 +692,96 @@ class _GroupSectionState extends State<_GroupSection> {
   );
 }
 
-
 class SkillGauge extends StatelessWidget {
- const SkillGauge({super.key,required this.session,required this.skin,required this.id,this.named=false});
- final GameSession session;
- final G skin;
- final String id;
- final bool named;
- @override
- Widget build(BuildContext context){
- final estimate=session.estimate(session.skill(id));
- final level=objects(session.mastery['levels'])[session.level(id)];
- final color=Color(int.parse(level['color'] as String,radix:16));
- final label=estimate==null?session.label('labels.unassessed'):'${session.text(level['name'])} · ${(estimate*100).round()} %';
- return Padding(padding:const EdgeInsets.only(bottom:4),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
- if(named)Text(session.text(session.design.knowledge[id]?['name']),style:skin.body(13,weight:700,color:skin.inkSoft),overflow:TextOverflow.ellipsis),
- Row(children:[Expanded(child:Padding(padding:const EdgeInsets.symmetric(vertical:8),child:Stack(children:[
- Container(height:12,decoration:ShapeDecoration(shape:const StadiumBorder(),gradient:LinearGradient(colors:[skin.paint('FFC4BFB9'),skin.paint('FFD9D4CE')],begin:Alignment.topCenter,end:Alignment.bottomCenter))),
- FractionallySizedBox(widthFactor:(estimate??0).clamp(0,1),child:Container(height:12,decoration:ShapeDecoration(shape:const StadiumBorder(),gradient:LinearGradient(colors:[Color.lerp(color,Colors.white,.3)!,color],begin:Alignment.topCenter,end:Alignment.bottomCenter)))),
- ]))),const SizedBox(width:10),Text(label,style:skin.body(13,weight:800,color:estimate==null?skin.ink:Color.lerp(color,Colors.black,.38)),maxLines:1,overflow:TextOverflow.ellipsis)]),
- ]));
- }
+  const SkillGauge({
+    super.key,
+    required this.session,
+    required this.skin,
+    required this.id,
+    this.named = false,
+  });
+  final GameSession session;
+  final G skin;
+  final String id;
+  final bool named;
+  @override
+  Widget build(BuildContext context) {
+    final estimate = session.estimate(session.skill(id));
+    final level = objects(session.mastery['levels'])[session.level(id)];
+    final color = Color(int.parse(level['color'] as String, radix: 16));
+    final label = estimate == null
+        ? session.label('labels.unassessed')
+        : '${session.text(level['name'])} · ${(estimate * 100).round()} %';
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (named)
+            Text(
+              session.text(session.design.knowledge[id]?['name']),
+              style: skin.body(13, weight: 700, color: skin.inkSoft),
+              overflow: TextOverflow.ellipsis,
+            ),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Stack(
+                    children: [
+                      Container(
+                        height: 12,
+                        decoration: ShapeDecoration(
+                          shape: const StadiumBorder(),
+                          gradient: LinearGradient(
+                            colors: [
+                              skin.paint('FFC4BFB9'),
+                              skin.paint('FFD9D4CE'),
+                            ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                        ),
+                      ),
+                      FractionallySizedBox(
+                        widthFactor: (estimate ?? 0).clamp(0, 1),
+                        child: Container(
+                          height: 12,
+                          decoration: ShapeDecoration(
+                            shape: const StadiumBorder(),
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.lerp(color, Colors.white, .3)!,
+                                color,
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Text(
+                label,
+                style: skin.body(
+                  13,
+                  weight: 800,
+                  color: estimate == null
+                      ? skin.ink
+                      : Color.lerp(color, Colors.black, .38),
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }

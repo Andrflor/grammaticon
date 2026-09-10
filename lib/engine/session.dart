@@ -549,6 +549,7 @@ class GameSession extends ChangeNotifier {
     final outcome = q.outcome(choice);
     final observation = <String, dynamic>{
       'transaction': (next['transaction'] as int) + 1,
+      'balanceDelta': delta,
       'at': timestamp,
       'design': design.identity,
       'card': battle['card'],

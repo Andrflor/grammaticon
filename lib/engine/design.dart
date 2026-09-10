@@ -269,7 +269,9 @@ class GameDesign {
   ) async {
     if (entry.data['part'] == null) return entry;
     final part = entry.data['part'] as String;
-    if (part.contains('/') || part.contains('..') || !part.endsWith('.json.gz')) {
+    if (part.contains('/') ||
+        part.contains('..') ||
+        !part.endsWith('.json.gz')) {
       throw FormatException('Invalid question part $part');
     }
     final relative = '${card.directory}/$part';
