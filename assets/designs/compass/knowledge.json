@@ -1,0 +1,262 @@
+{
+  "dimensions": [
+    {
+      "id": "selection",
+      "name": {
+        "fr": "Sélection",
+        "en": "Selection"
+      }
+    },
+    {
+      "id": "completion",
+      "name": {
+        "fr": "Complétion",
+        "en": "Completion"
+      }
+    },
+    {
+      "id": "interpretation",
+      "name": {
+        "fr": "Interprétation",
+        "en": "Interpretation"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "measure",
+      "name": {
+        "fr": "Mesures",
+        "en": "Measurements"
+      }
+    },
+    {
+      "id": "time-units",
+      "parent": "measure",
+      "name": {
+        "fr": "Unités de durée",
+        "en": "Units of duration"
+      }
+    },
+    {
+      "id": "orbits",
+      "parent": "measure",
+      "name": {
+        "fr": "Cycles astronomiques",
+        "en": "Astronomical cycles"
+      }
+    },
+    {
+      "id": "chronology",
+      "name": {
+        "fr": "Chronologie",
+        "en": "Chronology"
+      }
+    },
+    {
+      "id": "centuries",
+      "parent": "chronology",
+      "name": {
+        "fr": "Années et siècles",
+        "en": "Years and centuries"
+      }
+    },
+    {
+      "id": "ordering",
+      "parent": "chronology",
+      "name": {
+        "fr": "Avant et après",
+        "en": "Before and after"
+      }
+    },
+    {
+      "id": "space",
+      "name": {
+        "fr": "Lecture des cartes",
+        "en": "Reading maps"
+      }
+    },
+    {
+      "id": "scale",
+      "parent": "space",
+      "name": {
+        "fr": "Échelles",
+        "en": "Scales"
+      }
+    },
+    {
+      "id": "orientation",
+      "parent": "space",
+      "name": {
+        "fr": "Orientation",
+        "en": "Orientation"
+      }
+    },
+    {
+      "id": "rotation-revolution",
+      "name": {
+        "fr": "Rotation confondue avec révolution",
+        "en": "Rotation confused with revolution"
+      },
+      "visible": false
+    },
+    {
+      "id": "unit-factor",
+      "name": {
+        "fr": "Facteur de conversion incorrect",
+        "en": "Incorrect conversion factor"
+      },
+      "visible": false
+    },
+    {
+      "id": "century-boundary",
+      "name": {
+        "fr": "Début ou fin du siècle confondu",
+        "en": "Confused century boundary"
+      },
+      "visible": false
+    },
+    {
+      "id": "order-reversed",
+      "name": {
+        "fr": "Ordre chronologique inversé",
+        "en": "Chronological order reversed"
+      },
+      "visible": false
+    },
+    {
+      "id": "scale-direction",
+      "name": {
+        "fr": "Conversion de distance inversée",
+        "en": "Distance conversion reversed"
+      },
+      "visible": false
+    },
+    {
+      "id": "direction-reversed",
+      "name": {
+        "fr": "Direction opposée choisie",
+        "en": "Opposite direction selected"
+      },
+      "visible": false
+    },
+    {
+      "id": "unit-count-omitted",
+      "name": {
+        "fr": "Une seule unité comptée au lieu de deux",
+        "en": "One unit counted instead of two"
+      },
+      "visible": false
+    }
+  ],
+  "practiceSets": [
+    {
+      "id": "practice-cycles",
+      "targets": [
+        {
+          "card": "observatory/discovery/cycles",
+          "questions": [
+            "day",
+            "year"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-durations",
+      "targets": [
+        {
+          "card": "observatory/discovery/durations",
+          "questions": [
+            "hours",
+            "half-hour"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-centuries",
+      "targets": [
+        {
+          "card": "archives/discovery/centuries",
+          "questions": [
+            "1900",
+            "1901"
+          ]
+        },
+        {
+          "card": "observatory/discovery/durations",
+          "questions": [
+            "hours",
+            "half-hour"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-sequence",
+      "targets": [
+        {
+          "card": "archives/discovery/sequence",
+          "questions": [
+            "earlier",
+            "later"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-scale",
+      "targets": [
+        {
+          "card": "map-room/discovery/scale",
+          "questions": [
+            "map-two",
+            "map-back"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-orientation",
+      "targets": [
+        {
+          "card": "map-room/discovery/orientation",
+          "questions": [
+            "north",
+            "opposite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duration-base",
+      "targets": [
+        {
+          "card": "observatory/discovery/durations",
+          "questions": [
+            "hours",
+            "half-hour"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duration-count",
+      "targets": [
+        {
+          "card": "observatory/discovery/durations",
+          "questions": [
+            "hours"
+          ]
+        },
+        {
+          "card": "map-room/discovery/scale",
+          "questions": [
+            "map-two"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,72 +1,54 @@
-import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'app/app.dart';
-import 'app/providers.dart';
-import 'app/theme.dart';
-import 'audio/audio_service.dart';
-import 'linguistics/engine/analyzer.dart';
-import 'linguistics/engine/conjugator.dart';
-import 'linguistics/engine/declinator.dart';
-import 'linguistics/engine/noun_analyzer.dart';
-import 'linguistics/lexicon/nouns.dart';
-import 'linguistics/lexicon/verbs.dart';
-import 'pedagogy/reading/reading_content.dart';
-import 'persistence/save_repository.dart';
+import 'engine/application.dart';
+import 'engine/assets.dart';
+import 'engine/design.dart';
+import 'engine/session.dart';
+
+const designPath = String.fromEnvironment(
+  'GAME_DESIGN',
+  defaultValue: 'assets/designs/grammaticon/game.json',
+);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const _Splash());
-  // Whole-lexicon index (about 60 000 forms) built once at start-up.
-  final analyzer = Analyzer(kVerbs, Conjugator());
-  final nounAnalyzer = NounAnalyzer(kNouns, const Declinator());
-  // Curated Theatrum content (Latin passages + shipped translation languages).
-  final reading = await ReadingLibrary.load(rootBundle);
-  final repo = SaveRepository(PrefsSaveStore());
-  final save = await repo.load();
-  final audio = AudioService();
-  AudioService.current = audio;
-  await audio.preload();
-  audio.volume = save.settings.volume;
-  audio.soundOn = save.settings.soundOn;
-  audio.setMusic(on: save.settings.musicOn, volume: save.settings.musicVolume);
-  unawaited(audio.startMusic());
-  runApp(
-    ProviderScope(
-      overrides: [
-        analyzerProvider.overrideWithValue(analyzer),
-        nounAnalyzerProvider.overrideWithValue(nounAnalyzer),
-        readingLibraryProvider.overrideWithValue(reading),
-        saveRepositoryProvider.overrideWithValue(repo),
-        initialSaveProvider.overrideWithValue(save),
-        audioProvider.overrideWithValue(audio),
-      ],
-      child: const GrammaticonApp(),
-    ),
-  );
-}
-
-class _Splash extends StatelessWidget {
-  const _Splash();
-  @override
-  Widget build(BuildContext context) => MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: G.theme(),
-    home: Scaffold(
-      backgroundColor: G.purpleDark,
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('GRAMMATICON', style: G.display(40)),
-            const SizedBox(height: 12),
-            Text('Fōrmae parantur…', style: G.body(18, color: G.goldLight)),
-          ],
+  try {
+    final design = await GameDesign.load(designPath, readDesignAsset);
+    for (final font in design.resources.values.where(
+      (r) => r['type'] == 'font',
+    )) {
+      await (FontLoader(
+        font['family'] as String,
+      )..addFont(rootBundle.load(font['path'] as String))).load();
+    }
+    final preferences = await SharedPreferences.getInstance();
+    final key = '${design.id}.save';
+    final raw = preferences.getString(key);
+    final session = GameSession(
+      design,
+      raw == null ? {} : object(jsonDecode(raw)),
+      (value) async {
+        if (!await preferences.setString(key, value)) {
+          throw StateError('Could not persist the transaction');
+        }
+      },
+    );
+    await session.recover();
+    runApp(DesignApp(session: session));
+  } catch (error) {
+    // A malformed design cannot supply a reliable localized application UI.
+    runApp(
+      MaterialApp(
+        home: Scaffold(
+          body: SafeArea(
+            child: SelectableText('Unable to load the game design:\n$error'),
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

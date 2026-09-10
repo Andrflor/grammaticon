@@ -1,48 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../app/providers.dart';
 import '../../app/theme.dart';
-import '../../audio/audio_service.dart';
-import '../../economy/economy.dart';
-import '../../pedagogy/mastery.dart';
-import '../../persistence/save_data.dart';
+import '../../engine/design.dart';
+import '../../engine/session.dart';
 import '../widgets/roman_widgets.dart';
-
-class SettingsScreen extends ConsumerWidget {
-  const SettingsScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key,required this.session,required this.skin,required this.onBack,required this.onAudioChanged});
+ final GameSession session;
+ final G skin;
+ final VoidCallback onBack;
+ final Future<void> Function() onAudioChanged;
+ String text(String key)=>session.label(key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final save = ref.watch(profileProvider);
-    final s = save.settings;
-    final p = ref.read(profileProvider.notifier);
-    final audio = ref.read(audioProvider);
+  Widget build(BuildContext context) {
+    final s=SettingsSnapshot(object(session.state['settings']));
+    final p=SettingsBinding(session,onAudioChanged);
+    final levels=objects(session.mastery['levels']);
+    final economy=session.economy;
     final wide = MediaQuery.sizeOf(context).width > 1100;
-    const panelPadding = EdgeInsets.fromLTRB(18, 16, 18, 16);
+    final panelPadding = EdgeInsets.fromLTRB(18, 16, 18, 16);
 
     final panels = <Widget>[
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PanelHeader(
+            PanelHeader(skin:skin,
               icon: s.soundOn ? Icons.volume_up : Icons.volume_off,
-              title: 'Sonus',
-              subtitle: 'Sonī certāminis et mūsica · interruptor omnia tacet',
+              title: text('settings.text.0'),
+              subtitle: text('settings.text.1'),
               trailing: _Toggle(
                 value: s.soundOn,
                 onChanged: (v) {
                   p.updateSettings(s.copyWith(soundOn: v));
-                  if (v) audio.play(Sfx.tactus);
+                  
                 },
               ),
             ),
             _SliderRow(
-              icon: s.volume == 0 ? Icons.notifications_off : Icons.notifications_active,
-              label: 'Sonī',
+ skin:skin,              icon: s.volume == 0 ? Icons.notifications_off : Icons.notifications_active,
+              label: text('settings.text.2'),
               valueText: '${(s.volume * 100).round()} %',
               value: s.volume,
               min: 0,
@@ -50,11 +49,11 @@ class SettingsScreen extends ConsumerWidget {
               divisions: 20,
               enabled: s.soundOn,
               onChanged: (v) => p.updateSettings(s.copyWith(volume: v)),
-              onChangeEnd: (_) => audio.play(Sfx.gemma),
+              
             ),
             _SliderRow(
-              icon: s.musicVolume == 0 ? Icons.music_off : Icons.music_note,
-              label: 'Mūsica',
+ skin:skin,              icon: s.musicVolume == 0 ? Icons.music_off : Icons.music_note,
+              label: text('settings.text.3'),
               valueText: '${(s.musicVolume * 100).round()} %',
               value: s.musicVolume,
               min: 0,
@@ -66,25 +65,25 @@ class SettingsScreen extends ConsumerWidget {
           ],
         ),
       ),
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PanelHeader(
+            PanelHeader(skin:skin,
               icon: Icons.animation,
-              title: 'Mōtus et tempora',
-              subtitle: 'Animātiōnēs et morae inter quaestiōnēs',
+              title: text('settings.text.4'),
+              subtitle: text('settings.text.5'),
               trailing: _Toggle(
                 value: s.reducedMotion,
                 onChanged: (v) => p.updateSettings(s.copyWith(reducedMotion: v)),
               ),
             ),
-            const _Note('Mōtus minor: minus animātiōnum, gemmae nōn volant.', indent: 66),
-            const SizedBox(height: 6),
+            _Note(text('settings.text.6'), indent: 66,skin:skin),
+            SizedBox(height: 6),
             _SliderRow(
-              icon: Icons.bolt,
-              label: 'Mora post respōnsum rēctum',
+ skin:skin,              icon: Icons.bolt,
+              label: text('settings.text.7'),
               valueText: '${s.correctDelayMs} ms',
               value: s.correctDelayMs.toDouble(),
               min: 200,
@@ -92,34 +91,34 @@ class SettingsScreen extends ConsumerWidget {
               divisions: 12,
               onChanged: (v) => p.updateSettings(s.copyWith(correctDelayMs: v.round())),
             ),
-            const _Note('Post errōrem explicātiō manet dōnec "Perge" premis (aut spatium / Enter).', indent: 66),
+            _Note(text('settings.text.8'), indent: 66,skin:skin),
           ],
         ),
       ),
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const PanelHeader(icon: Icons.translate, title: 'Lingua interpretātiōnis', subtitle: 'Theātrum: sententiae Latīnae, interpretātiōnēs in linguā ēlēctā · interfaciēs Latīna manet.'),
+            PanelHeader(skin:skin,icon: Icons.translate, title: text('settings.text.9'), subtitle: text('settings.text.10')),
             Padding(
-              padding: const EdgeInsets.only(left: 6),
+              padding: EdgeInsets.only(left: 6),
               child: Wrap(
                 spacing: 12,
                 runSpacing: 10,
                 children: [
-                  for (final lang in TranslationLanguage.values)
+                  for(final lang in session.design.locales.keys)
                     Builder(builder: (context) {
-                      final available = ref.watch(readingLibraryProvider).supports(lang.code);
-                      final selected = s.translationLanguage == lang;
-                      return RomanButton(
-                        label: available ? lang.latin : '${lang.latin} · nōndum parāta',
+                      final available = true;
+                      final selected = session.locale == lang;
+                      return RomanButton(skin:skin,
+                        label: session.design.locales[lang]!['locale.name'] as String,
                         icon: selected ? Icons.check_circle : (available ? Icons.circle_outlined : Icons.lock),
                         style: selected ? RomanButtonStyle.chosen : (available ? RomanButtonStyle.outline : RomanButtonStyle.locked),
                         dense: true,
                         onPressed: available && !selected
                             ? () {
-                                p.updateSettings(s.copyWith(translationLanguage: lang));
+                                p.updateSettings(s.copyWith(locale: lang));
                               }
                             : null,
                       );
@@ -127,89 +126,85 @@ class SettingsScreen extends ConsumerWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
-            const _Note('Lingua nōndum parāta ēligī nōn potest: nihil aliā linguā ostenditur.', indent: 6),
+            SizedBox(height: 10),
+            _Note(text('settings.text.12'), indent: 6,skin:skin),
           ],
         ),
       ),
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const PanelHeader(icon: Icons.diamond, title: 'Gemmae: praemia et poenae', subtitle: 'Ūna trānsāctiō prō ūnā respōnsiōne; perītia ante respōnsum computātur.'),
+            PanelHeader(skin:skin,icon: Icons.diamond, title: text('settings.text.13'), subtitle: text('settings.text.14')),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: G.marbleDark, width: 1.5),
+                border: Border.all(color: skin.marbleDark, width: 1.5),
               ),
               // Rows are rounded inside the border instead of clipped: Impeller
               // on OpenGL ES does not anti-alias clips.
               child: Column(
                 children: [
                   Container(
-                    decoration: const BoxDecoration(color: G.purpleRoyal, borderRadius: BorderRadius.vertical(top: Radius.circular(10.5))),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 9),
+                    decoration: BoxDecoration(color: skin.purpleRoyal, borderRadius: BorderRadius.vertical(top: Radius.circular(10.5))),
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 9),
                     child: Row(
                       children: [
-                        Expanded(child: Text('Perītia', style: G.body(15, color: Colors.white, weight: 800))),
-                        SizedBox(width: 100, child: Text('Rēctē', textAlign: TextAlign.center, style: G.body(15, color: Colors.white, weight: 800))),
-                        SizedBox(width: 100, child: Text('Errāns', textAlign: TextAlign.center, style: G.body(15, color: Colors.white, weight: 800))),
+                        Expanded(child: Text(text('settings.text.15'), style: skin.body(15, color: Colors.white, weight: 800))),
+                        SizedBox(width: 100, child: Text(text('settings.text.16'), textAlign: TextAlign.center, style: skin.body(15, color: Colors.white, weight: 800))),
+                        SizedBox(width: 100, child: Text(text('settings.text.17'), textAlign: TextAlign.center, style: skin.body(15, color: Colors.white, weight: 800))),
                       ],
                     ),
                   ),
-                  for (final (i, t) in MasteryTier.values.indexed)
+                  for(final (i,t) in levels.indexed)
                     Container(
                       decoration: BoxDecoration(
-                        color: i.isOdd ? G.parchment : Colors.white,
-                        borderRadius: i == MasteryTier.values.length - 1 ? const BorderRadius.vertical(bottom: Radius.circular(10.5)) : null,
+                        color: i.isOdd ? skin.parchment : Colors.white,
+                        borderRadius: i == levels.length - 1 ? BorderRadius.vertical(bottom: Radius.circular(10.5)) : null,
                       ),
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+                      padding: EdgeInsets.symmetric(horizontal: 14, vertical: 7),
                       child: Row(
                         children: [
-                          Expanded(child: Align(alignment: Alignment.centerLeft, child: MasteryBadge(t))),
-                          _GemDelta(kEconomy.gains[t]!, positive: true),
-                          _GemDelta(-kEconomy.losses[t]!, positive: false),
+                          Expanded(child: Align(alignment: Alignment.centerLeft, child: LevelBadge(session:session,skin:skin,level:i))),
+                          _GemDelta(skin:skin,currencyAsset:session.design.asset(session.design.root['presentation']['currency']),objects(economy['levels'])[i]['gain'] as int, positive: true),
+                          _GemDelta(skin:skin,currencyAsset:session.design.asset(session.design.root['presentation']['currency']),-(objects(economy['levels'])[i]['loss'] as int), positive: false),
                         ],
                       ),
                     ),
                 ],
               ),
             ),
-            const SizedBox(height: 10),
-            _Rule(Icons.help_outline, 'Auxiliō adhibitō: +${kEconomy.aidedGain} sī rēctē, nūlla poena.'),
-            _Rule(Icons.emoji_events, 'Victōria: +${kEconomy.victoryBonus} gemmae, ×${kEconomy.catchUpMultiplier} sī nihil emī potest.'),
-            _Rule(Icons.repeat, 'Idem verbum post ${kEconomy.lemmaSaturation} respōnsa rēcta nihil affert.'),
-            _Rule(Icons.heart_broken, 'Clādēs: gemmae certāminis āmittuntur et quārta pars summae (ad ${kEconomy.defeatTributeMax}) tribūtum solvitur. Emptiōnēs manent.'),
-            const _Rule(Icons.shield, 'Summa nunquam īnfrā 0; emptiōnēs perpetuae sunt.'),
+            SizedBox(height: 10),
+            for(final rule in objects(economy['displayRules'])) _Rule(Icons.info_outline,session.text(rule['text']),skin:skin),
           ],
         ),
       ),
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PanelHeader(icon: Icons.save, title: 'Cōnservātiō', subtitle: 'Servātur post omne respōnsum et omnem emptiōnem · schēma ${save.schemaVersion}.'),
+            PanelHeader(skin:skin,icon: Icons.save, title: text('settings.text.18'), subtitle: text('settings.persistence.subtitle')),
             Padding(
-              padding: const EdgeInsets.only(left: 6),
+              padding: EdgeInsets.only(left: 6),
               child: Wrap(
                 spacing: 12,
                 runSpacing: 10,
                 children: [
-                  RomanButton(
-                    label: 'Exportā in tabellam',
+                  RomanButton(skin:skin,
+                    label: text('settings.text.19'),
                     icon: Icons.upload,
                     style: RomanButtonStyle.gold,
                     dense: true,
                     onPressed: () async {
                       await Clipboard.setData(ClipboardData(text: p.exportJson()));
-                      if (context.mounted) showLatinSnack(context, 'Cōnservātiō in tabellam cōpiāta est.');
+                      if (context.mounted) showSnack(context, text('settings.text.20'));
                     },
                   ),
-                  RomanButton(
-                    label: 'Importā ē tabellā',
+                  RomanButton(skin:skin,
+                    label: text('settings.text.21'),
                     icon: Icons.download,
                     style: RomanButtonStyle.outline,
                     dense: true,
@@ -217,27 +212,27 @@ class SettingsScreen extends ConsumerWidget {
                       final data = await Clipboard.getData('text/plain');
                       final raw = data?.text;
                       if (raw == null || raw.isEmpty) {
-                        if (context.mounted) showLatinSnack(context, 'Tabella vacua est.');
+                        if (context.mounted) showSnack(context, text('settings.text.22'));
                         return;
                       }
                       if (!context.mounted) return;
-                      final ok = await confirmLatin(context, title: 'Importāre?', body: 'Cōnservātiō praesēns dēlēbitur et ē tabellā restituētur.', yes: 'Importā');
+                      final ok = await confirmAction(context,skin:skin,no:session.label('actions.cancel'), title: text('settings.text.23'), body: text('settings.text.24'), yes: text('settings.text.25'));
                       if (!ok) return;
                       try {
                         await p.importJson(raw);
-                        if (context.mounted) showLatinSnack(context, 'Cōnservātiō importāta est.');
+                        if (context.mounted) showSnack(context, text('settings.text.26'));
                       } on FormatException catch (e) {
-                        if (context.mounted) showLatinSnack(context, 'Error: ${e.message}');
+                        if (context.mounted) showSnack(context, e.message.toString());
                       }
                     },
                   ),
-                  RomanButton(
-                    label: 'Dēlē omnia',
+                  RomanButton(skin:skin,
+                    label: text('settings.text.27'),
                     icon: Icons.delete_forever,
                     style: RomanButtonStyle.danger,
                     dense: true,
                     onPressed: () async {
-                      final ok = await confirmLatin(context, title: 'Dēlēre omnia?', body: 'Gemmae, emptiōnēs et perītiae dēlēbuntur. Hoc revocārī nōn potest.', yes: 'Dēlē');
+                      final ok = await confirmAction(context,skin:skin,no:session.label('actions.cancel'), title: text('settings.text.28'), body: text('settings.text.29'), yes: text('settings.text.30'));
                       if (ok) await p.resetAll();
                     },
                   ),
@@ -247,16 +242,16 @@ class SettingsScreen extends ConsumerWidget {
           ],
         ),
       ),
-      RomanPanel(
+      RomanPanel(skin:skin,
         padding: panelPadding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const PanelHeader(icon: Icons.account_balance, title: 'Dē fontibus'),
-            _Rule(Icons.menu_book, 'Grammatica: Allen & Greenough, New Latin Grammar (1903), ēditiō Dickinson College Commentaries (CC BY-SA).'),
-            const _Rule(Icons.auto_stories, 'Theātrum: Biblia Sacra Vulgata Clementina (textus 1598, ēditiō Migne 1880) et La Sainte Bible, Louis Segond 1910 — eBible.org, in pūblicō (ēditiō Desclée 1901 postulāta, digitāliter nōn exstat).'),
-            const _Rule(Icons.fact_check, 'Fōrmae in ipsō lūdō generantur; cum Collatinō (GPL-3.0) in officīnā tantum comparātae sunt.'),
-            const _Rule(Icons.brush, 'Litterae Cinzel et Nunito (OFL). Imāginēs et sonī hīc factī (CC0), prōvīsōriī.'),
+            PanelHeader(skin:skin,icon: Icons.account_balance, title: text('settings.text.31')),
+            _Rule(Icons.menu_book, text('settings.text.32'),skin:skin),
+            _Rule(Icons.auto_stories, text('settings.text.33'),skin:skin),
+            _Rule(Icons.fact_check, text('settings.text.34'),skin:skin),
+            _Rule(Icons.brush, text('settings.text.35'),skin:skin),
           ],
         ),
       ),
@@ -264,21 +259,21 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       body: ScreenBackground(
-        asset: 'assets/images/optiones_bg.png',
+        asset: session.design.asset(session.design.root['presentation']['settingsBackground']),
         child: Column(
           children: [
-            TopBar(title: 'Optiōnēs', gems: save.gems),
+            TopBar(skin:skin,onBack:onBack,backLabel:session.label('actions.back'),currencyAsset:session.design.asset(session.design.root['presentation']['currency']),title: text('settings.text.36'), gems: session.balance),
             Expanded(
               child: Stack(
                 children: [
                   // The hero greets the player from the carpet on wide screens.
-                  if (wide) Positioned(right: 48, bottom: 0, child: Image.asset('assets/images/hero_victory.png', height: 380)),
+                  if (wide) Positioned(right: 48, bottom: 0, child: Image.asset(session.design.asset(session.design.root['presentation']['settingsHero']), height: 380)),
                   ContentColumn(
                     maxWidth: 740,
                     child: ListView.separated(
-                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+                      padding: EdgeInsets.fromLTRB(16, 8, 16, 32),
                       itemCount: panels.length,
-                      separatorBuilder: (context, i) => const SizedBox(height: 16),
+                      separatorBuilder: (context, i) => SizedBox(height: 16),
                       itemBuilder: (context, i) => panels[i],
                     ),
                   ),
@@ -307,18 +302,20 @@ class _Toggle extends StatelessWidget {
 
 /// Explanatory line under a control, aligned with the header text.
 class _Note extends StatelessWidget {
-  const _Note(this.text, {this.indent = 0});
+ final G skin;
+  const _Note(this.text, {required this.skin,this.indent = 0});
   final String text;
   final double indent;
   @override
   Widget build(BuildContext context) => Padding(
         padding: EdgeInsets.only(left: indent, top: 4),
-        child: Text(text, style: G.body(15, color: G.inkSoft)),
+        child: Text(text, style: skin.body(15, color: skin.inkSoft)),
       );
 }
 
 class _SliderRow extends StatelessWidget {
-  const _SliderRow({
+ final G skin;
+  const _SliderRow({required this.skin,
     required this.icon,
     required this.label,
     required this.valueText,
@@ -327,9 +324,8 @@ class _SliderRow extends StatelessWidget {
     required this.max,
     required this.divisions,
     required this.onChanged,
-    this.onChangeEnd,
     this.enabled = true,
-  });
+  }) : onChangeEnd = null;
   final IconData icon;
   final String label;
   final String valueText;
@@ -344,29 +340,29 @@ class _SliderRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final compact = MediaQuery.sizeOf(context).width < 720;
-    final iconBox = SizedBox(width: 30, child: Icon(icon, color: G.purpleRoyal, size: 24));
-    final labelText = Text(label, style: G.body(17, weight: 800));
+    final iconBox = SizedBox(width: 30, child: Icon(icon, color: skin.purpleRoyal, size: 24));
+    final labelText = Text(label, style: skin.body(17, weight: 800));
     final slider = Slider(value: value, min: min, max: max, divisions: divisions, onChanged: enabled ? onChanged : null, onChangeEnd: onChangeEnd);
-    final valueBox = SizedBox(width: 76, child: Text(valueText, textAlign: TextAlign.right, style: G.body(17, weight: 800, color: G.purpleDark)));
+    final valueBox = SizedBox(width: 76, child: Text(valueText, textAlign: TextAlign.right, style: skin.body(17, weight: 800, color: skin.purpleDark)));
     // On phones the label takes its own line so the track keeps its length.
     if (compact) {
       return Padding(
-        padding: const EdgeInsets.only(top: 6, bottom: 2),
+        padding: EdgeInsets.only(top: 6, bottom: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(children: [iconBox, const SizedBox(width: 10), Expanded(child: labelText)]),
+            Row(children: [iconBox, SizedBox(width: 10), Expanded(child: labelText)]),
             Row(children: [Expanded(child: slider), valueBox]),
           ],
         ),
       );
     }
     return Padding(
-      padding: const EdgeInsets.only(top: 4, bottom: 2),
+      padding: EdgeInsets.only(top: 4, bottom: 2),
       child: Row(
         children: [
           iconBox,
-          const SizedBox(width: 10),
+          SizedBox(width: 10),
           SizedBox(width: 200, child: labelText),
           Expanded(child: slider),
           valueBox,
@@ -377,8 +373,10 @@ class _SliderRow extends StatelessWidget {
 }
 
 class _GemDelta extends StatelessWidget {
-  const _GemDelta(this.value, {required this.positive});
-  final int value;
+ final G skin;
+  const _GemDelta(this.value, {required this.skin,required this.currencyAsset,required this.positive});
+  final String currencyAsset;
+ final int value;
   final bool positive;
   @override
   Widget build(BuildContext context) => SizedBox(
@@ -386,28 +384,51 @@ class _GemDelta extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (positive) Image.asset('assets/images/gem.png', width: 20, height: 20) else const Icon(Icons.diamond, size: 18, color: G.red),
-            const SizedBox(width: 5),
-            Text('${value > 0 ? '+' : ''}$value', style: G.body(17, weight: 800, color: value > 0 ? G.greenDark : (value == 0 ? G.inkSoft : G.redDark))),
+            if (positive) Image.asset(currencyAsset, width: 20, height: 20) else Icon(Icons.diamond, size: 18, color: skin.red),
+            SizedBox(width: 5),
+            Text('${value > 0 ? '+' : ''}$value', style: skin.body(17, weight: 800, color: value > 0 ? skin.greenDark : (value == 0 ? skin.inkSoft : skin.redDark))),
           ],
         ),
       );
 }
 
 class _Rule extends StatelessWidget {
-  const _Rule(this.icon, this.text);
+ final G skin;
+  const _Rule(this.icon, this.text,{required this.skin});
   final IconData icon;
   final String text;
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(top: 6, left: 4),
+        padding: EdgeInsets.only(top: 6, left: 4),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(icon, size: 20, color: G.purpleRoyal),
-            const SizedBox(width: 8),
-            Expanded(child: Text(text, style: G.body(16, color: G.ink))),
+            Icon(icon, size: 20, color: skin.purpleRoyal),
+            SizedBox(width: 8),
+            Expanded(child: Text(text, style: skin.body(16, color: skin.ink))),
           ],
         ),
       );
+}
+
+class SettingsSnapshot {
+ SettingsSnapshot(this.data);
+ final Json data;
+ bool get soundOn=>data['sound']==true;
+ bool get reducedMotion=>data['reducedMotion']==true;
+ double get volume=>(data['volume'] as num).toDouble();
+ double get musicVolume=>(data['musicVolume'] as num? ?? volume).toDouble();
+ int get correctDelayMs=>data['correctDelayMs'] as int;
+ Json copyWith({bool? soundOn,bool? reducedMotion,double? volume,double? musicVolume,bool? musicOn,int? correctDelayMs,String? locale})=>{
+ if(soundOn!=null)'sound':soundOn,if(reducedMotion!=null)'reducedMotion':reducedMotion,if(volume!=null)'volume':volume,if(musicVolume!=null)'musicVolume':musicVolume,if(musicOn!=null)'music':musicOn,if(correctDelayMs!=null)'correctDelayMs':correctDelayMs,if(locale!=null)'locale':locale,
+ };
+}
+class SettingsBinding {
+ SettingsBinding(this.session,this.onAudioChanged);
+ final GameSession session;
+ final Future<void> Function() onAudioChanged;
+ Future<void> updateSettings(Json values)async{for(final e in values.entries){await session.setting(e.key,e.value);}await onAudioChanged();}
+ String exportJson()=>session.exportJson;
+ Future<void> importJson(String raw)=>session.importSave(raw);
+ Future<void> resetAll()async{final fresh=GameSession(session.design,{},(_)async{});await session.importSave(fresh.exportJson);fresh.dispose();}
 }

@@ -1,0 +1,190 @@
+[
+  {
+    "id": "day",
+    "interaction": "choice",
+    "dimension": "selection",
+    "item": "day",
+    "assessment": "day",
+    "prompt": {
+      "fr": "Pourquoi alternent le jour et la nuit ?",
+      "en": "Why do day and night alternate?"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Jour et nuit",
+          "en": "Day and night"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "La Terre tourne sur elle-même",
+          "en": "Earth rotates on its axis"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "La Terre fait le tour du Soleil en un jour",
+          "en": "Earth orbits the Sun in one day"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "Le Soleil s’éteint la nuit",
+          "en": "The Sun switches off at night"
+        }
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "orbits"
+    ],
+    "requires": [
+      "orbits"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "La rotation terrestre expose successivement les lieux au Soleil. La révolution autour du Soleil dure environ un an.",
+          "en": "Earth’s rotation exposes places to the Sun in succession. Its orbit around the Sun takes about a year."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": {
+          "fr": "La rotation terrestre expose successivement les lieux au Soleil. La révolution autour du Soleil dure environ un an.",
+          "en": "Earth’s rotation exposes places to the Sun in succession. Its orbit around the Sun takes about a year."
+        },
+        "observed": [
+          "rotation-revolution"
+        ],
+        "hypotheses": [
+          "orbits"
+        ],
+        "practice": [
+          "practice-cycles"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "La rotation terrestre expose successivement les lieux au Soleil. La révolution autour du Soleil dure environ un an.",
+          "en": "Earth’s rotation exposes places to the Sun in succession. Its orbit around the Sun takes about a year."
+        },
+        "observed": [
+          "rotation-revolution"
+        ],
+        "hypotheses": [
+          "orbits"
+        ],
+        "practice": [
+          "practice-cycles"
+        ]
+      }
+    },
+    "help": "cycles"
+  },
+  {
+    "id": "year",
+    "interaction": "highlightChoice",
+    "dimension": "interpretation",
+    "item": "year",
+    "assessment": "year",
+    "prompt": {
+      "fr": "Quel mouvement correspond au cycle mis en évidence ?",
+      "en": "Which motion matches the highlighted cycle?"
+    },
+    "content": [
+      {
+        "type": "highlight",
+        "text": {
+          "fr": "une année",
+          "en": "one year"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "Un tour de la Terre autour du Soleil",
+          "en": "One Earth orbit around the Sun"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "Un tour de la Terre sur elle-même",
+          "en": "One Earth rotation"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "Un tour de la Lune en une heure",
+          "en": "One Moon orbit in an hour"
+        }
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "orbits"
+    ],
+    "requires": [
+      "orbits"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "L’année correspond approximativement à une révolution terrestre ; le jour à une rotation.",
+          "en": "A year corresponds approximately to one Earth orbit; a day to one rotation."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": {
+          "fr": "L’année correspond approximativement à une révolution terrestre ; le jour à une rotation.",
+          "en": "A year corresponds approximately to one Earth orbit; a day to one rotation."
+        },
+        "observed": [
+          "rotation-revolution"
+        ],
+        "hypotheses": [
+          "orbits"
+        ],
+        "practice": [
+          "practice-cycles"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "L’année correspond approximativement à une révolution terrestre ; le jour à une rotation.",
+          "en": "A year corresponds approximately to one Earth orbit; a day to one rotation."
+        },
+        "observed": [
+          "rotation-revolution"
+        ],
+        "hypotheses": [
+          "orbits"
+        ],
+        "practice": [
+          "practice-cycles"
+        ]
+      }
+    },
+    "help": "cycles"
+  }
+]

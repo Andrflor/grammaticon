@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "compass",
+  "revision": "1",
+  "name": {
+    "fr": "Le Cabinet des repères",
+    "en": "The Reference Cabinet"
+  },
+  "subtitle": {
+    "fr": "Mesurer, situer, comprendre",
+    "en": "Measure, locate, understand"
+  },
+  "defaultLocale": "fr",
+  "locales": {
+    "fr": "locales/fr.json",
+    "en": "locales/en.json"
+  },
+  "assets": "assets.json",
+  "knowledge": "knowledge.json",
+  "help": "help.json",
+  "rules": "rules.json",
+  "places": [
+    "observatory",
+    "archives",
+    "map-room"
+  ],
+  "theme": {
+    "colors": {
+      "primary": "FF00695C",
+      "accent": "FFFFB74D",
+      "surface": "FFF4FAF8",
+      "background": "FF102A32",
+      "onBackground": "FFFFFFFF",
+      "text": "FF183D38",
+      "error": "FFE83240"
+    },
+    "bodyFont": "Nunito",
+    "headingFont": "Nunito",
+    "radius": 16,
+    "spacing": 16,
+    "buttonHeight": 48,
+    "bodySize": 18,
+    "headingSize": 26,
+    "questionSize": 28,
+    "maxWidth": 1100,
+    "sceneHeight": 240,
+    "sceneActorHeight": 190,
+    "sceneActorWidth": 150,
+    "sceneRadius": 16,
+    "motionDurationMs": 180,
+    "actorY": 0.8,
+    "heroX": -0.65,
+    "opponentX": 0.65,
+    "strikeX": -0.15,
+    "hitOpacity": 0.5,
+    "effectSize": 40
+  },
+  "presentation": {
+    "background": "city_bg",
+    "music": "thema"
+  },
+  "settings": {
+    "sound": true,
+    "music": false,
+    "volume": 0.5,
+    "reducedMotion": false,
+    "correctDelayMs": 350
+  }
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "id": "north",
+    "interaction": "choice",
+    "dimension": "selection",
+    "item": "north",
+    "assessment": "north",
+    "prompt": {
+      "fr": "Le nord est en haut. Où se trouve l’est ?",
+      "en": "North is at the top. Where is east?"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Carte orientée au nord",
+          "en": "North-up map"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "À gauche",
+          "en": "Left"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "À droite",
+          "en": "Right"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "En bas",
+          "en": "Below"
+        }
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "orientation"
+    ],
+    "requires": [
+      "orientation"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Sur une carte orientée au nord, l’est est à droite et l’ouest à gauche.",
+          "en": "On a north-up map, east is right and west is left."
+        },
+        "observed": [
+          "direction-reversed"
+        ],
+        "hypotheses": [
+          "orientation"
+        ],
+        "practice": [
+          "practice-orientation"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "Sur une carte orientée au nord, l’est est à droite et l’ouest à gauche.",
+          "en": "On a north-up map, east is right and west is left."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": {
+          "fr": "Sur une carte orientée au nord, l’est est à droite et l’ouest à gauche.",
+          "en": "On a north-up map, east is right and west is left."
+        },
+        "observed": [
+          "direction-reversed"
+        ],
+        "hypotheses": [
+          "orientation"
+        ],
+        "practice": [
+          "practice-orientation"
+        ]
+      }
+    },
+    "help": "orientation"
+  },
+  {
+    "id": "opposite",
+    "interaction": "highlightChoice",
+    "dimension": "interpretation",
+    "item": "opposite",
+    "assessment": "opposite",
+    "prompt": {
+      "fr": "Quelle direction est opposée à celle-ci ?",
+      "en": "Which direction is opposite to this one?"
+    },
+    "content": [
+      {
+        "type": "highlight",
+        "text": {
+          "fr": "Nord",
+          "en": "North"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "Sud",
+          "en": "South"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "Est",
+          "en": "East"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "Ouest",
+          "en": "West"
+        }
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "orientation"
+    ],
+    "requires": [
+      "orientation"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Le sud est opposé au nord ; l’est et l’ouest forment l’autre paire.",
+          "en": "South is opposite north; east and west form the other pair."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": {
+          "fr": "Le sud est opposé au nord ; l’est et l’ouest forment l’autre paire.",
+          "en": "South is opposite north; east and west form the other pair."
+        },
+        "observed": [
+          "direction-reversed"
+        ],
+        "hypotheses": [
+          "orientation"
+        ],
+        "practice": [
+          "practice-orientation"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "Le sud est opposé au nord ; l’est et l’ouest forment l’autre paire.",
+          "en": "South is opposite north; east and west form the other pair."
+        },
+        "observed": [
+          "direction-reversed"
+        ],
+        "hypotheses": [
+          "orientation"
+        ],
+        "practice": [
+          "practice-orientation"
+        ]
+      }
+    },
+    "help": "orientation"
+  }
+]

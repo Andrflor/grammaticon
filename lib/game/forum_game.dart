@@ -1,3 +1,5 @@
+import '../engine/design.dart';
+import '../app/theme.dart';
 import 'dart:math';
 import 'dart:ui';
 
@@ -13,10 +15,12 @@ import 'encounter_scene.dart';
 /// delivered with a gesture (a scroll flies to the opponent, who recoils under
 /// applause); an error is the opponent's rebuttal (the player recoils under a
 /// murmur). Same engine as the arena; different choreography.
-class ForumGame extends EncounterScene {
-  ForumGame({required this.opponentId, super.reducedMotion = false});
+class ProjectileScene extends EncounterScene {
+  ProjectileScene({required this.design, required this.view, required this.skin, super.reducedMotion = false});
 
-  final String opponentId;
+  final GameDesign design;
+  final Json view;
+  final G skin;
 
   late final SpriteComponent _bg;
   late final Fighter orator;
@@ -25,17 +29,17 @@ class ForumGame extends EncounterScene {
   bool _ready = false;
 
   @override
-  Color backgroundColor() => const Color(0xFF2E1A4C);
+  Color backgroundColor() => skin.paint('FF2E1A4C');
 
   @override
   Future<void> onLoad() async {
-    final names = ['forum_bg', 'orator_idle', 'orator_gesture', 'orator_hurt', 'orator_victory', 'orator_defeat', 'rhetor_$opponentId', 'argumentum', 'laurel'];
-    for (final n in names) {
-      _sprites[n] = Sprite(await images.load('$n.png'));
+    images.prefix = '';
+    for (final role in ['background', 'hero', 'heroCorrect', 'heroWrong', 'heroVictory', 'heroDefeat', 'opponent', 'projectile', 'rewardEffect']) {
+      _sprites[role] = Sprite(await images.load(design.asset(view[role] as String)));
     }
-    _bg = SpriteComponent(sprite: _sprites['forum_bg'], anchor: Anchor.center, priority: 0);
-    orator = Fighter(idle: _sprites['orator_idle']!, facingRight: true, priority: 2);
-    opponent = Fighter(idle: _sprites['rhetor_$opponentId']!, facingRight: false, priority: 1);
+    _bg = SpriteComponent(sprite: _sprites['background'], anchor: Anchor.center, priority: 0);
+    orator = Fighter(idle: _sprites['hero']!, facingRight: true, priority: 2);
+    opponent = Fighter(idle: _sprites['opponent']!, facingRight: false, priority: 1);
     addAll([_bg, orator, opponent]);
     _ready = true;
     _layout(size);
@@ -64,7 +68,7 @@ class ForumGame extends EncounterScene {
   @override
   void playerStrikes() {
     if (!_ready) return;
-    orator.swapSprite(_sprites['orator_gesture']!, const Duration(milliseconds: 620));
+    orator.swapSprite(_sprites['heroCorrect']!, Duration(milliseconds: 620));
     final from = orator.position - Vector2(-orator.size.x * 0.3, orator.size.y * 0.62);
     final to = opponent.position - Vector2(0, opponent.size.y * 0.6);
     if (reducedMotion) {
@@ -74,11 +78,11 @@ class ForumGame extends EncounterScene {
     }
     orator.add(MoveByEffect(Vector2(18, 0), EffectController(duration: 0.14, reverseDuration: 0.3, curve: Curves.easeOutCubic)));
     _scroll(from, to);
-    Future<void>.delayed(const Duration(milliseconds: 260), () {
+    Future<void>.delayed(Duration(milliseconds: 260), () {
       if (!isMounted) return;
       opponent.flash();
       opponent.recoil(Vector2(22, 0));
-      _burst(to, const Color(0xFFFFE08A), 14);
+      _burst(to, skin.paint('FFFFE08A'), 14);
       _applause(intensity: 1);
     });
   }
@@ -90,19 +94,19 @@ class ForumGame extends EncounterScene {
     if (!_ready) return;
     final to = orator.position - Vector2(0, orator.size.y * 0.6);
     final from = opponent.position - Vector2(opponent.size.x * 0.3, opponent.size.y * 0.62);
-    Future<void>.delayed(const Duration(milliseconds: 240), () {
+    Future<void>.delayed(Duration(milliseconds: 240), () {
       if (!isMounted) return;
-      orator.swapSprite(_sprites['orator_hurt']!, const Duration(milliseconds: 700));
+      orator.swapSprite(_sprites['heroWrong']!, Duration(milliseconds: 700));
     });
     if (reducedMotion) {
-      orator.flash(color: const Color(0xFFE0333F));
+      orator.flash(color: skin.paint('FFE0333F'));
       return;
     }
     opponent.add(MoveByEffect(Vector2(-18, 0), EffectController(duration: 0.14, reverseDuration: 0.3, curve: Curves.easeOutCubic)));
     _wave(from, to);
-    Future<void>.delayed(const Duration(milliseconds: 260), () {
+    Future<void>.delayed(Duration(milliseconds: 260), () {
       if (!isMounted) return;
-      orator.flash(color: const Color(0xFFE0333F));
+      orator.flash(color: skin.paint('FFE0333F'));
       orator.recoil(Vector2(-20, 0));
       _murmur();
     });
@@ -111,7 +115,7 @@ class ForumGame extends EncounterScene {
   @override
   void victory() {
     if (!_ready) return;
-    orator.swapSprite(_sprites['orator_victory']!, const Duration(days: 1));
+    orator.swapSprite(_sprites['heroVictory']!, Duration(days: 1));
     opponent.defeated();
     if (!reducedMotion) {
       orator.add(MoveByEffect(Vector2(0, -24), EffectController(duration: 0.25, reverseDuration: 0.25, repeatCount: 3, curve: Curves.easeOut)));
@@ -123,7 +127,7 @@ class ForumGame extends EncounterScene {
   @override
   void defeat() {
     if (!_ready) return;
-    orator.swapSprite(_sprites['orator_defeat']!, const Duration(days: 1));
+    orator.swapSprite(_sprites['heroDefeat']!, Duration(days: 1));
     if (!reducedMotion) {
       orator.add(MoveByEffect(Vector2(0, 22), EffectController(duration: 0.4, curve: Curves.easeIn)));
       _murmur(heavy: true);
@@ -142,7 +146,7 @@ class ForumGame extends EncounterScene {
   /// A scroll of argument arcs from the orator's hand to the opponent.
   void _scroll(Vector2 from, Vector2 to) {
     final s = orator.size.y * 0.22;
-    final c = SpriteComponent(sprite: _sprites['argumentum'], size: Vector2.all(s), anchor: Anchor.center, position: from, priority: 5);
+    final c = SpriteComponent(sprite: _sprites['projectile'], size: Vector2.all(s), anchor: Anchor.center, position: from, priority: 5);
     final mid = Vector2((from.x + to.x) / 2, min(from.y, to.y) - orator.size.y * 0.35);
     c.add(MoveAlongPathEffect(Path()..quadraticBezierTo(mid.x - from.x, mid.y - from.y, to.x - from.x, to.y - from.y), EffectController(duration: 0.26, curve: Curves.easeIn)));
     c.add(RotateEffect.by(pi * 1.5, EffectController(duration: 0.26)));
@@ -153,7 +157,7 @@ class ForumGame extends EncounterScene {
 
   /// A red rebuttal wave: a widening ring that travels toward the orator.
   void _wave(Vector2 from, Vector2 to) {
-    final ring = CircleComponent(radius: 10, position: from, anchor: Anchor.center, priority: 5, paint: Paint()..color = const Color(0xCCE0333F)..style = PaintingStyle.stroke..strokeWidth = 6);
+    final ring = CircleComponent(radius: 10, position: from, anchor: Anchor.center, priority: 5, paint: Paint()..color = skin.paint('CCE0333F')..style = PaintingStyle.stroke..strokeWidth = 6);
     ring.add(MoveToEffect(to, EffectController(duration: 0.26, curve: Curves.easeIn)));
     ring.add(ScaleEffect.to(Vector2.all(3.2), EffectController(duration: 0.26)));
     ring.add(OpacityEffect.fadeOut(EffectController(duration: 0.12, startDelay: 0.22)));
@@ -199,7 +203,7 @@ class ForumGame extends EncounterScene {
             position: Vector2(x, rnd.nextDouble() * 20),
             speed: Vector2((rnd.nextDouble() - 0.5) * 60, -sp),
             acceleration: Vector2(0, 260),
-            child: CircleParticle(radius: 3 + rnd.nextDouble() * 3, paint: Paint()..color = i.isEven ? const Color(0xFFFFE08A) : const Color(0xFFFFFFFF)),
+            child: CircleParticle(radius: 3 + rnd.nextDouble() * 3, paint: Paint()..color = i.isEven ? skin.paint('FFFFE08A') : skin.paint('FFFFFFFF')),
           );
         },
       ),
@@ -221,7 +225,7 @@ class ForumGame extends EncounterScene {
             position: Vector2(x, 0),
             speed: Vector2((rnd.nextDouble() - 0.5) * 40, 20 + rnd.nextDouble() * 40),
             acceleration: Vector2(0, 60),
-            child: CircleParticle(radius: 3 + rnd.nextDouble() * 4, paint: Paint()..color = const Color(0x99605070)),
+            child: CircleParticle(radius: 3 + rnd.nextDouble() * 4, paint: Paint()..color = skin.paint('99605070')),
           );
         },
       ),
@@ -231,7 +235,7 @@ class ForumGame extends EncounterScene {
   /// Victory: laurel leaves rain down.
   void _laurels() {
     final rnd = Random();
-    final leaf = _sprites['laurel']!;
+    final leaf = _sprites['rewardEffect']!;
     add(ParticleSystemComponent(
       position: Vector2(size.x / 2, size.y * 0.15),
       priority: 6,

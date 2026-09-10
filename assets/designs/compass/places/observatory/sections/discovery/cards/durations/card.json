@@ -1,0 +1,37 @@
+{
+  "id": "durations",
+  "name": {
+    "fr": "Durées",
+    "en": "Durations"
+  },
+  "subtitle": {
+    "fr": "Deux repères, trois choix",
+    "en": "Two references, three choices"
+  },
+  "skills": [
+    "time-units"
+  ],
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": []
+    }
+  },
+  "encounter": {
+    "lives": 3,
+    "target": 3
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "opponent": "rhetor_rhetor",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur"
+  }
+}

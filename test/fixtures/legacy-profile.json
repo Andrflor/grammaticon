@@ -1,0 +1,100 @@
+{
+  "schema": 5,
+  "gameId": "grammaticon",
+  "gems": 83,
+  "purchased": [
+    "ind-imperf-act",
+    "deponentia"
+  ],
+  "skills": {
+    "v.ind.praes.act": {
+      "ac": 7,
+      "aw": 2,
+      "aidc": 1,
+      "aidw": 0,
+      "est": 0.72,
+      "hw": 0.8,
+      "lemmas": [
+        "amo",
+        "moneo"
+      ],
+      "days": [
+        "2026-09-08"
+      ],
+      "last": 1788860000000,
+      "recent": [
+        {
+          "t": 1788860000000,
+          "c": true,
+          "l": "amo",
+          "q": "autonoma",
+          "tr": "ind-praes-act"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "snd": false,
+    "mus": false,
+    "vol": 0.3,
+    "rm": true,
+    "cd": 350
+  },
+  "tx": 42,
+  "won": 3,
+  "lost": 1,
+  "introSeen": [
+    "ind-praes-act"
+  ],
+  "activities": {
+    "amphitheatrum": {
+      "w": 3,
+      "l": 1
+    }
+  },
+  "expo": {
+    "preserved": "excluded content history"
+  },
+  "answers": [
+    {
+      "transactionId": 42,
+      "question": {
+        "lemmaId": "amo",
+        "surface": "amat"
+      },
+      "correct": true,
+      "responseTimeMs": 7300
+    }
+  ],
+  "errata": {
+    "i": [
+      {
+        "f": "v|sequor|ind.praes.pass.3.sg",
+        "c": "ind.praes.pass.3.sg",
+        "l": "sequor",
+        "s": "sequitur",
+        "a": "passive morphology, active meaning",
+        "tr": "deponentia",
+        "t": 1788860000000,
+        "b": 12,
+        "n": 2,
+        "ok": 0,
+        "x": {
+          "pass": 2
+        },
+        "dimension": "voxSensus"
+      }
+    ]
+  },
+  "battle": {
+    "t": "ind-praes-act",
+    "h": 2,
+    "e": 7,
+    "a": 4,
+    "g": 11,
+    "s": 27,
+    "q": 4,
+    "c": [],
+    "ok": 3
+  }
+}

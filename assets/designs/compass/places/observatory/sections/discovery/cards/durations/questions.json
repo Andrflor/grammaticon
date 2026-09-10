@@ -1,0 +1,183 @@
+[
+  {
+    "id": "hours",
+    "interaction": "gapChoice",
+    "dimension": "completion",
+    "item": "hours",
+    "assessment": "hours",
+    "prompt": {
+      "fr": "Compléter la conversion.",
+      "en": "Complete the conversion."
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Deux heures = ",
+          "en": "Two hours = "
+        }
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": {
+          "fr": " minutes",
+          "en": " minutes"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "120"
+      },
+      {
+        "id": "1",
+        "text": "200"
+      },
+      {
+        "id": "2",
+        "text": "60"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "time-units"
+    ],
+    "requires": [
+      "time-units"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Une heure contient 60 minutes : 2 × 60 = 120. Le facteur est 60, pas 100.",
+          "en": "An hour has 60 minutes: 2 × 60 = 120. The factor is 60, not 100."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": {
+          "fr": "200 correspond à deux groupes de 100. Une heure contient 60 minutes : il faut deux groupes de 60.",
+          "en": "200 is two groups of 100. An hour contains 60 minutes, so we need two groups of 60."
+        },
+        "observed": [
+          "unit-factor"
+        ],
+        "hypotheses": [
+          "time-units"
+        ],
+        "practice": [
+          "duration-base"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "60 minutes représentent une seule heure. La question porte sur deux heures : il faut compter deux fois cette durée.",
+          "en": "60 minutes represent one hour. The question asks about two hours: count that duration twice."
+        },
+        "observed": [
+          "unit-count-omitted"
+        ],
+        "hypotheses": [
+          "time-units"
+        ],
+        "practice": [
+          "duration-count"
+        ]
+      }
+    },
+    "help": "durations"
+  },
+  {
+    "id": "half-hour",
+    "interaction": "choice",
+    "dimension": "selection",
+    "item": "half-hour",
+    "assessment": "half-hour",
+    "prompt": {
+      "fr": "Combien de minutes dure une demi-heure ?",
+      "en": "How many minutes are in half an hour?"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Une demi-heure",
+          "en": "Half an hour"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "50"
+      },
+      {
+        "id": "1",
+        "text": "30"
+      },
+      {
+        "id": "2",
+        "text": "15"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "time-units"
+    ],
+    "requires": [
+      "time-units"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "La moitié de 60 est 30. Le découpage d’une heure n’est pas un découpage en cent parties.",
+          "en": "Half of 60 is 30. An hour is not divided into a hundred minutes."
+        },
+        "observed": [
+          "unit-factor"
+        ],
+        "hypotheses": [
+          "time-units"
+        ],
+        "practice": [
+          "practice-durations"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "La moitié de 60 est 30. Le découpage d’une heure n’est pas un découpage en cent parties.",
+          "en": "Half of 60 is 30. An hour is not divided into a hundred minutes."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": {
+          "fr": "La moitié de 60 est 30. Le découpage d’une heure n’est pas un découpage en cent parties.",
+          "en": "Half of 60 is 30. An hour is not divided into a hundred minutes."
+        },
+        "observed": [
+          "unit-factor"
+        ],
+        "hypotheses": [
+          "time-units"
+        ],
+        "practice": [
+          "practice-durations"
+        ]
+      }
+    },
+    "help": "durations"
+  }
+]

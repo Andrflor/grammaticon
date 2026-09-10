@@ -1,0 +1,183 @@
+[
+  {
+    "id": "map-two",
+    "interaction": "choice",
+    "dimension": "selection",
+    "item": "map-two",
+    "assessment": "map-two",
+    "prompt": {
+      "fr": "1 cm représente 5 km. Que représentent 2 cm ?",
+      "en": "1 cm represents 5 km. What do 2 cm represent?"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Échelle : 1 cm → 5 km",
+          "en": "Scale: 1 cm → 5 km"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "2,5 km"
+      },
+      {
+        "id": "1",
+        "text": "10 km"
+      },
+      {
+        "id": "2",
+        "text": "7 km"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "scale"
+    ],
+    "requires": [
+      "scale"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Deux segments de 1 cm représentent chacun 5 km : 2 × 5 = 10 km.",
+          "en": "Two 1 cm segments each represent 5 km: 2 × 5 = 10 km."
+        },
+        "observed": [
+          "scale-direction"
+        ],
+        "hypotheses": [
+          "scale"
+        ],
+        "practice": [
+          "practice-scale"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "Deux segments de 1 cm représentent chacun 5 km : 2 × 5 = 10 km.",
+          "en": "Two 1 cm segments each represent 5 km: 2 × 5 = 10 km."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": {
+          "fr": "Deux segments de 1 cm représentent chacun 5 km : 2 × 5 = 10 km.",
+          "en": "Two 1 cm segments each represent 5 km: 2 × 5 = 10 km."
+        },
+        "observed": [
+          "scale-direction"
+        ],
+        "hypotheses": [
+          "scale"
+        ],
+        "practice": [
+          "practice-scale"
+        ]
+      }
+    },
+    "help": "scale"
+  },
+  {
+    "id": "map-back",
+    "interaction": "gapChoice",
+    "dimension": "completion",
+    "item": "map-back",
+    "assessment": "map-back",
+    "prompt": {
+      "fr": "1 cm représente 5 km. Compléter.",
+      "en": "1 cm represents 5 km. Complete the gap."
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "15 km correspondent à ",
+          "en": "15 km correspond to "
+        }
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": {
+          "fr": " cm",
+          "en": " cm"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "75"
+      },
+      {
+        "id": "1",
+        "text": "10"
+      },
+      {
+        "id": "2",
+        "text": "3"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "scale"
+    ],
+    "requires": [
+      "scale"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "On cherche le nombre de groupes de 5 km : 15 ÷ 5 = 3 cm.",
+          "en": "Find the number of 5 km groups: 15 ÷ 5 = 3 cm."
+        },
+        "observed": [
+          "scale-direction"
+        ],
+        "hypotheses": [
+          "scale"
+        ],
+        "practice": [
+          "practice-scale"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "On cherche le nombre de groupes de 5 km : 15 ÷ 5 = 3 cm.",
+          "en": "Find the number of 5 km groups: 15 ÷ 5 = 3 cm."
+        },
+        "observed": [
+          "scale-direction"
+        ],
+        "hypotheses": [
+          "scale"
+        ],
+        "practice": [
+          "practice-scale"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "On cherche le nombre de groupes de 5 km : 15 ÷ 5 = 3 cm.",
+          "en": "Find the number of 5 km groups: 15 ÷ 5 = 3 cm."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "help": "scale"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "earlier",
+    "interaction": "choice",
+    "dimension": "selection",
+    "item": "earlier",
+    "assessment": "earlier",
+    "prompt": {
+      "fr": "Quel événement a eu lieu en premier ?",
+      "en": "Which event happened first?"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Comparer les dates",
+          "en": "Compare the dates"
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "Premier pas humain sur la Lune : 1969",
+          "en": "First human Moon landing: 1969"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "Début de la Révolution française : 1789",
+          "en": "Start of the French Revolution: 1789"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "Premier vol motorisé des frères Wright : 1903",
+          "en": "Wright brothers’ first powered flight: 1903"
+        }
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "ordering"
+    ],
+    "requires": [
+      "ordering"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "1789 précède 1903, puis 1969. Comparer les dates données suffit ici ; il n’est pas nécessaire de les connaître par cœur.",
+          "en": "1789 precedes 1903, then 1969. Comparing the supplied dates is sufficient; memorizing them is unnecessary."
+        },
+        "observed": [
+          "order-reversed"
+        ],
+        "hypotheses": [
+          "ordering"
+        ],
+        "practice": [
+          "practice-sequence"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "1789 précède 1903, puis 1969. Comparer les dates données suffit ici ; il n’est pas nécessaire de les connaître par cœur.",
+          "en": "1789 precedes 1903, then 1969. Comparing the supplied dates is sufficient; memorizing them is unnecessary."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": {
+          "fr": "1789 précède 1903, puis 1969. Comparer les dates données suffit ici ; il n’est pas nécessaire de les connaître par cœur.",
+          "en": "1789 precedes 1903, then 1969. Comparing the supplied dates is sufficient; memorizing them is unnecessary."
+        },
+        "observed": [
+          "order-reversed"
+        ],
+        "hypotheses": [
+          "ordering"
+        ],
+        "practice": [
+          "practice-sequence"
+        ]
+      }
+    },
+    "help": "sequence"
+  },
+  {
+    "id": "later",
+    "interaction": "highlightChoice",
+    "dimension": "interpretation",
+    "item": "later",
+    "assessment": "later",
+    "prompt": {
+      "fr": "Quelle date vient après celle qui est indiquée ?",
+      "en": "Which date comes after the highlighted one?"
+    },
+    "content": [
+      {
+        "type": "highlight",
+        "text": "1903"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "1789"
+      },
+      {
+        "id": "1",
+        "text": "1900"
+      },
+      {
+        "id": "2",
+        "text": "1969"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "ordering"
+    ],
+    "requires": [
+      "ordering"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "1969 vient après 1903. Les deux autres dates lui sont antérieures.",
+          "en": "1969 comes after 1903. The other two dates come before it."
+        },
+        "observed": [
+          "order-reversed"
+        ],
+        "hypotheses": [
+          "ordering"
+        ],
+        "practice": [
+          "practice-sequence"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "1969 vient après 1903. Les deux autres dates lui sont antérieures.",
+          "en": "1969 comes after 1903. The other two dates come before it."
+        },
+        "observed": [
+          "order-reversed"
+        ],
+        "hypotheses": [
+          "ordering"
+        ],
+        "practice": [
+          "practice-sequence"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "1969 vient après 1903. Les deux autres dates lui sont antérieures.",
+          "en": "1969 comes after 1903. The other two dates come before it."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "help": "sequence"
+  }
+]

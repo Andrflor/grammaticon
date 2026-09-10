@@ -1,0 +1,112 @@
+{
+  "mastery": {
+    "levels": [
+      {
+        "id": "new",
+        "name": "Nova",
+        "threshold": 0,
+        "minObservations": 0,
+        "minItems": 0,
+        "minRecentSuccess": 0,
+        "graceDays": 0,
+        "color": "FF6B6360"
+      },
+      {
+        "id": "learning",
+        "name": "Discēns",
+        "threshold": 0,
+        "minObservations": 1,
+        "minItems": 0,
+        "minRecentSuccess": 0,
+        "graceDays": 2,
+        "color": "FF1F74EC"
+      },
+      {
+        "id": "familiar",
+        "name": "Familiāris",
+        "threshold": 0.6,
+        "minObservations": 5,
+        "minItems": 0,
+        "minRecentSuccess": 0,
+        "graceDays": 5,
+        "color": "FFDB9C39"
+      },
+      {
+        "id": "proficient",
+        "name": "Perīta",
+        "threshold": 0.85,
+        "minObservations": 12,
+        "minItems": 4,
+        "minRecentSuccess": 0.85,
+        "graceDays": 14,
+        "color": "FF3CBF55"
+      }
+    ],
+    "alpha": 0.2,
+    "initialCorrect": 0.55,
+    "initialWrong": 0.2,
+    "highWaterDecay": 0.02,
+    "recentWindow": 20,
+    "decayPerDay": 0.02,
+    "graceDoublings": 3
+  },
+  "economy": {
+    "startingBalance": 0,
+    "levels": [
+      {
+        "gain": 8,
+        "loss": 1
+      },
+      {
+        "gain": 5,
+        "loss": 2
+      },
+      {
+        "gain": 2,
+        "loss": 3
+      },
+      {
+        "gain": 0,
+        "loss": 4
+      }
+    ],
+    "assistedGain": 1,
+    "assistedLoss": 0,
+    "itemSaturation": 3,
+    "victoryBonus": 6,
+    "catchUpMultiplier": 2,
+    "minBalance": 0,
+    "loseEncounterGains": true,
+    "defeatTributeRatio": 0.25,
+    "defeatTributeMax": 40,
+    "defeatRounding": "up",
+    "description": "Gemmae certāminis āmittuntur et quārta pars summae (ad 40) tribūtum solvitur. Emptiōnēs manent.",
+    "displayRules": [
+      {
+        "text": "Auxiliō adhibitō: +1 sī rēctē, nūlla poena."
+      },
+      {
+        "text": "Victōria: +6 gemmae, ×2 sī nihil emī potest."
+      },
+      {
+        "text": "Idem verbum post 3 respōnsa rēcta nihil affert."
+      },
+      {
+        "text": "Clādēs: gemmae certāminis āmittuntur et quārta pars summae (ad 40) tribūtum solvitur. Emptiōnēs manent."
+      },
+      {
+        "text": "Summa nunquam īnfrā 0; emptiōnēs perpetuae sunt."
+      }
+    ]
+  },
+  "selection": {
+    "unknownWeight": 2.0,
+    "weakScale": 2.0,
+    "sameQuestionBoost": 4.0,
+    "linkedQuestionBoost": 2.5,
+    "retireAfter": 2,
+    "maxErrors": 150,
+    "maxObservations": 1000,
+    "recentItems": 4
+  }
+}

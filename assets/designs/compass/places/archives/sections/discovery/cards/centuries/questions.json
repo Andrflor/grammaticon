@@ -1,0 +1,189 @@
+[
+  {
+    "id": "1900",
+    "interaction": "highlightChoice",
+    "dimension": "interpretation",
+    "item": "1900",
+    "assessment": "1900",
+    "prompt": {
+      "fr": "À quel siècle appartient cette année ?",
+      "en": "Which century contains this year?"
+    },
+    "content": [
+      {
+        "type": "highlight",
+        "text": "1900"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": {
+          "fr": "XIXe siècle",
+          "en": "19th century"
+        }
+      },
+      {
+        "id": "1",
+        "text": {
+          "fr": "XXe siècle",
+          "en": "20th century"
+        }
+      },
+      {
+        "id": "2",
+        "text": {
+          "fr": "XVIIIe siècle",
+          "en": "18th century"
+        }
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "centuries"
+    ],
+    "requires": [
+      "centuries"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Le XIXe siècle va de 1801 à 1900 inclus. Le XXe commence en 1901.",
+          "en": "The 19th century runs from 1801 through 1900. The 20th begins in 1901."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": {
+          "fr": "Le XIXe siècle va de 1801 à 1900 inclus. Le XXe commence en 1901.",
+          "en": "The 19th century runs from 1801 through 1900. The 20th begins in 1901."
+        },
+        "observed": [
+          "century-boundary"
+        ],
+        "hypotheses": [
+          "centuries"
+        ],
+        "practice": [
+          "practice-centuries"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "Le XIXe siècle va de 1801 à 1900 inclus. Le XXe commence en 1901.",
+          "en": "The 19th century runs from 1801 through 1900. The 20th begins in 1901."
+        },
+        "observed": [
+          "century-boundary"
+        ],
+        "hypotheses": [
+          "centuries"
+        ],
+        "practice": [
+          "practice-centuries"
+        ]
+      }
+    },
+    "help": "centuries"
+  },
+  {
+    "id": "1901",
+    "interaction": "gapChoice",
+    "dimension": "completion",
+    "item": "1901",
+    "assessment": "1901",
+    "prompt": {
+      "fr": "Compléter le repère.",
+      "en": "Complete the reference."
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": {
+          "fr": "Le XXe siècle commence en ",
+          "en": "The 20th century begins in "
+        }
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": {
+          "fr": "",
+          "en": ""
+        }
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "1900"
+      },
+      {
+        "id": "1",
+        "text": "2000"
+      },
+      {
+        "id": "2",
+        "text": "1901"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "centuries"
+    ],
+    "requires": [
+      "centuries"
+    ],
+    "outcomes": {
+      "0": {
+        "feedback": {
+          "fr": "Le premier siècle regroupe les années 1 à 100 ; en poursuivant ces groupes, le XXe commence en 1901.",
+          "en": "The first century contains years 1–100; continuing those groups, the 20th begins in 1901."
+        },
+        "observed": [
+          "century-boundary"
+        ],
+        "hypotheses": [
+          "centuries"
+        ],
+        "practice": [
+          "practice-centuries"
+        ]
+      },
+      "1": {
+        "feedback": {
+          "fr": "Le premier siècle regroupe les années 1 à 100 ; en poursuivant ces groupes, le XXe commence en 1901.",
+          "en": "The first century contains years 1–100; continuing those groups, the 20th begins in 1901."
+        },
+        "observed": [
+          "century-boundary"
+        ],
+        "hypotheses": [
+          "centuries"
+        ],
+        "practice": [
+          "practice-centuries"
+        ]
+      },
+      "2": {
+        "feedback": {
+          "fr": "Le premier siècle regroupe les années 1 à 100 ; en poursuivant ces groupes, le XXe commence en 1901.",
+          "en": "The first century contains years 1–100; continuing those groups, the 20th begins in 1901."
+        },
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "help": "centuries"
+  }
+]

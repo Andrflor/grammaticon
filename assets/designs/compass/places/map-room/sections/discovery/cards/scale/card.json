@@ -1,0 +1,54 @@
+{
+  "id": "scale",
+  "name": {
+    "fr": "Échelles",
+    "en": "Scales"
+  },
+  "subtitle": {
+    "fr": "Deux repères, trois choix",
+    "en": "Two references, three choices"
+  },
+  "skills": [
+    "scale"
+  ],
+  "access": {
+    "price": 8,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "observatory/discovery/durations"
+        },
+        {
+          "any": [
+            {
+              "completed": "observatory/discovery/durations"
+            },
+            {
+              "skill": {
+                "id": "time-units",
+                "minLevel": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "encounter": {
+    "lives": 3,
+    "target": 3
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "opponent": "rhetor_rhetor",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur"
+  }
+}

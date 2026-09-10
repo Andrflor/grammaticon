@@ -1,22 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../app/app.dart';
-import '../../app/providers.dart';
+import '../../engine/design.dart';
+import '../../engine/session.dart';
 import '../../app/theme.dart';
-import '../../audio/audio_service.dart';
-import '../../battle/battle_controller.dart';
-import '../../pedagogy/trials.dart';
-import '../activity/activity_config.dart';
-import '../battle/battle_screen.dart';
-import '../coliseum/coliseum_screen.dart';
-import '../forum/forum_screen.dart';
-import '../settings/settings_screen.dart';
-import '../tabula/tabula_screen.dart';
-import '../theatrum/theatrum_screen.dart';
 import '../widgets/roman_widgets.dart';
-
 class _Building {
   const _Building({required this.id, required this.name, required this.activity, required this.asset, required this.x, required this.y, required this.width, this.future = false});
   final String id;
@@ -31,63 +17,39 @@ class _Building {
   final bool future;
 }
 
-const _buildings = [
-  _Building(id: 'templum', name: 'Templum', activity: 'Gallicē → Latīnē · ventūrum', asset: 'assets/images/bld_templum.png', x: 0.50, y: 0.42, width: 0.20, future: true),
-  _Building(id: 'amphitheatrum', name: 'Amphitheātrum', activity: 'Coniugātiōnēs', asset: 'assets/images/bld_amphitheatrum.png', x: 0.84, y: 0.56, width: 0.30),
-  _Building(id: 'theatrum', name: 'Theātrum', activity: 'Latīnē → Gallicē', asset: 'assets/images/bld_theatrum.png', x: 0.22, y: 0.74, width: 0.26),
-  _Building(id: 'forum', name: 'Forum', activity: 'Dēclīnātiōnēs', asset: 'assets/images/bld_forum.png', x: 0.68, y: 0.86, width: 0.26),
-];
-
-/// The Roman city: an interactive scene with four buildings (three open, the
-/// Templum announced).
-class CityScreen extends HookConsumerWidget {
-  const CityScreen({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final save = ref.watch(profileProvider);
-    final audio = ref.read(audioProvider);
-    final battle = ref.watch(battleProvider);
-
-    void open(_Building b) {
-      if (b.future) {
-        audio.play(Sfx.vetitum);
-        showLatinSnack(context, '${b.name}: aedificium ventūrum. Nōndum aperītur.');
-        return;
-      }
-      audio.play(Sfx.tactus);
-      pushScreen(context, switch (b.id) { 'forum' => const ForumScreen(), 'theatrum' => const TheatrumScreen(), _ => const ColiseumScreen() });
-    }
-
-    final interrupted = save.activeBattle == null ? null : Trials.maybe(save.activeBattle!.trialId);
-    final interruptedLabels = interrupted == null ? null : configFor(interrupted.activity).labels;
-
+class CityScreen extends StatelessWidget {
+ const CityScreen({super.key, required this.session, required this.skin, required this.onOpen, required this.onProgress, required this.onSettings, required this.onResume});
+ final GameSession session;
+ final G skin;
+ final void Function(ContentNode) onOpen;
+ final VoidCallback onProgress, onSettings, onResume;
+ @override
+ Widget build(BuildContext context) {
+ final design = session.design;
+ final layout = object(design.root['presentation']);
+ final buildings = [
+ for(final node in design.places) _Building(id:node.address,name:session.text(node.data['name']),activity:session.text(node.data['subtitle']),asset:design.asset(node.data['presentation']['image']),x:(node.data['presentation']['position']['x'] as num).toDouble(),y:(node.data['presentation']['position']['y'] as num).toDouble(),width:(node.data['presentation']['width'] as num).toDouble()),
+ for(final item in objects(layout['decorations'])) _Building(id:item['id'],name:session.text(item['name']),activity:session.text(item['subtitle']),asset:design.asset(item['image']),x:(item['x'] as num).toDouble(),y:(item['y'] as num).toDouble(),width:(item['width'] as num).toDouble(),future:item['future']==true),
+ ]..sort((a,b) => strings(layout['worldOrder']).indexOf(a.id).compareTo(strings(layout['worldOrder']).indexOf(b.id)));
+ void open(_Building b) {
+ final node=design.nodes[b.id];
+ if(node!=null) onOpen(node);
+ }
     return Scaffold(
       body: LayoutBuilder(builder: (context, c) {
         final portrait = c.maxWidth < c.maxHeight;
         return Stack(fit: StackFit.expand, children: [
-          Image.asset('assets/images/city_bg.png', fit: BoxFit.cover, alignment: Alignment.bottomCenter),
-          if (portrait) _PortraitCity(onOpen: open, narrow: c.maxWidth < 700) else _StageCity(onOpen: open),
+          Image.asset(design.asset(layout['background']), fit: BoxFit.cover, alignment: Alignment.bottomCenter),
+          if (portrait) _PortraitCity(skin: skin, buildings: buildings, onOpen: open, narrow: c.maxWidth < 700) else _StageCity(skin: skin, buildings: buildings, onOpen: open),
           // HUD: Tabula flush left, the title centred on the screen, the cog and
           // the gems flush right in the same place as on every other screen.
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(kHudSidePadding, kHudTopPadding, kHudSidePadding, 12),
               child: Column(children: [
-                _CityHud(narrow: c.maxWidth < 700, gems: save.gems),
+                _CityHud(skin:skin,session:session,onProgress:onProgress,onSettings:onSettings,narrow:c.maxWidth<700,gems:session.balance),
                 const Spacer(),
-                if (interrupted != null && interruptedLabels != null && battle == null)
-                  RomanPanel(
-                    color: G.purpleDark,
-                    child: Wrap(crossAxisAlignment: WrapCrossAlignment.center, spacing: 12, runSpacing: 8, children: [
-                      Text('${interruptedLabels.interrupted}: ${interrupted.name}', style: G.body(16, color: G.goldLight, weight: 700)),
-                      RomanButton(label: interruptedLabels.resume, style: RomanButtonStyle.gold, dense: true, sound: null, onPressed: () {
-                        final ab = save.activeBattle!;
-                        pushScreen(context, BattleScreen(trial: interrupted, resume: ab));
-                      }),
-                      RomanButton(label: 'Omitte', style: RomanButtonStyle.neutral, dense: true, onPressed: () => ref.read(profileProvider.notifier).setActiveBattle(null)),
-                    ]),
-                  ),
+                if(session.encounter!=null) RomanPanel(skin:skin,color:skin.purpleDark,child:RomanButton(skin:skin,label:session.label('actions.resume'),style:RomanButtonStyle.gold,dense:true,onPressed:onResume)),
               ]),
             ),
           ),
@@ -98,7 +60,10 @@ class CityScreen extends HookConsumerWidget {
 }
 
 class _CityHud extends StatelessWidget {
-  const _CityHud({required this.narrow, required this.gems});
+ final G skin;
+ final GameSession session;
+ final VoidCallback onProgress,onSettings;
+  const _CityHud({required this.skin, required this.session, required this.onProgress, required this.onSettings, required this.narrow, required this.gems});
   final bool narrow;
   final int gems;
 
@@ -106,18 +71,18 @@ class _CityHud extends StatelessWidget {
   Widget build(BuildContext context) {
     final tabula = SizedBox(
       height: kPillHeight,
-      child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () => pushScreen(context, const TabulaScreen())),
+      child: RomanButton(skin:skin,label:session.label('actions.progress'), icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed:onProgress),
     );
     final right = Row(mainAxisSize: MainAxisSize.min, children: [
-      SettingsButton(onPressed: () => pushScreen(context, const SettingsScreen())),
+      RomanButton(skin:skin,label:'',icon:Icons.settings,style:RomanButtonStyle.ghost,dense:true,circular:true,onPressed:onSettings),
       const SizedBox(width: kHudGap),
       // Same 46 px pill height as the top bars and the arena HUD.
-      AnimatedGemCounter(count: gems, size: 34),
+      CurrencyCounter(skin:skin,asset:session.design.asset(session.design.root['presentation']['currency']),count:gems,size:34),
     ]);
-    final title = RomanPanel(
+    final title = RomanPanel(skin:skin,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      color: G.purpleDark,
-      child: Text('GRAMMATICON', style: G.display(narrow ? 20 : 26)),
+      color: skin.purpleDark,
+      child: Text(session.text(session.design.root['name']).toUpperCase(), style: skin.display(narrow ? 20 : 26)),
     );
     if (narrow) {
       // Phone: the title takes its own line under the pills.
@@ -134,7 +99,9 @@ class _CityHud extends StatelessWidget {
 double _cityHudHeight(bool narrow) => kHudTopPadding + (narrow ? kPillHeight + 10 + 48 : HudRow.defaultHeight) + 12;
 
 class _StageCity extends StatelessWidget {
-  const _StageCity({required this.onOpen});
+ final G skin;
+ final List<_Building> buildings;
+  const _StageCity({required this.skin, required this.buildings, required this.onOpen});
   final void Function(_Building) onOpen;
 
   @override
@@ -149,20 +116,22 @@ class _StageCity extends StatelessWidget {
         final left = (c.maxWidth - w) / 2;
         final top = c.maxHeight - h;
         return Stack(children: [
-          for (final b in _buildings)
+          for (final b in buildings)
             Positioned(
               left: left + b.x * w - b.width * w / 2,
               top: top + b.y * h - b.width * w * 0.75,
               width: b.width * w,
               height: b.width * w * 0.75 + 44,
-              child: _BuildingSpot(b: b, onTap: () => onOpen(b)),
+              child: _BuildingSpot(skin:skin,b: b, onTap: () => onOpen(b)),
             ),
         ]);
       });
 }
 
 class _PortraitCity extends StatelessWidget {
-  const _PortraitCity({required this.onOpen, required this.narrow});
+ final G skin;
+ final List<_Building> buildings;
+  const _PortraitCity({required this.skin, required this.buildings, required this.onOpen, required this.narrow});
   final void Function(_Building) onOpen;
   final bool narrow;
   @override
@@ -170,34 +139,41 @@ class _PortraitCity extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.fromLTRB(16, _cityHudHeight(narrow) + 20, 16, 24),
           children: [
-            for (final b in _buildings)
+            for (final b in buildings)
               Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: SizedBox(height: 200, child: _BuildingSpot(b: b, onTap: () => onOpen(b))),
+                child: SizedBox(height: 200, child: _BuildingSpot(skin:skin,b: b, onTap: () => onOpen(b))),
               ),
           ],
         ),
       );
 }
 
-class _BuildingSpot extends HookWidget {
-  const _BuildingSpot({required this.b, required this.onTap});
+class _BuildingSpot extends StatefulWidget {
+ final G skin;
+  const _BuildingSpot({required this.skin, required this.b, required this.onTap});
   final _Building b;
   final VoidCallback onTap;
 
-  @override
-  Widget build(BuildContext context) {
-    final hover = useState(false);
-    final pressed = useState(false);
-    final scale = pressed.value ? 0.97 : (hover.value ? 1.05 : 1.0);
+ @override
+ State<_BuildingSpot> createState()=>_BuildingSpotState();
+}
+class _BuildingSpotState extends State<_BuildingSpot> {
+ bool hover=false, pressed=false;
+ _Building get b=>widget.b;
+ G get skin=>widget.skin;
+ VoidCallback get onTap=>widget.onTap;
+ @override
+ Widget build(BuildContext context) {
+    final scale = pressed ? 0.97 : (hover ? 1.05 : 1.0);
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      onEnter: (_) => hover.value = true,
-      onExit: (_) => hover.value = false,
+      onEnter: (_) => setState(() => hover = true),
+      onExit: (_) => setState(() => hover = false),
       child: GestureDetector(
-        onTapDown: (_) => pressed.value = true,
-        onTapCancel: () => pressed.value = false,
-        onTapUp: (_) => pressed.value = false,
+        onTapDown: (_) => setState(() => pressed = true),
+        onTapCancel: () => setState(() => pressed = false),
+        onTapUp: (_) => setState(() => pressed = false),
         onTap: onTap,
         child: Semantics(
           button: true,
@@ -210,7 +186,7 @@ class _BuildingSpot extends HookWidget {
                 alignment: Alignment.bottomCenter,
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 160),
-                  decoration: BoxDecoration(boxShadow: hover.value ? const [BoxShadow(color: Color(0xAAFFE08A), blurRadius: 30, spreadRadius: 4)] : null, shape: BoxShape.circle),
+                  decoration: BoxDecoration(boxShadow: hover ? [BoxShadow(color: skin.paint('AAFFE08A'), blurRadius: 30, spreadRadius: 4)] : null, shape: BoxShape.circle),
                   child: Opacity(
                     opacity: b.future ? 0.9 : 1,
                     child: Image.asset(b.asset, fit: BoxFit.contain, alignment: Alignment.bottomCenter),
@@ -223,13 +199,13 @@ class _BuildingSpot extends HookWidget {
               duration: const Duration(milliseconds: 160),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: hover.value ? G.gold : G.purpleDark,
+                color: hover ? skin.gold : skin.purpleDark,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: G.gold, width: 2),
+                border: Border.all(color: skin.gold, width: 2),
               ),
               child: Column(mainAxisSize: MainAxisSize.min, children: [
-                Text(b.name, style: G.display(16, color: hover.value ? G.purpleDark : G.goldLight)),
-                Text(b.activity, style: G.body(12, color: hover.value ? G.purpleDark : Colors.white, weight: 700)),
+                Text(b.name, style: skin.display(16, color: hover ? skin.purpleDark : skin.goldLight)),
+                Text(b.activity, style: skin.body(12, color: hover ? skin.purpleDark : Colors.white, weight: 700)),
               ]),
             ),
           ]),

@@ -1,0 +1,78 @@
+{
+  "mastery": {
+    "levels": [
+      {
+        "id": "unseen",
+        "name": {
+          "fr": "À découvrir",
+          "en": "Undiscovered"
+        },
+        "threshold": 0,
+        "minObservations": 0
+      },
+      {
+        "id": "exploring",
+        "name": {
+          "fr": "En exploration",
+          "en": "Exploring"
+        },
+        "threshold": 0,
+        "minObservations": 1
+      },
+      {
+        "id": "secure",
+        "name": {
+          "fr": "Repère acquis",
+          "en": "Established"
+        },
+        "threshold": 0.7,
+        "minObservations": 4,
+        "minItems": 2
+      }
+    ],
+    "alpha": 0.2,
+    "initialCorrect": 0.55,
+    "initialWrong": 0.2,
+    "highWaterDecay": 0.02,
+    "recentWindow": 20,
+    "decayPerDay": 0.02,
+    "graceDoublings": 3
+  },
+  "economy": {
+    "startingBalance": 15,
+    "levels": [
+      {
+        "gain": 5,
+        "loss": 1
+      },
+      {
+        "gain": 3,
+        "loss": 1
+      },
+      {
+        "gain": 1,
+        "loss": 2
+      }
+    ],
+    "assistedGain": 1,
+    "assistedLoss": 0,
+    "itemSaturation": 3,
+    "victoryBonus": 3,
+    "catchUpMultiplier": 2,
+    "minBalance": 0,
+    "loseEncounterGains": true,
+    "defeatTributeRatio": 0,
+    "defeatTributeMax": 40,
+    "defeatRounding": "up"
+  },
+  "selection": {
+    "unknownWeight": 2.0,
+    "weakScale": 2.0,
+    "sameQuestionBoost": 4.0,
+    "linkedQuestionBoost": 2.5,
+    "retireAfter": 2,
+    "maxErrors": 150,
+    "maxObservations": 1000,
+    "recentItems": 4
+  }
+}
