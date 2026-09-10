@@ -65,6 +65,15 @@ class GameSession extends ChangeNotifier {
         throw const FormatException('Save belongs to another design');
       }
       final restored = object(jsonDecode(jsonEncode(saved)));
+      final purchaseAliases = object(
+        d.root['migration']?['purchaseAliases'] ?? {},
+      );
+      restored['purchased'] = {
+        ...strings(restored['purchased']),
+        for (final address in strings(restored['purchased']))
+          if (purchaseAliases.containsKey(address))
+            purchaseAliases[address] as String,
+      }.toList();
       final battle = restored['encounter'];
       if (battle != null &&
           (!d.cards.containsKey(battle['card']) ||
@@ -386,6 +395,18 @@ class GameSession extends ChangeNotifier {
         break;
       }
     }
+    if (card.data['questionSelection'] == 'adaptive') {
+      final history = object(
+        state['questionResults']?[card.address]?[q.id] ?? {},
+      );
+      final correct = history['correct'] as num? ?? 0;
+      final wrong = history['wrong'] as num? ?? 0;
+      if (correct + wrong == 0) {
+        result *= (selection['unseenQuestionBoost'] as num? ?? 2);
+      } else {
+        result /= 1 + correct / (1 + wrong);
+      }
+    }
     return result;
   }
 
@@ -393,6 +414,7 @@ class GameSession extends ChangeNotifier {
     ContentNode card,
     List<QuestionEntry> bank,
     Json battle,
+    Json next,
   ) {
     final allowed = bank
         .where(
@@ -404,9 +426,20 @@ class GameSession extends ChangeNotifier {
     if (allowed.isEmpty) {
       throw StateError('No eligible authored questions for ${card.address}');
     }
-    final recent = strings(battle['recent']);
-    var candidates = allowed.where((q) => !recent.contains(q.item)).toList();
-    if (candidates.isEmpty) candidates = allowed;
+    final adaptive = card.data['questionSelection'] == 'adaptive';
+    final recent = adaptive
+        ? strings(next['recentQuestions']?[card.address])
+        : strings(battle['recent']);
+    var candidates = allowed
+        .where((q) => !recent.contains(adaptive ? q.id : q.item))
+        .toList();
+    if (candidates.isEmpty) {
+      final last = recent.isEmpty ? null : recent.last;
+      candidates = allowed
+          .where((q) => (adaptive ? q.id : q.item) != last)
+          .toList();
+      if (candidates.isEmpty) candidates = allowed;
+    }
     // First select a declared group, then a question. Large banks cannot drown a dimension.
     final groups = <String, List<QuestionEntry>>{};
     for (final q in candidates) {
@@ -430,12 +463,36 @@ class GameSession extends ChangeNotifier {
       }).toList(),
     );
     candidates = groups[group]!;
-    return _pick(
+    final chosen = _pick(
       candidates,
       candidates
           .map((q) => weight(card, q, encounterId: battle['id'] as String))
           .toList(),
     );
+    if (adaptive) {
+      next['recentQuestions'] ??= <String, dynamic>{};
+      final history = [...recent, chosen.id];
+      final window = selection['recentItems'] as int? ?? 4;
+      next['recentQuestions'][card.address] = history
+          .skip(max(0, history.length - window))
+          .toList();
+    }
+    return chosen;
+  }
+
+  Future<QuestionEntry> _prepareQuestion(
+    ContentNode card,
+    QuestionEntry entry,
+  ) async {
+    final materialized = await design.materialize(card, entry);
+    if ((materialized.data['shuffleChoices'] ??
+            card.data['shuffleChoices'] ??
+            false) !=
+        true)
+      return materialized;
+    final data = object(jsonDecode(jsonEncode(materialized.data)));
+    (data['choices'] as List).shuffle(random);
+    return QuestionEntry(data);
   }
 
   T _pick<T>(List<T> values, List<double> weights) {
@@ -465,9 +522,9 @@ class GameSession extends ChangeNotifier {
       'recent': <String>[],
       'assisted': false,
     };
-    battle['question'] = (await design.materialize(
+    battle['question'] = (await _prepareQuestion(
       card,
-      _select(card, bank, battle),
+      _select(card, bank, battle, next),
     )).data;
     next['encounter'] = battle;
     await _commit(next);
@@ -477,6 +534,10 @@ class GameSession extends ChangeNotifier {
 
   Future<void> recover() async {
     if (encounter != null) {
+      if (encounterExhausted) {
+        await advance();
+        return;
+      }
       if (encounter!['phase'] == 'question') {
         final next = _copy();
         next['encounter']['phase'] = 'paused';
@@ -505,9 +566,9 @@ class GameSession extends ChangeNotifier {
     for (final f in object(migration['encounterFields']).entries) {
       b[f.key] = old[f.value];
     }
-    b['question'] = (await design.materialize(
+    b['question'] = (await _prepareQuestion(
       card,
-      _select(card, bank, b),
+      _select(card, bank, b, next),
     )).data;
     next['encounter'] = b;
     next.remove('legacyEncounter');
@@ -516,6 +577,7 @@ class GameSession extends ChangeNotifier {
 
   Future<void> begin() async {
     if (encounter?['phase'] != 'introduction') return;
+    if (encounterExhausted) return advance();
     final next = _copy();
     next['encounter']['phase'] = 'question';
     next['seenLessons'] = {
@@ -548,6 +610,7 @@ class GameSession extends ChangeNotifier {
 
   Future<void> resume() async {
     if (encounter?['phase'] != 'paused') return;
+    if (encounterExhausted) return advance();
     final next = _copy();
     next['encounter']['phase'] = 'question';
     await _commit(next);
@@ -556,6 +619,7 @@ class GameSession extends ChangeNotifier {
 
   Future<void> answer(String choice) async {
     if (busy || encounter?['phase'] != 'question') return;
+    if (encounterExhausted) return advance();
     final q = question!;
     if (!q.choices.any((c) => c['id'] == choice)) {
       throw ArgumentError('Answer is not an authored choice');
@@ -564,6 +628,16 @@ class GameSession extends ChangeNotifier {
     final next = _copy(), battle = object(next['encounter']);
     final correct = q.accepted.contains(choice),
         assisted = battle['assisted'] == true;
+    next['questionResults'] ??= <String, dynamic>{};
+    next['questionResults'][battle['card']] ??= <String, dynamic>{};
+    final results = object(next['questionResults'][battle['card']][q.id] ?? {});
+    final field = assisted
+        ? 'assisted'
+        : correct
+        ? 'correct'
+        : 'wrong';
+    results[field] = (results[field] as int? ?? 0) + 1;
+    next['questionResults'][battle['card']][q.id] = results;
     final primary = skill(q.skills.first);
     final rewardLevel = _level(primary, rewards: true);
     final reward = objects(economy['levels'])[rewardLevel];
@@ -702,14 +776,23 @@ class GameSession extends ChangeNotifier {
     await _commit(next);
   }
 
+  bool get encounterExhausted =>
+      encounter != null &&
+      ((encounter!['remaining'] as num? ?? 1) <= 0 ||
+          (encounter!['lives'] as num? ?? 1) <= 0);
+
   Future<void> advance() async {
-    if (busy || encounter?['phase'] != 'feedback') return;
+    if (busy || encounter == null) return;
+    final phase = encounter!['phase'];
+    if (phase != 'feedback' &&
+        !(encounterExhausted &&
+            ['question', 'paused', 'introduction'].contains(phase)))
+      return;
     final next = _copy(), battle = object(next['encounter']);
     final currentCard = design.cards[battle['card']]!;
     final ordered = currentCard.data['encounter']['completion'] == 'sequence';
-    final completed = ordered
-        ? question!.data['next'] == null
-        : battle['remaining'] <= 0;
+    final completed =
+        battle['remaining'] <= 0 || (ordered && question!.data['next'] == null);
     if (completed || battle['lives'] <= 0) {
       final won = battle['remaining'] <= 0 && battle['lives'] > 0;
       final card = design.cards[battle['card']]!;
@@ -765,17 +848,21 @@ class GameSession extends ChangeNotifier {
       battle['recent'] = recent
           .skip(max(0, recent.length - (selection['recentItems'] as int? ?? 4)))
           .toList();
-      final q = old.data['next'] == null
-          ? _select(card, bank, battle)
+      final q =
+          old.data['next'] == null ||
+              card.data['questionSelection'] == 'adaptive'
+          ? _select(card, bank, battle, next)
           : bank.firstWhere((q) => q.id == old.data['next']);
-      battle['question'] = (await design.materialize(card, q)).data;
+      battle['question'] = (await _prepareQuestion(card, q)).data;
       battle['phase'] = 'question';
       battle['assisted'] = false;
       battle.remove('chosen');
     }
     next['encounter'] = battle;
     await _commit(next);
-    _timer.reset();
+    _timer
+      ..stop()
+      ..reset();
     if (battle['phase'] == 'question') _timer.start();
   }
 

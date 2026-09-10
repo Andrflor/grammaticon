@@ -1,24 +1,24 @@
 {
   "id": "possession",
-  "name": "Liber puerī",
-  "subtitle": "Interpretātiō sententiarum",
+  "name": "Cuius est?",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
       "all": [
         {
-          "unlocked": "theatrum/personae/agent-object"
+          "unlocked": "theatrum/personae/agents"
         }
       ]
     }
   },
   "skills": [
-    "study.version.possession"
+    "study.version.personae-possession"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

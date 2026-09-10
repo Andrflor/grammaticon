@@ -4,7 +4,7 @@
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q1",
-    "assessment": "study.theme.possession:q1",
+    "assessment": "study.theme.personae-possession:possession:q1",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -61,23 +61,21 @@
       "puer"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": false,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
-    },
-    "next": "q2"
+    }
   },
   {
     "id": "q2",
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q2",
-    "assessment": "study.theme.possession:q2",
+    "assessment": "study.theme.personae-possession:possession:q2",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -134,23 +132,21 @@
       "sum"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": true,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
-    },
-    "next": "q3"
+    }
   },
   {
     "id": "q3",
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q3",
-    "assessment": "study.theme.possession:q3",
+    "assessment": "study.theme.personae-possession:possession:q3",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -207,23 +203,21 @@
       "vir"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": true,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
-    },
-    "next": "q4"
+    }
   },
   {
     "id": "q4",
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q4",
-    "assessment": "study.theme.possession:q4",
+    "assessment": "study.theme.personae-possession:possession:q4",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -281,23 +275,21 @@
       "vir"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": true,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
-    },
-    "next": "q5"
+    }
   },
   {
     "id": "q5",
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q5",
-    "assessment": "study.theme.possession:q5",
+    "assessment": "study.theme.personae-possession:possession:q5",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -354,23 +346,21 @@
       "sum"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": true,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
-    },
-    "next": "q6"
+    }
   },
   {
     "id": "q6",
     "interaction": "choice",
     "dimension": "course.production",
     "item": "possession:q6",
-    "assessment": "study.theme.possession:q6",
+    "assessment": "study.theme.personae-possession:possession:q6",
     "prompt": "Sententiam Latīnē redde.",
     "content": [
       {
@@ -428,14 +418,1845 @@
       "voco"
     ],
     "skills": [
-      "study.theme.possession"
+      "study.theme.personae-possession"
     ],
-    "help": "study.possession",
-    "followUpOnly": true,
+    "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
       "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "genitive-plural-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le livre des jeunes filles est petit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Librī puellae parvī sunt."
+      },
+      {
+        "id": "1",
+        "text": "Liber puellae parvus est."
+      },
+      {
+        "id": "0",
+        "text": "Liber puellārum parvus est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "genitive-plural:q1",
+    "assessment": "study.theme.personae-possession:genitive-plural:q1",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "parvus",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "genitive-plural-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le jardin des garçons est grand."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Hortus puerī magnus est."
+      },
+      {
+        "id": "2",
+        "text": "Hortus puerōrum magnus est."
+      },
+      {
+        "id": "1",
+        "text": "Hortī puerī magnī sunt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "genitive-plural:q2",
+    "assessment": "study.theme.personae-possession:genitive-plural:q2",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "hortus",
+      "magnus",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "genitive-plural-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte les livres des maîtres."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella librōs magistrōrum portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella librōs magistrī portat."
+      },
+      {
+        "id": "0",
+        "text": "Puella librum magistrōrum portat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "genitive-plural:q3",
+    "assessment": "study.theme.personae-possession:genitive-plural:q3",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "magister",
+      "porto",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "genitive-plural-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon voit la maison de campagne des femmes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer vīllam fēminae videt."
+      },
+      {
+        "id": "2",
+        "text": "Puer vīllās fēminārum videt."
+      },
+      {
+        "id": "0",
+        "text": "Puer vīllam fēminārum videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "genitive-plural:q4",
+    "assessment": "study.theme.personae-possession:genitive-plural:q4",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "femina",
+      "puer",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q1",
+    "assessment": "study.theme.personae-possession:cuius-question:q1",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "À qui est le livre ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Quid est liber?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius est liber?"
+      },
+      {
+        "id": "1",
+        "text": "Ubi est liber?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "quis",
+      "sum",
+      "ubi"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quid est liber? genus reī quaerit; cuius est liber? possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q2",
+    "assessment": "study.theme.personae-possession:cuius-question:q2",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La fille de qui rit ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Quis rīdet?"
+      },
+      {
+        "id": "2",
+        "text": "Cuius fīliae rīdent?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius fīlia rīdet?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "filia",
+      "quis",
+      "rideo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q3",
+    "assessment": "study.theme.personae-possession:cuius-question:q3",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître instruit le fils de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius fīlium magister docet?"
+      },
+      {
+        "id": "1",
+        "text": "Quis fīlium docet?"
+      },
+      {
+        "id": "2",
+        "text": "Cuius fīlius magistrum docet?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "doceo",
+      "filius",
+      "magister",
+      "quis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Fīlium magister docet: magister docet. Fīlius magistrum docet: fīlius docet. Cuius in utrāque sententiā patrem vel mātrem fīliī quaerit; cāsūs agentem et patientem distinguunt.",
+        "observed": [
+          "study.confusion.question-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q4",
+    "assessment": "study.theme.personae-possession:cuius-question:q4",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte les livres de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius librōs puella portat?"
+      },
+      {
+        "id": "1",
+        "text": "Cuius librum puella portat?"
+      },
+      {
+        "id": "2",
+        "text": "Quis librōs portat?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "porto",
+      "puella",
+      "quis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q5",
+    "assessment": "study.theme.personae-possession:cuius-question:q5",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les livres de qui sont dans l’école ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Cuius liber in scholā est?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius librī in scholā sunt?"
+      },
+      {
+        "id": "2",
+        "text": "Ubi librī sunt?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "in",
+      "liber",
+      "quis",
+      "schola",
+      "sum",
+      "ubi"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cuius-question-q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q6",
+    "assessment": "study.theme.personae-possession:cuius-question:q6",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon voit la villa de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Cuius vīllās puer videt?"
+      },
+      {
+        "id": "1",
+        "text": "Ubi puer vīllam videt?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius vīllam puer videt?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "puer",
+      "quis",
+      "ubi",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte la rose du maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella rosam magistrī portat."
+      },
+      {
+        "id": "1",
+        "text": "Puella rosam magistrōrum portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella rosās magistrī portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-1",
+    "assessment": "study.theme.personae-possession:extra-1",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "magister",
+      "porto",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon lit la lettre des jeunes filles."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer epistulam puellārum legit."
+      },
+      {
+        "id": "1",
+        "text": "Puer epistulam puellae legit."
+      },
+      {
+        "id": "2",
+        "text": "Puer epistulās puellārum legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-2",
+    "assessment": "study.theme.personae-possession:extra-2",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "lego",
+      "puella",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme lit le livre des garçons."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina librum puerōrum legit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina librum puerī legit."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina librōs puerōrum legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-3",
+    "assessment": "study.theme.personae-possession:extra-3",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "femina",
+      "lego",
+      "liber",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme porte les cadeaux de la femme."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir dōna fēminae portat."
+      },
+      {
+        "id": "1",
+        "text": "Vir dōna fēminārum portat."
+      },
+      {
+        "id": "2",
+        "text": "Vir dōnum fēminae portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-4",
+    "assessment": "study.theme.personae-possession:extra-4",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "donum",
+      "femina",
+      "porto",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin a la lettre du paysan."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta epistulam agricolae habet."
+      },
+      {
+        "id": "1",
+        "text": "Nauta epistulam agricolārum habet."
+      },
+      {
+        "id": "2",
+        "text": "Nauta epistulās agricolae habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-5",
+    "assessment": "study.theme.personae-possession:extra-5",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "epistula",
+      "habeo",
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître voit les livres des esclaves."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister librōs servōrum videt."
+      },
+      {
+        "id": "1",
+        "text": "Magister librōs servī videt."
+      },
+      {
+        "id": "2",
+        "text": "Magister librum servōrum videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-6",
+    "assessment": "study.theme.personae-possession:extra-6",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "magister",
+      "servus",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-7",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille a le cadeau des marins."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella dōnum nautārum habet."
+      },
+      {
+        "id": "1",
+        "text": "Puella dōnum nautae habet."
+      },
+      {
+        "id": "2",
+        "text": "Puella dōna nautārum habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-7",
+    "assessment": "study.theme.personae-possession:extra-7",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "donum",
+      "habeo",
+      "nauta",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-8",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon porte les roses de l’homme."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer rosās virī portat."
+      },
+      {
+        "id": "1",
+        "text": "Puer rosās virōrum portat."
+      },
+      {
+        "id": "2",
+        "text": "Puer rosam virī portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-8",
+    "assessment": "study.theme.personae-possession:extra-8",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "porto",
+      "puer",
+      "rosa",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-9",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave porte les lettres du maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus epistulās magistrī portat."
+      },
+      {
+        "id": "1",
+        "text": "Servus epistulās magistrōrum portat."
+      },
+      {
+        "id": "2",
+        "text": "Servus epistulam magistrī portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-9",
+    "assessment": "study.theme.personae-possession:extra-9",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "magister",
+      "porto",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-10",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le paysan a le livre de la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola librum puellae habet."
+      },
+      {
+        "id": "1",
+        "text": "Agricola librum puellārum habet."
+      },
+      {
+        "id": "2",
+        "text": "Agricola librōs puellae habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-10",
+    "assessment": "study.theme.personae-possession:extra-10",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "habeo",
+      "liber",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-11",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme voit les cadeaux du garçon."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina dōna puerī videt."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina dōna puerōrum videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina dōnum puerī videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-11",
+    "assessment": "study.theme.personae-possession:extra-11",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "donum",
+      "femina",
+      "puer",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-12",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme a la rose des femmes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir rosam fēminārum habet."
+      },
+      {
+        "id": "1",
+        "text": "Vir rosam fēminae habet."
+      },
+      {
+        "id": "2",
+        "text": "Vir rosās fēminārum habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-12",
+    "assessment": "study.theme.personae-possession:extra-12",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "femina",
+      "habeo",
+      "rosa",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-13",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître lit la lettre des marins."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister epistulam nautārum legit."
+      },
+      {
+        "id": "1",
+        "text": "Magister epistulam nautae legit."
+      },
+      {
+        "id": "2",
+        "text": "Magister epistulās nautārum legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-13",
+    "assessment": "study.theme.personae-possession:extra-13",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "lego",
+      "magister",
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-14",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin porte les livres des hommes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta librōs virōrum portat."
+      },
+      {
+        "id": "1",
+        "text": "Nauta librōs virī portat."
+      },
+      {
+        "id": "2",
+        "text": "Nauta librum virōrum portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-14",
+    "assessment": "study.theme.personae-possession:extra-14",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "nauta",
+      "porto",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-15",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille lit les lettres de l’esclave."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella epistulās servī legit."
+      },
+      {
+        "id": "1",
+        "text": "Puella epistulās servōrum legit."
+      },
+      {
+        "id": "2",
+        "text": "Puella epistulam servī legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-15",
+    "assessment": "study.theme.personae-possession:extra-15",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "lego",
+      "puella",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-16",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon voit les cadeaux des paysans."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer dōna agricolārum videt."
+      },
+      {
+        "id": "1",
+        "text": "Puer dōna agricolae videt."
+      },
+      {
+        "id": "2",
+        "text": "Puer dōnum agricolārum videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-possession"
+    ],
+    "item": "personae-possession:extra-16",
+    "assessment": "study.theme.personae-possession:extra-16",
+    "help": "study.personae-possession",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "donum",
+      "puer",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est liber? Genetīvus rem cum possessōre coniungit: liber puerī, liber puerōrum. Numerus possessōris et numerus reī possessae distinguendī sunt: liber puerōrum nōn idem est ac librī puerī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
+        "observed": [
+          "study.confusion.personae-possessor-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
     }
   }
 ]

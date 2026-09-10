@@ -45,7 +45,10 @@ class BattleView {
   };
   bool get isOver =>
       phase == BattlePhase.victory || phase == BattlePhase.defeat;
-  bool get acceptsInput => !session.busy && data['phase'] == 'question';
+  bool get acceptsInput =>
+      !session.busy &&
+      !session.encounterExhausted &&
+      data['phase'] == 'question';
   int get enemyHp => data['remaining'] as int;
   int get enemyMaxHp => trial.target;
   int get hearts => data['lives'] as int;

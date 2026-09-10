@@ -14,16 +14,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "ambulāre"
+        "id": "0",
+        "text": "adesse"
       },
       {
         "id": "1",
         "text": "agricola"
       },
       {
-        "id": "0",
-        "text": "adesse"
+        "id": "2",
+        "text": "ambulāre"
       }
     ],
     "accepted": [
@@ -81,16 +81,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "aqua"
-      },
-      {
         "id": "0",
         "text": "agricola"
       },
       {
         "id": "1",
         "text": "ambulāre"
+      },
+      {
+        "id": "2",
+        "text": "aqua"
       }
     ],
     "accepted": [
@@ -148,16 +148,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "audīre"
-      },
-      {
         "id": "0",
         "text": "ambulāre"
       },
       {
         "id": "1",
         "text": "aqua"
+      },
+      {
+        "id": "2",
+        "text": "audīre"
       }
     ],
     "accepted": [
@@ -215,16 +215,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "bonus, bona, bonum"
+        "id": "0",
+        "text": "aqua"
       },
       {
         "id": "1",
         "text": "audīre"
       },
       {
-        "id": "0",
-        "text": "aqua"
+        "id": "2",
+        "text": "bonus, bona, bonum"
       }
     ],
     "accepted": [
@@ -282,12 +282,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "bonus, bona, bonum"
-      },
-      {
         "id": "0",
         "text": "audīre"
+      },
+      {
+        "id": "1",
+        "text": "bonus, bona, bonum"
       },
       {
         "id": "2",
@@ -353,12 +353,12 @@
         "text": "bonus, bona, bonum"
       },
       {
-        "id": "2",
-        "text": "dare"
-      },
-      {
         "id": "1",
         "text": "currere"
+      },
+      {
+        "id": "2",
+        "text": "dare"
       }
     ],
     "accepted": [
@@ -416,16 +416,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "currere"
+      },
+      {
         "id": "1",
         "text": "dare"
       },
       {
         "id": "2",
         "text": "docēre"
-      },
-      {
-        "id": "0",
-        "text": "currere"
       }
     ],
     "accepted": [
@@ -483,16 +483,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "dominus"
+        "id": "0",
+        "text": "dare"
       },
       {
         "id": "1",
         "text": "docēre"
       },
       {
-        "id": "0",
-        "text": "dare"
+        "id": "2",
+        "text": "dominus"
       }
     ],
     "accepted": [
@@ -617,16 +617,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "fēmina"
-      },
-      {
         "id": "0",
         "text": "dominus"
       },
       {
         "id": "1",
         "text": "domus"
+      },
+      {
+        "id": "2",
+        "text": "dōnum"
       }
     ],
     "accepted": [
@@ -684,16 +684,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "fīlia"
-      },
-      {
         "id": "0",
         "text": "domus"
       },
       {
         "id": "1",
-        "text": "fēmina"
+        "text": "dōnum"
+      },
+      {
+        "id": "2",
+        "text": "epistula"
       }
     ],
     "accepted": [
@@ -728,6 +728,207 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "donum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "donum",
+    "assessment": "study.lexicon.templum.personae:donum",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "cadeau"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dōnum"
+      },
+      {
+        "id": "1",
+        "text": "epistula"
+      },
+      {
+        "id": "2",
+        "text": "fābula"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "donum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dōnum — cadeau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "epistula",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "epistula",
+    "assessment": "study.lexicon.templum.personae:epistula",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "lettre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "epistula"
+      },
+      {
+        "id": "1",
+        "text": "fābula"
+      },
+      {
+        "id": "2",
+        "text": "fēmina"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "epistula"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: epistula — lettre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "fabula",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "fabula",
+    "assessment": "study.lexicon.templum.personae:fabula",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "histoire, récit"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "fābula"
+      },
+      {
+        "id": "1",
+        "text": "fēmina"
+      },
+      {
+        "id": "2",
+        "text": "fīlia"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "fabula"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: fābula — histoire, récit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
         "observed": [
           "study.error"
         ],
@@ -818,16 +1019,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "habēre"
-      },
-      {
         "id": "0",
         "text": "fīlia"
       },
       {
         "id": "1",
         "text": "fīlius"
+      },
+      {
+        "id": "2",
+        "text": "habēre"
       }
     ],
     "accepted": [
@@ -885,16 +1086,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "hortus"
+        "id": "0",
+        "text": "fīlius"
       },
       {
         "id": "1",
         "text": "habēre"
       },
       {
-        "id": "0",
-        "text": "fīlius"
+        "id": "2",
+        "text": "hortus"
       }
     ],
     "accepted": [
@@ -952,16 +1153,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "in"
-      },
-      {
         "id": "0",
         "text": "habēre"
       },
       {
         "id": "1",
         "text": "hortus"
+      },
+      {
+        "id": "2",
+        "text": "in"
       }
     ],
     "accepted": [
@@ -1019,16 +1220,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "hortus"
+      },
+      {
         "id": "1",
         "text": "in"
       },
       {
         "id": "2",
         "text": "is, ea, id"
-      },
-      {
-        "id": "0",
-        "text": "hortus"
       }
     ],
     "accepted": [
@@ -1153,16 +1354,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "laetus, laeta, laetum"
+        "id": "0",
+        "text": "is, ea, id"
       },
       {
         "id": "1",
         "text": "Italia"
       },
       {
-        "id": "0",
-        "text": "is, ea, id"
+        "id": "2",
+        "text": "laetus, laeta, laetum"
       }
     ],
     "accepted": [
@@ -1220,16 +1421,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "Italia"
+      },
+      {
         "id": "1",
         "text": "laetus, laeta, laetum"
       },
       {
         "id": "2",
         "text": "laudāre"
-      },
-      {
-        "id": "0",
-        "text": "Italia"
       }
     ],
     "accepted": [
@@ -1354,12 +1555,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "lavāre"
-      },
-      {
         "id": "0",
         "text": "laudāre"
+      },
+      {
+        "id": "1",
+        "text": "lavāre"
       },
       {
         "id": "2",
@@ -1425,12 +1626,12 @@
         "text": "lavāre"
       },
       {
-        "id": "2",
-        "text": "liber"
-      },
-      {
         "id": "1",
         "text": "legere"
+      },
+      {
+        "id": "2",
+        "text": "liber"
       }
     ],
     "accepted": [
@@ -1492,12 +1693,12 @@
         "text": "legere"
       },
       {
-        "id": "2",
-        "text": "magister"
-      },
-      {
         "id": "1",
         "text": "liber"
+      },
+      {
+        "id": "2",
+        "text": "magister"
       }
     ],
     "accepted": [
@@ -1559,12 +1760,12 @@
         "text": "liber"
       },
       {
-        "id": "2",
-        "text": "magnus"
-      },
-      {
         "id": "1",
         "text": "magister"
+      },
+      {
+        "id": "2",
+        "text": "magnus"
       }
     ],
     "accepted": [
@@ -1626,12 +1827,12 @@
         "text": "magister"
       },
       {
-        "id": "2",
-        "text": "manēre"
-      },
-      {
         "id": "1",
         "text": "magnus"
+      },
+      {
+        "id": "2",
+        "text": "manēre"
       }
     ],
     "accepted": [
@@ -1693,12 +1894,12 @@
         "text": "magnus"
       },
       {
-        "id": "2",
-        "text": "mercātor"
-      },
-      {
         "id": "1",
         "text": "manēre"
+      },
+      {
+        "id": "2",
+        "text": "mercātor"
       }
     ],
     "accepted": [
@@ -1756,12 +1957,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "mercātor"
-      },
-      {
         "id": "0",
         "text": "manēre"
+      },
+      {
+        "id": "1",
+        "text": "mercātor"
       },
       {
         "id": "2",
@@ -1827,12 +2028,12 @@
         "text": "mercātor"
       },
       {
-        "id": "2",
-        "text": "nauta"
-      },
-      {
         "id": "1",
         "text": "meus, mea, meum"
+      },
+      {
+        "id": "2",
+        "text": "mittere"
       }
     ],
     "accepted": [
@@ -1890,16 +2091,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "meus, mea, meum"
+      },
+      {
         "id": "1",
-        "text": "nauta"
+        "text": "mittere"
       },
       {
         "id": "2",
-        "text": "nōn"
-      },
-      {
-        "id": "0",
-        "text": "meus, mea, meum"
+        "text": "nārrāre"
       }
     ],
     "accepted": [
@@ -1943,6 +2144,140 @@
     }
   },
   {
+    "id": "mitto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "mitto",
+    "assessment": "study.lexicon.templum.personae:mitto",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "envoyer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "mittere"
+      },
+      {
+        "id": "1",
+        "text": "nārrāre"
+      },
+      {
+        "id": "2",
+        "text": "nauta"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "mitto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: mittere — envoyer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "narro",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "narro",
+    "assessment": "study.lexicon.templum.personae:narro",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "raconter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nārrāre"
+      },
+      {
+        "id": "1",
+        "text": "nauta"
+      },
+      {
+        "id": "2",
+        "text": "nōn"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "narro"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: nārrāre — raconter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "nauta",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1957,16 +2292,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "ōrnāre"
-      },
-      {
         "id": "0",
         "text": "nauta"
       },
       {
         "id": "1",
         "text": "nōn"
+      },
+      {
+        "id": "2",
+        "text": "ōrnāre"
       }
     ],
     "accepted": [
@@ -2024,16 +2359,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "ōrnāre"
-      },
-      {
         "id": "0",
         "text": "nōn"
       },
       {
+        "id": "1",
+        "text": "ōrnāre"
+      },
+      {
         "id": "2",
-        "text": "pānis"
+        "text": "ostendere"
       }
     ],
     "accepted": [
@@ -2091,15 +2426,15 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "parvus, parva, parvum"
-      },
-      {
         "id": "0",
         "text": "ōrnāre"
       },
       {
         "id": "1",
+        "text": "ostendere"
+      },
+      {
+        "id": "2",
         "text": "pānis"
       }
     ],
@@ -2144,6 +2479,73 @@
     }
   },
   {
+    "id": "ostendo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ostendo",
+    "assessment": "study.lexicon.templum.personae:ostendo",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "montrer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ostendere"
+      },
+      {
+        "id": "1",
+        "text": "pānis"
+      },
+      {
+        "id": "2",
+        "text": "parvus, parva, parvum"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "ostendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ostendere — montrer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "panis",
     "interaction": "choice",
     "dimension": "lemma",
@@ -2158,16 +2560,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "pānis"
+      },
+      {
         "id": "1",
         "text": "parvus, parva, parvum"
       },
       {
         "id": "2",
         "text": "portāre"
-      },
-      {
-        "id": "0",
-        "text": "pānis"
       }
     ],
     "accepted": [
@@ -2292,16 +2694,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "portāre"
+      },
+      {
         "id": "1",
         "text": "puella"
       },
       {
         "id": "2",
         "text": "puer"
-      },
-      {
-        "id": "0",
-        "text": "portāre"
       }
     ],
     "accepted": [
@@ -2359,16 +2761,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "puella"
+      },
+      {
         "id": "1",
         "text": "puer"
       },
       {
         "id": "2",
         "text": "pulcher, pulchra, pulchrum"
-      },
-      {
-        "id": "0",
-        "text": "puella"
       }
     ],
     "accepted": [
@@ -2426,16 +2828,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "puer"
+      },
+      {
         "id": "1",
         "text": "pulcher, pulchra, pulchrum"
       },
       {
         "id": "2",
         "text": "quī"
-      },
-      {
-        "id": "0",
-        "text": "puer"
       }
     ],
     "accepted": [
@@ -2493,16 +2895,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "pulcher, pulchra, pulchrum"
+      },
+      {
         "id": "1",
         "text": "quī"
       },
       {
         "id": "2",
         "text": "quis, quid"
-      },
-      {
-        "id": "0",
-        "text": "pulcher, pulchra, pulchrum"
       }
     ],
     "accepted": [
@@ -2569,7 +2971,7 @@
       },
       {
         "id": "2",
-        "text": "adesse"
+        "text": "rīdēre"
       }
     ],
     "accepted": [
@@ -2627,12 +3029,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "rīdēre"
-      },
-      {
         "id": "0",
         "text": "quis, quid"
+      },
+      {
+        "id": "1",
+        "text": "rīdēre"
       },
       {
         "id": "2",
@@ -2694,12 +3096,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "rosa"
-      },
-      {
         "id": "0",
         "text": "rīdēre"
+      },
+      {
+        "id": "1",
+        "text": "rosa"
       },
       {
         "id": "2",
@@ -2765,12 +3167,12 @@
         "text": "rosa"
       },
       {
-        "id": "2",
-        "text": "schola"
-      },
-      {
         "id": "1",
         "text": "salūtāre"
+      },
+      {
+        "id": "2",
+        "text": "schola"
       }
     ],
     "accepted": [
@@ -2832,12 +3234,12 @@
         "text": "salūtāre"
       },
       {
-        "id": "2",
-        "text": "sē"
-      },
-      {
         "id": "1",
         "text": "schola"
+      },
+      {
+        "id": "2",
+        "text": "sē"
       }
     ],
     "accepted": [
@@ -2895,16 +3297,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "sedēre"
-      },
-      {
         "id": "0",
         "text": "schola"
       },
       {
         "id": "1",
         "text": "sē"
+      },
+      {
+        "id": "2",
+        "text": "sedēre"
       }
     ],
     "accepted": [
@@ -2966,12 +3368,12 @@
         "text": "sē"
       },
       {
-        "id": "2",
-        "text": "servus"
-      },
-      {
         "id": "1",
         "text": "sedēre"
+      },
+      {
+        "id": "2",
+        "text": "servus"
       }
     ],
     "accepted": [
@@ -3029,16 +3431,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "speculum"
-      },
-      {
         "id": "0",
         "text": "sedēre"
       },
       {
         "id": "1",
         "text": "servus"
+      },
+      {
+        "id": "2",
+        "text": "speculum"
       }
     ],
     "accepted": [
@@ -3096,16 +3498,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "servus"
+      },
+      {
         "id": "1",
         "text": "speculum"
       },
       {
         "id": "2",
         "text": "esse"
-      },
-      {
-        "id": "0",
-        "text": "servus"
       }
     ],
     "accepted": [
@@ -3163,16 +3565,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "speculum"
+      },
+      {
         "id": "1",
         "text": "esse"
       },
       {
         "id": "2",
         "text": "suus, sua, suum"
-      },
-      {
-        "id": "0",
-        "text": "speculum"
       }
     ],
     "accepted": [
@@ -3230,12 +3632,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "suus, sua, suum"
-      },
-      {
         "id": "0",
         "text": "esse"
+      },
+      {
+        "id": "1",
+        "text": "suus, sua, suum"
       },
       {
         "id": "2",
@@ -3297,12 +3699,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "templum"
-      },
-      {
         "id": "0",
         "text": "suus, sua, suum"
+      },
+      {
+        "id": "1",
+        "text": "templum"
       },
       {
         "id": "2",
@@ -3431,16 +3833,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "vidēre"
+        "id": "0",
+        "text": "tuus, tua, tuum"
       },
       {
         "id": "1",
         "text": "ubi"
       },
       {
-        "id": "0",
-        "text": "tuus, tua, tuum"
+        "id": "2",
+        "text": "vidēre"
       }
     ],
     "accepted": [
@@ -3502,12 +3904,12 @@
         "text": "ubi"
       },
       {
-        "id": "2",
-        "text": "vīlla"
-      },
-      {
         "id": "1",
         "text": "vidēre"
+      },
+      {
+        "id": "2",
+        "text": "vīlla"
       }
     ],
     "accepted": [
@@ -3565,16 +3967,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "vir"
-      },
-      {
         "id": "0",
         "text": "vidēre"
       },
       {
         "id": "1",
         "text": "vīlla"
+      },
+      {
+        "id": "2",
+        "text": "vir"
       }
     ],
     "accepted": [
@@ -3632,16 +4034,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "vocāre"
+        "id": "0",
+        "text": "vīlla"
       },
       {
         "id": "1",
         "text": "vir"
       },
       {
-        "id": "0",
-        "text": "vīlla"
+        "id": "2",
+        "text": "vocāre"
       }
     ],
     "accepted": [
@@ -3766,16 +4168,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "vocāre"
+      },
+      {
         "id": "1",
         "text": "adesse"
       },
       {
         "id": "2",
         "text": "agricola"
-      },
-      {
-        "id": "0",
-        "text": "vocāre"
       }
     ],
     "accepted": [

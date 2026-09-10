@@ -1,0 +1,2344 @@
+[
+  {
+    "id": "meus-tuus-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mon livre est dans l’école."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Liber tuus in scholā est."
+      },
+      {
+        "id": "2",
+        "text": "Liber mea in scholā est."
+      },
+      {
+        "id": "0",
+        "text": "Liber meus in scholā est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "meus-tuus:q1",
+    "assessment": "study.theme.personae-reference:meus-tuus:q1",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "in",
+      "liber",
+      "meus",
+      "schola",
+      "sum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "meus-tuus-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ta maison de campagne est en Italie."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Vīlla tuus in Italiā est."
+      },
+      {
+        "id": "0",
+        "text": "Vīlla mea in Italiā est."
+      },
+      {
+        "id": "2",
+        "text": "Vīlla tua in Italiā est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "meus-tuus:q2",
+    "assessment": "study.theme.personae-reference:meus-tuus:q2",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "in",
+      "italia",
+      "meus",
+      "sum",
+      "tuus",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "meus-tuus-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Tes livres sont petits."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Librī tuī parvī sunt."
+      },
+      {
+        "id": "0",
+        "text": "Librī tuae parvī sunt."
+      },
+      {
+        "id": "2",
+        "text": "Librī meī parvī sunt."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "meus-tuus:q3",
+    "assessment": "study.theme.personae-reference:meus-tuus:q3",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "meus",
+      "parvus",
+      "sum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "meus-tuus-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mes temples sont grands."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Templa meī magna sunt."
+      },
+      {
+        "id": "0",
+        "text": "Templa mea magna sunt."
+      },
+      {
+        "id": "1",
+        "text": "Templa tua magna sunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "meus-tuus:q4",
+    "assessment": "study.theme.personae-reference:meus-tuus:q4",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "magnus",
+      "meus",
+      "sum",
+      "templum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "suus-eius-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. Le garçon porte son propre livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister adest. Puer librum suum portat."
+      },
+      {
+        "id": "2",
+        "text": "Magister adest. Puer librum tuum portat."
+      },
+      {
+        "id": "1",
+        "text": "Magister adest. Puer librum eius portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "suus-eius:q1",
+    "assessment": "study.theme.personae-reference:suus-eius:q1",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "magister",
+      "porto",
+      "puer",
+      "suus",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "suus-eius-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. Le garçon porte le livre de la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella adest. Puer librum suum portat."
+      },
+      {
+        "id": "1",
+        "text": "Puella adest. Puer librum meum portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Puer librum eius portat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "suus-eius:q2",
+    "assessment": "study.theme.personae-reference:suus-eius:q2",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "meus",
+      "porto",
+      "puella",
+      "puer",
+      "suus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "suus-eius-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est présente. Le maître voit sa propre maison de campagne."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina adest. Magister vīllam meam videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina adest. Magister vīllam eius videt."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina adest. Magister vīllam suam videt."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "suus-eius:q3",
+    "assessment": "study.theme.personae-reference:suus-eius:q3",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "magister",
+      "meus",
+      "suus",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "suus-eius-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. La jeune fille voit les livres du maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Magister adest. Puella librōs meōs videt."
+      },
+      {
+        "id": "0",
+        "text": "Magister adest. Puella librōs eius videt."
+      },
+      {
+        "id": "1",
+        "text": "Magister adest. Puella librōs suōs videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "suus-eius:q4",
+    "assessment": "study.theme.personae-reference:suus-eius:q4",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "magister",
+      "meus",
+      "puella",
+      "suus",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est présent. Le maître se voit lui-même dans le miroir."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer adest. Magister sē in speculō videt."
+      },
+      {
+        "id": "1",
+        "text": "Puer adest. Magister eum in speculō videt."
+      },
+      {
+        "id": "2",
+        "text": "Puer adest. Magister sē in speculō nōn videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q1",
+    "assessment": "study.theme.personae-reference:reflexive-object:q1",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "in",
+      "is",
+      "magister",
+      "non",
+      "puer",
+      "se",
+      "speculum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. La femme voit la jeune fille dans le miroir."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella adest. Fēmina eam in speculō nōn videt."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Fēmina eam in speculō videt."
+      },
+      {
+        "id": "0",
+        "text": "Puella adest. Fēmina sē in speculō videt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q2",
+    "assessment": "study.theme.personae-reference:reflexive-object:q2",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "in",
+      "is",
+      "non",
+      "puella",
+      "se",
+      "speculum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand est présent. Le maître de maison fait son propre éloge."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Mercātor adest. Dominus sē laudat."
+      },
+      {
+        "id": "2",
+        "text": "Mercātor adest. Dominus eum laudat."
+      },
+      {
+        "id": "0",
+        "text": "Mercātor adest. Dominus sē nōn laudat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q3",
+    "assessment": "study.theme.personae-reference:reflexive-object:q3",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "dominus",
+      "is",
+      "laudo",
+      "mercator",
+      "non",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave est présent. L’agriculteur lave l’esclave."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Servus adest. Agricola eum nōn lavat."
+      },
+      {
+        "id": "0",
+        "text": "Servus adest. Agricola eum lavat."
+      },
+      {
+        "id": "1",
+        "text": "Servus adest. Agricola sē lavat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q4",
+    "assessment": "study.theme.personae-reference:reflexive-object:q4",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "agricola",
+      "is",
+      "lavo",
+      "non",
+      "se",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. La femme se pare elle-même."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella adest. Fēmina sē nōn ōrnat."
+      },
+      {
+        "id": "0",
+        "text": "Puella adest. Fēmina eam ōrnat."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Fēmina sē ōrnat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q5",
+    "assessment": "study.theme.personae-reference:reflexive-object:q5",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "non",
+      "orno",
+      "puella",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "reflexive-object-q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est présent. Le maître fait l’éloge du garçon."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puer adest. Magister sē laudat."
+      },
+      {
+        "id": "0",
+        "text": "Puer adest. Magister eum nōn laudat."
+      },
+      {
+        "id": "1",
+        "text": "Puer adest. Magister eum laudat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "reflexive-object:q6",
+    "assessment": "study.theme.personae-reference:reflexive-object:q6",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "laudo",
+      "magister",
+      "non",
+      "puer",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "reflexive-object",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.reference-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs sententiīs sē ad subiectum eiusdem verbi refertur. Magister sē videt: magister magistrum videt. Puer adest; magister eum videt: magister puerum videt. Prōnōmen et subiectum simul observā; sē cum eum aut eam nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
+        "observed": [
+          "study.confusion.reflexive-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte mes roses."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella rosās meās portat."
+      },
+      {
+        "id": "1",
+        "text": "Puella rosās tuās portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella rosam meam portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-1",
+    "assessment": "study.theme.personae-reference:extra-1",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "meus",
+      "porto",
+      "puella",
+      "rosa",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon lit ta lettre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer epistulam tuam legit."
+      },
+      {
+        "id": "1",
+        "text": "Puer epistulam meam legit."
+      },
+      {
+        "id": "2",
+        "text": "Puer epistulās tuās legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-2",
+    "assessment": "study.theme.personae-reference:extra-2",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "lego",
+      "meus",
+      "puer",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître a mes livres."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister librōs meōs habet."
+      },
+      {
+        "id": "1",
+        "text": "Magister librōs tuōs habet."
+      },
+      {
+        "id": "2",
+        "text": "Magister librum meum habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-3",
+    "assessment": "study.theme.personae-reference:extra-3",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "habeo",
+      "liber",
+      "magister",
+      "meus",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme voit ton cadeau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina dōnum tuum videt."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina dōnum meum videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina dōna tua videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-4",
+    "assessment": "study.theme.personae-reference:extra-4",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "donum",
+      "femina",
+      "meus",
+      "tuus",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave décore ma maison de campagne."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus vīllam meam ōrnat."
+      },
+      {
+        "id": "1",
+        "text": "Servus vīllam tuam ōrnat."
+      },
+      {
+        "id": "2",
+        "text": "Servus vīllās meās ōrnat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-5",
+    "assessment": "study.theme.personae-reference:extra-5",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "meus",
+      "orno",
+      "servus",
+      "tuus",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le paysan salue ton fils."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola fīlium tuum salūtat."
+      },
+      {
+        "id": "1",
+        "text": "Agricola fīlium meum salūtat."
+      },
+      {
+        "id": "2",
+        "text": "Agricola fīliōs tuōs salūtat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-6",
+    "assessment": "study.theme.personae-reference:extra-6",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "filius",
+      "meus",
+      "saluto",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-possessive-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-7",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est présente. La jeune fille porte sa propre rose."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina adest. Puella rosam suam portat."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina adest. Puella rosam eius portat."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina adest. Puella rosās suās portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-7",
+    "assessment": "study.theme.personae-reference:extra-7",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "porto",
+      "puella",
+      "rosa",
+      "suus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-8",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin est présent. Le garçon lit la lettre du marin."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta adest. Puer epistulam eius legit."
+      },
+      {
+        "id": "1",
+        "text": "Nauta adest. Puer epistulam suam legit."
+      },
+      {
+        "id": "2",
+        "text": "Nauta adest. Puer epistulās eius legit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-8",
+    "assessment": "study.theme.personae-reference:extra-8",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "epistula",
+      "is",
+      "lego",
+      "nauta",
+      "puer",
+      "suus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-9",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme est présent. L’esclave a son propre cadeau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir adest. Servus dōnum suum habet."
+      },
+      {
+        "id": "1",
+        "text": "Vir adest. Servus dōnum eius habet."
+      },
+      {
+        "id": "2",
+        "text": "Vir adest. Servus dōna sua habet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-9",
+    "assessment": "study.theme.personae-reference:extra-9",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "donum",
+      "habeo",
+      "is",
+      "servus",
+      "suus",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-10",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. La femme porte les livres de la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella adest. Fēmina librōs eius portat."
+      },
+      {
+        "id": "1",
+        "text": "Puella adest. Fēmina librōs suōs portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Fēmina librum eius portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-10",
+    "assessment": "study.theme.personae-reference:extra-10",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "liber",
+      "porto",
+      "puella",
+      "suus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-11",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. Le marin appelle son propre fils."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister adest. Nauta fīlium suum vocat."
+      },
+      {
+        "id": "1",
+        "text": "Magister adest. Nauta fīlium eius vocat."
+      },
+      {
+        "id": "2",
+        "text": "Magister adest. Nauta fīliōs suōs vocat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-11",
+    "assessment": "study.theme.personae-reference:extra-11",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "filius",
+      "is",
+      "magister",
+      "nauta",
+      "suus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-12",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est présent. Le paysan voit les roses du garçon."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer adest. Agricola rosās eius videt."
+      },
+      {
+        "id": "1",
+        "text": "Puer adest. Agricola rosās suās videt."
+      },
+      {
+        "id": "2",
+        "text": "Puer adest. Agricola rosam eius videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-12",
+    "assessment": "study.theme.personae-reference:extra-12",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "agricola",
+      "is",
+      "puer",
+      "rosa",
+      "suus",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
+        "observed": [
+          "study.confusion.personae-own-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
+        "observed": [
+          "study.confusion.personae-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-13",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est présent. Le marin se lave lui-même."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer adest. Nauta sē lavat."
+      },
+      {
+        "id": "1",
+        "text": "Puer adest. Nauta eum lavat."
+      },
+      {
+        "id": "2",
+        "text": "Puer adest. Nauta sē nōn lavat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-13",
+    "assessment": "study.theme.personae-reference:extra-13",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "lavo",
+      "nauta",
+      "non",
+      "puer",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-14",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est présente. La jeune fille fait l’éloge de la femme."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina adest. Puella eam laudat."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina adest. Puella sē laudat."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina adest. Puella eam nōn laudat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-14",
+    "assessment": "study.theme.personae-reference:extra-14",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "laudo",
+      "non",
+      "puella",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-15",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave est présent. Le maître de maison se voit lui-même dans le miroir."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus adest. Dominus sē in speculō videt."
+      },
+      {
+        "id": "1",
+        "text": "Servus adest. Dominus eum in speculō videt."
+      },
+      {
+        "id": "2",
+        "text": "Servus adest. Dominus sē in speculō nōn videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-15",
+    "assessment": "study.theme.personae-reference:extra-15",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "dominus",
+      "in",
+      "is",
+      "non",
+      "se",
+      "servus",
+      "speculum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-16",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. La femme pare la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella adest. Fēmina eam ōrnat."
+      },
+      {
+        "id": "1",
+        "text": "Puella adest. Fēmina sē ōrnat."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Fēmina eam nōn ōrnat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-16",
+    "assessment": "study.theme.personae-reference:extra-16",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "non",
+      "orno",
+      "puella",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-17",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme est présent. Le maître fait son propre éloge."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir adest. Magister sē laudat."
+      },
+      {
+        "id": "1",
+        "text": "Vir adest. Magister eum laudat."
+      },
+      {
+        "id": "2",
+        "text": "Vir adest. Magister sē nōn laudat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-17",
+    "assessment": "study.theme.personae-reference:extra-17",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "is",
+      "laudo",
+      "magister",
+      "non",
+      "se",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-18",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin est présent. Le paysan salue le marin."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta adest. Agricola eum salūtat."
+      },
+      {
+        "id": "1",
+        "text": "Nauta adest. Agricola sē salūtat."
+      },
+      {
+        "id": "2",
+        "text": "Nauta adest. Agricola eum nōn salūtat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-reference"
+    ],
+    "item": "personae-reference:extra-18",
+    "assessment": "study.theme.personae-reference:extra-18",
+    "help": "study.personae-reference",
+    "requires": [],
+    "vocabulary": [
+      "adsum",
+      "agricola",
+      "is",
+      "nauta",
+      "non",
+      "saluto",
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus ad eum quī loquitur, tuus ad eum quī audit refertur. Hīc suus et sē ad subiectum suae sententiae referuntur. Eius, eum et eam in hīs sententiīs ad alteram persōnam anteā nōminātam referuntur. Vidē cuius rēs sit vel ad quem actiō referātur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
+        "observed": [
+          "study.confusion.personae-self-other"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
+        "observed": [
+          "study.confusion.personae-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

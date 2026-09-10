@@ -1,36 +1,36 @@
 {
   "id": "possession",
-  "name": "Liber puerī",
-  "subtitle": "Compositiō sententiarum",
+  "name": "Cuius est?",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
       "all": [
         {
-          "unlocked": "templum/personae/agent-object"
+          "unlocked": "templum/personae/agents"
         }
       ]
     }
   },
   "skills": [
-    "study.theme.possession"
+    "study.theme.personae-possession"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
   "presentation": {
     "background": "temple_bg",
     "hero": "temple_hero_idle",
-    "opponent": "temple_priest_flamen",
+    "opponent": "priest",
     "heroCorrect": "temple_hero_gesture",
     "heroWrong": "temple_hero_hurt",
     "heroVictory": "temple_hero_victory",
     "heroDefeat": "temple_hero_defeat",
-    "opponentName": "Flāmen",
+    "opponentName": "Sacerdōs",
     "motion": "projectile",
     "projectile": "argumentum",
     "correctSound": "plausus",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

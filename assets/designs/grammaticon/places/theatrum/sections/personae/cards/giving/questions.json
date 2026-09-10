@@ -4,7 +4,7 @@
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q1",
-    "assessment": "study.version.dative-recipient:q1",
+    "assessment": "study.version.personae-giving:dative-recipient:q1",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -30,11 +30,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": false,
     "vocabulary": [
       "do",
       "panis",
@@ -69,15 +68,14 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q2"
+    }
   },
   {
     "id": "q2",
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q2",
-    "assessment": "study.version.dative-recipient:q2",
+    "assessment": "study.version.personae-giving:dative-recipient:q2",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -103,11 +101,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "aqua",
       "do",
@@ -142,15 +139,14 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q3"
+    }
   },
   {
     "id": "q3",
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q3",
-    "assessment": "study.version.dative-recipient:q3",
+    "assessment": "study.version.personae-giving:dative-recipient:q3",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -176,11 +172,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "do",
       "liber",
@@ -215,15 +210,14 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q4"
+    }
   },
   {
     "id": "q4",
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q4",
-    "assessment": "study.version.dative-recipient:q4",
+    "assessment": "study.version.personae-giving:dative-recipient:q4",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -249,11 +243,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "do",
       "femina",
@@ -288,15 +281,14 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q5"
+    }
   },
   {
     "id": "q5",
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q5",
-    "assessment": "study.version.dative-recipient:q5",
+    "assessment": "study.version.personae-giving:dative-recipient:q5",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -322,11 +314,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "do",
       "liber",
@@ -361,15 +352,14 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q6"
+    }
   },
   {
     "id": "q6",
     "interaction": "choice",
     "dimension": "course.reading",
     "item": "dative-recipient:q6",
-    "assessment": "study.version.dative-recipient:q6",
+    "assessment": "study.version.personae-giving:dative-recipient:q6",
     "prompt": "Sententiam Gallicē redde.",
     "content": [
       {
@@ -395,11 +385,10 @@
       "0"
     ],
     "skills": [
-      "study.version.dative-recipient"
+      "study.version.personae-giving"
     ],
-    "help": "study.giving",
+    "help": "study.personae-giving",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "do",
       "nauta",
@@ -430,6 +419,1826 @@
         "feedback": "Nōn rēctē. Nautae et nautīs numerō differunt. Hīc ūnus accipit.",
         "observed": [
           "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam dominus puerō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître de maison donne la lettre au garçon."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon donne la lettre au maître de maison."
+      },
+      {
+        "id": "2",
+        "text": "Le maître de maison donne la lettre aux garçons."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-1",
+    "assessment": "study.version.personae-giving:extra-1",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "dominus",
+      "epistula",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rosam puella fēminae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille donne la rose à la femme."
+      },
+      {
+        "id": "1",
+        "text": "La femme donne la rose à la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille donne la rose aux femmes."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-2",
+    "assessment": "study.version.personae-giving:extra-2",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "femina",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dōnum nauta servō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin donne le cadeau à l’esclave."
+      },
+      {
+        "id": "1",
+        "text": "L’esclave donne le cadeau au marin."
+      },
+      {
+        "id": "2",
+        "text": "Le marin donne le cadeau aux esclaves."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-3",
+    "assessment": "study.version.personae-giving:extra-3",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "donum",
+      "nauta",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum agricola magistrō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan donne le livre au maître."
+      },
+      {
+        "id": "1",
+        "text": "Le maître donne le livre au paysan."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan donne le livre aux maîtres."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-4",
+    "assessment": "study.version.personae-giving:extra-4",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "do",
+      "liber",
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam vir puellae mittit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’homme envoie la lettre à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille envoie la lettre à l’homme."
+      },
+      {
+        "id": "2",
+        "text": "L’homme envoie la lettre aux jeunes filles."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-5",
+    "assessment": "study.version.personae-giving:extra-5",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "mitto",
+      "puella",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fābulam magister puerō nārrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître raconte l’histoire au garçon."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon raconte l’histoire au maître."
+      },
+      {
+        "id": "2",
+        "text": "Le maître raconte l’histoire aux garçons."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-6",
+    "assessment": "study.version.personae-giving:extra-6",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "fabula",
+      "magister",
+      "narro",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-7",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dōnum fēmina nautae ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La femme montre le cadeau au marin."
+      },
+      {
+        "id": "1",
+        "text": "Le marin montre le cadeau à la femme."
+      },
+      {
+        "id": "2",
+        "text": "La femme montre le cadeau aux marins."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-7",
+    "assessment": "study.version.personae-giving:extra-7",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "donum",
+      "femina",
+      "nauta",
+      "ostendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-8",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam servus dominō ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’esclave montre la lettre au maître de maison."
+      },
+      {
+        "id": "1",
+        "text": "Le maître de maison montre la lettre à l’esclave."
+      },
+      {
+        "id": "2",
+        "text": "L’esclave montre la lettre aux maîtres de maison."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-8",
+    "assessment": "study.version.personae-giving:extra-8",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "dominus",
+      "epistula",
+      "ostendo",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-9",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Aquam puer agricolae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon donne de l’eau au paysan."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan donne de l’eau au garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon donne de l’eau aux paysans."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-9",
+    "assessment": "study.version.personae-giving:extra-9",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "aqua",
+      "do",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-10",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum puella magistrō ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille montre le livre au maître."
+      },
+      {
+        "id": "1",
+        "text": "Le maître montre le livre à la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille montre le livre aux maîtres."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-10",
+    "assessment": "study.version.personae-giving:extra-10",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "magister",
+      "ostendo",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-11",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fābulam nauta virō nārrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin raconte l’histoire à l’homme."
+      },
+      {
+        "id": "1",
+        "text": "L’homme raconte l’histoire au marin."
+      },
+      {
+        "id": "2",
+        "text": "Le marin raconte l’histoire aux hommes."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-11",
+    "assessment": "study.version.personae-giving:extra-11",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "fabula",
+      "narro",
+      "nauta",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-12",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rosam agricola puellae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan donne la rose à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille donne la rose au paysan."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan donne la rose aux jeunes filles."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-12",
+    "assessment": "study.version.personae-giving:extra-12",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "do",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-13",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pānem dominus servō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître de maison donne du pain à l’esclave."
+      },
+      {
+        "id": "1",
+        "text": "L’esclave donne du pain au maître de maison."
+      },
+      {
+        "id": "2",
+        "text": "Le maître de maison donne du pain aux esclaves."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-13",
+    "assessment": "study.version.personae-giving:extra-13",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "dominus",
+      "panis",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-14",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam fēmina puellae mittit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La femme envoie la lettre à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille envoie la lettre à la femme."
+      },
+      {
+        "id": "2",
+        "text": "La femme envoie la lettre aux jeunes filles."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-14",
+    "assessment": "study.version.personae-giving:extra-14",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "femina",
+      "mitto",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-15",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dōnum magister fīliō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître donne le cadeau au fils."
+      },
+      {
+        "id": "1",
+        "text": "Le fils donne le cadeau au maître."
+      },
+      {
+        "id": "2",
+        "text": "Le maître donne le cadeau aux fils."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-15",
+    "assessment": "study.version.personae-giving:extra-15",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "donum",
+      "filius",
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-16",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum vir nautae ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’homme montre le livre au marin."
+      },
+      {
+        "id": "1",
+        "text": "Le marin montre le livre à l’homme."
+      },
+      {
+        "id": "2",
+        "text": "L’homme montre le livre aux marins."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-16",
+    "assessment": "study.version.personae-giving:extra-16",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "liber",
+      "nauta",
+      "ostendo",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-17",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fābulam puella puerō nārrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille raconte l’histoire au garçon."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon raconte l’histoire à la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille raconte l’histoire aux garçons."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-17",
+    "assessment": "study.version.personae-giving:extra-17",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "fabula",
+      "narro",
+      "puella",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-18",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam puer magistrō mittit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon envoie la lettre au maître."
+      },
+      {
+        "id": "1",
+        "text": "Le maître envoie la lettre au garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon envoie la lettre aux maîtres."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-18",
+    "assessment": "study.version.personae-giving:extra-18",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "epistula",
+      "magister",
+      "mitto",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-19",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum nauta fēminae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin donne le livre à la femme."
+      },
+      {
+        "id": "1",
+        "text": "La femme donne le livre au marin."
+      },
+      {
+        "id": "2",
+        "text": "Le marin donne le livre aux femmes."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-19",
+    "assessment": "study.version.personae-giving:extra-19",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "femina",
+      "liber",
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-20",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dōnum servus puellae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’esclave donne le cadeau à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille donne le cadeau à l’esclave."
+      },
+      {
+        "id": "2",
+        "text": "L’esclave donne le cadeau aux jeunes filles."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-20",
+    "assessment": "study.version.personae-giving:extra-20",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "do",
+      "donum",
+      "puella",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-21",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam agricola virō ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan montre la lettre à l’homme."
+      },
+      {
+        "id": "1",
+        "text": "L’homme montre la lettre au paysan."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan montre la lettre aux hommes."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-21",
+    "assessment": "study.version.personae-giving:extra-21",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "epistula",
+      "ostendo",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-22",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fābulam fēmina servō nārrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La femme raconte l’histoire à l’esclave."
+      },
+      {
+        "id": "1",
+        "text": "L’esclave raconte l’histoire à la femme."
+      },
+      {
+        "id": "2",
+        "text": "La femme raconte l’histoire aux esclaves."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-22",
+    "assessment": "study.version.personae-giving:extra-22",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "fabula",
+      "femina",
+      "narro",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-23",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rosam magister puellae ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître montre la rose à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille montre la rose au maître."
+      },
+      {
+        "id": "2",
+        "text": "Le maître montre la rose aux jeunes filles."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-23",
+    "assessment": "study.version.personae-giving:extra-23",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "magister",
+      "ostendo",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-24",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulam dominus nautae mittit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître de maison envoie la lettre au marin."
+      },
+      {
+        "id": "1",
+        "text": "Le marin envoie la lettre au maître de maison."
+      },
+      {
+        "id": "2",
+        "text": "Le maître de maison envoie la lettre aux marins."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-24",
+    "assessment": "study.version.personae-giving:extra-24",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "dominus",
+      "epistula",
+      "mitto",
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-25",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fābulam vir fīliō nārrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’homme raconte l’histoire au fils."
+      },
+      {
+        "id": "1",
+        "text": "Le fils raconte l’histoire à l’homme."
+      },
+      {
+        "id": "2",
+        "text": "L’homme raconte l’histoire aux fils."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-25",
+    "assessment": "study.version.personae-giving:extra-25",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "fabula",
+      "filius",
+      "narro",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-26",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum agricola fēminae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan donne le livre à la femme."
+      },
+      {
+        "id": "1",
+        "text": "La femme donne le livre au paysan."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan donne le livre aux femmes."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.personae-giving"
+    ],
+    "item": "personae-giving:extra-26",
+    "assessment": "study.version.personae-giving:extra-26",
+    "help": "study.personae-giving",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "do",
+      "femina",
+      "liber"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus eum cui aliquid datur, mittitur, ostenditur vel nārrātur indicat. Puer puellae librum dat: puer dat, liber datur, puella accipit. Puerō et puerīs nōn eundem numerum significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
+        "observed": [
+          "study.confusion.personae-recipient-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
+        "observed": [
+          "study.confusion.personae-recipient-number"
         ],
         "hypotheses": [],
         "practice": []

@@ -7,7 +7,7 @@
     "requires": {
       "all": [
         {
-          "unlocked": "templum/personae/03-descriptions"
+          "unlocked": "templum/personae/relative-case-role"
         }
       ]
     }
@@ -18,7 +18,7 @@
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
@@ -63,5 +63,6 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive"
 }

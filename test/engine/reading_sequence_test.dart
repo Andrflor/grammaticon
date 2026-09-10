@@ -6,6 +6,26 @@ import 'package:grammaticon/engine/session.dart';
 
 import 'design_test.dart' show readFile;
 
+Future<GameDesign> sequenceFixture() =>
+    GameDesign.load('assets/designs/grammaticon/game.json', (path) async {
+      final text = await readFile(path);
+      if (!path.contains('/theatrum/sections/loca/cards/a-ablative/'))
+        return text;
+      dynamic data = jsonDecode(text);
+      if (path.endsWith('/card.json')) {
+        data['questionSelection'] = 'weighted';
+        data['encounter']['completion'] = 'sequence';
+        data['encounter']['target'] = 3;
+      } else if (path.endsWith('/questions.json')) {
+        data = (data as List).take(4).toList();
+        for (var i = 0; i < data.length; i++) {
+          data[i]['followUpOnly'] = i > 0;
+          if (i + 1 < data.length) data[i]['next'] = data[i + 1]['id'];
+        }
+      }
+      return jsonEncode(data);
+    });
+
 void main() {
   late GameDesign design;
   setUpAll(() async {
@@ -41,7 +61,7 @@ void main() {
           );
         }
       }
-      expect(count, 1670);
+      expect(count, 2016);
       for (final set in objects(design.pedagogy['practiceSets'])) {
         for (final target in objects(set['targets'])) {
           if (banks.containsKey(target['card'])) {
@@ -81,16 +101,73 @@ void main() {
     original.dispose();
     restored.dispose();
   });
+  test(
+    'regrouping preserves purchases without granting new learning evidence',
+    () {
+      final original = GameSession(design, {}, (_) async {});
+      final saved = object(jsonDecode(original.exportJson));
+      saved['balance'] = 91;
+      saved['purchased'] = [
+        'theatrum/personae/agent-object',
+        'theatrum/personae/03-descriptions',
+        'theatrum/personae/genitive-plural',
+        'templum/loca/neuter-number',
+      ];
+      saved['completed']['theatrum/personae/genitive-plural'] = 2;
+      final restored = GameSession(design, saved, (_) async {});
+      expect(restored.balance, 91);
+      for (final address in [
+        'theatrum/personae/agents',
+        'theatrum/personae/possession',
+        'templum/loca/numerus',
+      ]) {
+        final card = design.cards[address]!;
+        expect(restored.unlocked(card), true);
+        expect(restored.state['completed'][address] ?? 0, 0);
+        expect(
+          restored.skill(strings(card.data['skills']).single)['correct'] ?? 0,
+          0,
+        );
+      }
+      expect(
+        strings(restored.state['purchased'])
+            .where((id) => id == 'theatrum/personae/agents'),
+        hasLength(1),
+      );
+      final again = GameSession(
+        design,
+        object(jsonDecode(restored.exportJson)),
+        (_) async {},
+      );
+      expect(again.exportJson, restored.exportJson);
+      original.dispose();
+      restored.dispose();
+      again.dispose();
+    },
+  );
+  test('purchase aliases reject destinations absent from the design', () async {
+    await expectLater(
+      GameDesign.load('assets/designs/grammaticon/game.json', (path) async {
+        final text = await readFile(path);
+        if (!path.endsWith('/game.json')) return text;
+        final data = object(jsonDecode(text));
+        data['migration']['purchaseAliases']['removed/card'] = 'missing/card';
+        return jsonEncode(data);
+      }),
+      throwsFormatException,
+    );
+  });
   for (final correctCount in [2, 3, 4]) {
     test(
-      'sequence traverses four authored questions with $correctCount successes and survives saving',
+      'sequence stops at its target or end with $correctCount available successes',
       () async {
-        final card = design.cards['theatrum/loca/02-places']!;
+        final design = await sequenceFixture();
+        final card = design.cards['theatrum/loca/a-ablative']!;
         var session = GameSession(design, {}, (_) async {});
         session.state['purchased'] = [...design.nodes.keys];
         await session.start(card);
         await session.begin();
-        for (var index = 0; index < 4; index++) {
+        for (var index = 0; index < (correctCount >= 3 ? 3 : 4); index++) {
           expect(session.encounter!['phase'], 'question');
           expect(session.question!.id, 'q${index + 1}');
           final q = session.question!;
@@ -119,7 +196,8 @@ void main() {
     );
   }
   test('sequence rejects missing starts, disconnected questions and impossible targets', () async {
-    final card = design.cards['theatrum/loca/02-places']!;
+    final design = await sequenceFixture();
+    final card = design.cards['theatrum/loca/a-ablative']!;
     final bank = await design.questions(card);
     List<QuestionEntry> altered(void Function(List<dynamic>) change) {
       final data =

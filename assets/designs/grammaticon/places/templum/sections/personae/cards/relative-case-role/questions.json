@@ -28,13 +28,12 @@
       "0"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q1",
-    "assessment": "study.theme.relative-case-role:q1",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q1",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": false,
     "vocabulary": [
       "magister",
       "puer",
@@ -70,8 +69,7 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q2"
+    }
   },
   {
     "id": "q2",
@@ -102,13 +100,12 @@
       "2"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q2",
-    "assessment": "study.theme.relative-case-role:q2",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q2",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "ambulo",
       "femina",
@@ -144,8 +141,7 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q3"
+    }
   },
   {
     "id": "q3",
@@ -176,13 +172,12 @@
       "1"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q3",
-    "assessment": "study.theme.relative-case-role:q3",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q3",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "curro",
       "dominus",
@@ -218,8 +213,7 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q4"
+    }
   },
   {
     "id": "q4",
@@ -250,13 +244,12 @@
       "0"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q4",
-    "assessment": "study.theme.relative-case-role:q4",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q4",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "doceo",
       "magister",
@@ -292,8 +285,7 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q5"
+    }
   },
   {
     "id": "q5",
@@ -324,13 +316,12 @@
       "2"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q5",
-    "assessment": "study.theme.relative-case-role:q5",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q5",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "femina",
       "laudo",
@@ -366,8 +357,7 @@
         "hypotheses": [],
         "practice": []
       }
-    },
-    "next": "q6"
+    }
   },
   {
     "id": "q6",
@@ -398,13 +388,12 @@
       "1"
     ],
     "skills": [
-      "study.theme.relative-case-role"
+      "study.theme.personae-relative-case-role"
     ],
     "item": "relative-case-role:q6",
-    "assessment": "study.theme.relative-case-role:q6",
-    "help": "study.relative-case-role",
+    "assessment": "study.theme.personae-relative-case-role:relative-case-role:q6",
+    "help": "study.personae-relative-case-role",
     "requires": [],
-    "followUpOnly": true,
     "vocabulary": [
       "agricola",
       "maneo",
@@ -436,6 +425,1852 @@
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
           "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin qui salue le garçon rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta quī puerum salūtat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Nauta quem puer salūtat rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Nautae quī puerum salūtant rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-1",
+    "assessment": "study.theme.personae-relative-case-role:extra-1",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "nauta",
+      "puer",
+      "qui",
+      "rideo",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître que la femme voit reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister quem fēmina videt manet."
+      },
+      {
+        "id": "1",
+        "text": "Magister quī fēminam videt manet."
+      },
+      {
+        "id": "2",
+        "text": "Magistrī quōs fēmina videt manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-2",
+    "assessment": "study.theme.personae-relative-case-role:extra-2",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "femina",
+      "magister",
+      "maneo",
+      "qui",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille qui appelle le paysan marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella quae agricolam vocat ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Puella quam agricola vocat ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Puellae quae agricolam vocant ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-3",
+    "assessment": "study.theme.personae-relative-case-role:extra-3",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "ambulo",
+      "puella",
+      "qui",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme dont l’esclave fait l’éloge rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir quem servus laudat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Vir quī servum laudat rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Virī quōs servus laudat rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-4",
+    "assessment": "study.theme.personae-relative-case-role:extra-4",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "laudo",
+      "qui",
+      "rideo",
+      "servus",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme qui entend le marin reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina quae nautam audit manet."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina quam nauta audit manet."
+      },
+      {
+        "id": "2",
+        "text": "Fēminae quae nautam audiunt manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-5",
+    "assessment": "study.theme.personae-relative-case-role:extra-5",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "audio",
+      "femina",
+      "maneo",
+      "nauta",
+      "qui"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave que le garçon salue court."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus quem puer salūtat currit."
+      },
+      {
+        "id": "1",
+        "text": "Servus quī puerum salūtat currit."
+      },
+      {
+        "id": "2",
+        "text": "Servī quōs puer salūtat currunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-6",
+    "assessment": "study.theme.personae-relative-case-role:extra-6",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "curro",
+      "puer",
+      "qui",
+      "saluto",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-7",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le paysan qui voit la jeune fille rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola quī puellam videt rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Agricola quem puella videt rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Agricolae quī puellam vident rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-7",
+    "assessment": "study.theme.personae-relative-case-role:extra-7",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "puella",
+      "qui",
+      "rideo",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-8",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître de maison que le maître appelle reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Dominus quem magister vocat manet."
+      },
+      {
+        "id": "1",
+        "text": "Dominus quī magistrum vocat manet."
+      },
+      {
+        "id": "2",
+        "text": "Dominī quōs magister vocat manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-8",
+    "assessment": "study.theme.personae-relative-case-role:extra-8",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "dominus",
+      "magister",
+      "maneo",
+      "qui",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-9",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon qui fait l’éloge de la femme marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer quī fēminam laudat ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Puer quem fēmina laudat ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Puerī quī fēminam laudant ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-9",
+    "assessment": "study.theme.personae-relative-case-role:extra-9",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "ambulo",
+      "femina",
+      "laudo",
+      "puer",
+      "qui"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-10",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille que l’homme salue rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella quam vir salūtat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Puella quae virum salūtat rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Puellae quās vir salūtat rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-10",
+    "assessment": "study.theme.personae-relative-case-role:extra-10",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "puella",
+      "qui",
+      "rideo",
+      "saluto",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-11",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin qui voit le maître de maison reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta quī dominum videt manet."
+      },
+      {
+        "id": "1",
+        "text": "Nauta quem dominus videt manet."
+      },
+      {
+        "id": "2",
+        "text": "Nautae quī dominum vident manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-11",
+    "assessment": "study.theme.personae-relative-case-role:extra-11",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "dominus",
+      "maneo",
+      "nauta",
+      "qui",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-12",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme que l’esclave appelle court."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina quam servus vocat currit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina quae servum vocat currit."
+      },
+      {
+        "id": "2",
+        "text": "Fēminae quās servus vocat currunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-12",
+    "assessment": "study.theme.personae-relative-case-role:extra-12",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "curro",
+      "femina",
+      "qui",
+      "servus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-13",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître qui entend le marin marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister quī nautam audit ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Magister quem nauta audit ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Magistrī quī nautam audiunt ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-13",
+    "assessment": "study.theme.personae-relative-case-role:extra-13",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "ambulo",
+      "audio",
+      "magister",
+      "nauta",
+      "qui"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-14",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme que la jeune fille voit rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir quem puella videt rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Vir quī puellam videt rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Virī quōs puella videt rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-14",
+    "assessment": "study.theme.personae-relative-case-role:extra-14",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "puella",
+      "qui",
+      "rideo",
+      "video",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-15",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave qui fait l’éloge du paysan reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus quī agricolam laudat manet."
+      },
+      {
+        "id": "1",
+        "text": "Servus quem agricola laudat manet."
+      },
+      {
+        "id": "2",
+        "text": "Servī quī agricolam laudant manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-15",
+    "assessment": "study.theme.personae-relative-case-role:extra-15",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "laudo",
+      "maneo",
+      "qui",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-16",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon que le maître salue court."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer quem magister salūtat currit."
+      },
+      {
+        "id": "1",
+        "text": "Puer quī magistrum salūtat currit."
+      },
+      {
+        "id": "2",
+        "text": "Puerī quōs magister salūtat currunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-16",
+    "assessment": "study.theme.personae-relative-case-role:extra-16",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "curro",
+      "magister",
+      "puer",
+      "qui",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-17",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille qui voit la femme marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella quae fēminam videt ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Puella quam fēmina videt ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Puellae quae fēminam vident ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-17",
+    "assessment": "study.theme.personae-relative-case-role:extra-17",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "ambulo",
+      "femina",
+      "puella",
+      "qui",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-18",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin que l’homme appelle rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta quem vir vocat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Nauta quī virum vocat rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Nautae quōs vir vocat rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-18",
+    "assessment": "study.theme.personae-relative-case-role:extra-18",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "nauta",
+      "qui",
+      "rideo",
+      "vir",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-19",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le paysan qui entend l’esclave reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola quī servum audit manet."
+      },
+      {
+        "id": "1",
+        "text": "Agricola quem servus audit manet."
+      },
+      {
+        "id": "2",
+        "text": "Agricolae quī servum audiunt manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-19",
+    "assessment": "study.theme.personae-relative-case-role:extra-19",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "audio",
+      "maneo",
+      "qui",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-20",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme dont le garçon fait l’éloge marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina quam puer laudat ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina quae puerum laudat ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Fēminae quās puer laudat ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-20",
+    "assessment": "study.theme.personae-relative-case-role:extra-20",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "ambulo",
+      "femina",
+      "laudo",
+      "puer",
+      "qui"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-21",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître de maison qui salue le marin rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Dominus quī nautam salūtat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Dominus quem nauta salūtat rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Dominī quī nautam salūtant rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-21",
+    "assessment": "study.theme.personae-relative-case-role:extra-21",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "dominus",
+      "nauta",
+      "qui",
+      "rideo",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-22",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître que la jeune fille appelle court."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister quem puella vocat currit."
+      },
+      {
+        "id": "1",
+        "text": "Magister quī puellam vocat currit."
+      },
+      {
+        "id": "2",
+        "text": "Magistrī quōs puella vocat currunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-22",
+    "assessment": "study.theme.personae-relative-case-role:extra-22",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "curro",
+      "magister",
+      "puella",
+      "qui",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-23",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme qui voit le paysan reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir quī agricolam videt manet."
+      },
+      {
+        "id": "1",
+        "text": "Vir quem agricola videt manet."
+      },
+      {
+        "id": "2",
+        "text": "Virī quī agricolam vident manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-23",
+    "assessment": "study.theme.personae-relative-case-role:extra-23",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "agricola",
+      "maneo",
+      "qui",
+      "video",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-24",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille que l’esclave entend rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella quam servus audit rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Puella quae servum audit rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Puellae quās servus audit rīdent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-24",
+    "assessment": "study.theme.personae-relative-case-role:extra-24",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "audio",
+      "puella",
+      "qui",
+      "rideo",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-25",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon qui appelle le marin marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer quī nautam vocat ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Puer quem nauta vocat ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Puerī quī nautam vocant ambulant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-25",
+    "assessment": "study.theme.personae-relative-case-role:extra-25",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "ambulo",
+      "nauta",
+      "puer",
+      "qui",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-26",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave que la femme salue reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus quem fēmina salūtat manet."
+      },
+      {
+        "id": "1",
+        "text": "Servus quī fēminam salūtat manet."
+      },
+      {
+        "id": "2",
+        "text": "Servī quōs fēmina salūtat manent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.personae-relative-case-role"
+    ],
+    "item": "personae-relative-case-role:extra-26",
+    "assessment": "study.theme.personae-relative-case-role:extra-26",
+    "help": "study.personae-relative-case-role",
+    "requires": [],
+    "vocabulary": [
+      "femina",
+      "maneo",
+      "qui",
+      "saluto",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quī vel quae subiectum sententiae relātīvae indicat; quem vel quam obiectum indicat. Puer quī magistrum videt et puer quem magister videt nōn idem significant. Persōnam quam prōnōmen repetit eiusque numerum observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
+        "observed": [
+          "study.confusion.personae-relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
+        "observed": [
+          "study.confusion.personae-relative-number"
         ],
         "hypotheses": [],
         "practice": []

@@ -10,37 +10,13 @@
           "completed": "templum/loca/a-ablative"
         },
         {
-          "completed": "templum/loca/o-ablative"
+          "completed": "templum/loca/numerus"
         },
         {
-          "completed": "templum/loca/est-sunt"
+          "completed": "templum/loca/concordia"
         },
         {
-          "completed": "templum/loca/ubi-question"
-        },
-        {
-          "completed": "templum/loca/first-declension-number"
-        },
-        {
-          "completed": "templum/loca/second-declension-number"
-        },
-        {
-          "completed": "templum/loca/neuter-number"
-        },
-        {
-          "completed": "templum/loca/feminine-agreement"
-        },
-        {
-          "completed": "templum/loca/masculine-agreement"
-        },
-        {
-          "completed": "templum/loca/neuter-agreement"
-        },
-        {
-          "completed": "templum/loca/negation"
-        },
-        {
-          "completed": "templum/loca/02-places"
+          "completed": "templum/loca/negatio"
         }
       ]
     }
@@ -50,7 +26,8 @@
   ],
   "encounter": {
     "lives": 3,
-    "target": 10
+    "target": 10,
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
@@ -95,5 +72,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

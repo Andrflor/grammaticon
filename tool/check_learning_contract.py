@@ -17,7 +17,6 @@ with gzip.open(design / 'knowledge.json.gz', 'rt', encoding='utf-8') as stream:
     knowledge = {node['id']: node for node in json.load(stream)['nodes']}
 errors = []
 question_ids = {}
-answer_prefixes = Counter()
 generic_sentence_diagnostics = Counter()
 counts = {'groups': len(report['groups']), 'cards': 0, 'questions': 0}
 for place, mode in [('theatrum', 'version'), ('templum', 'theme')]:
@@ -38,20 +37,13 @@ for place, mode in [('theatrum', 'version'), ('templum', 'theme')]:
             card = read(directory / 'card.json')
             bank = read(directory / card['questions'])
             question_ids[address] = {q['id'] for q in bank}
-            positions = []
-            for q in bank:
-                if len(q['accepted']) == 1 and len(q['choices']) == 3:
-                    positions.append(next(
-                        i for i, choice in enumerate(q['choices'])
-                        if choice['id'] in q['accepted']
-                    ))
-            if len(positions) == len(bank):
-                distribution = Counter(positions)
-                frequencies = [distribution[i] for i in range(3)]
-                if max(frequencies) - min(frequencies) > 1:
-                    errors.append(f'{address}: answer positions are unbalanced')
-                if child['id'] != 'vocabula' and len(positions) >= 4:
-                    answer_prefixes[tuple(positions[:4])] += 1
+            # Choice order is authored: grammatical categories may have stable keys.
+            # Runtime shuffle is optional and defaults to false.
+            if 'shuffleChoices' in card and not isinstance(card['shuffleChoices'], bool):
+                errors.append(f'{address}: invalid activity choice-order setting')
+            for question in bank:
+                if 'shuffleChoices' in question and not isinstance(question['shuffleChoices'], bool):
+                    errors.append(f'{address}: invalid question choice-order setting')
             counts['cards'] += 1
             counts['questions'] += len(bank)
             if len(card['skills']) != 1:
@@ -83,9 +75,6 @@ for place, mode in [('theatrum', 'version'), ('templum', 'theme')]:
                     errors.append(f'{address}#{q["id"]}: added review route')
     if free != [f'{place}/loca/a-ablative']:
         errors.append(f'{place}: free cards are not limited to the starting card')
-if sum(answer_prefixes.values()) >= 30:
-    if max(answer_prefixes.values()) / sum(answer_prefixes.values()) > 0.25:
-        errors.append('Too many sentence banks share the same answer-position pattern')
 if not args.catalog_only:
     for address, count in generic_sentence_diagnostics.items():
         errors.append(f'{address}: {count} incorrect sentence outcomes lack specific diagnostics')

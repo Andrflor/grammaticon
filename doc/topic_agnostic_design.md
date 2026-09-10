@@ -91,7 +91,7 @@ Extrait simplifié d’une question du second design :
 
 Chaque choix possède son propre résultat. Plusieurs réponses peuvent être acceptées. `assessment` déclare l’identité utilisée pour suivre une difficulté, indépendamment d’une variante de présentation. `item` est un identifiant de diversité ; il peut désigner n’importe quel objet du design. `attributes` contient les données descriptives pré-écrites, dont les noms et types sont décrits par le design. Le moteur ne les interprète pas comme des notions d’un sujet.
 
-`next` référence une autre question du même catalogue. `followUpOnly` permet de réserver cette question à l’enchaînement. Aucun ordre de réponse n’est mélangé à l’exécution. Pour un autre ordre, le design doit fournir une autre variante identifiée.
+`next` référence une autre question du même catalogue. `followUpOnly` permet de réserver cette question à l’enchaînement. `shuffleChoices` est un booléen optionnel : la valeur de la question prime sur celle de la carte, et le défaut est `false`. À `false`, l’ordre du JSON est conservé. À `true`, seul l’ordre des propositions est mélangé lors de la présentation ; les identifiants, réponses acceptées et diagnostics sont inchangés. Cet ordre est enregistré dans la sauvegarde et ne change pas à la reprise.
 
 ## Liens entièrement déclarés
 
@@ -141,7 +141,7 @@ Le panneau de reprise reprend la présentation originale. Chaque lieu déclare `
 
 ### Séquences intégrales
 
-Une carte peut déclarer `encounter.completion: "sequence"` (défaut : `"target"`). La banque doit avoir exactement une entrée sans `followUpOnly: true`, puis une chaîne `next` sans cycle qui traverse toutes ses questions. Le moteur continue jusqu’à la fin de cette chaîne ou à l’épuisement des vies. À la fin, `target` bonnes réponses et une vie restante sont nécessaires pour gagner. Le validateur refuse un quota supérieur à la taille de la séquence. La question courante est conservée dans la sauvegarde.
+Une carte peut déclarer `encounter.completion: "sequence"` (défaut : `"target"`). La banque doit avoir exactement une entrée sans `followUpOnly: true`, puis une chaîne `next` sans cycle qui traverse toutes ses questions. Le moteur arrête le combat dès que `target` bonnes réponses sont atteintes ou que les vies sont épuisées. Une chaîne peut aussi se terminer avant le quota, auquel cas le combat est perdu. Aucun maillon supplémentaire ne prime sur ces bornes. Le validateur refuse un quota supérieur à la taille de la séquence. La question courante est conservée dans la sauvegarde.
 
 `presentation.longText: true` rend le panneau de question défilable, avec une hauteur maximale de 46 % de l’écran, pour les lectures longues. Les cartes ordinaires conservent leur disposition originale.
 
@@ -156,3 +156,9 @@ Cette exigence s’applique au niveau de maîtrise et à sa période de grâce a
 La progression affichée est le minimum entre l’estimation habituelle et la proportion des éléments requis actuellement réussis. La barre existante ne peut donc pas être pleine alors que certains éléments déclarés n’ont pas été réussis. Ce calcul ne modifie pas l’estimation employée pour les observations ou les récompenses.
 
 Les bilans lexicaux de Grammaticon déclarent explicitement tous leurs éléments dans cette liste. Le contrôle de catalogue vérifie sa correspondance exacte avec la banque de la carte. Cela garantit une exigence sur les preuves de réussite ; cela ne certifie ni la qualité linguistique des questions ni l’exhaustivité du lexique des ouvrages sources.
+
+### Sélection adaptée aux résultats
+
+`questionSelection: "adaptive"` laisse le moteur choisir dans toute la banque admissible. Les questions doivent être indépendantes, sans `next` ni `followUpOnly`, avec une fin de combat au quota. Les résultats sont suivis par question dans `questionResults`. Les questions encore non évaluées reçoivent `selection.unseenQuestionBoost` (défaut 2) ; les réussites diminuent progressivement le poids individuel. Les erreurs actives et liens explicitement déclarés conservent les multiplicateurs de `rules.selection`. Le moteur ne déduit aucun lien entre sujets.
+
+Les dernières questions présentées sont conservées par activité dans `recentQuestions`, selon `selection.recentItems`, y compris entre deux parties. Elles sont évitées tant que d’autres questions sont disponibles. Ce mécanisme ne parcourt pas obligatoirement toute la banque avant de revenir sur une erreur. La sélection pondérée reste probabiliste. Le mode `weighted` conserve la sélection historique par compétences et erreurs pour les designs existants. L’ordre des propositions est une politique distincte de la sélection des questions.

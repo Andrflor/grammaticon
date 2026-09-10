@@ -1,7 +1,7 @@
 {
   "id": "relative-case-role",
-  "name": "Quī agit? Quem vidēs?",
-  "subtitle": "Compositiō sententiarum",
+  "name": "Quī et quem",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
@@ -13,12 +13,12 @@
     }
   },
   "skills": [
-    "study.theme.relative-case-role"
+    "study.theme.personae-relative-case-role"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

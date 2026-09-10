@@ -1,7 +1,7 @@
 {
   "id": "relative-case-role",
-  "name": "Quī agit? Quem vidēs?",
-  "subtitle": "Interpretātiō sententiarum",
+  "name": "Quī et quem",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
@@ -13,24 +13,24 @@
     }
   },
   "skills": [
-    "study.version.relative-case-role"
+    "study.version.personae-relative-case-role"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
   "presentation": {
     "background": "theatrum_bg",
     "hero": "histrio_idle",
-    "opponent": "actor_tragoedus",
+    "opponent": "actor_dominus",
     "heroCorrect": "histrio_gesture",
     "heroWrong": "histrio_hurt",
     "heroVictory": "histrio_victory",
     "heroDefeat": "histrio_defeat",
-    "opponentName": "Tragoedus Cothurnātus",
+    "opponentName": "Dominus Gregis",
     "motion": "projectile",
     "projectile": "persona",
     "correctSound": "plausus",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

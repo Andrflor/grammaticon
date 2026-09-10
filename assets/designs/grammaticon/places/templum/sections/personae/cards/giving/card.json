@@ -1,36 +1,36 @@
 {
   "id": "giving",
   "name": "Cui?",
-  "subtitle": "Compositiō sententiarum",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
       "all": [
         {
-          "unlocked": "templum/personae/reflexive-object"
+          "unlocked": "templum/personae/reference"
         }
       ]
     }
   },
   "skills": [
-    "study.theme.dative-recipient"
+    "study.theme.personae-giving"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
   "presentation": {
     "background": "temple_bg",
     "hero": "temple_hero_idle",
-    "opponent": "temple_priest_flamen",
+    "opponent": "temple_priest_augur",
     "heroCorrect": "temple_hero_gesture",
     "heroWrong": "temple_hero_hurt",
     "heroVictory": "temple_hero_victory",
     "heroDefeat": "temple_hero_defeat",
-    "opponentName": "Flāmen",
+    "opponentName": "Augur",
     "motion": "projectile",
     "projectile": "argumentum",
     "correctSound": "plausus",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

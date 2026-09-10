@@ -1,0 +1,2261 @@
+[
+  {
+    "id": "negation-q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q1",
+    "assessment": "study.theme.early-negatio:negation:q1",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puerī nōn dormiunt."
+      },
+      {
+        "id": "1",
+        "text": "Puer dormit."
+      },
+      {
+        "id": "0",
+        "text": "Puer nōn dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer nōn dormit; negātiō nōn omittenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Puer dormit negātiōnem omittit. Hīc autem puer nōn dormit.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc ūnus puer indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "negation-q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q2",
+    "assessment": "study.theme.early-negatio:negation:q2",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella nōn cantat."
+      },
+      {
+        "id": "0",
+        "text": "Puella cantat."
+      },
+      {
+        "id": "1",
+        "text": "Puellae nōn cantant."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Puella cantat negātiōnem omittit. Hīc autem puella nōn cantat.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc ūna puella indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puella nōn cantat; negātiō nōn omittenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "canto",
+      "non",
+      "puella"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "negation-q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q3",
+    "assessment": "study.theme.early-negatio:negation:q3",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon dort, mais la jeune fille ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer dormit et puella dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puer dormit, sed puella nōn dormit."
+      },
+      {
+        "id": "2",
+        "text": "Puer nōn dormit, sed puella dormit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae dormiunt. Hīc autem puer dormit et puella nōn dormit.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puer dormit. Puella autem nōn dormit. Negātiō ad puellam pertinet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō ad puellam, nōn ad puerum pertinet. Utramque partem sententiae separātim cōnsīderā.",
+        "observed": [
+          "study.confusion.negation-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "et",
+      "non",
+      "puella",
+      "puer",
+      "sed"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "negation-q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q4",
+    "assessment": "study.theme.early-negatio:negation:q4",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le livre n’est pas grand."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Liber est magnus."
+      },
+      {
+        "id": "0",
+        "text": "Liber nōn est magnus."
+      },
+      {
+        "id": "2",
+        "text": "Librī nōn sunt magnī."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Liber nōn est magnus. Vocābulum «nōn» negat librum magnum esse.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Liber est magnus rem affirmat. Hīc autem liber nōn est magnus.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc ūnus liber indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "liber",
+      "magnus",
+      "non",
+      "sum"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "negation-q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q5",
+    "assessment": "study.theme.early-negatio:negation:q5",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme chante, mais l’homme ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Fēmina cantat, sed vir nōn cantat."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina et vir cantant."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina nōn cantat, sed vir cantat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Negātiō ad virum, nōn ad fēminam pertinet. Utramque partem sententiae separātim cōnsīderā.",
+        "observed": [
+          "study.confusion.negation-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae cantant. Hīc autem fēmina cantat et vir nōn cantat.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Fēmina cantat. Vir autem nōn cantat. Negātiō ad virum pertinet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "canto",
+      "et",
+      "femina",
+      "non",
+      "sed",
+      "vir"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "negation-q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "negation:q6",
+    "assessment": "study.theme.early-negatio:negation:q6",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les garçons ne dorment pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puerī dormiunt."
+      },
+      {
+        "id": "0",
+        "text": "Puer nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puerī nōn dormiunt."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc plūrēs puerī indicantur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puerī plūrēs sunt et nōn dormiunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puerī dormiunt negātiōnem omittit. Hīc autem puerī nōn dormiunt.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "help": "study.early-negatio",
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "fr-la"
+    }
+  },
+  {
+    "id": "extra-1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister nōn cantat."
+      },
+      {
+        "id": "1",
+        "text": "Magister cantat."
+      },
+      {
+        "id": "2",
+        "text": "Magister nōn dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-1",
+    "assessment": "study.theme.early-negatio:extra-1",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "magister",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Magister dormit."
+      },
+      {
+        "id": "2",
+        "text": "Magister nōn cantat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-2",
+    "assessment": "study.theme.early-negatio:extra-2",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "magister",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina nōn cantat."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina cantat."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina nōn dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-3",
+    "assessment": "study.theme.early-negatio:extra-3",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "femina",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina dormit."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina nōn cantat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-4",
+    "assessment": "study.theme.early-negatio:extra-4",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "femina",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir nōn cantat."
+      },
+      {
+        "id": "1",
+        "text": "Vir cantat."
+      },
+      {
+        "id": "2",
+        "text": "Vir nōn dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-5",
+    "assessment": "study.theme.early-negatio:extra-5",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "non",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Vir dormit."
+      },
+      {
+        "id": "2",
+        "text": "Vir nōn cantat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-6",
+    "assessment": "study.theme.early-negatio:extra-6",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "non",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-7",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin ne chante pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta nōn cantat."
+      },
+      {
+        "id": "1",
+        "text": "Nauta cantat."
+      },
+      {
+        "id": "2",
+        "text": "Nauta nōn dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-7",
+    "assessment": "study.theme.early-negatio:extra-7",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "nauta",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-8",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Nauta dormit."
+      },
+      {
+        "id": "2",
+        "text": "Nauta nōn cantat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-8",
+    "assessment": "study.theme.early-negatio:extra-8",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "nauta",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-9",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les filles ne chantent pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puellae nōn cantant."
+      },
+      {
+        "id": "1",
+        "text": "Puellae cantant."
+      },
+      {
+        "id": "2",
+        "text": "Puellae nōn dormiunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-9",
+    "assessment": "study.theme.early-negatio:extra-9",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "non",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-10",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les filles ne dorment pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puellae nōn dormiunt."
+      },
+      {
+        "id": "1",
+        "text": "Puellae dormiunt."
+      },
+      {
+        "id": "2",
+        "text": "Puellae nōn cantant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-10",
+    "assessment": "study.theme.early-negatio:extra-10",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "non",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-11",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les maîtres ne chantent pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magistrī nōn cantant."
+      },
+      {
+        "id": "1",
+        "text": "Magistrī cantant."
+      },
+      {
+        "id": "2",
+        "text": "Magistrī nōn dormiunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-11",
+    "assessment": "study.theme.early-negatio:extra-11",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "magister",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-12",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les maîtres ne dorment pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magistrī nōn dormiunt."
+      },
+      {
+        "id": "1",
+        "text": "Magistrī dormiunt."
+      },
+      {
+        "id": "2",
+        "text": "Magistrī nōn cantant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-12",
+    "assessment": "study.theme.early-negatio:extra-12",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "magister",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-13",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les marins ne chantent pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nautae nōn cantant."
+      },
+      {
+        "id": "1",
+        "text": "Nautae cantant."
+      },
+      {
+        "id": "2",
+        "text": "Nautae nōn dormiunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-13",
+    "assessment": "study.theme.early-negatio:extra-13",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "nauta",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-14",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les marins ne dorment pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nautae nōn dormiunt."
+      },
+      {
+        "id": "1",
+        "text": "Nautae dormiunt."
+      },
+      {
+        "id": "2",
+        "text": "Nautae nōn cantant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-14",
+    "assessment": "study.theme.early-negatio:extra-14",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "canto",
+      "dormio",
+      "nauta",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-15",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon dort, mais le maître ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer dormit, sed magister nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puer nōn dormit, sed magister dormit."
+      },
+      {
+        "id": "2",
+        "text": "Puer dormit, sed magister dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-15",
+    "assessment": "study.theme.early-negatio:extra-15",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "magister",
+      "non",
+      "puer",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-16",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La fille dort, mais le marin ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella dormit, sed nauta nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puella nōn dormit, sed nauta dormit."
+      },
+      {
+        "id": "2",
+        "text": "Puella dormit, sed nauta dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-16",
+    "assessment": "study.theme.early-negatio:extra-16",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "nauta",
+      "non",
+      "puella",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-17",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître dort, mais la femme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister dormit, sed fēmina nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Magister nōn dormit, sed fēmina dormit."
+      },
+      {
+        "id": "2",
+        "text": "Magister dormit, sed fēmina dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-17",
+    "assessment": "study.theme.early-negatio:extra-17",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "femina",
+      "magister",
+      "non",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-18",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme dort, mais la fille ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir dormit, sed puella nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Vir nōn dormit, sed puella dormit."
+      },
+      {
+        "id": "2",
+        "text": "Vir dormit, sed puella dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-18",
+    "assessment": "study.theme.early-negatio:extra-18",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puella",
+      "sed",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-19",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin dort, mais le garçon ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta dormit, sed puer nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Nauta nōn dormit, sed puer dormit."
+      },
+      {
+        "id": "2",
+        "text": "Nauta dormit, sed puer dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-19",
+    "assessment": "study.theme.early-negatio:extra-19",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "nauta",
+      "non",
+      "puer",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-20",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme dort, mais le maître ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina dormit, sed magister nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina nōn dormit, sed magister dormit."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina dormit, sed magister dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-20",
+    "assessment": "study.theme.early-negatio:extra-20",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "femina",
+      "magister",
+      "non",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-21",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon dort, mais l’homme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer dormit, sed vir nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puer nōn dormit, sed vir dormit."
+      },
+      {
+        "id": "2",
+        "text": "Puer dormit, sed vir dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-21",
+    "assessment": "study.theme.early-negatio:extra-21",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer",
+      "sed",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-22",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La fille dort, mais la femme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella dormit, sed fēmina nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Puella nōn dormit, sed fēmina dormit."
+      },
+      {
+        "id": "2",
+        "text": "Puella dormit, sed fēmina dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-22",
+    "assessment": "study.theme.early-negatio:extra-22",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "femina",
+      "non",
+      "puella",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-23",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître dort, mais le marin ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister dormit, sed nauta nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Magister nōn dormit, sed nauta dormit."
+      },
+      {
+        "id": "2",
+        "text": "Magister dormit, sed nauta dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-23",
+    "assessment": "study.theme.early-negatio:extra-23",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "magister",
+      "nauta",
+      "non",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-24",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme dort, mais le garçon ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir dormit, sed puer nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Vir nōn dormit, sed puer dormit."
+      },
+      {
+        "id": "2",
+        "text": "Vir dormit, sed puer dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-24",
+    "assessment": "study.theme.early-negatio:extra-24",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer",
+      "sed",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-25",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin dort, mais la femme ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nauta dormit, sed fēmina nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Nauta nōn dormit, sed fēmina dormit."
+      },
+      {
+        "id": "2",
+        "text": "Nauta dormit, sed fēmina dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-25",
+    "assessment": "study.theme.early-negatio:extra-25",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "femina",
+      "nauta",
+      "non",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "extra-26",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme dort, mais la fille ne dort pas."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina dormit, sed puella nōn dormit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina nōn dormit, sed puella dormit."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina dormit, sed puella dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.early-negatio"
+    ],
+    "item": "early-negatio:extra-26",
+    "assessment": "study.theme.early-negatio:extra-26",
+    "help": "study.early-negatio",
+    "requires": [],
+    "vocabulary": [
+      "dormio",
+      "femina",
+      "non",
+      "puella",
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn sententiam negat. Puer dormit et puer nōn dormit contrāria significant. In sententiā coniūnctā vidē quae pars negētur: puer dormit, sed puella nōn dormit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
+        "observed": [
+          "study.confusion.early-negative-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
+        "observed": [
+          "study.confusion.early-negative-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

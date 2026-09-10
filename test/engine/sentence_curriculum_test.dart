@@ -248,6 +248,7 @@ void main() {
       final session = GameSession(design, {}, (_) async {});
       await session.start(card);
       await session.begin();
+      session.state['encounter']['question'] = first.data;
       final choice = session.question!.choices.singleWhere(
         (c) => c['text'] == text,
       );

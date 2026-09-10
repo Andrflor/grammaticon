@@ -1,36 +1,36 @@
 {
   "id": "giving",
   "name": "Cui?",
-  "subtitle": "Interpretātiō sententiarum",
+  "subtitle": "Persōnae et necessitūdinēs",
   "access": {
     "price": 20,
     "requires": {
       "all": [
         {
-          "unlocked": "theatrum/personae/reflexive-object"
+          "unlocked": "theatrum/personae/reference"
         }
       ]
     }
   },
   "skills": [
-    "study.version.dative-recipient"
+    "study.version.personae-giving"
   ],
   "encounter": {
     "lives": 3,
     "target": 5,
-    "completion": "sequence"
+    "completion": "target"
   },
   "questions": "questions.json",
   "lesson": "lesson.json",
   "presentation": {
     "background": "theatrum_bg",
     "hero": "histrio_idle",
-    "opponent": "actor_pantomimus",
+    "opponent": "actor_tragoedus",
     "heroCorrect": "histrio_gesture",
     "heroWrong": "histrio_hurt",
     "heroVictory": "histrio_victory",
     "heroDefeat": "histrio_defeat",
-    "opponentName": "Pantomīmus Ēlegāns",
+    "opponentName": "Tragoedus Cothurnātus",
     "motion": "projectile",
     "projectile": "persona",
     "correctSound": "plausus",
@@ -63,5 +63,7 @@
       0,
       1
     ]
-  }
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": true
 }

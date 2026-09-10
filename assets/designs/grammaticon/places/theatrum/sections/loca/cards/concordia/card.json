@@ -1,0 +1,69 @@
+{
+  "id": "concordia",
+  "name": "Magnus, magna, magnum",
+  "subtitle": "Locī et rēs",
+  "access": {
+    "price": 20,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "theatrum/loca/numerus"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.version.early-concordia"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 5,
+    "completion": "target"
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_chorus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Chorī Magister",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  },
+  "questionSelection": "adaptive",
+  "shuffleChoices": false
+}

@@ -81,16 +81,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "paysan"
+      },
+      {
         "id": "1",
         "text": "marcher"
       },
       {
         "id": "2",
         "text": "eau"
-      },
-      {
-        "id": "0",
-        "text": "paysan"
       }
     ],
     "accepted": [
@@ -148,16 +148,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "entendre, apprendre une nouvelle"
+        "id": "0",
+        "text": "marcher"
       },
       {
         "id": "1",
         "text": "eau"
       },
       {
-        "id": "0",
-        "text": "marcher"
+        "id": "2",
+        "text": "entendre, apprendre une nouvelle"
       }
     ],
     "accepted": [
@@ -215,16 +215,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "bon, bonne"
-      },
-      {
         "id": "0",
         "text": "eau"
       },
       {
         "id": "1",
         "text": "entendre, apprendre une nouvelle"
+      },
+      {
+        "id": "2",
+        "text": "bon, bonne"
       }
     ],
     "accepted": [
@@ -349,16 +349,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "bon, bonne"
+      },
+      {
         "id": "1",
         "text": "courir"
       },
       {
         "id": "2",
         "text": "donner"
-      },
-      {
-        "id": "0",
-        "text": "bon, bonne"
       }
     ],
     "accepted": [
@@ -420,12 +420,12 @@
         "text": "courir"
       },
       {
-        "id": "2",
-        "text": "enseigner"
-      },
-      {
         "id": "1",
         "text": "donner"
+      },
+      {
+        "id": "2",
+        "text": "enseigner"
       }
     ],
     "accepted": [
@@ -554,12 +554,12 @@
         "text": "enseigner"
       },
       {
-        "id": "2",
-        "text": "maison"
-      },
-      {
         "id": "1",
         "text": "maître de maison"
+      },
+      {
+        "id": "2",
+        "text": "maison"
       }
     ],
     "accepted": [
@@ -617,16 +617,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "maison"
-      },
-      {
         "id": "0",
         "text": "maître de maison"
       },
       {
+        "id": "1",
+        "text": "maison"
+      },
+      {
         "id": "2",
-        "text": "femme"
+        "text": "cadeau"
       }
     ],
     "accepted": [
@@ -688,12 +688,12 @@
         "text": "maison"
       },
       {
-        "id": "2",
-        "text": "fille de quelqu’un"
+        "id": "1",
+        "text": "cadeau"
       },
       {
-        "id": "1",
-        "text": "femme"
+        "id": "2",
+        "text": "lettre"
       }
     ],
     "accepted": [
@@ -728,6 +728,207 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "donum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "donum",
+    "assessment": "study.lexicon.theatrum.personae:donum",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dōnum"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "cadeau"
+      },
+      {
+        "id": "1",
+        "text": "lettre"
+      },
+      {
+        "id": "2",
+        "text": "histoire, récit"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "donum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dōnum — cadeau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "epistula",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "epistula",
+    "assessment": "study.lexicon.theatrum.personae:epistula",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "epistula"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "lettre"
+      },
+      {
+        "id": "1",
+        "text": "histoire, récit"
+      },
+      {
+        "id": "2",
+        "text": "femme"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "epistula"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: epistula — lettre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "fabula",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "fabula",
+    "assessment": "study.lexicon.theatrum.personae:fabula",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fābula"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "histoire, récit"
+      },
+      {
+        "id": "1",
+        "text": "femme"
+      },
+      {
+        "id": "2",
+        "text": "fille de quelqu’un"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "fabula"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: fābula — histoire, récit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
         "observed": [
           "study.error"
         ],
@@ -818,16 +1019,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "fille de quelqu’un"
+      },
+      {
         "id": "1",
         "text": "fils"
       },
       {
         "id": "2",
         "text": "avoir"
-      },
-      {
-        "id": "0",
-        "text": "fille de quelqu’un"
       }
     ],
     "accepted": [
@@ -885,16 +1086,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "jardin"
-      },
-      {
         "id": "0",
         "text": "fils"
       },
       {
         "id": "1",
         "text": "avoir"
+      },
+      {
+        "id": "2",
+        "text": "jardin"
       }
     ],
     "accepted": [
@@ -952,16 +1153,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "dans, sur"
+        "id": "0",
+        "text": "avoir"
       },
       {
         "id": "1",
         "text": "jardin"
       },
       {
-        "id": "0",
-        "text": "avoir"
+        "id": "2",
+        "text": "dans, sur"
       }
     ],
     "accepted": [
@@ -1019,16 +1220,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "jardin"
+      },
+      {
         "id": "1",
         "text": "dans, sur"
       },
       {
         "id": "2",
         "text": "celui-ci, celle-ci, cela"
-      },
-      {
-        "id": "0",
-        "text": "jardin"
       }
     ],
     "accepted": [
@@ -1090,12 +1291,12 @@
         "text": "dans, sur"
       },
       {
-        "id": "2",
-        "text": "Italie"
-      },
-      {
         "id": "1",
         "text": "celui-ci, celle-ci, cela"
+      },
+      {
+        "id": "2",
+        "text": "Italie"
       }
     ],
     "accepted": [
@@ -1153,16 +1354,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "joyeux, joyeuse"
+        "id": "0",
+        "text": "celui-ci, celle-ci, cela"
       },
       {
         "id": "1",
         "text": "Italie"
       },
       {
-        "id": "0",
-        "text": "celui-ci, celle-ci, cela"
+        "id": "2",
+        "text": "joyeux, joyeuse"
       }
     ],
     "accepted": [
@@ -1220,16 +1421,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "Italie"
+      },
+      {
         "id": "1",
         "text": "joyeux, joyeuse"
       },
       {
         "id": "2",
         "text": "louer, faire l’éloge de"
-      },
-      {
-        "id": "0",
-        "text": "Italie"
       }
     ],
     "accepted": [
@@ -1291,12 +1492,12 @@
         "text": "joyeux, joyeuse"
       },
       {
-        "id": "2",
-        "text": "laver"
-      },
-      {
         "id": "1",
         "text": "louer, faire l’éloge de"
+      },
+      {
+        "id": "2",
+        "text": "laver"
       }
     ],
     "accepted": [
@@ -1354,12 +1555,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "laver"
-      },
-      {
         "id": "0",
         "text": "louer, faire l’éloge de"
+      },
+      {
+        "id": "1",
+        "text": "laver"
       },
       {
         "id": "2",
@@ -1421,16 +1622,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "livre"
+        "id": "0",
+        "text": "laver"
       },
       {
         "id": "1",
         "text": "lire"
       },
       {
-        "id": "0",
-        "text": "laver"
+        "id": "2",
+        "text": "livre"
       }
     ],
     "accepted": [
@@ -1488,16 +1689,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "lire"
+      },
+      {
         "id": "1",
         "text": "livre"
       },
       {
         "id": "2",
         "text": "maître"
-      },
-      {
-        "id": "0",
-        "text": "lire"
       }
     ],
     "accepted": [
@@ -1559,12 +1760,12 @@
         "text": "livre"
       },
       {
-        "id": "2",
-        "text": "grand"
-      },
-      {
         "id": "1",
         "text": "maître"
+      },
+      {
+        "id": "2",
+        "text": "grand"
       }
     ],
     "accepted": [
@@ -1622,12 +1823,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "grand"
-      },
-      {
         "id": "0",
         "text": "maître"
+      },
+      {
+        "id": "1",
+        "text": "grand"
       },
       {
         "id": "2",
@@ -1689,12 +1890,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "rester"
-      },
-      {
         "id": "0",
         "text": "grand"
+      },
+      {
+        "id": "1",
+        "text": "rester"
       },
       {
         "id": "2",
@@ -1832,7 +2033,7 @@
       },
       {
         "id": "2",
-        "text": "marin"
+        "text": "envoyer"
       }
     ],
     "accepted": [
@@ -1895,11 +2096,11 @@
       },
       {
         "id": "1",
-        "text": "marin"
+        "text": "envoyer"
       },
       {
         "id": "2",
-        "text": "ne… pas"
+        "text": "raconter"
       }
     ],
     "accepted": [
@@ -1943,6 +2144,140 @@
     }
   },
   {
+    "id": "mitto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "mitto",
+    "assessment": "study.lexicon.theatrum.personae:mitto",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "mittere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "envoyer"
+      },
+      {
+        "id": "1",
+        "text": "raconter"
+      },
+      {
+        "id": "2",
+        "text": "marin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "mitto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: mittere — envoyer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "narro",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "narro",
+    "assessment": "study.lexicon.theatrum.personae:narro",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "nārrāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "raconter"
+      },
+      {
+        "id": "1",
+        "text": "marin"
+      },
+      {
+        "id": "2",
+        "text": "ne… pas"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "narro"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: nārrāre — raconter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "nauta",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1957,16 +2292,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "parer, orner"
+        "id": "0",
+        "text": "marin"
       },
       {
         "id": "1",
         "text": "ne… pas"
       },
       {
-        "id": "0",
-        "text": "marin"
+        "id": "2",
+        "text": "parer, orner"
       }
     ],
     "accepted": [
@@ -2024,16 +2359,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "parer, orner"
-      },
-      {
         "id": "0",
         "text": "ne… pas"
       },
       {
+        "id": "1",
+        "text": "parer, orner"
+      },
+      {
         "id": "2",
-        "text": "pain"
+        "text": "montrer"
       }
     ],
     "accepted": [
@@ -2091,16 +2426,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "petit, petite"
+        "id": "0",
+        "text": "parer, orner"
       },
       {
         "id": "1",
-        "text": "pain"
+        "text": "montrer"
       },
       {
-        "id": "0",
-        "text": "parer, orner"
+        "id": "2",
+        "text": "pain"
       }
     ],
     "accepted": [
@@ -2144,6 +2479,73 @@
     }
   },
   {
+    "id": "ostendo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ostendo",
+    "assessment": "study.lexicon.theatrum.personae:ostendo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ostendere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "montrer"
+      },
+      {
+        "id": "1",
+        "text": "pain"
+      },
+      {
+        "id": "2",
+        "text": "petit, petite"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.personae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.personae",
+    "vocabulary": [
+      "ostendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ostendere — montrer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "panis",
     "interaction": "choice",
     "dimension": "lemma",
@@ -2158,16 +2560,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "porter"
-      },
-      {
         "id": "0",
         "text": "pain"
       },
       {
         "id": "1",
         "text": "petit, petite"
+      },
+      {
+        "id": "2",
+        "text": "porter"
       }
     ],
     "accepted": [
@@ -2225,12 +2627,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "porter"
-      },
-      {
         "id": "0",
         "text": "petit, petite"
+      },
+      {
+        "id": "1",
+        "text": "porter"
       },
       {
         "id": "2",
@@ -2292,16 +2694,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "garçon"
+        "id": "0",
+        "text": "porter"
       },
       {
         "id": "1",
         "text": "jeune fille"
       },
       {
-        "id": "0",
-        "text": "porter"
+        "id": "2",
+        "text": "garçon"
       }
     ],
     "accepted": [
@@ -2359,16 +2761,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "beau, belle"
-      },
-      {
         "id": "0",
         "text": "jeune fille"
       },
       {
         "id": "1",
         "text": "garçon"
+      },
+      {
+        "id": "2",
+        "text": "beau, belle"
       }
     ],
     "accepted": [
@@ -2426,16 +2828,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "qui, pronom relatif"
+        "id": "0",
+        "text": "garçon"
       },
       {
         "id": "1",
         "text": "beau, belle"
       },
       {
-        "id": "0",
-        "text": "garçon"
+        "id": "2",
+        "text": "qui, pronom relatif"
       }
     ],
     "accepted": [
@@ -2493,12 +2895,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "qui, pronom relatif"
-      },
-      {
         "id": "0",
         "text": "beau, belle"
+      },
+      {
+        "id": "1",
+        "text": "qui, pronom relatif"
       },
       {
         "id": "2",
@@ -2560,16 +2962,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "qui ? quoi ? (cuius : de qui ?)"
+        "id": "0",
+        "text": "qui, pronom relatif"
       },
       {
         "id": "1",
-        "text": "être présent"
+        "text": "qui ? quoi ? (cuius : de qui ?)"
       },
       {
-        "id": "0",
-        "text": "qui, pronom relatif"
+        "id": "2",
+        "text": "rire"
       }
     ],
     "accepted": [
@@ -2627,16 +3029,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "rose"
-      },
-      {
         "id": "0",
         "text": "qui ? quoi ? (cuius : de qui ?)"
       },
       {
         "id": "1",
         "text": "rire"
+      },
+      {
+        "id": "2",
+        "text": "rose"
       }
     ],
     "accepted": [
@@ -2698,12 +3100,12 @@
         "text": "rire"
       },
       {
-        "id": "2",
-        "text": "saluer"
-      },
-      {
         "id": "1",
         "text": "rose"
+      },
+      {
+        "id": "2",
+        "text": "saluer"
       }
     ],
     "accepted": [
@@ -2761,12 +3163,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "saluer"
-      },
-      {
         "id": "0",
         "text": "rose"
+      },
+      {
+        "id": "1",
+        "text": "saluer"
       },
       {
         "id": "2",
@@ -2828,16 +3230,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "saluer"
+      },
+      {
         "id": "1",
         "text": "école"
       },
       {
         "id": "2",
         "text": "soi, se"
-      },
-      {
-        "id": "0",
-        "text": "saluer"
       }
     ],
     "accepted": [
@@ -2899,12 +3301,12 @@
         "text": "école"
       },
       {
-        "id": "2",
-        "text": "être assis"
-      },
-      {
         "id": "1",
         "text": "soi, se"
+      },
+      {
+        "id": "2",
+        "text": "être assis"
       }
     ],
     "accepted": [
@@ -2962,12 +3364,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "être assis"
-      },
-      {
         "id": "0",
         "text": "soi, se"
+      },
+      {
+        "id": "1",
+        "text": "être assis"
       },
       {
         "id": "2",
@@ -3029,16 +3431,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "miroir"
+        "id": "0",
+        "text": "être assis"
       },
       {
         "id": "1",
         "text": "esclave"
       },
       {
-        "id": "0",
-        "text": "être assis"
+        "id": "2",
+        "text": "miroir"
       }
     ],
     "accepted": [
@@ -3163,16 +3565,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "miroir"
+      },
+      {
         "id": "1",
         "text": "être"
       },
       {
         "id": "2",
         "text": "son propre, sa propre, ses propres"
-      },
-      {
-        "id": "0",
-        "text": "miroir"
       }
     ],
     "accepted": [
@@ -3230,16 +3632,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "être"
+      },
+      {
         "id": "1",
         "text": "son propre, sa propre, ses propres"
       },
       {
         "id": "2",
         "text": "temple"
-      },
-      {
-        "id": "0",
-        "text": "être"
       }
     ],
     "accepted": [
@@ -3297,16 +3699,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "ton, ta, tes"
-      },
-      {
         "id": "0",
         "text": "son propre, sa propre, ses propres"
       },
       {
         "id": "1",
         "text": "temple"
+      },
+      {
+        "id": "2",
+        "text": "ton, ta, tes"
       }
     ],
     "accepted": [
@@ -3431,16 +3833,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "voir"
-      },
-      {
         "id": "0",
         "text": "ton, ta, tes"
       },
       {
         "id": "1",
         "text": "où"
+      },
+      {
+        "id": "2",
+        "text": "voir"
       }
     ],
     "accepted": [
@@ -3565,16 +3967,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "homme"
-      },
-      {
         "id": "0",
         "text": "voir"
       },
       {
         "id": "1",
         "text": "maison de campagne"
+      },
+      {
+        "id": "2",
+        "text": "homme"
       }
     ],
     "accepted": [
@@ -3632,16 +4034,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "appeler"
-      },
-      {
         "id": "0",
         "text": "maison de campagne"
       },
       {
         "id": "1",
         "text": "homme"
+      },
+      {
+        "id": "2",
+        "text": "appeler"
       }
     ],
     "accepted": [
@@ -3703,12 +4105,12 @@
         "text": "homme"
       },
       {
-        "id": "2",
-        "text": "être présent"
-      },
-      {
         "id": "1",
         "text": "appeler"
+      },
+      {
+        "id": "2",
+        "text": "être présent"
       }
     ],
     "accepted": [
@@ -3766,12 +4168,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "être présent"
-      },
-      {
         "id": "0",
         "text": "appeler"
+      },
+      {
+        "id": "1",
+        "text": "être présent"
       },
       {
         "id": "2",

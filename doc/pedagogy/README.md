@@ -23,7 +23,7 @@ Le registre de 356 unités dans `coverage.json` reste incomplet : les 30 lecture
 
 ## État technique actuel
 
-Douze groupes, 66 sujets dans les deux sens, dont certaines anciennes cartes encore à découper, vingt-quatre cartes lexicales finales : 156 cartes et 1 670 questions pour Theatrum/Templum. Le rapport du design déclare les adresses des cartes et leurs inventaires lexicaux. La validation technique et les tests de macrons, d’économie, de progression et de rendu passent ; cela ne certifie pas une couverture exhaustive ni une relecture indépendante de tous les contenus.
+Douze groupes, 58 sujets dans les deux sens, dont certaines anciennes cartes encore à découper, vingt-quatre cartes lexicales finales : 140 cartes et 1 808 questions pour Theatrum/Templum. Le rapport du design déclare les adresses des cartes et leurs inventaires lexicaux. La validation technique et les tests de macrons, d’économie, de progression et de rendu passent ; cela ne certifie pas une couverture exhaustive ni une relecture indépendante de tous les contenus.
 
 Le rapport de rapprochement lexical est recalculé par `python3 tool/audit_lexical_traceability.py`. L’option `--check` détecte un rapport périmé. Ce contrôle examine les références aux questions existantes ; il ne produit aucune question et ne certifie pas les sens lexicaux.
 
@@ -38,3 +38,7 @@ Les références de Fabulae Syrae et d’Epitome sont accessibles pour l’audit
 Les cinq premières lectures de *Fabulae Syrae* ont désormais un inventaire provisoire, indexé dans [fabulae-syrae-construction-index.json](contracts/fabulae-syrae-construction-index.json). Les fins de trois plages de pages ont été corrigées après lecture du corps du texte. Les quarante lectures suivantes et l’exhaustivité lexicale restent à examiner.
 
 Les dix premiers paragraphes de l’*Epitome* ont un relevé provisoire de 82 constructions dans [epitome-construction-index.json](contracts/epitome-construction-index.json), avec leurs limites de pages vérifiées. Les 236 paragraphes suivants et l’exhaustivité lexicale restent à examiner. La carte **Ut monēret**, placée après **Ut et nē**, apporte une première correspondance partielle pour le but après une action passée.
+
+Le début a été regroupé en quatre cartes : **In Italiā**, **Ūnus et plūrēs**, **Magnus, magna, magnum** et **Affirmātiō et negātiō**. Chaque carte comporte 32 questions par sens, puis le bilan de 28 lemmes rencontrés. Le Templum propose le singulier avant le pluriel dans la carte du nombre. Les petites banques des groupes suivants restent à élargir et le découpage doit encore être revu selon leur difficulté.
+
+Les cartes du Theatrum et du Templum utilisent une sélection adaptée aux résultats et aux erreurs, avec mémoire des questions récentes entre parties. Elles n’imposent plus de chaîne fixe. Le quota atteint ou zéro cœur clôt le combat, même si d’autres questions restent dans la banque.

@@ -422,6 +422,13 @@ class GameDesign {
       }
     }
 
+    for (final target in object(
+      root['migration']?['purchaseAliases'] ?? {},
+    ).values) {
+      if (target is! String || !nodes.containsKey(target)) {
+        throw const FormatException('Invalid purchase migration target');
+      }
+    }
     for (final n in nodes.values) {
       if (n.price < 0) throw FormatException('Negative price ${n.address}');
       text(n.data['name']);
@@ -432,6 +439,22 @@ class GameDesign {
         if (view[key] != null) asset(view[key] as String);
       }
       if (n.kind == 'card') {
+        if (n.data.containsKey('shuffleChoices') &&
+            n.data['shuffleChoices'] is! bool) {
+          throw FormatException('Invalid choice shuffle setting ${n.address}');
+        }
+        if (!{
+          'weighted',
+          'adaptive',
+        }.contains(n.data['questionSelection'] ?? 'weighted')) {
+          throw FormatException('Unsupported question selection ${n.address}');
+        }
+        if (n.data['questionSelection'] == 'adaptive' &&
+            n.data['encounter']?['completion'] == 'sequence') {
+          throw FormatException(
+            'Adaptive selection cannot require a sequence ${n.address}',
+          );
+        }
         if (!{
           'target',
           'sequence',
@@ -489,6 +512,12 @@ class GameDesign {
       }
     }
     final selection = object(rules['selection']);
+    if (selection.containsKey('unseenQuestionBoost')) {
+      final value = selection['unseenQuestionBoost'];
+      if (value is! num || !value.isFinite || value <= 0) {
+        throw const FormatException('Invalid unseen-question weight');
+      }
+    }
     for (final key in [
       'unknownWeight',
       'weakScale',
@@ -629,6 +658,12 @@ class GameDesign {
       }
       _reference(dimensions, q.dimension, 'dimension');
       final choices = q.choices.map((c) => c['id'] as String).toSet();
+      if (q.data.containsKey('shuffleChoices') &&
+          q.data['shuffleChoices'] is! bool) {
+        throw FormatException(
+          'Invalid choice shuffle setting ${card.address}/${q.id}',
+        );
+      }
       if (choices.length < 2 ||
           choices.length != q.choices.length ||
           q.accepted.isEmpty ||
@@ -696,6 +731,14 @@ class GameDesign {
     ContentNode card,
     List<QuestionEntry> questions,
   ) {
+    if (card.data['questionSelection'] == 'adaptive' &&
+        questions.any(
+          (q) => q.data['next'] != null || q.data['followUpOnly'] == true,
+        )) {
+      throw FormatException(
+        'Adaptive selection needs independent entries: ${card.address}',
+      );
+    }
     if (card.data['encounter']['completion'] == 'sequence') {
       final starts = questions
           .where((q) => q.data['followUpOnly'] != true)

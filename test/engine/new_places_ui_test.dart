@@ -123,7 +123,10 @@ void main() {
         await tester.tap(find.widgetWithText(RomanButton, 'Incipe!'));
         await tester.pump(const Duration(milliseconds: 300));
         expect(tester.takeException(), isNull);
-        expect(session.question!.id, 'q1');
+        expect(
+          (await design.questions(card)).map((q) => q.id),
+          contains(session.question!.id),
+        );
         await tester.runAsync(() async {
           final image =
               await (boundary.currentContext!.findRenderObject()
