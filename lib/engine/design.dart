@@ -342,19 +342,11 @@ class GameDesign {
       }
     }
     for (final key in [
-      'radius',
       'spacing',
-      'buttonHeight',
       'bodySize',
       'headingSize',
       'questionSize',
       'maxWidth',
-      'sceneHeight',
-      'sceneActorHeight',
-      'sceneActorWidth',
-      'sceneRadius',
-      'motionDurationMs',
-      'effectSize',
     ]) {
       if (theme[key] is! num ||
           !(theme[key] as num).isFinite ||

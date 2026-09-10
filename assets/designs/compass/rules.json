@@ -8,7 +8,8 @@
           "en": "Undiscovered"
         },
         "threshold": 0,
-        "minObservations": 0
+        "minObservations": 0,
+        "color": "FF7D938C"
       },
       {
         "id": "exploring",
@@ -17,7 +18,8 @@
           "en": "Exploring"
         },
         "threshold": 0,
-        "minObservations": 1
+        "minObservations": 1,
+        "color": "FF26A69A"
       },
       {
         "id": "secure",
@@ -27,7 +29,8 @@
         },
         "threshold": 0.7,
         "minObservations": 4,
-        "minItems": 2
+        "minItems": 2,
+        "color": "FF00695C"
       }
     ],
     "alpha": 0.2,
@@ -63,7 +66,29 @@
     "loseEncounterGains": true,
     "defeatTributeRatio": 0,
     "defeatTributeMax": 40,
-    "defeatRounding": "up"
+    "defeatRounding": "up",
+    "description": {
+      "fr": "Les éclats suivent les règles de cette exploration.",
+      "en": "Shards follow this exploration’s rules."
+    },
+    "introductionDescription": {
+      "fr": "Chaque réponse fait avancer cette exploration.",
+      "en": "Each answer moves this exploration forward."
+    },
+    "displayRules": [
+      {
+        "text": {
+          "fr": "Une réponse avec aide rapporte 1 éclat, sans perte en cas d’erreur.",
+          "en": "An assisted answer earns 1 shard, with no loss for an error."
+        }
+      },
+      {
+        "text": {
+          "fr": "Terminer une exploration rapporte 3 éclats.",
+          "en": "Completing an exploration earns 3 shards."
+        }
+      }
+    ]
   },
   "selection": {
     "unknownWeight": 2.0,

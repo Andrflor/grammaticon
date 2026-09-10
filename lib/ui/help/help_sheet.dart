@@ -74,7 +74,14 @@ Future<void> showHelpSheet(
       controller: scroll,
       padding: const EdgeInsets.all(18),
       children: [
-        for (final b in blocks)
+        for (final b in [
+          if (!blocks.any((block) => block['role'] == 'heading'))
+            <String, dynamic>{
+              'role': 'heading',
+              'text': session.label('actions.help'),
+            },
+          ...blocks,
+        ])
           if (b['role'] == 'heading')
             Row(
               children: [

@@ -60,6 +60,6 @@ Les sauvegardes sont séparées par identifiant de jeu. Grammaticon reprend l’
 
 ## Fidélité graphique
 
-Grammaticon utilise les écrans originaux, leurs boutons, cartes, placements, dégradés et animations. `presentation.layout: "painted"` sélectionne cette présentation ; le thème (`theme.paintedPalette`, polices) et ses ressources sont fournis par le JSON.
+Tous les designs, dont Grammaticon et Compass, utilisent les mêmes écrans originaux, leurs boutons, cartes, placements, dégradés et animations. Le thème (`theme.paintedPalette`, polices) et les ressources sont fournis par chaque JSON. Il n’existe aucune interface simplifiée alternative.
 
 Douze images de référence issues du code original (`9bc4ad1`) vérifient au pixel près la ville, la sélection, les réglages, le suivi, l’introduction et le combat, à 1600 × 900 et 420 × 900. Les questions et les poses sont figées pour cette comparaison. Les images ne doivent pas être remplacées pour faire passer une régression graphique.

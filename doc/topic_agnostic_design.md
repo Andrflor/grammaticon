@@ -131,7 +131,7 @@ Le futur parcours automatique n’est pas implémenté. Ses choix devront eux au
 
 ## Présentation originale pilotée par le design
 
-`presentation.layout: "painted"` utilise les widgets originaux de `lib/ui` et les scènes de `lib/game`. Les adaptateurs de présentation lisent les instantanés du moteur ; ils ne génèrent pas de questions. `theme.paintedPalette` associe chaque jeton de couleur du style original à sa valeur ARGB ; les polices viennent également du thème. Les coordonnées et largeurs des bâtiments, titres, sous-titres, bulles, portraits et sons proviennent des JSON.
+Tous les designs utilisent les widgets originaux de `lib/ui` et les scènes de `lib/game`, sans sélection d’une interface alternative. Les adaptateurs de présentation lisent les instantanés du moteur ; ils ne génèrent pas de questions. `theme.paintedPalette` associe chaque jeton de couleur du style original à sa valeur ARGB ; les polices viennent également du thème. Les coordonnées et largeurs des bâtiments, titres, sous-titres, bulles, portraits et sons proviennent des JSON.
 
 `presentation.decorations` conserve les éléments visuels de la ville qui ne portent pas d’activité. `languageControl` décrit les choix du panneau de langue. `progressStatistics` et `collections` décrivent les panneaux de suivi ; leurs chemins de données, membres et conditions de comptage sont explicites. Pour Grammaticon, la collection historique lit les observations conservées dans la sauvegarde antérieure. Elle n’ajoute aucune activité au jeu.
 
