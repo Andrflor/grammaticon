@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Cet anneau-ci est beau."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ānulus pulcher est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Ille ānulus pulcher est."
+        "text": "Ille"
       },
       {
         "id": "1",
-        "text": "Hoc ānulus pulcher est."
+        "text": "Hoc"
       },
       {
         "id": "0",
-        "text": "Hic ānulus pulcher est."
+        "text": "Hic"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q1",
     "assessment": "study.theme.demonstrative-gender:q1",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.anulus",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.pulcher",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "anulus",
       "hic",
@@ -44,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +78,7 @@
       "1": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +86,7 @@
       "2": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +95,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Cette pierre précieuse-là est petite."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " gemma parva est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Illa gemma parva est."
+        "text": "Illa"
       },
       {
         "id": "1",
-        "text": "Haec gemma parva est."
+        "text": "Haec"
       },
       {
         "id": "0",
-        "text": "Illud gemma parva est."
+        "text": "Illud"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q2",
     "assessment": "study.theme.demonstrative-gender:q2",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.gemma",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "gemma",
       "hic",
@@ -116,13 +159,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +174,7 @@
       "1": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +189,60 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Cet ornement-ci est grand."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ōrnāmentum magnum est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Illud ōrnāmentum magnum est."
+        "text": "Illud"
       },
       {
         "id": "2",
-        "text": "Hic ōrnāmentum magnum est."
+        "text": "Hic"
       },
       {
         "id": "1",
-        "text": "Hoc ōrnāmentum magnum est."
+        "text": "Hoc"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q3",
     "assessment": "study.theme.demonstrative-gender:q3",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.ornamentum",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -188,13 +253,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +274,7 @@
       "2": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -217,39 +283,60 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Cet anneau-là est petit."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ānulus parvus est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Hic ānulus parvus est."
+        "text": "Hic"
       },
       {
         "id": "0",
-        "text": "Ille ānulus parvus est."
+        "text": "Ille"
       },
       {
         "id": "1",
-        "text": "Illud ānulus parvus est."
+        "text": "Illud"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q4",
     "assessment": "study.theme.demonstrative-gender:q4",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.anulus",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "anulus",
       "hic",
@@ -260,7 +347,8 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +360,7 @@
       "1": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +368,7 @@
       "2": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +377,60 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Cette rose-ci est belle."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " rosa pulchra est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Haec rosa pulchra est."
+        "text": "Haec"
       },
       {
         "id": "1",
-        "text": "Illa rosa pulchra est."
+        "text": "Illa"
       },
       {
         "id": "0",
-        "text": "Hic rosa pulchra est."
+        "text": "Hic"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q5",
     "assessment": "study.theme.demonstrative-gender:q5",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.pulcher",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -332,13 +441,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,7 +456,7 @@
       "1": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,39 +471,60 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Ce temple-là est grand."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " templum magnum est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Hoc templum magnum est."
+        "text": "Hoc"
       },
       {
         "id": "1",
-        "text": "Illud templum magnum est."
+        "text": "Illud"
       },
       {
         "id": "2",
-        "text": "Ille templum magnum est."
+        "text": "Ille"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.demonstrative-gender"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-gender"
     ],
     "item": "demonstrative-gender:q6",
     "assessment": "study.theme.demonstrative-gender:q6",
     "help": "study.demonstrative-gender",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -404,13 +535,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-gender",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -424,7 +556,7 @@
       "2": {
         "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
         "observed": [
-          "study.confusion.demonstrative-gender"
+          "compositio.demonstrative-gender"
         ],
         "hypotheses": [],
         "practice": []

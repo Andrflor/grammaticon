@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon court pour chercher de l’eau."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer currit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer currit quia aquam petit."
+        "text": "quia aquam petit."
       },
       {
         "id": "2",
-        "text": "Puer currit nē aquam petat."
+        "text": "nē aquam petat."
       },
       {
         "id": "0",
-        "text": "Puer currit ut aquam petat."
+        "text": "ut aquam petat."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q1",
     "assessment": "study.theme.purpose-present:q1",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.peto",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ut"
+    ],
     "vocabulary": [
       "aqua",
       "curro",
@@ -46,7 +67,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -58,7 +80,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -66,7 +88,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []
@@ -75,39 +97,61 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille se tait pour ne pas réveiller le garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella tacet "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella tacet nē puerum excitet."
+        "text": "nē puerum excitet."
       },
       {
         "id": "1",
-        "text": "Puella tacet quia puerum nōn excitat."
+        "text": "quia puerum nōn excitat."
       },
       {
         "id": "2",
-        "text": "Puella tacet ut puerum excitet."
+        "text": "ut puerum excitet."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q2",
     "assessment": "study.theme.purpose-present:q2",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.excito",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.taceo",
+      "lexicon.compositio.ut"
+    ],
     "vocabulary": [
       "excito",
       "ne",
@@ -121,7 +165,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -133,7 +178,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -141,7 +186,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []
@@ -150,39 +195,61 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin prépare les voiles pour que le navire parte."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta vēla parat "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Nauta vēla parat nē nāvis discēdat."
+        "text": "nē nāvis discēdat."
       },
       {
         "id": "0",
-        "text": "Nauta vēla parat ut nāvis discēdat."
+        "text": "ut nāvis discēdat."
       },
       {
         "id": "1",
-        "text": "Nauta vēla parat quia nāvis discēdit."
+        "text": "quia nāvis discēdit."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q3",
     "assessment": "study.theme.purpose-present:q3",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.discedo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.navis",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.paro",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ut",
+      "lexicon.compositio.velum"
+    ],
     "vocabulary": [
       "discedo",
       "nauta",
@@ -196,7 +263,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -208,7 +276,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -216,7 +284,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []
@@ -225,39 +293,62 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme ferme la porte pour que le froid n’entre pas."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina iānuam claudit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina iānuam claudit quia frīgus nōn intrat."
+        "text": "quia frīgus nōn intrat."
       },
       {
         "id": "2",
-        "text": "Fēmina iānuam claudit ut frīgus intret."
+        "text": "ut frīgus intret."
       },
       {
         "id": "0",
-        "text": "Fēmina iānuam claudit nē frīgus intret."
+        "text": "nē frīgus intret."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q4",
     "assessment": "study.theme.purpose-present:q4",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.claudo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.frigus",
+      "lexicon.compositio.ianua",
+      "lexicon.compositio.intro",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.non",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ut"
+    ],
     "vocabulary": [
       "claudo",
       "femina",
@@ -272,7 +363,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -284,7 +376,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -292,7 +384,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []
@@ -301,39 +393,62 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le voyageur cherche le chemin pour parvenir à la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nViātor viam quaerit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Viātor viam quaerit quia ad oppidum pervenit."
+        "text": "quia ad oppidum pervenit."
       },
       {
         "id": "0",
-        "text": "Viātor viam quaerit ut ad oppidum perveniat."
+        "text": "ut ad oppidum perveniat."
       },
       {
         "id": "2",
-        "text": "Viātor viam quaerit nē ad oppidum perveniat."
+        "text": "nē ad oppidum perveniat."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q5",
     "assessment": "study.theme.purpose-present:q5",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.ad",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.pervenio",
+      "lexicon.compositio.quaero",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ut",
+      "lexicon.compositio.via",
+      "lexicon.compositio.viator"
+    ],
     "vocabulary": [
       "ad",
       "ne",
@@ -348,7 +463,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -360,7 +476,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -368,7 +484,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []
@@ -404,12 +520,24 @@
       "0"
     ],
     "skills": [
-      "study.theme.purpose-present"
+      "compositio.purpose-cause",
+      "compositio.purpose-polarity"
     ],
     "item": "purpose-present:q6",
     "assessment": "study.theme.purpose-present:q6",
     "help": "study.07-purpose",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.cado",
+      "lexicon.compositio.flumen",
+      "lexicon.compositio.in",
+      "lexicon.compositio.ne",
+      "lexicon.compositio.non",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.teneo",
+      "lexicon.compositio.ut"
+    ],
     "vocabulary": [
       "cado",
       "flumen",
@@ -425,7 +553,8 @@
     "editorial": {
       "language": "la",
       "topic": "07-purpose",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -437,7 +566,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
         "observed": [
-          "study.confusion.purpose-cause"
+          "compositio.purpose-cause"
         ],
         "hypotheses": [],
         "practice": []
@@ -445,7 +574,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
         "observed": [
-          "study.confusion.purpose-polarity"
+          "compositio.purpose-polarity"
         ],
         "hypotheses": [],
         "practice": []

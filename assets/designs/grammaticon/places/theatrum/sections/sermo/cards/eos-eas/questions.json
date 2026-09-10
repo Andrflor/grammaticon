@@ -28,12 +28,21 @@
       "0"
     ],
     "skills": [
-      "study.version.eos-eas"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eos-eas:q1",
     "assessment": "study.version.eos-eas:q1",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.adsum",
+      "lexicon.lectio.is",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -56,7 +65,7 @@
       "1": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +73,7 @@
       "2": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +109,21 @@
       "2"
     ],
     "skills": [
-      "study.version.eos-eas"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eos-eas:q2",
     "assessment": "study.version.eos-eas:q2",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.adsum",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.is",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "adsum",
       "audio",
@@ -122,7 +140,7 @@
       "0": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +148,7 @@
       "1": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +190,23 @@
       "1"
     ],
     "skills": [
-      "study.version.eos-eas"
+      "lectio.pronoun-number",
+      "lectio.pronoun-reference"
     ],
     "item": "eos-eas:q3",
     "assessment": "study.version.eos-eas:q3",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.in",
+      "lexicon.lectio.is",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "is",
@@ -196,7 +225,7 @@
       "0": {
         "feedback": "Prōnōmen ad rem anteā memorātam refertur; antecedēns nōn est aliud nōmen propinquum.",
         "observed": [
-          "study.confusion.pronoun-antecedent"
+          "lectio.pronoun-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +239,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -246,12 +275,23 @@
       "0"
     ],
     "skills": [
-      "study.version.eos-eas"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eos-eas:q4",
     "assessment": "study.version.eos-eas:q4",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.is",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.rosa",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -276,7 +316,7 @@
       "1": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +324,7 @@
       "2": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []

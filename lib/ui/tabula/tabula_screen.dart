@@ -178,9 +178,7 @@ class SkillSummary {
   SkillSummary(this.session, this.node);
   final GameSession session;
   final Json node;
-  List<String> get ids => node['aggregation'] == null
-      ? [node['id'] as String]
-      : strings(node['aggregation']['skills']);
+  List<String> get ids => session.design.skillLeaves(node['id']).toList();
   int get totalLeaves => ids.length;
   int get evaluatedLeaves =>
       ids.where((id) => session.progress(id) != null).length;
@@ -190,19 +188,8 @@ class SkillSummary {
     int.parse(objects(session.mastery['levels'])[tier]['color'], radix: 16),
   );
   String get estimateText {
-    double weighted = 0, total = 0;
-    for (final id in ids) {
-      final record = session.skill(id);
-      final est = session.progress(id);
-      if (est != null) {
-        final weight =
-            ((record['correct'] as num? ?? 0) + (record['wrong'] as num? ?? 0))
-                .clamp(1, double.infinity);
-        weighted += est * weight;
-        total += weight;
-      }
-    }
-    return total == 0 ? '—' : '${(weighted / total * 100).round()} %';
+    final value = session.progress(node['id']);
+    return value == null ? '—' : '${(value * 100).round()} %';
   }
 }
 

@@ -488,15 +488,17 @@ class _Center extends StatelessWidget {
       skin: skin,
       key: cardKey,
       width: min(w - 24, long ? 900 : 760),
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+      padding: EdgeInsets.fromLTRB(18, 12, 18, 16),
       child: Column(
         children: [
+          // Title bar: where you are and how far along, then help.
           Row(
             children: [
               Expanded(
                 child: Text(
                   '${trial.name} · ${state.answered}/${state.enemyMaxHp}',
                   style: skin.body(12, color: skin.inkSoft, weight: 700),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               RomanButton(
@@ -515,14 +517,30 @@ class _Center extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 6),
+          // A rule keeps the chrome above from reading as part of the task.
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: Divider(height: 1, thickness: 1, color: skin.goldPale),
+          ),
+          // The instruction is chrome too: it says what to do, so it stays
+          // quiet and sits above the sentence it applies to.
+          Text(
+            q.prompt.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: skin.body(
+              compact ? 11 : 12,
+              color: skin.goldDark,
+              weight: 800,
+            ).copyWith(letterSpacing: 1.1),
+          ),
+          SizedBox(height: compact ? 10 : 14),
           // A contextual item shows the whole phrase with the asked
           // word highlighted; an isolated form is scaled to the width.
           if (q.syntagma != null)
             QuestionContent(
               session: state.session,
               parts: q.syntagma!,
-              size: (w / (q.surface.length + 4)).clamp(
+              size: (w / (q.syntagmaWidth + 4)).clamp(
                 18.0,
                 compact ? 26.0 : 34.0,
               ),
@@ -540,7 +558,8 @@ class _Center extends StatelessWidget {
                   .copyWith(height: long ? 1.3 : null),
             ),
           // Context lines (dictionary entry) never give the answer away.
-          for (final line in q.context)
+          for (final line in q.context) ...[
+            SizedBox(height: 8),
             Text(
               line,
               textAlign: TextAlign.center,
@@ -550,24 +569,19 @@ class _Center extends StatelessWidget {
                 style: FontStyle.italic,
               ),
             ),
-          SizedBox(height: 4),
-          Text(
-            q.prompt,
-            style: skin.body(
-              compact ? 16 : 20,
-              color: skin.inkSoft,
-              weight: 700,
-            ),
-          ),
-          if (q.ambiguous)
+          ],
+          if (q.ambiguous) ...[
+            SizedBox(height: 8),
             Text(
               state.session.label('labels.multipleCorrect'),
+              textAlign: TextAlign.center,
               style: skin.body(
                 12,
                 color: skin.inkSoft,
                 style: FontStyle.italic,
               ),
             ),
+          ],
         ],
       ),
     );
@@ -1018,13 +1032,23 @@ class _ResultOverlay extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // A place may claim perfection only for a win without a single
+            // wrong answer; otherwise the plain victory wording is used.
             Text(
-              won ? config.label('victoryTitle') : config.label('defeatTitle'),
+              won
+                  ? (state.flawless
+                        ? config.labelOr('flawlessTitle', 'victoryTitle')
+                        : config.label('victoryTitle'))
+                  : config.label('defeatTitle'),
               style: skin.display(32, color: won ? skin.green : skin.red),
             ),
             SizedBox(height: 6),
             Text(
-              won ? config.label('victoryBody') : config.label('defeatBody'),
+              won
+                  ? (state.flawless
+                        ? config.labelOr('flawlessBody', 'victoryBody')
+                        : config.label('victoryBody'))
+                  : config.label('defeatBody'),
               style: skin.body(16),
               textAlign: TextAlign.center,
             ),

@@ -1,39 +1,58 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille chantait dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puella in hortō cantābit."
+        "text": "cantābit."
       },
       {
         "id": "0",
-        "text": "Puella in hortō cantābat."
+        "text": "cantābat."
       },
       {
         "id": "1",
-        "text": "Puella in hortō cantāvit."
+        "text": "cantāvit."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q1",
     "assessment": "study.theme.imperfect-perfect:q1",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "canto",
       "hortus",
@@ -43,7 +62,8 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +75,7 @@
       "1": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +83,7 @@
       "2": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +92,57 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon a lu le livre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer librum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer librum lēgit."
+        "text": "lēgit."
       },
       {
         "id": "0",
-        "text": "Puer librum legēbat."
+        "text": "legēbat."
       },
       {
         "id": "1",
-        "text": "Puer librum leget."
+        "text": "leget."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q2",
     "assessment": "study.theme.imperfect-perfect:q2",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "lego",
       "liber",
@@ -113,13 +151,14 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []
@@ -127,7 +166,7 @@
       "1": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -142,39 +181,57 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître avertissait l’élève."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister discipulum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Magister discipulum monuit."
+        "text": "monuit."
       },
       {
         "id": "0",
-        "text": "Magister discipulum monēbit."
+        "text": "monēbit."
       },
       {
         "id": "1",
-        "text": "Magister discipulum monēbat."
+        "text": "monēbat."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q3",
     "assessment": "study.theme.imperfect-perfect:q3",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.discipulus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.moneo"
+    ],
     "vocabulary": [
       "discipulus",
       "magister",
@@ -183,13 +240,14 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -203,7 +261,7 @@
       "2": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []
@@ -212,39 +270,57 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur a conduit le cheval."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola equum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Agricola equum dūxit."
+        "text": "dūxit."
       },
       {
         "id": "1",
-        "text": "Agricola equum dūcēbat."
+        "text": "dūcēbat."
       },
       {
         "id": "2",
-        "text": "Agricola equum dūcet."
+        "text": "dūcet."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q4",
     "assessment": "study.theme.imperfect-perfect:q4",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.duco",
+      "lexicon.compositio.equus"
+    ],
     "vocabulary": [
       "agricola",
       "duco",
@@ -253,7 +329,8 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -265,7 +342,7 @@
       "1": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []
@@ -273,7 +350,7 @@
       "2": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -282,39 +359,57 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme écrivait une lettre."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina epistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina epistulam scrībet."
+        "text": "scrībet."
       },
       {
         "id": "2",
-        "text": "Fēmina epistulam scrībēbat."
+        "text": "scrībēbat."
       },
       {
         "id": "0",
-        "text": "Fēmina epistulam scrīpsit."
+        "text": "scrīpsit."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q5",
     "assessment": "study.theme.imperfect-perfect:q5",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.scribo"
+    ],
     "vocabulary": [
       "epistula",
       "femina",
@@ -323,13 +418,14 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []
@@ -337,7 +433,7 @@
       "1": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -352,39 +448,57 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave a ouvert la porte."
+      },
+      {
+        "type": "text",
+        "text": "\nServus portam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Servus portam aperiēbat."
+        "text": "aperiēbat."
       },
       {
         "id": "0",
-        "text": "Servus portam aperiet."
+        "text": "aperiet."
       },
       {
         "id": "1",
-        "text": "Servus portam aperuit."
+        "text": "aperuit."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.imperfect-perfect"
+      "compositio.imperfect-perfect",
+      "compositio.past-future"
     ],
     "item": "05-narrative:q6",
     "assessment": "study.theme.imperfect-perfect:q6",
     "help": "study.05-narrative",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.aperio",
+      "lexicon.compositio.porta",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "aperio",
       "porta",
@@ -393,13 +507,14 @@
     "editorial": {
       "language": "la",
       "topic": "05-narrative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō hīc praeterita est. Futūrum eam postea futūram esse significāret.",
         "observed": [
-          "study.confusion.past-future"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -413,7 +528,7 @@
       "2": {
         "feedback": "Actiō tum dūrāns vel iterāta et actiō ut facta nārrāta distinguuntur. In hīs exemplīs imperfectum et perfectum nōn permūtantur.",
         "observed": [
-          "study.confusion.imperfect-perfect"
+          "compositio.imperfect-perfect"
         ],
         "hypotheses": [],
         "practice": []

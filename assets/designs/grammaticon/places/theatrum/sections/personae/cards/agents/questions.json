@@ -28,12 +28,17 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.question-person"
     ],
     "item": "quis-quid:q1",
     "assessment": "study.version.personae-agents:quis-quid:q1",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -55,7 +60,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +68,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +105,17 @@
       "2"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.question-person"
     ],
     "item": "quis-quid:q2",
     "assessment": "study.version.personae-agents:quis-quid:q2",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.in",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "quis",
@@ -121,7 +131,7 @@
       "0": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -129,7 +139,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +182,16 @@
       "1"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.question-person"
     ],
     "item": "quis-quid:q3",
     "assessment": "study.version.personae-agents:quis-quid:q3",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.quis"
+    ],
     "vocabulary": [
       "liber",
       "porto",
@@ -192,7 +206,7 @@
       "0": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -206,7 +220,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -243,12 +257,16 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.question-person"
     ],
     "item": "quis-quid:q4",
     "assessment": "study.version.personae-agents:quis-quid:q4",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "puella",
       "quis",
@@ -269,7 +287,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -277,7 +295,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.quis-quid"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -319,12 +337,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "agent-subject:q1",
     "assessment": "study.version.personae-agents:agent-subject:q1",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.video"
+    ],
     "editorial": {
       "language": "la",
       "topic": "agent-subject",
@@ -340,7 +365,7 @@
       "1": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc magister nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -348,7 +373,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc magister ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -389,12 +414,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "agent-subject:q2",
     "assessment": "study.version.personae-agents:agent-subject:q2",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.voco"
+    ],
     "editorial": {
       "language": "la",
       "topic": "agent-subject",
@@ -404,7 +436,7 @@
       "0": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc fēmina nōminātīvus subiectum indicat; puerum accūsātīvus obiectum dīrectum indicat. Verbum est vocat.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +444,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc fēmina ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -459,12 +491,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "agent-subject:q3",
     "assessment": "study.version.personae-agents:agent-subject:q3",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.vir"
+    ],
     "editorial": {
       "language": "la",
       "topic": "agent-subject",
@@ -474,7 +513,7 @@
       "0": {
         "feedback": "Nōn rēctē. Hīc vir ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -488,7 +527,7 @@
       "2": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc vir nōminātīvus subiectum indicat; puellās accūsātīvus obiectum dīrectum indicat. Verbum est audit.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -529,12 +568,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.personae-agents"
+      "lectio.object-number",
+      "lectio.subject-number"
     ],
     "item": "agent-subject:q4",
     "assessment": "study.version.personae-agents:agent-subject:q4",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puer"
+    ],
     "editorial": {
       "language": "la",
       "topic": "agent-subject",
@@ -550,7 +595,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc puer ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -558,7 +603,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc librōs plūrēs rēs vel persōnās indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -595,7 +640,13 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Hīc fēmina nōminātīvus subiectum indicat; puerum accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
@@ -606,7 +657,7 @@
       "1": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc fēmina nōminātīvus subiectum indicat; puerum accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -614,7 +665,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc puerum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -626,7 +677,8 @@
       "video"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -665,12 +717,18 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc vir nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est audit.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -678,7 +736,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc puellam ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -696,7 +754,8 @@
       "vir"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -735,12 +794,18 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.voco"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc puellam ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -754,7 +819,7 @@
       "2": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc puer nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est vocat.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -766,7 +831,8 @@
       "voco"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -805,7 +871,13 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Hīc magister nōminātīvus subiectum indicat; puerōs accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
@@ -816,7 +888,7 @@
       "1": {
         "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc magister nōminātīvus subiectum indicat; puerōs accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
         "observed": [
-          "study.confusion.active-role-reversal"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -824,7 +896,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc puerōs plūrēs rēs vel persōnās indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -836,7 +908,8 @@
       "video"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -875,12 +948,17 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc puella ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -888,7 +966,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc librum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -906,7 +984,8 @@
       "puella"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.object-number",
+      "lectio.subject-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -945,12 +1024,17 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc librum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
         "observed": [
-          "study.confusion.active-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -964,7 +1048,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc vir ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
         "observed": [
-          "study.confusion.active-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -976,7 +1060,8 @@
       "vir"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.object-number",
+      "lectio.subject-number"
     ],
     "help": "study.personae-agents",
     "editorial": {
@@ -1014,12 +1099,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q1",
     "assessment": "study.version.personae-agents:adjective-reference:q1",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "lego",
       "liber",
@@ -1041,7 +1134,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1049,7 +1142,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1085,12 +1178,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q2",
     "assessment": "study.version.personae-agents:adjective-reference:q2",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.pulcher",
+      "lexicon.lectio.rosa"
+    ],
     "vocabulary": [
       "porto",
       "puer",
@@ -1112,7 +1213,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1120,7 +1221,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1156,12 +1257,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q3",
     "assessment": "study.version.personae-agents:adjective-reference:q3",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "femina",
       "laetus",
@@ -1183,7 +1292,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1191,7 +1300,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1227,12 +1336,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q4",
     "assessment": "study.version.personae-agents:adjective-reference:q4",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.bonus",
+      "lexicon.lectio.laudo",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "bonus",
       "laudo",
@@ -1254,7 +1371,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1262,7 +1379,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1298,12 +1415,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q5",
     "assessment": "study.version.personae-agents:adjective-reference:q5",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.doceo",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "doceo",
       "magister",
@@ -1325,7 +1450,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1333,7 +1458,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1369,12 +1494,20 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.adjective-number",
+      "lectio.adjective-reference"
     ],
     "item": "adjective-reference:q6",
     "assessment": "study.version.personae-agents:adjective-reference:q6",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.saluto"
+    ],
     "vocabulary": [
       "femina",
       "laetus",
@@ -1396,7 +1529,7 @@
       "1": {
         "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
         "observed": [
-          "study.confusion.adjective-referent"
+          "lectio.adjective-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1404,7 +1537,7 @@
       "2": {
         "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
         "observed": [
-          "study.confusion.adjective-object-number"
+          "lectio.adjective-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1440,12 +1573,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-1",
     "assessment": "study.version.personae-agents:extra-1",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.saluto"
+    ],
     "vocabulary": [
       "nauta",
       "puer",
@@ -1465,7 +1605,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1473,7 +1613,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1509,12 +1649,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-2",
     "assessment": "study.version.personae-agents:extra-2",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.laudo",
+      "lexicon.lectio.magister"
+    ],
     "vocabulary": [
       "femina",
       "laudo",
@@ -1534,7 +1681,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1542,7 +1689,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1578,12 +1725,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-3",
     "assessment": "study.version.personae-agents:extra-3",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.dominus",
+      "lexicon.lectio.servus",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "dominus",
       "servus",
@@ -1603,7 +1757,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1611,7 +1765,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1647,12 +1801,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-4",
     "assessment": "study.version.personae-agents:extra-4",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "agricola",
       "puella",
@@ -1672,7 +1833,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1680,7 +1841,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1716,12 +1877,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-5",
     "assessment": "study.version.personae-agents:extra-5",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "audio",
       "nauta",
@@ -1741,7 +1909,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1749,7 +1917,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1785,12 +1953,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-6",
     "assessment": "study.version.personae-agents:extra-6",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.saluto",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "femina",
       "saluto",
@@ -1810,7 +1985,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1818,7 +1993,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1854,12 +2029,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-7",
     "assessment": "study.version.personae-agents:extra-7",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "agricola",
       "magister",
@@ -1879,7 +2061,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1887,7 +2069,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1923,12 +2105,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-8",
     "assessment": "study.version.personae-agents:extra-8",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.laudo",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "laudo",
       "puer",
@@ -1948,7 +2137,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1956,7 +2145,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1992,12 +2181,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-9",
     "assessment": "study.version.personae-agents:extra-9",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.dominus",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "audio",
       "dominus",
@@ -2017,7 +2213,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2025,7 +2221,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2061,12 +2257,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-10",
     "assessment": "study.version.personae-agents:extra-10",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "femina",
       "nauta",
@@ -2086,7 +2289,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2094,7 +2297,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2130,12 +2333,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-11",
     "assessment": "study.version.personae-agents:extra-11",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.saluto",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "magister",
       "saluto",
@@ -2155,7 +2365,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2163,7 +2373,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2199,12 +2409,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-agents"
+      "lectio.agent-patient",
+      "lectio.subject-number"
     ],
     "item": "personae-agents:extra-12",
     "assessment": "study.version.personae-agents:extra-12",
     "help": "study.personae-agents",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.video",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "puella",
       "video",
@@ -2224,7 +2441,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae agit et persōna ad quam actiō pertinet commūtātae sunt. Cāsūs, nōn sōlum ordō vocābulōrum, spectandī sunt.",
         "observed": [
-          "study.confusion.personae-agent-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2232,7 +2449,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna persōna et plūrēs persōnae nōn idem sunt. Numerum agentis servā.",
         "observed": [
-          "study.confusion.personae-agent-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []

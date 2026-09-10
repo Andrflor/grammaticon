@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "compass",
-  "revision": "1",
+  "revision": "unified-skills-2",
   "name": {
     "fr": "Le Cabinet des repères",
     "en": "The Reference Cabinet"
@@ -205,5 +205,16 @@
     "volume": 0.5,
     "reducedMotion": false,
     "correctDelayMs": 350
+  },
+  "masteryRevision": "unified-skills-2",
+  "migration": {
+    "retiredSkillIds": [
+      "centuries",
+      "ordering",
+      "scale",
+      "orientation",
+      "time-units",
+      "orbits"
+    ]
   }
 }

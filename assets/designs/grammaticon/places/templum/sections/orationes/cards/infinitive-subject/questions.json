@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître dit que le garçon chante."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " cantāre."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Magister dīcit puerōs cantāre."
+        "text": "puerōs"
       },
       {
         "id": "1",
-        "text": "Magister dīcit puer cantāre."
+        "text": "puer"
       },
       {
         "id": "0",
-        "text": "Magister dīcit puerum cantāre."
+        "text": "puerum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q1",
     "assessment": "study.theme.infinitive-subject:q1",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "canto",
       "dico",
@@ -43,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +76,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +84,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +93,61 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme dit que la jeune fille est dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " in hortō esse."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina dīcit puellās in hortō esse."
+        "text": "puellās"
       },
       {
         "id": "2",
-        "text": "Fēmina dīcit puellam in hortō esse."
+        "text": "puellam"
       },
       {
         "id": "0",
-        "text": "Fēmina dīcit puella in hortō esse."
+        "text": "puella"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q2",
     "assessment": "study.theme.infinitive-subject:q2",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "femina",
@@ -116,13 +159,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +174,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +189,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand dit que l’esclave marche."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ambulāre."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Mercātor dīcit servōs ambulāre."
+        "text": "servōs"
       },
       {
         "id": "1",
-        "text": "Mercātor dīcit servum ambulāre."
+        "text": "servum"
       },
       {
         "id": "2",
-        "text": "Mercātor dīcit servus ambulāre."
+        "text": "servus"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q3",
     "assessment": "study.theme.infinitive-subject:q3",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "ambulo",
       "dico",
@@ -187,13 +251,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -207,7 +272,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -216,39 +281,61 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le père dit que le fils est à l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nPater dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " in scholā esse."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Pater dīcit fīlius in scholā esse."
+        "text": "fīlius"
       },
       {
         "id": "2",
-        "text": "Pater dīcit fīliōs in scholā esse."
+        "text": "fīliōs"
       },
       {
         "id": "0",
-        "text": "Pater dīcit fīlium in scholā esse."
+        "text": "fīlium"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q4",
     "assessment": "study.theme.infinitive-subject:q4",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.in",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "filius",
@@ -260,7 +347,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +360,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +368,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +377,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur dit que le marchand court."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " currere."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Agricola dīcit mercātōrem currere."
+        "text": "mercātōrem"
       },
       {
         "id": "0",
-        "text": "Agricola dīcit mercātor currere."
+        "text": "mercātor"
       },
       {
         "id": "1",
-        "text": "Agricola dīcit mercātōrēs currere."
+        "text": "mercātōrēs"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q5",
     "assessment": "study.theme.infinitive-subject:q5",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.mercator"
+    ],
     "vocabulary": [
       "agricola",
       "curro",
@@ -331,13 +439,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -345,7 +454,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -360,39 +469,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille dit que le maître est assis."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sedēre."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella dīcit magistrum sedēre."
+        "text": "magistrum"
       },
       {
         "id": "0",
-        "text": "Puella dīcit magistrōs sedēre."
+        "text": "magistrōs"
       },
       {
         "id": "2",
-        "text": "Puella dīcit magister sedēre."
+        "text": "magister"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-subject"
+      "compositio.infinitive-case",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-subject:q6",
     "assessment": "study.theme.infinitive-subject:q6",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sedeo"
+    ],
     "vocabulary": [
       "dico",
       "magister",
@@ -402,13 +531,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-subject",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -422,7 +552,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc accūsātīvō pōnitur: puerum cantāre, nōn puer cantāre.",
         "observed": [
-          "study.confusion.infinitive-case"
+          "compositio.infinitive-case"
         ],
         "hypotheses": [],
         "practice": []

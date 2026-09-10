@@ -1,1 +1,79 @@
-{"id":"cas-verba-abl","name":"Verba cum ablātīvō","subtitle":"ūtor · fruor · fungor · potior · opus est","access":{"price":45,"requires":{"all":[{"unlocked":"forum/section-1/dec-2-mf"}]}},"skills":["f.cas.verbaabl"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_iurisconsultus","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Iūriscōnsultus Callidus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"casus":{"weight":1.0},"functio":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"cas-verba-abl"}
+{
+  "id": "cas-verba-abl",
+  "name": "Verba cum ablātīvō",
+  "subtitle": "ūtor · fruor · fungor · potior · opus est",
+  "access": {
+    "price": 45,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-1/dec-2-mf"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.cas.verbaabl"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_iurisconsultus",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Iūriscōnsultus Callidus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "casus": {
+      "weight": 1.0
+    },
+    "functio": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "cas-verba-abl"
+}

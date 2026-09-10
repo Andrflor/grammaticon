@@ -73,8 +73,17 @@ void main() {
       s.state['purchased'],
       contains(design.root['migration']['nodeAliases']['deponentia']),
     );
-    expect(s.skill('v.ind.praes.act')['correct'], 7);
-    expect(s.skill('v.ind.praes.act')['recent'].single['assisted'], false);
+    expect(s.skill('v.ind.praes.act'), isEmpty);
+    expect(
+      s.state['previousMastery']['skills']['v.ind.praes.act']['correct'],
+      7,
+    );
+    expect(
+      s
+          .state['previousMastery']['skills']['v.ind.praes.act']['recent']
+          .single['assisted'],
+      false,
+    );
     expect(s.state['observations'], original['answers']);
     expect(s.state['legacy'], original);
     expect(

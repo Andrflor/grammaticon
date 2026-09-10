@@ -29,7 +29,12 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puer nōn dormit; negātiō nōn omittenda est.",
@@ -40,7 +45,7 @@
       "1": {
         "feedback": "Nōn rēctē. Puer dormit negātiōnem omittit. Hīc autem puer nōn dormit.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -48,7 +53,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc ūnus puer indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "lectio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -60,7 +65,8 @@
       "puer"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -99,12 +105,17 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.canto",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Puella cantat negātiōnem omittit. Hīc autem puella nōn cantat.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -112,7 +123,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc ūna puella indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "lectio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +141,8 @@
       "puella"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -169,12 +181,18 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sed"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae dormiunt. Hīc autem puer dormit et puella nōn dormit.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -188,7 +206,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō ad puellam, nōn ad puerum pertinet. Utramque partem sententiae separātim cōnsīderā.",
         "observed": [
-          "study.confusion.negation-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +220,8 @@
       "sed"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -241,7 +260,13 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Liber nōn est magnus. Vocābulum «nōn» negat librum magnum esse.",
@@ -252,7 +277,7 @@
       "1": {
         "feedback": "Nōn rēctē. Liber est magnus rem affirmat. Hīc autem liber nōn est magnus.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -260,7 +285,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc ūnus liber indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "lectio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -273,7 +298,8 @@
       "sum"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -312,12 +338,18 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sed",
+      "lexicon.lectio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Negātiō ad virum, nōn ad fēminam pertinet. Utramque partem sententiae separātim cōnsīderā.",
         "observed": [
-          "study.confusion.negation-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -325,7 +357,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae cantant. Hīc autem fēmina cantat et vir nōn cantat.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -345,7 +377,8 @@
       "vir"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -384,12 +417,17 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc plūrēs puerī indicantur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "lectio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -403,7 +441,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puerī dormiunt negātiōnem omittit. Hīc autem puerī nōn dormiunt.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -415,7 +453,8 @@
       "puer"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
@@ -453,12 +492,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-1",
     "assessment": "study.version.early-negatio:extra-1",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "canto",
       "magister",
@@ -478,7 +522,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -486,7 +530,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -522,12 +566,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-2",
     "assessment": "study.version.early-negatio:extra-2",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -547,7 +596,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -555,7 +604,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -591,12 +640,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-3",
     "assessment": "study.version.early-negatio:extra-3",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "canto",
       "femina",
@@ -616,7 +670,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -624,7 +678,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -660,12 +714,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-4",
     "assessment": "study.version.early-negatio:extra-4",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -685,7 +744,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -693,7 +752,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -729,12 +788,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-5",
     "assessment": "study.version.early-negatio:extra-5",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.non",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "canto",
       "non",
@@ -754,7 +818,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -762,7 +826,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -798,12 +862,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-6",
     "assessment": "study.version.early-negatio:extra-6",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -823,7 +892,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -831,7 +900,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -867,12 +936,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-7",
     "assessment": "study.version.early-negatio:extra-7",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "canto",
       "nauta",
@@ -892,7 +966,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -900,7 +974,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -936,12 +1010,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-8",
     "assessment": "study.version.early-negatio:extra-8",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -961,7 +1040,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -969,7 +1048,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1005,12 +1084,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-9",
     "assessment": "study.version.early-negatio:extra-9",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "canto",
       "non",
@@ -1030,7 +1114,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1038,7 +1122,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1074,12 +1158,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-10",
     "assessment": "study.version.early-negatio:extra-10",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -1099,7 +1188,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1107,7 +1196,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1143,12 +1232,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-11",
     "assessment": "study.version.early-negatio:extra-11",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "canto",
       "magister",
@@ -1168,7 +1262,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1176,7 +1270,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1212,12 +1306,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-12",
     "assessment": "study.version.early-negatio:extra-12",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -1237,7 +1336,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1245,7 +1344,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1281,12 +1380,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-13",
     "assessment": "study.version.early-negatio:extra-13",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "canto",
       "nauta",
@@ -1306,7 +1410,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1314,7 +1418,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1350,12 +1454,17 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-14",
     "assessment": "study.version.early-negatio:extra-14",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -1375,7 +1484,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1383,7 +1492,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1419,12 +1528,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-15",
     "assessment": "study.version.early-negatio:extra-15",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -1446,7 +1562,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1454,7 +1570,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1490,12 +1606,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-16",
     "assessment": "study.version.early-negatio:extra-16",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -1517,7 +1640,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1525,7 +1648,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1561,12 +1684,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-17",
     "assessment": "study.version.early-negatio:extra-17",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1588,7 +1718,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1596,7 +1726,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1632,12 +1762,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-18",
     "assessment": "study.version.early-negatio:extra-18",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sed",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -1659,7 +1796,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1667,7 +1804,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1703,12 +1840,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-19",
     "assessment": "study.version.early-negatio:extra-19",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -1730,7 +1874,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1738,7 +1882,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1774,12 +1918,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-20",
     "assessment": "study.version.early-negatio:extra-20",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1801,7 +1952,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1809,7 +1960,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1845,12 +1996,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-21",
     "assessment": "study.version.early-negatio:extra-21",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sed",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -1872,7 +2030,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1880,7 +2038,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1916,12 +2074,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-22",
     "assessment": "study.version.early-negatio:extra-22",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1943,7 +2108,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1951,7 +2116,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1987,12 +2152,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-23",
     "assessment": "study.version.early-negatio:extra-23",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -2014,7 +2186,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2022,7 +2194,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2058,12 +2230,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-24",
     "assessment": "study.version.early-negatio:extra-24",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sed",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -2085,7 +2264,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2093,7 +2272,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2129,12 +2308,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-25",
     "assessment": "study.version.early-negatio:extra-25",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.non",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -2156,7 +2342,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2164,7 +2350,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2200,12 +2386,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-negatio"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
     "item": "early-negatio:extra-26",
     "assessment": "study.version.early-negatio:extra-26",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.non",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -2227,7 +2420,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2235,7 +2428,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []

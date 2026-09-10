@@ -30,10 +30,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "do",
       "panis",
@@ -43,7 +51,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -55,7 +64,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Puella dat; puer accipit. Datīvus puerō ūnum accipientem indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +72,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puerō et puerīs numerō differunt. Hīc ūnus accipit.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +81,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "item": "dative-recipient:q2",
     "assessment": "study.theme.personae-giving:dative-recipient:q2",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin donne de l’eau à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " aquam dat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Nauta puellīs aquam dat."
+        "text": "Nauta puellīs"
       },
       {
         "id": "0",
-        "text": "Nauta puellae aquam dat."
+        "text": "Nauta puellae"
       },
       {
         "id": "1",
-        "text": "Puella nautae aquam dat."
+        "text": "Puella nautae"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.do",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "aqua",
       "do",
@@ -114,7 +143,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -126,7 +156,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Nauta dat; puella accipit. Datīvus puellae ūnum accipientem indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -134,7 +164,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puellae et puellīs numerō differunt. Hīc ūnus accipit.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,10 +202,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "do",
       "liber",
@@ -185,7 +223,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -197,7 +236,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Puer dat; magister accipit. Datīvus magistrō ūnum accipientem indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +244,7 @@
       "2": {
         "feedback": "Nōn rēctē. Magistrō et magistrīs numerō differunt. Hīc ūnus accipit.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -243,10 +282,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "do",
       "femina",
@@ -256,7 +303,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -268,7 +316,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Fēmina dat; puerī accipiunt. Datīvus puerīs plūrēs accipientēs indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +324,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puerīs et puerō numerō differunt. Hīc plūrēs accipiunt.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -314,10 +362,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "do",
       "liber",
@@ -327,7 +383,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -339,7 +396,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Magister dat; puellae accipiunt. Datīvus puellīs plūrēs accipientēs indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -347,7 +404,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puellīs et puellae numerō differunt. Hīc plūrēs accipiunt.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -356,39 +413,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "item": "dative-recipient:q6",
     "assessment": "study.theme.personae-giving:dative-recipient:q6",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme donne du pain au marin."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pānem dat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Vir nautīs pānem dat."
+        "text": "Vir nautīs"
       },
       {
         "id": "1",
-        "text": "Nauta virō pānem dat."
+        "text": "Nauta virō"
       },
       {
         "id": "0",
-        "text": "Vir nautae pānem dat."
+        "text": "Vir nautae"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "do",
       "nauta",
@@ -398,7 +475,8 @@
     "editorial": {
       "language": "la",
       "topic": "dative-recipient",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -410,7 +488,7 @@
       "1": {
         "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Vir dat; nauta accipit. Datīvus nautae ūnum accipientem indicat.",
         "observed": [
-          "study.confusion.gift-role-reversal"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -418,7 +496,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nautae et nautīs numerō differunt. Hīc ūnus accipit.",
         "observed": [
-          "study.confusion.recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -427,39 +505,59 @@
   },
   {
     "id": "extra-1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison donne la lettre au garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam dominus puerō dat."
+        "text": "dominus puerō"
       },
       {
         "id": "1",
-        "text": "Epistulam puer dominō dat."
+        "text": "puer dominō"
       },
       {
         "id": "2",
-        "text": "Epistulam dominus puerīs dat."
+        "text": "dominus puerīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-1",
     "assessment": "study.theme.personae-giving:extra-1",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "do",
       "dominus",
@@ -468,7 +566,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -480,7 +579,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -488,7 +587,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -497,39 +596,59 @@
   },
   {
     "id": "extra-2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille donne la rose à la femme."
+      },
+      {
+        "type": "text",
+        "text": "\nRosam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Rosam puella fēminae dat."
+        "text": "puella fēminae"
       },
       {
         "id": "1",
-        "text": "Rosam fēmina puellae dat."
+        "text": "fēmina puellae"
       },
       {
         "id": "2",
-        "text": "Rosam puella fēminīs dat."
+        "text": "puella fēminīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-2",
     "assessment": "study.theme.personae-giving:extra-2",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "do",
       "femina",
@@ -538,7 +657,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -550,7 +670,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -558,7 +678,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -567,39 +687,59 @@
   },
   {
     "id": "extra-3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin donne le cadeau à l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nDōnum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dōnum nauta servō dat."
+        "text": "nauta servō"
       },
       {
         "id": "1",
-        "text": "Dōnum servus nautae dat."
+        "text": "servus nautae"
       },
       {
         "id": "2",
-        "text": "Dōnum nauta servīs dat."
+        "text": "nauta servīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-3",
     "assessment": "study.theme.personae-giving:extra-3",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "do",
       "donum",
@@ -608,7 +748,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -620,7 +761,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -628,7 +769,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -637,39 +778,59 @@
   },
   {
     "id": "extra-4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan donne le livre au maître."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librum agricola magistrō dat."
+        "text": "agricola magistrō"
       },
       {
         "id": "1",
-        "text": "Librum magister agricolae dat."
+        "text": "magister agricolae"
       },
       {
         "id": "2",
-        "text": "Librum agricola magistrīs dat."
+        "text": "agricola magistrīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-4",
     "assessment": "study.theme.personae-giving:extra-4",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.do",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister"
+    ],
     "vocabulary": [
       "agricola",
       "do",
@@ -678,7 +839,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -690,7 +852,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -698,7 +860,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -707,39 +869,59 @@
   },
   {
     "id": "extra-5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme envoie la lettre à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mittit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam vir puellae mittit."
+        "text": "vir puellae"
       },
       {
         "id": "1",
-        "text": "Epistulam puella virō mittit."
+        "text": "puella virō"
       },
       {
         "id": "2",
-        "text": "Epistulam vir puellīs mittit."
+        "text": "vir puellīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-5",
     "assessment": "study.theme.personae-giving:extra-5",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.mitto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "epistula",
       "mitto",
@@ -748,7 +930,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -760,7 +943,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -768,7 +951,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -777,39 +960,59 @@
   },
   {
     "id": "extra-6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître raconte l’histoire au garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nFābulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " nārrat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fābulam magister puerō nārrat."
+        "text": "magister puerō"
       },
       {
         "id": "1",
-        "text": "Fābulam puer magistrō nārrat."
+        "text": "puer magistrō"
       },
       {
         "id": "2",
-        "text": "Fābulam magister puerīs nārrat."
+        "text": "magister puerīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-6",
     "assessment": "study.theme.personae-giving:extra-6",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "fabula",
       "magister",
@@ -818,7 +1021,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -830,7 +1034,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -838,7 +1042,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -847,39 +1051,59 @@
   },
   {
     "id": "extra-7",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme montre le cadeau au marin."
+      },
+      {
+        "type": "text",
+        "text": "\nDōnum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dōnum fēmina nautae ostendit."
+        "text": "fēmina nautae"
       },
       {
         "id": "1",
-        "text": "Dōnum nauta fēminae ostendit."
+        "text": "nauta fēminae"
       },
       {
         "id": "2",
-        "text": "Dōnum fēmina nautīs ostendit."
+        "text": "fēmina nautīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-7",
     "assessment": "study.theme.personae-giving:extra-7",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.ostendo"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -888,7 +1112,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -900,7 +1125,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -908,7 +1133,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -917,39 +1142,59 @@
   },
   {
     "id": "extra-8",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave montre la lettre au maître de maison."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam servus dominō ostendit."
+        "text": "servus dominō"
       },
       {
         "id": "1",
-        "text": "Epistulam dominus servō ostendit."
+        "text": "dominus servō"
       },
       {
         "id": "2",
-        "text": "Epistulam servus dominīs ostendit."
+        "text": "servus dominīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-8",
     "assessment": "study.theme.personae-giving:extra-8",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.ostendo",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "dominus",
       "epistula",
@@ -958,7 +1203,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -970,7 +1216,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -978,7 +1224,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -987,39 +1233,59 @@
   },
   {
     "id": "extra-9",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon donne de l’eau au paysan."
+      },
+      {
+        "type": "text",
+        "text": "\nAquam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Aquam puer agricolae dat."
+        "text": "puer agricolae"
       },
       {
         "id": "1",
-        "text": "Aquam agricola puerō dat."
+        "text": "agricola puerō"
       },
       {
         "id": "2",
-        "text": "Aquam puer agricolīs dat."
+        "text": "puer agricolīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-9",
     "assessment": "study.theme.personae-giving:extra-9",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.do",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "agricola",
       "aqua",
@@ -1028,7 +1294,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1040,7 +1307,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1048,7 +1315,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1057,39 +1324,59 @@
   },
   {
     "id": "extra-10",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille montre le livre au maître."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librum puella magistrō ostendit."
+        "text": "puella magistrō"
       },
       {
         "id": "1",
-        "text": "Librum magister puellae ostendit."
+        "text": "magister puellae"
       },
       {
         "id": "2",
-        "text": "Librum puella magistrīs ostendit."
+        "text": "puella magistrīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-10",
     "assessment": "study.theme.personae-giving:extra-10",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.ostendo",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "liber",
       "magister",
@@ -1098,7 +1385,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1110,7 +1398,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1118,7 +1406,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1127,39 +1415,59 @@
   },
   {
     "id": "extra-11",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin raconte l’histoire à l’homme."
+      },
+      {
+        "type": "text",
+        "text": "\nFābulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " nārrat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fābulam nauta virō nārrat."
+        "text": "nauta virō"
       },
       {
         "id": "1",
-        "text": "Fābulam vir nautae nārrat."
+        "text": "vir nautae"
       },
       {
         "id": "2",
-        "text": "Fābulam nauta virīs nārrat."
+        "text": "nauta virīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-11",
     "assessment": "study.theme.personae-giving:extra-11",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "fabula",
       "narro",
@@ -1168,7 +1476,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1180,7 +1489,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1188,7 +1497,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1197,39 +1506,59 @@
   },
   {
     "id": "extra-12",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan donne la rose à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nRosam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Rosam agricola puellae dat."
+        "text": "agricola puellae"
       },
       {
         "id": "1",
-        "text": "Rosam puella agricolae dat."
+        "text": "puella agricolae"
       },
       {
         "id": "2",
-        "text": "Rosam agricola puellīs dat."
+        "text": "agricola puellīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-12",
     "assessment": "study.theme.personae-giving:extra-12",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.do",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "agricola",
       "do",
@@ -1238,7 +1567,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1250,7 +1580,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1258,7 +1588,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1267,39 +1597,59 @@
   },
   {
     "id": "extra-13",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison donne du pain à l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nPānem "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Pānem dominus servō dat."
+        "text": "dominus servō"
       },
       {
         "id": "1",
-        "text": "Pānem servus dominō dat."
+        "text": "servus dominō"
       },
       {
         "id": "2",
-        "text": "Pānem dominus servīs dat."
+        "text": "dominus servīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-13",
     "assessment": "study.theme.personae-giving:extra-13",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "do",
       "dominus",
@@ -1308,7 +1658,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1320,7 +1671,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1328,7 +1679,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1337,39 +1688,59 @@
   },
   {
     "id": "extra-14",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme envoie la lettre à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mittit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam fēmina puellae mittit."
+        "text": "fēmina puellae"
       },
       {
         "id": "1",
-        "text": "Epistulam puella fēminae mittit."
+        "text": "puella fēminae"
       },
       {
         "id": "2",
-        "text": "Epistulam fēmina puellīs mittit."
+        "text": "fēmina puellīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-14",
     "assessment": "study.theme.personae-giving:extra-14",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.mitto",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "epistula",
       "femina",
@@ -1378,7 +1749,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1390,7 +1762,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1398,7 +1770,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1407,39 +1779,59 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître donne le cadeau au fils."
+      },
+      {
+        "type": "text",
+        "text": "\nDōnum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dōnum magister fīliō dat."
+        "text": "magister fīliō"
       },
       {
         "id": "1",
-        "text": "Dōnum fīlius magistrō dat."
+        "text": "fīlius magistrō"
       },
       {
         "id": "2",
-        "text": "Dōnum magister fīliīs dat."
+        "text": "magister fīliīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-15",
     "assessment": "study.theme.personae-giving:extra-15",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.magister"
+    ],
     "vocabulary": [
       "do",
       "donum",
@@ -1448,7 +1840,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1460,7 +1853,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1468,7 +1861,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1477,39 +1870,59 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme montre le livre au marin."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librum vir nautae ostendit."
+        "text": "vir nautae"
       },
       {
         "id": "1",
-        "text": "Librum nauta virō ostendit."
+        "text": "nauta virō"
       },
       {
         "id": "2",
-        "text": "Librum vir nautīs ostendit."
+        "text": "vir nautīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-16",
     "assessment": "study.theme.personae-giving:extra-16",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.ostendo",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "liber",
       "nauta",
@@ -1518,7 +1931,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1530,7 +1944,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1538,7 +1952,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1547,39 +1961,59 @@
   },
   {
     "id": "extra-17",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille raconte l’histoire au garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nFābulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " nārrat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fābulam puella puerō nārrat."
+        "text": "puella puerō"
       },
       {
         "id": "1",
-        "text": "Fābulam puer puellae nārrat."
+        "text": "puer puellae"
       },
       {
         "id": "2",
-        "text": "Fābulam puella puerīs nārrat."
+        "text": "puella puerīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-17",
     "assessment": "study.theme.personae-giving:extra-17",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "fabula",
       "narro",
@@ -1588,7 +2022,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1600,7 +2035,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1608,7 +2043,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1617,39 +2052,59 @@
   },
   {
     "id": "extra-18",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon envoie la lettre au maître."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mittit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam puer magistrō mittit."
+        "text": "puer magistrō"
       },
       {
         "id": "1",
-        "text": "Epistulam magister puerō mittit."
+        "text": "magister puerō"
       },
       {
         "id": "2",
-        "text": "Epistulam puer magistrīs mittit."
+        "text": "puer magistrīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-18",
     "assessment": "study.theme.personae-giving:extra-18",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.mitto",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "epistula",
       "magister",
@@ -1658,7 +2113,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1670,7 +2126,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1678,7 +2134,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1687,39 +2143,59 @@
   },
   {
     "id": "extra-19",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin donne le livre à la femme."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librum nauta fēminae dat."
+        "text": "nauta fēminae"
       },
       {
         "id": "1",
-        "text": "Librum fēmina nautae dat."
+        "text": "fēmina nautae"
       },
       {
         "id": "2",
-        "text": "Librum nauta fēminīs dat."
+        "text": "nauta fēminīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-19",
     "assessment": "study.theme.personae-giving:extra-19",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.nauta"
+    ],
     "vocabulary": [
       "do",
       "femina",
@@ -1728,7 +2204,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1740,7 +2217,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1748,7 +2225,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1757,39 +2234,59 @@
   },
   {
     "id": "extra-20",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave donne le cadeau à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nDōnum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dōnum servus puellae dat."
+        "text": "servus puellae"
       },
       {
         "id": "1",
-        "text": "Dōnum puella servō dat."
+        "text": "puella servō"
       },
       {
         "id": "2",
-        "text": "Dōnum servus puellīs dat."
+        "text": "servus puellīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-20",
     "assessment": "study.theme.personae-giving:extra-20",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "do",
       "donum",
@@ -1798,7 +2295,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1810,7 +2308,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1818,7 +2316,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1827,39 +2325,59 @@
   },
   {
     "id": "extra-21",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan montre la lettre à l’homme."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam agricola virō ostendit."
+        "text": "agricola virō"
       },
       {
         "id": "1",
-        "text": "Epistulam vir agricolae ostendit."
+        "text": "vir agricolae"
       },
       {
         "id": "2",
-        "text": "Epistulam agricola virīs ostendit."
+        "text": "agricola virīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-21",
     "assessment": "study.theme.personae-giving:extra-21",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.ostendo",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "agricola",
       "epistula",
@@ -1868,7 +2386,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1880,7 +2399,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1888,7 +2407,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1897,39 +2416,59 @@
   },
   {
     "id": "extra-22",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme raconte l’histoire à l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nFābulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " nārrat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fābulam fēmina servō nārrat."
+        "text": "fēmina servō"
       },
       {
         "id": "1",
-        "text": "Fābulam servus fēminae nārrat."
+        "text": "servus fēminae"
       },
       {
         "id": "2",
-        "text": "Fābulam fēmina servīs nārrat."
+        "text": "fēmina servīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-22",
     "assessment": "study.theme.personae-giving:extra-22",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "fabula",
       "femina",
@@ -1938,7 +2477,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1950,7 +2490,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -1958,7 +2498,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1967,39 +2507,59 @@
   },
   {
     "id": "extra-23",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître montre la rose à la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nRosam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ostendit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Rosam magister puellae ostendit."
+        "text": "magister puellae"
       },
       {
         "id": "1",
-        "text": "Rosam puella magistrō ostendit."
+        "text": "puella magistrō"
       },
       {
         "id": "2",
-        "text": "Rosam magister puellīs ostendit."
+        "text": "magister puellīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-23",
     "assessment": "study.theme.personae-giving:extra-23",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.ostendo",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "magister",
       "ostendo",
@@ -2008,7 +2568,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2020,7 +2581,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2028,7 +2589,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2037,39 +2598,59 @@
   },
   {
     "id": "extra-24",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison envoie la lettre au marin."
+      },
+      {
+        "type": "text",
+        "text": "\nEpistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mittit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Epistulam dominus nautae mittit."
+        "text": "dominus nautae"
       },
       {
         "id": "1",
-        "text": "Epistulam nauta dominō mittit."
+        "text": "nauta dominō"
       },
       {
         "id": "2",
-        "text": "Epistulam dominus nautīs mittit."
+        "text": "dominus nautīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-24",
     "assessment": "study.theme.personae-giving:extra-24",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.mitto",
+      "lexicon.compositio.nauta"
+    ],
     "vocabulary": [
       "dominus",
       "epistula",
@@ -2078,7 +2659,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2090,7 +2672,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2098,7 +2680,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2107,39 +2689,59 @@
   },
   {
     "id": "extra-25",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme raconte l’histoire au fils."
+      },
+      {
+        "type": "text",
+        "text": "\nFābulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " nārrat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fābulam vir fīliō nārrat."
+        "text": "vir fīliō"
       },
       {
         "id": "1",
-        "text": "Fābulam fīlius virō nārrat."
+        "text": "fīlius virō"
       },
       {
         "id": "2",
-        "text": "Fābulam vir fīliīs nārrat."
+        "text": "vir fīliīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-25",
     "assessment": "study.theme.personae-giving:extra-25",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "fabula",
       "filius",
@@ -2148,7 +2750,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2160,7 +2763,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2168,7 +2771,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2177,39 +2780,59 @@
   },
   {
     "id": "extra-26",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan donne le livre à la femme."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librum agricola fēminae dat."
+        "text": "agricola fēminae"
       },
       {
         "id": "1",
-        "text": "Librum fēmina agricolae dat."
+        "text": "fēmina agricolae"
       },
       {
         "id": "2",
-        "text": "Librum agricola fēminīs dat."
+        "text": "agricola fēminīs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-giving"
+      "compositio.recipient",
+      "compositio.recipient-number"
     ],
     "item": "personae-giving:extra-26",
     "assessment": "study.theme.personae-giving:extra-26",
     "help": "study.personae-giving",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.do",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.liber"
+    ],
     "vocabulary": [
       "agricola",
       "do",
@@ -2218,7 +2841,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2230,7 +2854,7 @@
       "1": {
         "feedback": "Nōn rēctē. Persōna quae dat, mittit, ostendit vel narrat cum eā quae accipit commūtāta est.",
         "observed": [
-          "study.confusion.personae-recipient-role"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -2238,7 +2862,7 @@
       "2": {
         "feedback": "Nōn rēctē. Datīvus ūnam persōnam vel plūrēs persōnās indicat. Numerus accipientium servandus est.",
         "observed": [
-          "study.confusion.personae-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []

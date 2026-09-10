@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time"
     ],
     "item": "absolute-perfect:q1",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q1",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.filius",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "epistula",
       "filius",
@@ -56,7 +63,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +71,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +107,19 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time"
     ],
     "item": "absolute-perfect:q2",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q2",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.aperio",
+      "lexicon.lectio.intro",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.porta",
+      "lexicon.lectio.viator"
+    ],
     "vocabulary": [
       "aperio",
       "intro",
@@ -128,7 +142,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -136,7 +150,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +186,19 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time"
     ],
     "item": "absolute-perfect:q3",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q3",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.amicus",
+      "lexicon.lectio.cena",
+      "lexicon.lectio.paro",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "amicus",
       "cena",
@@ -200,7 +221,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +229,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -244,12 +265,18 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time"
     ],
     "item": "absolute-perfect:q4",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q4",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.claudo",
+      "lexicon.lectio.discipulus",
+      "lexicon.lectio.exeo",
+      "lexicon.lectio.liber"
+    ],
     "vocabulary": [
       "claudo",
       "discipulus",
@@ -271,7 +298,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -279,7 +306,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -315,12 +342,21 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time",
+      "lectio.absolute-voice"
     ],
     "item": "absolute-perfect:q5",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q5",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "trait.vox",
+      "lexicon.lectio.claudo",
+      "lexicon.lectio.ianua",
+      "lexicon.lectio.mater",
+      "lexicon.lectio.perterreo",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "claudo",
       "ianua",
@@ -343,7 +379,7 @@
       "1": {
         "feedback": "Nōn rēctē. Puerīs perterritīs puerōs ipsōs iam perterritōs esse indicat. Responsum autem puerōs mātrem perterrēre dīcit. Nōlī eum quī patitur cum eō quī agit confundere.",
         "observed": [
-          "study.confusion.absolute-perfect-state-passive"
+          "lectio.absolute-voice"
         ],
         "hypotheses": [],
         "practice": []
@@ -351,7 +387,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -387,12 +423,18 @@
       "0"
     ],
     "skills": [
-      "study.version.absolute-perfect"
+      "lectio.absolute-time"
     ],
     "item": "absolute-perfect:q6",
     "assessment": "study.version.absolute-perfect:absolute-perfect:q6",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.civis",
+      "lexicon.lectio.deleo",
+      "lexicon.lectio.fugio",
+      "lexicon.lectio.urbs"
+    ],
     "vocabulary": [
       "civis",
       "deleo",
@@ -414,7 +456,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "lectio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -422,7 +464,202 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "lectio.absolute-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-absolute-voice-1",
+    "assessment": "lectio:transfer-absolute-voice-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Iānuā apertā, puer intrāvit. Quid apertum erat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La porte avait été ouverte."
+      },
+      {
+        "id": "1",
+        "text": "La porte avait ouvert quelque chose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.lectio.aperio",
+      "lexicon.lectio.ianua",
+      "lexicon.lectio.intro",
+      "lexicon.lectio.puer"
+    ],
+    "vocabulary": [
+      "aperio",
+      "ianua",
+      "intro",
+      "puer"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "lectio.absolute-voice"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-absolute-voice-2",
+    "assessment": "lectio:transfer-absolute-voice-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulā scrīptā, puella discessit. Quid scrīptum erat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La lettre avait été écrite."
+      },
+      {
+        "id": "1",
+        "text": "La lettre avait écrit quelque chose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.lectio.discedo",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.scribo"
+    ],
+    "vocabulary": [
+      "discedo",
+      "epistula",
+      "puella",
+      "scribo"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "lectio.absolute-voice"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-absolute-voice-3",
+    "assessment": "lectio:transfer-absolute-voice-3",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dōnō datō, peregrīnus discessit. Quid datum erat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le cadeau avait été donné."
+      },
+      {
+        "id": "1",
+        "text": "Le cadeau avait donné quelque chose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.lectio.donum",
+      "lexicon.lectio.do",
+      "lexicon.lectio.peregrinus",
+      "lexicon.lectio.discedo"
+    ],
+    "vocabulary": [
+      "donum",
+      "do",
+      "peregrinus",
+      "discedo"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "lectio.absolute-voice"
         ],
         "hypotheses": [],
         "practice": []

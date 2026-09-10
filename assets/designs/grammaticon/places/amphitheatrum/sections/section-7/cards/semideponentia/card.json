@@ -1,1 +1,109 @@
-{"id":"semideponentia","name":"Sēmidēpōnentia","subtitle":"audeō · ausus sum","access":{"price":40,"requires":{"all":[{"unlocked":"amphitheatrum/section-7/deponentia"}]}},"skills":["v.semidep"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_hydra","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Hydra Lernaea","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,2,3,4]},"selectionGroups":{"tempus":{"weight":1.0},"modus":{"weight":1.0},"persona":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.semidep","minLevel":2}},"weight":0.5}]},"numerus":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.semidep","minLevel":2}},"weight":0.5}]},"lemma":{"weight":0.5},"voxSensus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"semideponentia"}
+{
+  "id": "semideponentia",
+  "name": "Sēmidēpōnentia",
+  "subtitle": "audeō · ausus sum",
+  "access": {
+    "price": 40,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-7/deponentia"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "v.semidep"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_hydra",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Hydra Lernaea",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "tempus": {
+      "weight": 1.0
+    },
+    "modus": {
+      "weight": 1.0
+    },
+    "persona": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.semidep",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "numerus": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.semidep",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "voxSensus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "semideponentia"
+}

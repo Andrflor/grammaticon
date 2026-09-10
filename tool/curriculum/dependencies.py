@@ -1,0 +1,91 @@
+"""Prerequisites are fine skills, never card addresses or victory counters."""
+PREREQUISITES = {
+    'verb-meaning': {
+        '1': ['voice', 'agent-patient'],
+        '2': ['curriculum.verb-meaning.1', 'imperfect-perfect'],
+        '3': ['agent-patient', 'recipient', 'possessor-case'],
+        '4': ['imperfect-perfect'],
+        '5': ['voice', 'subject-number'],
+        '6': ['instrument-role', 'recipient'],
+    },
+    'reported-speech': {
+        '1': ['agent-patient', 'past-anteriority'],
+        '2': ['curriculum.reported-speech.1', 'voice'],
+        '3': ['command-mood', 'negation'],
+        '4': ['curriculum.subordination.1', 'question-statement'],
+        '5': ['agent-patient', 'possessor-reference'],
+    },
+    'nonfinite': {
+        '1': ['agent-patient', 'adjective-reference'],
+        '2': ['adjective-reference'],
+        '3': ['curriculum.nonfinite.2'],
+        '4': ['present-future'],
+        '5': ['curriculum.nonfinite.2', 'recipient'],
+        '6': ['purpose-cause'],
+        '7': ['adjective-reference'],
+    },
+    'subjunctive': {
+        '1': ['subject-number'],
+        '2': ['condiciones.irrealis'],
+        '3': ['condiciones.potentialis'],
+        '4': ['question-thing', 'imperfect-perfect'],
+        '5': ['negation-scope'],
+    },
+    'conditions': {
+        '1': ['present-future'],
+        '2': ['curriculum.conditions.1'],
+        '3': ['imperfect-perfect', 'past-anteriority'],
+        '4': ['curriculum.conditions.3'],
+    },
+    'numerals': {
+        '1': ['subject-number', 'agent-patient'],
+        '2': ['curriculum.numerals.1'],
+        '3': ['curriculum.numerals.1', 'subject-number'],
+        '4': ['curriculum.numerals.1', 'curriculum.pronouns.4'],
+    },
+    'pronouns': {
+        '1': ['negation-scope'],
+        '2': ['question-thing', 'recipient', 'possessor-case'],
+        '3': ['relative-reference', 'curriculum.pronouns.1'],
+        '4': ['relative-reference', 'adjective-reference'],
+    },
+    'comparison': {
+        '1': ['adjective-reference'],
+        '2': ['curriculum.comparison.1'],
+        '3': ['curriculum.comparison.1'],
+        '4': ['curriculum.comparison.1'],
+    },
+    'case-uses': {
+        '1': ['subject-number', 'possessor-case'],
+        '2': ['possessor-case', 'adjective-reference'],
+        '3': ['possessor-case', 'adjective-reference'],
+        '4': ['recipient'],
+        '5': ['recipient', 'purpose-cause'],
+        '6': ['recipient', 'curriculum.case-uses.5'],
+        '7': ['location-motion'],
+        '8': [],
+        '9': ['agent-patient', 'recipient'],
+        '10': ['adjective-reference'],
+        '11': ['adjective-reference'],
+        '12': ['cause-question'],
+        '13': ['curriculum.case-uses.10'],
+    },
+    'subordination': {
+        '1': ['imperfect-perfect', 'past-anteriority'],
+        '2': ['question-thing', 'cause-question'],
+        '3': ['purpose-cause'],
+        '4': ['cause-contrast'],
+        '5': ['agent-patient'],
+        '6': ['imperfect-perfect'],
+        '7': ['cause-question', 'past-anteriority'],
+        '8': ['relative-reference', 'purpose-polarity'],
+        '9': ['relative-role', 'negation-scope'],
+        '10': ['purpose-polarity', 'negation'],
+        '11': ['negation', 'purpose-polarity'],
+        '12': ['negation-scope'],
+    },
+}
+
+def prerequisites(skill):
+    mode, _, family, number = skill.split('.')
+    return [mode + '.' + suffix for suffix in PREREQUISITES[family][number]]

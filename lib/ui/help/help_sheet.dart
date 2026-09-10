@@ -7,6 +7,10 @@ import '../../engine/design.dart';
 import '../../engine/session.dart';
 
 /// Rich authored content uses the original highlighted-word treatment.
+///
+/// Authored content is a flat run of parts whose text may carry line breaks.
+/// Splitting on those breaks gives the real structure: an optional gloss line
+/// (the vernacular sentence) above the Latin line that carries the gap.
 class QuestionContent extends StatelessWidget {
   const QuestionContent({
     super.key,
@@ -17,40 +21,113 @@ class QuestionContent extends StatelessWidget {
   final GameSession session;
   final List<Json> parts;
   final double size;
+
+  /// Groups the parts into lines, cutting text parts on their line breaks.
+  List<List<Json>> get _lines {
+    final lines = <List<Json>>[[]];
+    for (final part in parts) {
+      if (part['type'] != 'text') {
+        lines.last.add(part);
+        continue;
+      }
+      final segments = session.text(part['text']).split('\n');
+      for (var i = 0; i < segments.length; i++) {
+        if (i > 0) lines.add([]);
+        if (segments[i].trim().isEmpty) continue;
+        lines.last.add({'type': 'text', 'text': segments[i]});
+      }
+    }
+    return lines.where((line) => line.isNotEmpty).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     final skin = G(object(session.design.root['theme']));
+    final lines = _lines;
+    // With two lines the first one is the vernacular gloss: it supports the
+    // Latin line instead of competing with it.
+    final glossed = lines.length > 1;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var i = 0; i < lines.length; i++) ...[
+          if (i > 0) SizedBox(height: 10),
+          if (glossed && i == 0)
+            Text(
+              lines[i].map((p) => session.text(p['text'])).join(),
+              textAlign: TextAlign.center,
+              style: skin.body(
+                15,
+                color: skin.inkSoft,
+                weight: 600,
+                style: FontStyle.italic,
+              ),
+            )
+          else
+            _Line(skin: skin, session: session, parts: lines[i], size: size),
+        ],
+      ],
+    );
+  }
+}
+
+/// One rendered line: words flow and wrap, gaps and highlights keep their box.
+class _Line extends StatelessWidget {
+  const _Line({
+    required this.skin,
+    required this.session,
+    required this.parts,
+    required this.size,
+  });
+  final G skin;
+  final GameSession session;
+  final List<Json> parts;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    final style = skin.display(size, color: skin.purpleDark, letterSpacing: .3);
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 0,
+      runSpacing: 6,
       children: [
         for (final part in parts)
           if (part['type'] == 'image')
             Image.asset(session.design.asset(part['asset']), height: 160)
-          else
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: part['type'] == 'highlight' ? 6 : 0,
-                vertical: part['type'] == 'highlight' ? 2 : 0,
+          else if (part['type'] == 'gap')
+            // The gap reads as a slot waiting for the answer, not as text.
+            // Its width is fixed so it never stretches the line it sits in.
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                width: 96,
+                height: size * 1.15,
+                decoration: BoxDecoration(
+                  color: skin.goldWash,
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border(
+                    bottom: BorderSide(color: skin.goldDark, width: 3),
+                  ),
+                ),
               ),
+            )
+          else if (part['type'] == 'highlight')
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 2),
+              padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: part['type'] == 'highlight' ? skin.goldWash : null,
+                color: skin.goldWash,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(
                 session.text(part['text']),
-                style: skin
-                    .display(size, color: skin.purpleDark, letterSpacing: .3)
-                    .copyWith(
-                      fontWeight: part['type'] == 'highlight'
-                          ? FontWeight.bold
-                          : null,
-                      decoration: part['type'] == 'gap'
-                          ? TextDecoration.underline
-                          : null,
-                    ),
+                style: style.copyWith(fontWeight: FontWeight.bold),
               ),
-            ),
+            )
+          else
+            Text(session.text(part['text']), style: style),
       ],
     );
   }

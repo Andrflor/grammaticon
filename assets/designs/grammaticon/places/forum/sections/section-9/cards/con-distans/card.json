@@ -1,1 +1,79 @@
-{"id":"con-distans","name":"Adiectīvum ā nōmine distāns","subtitle":"magnam in silvā vīdit umbram","access":{"price":55,"requires":{"all":[{"unlocked":"forum/section-9/con-3-1"}]}},"skills":["f.con.distans"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_senator","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Senātor Vetus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"quodNomen":{"weight":1.0},"casus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"con-distans"}
+{
+  "id": "con-distans",
+  "name": "Adiectīvum ā nōmine distāns",
+  "subtitle": "magnam in silvā vīdit umbram",
+  "access": {
+    "price": 55,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-9/con-3-1"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.con.distans"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_senator",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Senātor Vetus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "quodNomen": {
+      "weight": 1.0
+    },
+    "casus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "con-distans"
+}

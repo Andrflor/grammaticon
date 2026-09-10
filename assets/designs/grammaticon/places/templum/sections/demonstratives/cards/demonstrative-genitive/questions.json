@@ -1,39 +1,61 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre de ce garçon-ci est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " puerī parvus est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Liber hic puerī parvus est."
+        "text": "hic"
       },
       {
         "id": "0",
-        "text": "Liber huius puerī parvus est."
+        "text": "huius"
       },
       {
         "id": "2",
-        "text": "Liber illīus puerī parvus est."
+        "text": "illīus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q1",
     "assessment": "study.theme.demonstrative-genitive:q1",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -45,7 +67,8 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -57,7 +80,7 @@
       "1": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []
@@ -65,7 +88,7 @@
       "2": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -74,39 +97,61 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La rose de cette jeune fille-là est belle."
+      },
+      {
+        "type": "text",
+        "text": "\nRosa "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " puellae pulchra est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Rosa huius puellae pulchra est."
+        "text": "huius"
       },
       {
         "id": "0",
-        "text": "Rosa illa puellae pulchra est."
+        "text": "illa"
       },
       {
         "id": "2",
-        "text": "Rosa illīus puellae pulchra est."
+        "text": "illīus"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q2",
     "assessment": "study.theme.demonstrative-genitive:q2",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.pulcher",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -118,13 +163,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []
@@ -132,7 +178,7 @@
       "1": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -147,39 +193,61 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La porte de ce temple-ci est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nPorta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " templī magna est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Porta hoc templī magna est."
+        "text": "hoc"
       },
       {
         "id": "1",
-        "text": "Porta huius templī magna est."
+        "text": "huius"
       },
       {
         "id": "0",
-        "text": "Porta illīus templī magna est."
+        "text": "illīus"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q3",
     "assessment": "study.theme.demonstrative-genitive:q3",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.porta",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "hic",
       "ille",
@@ -191,13 +259,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,7 +280,7 @@
       "2": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []
@@ -220,39 +289,61 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le prix de cet anneau-là est élevé."
+      },
+      {
+        "type": "text",
+        "text": "\nPretium "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ānulī magnum est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Pretium illīus ānulī magnum est."
+        "text": "illīus"
       },
       {
         "id": "1",
-        "text": "Pretium ille ānulī magnum est."
+        "text": "ille"
       },
       {
         "id": "2",
-        "text": "Pretium huius ānulī magnum est."
+        "text": "huius"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q4",
     "assessment": "study.theme.demonstrative-genitive:q4",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.anulus",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.pretium",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "anulus",
       "hic",
@@ -264,7 +355,8 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -276,7 +368,7 @@
       "1": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +376,7 @@
       "2": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -293,39 +385,61 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le prix de cette pierre précieuse-ci est faible."
+      },
+      {
+        "type": "text",
+        "text": "\nPretium "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " gemmae parvum est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Pretium illīus gemmae parvum est."
+        "text": "illīus"
       },
       {
         "id": "0",
-        "text": "Pretium haec gemmae parvum est."
+        "text": "haec"
       },
       {
         "id": "2",
-        "text": "Pretium huius gemmae parvum est."
+        "text": "huius"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q5",
     "assessment": "study.theme.demonstrative-genitive:q5",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.gemma",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.pretium",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "gemma",
       "hic",
@@ -337,13 +451,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []
@@ -351,7 +466,7 @@
       "1": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -366,39 +481,60 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le fils de cette mère-là chante."
+      },
+      {
+        "type": "text",
+        "text": "\nFīlius "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mātris cantat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fīlius illīus mātris cantat."
+        "text": "illīus"
       },
       {
         "id": "0",
-        "text": "Fīlius huius mātris cantat."
+        "text": "huius"
       },
       {
         "id": "2",
-        "text": "Fīlius illa mātris cantat."
+        "text": "illa"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.demonstrative-genitive"
+      "compositio.demonstrative-distance",
+      "compositio.demonstrative-genitive"
     ],
     "item": "demonstrative-genitive:q6",
     "assessment": "study.theme.demonstrative-genitive:q6",
     "help": "study.demonstrative-genitive",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.quodNomen",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.ille",
+      "lexicon.compositio.mater"
+    ],
     "vocabulary": [
       "canto",
       "filius",
@@ -409,13 +545,14 @@
     "editorial": {
       "language": "la",
       "topic": "demonstrative-genitive",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
         "observed": [
-          "study.confusion.demonstrative-distance"
+          "compositio.demonstrative-distance"
         ],
         "hypotheses": [],
         "practice": []
@@ -429,7 +566,7 @@
       "2": {
         "feedback": "Huius vel illīus ad nōmen genetīvō positum pertinet. Fōrmam nōminātīvī substituēns aut concordantiam aut rem dēmōnstrātam mūtās.",
         "observed": [
-          "study.confusion.demonstrative-genitive"
+          "compositio.demonstrative-genitive"
         ],
         "hypotheses": [],
         "practice": []

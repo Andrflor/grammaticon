@@ -147,7 +147,7 @@ Une carte peut déclarer `encounter.completion: "sequence"` (défaut : `"target"
 
 ## Couverture exigée pour la maîtrise
 
-Un nœud de connaissance peut déclarer `masteryRequirements: {"successfulItems": ["item-a", "item-b"]}`. Ces identifiants sont ceux du champ `item` des questions, sans signification particulière pour le moteur. La liste doit être non vide, sans doublon ni identifiant vide.
+Un nœud de connaissance peut déclarer `masteryRequirements: {"successfulItems": ["item-a", "item-b"]}`. Ces identifiants sont ceux du champ `evidenceItem` des questions (`item` en son absence), sans signification particulière pour le moteur. La liste doit être non vide, sans doublon ni identifiant vide.
 
 Le niveau maximal exige alors, en plus des seuils habituels, une dernière réponse non aidée correcte pour chacun des éléments déclarés. Une réponse non aidée incorrecte retire cet élément de la liste des réussites ; une réponse aidée ne la modifie pas. Une liste persistante `successfulItems` conserve ces preuves indépendamment de la fenêtre d’observations récentes. Les anciennes sauvegardes peuvent récupérer les preuves présentes dans leur historique récent ; les réussites dont aucune trace ne subsiste ne sont pas supposées.
 
@@ -162,3 +162,14 @@ Les bilans lexicaux de Grammaticon déclarent explicitement tous leurs élément
 `questionSelection: "adaptive"` laisse le moteur choisir dans toute la banque admissible. Les questions doivent être indépendantes, sans `next` ni `followUpOnly`, avec une fin de combat au quota. Les résultats sont suivis par question dans `questionResults`. Les questions encore non évaluées reçoivent `selection.unseenQuestionBoost` (défaut 2) ; les réussites diminuent progressivement le poids individuel. Les erreurs actives et liens explicitement déclarés conservent les multiplicateurs de `rules.selection`. Le moteur ne déduit aucun lien entre sujets.
 
 Les dernières questions présentées sont conservées par activité dans `recentQuestions`, selon `selection.recentItems`, y compris entre deux parties. Elles sont évitées tant que d’autres questions sont disponibles. Ce mécanisme ne parcourt pas obligatoirement toute la banque avant de revenir sur une erreur. La sélection pondérée reste probabiliste. Le mode `weighted` conserve la sélection historique par compétences et erreurs pour les designs existants. L’ordre des propositions est une politique distincte de la sélection des questions.
+
+
+## Évaluation par compétences fines
+
+Le contrat obligatoire d’évaluation par feuilles, la composition récursive, les prérequis et la migration sont décrits dans [le contrat des compétences](pedagogy/skills/README.md). Il s’applique à tous les lieux et designs et remplace les descriptions historiques de suivi par carte.
+
+
+Les banques indexées conservent également `selectionGroup` dans chaque entrée ;
+le moteur compare ce champ à celui de la question matérialisée. En sélection
+adaptative, le poids d’un groupe est son facteur déclaré multiplié par la moyenne
+des besoins de ses questions. La cardinalité du groupe n’ajoute pas de priorité.

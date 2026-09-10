@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon qui voit le maître rit."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt rīdet."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer quem magister videt rīdet."
+        "text": "Puer quem magister"
       },
       {
         "id": "0",
-        "text": "Puer quī magistrum videt rīdet."
+        "text": "Puer quī magistrum"
       },
       {
         "id": "2",
-        "text": "Magister quem puer videt rīdet."
+        "text": "Magister quem puer"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q1",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q1",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "magister",
       "puer",
@@ -44,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +78,7 @@
       "1": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +86,7 @@
       "2": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +95,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme que la jeune fille salue marche."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " salūtat ambulat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina quae puellam salūtat ambulat."
+        "text": "Fēmina quae puellam"
       },
       {
         "id": "1",
-        "text": "Puella quam fēmina salūtat ambulat."
+        "text": "Puella quam fēmina"
       },
       {
         "id": "2",
-        "text": "Fēmina quam puella salūtat ambulat."
+        "text": "Fēmina quam puella"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q2",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q2",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.saluto"
+    ],
     "vocabulary": [
       "ambulo",
       "femina",
@@ -116,13 +159,14 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +174,7 @@
       "1": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +189,60 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave que le maître de maison appelle court."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vocat currit."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Servus quem dominus vocat currit."
+        "text": "Servus quem dominus"
       },
       {
         "id": "2",
-        "text": "Servus quī dominum vocat currit."
+        "text": "Servus quī dominum"
       },
       {
         "id": "0",
-        "text": "Dominus quem servus vocat currit."
+        "text": "Dominus quem servus"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q3",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q3",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "curro",
       "dominus",
@@ -188,13 +253,14 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +274,7 @@
       "2": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -217,39 +283,60 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître qui instruit le garçon est assis."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " docet sedet."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer quem magister docet sedet."
+        "text": "Puer quem magister"
       },
       {
         "id": "0",
-        "text": "Magister quī puerum docet sedet."
+        "text": "Magister quī puerum"
       },
       {
         "id": "1",
-        "text": "Magister quem puer docet sedet."
+        "text": "Magister quem puer"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q4",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q4",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.doceo",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.sedeo"
+    ],
     "vocabulary": [
       "doceo",
       "magister",
@@ -260,7 +347,8 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +360,7 @@
       "1": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +368,7 @@
       "2": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +377,60 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille qui fait l’éloge de la femme rit."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " laudat rīdet."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puella quae fēminam laudat rīdet."
+        "text": "Puella quae fēminam"
       },
       {
         "id": "0",
-        "text": "Puella quam fēmina laudat rīdet."
+        "text": "Puella quam fēmina"
       },
       {
         "id": "1",
-        "text": "Fēmina quam puella laudat rīdet."
+        "text": "Fēmina quam puella"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q5",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q5",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo"
+    ],
     "vocabulary": [
       "femina",
       "laudo",
@@ -332,13 +441,14 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,7 +456,7 @@
       "1": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,39 +471,60 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur que le marchand salue reste."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " salūtat manet."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Agricola quī mercātōrem salūtat manet."
+        "text": "Agricola quī mercātōrem"
       },
       {
         "id": "0",
-        "text": "Mercātor quem agricola salūtat manet."
+        "text": "Mercātor quem agricola"
       },
       {
         "id": "1",
-        "text": "Agricola quem mercātor salūtat manet."
+        "text": "Agricola quem mercātor"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-reference",
+      "compositio.relative-role"
     ],
     "item": "relative-case-role:q6",
     "assessment": "study.theme.personae-relative-case-role:relative-case-role:q6",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.antecedent",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.saluto"
+    ],
     "vocabulary": [
       "agricola",
       "maneo",
@@ -404,13 +535,14 @@
     "editorial": {
       "language": "la",
       "topic": "relative-case-role",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.relative-antecedent"
+          "compositio.relative-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -424,7 +556,7 @@
       "2": {
         "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
         "observed": [
-          "study.confusion.relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -460,12 +592,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-1",
     "assessment": "study.theme.personae-relative-case-role:extra-1",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.saluto"
+    ],
     "vocabulary": [
       "nauta",
       "puer",
@@ -475,7 +616,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -487,7 +629,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -495,7 +637,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -531,12 +673,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-2",
     "assessment": "study.theme.personae-relative-case-role:extra-2",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "femina",
       "magister",
@@ -546,7 +697,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -558,7 +710,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -566,7 +718,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -602,12 +754,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-3",
     "assessment": "study.theme.personae-relative-case-role:extra-3",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "agricola",
       "ambulo",
@@ -617,7 +778,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -629,7 +791,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -637,7 +799,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -673,12 +835,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-4",
     "assessment": "study.theme.personae-relative-case-role:extra-4",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "laudo",
       "qui",
@@ -688,7 +859,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -700,7 +872,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -708,7 +880,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -744,12 +916,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-5",
     "assessment": "study.theme.personae-relative-case-role:extra-5",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.qui"
+    ],
     "vocabulary": [
       "audio",
       "femina",
@@ -759,7 +940,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -771,7 +953,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -779,7 +961,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -815,12 +997,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-6",
     "assessment": "study.theme.personae-relative-case-role:extra-6",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "curro",
       "puer",
@@ -830,7 +1021,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -842,7 +1034,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -850,7 +1042,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -886,12 +1078,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-7",
     "assessment": "study.theme.personae-relative-case-role:extra-7",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "agricola",
       "puella",
@@ -901,7 +1102,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -913,7 +1115,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -921,7 +1123,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -957,12 +1159,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-8",
     "assessment": "study.theme.personae-relative-case-role:extra-8",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "dominus",
       "magister",
@@ -972,7 +1183,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -984,7 +1196,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -992,7 +1204,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1028,12 +1240,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-9",
     "assessment": "study.theme.personae-relative-case-role:extra-9",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui"
+    ],
     "vocabulary": [
       "ambulo",
       "femina",
@@ -1043,7 +1264,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1055,7 +1277,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1063,7 +1285,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1099,12 +1321,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-10",
     "assessment": "study.theme.personae-relative-case-role:extra-10",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "puella",
       "qui",
@@ -1114,7 +1345,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1126,7 +1358,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1134,7 +1366,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1170,12 +1402,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-11",
     "assessment": "study.theme.personae-relative-case-role:extra-11",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "dominus",
       "maneo",
@@ -1185,7 +1426,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1197,7 +1439,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1205,7 +1447,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1241,12 +1483,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-12",
     "assessment": "study.theme.personae-relative-case-role:extra-12",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "curro",
       "femina",
@@ -1256,7 +1507,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1268,7 +1520,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1276,7 +1528,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1312,12 +1564,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-13",
     "assessment": "study.theme.personae-relative-case-role:extra-13",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.qui"
+    ],
     "vocabulary": [
       "ambulo",
       "audio",
@@ -1327,7 +1588,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1339,7 +1601,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1347,7 +1609,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1383,12 +1645,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-14",
     "assessment": "study.theme.personae-relative-case-role:extra-14",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.video",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "puella",
       "qui",
@@ -1398,7 +1669,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1410,7 +1682,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1418,7 +1690,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1454,12 +1726,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-15",
     "assessment": "study.theme.personae-relative-case-role:extra-15",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "agricola",
       "laudo",
@@ -1469,7 +1750,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1481,7 +1763,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1489,7 +1771,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1525,12 +1807,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-16",
     "assessment": "study.theme.personae-relative-case-role:extra-16",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.saluto"
+    ],
     "vocabulary": [
       "curro",
       "magister",
@@ -1540,7 +1831,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1552,7 +1844,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1560,7 +1852,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1596,12 +1888,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-17",
     "assessment": "study.theme.personae-relative-case-role:extra-17",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "ambulo",
       "femina",
@@ -1611,7 +1912,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1623,7 +1925,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1631,7 +1933,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1667,12 +1969,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-18",
     "assessment": "study.theme.personae-relative-case-role:extra-18",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.vir",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "nauta",
       "qui",
@@ -1682,7 +1993,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1694,7 +2006,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1702,7 +2014,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1738,12 +2050,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-19",
     "assessment": "study.theme.personae-relative-case-role:extra-19",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "agricola",
       "audio",
@@ -1753,7 +2074,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1765,7 +2087,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1773,7 +2095,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1809,12 +2131,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-20",
     "assessment": "study.theme.personae-relative-case-role:extra-20",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui"
+    ],
     "vocabulary": [
       "ambulo",
       "femina",
@@ -1824,7 +2155,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1836,7 +2168,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1844,7 +2176,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1880,12 +2212,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-21",
     "assessment": "study.theme.personae-relative-case-role:extra-21",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.saluto"
+    ],
     "vocabulary": [
       "dominus",
       "nauta",
@@ -1895,7 +2236,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1907,7 +2249,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1915,7 +2257,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1951,12 +2293,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-22",
     "assessment": "study.theme.personae-relative-case-role:extra-22",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "curro",
       "magister",
@@ -1966,7 +2317,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1978,7 +2330,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -1986,7 +2338,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2022,12 +2374,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-23",
     "assessment": "study.theme.personae-relative-case-role:extra-23",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.video",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "agricola",
       "maneo",
@@ -2037,7 +2398,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2049,7 +2411,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -2057,7 +2419,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2093,12 +2455,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-24",
     "assessment": "study.theme.personae-relative-case-role:extra-24",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.rideo",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "audio",
       "puella",
@@ -2108,7 +2479,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2120,7 +2492,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -2128,7 +2500,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2164,12 +2536,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-25",
     "assessment": "study.theme.personae-relative-case-role:extra-25",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "ambulo",
       "nauta",
@@ -2179,7 +2560,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2191,7 +2573,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -2199,7 +2581,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2235,12 +2617,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-relative-case-role"
+      "compositio.relative-number",
+      "compositio.relative-role"
     ],
     "item": "personae-relative-case-role:extra-26",
     "assessment": "study.theme.personae-relative-case-role:extra-26",
     "help": "study.personae-relative-case-role",
-    "requires": [],
+    "requires": [
+      "relative.agreement",
+      "relative.case",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.qui",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "femina",
       "maneo",
@@ -2250,7 +2641,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2262,7 +2654,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quī vel quae subiectum indicat; quem vel quam obiectum. Quis agat in sententiā relātīvā agnōsce.",
         "observed": [
-          "study.confusion.personae-relative-role"
+          "compositio.relative-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -2270,7 +2662,7 @@
       "2": {
         "feedback": "Nōn rēctē. Persōna quam relātīvum repetit singulāris vel plūrālis est. Numerum nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-relative-number"
+          "compositio.relative-number"
         ],
         "hypotheses": [],
         "practice": []

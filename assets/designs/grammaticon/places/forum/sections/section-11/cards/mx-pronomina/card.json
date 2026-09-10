@@ -1,1 +1,100 @@
-{"id":"mx-pronomina","name":"Prōnōmina omnia","subtitle":"persōnālia · dēmōnstrātīva · relātīva · indēfīnīta","access":{"price":65,"requires":{"all":[{"unlocked":"forum/section-4/pron-nos-vos"},{"unlocked":"forum/section-4/pron-se"},{"unlocked":"forum/section-5/pron-dem-omnia"},{"unlocked":"forum/section-6/pron-quis-qui"},{"unlocked":"forum/section-6/pron-indef"}]}},"skills":["f.mx.pronomina"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_censor","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Cēnsor Sevērus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"analysis":{"weight":1.0},"lemma":{"weight":0.5},"casus":{"weight":1.0},"numerus":{"weight":0.8},"genus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"mx-pronomina"}
+{
+  "id": "mx-pronomina",
+  "name": "Prōnōmina omnia",
+  "subtitle": "persōnālia · dēmōnstrātīva · relātīva · indēfīnīta",
+  "access": {
+    "price": 65,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-4/pron-nos-vos"
+        },
+        {
+          "unlocked": "forum/section-4/pron-se"
+        },
+        {
+          "unlocked": "forum/section-5/pron-dem-omnia"
+        },
+        {
+          "unlocked": "forum/section-6/pron-quis-qui"
+        },
+        {
+          "unlocked": "forum/section-6/pron-indef"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.mx.pronomina"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_censor",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Cēnsor Sevērus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "analysis": {
+      "weight": 1.0
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "casus": {
+      "weight": 1.0
+    },
+    "numerus": {
+      "weight": 0.8
+    },
+    "genus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "mx-pronomina"
+}

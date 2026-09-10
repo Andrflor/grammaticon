@@ -30,6 +30,20 @@ Future<String> readVisualBaseline(String path) async {
     final ids = (jsonDecode(
       await readFile('test/fixtures/visual/original-knowledge-ids.json'),
     ) as List).toSet();
+    // Retain the dependency closure of the original visible curriculum. Fine
+    // skills are hidden but are now the actual evidence behind its gauges.
+    final registry = {for (final node in data['nodes']) node['id']: node};
+    final pending = ids.toList();
+    while (pending.isNotEmpty) {
+      final node = registry[pending.removeLast()];
+      if (node == null) continue;
+      for (final ref in [
+        ...strings(node['aggregation']?['skills']),
+        ...strings(node['requires']),
+      ]) {
+        if (ids.add(ref)) pending.add(ref);
+      }
+    }
     data['nodes'] = (data['nodes'] as List)
         .where((n) => ids.contains(n['id']))
         .toList();

@@ -1,1 +1,106 @@
-{"id":"subj-plusq-pass","name":"Subiūnctīvus plūsquamperfectum","subtitle":"Passīvum","access":{"price":50,"requires":{"all":[{"unlocked":"amphitheatrum/section-2/subj-perf-pass"}]}},"skills":["v.subj.plusq.pass"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_cyclops","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Cyclōps","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,2,3,4]},"selectionGroups":{"persona":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.subj.plusq.pass","minLevel":2}},"weight":0.5}]},"numerus":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.subj.plusq.pass","minLevel":2}},"weight":0.5}]},"genus":{"weight":1.0},"coniugatio":{"weight":1.0},"lemma":{"weight":0.5},"personaNumerus":{"weight":1.2}},"legacyId":"subj-plusq-pass"}
+{
+  "id": "subj-plusq-pass",
+  "name": "Subiūnctīvus plūsquamperfectum",
+  "subtitle": "Passīvum",
+  "access": {
+    "price": 50,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-2/subj-perf-pass"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "v.subj.plusq.pass"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_cyclops",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Cyclōps",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "persona": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.subj.plusq.pass",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "numerus": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.subj.plusq.pass",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "genus": {
+      "weight": 1.0
+    },
+    "coniugatio": {
+      "weight": 1.0
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "subj-plusq-pass"
+}

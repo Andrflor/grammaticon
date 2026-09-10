@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.plural-command"
+      "compositio.command-mood",
+      "compositio.command-number"
     ],
     "item": "plural-command:q1",
     "assessment": "study.theme.plural-command:q1",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "liber",
       "porto",
@@ -42,7 +49,8 @@
     "editorial": {
       "language": "la",
       "topic": "plural-command",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -54,7 +62,7 @@
       "1": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "compositio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +70,7 @@
       "2": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "compositio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +106,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.plural-command"
+      "compositio.command-mood",
+      "compositio.command-number"
     ],
     "item": "plural-command:q2",
     "assessment": "study.theme.plural-command:q2",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "insula",
       "puella",
@@ -112,13 +127,14 @@
     "editorial": {
       "language": "la",
       "topic": "plural-command",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "compositio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +142,7 @@
       "1": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "compositio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -168,12 +184,21 @@
       "1"
     ],
     "skills": [
-      "study.theme.plural-command"
+      "compositio.command-mood",
+      "compositio.command-number"
     ],
     "item": "plural-command:q3",
     "assessment": "study.theme.plural-command:q3",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.mensa",
+      "lexicon.compositio.pono",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -184,13 +209,14 @@
     "editorial": {
       "language": "la",
       "topic": "plural-command",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "compositio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -204,7 +230,7 @@
       "2": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "compositio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -240,12 +266,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.plural-command"
+      "compositio.command-mood",
+      "compositio.command-number"
     ],
     "item": "plural-command:q4",
     "assessment": "study.theme.plural-command:q4",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "audio",
       "magister",
@@ -254,7 +287,8 @@
     "editorial": {
       "language": "la",
       "topic": "plural-command",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -266,7 +300,7 @@
       "1": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "compositio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -274,7 +308,7 @@
       "2": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "compositio.command-mood"
         ],
         "hypotheses": [],
         "practice": []

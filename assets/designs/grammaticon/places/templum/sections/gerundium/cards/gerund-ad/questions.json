@@ -1,39 +1,58 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon entre dans l’école pour apprendre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer scholam intrat ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer scholam intrat ad discendī."
+        "text": "discendī."
       },
       {
         "id": "2",
-        "text": "Puer scholam intrat ad discere."
+        "text": "discere."
       },
       {
         "id": "0",
-        "text": "Puer scholam intrat ad discendum."
+        "text": "discendum."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q1",
     "assessment": "study.theme.gerund-ad:q1",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.disco",
+      "lexicon.compositio.intro",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.schola"
+    ],
     "vocabulary": [
       "ad",
       "disco",
@@ -44,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +76,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +84,7 @@
       "2": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +93,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille va dans le jardin pour jouer."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in hortum it ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella in hortum it ad lūdendī."
+        "text": "lūdendī."
       },
       {
         "id": "1",
-        "text": "Puella in hortum it ad lūdere."
+        "text": "lūdere."
       },
       {
         "id": "2",
-        "text": "Puella in hortum it ad lūdendum."
+        "text": "lūdendum."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q2",
     "assessment": "study.theme.gerund-ad:q2",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.eo",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.ludo",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "ad",
       "eo",
@@ -117,13 +157,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -131,7 +172,7 @@
       "1": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -146,39 +187,58 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand vient au forum pour vendre."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor ad forum venit ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Mercātor ad forum venit ad vēndendī."
+        "text": "vēndendī."
       },
       {
         "id": "1",
-        "text": "Mercātor ad forum venit ad vēndendum."
+        "text": "vēndendum."
       },
       {
         "id": "0",
-        "text": "Mercātor ad forum venit ad vēndere."
+        "text": "vēndere."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q3",
     "assessment": "study.theme.gerund-ad:q3",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.forum",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.vendo",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "ad",
       "forum",
@@ -189,13 +249,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -209,7 +270,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -218,39 +279,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme sort dans le jardin pour marcher."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina in hortum exit ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina in hortum exit ad ambulandum."
+        "text": "ambulandum."
       },
       {
         "id": "1",
-        "text": "Fēmina in hortum exit ad ambulandī."
+        "text": "ambulandī."
       },
       {
         "id": "2",
-        "text": "Fēmina in hortum exit ad ambulāre."
+        "text": "ambulāre."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q4",
     "assessment": "study.theme.gerund-ad:q4",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.exeo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in"
+    ],
     "vocabulary": [
       "ad",
       "ambulo",
@@ -262,7 +343,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -274,7 +356,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -282,7 +364,7 @@
       "2": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -291,39 +373,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les amis viennent dans la villa pour dîner."
+      },
+      {
+        "type": "text",
+        "text": "\nAmīcī in vīllam veniunt ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Amīcī in vīllam veniunt ad cēnandum."
+        "text": "cēnandum."
       },
       {
         "id": "0",
-        "text": "Amīcī in vīllam veniunt ad cēnandī."
+        "text": "cēnandī."
       },
       {
         "id": "1",
-        "text": "Amīcī in vīllam veniunt ad cēnāre."
+        "text": "cēnāre."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q5",
     "assessment": "study.theme.gerund-ad:q5",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.ceno",
+      "lexicon.compositio.in",
+      "lexicon.compositio.venio",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "ad",
       "amicus",
@@ -335,13 +437,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -349,7 +452,7 @@
       "1": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -364,39 +467,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les garçons vont au théâtre pour regarder."
+      },
+      {
+        "type": "text",
+        "text": "\nPuerī in theātrum eunt ad "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puerī in theātrum eunt ad spectāre."
+        "text": "spectāre."
       },
       {
         "id": "1",
-        "text": "Puerī in theātrum eunt ad spectandum."
+        "text": "spectandum."
       },
       {
         "id": "2",
-        "text": "Puerī in theātrum eunt ad spectandī."
+        "text": "spectandī."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-ad"
+      "compositio.gerund-ad"
     ],
     "item": "gerund-ad:q6",
     "assessment": "study.theme.gerund-ad:q6",
     "help": "study.gerund-ad",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.eo",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.specto",
+      "lexicon.compositio.theatrum"
+    ],
     "vocabulary": [
       "ad",
       "eo",
@@ -408,13 +531,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-ad",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Post ad hīc gerundium accūsātīvō pōnitur, nōn īnfīnītīvus: ad discendum, nōn ad discere.",
         "observed": [
-          "study.confusion.gerund-ad-infinitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -428,7 +552,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ad accūsātīvum regit. Hīc gerundium in -ndum, nōn genetīvus in -ndī, adhibendum est.",
         "observed": [
-          "study.confusion.gerund-ad-genitive"
+          "compositio.gerund-ad"
         ],
         "hypotheses": [],
         "practice": []

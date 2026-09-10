@@ -1,1 +1,82 @@
-{"id":"dec-3-n","name":"Dēclīnātiō tertia · neutra","subtitle":"corpus, corporis · nōmen · caput","access":{"price":35,"requires":{"all":[{"unlocked":"forum/section-1/dec-3-cons"}]}},"skills":["f.dec.3n"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_grammaticus","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Grammaticus Doctus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"casus":{"weight":1.0},"numerus":{"weight":0.8},"lemma":{"weight":0.5},"personaNumerus":{"weight":1.2}},"legacyId":"dec-3-n"}
+{
+  "id": "dec-3-n",
+  "name": "Dēclīnātiō tertia · neutra",
+  "subtitle": "corpus, corporis · nōmen · caput",
+  "access": {
+    "price": 35,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-1/dec-3-cons"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.dec.3n"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_grammaticus",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Grammaticus Doctus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "casus": {
+      "weight": 1.0
+    },
+    "numerus": {
+      "weight": 0.8
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "dec-3-n"
+}

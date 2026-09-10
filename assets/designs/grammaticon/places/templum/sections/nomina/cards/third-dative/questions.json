@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon donne un livre à la mère."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " librum dat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer mātrem librum dat."
+        "text": "mātrem"
       },
       {
         "id": "0",
-        "text": "Puer mātrī librum dat."
+        "text": "mātrī"
       },
       {
         "id": "2",
-        "text": "Puer mātribus librum dat."
+        "text": "mātribus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q1",
     "assessment": "study.theme.third-dative:q1",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "do",
       "liber",
@@ -43,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +76,7 @@
       "1": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +84,7 @@
       "2": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +93,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille donne une rose au père."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " rosam dat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella patrem rosam dat."
+        "text": "patrem"
       },
       {
         "id": "2",
-        "text": "Puella patrī rosam dat."
+        "text": "patrī"
       },
       {
         "id": "1",
-        "text": "Puella patribus rosam dat."
+        "text": "patribus"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q2",
     "assessment": "study.theme.third-dative:q2",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "do",
       "pater",
@@ -114,13 +155,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -128,7 +170,7 @@
       "1": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -143,39 +185,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La sœur donne du pain au frère."
+      },
+      {
+        "type": "text",
+        "text": "\nSoror "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pānem dat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Soror frātrī pānem dat."
+        "text": "frātrī"
       },
       {
         "id": "2",
-        "text": "Soror frātrem pānem dat."
+        "text": "frātrem"
       },
       {
         "id": "0",
-        "text": "Soror frātribus pānem dat."
+        "text": "frātribus"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q3",
     "assessment": "study.theme.third-dative:q3",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.frater",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.soror"
+    ],
     "vocabulary": [
       "do",
       "frater",
@@ -185,13 +247,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +268,7 @@
       "2": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,39 +277,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le frère donne un livre à la sœur."
+      },
+      {
+        "type": "text",
+        "text": "\nFrāter "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " librum dat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Frāter sorōrem librum dat."
+        "text": "sorōrem"
       },
       {
         "id": "2",
-        "text": "Frāter sorōribus librum dat."
+        "text": "sorōribus"
       },
       {
         "id": "0",
-        "text": "Frāter sorōrī librum dat."
+        "text": "sorōrī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q4",
     "assessment": "study.theme.third-dative:q4",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.do",
+      "lexicon.compositio.frater",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.soror"
+    ],
     "vocabulary": [
       "do",
       "frater",
@@ -256,7 +339,8 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -268,7 +352,7 @@
       "1": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +360,7 @@
       "2": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -285,39 +369,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur donne de l’eau au berger."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " aquam dat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Agricola pāstōribus aquam dat."
+        "text": "pāstōribus"
       },
       {
         "id": "0",
-        "text": "Agricola pāstōrem aquam dat."
+        "text": "pāstōrem"
       },
       {
         "id": "2",
-        "text": "Agricola pāstōrī aquam dat."
+        "text": "pāstōrī"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q5",
     "assessment": "study.theme.third-dative:q5",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.do",
+      "lexicon.compositio.pastor"
+    ],
     "vocabulary": [
       "agricola",
       "aqua",
@@ -327,13 +431,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -341,7 +446,7 @@
       "1": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -356,39 +461,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon donne du pain au chien."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pānem dat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer canī pānem dat."
+        "text": "canī"
       },
       {
         "id": "0",
-        "text": "Puer canibus pānem dat."
+        "text": "canibus"
       },
       {
         "id": "2",
-        "text": "Puer canem pānem dat."
+        "text": "canem"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.third-dative"
+      "compositio.recipient-case",
+      "compositio.recipient-number"
     ],
     "item": "third-dative:q6",
     "assessment": "study.theme.third-dative:q6",
     "help": "study.third-dative",
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "trait.numerus",
+      "lexicon.compositio.canis",
+      "lexicon.compositio.do",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "canis",
       "do",
@@ -398,13 +523,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-dative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
         "observed": [
-          "study.confusion.case-third-recipient-number"
+          "compositio.recipient-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -418,7 +544,7 @@
       "2": {
         "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
         "observed": [
-          "study.confusion.case-third-dative"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []

@@ -1,1 +1,106 @@
-{"id":"subj-imperf-pass","name":"Subiūnctīvus imperfectum","subtitle":"Passīvum","access":{"price":45,"requires":{"all":[{"unlocked":"amphitheatrum/section-2/subj-imperf-act"},{"unlocked":"amphitheatrum/section-2/subj-praes-pass"}]}},"skills":["v.subj.imperf.pass"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_sphinx","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Sphinx Aegyptia","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,2,3,4]},"selectionGroups":{"persona":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.subj.imperf.pass","minLevel":2}},"weight":0.5}]},"numerus":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.subj.imperf.pass","minLevel":2}},"weight":0.5}]},"coniugatio":{"weight":1.0},"lemma":{"weight":0.5},"personaNumerus":{"weight":1.2}},"legacyId":"subj-imperf-pass"}
+{
+  "id": "subj-imperf-pass",
+  "name": "Subiūnctīvus imperfectum",
+  "subtitle": "Passīvum",
+  "access": {
+    "price": 45,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-2/subj-imperf-act"
+        },
+        {
+          "unlocked": "amphitheatrum/section-2/subj-praes-pass"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "v.subj.imperf.pass"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_sphinx",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Sphinx Aegyptia",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "persona": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.subj.imperf.pass",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "numerus": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.subj.imperf.pass",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "coniugatio": {
+      "weight": 1.0
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "subj-imperf-pass"
+}

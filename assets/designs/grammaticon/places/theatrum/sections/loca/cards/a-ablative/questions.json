@@ -34,12 +34,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-relation"
     ],
     "item": "a-ablative:q1",
     "assessment": "study.version.early-loca:a-ablative:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.italia",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
@@ -55,7 +61,7 @@
       "1": {
         "feedback": "In cum ablātīvō locum indicat. Sententia dīcit ubi persōna est, nōn quid ipsa sit.",
         "observed": [
-          "study.confusion.location-as-identity"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +69,7 @@
       "2": {
         "feedback": "Persōna in locō est. Relātiōnem nōn converte: locus nōn in persōnā est.",
         "observed": [
-          "study.confusion.reversed-location"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -105,12 +111,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-relation"
     ],
     "item": "a-ablative:q2",
     "assessment": "study.version.early-loca:a-ablative:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
@@ -120,7 +132,7 @@
       "0": {
         "feedback": "In cum ablātīvō locum indicat. Sententia dīcit ubi persōna est, nōn quid ipsa sit.",
         "observed": [
-          "study.confusion.location-as-identity"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -128,7 +140,7 @@
       "1": {
         "feedback": "Persōna in locō est. Relātiōnem nōn converte: locus nōn in persōnā est.",
         "observed": [
-          "study.confusion.reversed-location"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -176,12 +188,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-relation"
     ],
     "item": "a-ablative:q3",
     "assessment": "study.version.early-loca:a-ablative:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
@@ -191,7 +209,7 @@
       "0": {
         "feedback": "Persōna in locō est. Relātiōnem nōn converte: locus nōn in persōnā est.",
         "observed": [
-          "study.confusion.reversed-location"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +223,7 @@
       "2": {
         "feedback": "In cum ablātīvō locum indicat. Sententia dīcit ubi persōna est, nōn quid ipsa sit.",
         "observed": [
-          "study.confusion.location-as-identity"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -247,12 +265,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-relation"
     ],
     "item": "a-ablative:q4",
     "assessment": "study.version.early-loca:a-ablative:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.in",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
@@ -268,7 +292,7 @@
       "1": {
         "feedback": "In cum ablātīvō locum indicat. Sententia dīcit ubi persōna est, nōn quid ipsa sit.",
         "observed": [
-          "study.confusion.location-as-identity"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +300,7 @@
       "2": {
         "feedback": "Persōna in locō est. Relātiōnem nōn converte: locus nōn in persōnā est.",
         "observed": [
-          "study.confusion.reversed-location"
+          "lectio.location-relation"
         ],
         "hypotheses": [],
         "practice": []
@@ -318,12 +342,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "o-ablative:q1",
     "assessment": "study.version.early-loca:o-ablative:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
@@ -339,7 +370,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hortō persōnam intus esse indicat. Extrā alium locum significāret.",
         "observed": [
-          "study.confusion.inside-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -347,7 +378,7 @@
       "2": {
         "feedback": "Nōn rēctē. In hortō est locum indicat. In hortum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -389,12 +420,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "o-ablative:q2",
     "assessment": "study.version.early-loca:o-ablative:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum",
+      "lexicon.lectio.vir"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
@@ -404,7 +442,7 @@
       "0": {
         "feedback": "Nōn rēctē. In templō est locum indicat. In templum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +450,7 @@
       "1": {
         "feedback": "Nōn rēctē. In templō persōnam intus esse indicat. Extrā alium locum significāret.",
         "observed": [
-          "study.confusion.inside-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -460,12 +498,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "o-ablative:q3",
     "assessment": "study.version.early-loca:o-ablative:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
@@ -475,7 +520,7 @@
       "0": {
         "feedback": "Nōn rēctē. In oppidō persōnam intus esse indicat. Extrā alium locum significāret.",
         "observed": [
-          "study.confusion.inside-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -489,7 +534,7 @@
       "2": {
         "feedback": "Nōn rēctē. In oppidō est locum indicat. In oppidum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -531,12 +576,19 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "o-ablative:q4",
     "assessment": "study.version.early-loca:o-ablative:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.ager",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.in",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
@@ -552,7 +604,7 @@
       "1": {
         "feedback": "Nōn rēctē. In agrō est locum indicat. In agrum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -560,7 +612,7 @@
       "2": {
         "feedback": "Nōn rēctē. In agrō persōnam intus esse indicat. Extrā alium locum significāret.",
         "observed": [
-          "study.confusion.inside-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -601,12 +653,17 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-person",
+      "lectio.question-statement"
     ],
     "item": "ubi-question:q1",
     "assessment": "study.version.early-loca:ubi-question:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
@@ -622,7 +679,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
         "observed": [
-          "study.confusion.location-person"
+          "lectio.location-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -630,7 +687,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "lectio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -671,12 +728,17 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-person",
+      "lectio.question-statement"
     ],
     "item": "ubi-question:q2",
     "assessment": "study.version.early-loca:ubi-question:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
@@ -686,7 +748,7 @@
       "0": {
         "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
         "observed": [
-          "study.confusion.location-person"
+          "lectio.location-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -694,7 +756,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "lectio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -741,12 +803,17 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-definition",
+      "lectio.question-statement"
     ],
     "item": "ubi-question:q3",
     "assessment": "study.version.early-loca:ubi-question:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
@@ -756,7 +823,7 @@
       "0": {
         "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.location-definition"
+          "lectio.location-definition"
         ],
         "hypotheses": [],
         "practice": []
@@ -770,7 +837,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "lectio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -811,12 +878,17 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-definition",
+      "lectio.question-statement"
     ],
     "item": "ubi-question:q4",
     "assessment": "study.version.early-loca:ubi-question:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum",
+      "lexicon.lectio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
@@ -832,7 +904,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "lectio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -840,7 +912,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.location-definition"
+          "lectio.location-definition"
         ],
         "hypotheses": [],
         "practice": []
@@ -876,12 +948,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-1",
     "assessment": "study.version.early-loca:extra-1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "nauta",
@@ -902,7 +981,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -910,7 +989,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -946,12 +1025,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-2",
     "assessment": "study.version.early-loca:extra-2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -972,7 +1058,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -980,7 +1066,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1016,12 +1102,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-3",
     "assessment": "study.version.early-loca:extra-3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "in",
       "puella",
@@ -1042,7 +1135,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1050,7 +1143,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1086,12 +1179,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-4",
     "assessment": "study.version.early-loca:extra-4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "vocabulary": [
       "in",
       "puer",
@@ -1112,7 +1212,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1120,7 +1220,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1156,12 +1256,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-5",
     "assessment": "study.version.early-loca:extra-5",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.in",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "femina",
       "in",
@@ -1182,7 +1289,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1190,7 +1297,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1226,12 +1333,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-6",
     "assessment": "study.version.early-loca:extra-6",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.ager",
+      "lexicon.lectio.in",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "ager",
       "in",
@@ -1252,7 +1366,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1260,7 +1374,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1296,12 +1410,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-7",
     "assessment": "study.version.early-loca:extra-7",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1322,7 +1443,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1330,7 +1451,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1366,12 +1487,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-8",
     "assessment": "study.version.early-loca:extra-8",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1392,7 +1520,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1400,7 +1528,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1436,12 +1564,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-9",
     "assessment": "study.version.early-loca:extra-9",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "oppidum",
@@ -1462,7 +1597,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1470,7 +1605,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1506,12 +1641,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-10",
     "assessment": "study.version.early-loca:extra-10",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.italia",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "italia",
@@ -1532,7 +1674,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1540,7 +1682,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1576,12 +1718,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-11",
     "assessment": "study.version.early-loca:extra-11",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -1602,7 +1751,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1610,7 +1759,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1646,12 +1795,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-12",
     "assessment": "study.version.early-loca:extra-12",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.in",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "femina",
       "in",
@@ -1672,7 +1828,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1680,7 +1836,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1716,12 +1872,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-13",
     "assessment": "study.version.early-loca:extra-13",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "in",
       "puer",
@@ -1742,7 +1905,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1750,7 +1913,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1786,12 +1949,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-14",
     "assessment": "study.version.early-loca:extra-14",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1812,7 +1982,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1820,7 +1990,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1856,12 +2026,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-15",
     "assessment": "study.version.early-loca:extra-15",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "vocabulary": [
       "in",
       "puella",
@@ -1882,7 +2059,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1890,7 +2067,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1926,12 +2103,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-16",
     "assessment": "study.version.early-loca:extra-16",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1952,7 +2136,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -1960,7 +2144,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -1996,12 +2180,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-17",
     "assessment": "study.version.early-loca:extra-17",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "nauta",
@@ -2022,7 +2213,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -2030,7 +2221,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -2066,12 +2257,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-18",
     "assessment": "study.version.early-loca:extra-18",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.ager",
+      "lexicon.lectio.in",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "ager",
       "in",
@@ -2092,7 +2290,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -2100,7 +2298,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -2136,12 +2334,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-19",
     "assessment": "study.version.early-loca:extra-19",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -2162,7 +2367,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -2170,7 +2375,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
         ],
         "hypotheses": [],
         "practice": []
@@ -2206,12 +2411,19 @@
       "0"
     ],
     "skills": [
-      "study.version.early-loca"
+      "lectio.location-inside",
+      "lectio.location-motion"
     ],
     "item": "early-loca:extra-20",
     "assessment": "study.version.early-loca:extra-20",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.lectio.in",
+      "lexicon.lectio.italia",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "vocabulary": [
       "in",
       "italia",
@@ -2232,7 +2444,7 @@
       "1": {
         "feedback": "Nōn rēctē. Sententia ubi rēs est dīcit, nōn quō eat.",
         "observed": [
-          "study.confusion.early-location-motion"
+          "lectio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -2240,7 +2452,271 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs in locō est, nōn extrā eum.",
         "observed": [
-          "study.confusion.early-location-outside"
+          "lectio.location-inside"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-person-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-location-person-1",
+    "assessment": "lectio:transfer-location-person-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Ubi est magister? » « In scholā. » Quid quaeritur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le lieu où se trouve le maître."
+      },
+      {
+        "id": "1",
+        "text": "L’identité du maître."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.location-person"
+    ],
+    "requires": [
+      "lexicon.lectio.in",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.ubi"
+    ],
+    "vocabulary": [
+      "in",
+      "magister",
+      "schola",
+      "sum",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: locum et persōnam discernere.",
+        "observed": [
+          "lectio.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-person-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-location-person-2",
+    "assessment": "lectio:transfer-location-person-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Ubi nauta habitat? » « In īnsulā. » Quid responsum indicat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Son lieu de résidence."
+      },
+      {
+        "id": "1",
+        "text": "La personne qui habite."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.location-person"
+    ],
+    "requires": [
+      "lexicon.lectio.habito",
+      "lexicon.lectio.in",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.ubi"
+    ],
+    "vocabulary": [
+      "habito",
+      "in",
+      "insula",
+      "nauta",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: locum et persōnam discernere.",
+        "observed": [
+          "lectio.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-definition-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-location-definition-1",
+    "assessment": "lectio:transfer-location-definition-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Ubi est templum? » « In oppidō. » Quid responsum docet?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Où se trouve le temple."
+      },
+      {
+        "id": "1",
+        "text": "Ce que signifie le mot temple."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.location-definition"
+    ],
+    "requires": [
+      "lexicon.lectio.in",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum",
+      "lexicon.lectio.ubi"
+    ],
+    "vocabulary": [
+      "in",
+      "oppidum",
+      "sum",
+      "templum",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: locum et genus reī discernere.",
+        "observed": [
+          "lectio.location-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-definition-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-location-definition-2",
+    "assessment": "lectio:transfer-location-definition-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Ubi est schola? » « In urbe. » Quid quaeritur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’emplacement de l’école."
+      },
+      {
+        "id": "1",
+        "text": "La définition d’une école."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.location-definition"
+    ],
+    "requires": [
+      "lexicon.lectio.in",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.ubi",
+      "lexicon.lectio.urbs"
+    ],
+    "vocabulary": [
+      "in",
+      "schola",
+      "sum",
+      "ubi",
+      "urbs"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: locum et genus reī discernere.",
+        "observed": [
+          "lectio.location-definition"
         ],
         "hypotheses": [],
         "practice": []

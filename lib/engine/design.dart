@@ -37,6 +37,7 @@ class QuestionEntry {
   String get dimension => data['dimension'] as String;
   String get item => data['item'] as String? ?? id;
   String get assessment => data['assessment'] as String? ?? id;
+  String get evidenceItem => data['evidenceItem'] as String? ?? item;
   List<Json> get choices => objects(data['choices']);
   List<String> get accepted => strings(data['accepted']);
   List<String> get skills => strings(data['skills']);
@@ -60,6 +61,50 @@ class GameDesign {
   final Map<String, Object?> _documents = {};
   late Json rules;
   late Json pedagogy;
+
+  /// Composition and prerequisites are different edges. Only components are
+  /// evaluated; a prerequisite is never marked wrong by implication.
+  Set<String> skillLeaves(String id) {
+    final components = knowledge[id]?['aggregation'];
+    if (components == null) return {id};
+    return {
+      for (final child in strings(components['skills'])) ...skillLeaves(child),
+    };
+  }
+
+  Set<String> skillPrerequisites(String id) => {
+    for (final prerequisite in strings(knowledge[id]?['requires'])) ...{
+      prerequisite,
+      ...skillPrerequisites(prerequisite),
+    },
+    for (final component in strings(knowledge[id]?['aggregation']?['skills']))
+      ...skillPrerequisites(component),
+  };
+
+  Set<String> cardSkills(ContentNode card) => {
+    for (final id in strings(card.data['skills'])) ...skillLeaves(id),
+  };
+
+  void _validateAssessedSkills(QuestionEntry question, Set<String> components) {
+    if (question.skills.isEmpty ||
+        question.skills.toSet().length != question.skills.length ||
+        !components.containsAll(question.skills) ||
+        question.skills.any((id) => knowledge[id]?['aggregation'] != null)) {
+      throw FormatException(
+        'Question must assess declared leaf skills ${question.id}',
+      );
+    }
+    final group = question.data['selectionGroup'];
+    if (group != null && (group is! String || group.isEmpty)) {
+      throw FormatException('Invalid selection group ${question.id}');
+    }
+    if (question.data['evidenceItem'] != null &&
+        (question.data['evidenceItem'] is! String ||
+            question.evidenceItem.isEmpty)) {
+      throw FormatException('Invalid evidence item ${question.id}');
+    }
+  }
+
   String get id => root['id'] as String;
   String get revision => root['revision'] as String;
   String get identity => '$id@$revision';
@@ -222,7 +267,9 @@ class GameDesign {
       if (ids.length != index.length || index.isEmpty) {
         throw const FormatException('Invalid question index');
       }
+      final components = cardSkills(card);
       for (final q in index) {
+        _validateAssessedSkills(q, components);
         _reference(dimensions, q.dimension, 'dimension');
         for (final id in q.skills) {
           _reference(knowledge, id, 'skill');
@@ -308,6 +355,8 @@ class GameDesign {
       'item',
       'assessment',
       'skills',
+      'evidenceItem',
+      'selectionGroup',
       'eligible',
       'legacyKeys',
       'followUpOnly',
@@ -467,6 +516,12 @@ class GameDesign {
         }
         for (final s in strings(n.data['skills'])) {
           _reference(knowledge, s, 'skill');
+          if (knowledge[s]?['aggregation'] != null &&
+              knowledge[s]?['aggregation']?['level'] != 'minimum') {
+            throw FormatException(
+              'Evidence card needs complete skill composition ${n.address}',
+            );
+          }
         }
       }
     }
@@ -475,11 +530,17 @@ class GameDesign {
       if (n['masteryRequirements'] != null) {
         final requirements = object(n['masteryRequirements']);
         final items = requirements['successfulItems'];
-        if (requirements.keys.any((key) => key != 'successfulItems') ||
-            items is! List ||
-            items.isEmpty ||
-            items.any((item) => item is! String || item.isEmpty) ||
-            items.toSet().length != items.length) {
+        if (requirements.keys.any(
+              (key) => !{'successfulItems', 'minItems'}.contains(key),
+            ) ||
+            (items != null &&
+                (items is! List ||
+                    items.isEmpty ||
+                    items.any((item) => item is! String || item.isEmpty) ||
+                    items.toSet().length != items.length)) ||
+            (requirements['minItems'] != null &&
+                (requirements['minItems'] is! int ||
+                    requirements['minItems'] < 1))) {
           throw FormatException('Invalid mastery requirements ${n['id']}');
         }
       }
@@ -489,7 +550,35 @@ class GameDesign {
       for (final ref in strings(n['requires'])) {
         _reference(knowledge, ref, 'knowledge');
       }
+      if (n['aggregation'] != null) {
+        final children = strings(n['aggregation']['skills']);
+        if (n['aggregation']['level'] != null &&
+            n['aggregation']['level'] != 'minimum') {
+          throw FormatException('Unsupported skill aggregation ${n['id']}');
+        }
+        if (children.isEmpty || children.toSet().length != children.length) {
+          throw FormatException('Invalid skill composition ${n['id']}');
+        }
+        for (final ref in children) {
+          _reference(knowledge, ref, 'skill component');
+        }
+      }
     }
+    _acyclic({
+      for (final n in knowledge.values)
+        n['id'] as String: strings(n['aggregation']?['skills']),
+    }, 'skill composition');
+    _acyclic({
+      for (final n in knowledge.values)
+        n['id'] as String: strings(n['requires']),
+    }, 'skill prerequisites');
+    _acyclic({
+      for (final n in knowledge.values)
+        n['id'] as String: [
+          ...strings(n['requires']),
+          ...strings(n['aggregation']?['skills']),
+        ],
+    }, 'combined skill dependencies');
     _acyclic({
       for (final n in knowledge.values)
         n['id'] as String: [if (n['parent'] != null) n['parent'] as String],
@@ -607,7 +696,11 @@ class GameDesign {
       }
     } else if (key == 'not') {
       validateRequirement(object(value), depth + 1);
-    } else if (key == 'unlocked' || key == 'completed') {
+    } else if (key == 'mastered') {
+      _reference(cards, value as String, key);
+    } else if (key == 'completed') {
+      _reference(cards, value as String, key);
+    } else if (key == 'unlocked') {
       _reference(nodes, value as String, key);
     } else if (key == 'skill') {
       final v = object(value);
@@ -630,7 +723,9 @@ class GameDesign {
 
   Iterable<String> _accessReferences(Json rule) sync* {
     for (final e in rule.entries) {
-      if (e.key == 'unlocked' || e.key == 'completed') yield e.value as String;
+      if (e.key == 'unlocked' || e.key == 'completed' || e.key == 'mastered') {
+        yield e.value as String;
+      }
       if (e.key == 'all' || e.key == 'any') {
         for (final c in objects(e.value)) {
           yield* _accessReferences(c);
@@ -648,6 +743,7 @@ class GameDesign {
     if (questions.isEmpty) {
       throw FormatException('Empty question bank ${card.address}');
     }
+    final components = cardSkills(card);
     final ids = <String>{};
     for (final q in questions) {
       if (q.id.isEmpty || !ids.add(q.id)) {
@@ -671,10 +767,13 @@ class GameDesign {
           q.accepted.length == choices.length) {
         throw FormatException('Invalid answers ${q.id}');
       }
-      if (q.skills.isEmpty) throw FormatException('No evaluated skill ${q.id}');
+      if (q.skills.isEmpty || q.skills.toSet().length != q.skills.length) {
+        throw FormatException('Invalid evaluated skills ${q.id}');
+      }
       for (final ref in [...q.skills, ...strings(q.data['requires'])]) {
         _reference(knowledge, ref, 'knowledge');
       }
+      _validateAssessedSkills(q, components);
       validateRequirement(object(q.data['eligible'] ?? {'all': []}));
       if (q.data['prompt'] == null || text(q.data['prompt']).trim().isEmpty) {
         throw FormatException('Missing question prompt ${q.id}');
@@ -688,6 +787,15 @@ class GameDesign {
           ...strings(o['hypotheses']),
         ]) {
           _reference(knowledge, ref, 'diagnosis');
+        }
+        final failed = strings(o['observed']);
+        final accepted = q.accepted.contains(c['id']);
+        if ((accepted && failed.isNotEmpty) ||
+            (!accepted && failed.isEmpty) ||
+            !q.skills.toSet().containsAll(failed)) {
+          throw FormatException(
+            'Outcome must identify assessed failed skills ${q.id}',
+          );
         }
         for (final set in strings(o['practice'])) {
           if (!objects(pedagogy['practiceSets']).any((s) => s['id'] == set)) {

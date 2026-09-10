@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.version.plural-command"
+      "lectio.command-mood",
+      "lectio.command-number"
     ],
     "item": "plural-command:q1",
     "assessment": "study.version.plural-command:q1",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "liber",
       "porto",
@@ -54,7 +61,7 @@
       "1": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "lectio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +69,7 @@
       "2": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +105,19 @@
       "2"
     ],
     "skills": [
-      "study.version.plural-command"
+      "lectio.command-mood",
+      "lectio.command-number"
     ],
     "item": "plural-command:q2",
     "assessment": "study.version.plural-command:q2",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "insula",
       "puella",
@@ -118,7 +132,7 @@
       "0": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "lectio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +140,7 @@
       "1": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -168,12 +182,21 @@
       "1"
     ],
     "skills": [
-      "study.version.plural-command"
+      "lectio.command-mood",
+      "lectio.command-number"
     ],
     "item": "plural-command:q3",
     "assessment": "study.version.plural-command:q3",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.mensa",
+      "lexicon.lectio.pono",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -190,7 +213,7 @@
       "0": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -204,7 +227,7 @@
       "2": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "lectio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -240,12 +263,19 @@
       "0"
     ],
     "skills": [
-      "study.version.plural-command"
+      "lectio.command-mood",
+      "lectio.command-number"
     ],
     "item": "plural-command:q4",
     "assessment": "study.version.plural-command:q4",
     "help": "study.plural-command",
-    "requires": [],
+    "requires": [
+      "trait.modus",
+      "trait.numerus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "audio",
       "magister",
@@ -266,7 +296,7 @@
       "1": {
         "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
         "observed": [
-          "study.confusion.command-number"
+          "lectio.command-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -274,7 +304,7 @@
       "2": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []

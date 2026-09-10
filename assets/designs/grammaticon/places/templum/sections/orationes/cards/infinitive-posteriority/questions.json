@@ -1,39 +1,58 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître dit que le garçon chantera."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister dīcit puerum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister dīcit puerum cantāre."
+        "text": "cantāre."
       },
       {
         "id": "0",
-        "text": "Magister dīcit puerum cantātūrum esse."
+        "text": "cantātūrum esse."
       },
       {
         "id": "2",
-        "text": "Magister dīcit puerum cantāvisse."
+        "text": "cantāvisse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q1",
     "assessment": "study.theme.infinitive-posteriority:q1",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "canto",
       "dico",
@@ -44,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +76,7 @@
       "1": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +84,7 @@
       "2": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +93,58 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le père dit que la jeune fille lira."
+      },
+      {
+        "type": "text",
+        "text": "\nPater dīcit puellam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Pater dīcit puellam lēgisse."
+        "text": "lēgisse."
       },
       {
         "id": "0",
-        "text": "Pater dīcit puellam legere."
+        "text": "legere."
       },
       {
         "id": "2",
-        "text": "Pater dīcit puellam lēctūram esse."
+        "text": "lēctūram esse."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q2",
     "assessment": "study.theme.infinitive-posteriority:q2",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "lego",
@@ -116,13 +155,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +170,7 @@
       "1": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +185,58 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme dit que l’esclave viendra."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina dīcit servum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina dīcit servum ventūrum esse."
+        "text": "ventūrum esse."
       },
       {
         "id": "2",
-        "text": "Fēmina dīcit servum venīre."
+        "text": "venīre."
       },
       {
         "id": "0",
-        "text": "Fēmina dīcit servum vēnisse."
+        "text": "vēnisse."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q3",
     "assessment": "study.theme.infinitive-posteriority:q3",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "dico",
       "femina",
@@ -188,13 +247,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +268,7 @@
       "2": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -217,39 +277,58 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon dit que le maître écrira."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer dīcit magistrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer dīcit magistrum scrīpsisse."
+        "text": "scrīpsisse."
       },
       {
         "id": "0",
-        "text": "Puer dīcit magistrum scrīptūrum esse."
+        "text": "scrīptūrum esse."
       },
       {
         "id": "1",
-        "text": "Puer dīcit magistrum scrībere."
+        "text": "scrībere."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q4",
     "assessment": "study.theme.infinitive-posteriority:q4",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.scribo",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "magister",
@@ -260,7 +339,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +352,7 @@
       "1": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +360,7 @@
       "2": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +369,58 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison dit que le fils dormira."
+      },
+      {
+        "type": "text",
+        "text": "\nDominus dīcit fīlium "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dominus dīcit fīlium dormīre."
+        "text": "dormīre."
       },
       {
         "id": "1",
-        "text": "Dominus dīcit fīlium dormīvisse."
+        "text": "dormīvisse."
       },
       {
         "id": "2",
-        "text": "Dominus dīcit fīlium dormītūrum esse."
+        "text": "dormītūrum esse."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q5",
     "assessment": "study.theme.infinitive-posteriority:q5",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "dominus",
@@ -332,13 +431,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,7 +446,7 @@
       "1": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,39 +461,58 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille dit que la femme marchera."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella dīcit fēminam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella dīcit fēminam ambulātūram esse."
+        "text": "ambulātūram esse."
       },
       {
         "id": "0",
-        "text": "Puella dīcit fēminam ambulāvisse."
+        "text": "ambulāvisse."
       },
       {
         "id": "2",
-        "text": "Puella dīcit fēminam ambulāre."
+        "text": "ambulāre."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-posteriority"
+      "compositio.infinitive-after"
     ],
     "item": "infinitive-posteriority:q6",
     "assessment": "study.theme.infinitive-posteriority:q6",
     "help": "study.infinitive-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "ambulo",
       "dico",
@@ -404,13 +523,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
         "observed": [
-          "study.confusion.infinitive-after-before"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -424,7 +544,7 @@
       "2": {
         "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-after-now"
+          "compositio.infinitive-after"
         ],
         "hypotheses": [],
         "practice": []

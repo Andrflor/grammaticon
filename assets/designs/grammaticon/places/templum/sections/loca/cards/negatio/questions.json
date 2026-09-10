@@ -29,7 +29,12 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puer nōn dormit; negātiō nōn omittenda est.",
@@ -40,7 +45,7 @@
       "1": {
         "feedback": "Nōn rēctē. Puer dormit negātiōnem omittit. Hīc autem puer nōn dormit.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -48,7 +53,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc ūnus puer indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -60,13 +65,15 @@
       "puer"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -99,12 +106,17 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Puella cantat negātiōnem omittit. Hīc autem puella nōn cantat.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -112,7 +124,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc ūna puella indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,51 +142,72 @@
       "puella"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
     "id": "negation-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "item": "negation:q3",
     "assessment": "study.theme.early-negatio:negation:q3",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon dort, mais la jeune fille ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer dormit et puella dormit."
+        "text": "dormit et puella"
       },
       {
         "id": "1",
-        "text": "Puer dormit, sed puella nōn dormit."
+        "text": "dormit, sed puella nōn"
       },
       {
         "id": "2",
-        "text": "Puer nōn dormit, sed puella dormit."
+        "text": "nōn dormit, sed puella"
       }
     ],
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.et",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sed"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae dormiunt. Hīc autem puer dormit et puella nōn dormit.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -188,7 +221,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō ad puellam, nōn ad puerum pertinet. Utramque partem sententiae separātim cōnsīderā.",
         "observed": [
-          "study.confusion.negation-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -203,13 +236,15 @@
       "sed"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     }
   },
   {
@@ -242,7 +277,13 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Liber nōn est magnus. Vocābulum «nōn» negat librum magnum esse.",
@@ -253,7 +294,7 @@
       "1": {
         "feedback": "Nōn rēctē. Liber est magnus rem affirmat. Hīc autem liber nōn est magnus.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -261,7 +302,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc ūnus liber indicātur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -274,13 +315,15 @@
       "sum"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -313,12 +356,19 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.et",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Negātiō ad virum, nōn ad fēminam pertinet. Utramque partem sententiae separātim cōnsīderā.",
         "observed": [
-          "study.confusion.negation-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -326,7 +376,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae cantant. Hīc autem fēmina cantat et vir nōn cantat.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -347,13 +397,15 @@
       "vir"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -386,12 +438,17 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc plūrēs puerī indicantur. Numerum subiectī nōlī mūtāre.",
         "observed": [
-          "study.confusion.negation-number"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -405,7 +462,7 @@
       "2": {
         "feedback": "Nōn rēctē. Puerī dormiunt negātiōnem omittit. Hīc autem puerī nōn dormiunt.",
         "observed": [
-          "study.confusion.negation-omitted"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -417,13 +474,15 @@
       "puer"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.verb-number"
     ],
     "help": "study.early-negatio",
     "editorial": {
       "language": "la",
       "topic": "negation",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -455,12 +514,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-1",
     "assessment": "study.theme.early-negatio:extra-1",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -469,7 +534,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -481,7 +547,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -489,7 +555,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -525,12 +591,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-2",
     "assessment": "study.theme.early-negatio:extra-2",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -539,7 +611,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -551,7 +624,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -559,7 +632,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -595,12 +668,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-3",
     "assessment": "study.theme.early-negatio:extra-3",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -609,7 +688,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -621,7 +701,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -629,7 +709,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -665,12 +745,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-4",
     "assessment": "study.theme.early-negatio:extra-4",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -679,7 +765,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -691,7 +778,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -699,7 +786,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -735,12 +822,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-5",
     "assessment": "study.theme.early-negatio:extra-5",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -749,7 +842,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -761,7 +855,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -769,7 +863,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -805,12 +899,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-6",
     "assessment": "study.theme.early-negatio:extra-6",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -819,7 +919,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -831,7 +932,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -839,7 +940,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -875,12 +976,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-7",
     "assessment": "study.theme.early-negatio:extra-7",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -889,7 +996,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -901,7 +1009,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -909,7 +1017,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -945,12 +1053,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-8",
     "assessment": "study.theme.early-negatio:extra-8",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -959,7 +1073,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -971,7 +1086,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -979,7 +1094,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1015,12 +1130,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-9",
     "assessment": "study.theme.early-negatio:extra-9",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1029,7 +1150,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1041,7 +1163,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1049,7 +1171,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1085,12 +1207,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-10",
     "assessment": "study.theme.early-negatio:extra-10",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1099,7 +1227,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1111,7 +1240,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1119,7 +1248,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1155,12 +1284,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-11",
     "assessment": "study.theme.early-negatio:extra-11",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1169,7 +1304,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1181,7 +1317,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1189,7 +1325,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1225,12 +1361,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-12",
     "assessment": "study.theme.early-negatio:extra-12",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1239,7 +1381,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1251,7 +1394,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1259,7 +1402,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1295,12 +1438,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-13",
     "assessment": "study.theme.early-negatio:extra-13",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1309,7 +1458,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1321,7 +1471,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1329,7 +1479,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1365,12 +1515,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-14",
     "assessment": "study.theme.early-negatio:extra-14",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non"
+    ],
     "vocabulary": [
       "canto",
       "dormio",
@@ -1379,7 +1535,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1391,7 +1548,7 @@
       "1": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1399,7 +1556,7 @@
       "2": {
         "feedback": "Nōn rēctē. Actiō quae negātur servanda est: cantāre et dormīre nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-action"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1408,39 +1565,58 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon dort, mais le maître ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer dormit, sed magister nōn dormit."
+        "text": "dormit, sed magister nōn"
       },
       {
         "id": "1",
-        "text": "Puer nōn dormit, sed magister dormit."
+        "text": "nōn dormit, sed magister"
       },
       {
         "id": "2",
-        "text": "Puer dormit, sed magister dormit."
+        "text": "dormit, sed magister"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-15",
     "assessment": "study.theme.early-negatio:extra-15",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -1450,7 +1626,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1462,7 +1639,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1470,7 +1647,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1479,39 +1656,58 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille dort, mais le marin ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella dormit, sed nauta nōn dormit."
+        "text": "dormit, sed nauta nōn"
       },
       {
         "id": "1",
-        "text": "Puella nōn dormit, sed nauta dormit."
+        "text": "nōn dormit, sed nauta"
       },
       {
         "id": "2",
-        "text": "Puella dormit, sed nauta dormit."
+        "text": "dormit, sed nauta"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-16",
     "assessment": "study.theme.early-negatio:extra-16",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -1521,7 +1717,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1533,7 +1730,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1541,7 +1738,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1550,39 +1747,58 @@
   },
   {
     "id": "extra-17",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître dort, mais la femme ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister dormit, sed fēmina nōn dormit."
+        "text": "dormit, sed fēmina nōn"
       },
       {
         "id": "1",
-        "text": "Magister nōn dormit, sed fēmina dormit."
+        "text": "nōn dormit, sed fēmina"
       },
       {
         "id": "2",
-        "text": "Magister dormit, sed fēmina dormit."
+        "text": "dormit, sed fēmina"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-17",
     "assessment": "study.theme.early-negatio:extra-17",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1592,7 +1808,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1604,7 +1821,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1612,7 +1829,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1621,39 +1838,58 @@
   },
   {
     "id": "extra-18",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme dort, mais la fille ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir dormit, sed puella nōn dormit."
+        "text": "dormit, sed puella nōn"
       },
       {
         "id": "1",
-        "text": "Vir nōn dormit, sed puella dormit."
+        "text": "nōn dormit, sed puella"
       },
       {
         "id": "2",
-        "text": "Vir dormit, sed puella dormit."
+        "text": "dormit, sed puella"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-18",
     "assessment": "study.theme.early-negatio:extra-18",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -1663,7 +1899,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1675,7 +1912,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1683,7 +1920,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1692,39 +1929,58 @@
   },
   {
     "id": "extra-19",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin dort, mais le garçon ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta dormit, sed puer nōn dormit."
+        "text": "dormit, sed puer nōn"
       },
       {
         "id": "1",
-        "text": "Nauta nōn dormit, sed puer dormit."
+        "text": "nōn dormit, sed puer"
       },
       {
         "id": "2",
-        "text": "Nauta dormit, sed puer dormit."
+        "text": "dormit, sed puer"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-19",
     "assessment": "study.theme.early-negatio:extra-19",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "nauta",
@@ -1734,7 +1990,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1746,7 +2003,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1754,7 +2011,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1763,39 +2020,58 @@
   },
   {
     "id": "extra-20",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme dort, mais le maître ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina dormit, sed magister nōn dormit."
+        "text": "dormit, sed magister nōn"
       },
       {
         "id": "1",
-        "text": "Fēmina nōn dormit, sed magister dormit."
+        "text": "nōn dormit, sed magister"
       },
       {
         "id": "2",
-        "text": "Fēmina dormit, sed magister dormit."
+        "text": "dormit, sed magister"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-20",
     "assessment": "study.theme.early-negatio:extra-20",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1805,7 +2081,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1817,7 +2094,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1825,7 +2102,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1834,39 +2111,58 @@
   },
   {
     "id": "extra-21",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon dort, mais l’homme ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer dormit, sed vir nōn dormit."
+        "text": "dormit, sed vir nōn"
       },
       {
         "id": "1",
-        "text": "Puer nōn dormit, sed vir dormit."
+        "text": "nōn dormit, sed vir"
       },
       {
         "id": "2",
-        "text": "Puer dormit, sed vir dormit."
+        "text": "dormit, sed vir"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-21",
     "assessment": "study.theme.early-negatio:extra-21",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -1876,7 +2172,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1888,7 +2185,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1896,7 +2193,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1905,39 +2202,58 @@
   },
   {
     "id": "extra-22",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille dort, mais la femme ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella dormit, sed fēmina nōn dormit."
+        "text": "dormit, sed fēmina nōn"
       },
       {
         "id": "1",
-        "text": "Puella nōn dormit, sed fēmina dormit."
+        "text": "nōn dormit, sed fēmina"
       },
       {
         "id": "2",
-        "text": "Puella dormit, sed fēmina dormit."
+        "text": "dormit, sed fēmina"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-22",
     "assessment": "study.theme.early-negatio:extra-22",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -1947,7 +2263,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1959,7 +2276,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -1967,7 +2284,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1976,39 +2293,58 @@
   },
   {
     "id": "extra-23",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître dort, mais le marin ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister dormit, sed nauta nōn dormit."
+        "text": "dormit, sed nauta nōn"
       },
       {
         "id": "1",
-        "text": "Magister nōn dormit, sed nauta dormit."
+        "text": "nōn dormit, sed nauta"
       },
       {
         "id": "2",
-        "text": "Magister dormit, sed nauta dormit."
+        "text": "dormit, sed nauta"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-23",
     "assessment": "study.theme.early-negatio:extra-23",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "magister",
@@ -2018,7 +2354,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2030,7 +2367,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2038,7 +2375,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2047,39 +2384,58 @@
   },
   {
     "id": "extra-24",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme dort, mais le garçon ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir dormit, sed puer nōn dormit."
+        "text": "dormit, sed puer nōn"
       },
       {
         "id": "1",
-        "text": "Vir nōn dormit, sed puer dormit."
+        "text": "nōn dormit, sed puer"
       },
       {
         "id": "2",
-        "text": "Vir dormit, sed puer dormit."
+        "text": "dormit, sed puer"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-24",
     "assessment": "study.theme.early-negatio:extra-24",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "dormio",
       "non",
@@ -2089,7 +2445,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2101,7 +2458,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2109,7 +2466,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2118,39 +2475,58 @@
   },
   {
     "id": "extra-25",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin dort, mais la femme ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta dormit, sed fēmina nōn dormit."
+        "text": "dormit, sed fēmina nōn"
       },
       {
         "id": "1",
-        "text": "Nauta nōn dormit, sed fēmina dormit."
+        "text": "nōn dormit, sed fēmina"
       },
       {
         "id": "2",
-        "text": "Nauta dormit, sed fēmina dormit."
+        "text": "dormit, sed fēmina"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-25",
     "assessment": "study.theme.early-negatio:extra-25",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -2160,7 +2536,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2172,7 +2549,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2180,7 +2557,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2189,39 +2566,58 @@
   },
   {
     "id": "extra-26",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme dort, mais la fille ne dort pas."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " dormit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina dormit, sed puella nōn dormit."
+        "text": "dormit, sed puella nōn"
       },
       {
         "id": "1",
-        "text": "Fēmina nōn dormit, sed puella dormit."
+        "text": "nōn dormit, sed puella"
       },
       {
         "id": "2",
-        "text": "Fēmina dormit, sed puella dormit."
+        "text": "dormit, sed puella"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-negatio"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
     "item": "early-negatio:extra-26",
     "assessment": "study.theme.early-negatio:extra-26",
     "help": "study.early-negatio",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sed"
+    ],
     "vocabulary": [
       "dormio",
       "femina",
@@ -2231,7 +2627,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2243,7 +2640,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vidē quae persōna agat et cuius actiō negētur. Negātiōnem ad aliam partem nōlī trānsferre.",
         "observed": [
-          "study.confusion.early-negative-scope"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -2251,7 +2648,7 @@
       "2": {
         "feedback": "Nōn rēctē. Nōn negātiōnem addit. Affirmātiō et negātiō nōn idem significant.",
         "observed": [
-          "study.confusion.early-negative-polarity"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []

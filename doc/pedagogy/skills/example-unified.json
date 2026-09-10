@@ -1,0 +1,5396 @@
+{
+  "source": "Extracted from the actual runtime JSON, not a proposed schema",
+  "revision": "unified-skills-3",
+  "examples": [
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/verbis-intellegendis/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Verba impersonālia",
+        "subtitle": "Verbōrum proprietātēs intellegere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/verbis-intellegendis/2"
+              },
+              {
+                "skill": {
+                  "id": "lectio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.possessor-case",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.recipient",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.verbis-intellegendis.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.verbis-intellegendis.3",
+        "name": "Verba impersonālia",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.verba.affectus-persona",
+            "lectio.verba.impersonale-persona"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-41ab46ccfafef0e6aa12",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dominum servī miseret."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le maître de maison a pitié de l’esclave."
+          },
+          {
+            "id": "1",
+            "text": "L’esclave a pitié du maître de maison."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.verba.affectus-persona"
+        ],
+        "item": "lectio-verba-3-miseret",
+        "evidenceItem": "lectio-verba-3-miseret",
+        "selectionGroup": "lectio-verba-3-miseret",
+        "assessment": "lectio.curriculum.verb-meaning.3:lectio-verba-3-miseret",
+        "requires": [
+          "lectio.agent-patient",
+          "lectio.possessor-case",
+          "lectio.recipient",
+          "lexicon.lectio.dominus",
+          "lexicon.lectio.miseret",
+          "lexicon.lectio.servus"
+        ],
+        "vocabulary": [
+          "dominus",
+          "miseret",
+          "servus"
+        ],
+        "help": "curriculum.lectio-verba-3-miseret",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Cum paenitet, pudet, taedet, miseret et piget, persōna affecta accūsātīvō, causa affectūs genitīvō exprimitur.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Cum paenitet, pudet, taedet, miseret et piget, persōna affecta accūsātīvō, causa affectūs genitīvō exprimitur.",
+            "observed": [
+              "lectio.verba.affectus-persona"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-verborum",
+          "frame": "lectio-verba-3-miseret",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {}
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.verba.affectus-persona",
+          "name": "Persōnam affectam accūsātīvō expressam agnōscere",
+          "visible": false,
+          "parent": "lectio.curriculum.verb-meaning",
+          "requires": [
+            "lectio.agent-patient"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-servus",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "servus"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "esclave"
+          },
+          {
+            "id": "1",
+            "text": "avoir l’habitude"
+          },
+          {
+            "id": "2",
+            "text": "être"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.servus"
+        ],
+        "item": "servus",
+        "assessment": "lexicon.lectio.servus",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "servus"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "servus — esclave",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "servus — esclave",
+            "observed": [
+              "lexicon.lectio.servus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "servus — esclave",
+            "observed": [
+              "lexicon.lectio.servus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.servus",
+        "name": "servus — intellegere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/verbis-utendis/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Verba impersonālia",
+        "subtitle": "Verbīs rēctē ūtī",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/verbis-utendis/2"
+              },
+              {
+                "skill": {
+                  "id": "compositio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.possessor-case",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.recipient",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.verbis-utendis.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.verbis-utendis.3",
+        "name": "Verba impersonālia",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.verba.affectus-accusativus",
+            "compositio.verba.affectus-genitivus",
+            "compositio.verba.licentia-dativus",
+            "compositio.verba.necessitas-accusativus"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-d88b3029b908d845c7b8",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "L’enfant a honte du mensonge."
+          },
+          {
+            "type": "text",
+            "text": "\nPuerum "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " pudet."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "mendāciī"
+          },
+          {
+            "id": "1",
+            "text": "mendācium"
+          },
+          {
+            "id": "2",
+            "text": "mendāciō"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.verba.affectus-genitivus"
+        ],
+        "item": "compositio-verba-3-pudet-cause",
+        "evidenceItem": "compositio-verba-3-pudet-cause",
+        "selectionGroup": "compositio-verba-3-pudet-cause",
+        "assessment": "compositio.curriculum.verb-meaning.3:compositio-verba-3-pudet-cause",
+        "requires": [
+          "compositio.agent-patient",
+          "compositio.possessor-case",
+          "compositio.recipient",
+          "lexicon.compositio.mendacium",
+          "lexicon.compositio.pudet",
+          "lexicon.compositio.puer"
+        ],
+        "vocabulary": [
+          "mendacium",
+          "pudet",
+          "puer"
+        ],
+        "help": "curriculum.compositio-verba-3-pudet-cause",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Causa affectūs cum hōc verbō in genitīvō ponitur; accūsātīvus persōnae affectae servātur.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Causa affectūs cum hōc verbō in genitīvō ponitur; accūsātīvus persōnae affectae servātur.",
+            "observed": [
+              "compositio.verba.affectus-genitivus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Causa affectūs cum hōc verbō in genitīvō ponitur; accūsātīvus persōnae affectae servātur.",
+            "observed": [
+              "compositio.verba.affectus-genitivus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-verborum",
+          "frame": "compositio-verba-3-pudet-cause",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {}
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.verba.affectus-genitivus",
+          "name": "Causam affectūs in genitīvō pōnere",
+          "visible": false,
+          "parent": "compositio.curriculum.verb-meaning",
+          "requires": [
+            "compositio.possessor-case"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-mendacium",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "mensonge"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "mendācium"
+          },
+          {
+            "id": "1",
+            "text": "mercātor"
+          },
+          {
+            "id": "2",
+            "text": "mīles"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.mendacium"
+        ],
+        "item": "mendacium",
+        "assessment": "lexicon.compositio.mendacium",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "mendacium"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "mendācium — mensonge",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "mendācium — mensonge",
+            "observed": [
+              "lexicon.compositio.mendacium"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "mendācium — mensonge",
+            "observed": [
+              "lexicon.compositio.mendacium"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.mendacium",
+        "name": "Latīnē reddere: mendācium",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "mendacium"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/oratio-obliqua/cards/5/card.json",
+      "card": {
+        "id": "5",
+        "name": "Prōnōmina et loquēns",
+        "subtitle": "Ōrātiōnem oblīquam intellegere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/oratio-obliqua/4"
+              },
+              {
+                "skill": {
+                  "id": "lectio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.possessor-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.oratio-obliqua.5"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.oratio-obliqua.5",
+        "name": "Prōnōmina et loquēns",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.possessive-reflexive",
+            "lectio.reflexive-reference"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-0c87566df8f6b3449cb7",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Medicus nautae dīcit: «Epistulam meam habeō.» Dīcit sē epistulam suam habēre."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le propriétaire de la lettre est le médecin."
+          },
+          {
+            "id": "1",
+            "text": "Le propriétaire de la lettre est le marin."
+          },
+          {
+            "id": "2",
+            "text": "Le texte dit que la lettre appartient aux deux personnes."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.possessive-reflexive"
+        ],
+        "item": "lectio-oratio-5-doctor-possession",
+        "evidenceItem": "lectio-oratio-5-doctor-possession",
+        "selectionGroup": "lectio-oratio-5-doctor-possession",
+        "assessment": "lectio.curriculum.reported-speech.5:lectio-oratio-5-doctor-possession",
+        "requires": [
+          "lectio.agent-patient",
+          "lectio.possessor-reference",
+          "lexicon.lectio.dico",
+          "lexicon.lectio.epistula",
+          "lexicon.lectio.habeo",
+          "lexicon.lectio.medicus",
+          "lexicon.lectio.meus",
+          "lexicon.lectio.nauta",
+          "lexicon.lectio.se",
+          "lexicon.lectio.suus"
+        ],
+        "vocabulary": [
+          "dico",
+          "epistula",
+          "habeo",
+          "medicus",
+          "meus",
+          "nauta",
+          "se",
+          "suus"
+        ],
+        "help": "curriculum.lectio-oratio-5-doctor-possession",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Suus in hīs verbīs ad loquentem refertur; eius alterīus possessiōnem indicat. Possessor ē contextū reperiendus est.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Suus in hīs verbīs ad loquentem refertur; eius alterīus possessiōnem indicat. Possessor ē contextū reperiendus est.",
+            "observed": [
+              "lectio.possessive-reflexive"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Suus in hīs verbīs ad loquentem refertur; eius alterīus possessiōnem indicat. Possessor ē contextū reperiendus est.",
+            "observed": [
+              "lectio.possessive-reflexive"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-orationis-obliquae",
+          "frame": "lectio-oratio-5-doctor-possession",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {}
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.possessive-reflexive",
+          "name": "Intellegere: possessōrem ad subiectum referre",
+          "visible": false,
+          "requires": [
+            "trait.quodNomen"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-meus",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "meus"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "mon"
+          },
+          {
+            "id": "1",
+            "text": "serviteur"
+          },
+          {
+            "id": "2",
+            "text": "envoyer"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.meus"
+        ],
+        "item": "meus",
+        "assessment": "lexicon.lectio.meus",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "meus"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "meus — mon",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "meus — mon",
+            "observed": [
+              "lexicon.lectio.meus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "meus — mon",
+            "observed": [
+              "lexicon.lectio.meus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.meus",
+        "name": "meus, mea, meum — intellegere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/orationem-referre/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Iussa oblīqua",
+        "subtitle": "Ōrātiōnem referre",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/orationem-referre/2"
+              },
+              {
+                "skill": {
+                  "id": "compositio.command-mood",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.negation",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.orationem-referre.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.orationem-referre.3",
+        "name": "Iussa oblīqua",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.negation",
+            "compositio.oratio.iussum-nexus"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-0057b3b473d19574b96a",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le commandant interdit que le gardien ferme la porte."
+          },
+          {
+            "type": "text",
+            "text": "\nImperātor custōdī imperat "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " portam claudat."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "nē"
+          },
+          {
+            "id": "1",
+            "text": "ut"
+          },
+          {
+            "id": "2",
+            "text": "quod"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.negation",
+          "compositio.oratio.iussum-nexus"
+        ],
+        "item": "compositio-oratio-3-gateTrue|imperator",
+        "evidenceItem": "compositio-oratio-3-gateTrue",
+        "selectionGroup": "compositio-oratio-3-gateTrue",
+        "assessment": "compositio.curriculum.reported-speech.3:compositio-oratio-3-gateTrue|imperator",
+        "requires": [
+          "compositio.command-mood",
+          "compositio.negation",
+          "lexicon.compositio.claudo",
+          "lexicon.compositio.custos",
+          "lexicon.compositio.imperator",
+          "lexicon.compositio.impero",
+          "lexicon.compositio.ne",
+          "lexicon.compositio.porta",
+          "lexicon.compositio.quod",
+          "lexicon.compositio.ut"
+        ],
+        "vocabulary": [
+          "claudo",
+          "custos",
+          "imperator",
+          "impero",
+          "ne",
+          "porta",
+          "quod",
+          "ut"
+        ],
+        "help": "curriculum.compositio-oratio-3-gateTrue",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Nē in iussō oblīquō rem prohibet; ut sine negātiōne rem agendam iubet. Post imperat iussum oblīquum ut vel nē intrōdūcitur; quod hunc nexum iussīvum nōn exprimit.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Nē in iussō oblīquō rem prohibet; ut sine negātiōne rem agendam iubet. Post imperat iussum oblīquum ut vel nē intrōdūcitur; quod hunc nexum iussīvum nōn exprimit.",
+            "observed": [
+              "compositio.negation"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Nē in iussō oblīquō rem prohibet; ut sine negātiōne rem agendam iubet. Post imperat iussum oblīquum ut vel nē intrōdūcitur; quod hunc nexum iussīvum nōn exprimit.",
+            "observed": [
+              "compositio.oratio.iussum-nexus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-orationis-obliquae",
+          "frame": "compositio-oratio-3-gateTrue",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "imperator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.negation",
+          "name": "Latīnē ēligere: affirmātiōnem et negātiōnem discernere",
+          "visible": false,
+          "requires": []
+        },
+        {
+          "id": "compositio.oratio.iussum-nexus",
+          "name": "Iussum oblīquum ut vel nē intrōdūcere",
+          "visible": false,
+          "parent": "compositio.curriculum.reported-speech",
+          "requires": [
+            "compositio.command-mood"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-ne",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "que ne pas"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "nē"
+          },
+          {
+            "id": "1",
+            "text": "nūntius"
+          },
+          {
+            "id": "2",
+            "text": "parō"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.ne"
+        ],
+        "item": "ne",
+        "assessment": "lexicon.compositio.ne",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "ne"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "nē — que ne pas",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "nē — que ne pas",
+            "observed": [
+              "lexicon.compositio.ne"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "nē — que ne pas",
+            "observed": [
+              "lexicon.compositio.ne"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.ne",
+        "name": "nē — latīnē ēligere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/formae-non-finitae/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Gerundīvī attractiō",
+        "subtitle": "Fōrmās nōn fīnītās intellegere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/formae-non-finitae/2"
+              },
+              {
+                "skill": {
+                  "id": "lectio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.curriculum.nonfinite.2",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.purpose-cause",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.formae-non-finitae.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.formae-non-finitae.3",
+        "name": "Gerundīvī attractiō",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.nonfinitum.attractio-sensus",
+            "lectio.nonfinitum.finis-actionis"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-438df99ab05480cf41c6",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Medicus librōrum legendōrum causā venit. Mercātor adest."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le médecin vient pour lire les livres. Le marchand est présent."
+          },
+          {
+            "id": "1",
+            "text": "Le médecin vient après avoir fini de lire les livres. Le marchand est présent."
+          },
+          {
+            "id": "2",
+            "text": "Le médecin vient pour les livres déjà lus. Le marchand est présent."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.nonfinitum.finis-actionis",
+          "lectio.nonfinitum.attractio-sensus"
+        ],
+        "item": "lectio-nonfinitum-3-libri-genitivus|medicus|mercator",
+        "evidenceItem": "lectio-nonfinitum-3-libri-genitivus",
+        "selectionGroup": "lectio-nonfinitum-3-libri-genitivus",
+        "assessment": "lectio.curriculum.nonfinite.3:lectio-nonfinitum-3-libri-genitivus|medicus|mercator",
+        "requires": [
+          "lectio.agent-patient",
+          "lectio.curriculum.nonfinite.2",
+          "lectio.purpose-cause",
+          "lexicon.lectio.adsum",
+          "lexicon.lectio.causa",
+          "lexicon.lectio.lego",
+          "lexicon.lectio.liber",
+          "lexicon.lectio.medicus",
+          "lexicon.lectio.mercator",
+          "lexicon.lectio.venio"
+        ],
+        "vocabulary": [
+          "adsum",
+          "causa",
+          "lego",
+          "liber",
+          "medicus",
+          "mercator",
+          "venio"
+        ],
+        "help": "curriculum.lectio-nonfinitum-3-libri-genitivus",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Fīnis respondet cūr veniat: ad actiōnem agendam venit, nōn post actiōnem perfectam nec eō tempore tantum quō eam agit. Nōmen cum gerundīvō hīc actiōnem verbālem exprimit; nōn dē rē iam perfectā tantum agitur.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Fīnis respondet cūr veniat: ad actiōnem agendam venit, nōn post actiōnem perfectam nec eō tempore tantum quō eam agit. Nōmen cum gerundīvō hīc actiōnem verbālem exprimit; nōn dē rē iam perfectā tantum agitur.",
+            "observed": [
+              "lectio.nonfinitum.finis-actionis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Fīnis respondet cūr veniat: ad actiōnem agendam venit, nōn post actiōnem perfectam nec eō tempore tantum quō eam agit. Nōmen cum gerundīvō hīc actiōnem verbālem exprimit; nōn dē rē iam perfectā tantum agitur.",
+            "observed": [
+              "lectio.nonfinitum.attractio-sensus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-formarum-non-finitarum",
+          "frame": "lectio-nonfinitum-3-libri-genitivus",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.nonfinitum.finis-actionis",
+          "name": "Fīnem actiōnis ā tempore distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.nonfinite",
+          "requires": [
+            "lectio.purpose-cause"
+          ]
+        },
+        {
+          "id": "lectio.nonfinitum.attractio-sensus",
+          "name": "Actiōnem in gerundīvī attractiōne intellegere",
+          "visible": false,
+          "parent": "lectio.curriculum.nonfinite",
+          "requires": [
+            "lectio.agent-patient"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-liber",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "liber"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "livre"
+          },
+          {
+            "id": "1",
+            "text": "ordre confié"
+          },
+          {
+            "id": "2",
+            "text": "médecin"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.liber"
+        ],
+        "item": "liber",
+        "assessment": "lexicon.lectio.liber",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "liber"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "liber — livre",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "liber — livre",
+            "observed": [
+              "lexicon.lectio.liber"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "liber — livre",
+            "observed": [
+              "lexicon.lectio.liber"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.liber",
+        "name": "liber — intellegere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/formis-non-finitis/cards/2/card.json",
+      "card": {
+        "id": "2",
+        "name": "Gerundīvum",
+        "subtitle": "Fōrmīs nōn fīnītīs ūtī",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/formis-non-finitis/1"
+              },
+              {
+                "skill": {
+                  "id": "compositio.adjective-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.formis-non-finitis.2"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.formis-non-finitis.2",
+        "name": "Gerundīvum",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.nonfinitum.genus-gerundivi",
+            "compositio.nonfinitum.numerus-gerundivi"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-996dd7661d2414cd8958",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les cadeaux à porter sont dans la ville. Le médecin est présent."
+          },
+          {
+            "type": "text",
+            "text": "\nDōna "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " in urbe sunt. Medicus adest."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "portanda"
+          },
+          {
+            "id": "1",
+            "text": "portandae"
+          },
+          {
+            "id": "2",
+            "text": "portandum"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.nonfinitum.genus-gerundivi",
+          "compositio.nonfinitum.numerus-gerundivi"
+        ],
+        "item": "compositio-nonfinitum-2-donum-plural|medicus",
+        "evidenceItem": "compositio-nonfinitum-2-donum-plural",
+        "selectionGroup": "compositio-nonfinitum-2-donum-plural",
+        "assessment": "compositio.curriculum.nonfinite.2:compositio-nonfinitum-2-donum-plural|medicus",
+        "requires": [
+          "compositio.adjective-reference",
+          "lexicon.compositio.adsum",
+          "lexicon.compositio.donum",
+          "lexicon.compositio.in",
+          "lexicon.compositio.medicus",
+          "lexicon.compositio.porto",
+          "lexicon.compositio.sum",
+          "lexicon.compositio.urbs"
+        ],
+        "vocabulary": [
+          "adsum",
+          "donum",
+          "in",
+          "medicus",
+          "porto",
+          "sum",
+          "urbs"
+        ],
+        "help": "curriculum.compositio-nonfinitum-2-donum-plural",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Gerundīvum eōdem genere ac nōmen suum ponitur: liber legendus, epistula scrībenda, carmen cantandum. Nōmen plūrāle gerundīvum plūrāle postulat: librī legendī, epistulae scrībendae, dōna portanda.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Gerundīvum eōdem genere ac nōmen suum ponitur: liber legendus, epistula scrībenda, carmen cantandum. Nōmen plūrāle gerundīvum plūrāle postulat: librī legendī, epistulae scrībendae, dōna portanda.",
+            "observed": [
+              "compositio.nonfinitum.genus-gerundivi"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Gerundīvum eōdem genere ac nōmen suum ponitur: liber legendus, epistula scrībenda, carmen cantandum. Nōmen plūrāle gerundīvum plūrāle postulat: librī legendī, epistulae scrībendae, dōna portanda.",
+            "observed": [
+              "compositio.nonfinitum.numerus-gerundivi"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-formarum-non-finitarum",
+          "frame": "compositio-nonfinitum-2-donum-plural",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "medicus"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.nonfinitum.genus-gerundivi",
+          "name": "Genus gerundīvī cum nōmine congruere",
+          "visible": false,
+          "parent": "compositio.curriculum.nonfinite",
+          "requires": [
+            "compositio.adjective-reference"
+          ]
+        },
+        {
+          "id": "compositio.nonfinitum.numerus-gerundivi",
+          "name": "Numerum gerundīvī cum nōmine congruere",
+          "visible": false,
+          "parent": "compositio.curriculum.nonfinite",
+          "requires": [
+            "compositio.adjective-reference"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-donum",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "cadeau"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "dōnum"
+          },
+          {
+            "id": "1",
+            "text": "dūcō"
+          },
+          {
+            "id": "2",
+            "text": "epistula"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.donum"
+        ],
+        "item": "donum",
+        "assessment": "lexicon.compositio.donum",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "donum"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "dōnum — cadeau",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "dōnum — cadeau",
+            "observed": [
+              "lexicon.compositio.donum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "dōnum — cadeau",
+            "observed": [
+              "lexicon.compositio.donum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.donum",
+        "name": "dōnum — latīnē ēligere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/voluntas-et-consilium/cards/2/card.json",
+      "card": {
+        "id": "2",
+        "name": "Optātiō",
+        "subtitle": "Voluntātem et cōnsilium intellegere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/voluntas-et-consilium/1"
+              },
+              {
+                "skill": {
+                  "id": "lectio.condiciones.irrealis",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.condiciones.potentialis",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.past-anteriority",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.subject-number",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.voluntas-et-consilium.2"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.voluntas-et-consilium.2",
+        "name": "Optātiō",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.voluntas.hortatio-optatio",
+            "lectio.voluntas.optatio-assertio",
+            "lectio.voluntas.optatio-possibilitas",
+            "lectio.voluntas.tempus-optationis"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-000c970daa18c1ba5259",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Minister dīcit: «Utinam herī servāvissemus trīticum!»"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le serviteur regrette : « Si seulement nous avions conservé du froment hier ! »"
+          },
+          {
+            "id": "1",
+            "text": "Le serviteur regrette : « Si seulement nous conservions du froment maintenant ! »"
+          },
+          {
+            "id": "2",
+            "text": "Le serviteur affirme que nous avions conservé du froment."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.voluntas.tempus-optationis",
+          "lectio.voluntas.optatio-assertio"
+        ],
+        "item": "lectio-voluntas-2-servo-praeterita|minister|triticum",
+        "evidenceItem": "lectio-voluntas-2-servo-praeterita",
+        "selectionGroup": "lectio-voluntas-2-servo-praeterita",
+        "assessment": "lectio.curriculum.subjunctive.2:lectio-voluntas-2-servo-praeterita|minister|triticum",
+        "requires": [
+          "lectio.condiciones.irrealis",
+          "lectio.past-anteriority",
+          "lectio.subject-number",
+          "lexicon.lectio.dico",
+          "lexicon.lectio.heri",
+          "lexicon.lectio.minister",
+          "lexicon.lectio.servo",
+          "lexicon.lectio.triticum",
+          "lexicon.lectio.utinam"
+        ],
+        "vocabulary": [
+          "dico",
+          "heri",
+          "minister",
+          "servo",
+          "triticum",
+          "utinam"
+        ],
+        "help": "curriculum.lectio-voluntas-2-servo-praeterita",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Imperfectum optātiōnem praesentem irrēālem, plusquamperfectum praeteritam exprimit.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Imperfectum optātiōnem praesentem irrēālem, plusquamperfectum praeteritam exprimit.",
+            "observed": [
+              "lectio.voluntas.tempus-optationis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Imperfectum optātiōnem praesentem irrēālem, plusquamperfectum praeteritam exprimit.",
+            "observed": [
+              "lectio.voluntas.optatio-assertio"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-voluntatis",
+          "frame": "lectio-voluntas-2-servo-praeterita",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "minister",
+            "f": "triticum"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.voluntas.tempus-optationis",
+          "name": "Tempus optātiōnis distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.subjunctive",
+          "requires": [
+            "lectio.condiciones.irrealis",
+            "lectio.past-anteriority"
+          ]
+        },
+        {
+          "id": "lectio.voluntas.optatio-assertio",
+          "name": "Optātiōnem ab affirmātiōne distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.subjunctive",
+          "requires": [
+            "lectio.subject-number"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-triticum",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "trīticum"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "froment"
+          },
+          {
+            "id": "1",
+            "text": "truffe"
+          },
+          {
+            "id": "2",
+            "text": "pourvu que"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.triticum"
+        ],
+        "item": "triticum",
+        "assessment": "lexicon.lectio.triticum",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "triticum"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "trīticum — froment",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "trīticum — froment",
+            "observed": [
+              "lexicon.lectio.triticum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "trīticum — froment",
+            "observed": [
+              "lexicon.lectio.triticum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.triticum",
+        "name": "Intellegere: trīticum",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "triticum"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/voluntatem-exprimere/cards/5/card.json",
+      "card": {
+        "id": "5",
+        "name": "Prohibitiō",
+        "subtitle": "Voluntātem exprimere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/voluntatem-exprimere/4"
+              },
+              {
+                "skill": {
+                  "id": "compositio.negation-scope",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.voluntatem-exprimere.5"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.voluntatem-exprimere.5",
+        "name": "Prohibitiō",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.voluntas.prohibitio-assertio",
+            "compositio.voluntas.prohibitio-polaritas"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-001582704bb841a60ed4",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le messager interdit à son interlocuteur de conserver une pomme."
+          },
+          {
+            "type": "text",
+            "text": "\nNūntius dīcit: «"
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " mālum!»"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "nē servāverīs"
+          },
+          {
+            "id": "1",
+            "text": "nōn servās"
+          },
+          {
+            "id": "2",
+            "text": "servā"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.voluntas.prohibitio-assertio",
+          "compositio.voluntas.prohibitio-polaritas"
+        ],
+        "item": "compositio-voluntas-5-servo|nuntius|malum",
+        "evidenceItem": "compositio-voluntas-5-servo",
+        "selectionGroup": "compositio-voluntas-5-servo",
+        "assessment": "compositio.curriculum.subjunctive.5:compositio-voluntas-5-servo|nuntius|malum",
+        "requires": [
+          "compositio.negation-scope",
+          "lexicon.compositio.dico",
+          "lexicon.compositio.malum",
+          "lexicon.compositio.ne",
+          "lexicon.compositio.non",
+          "lexicon.compositio.nuntius",
+          "lexicon.compositio.servo"
+        ],
+        "vocabulary": [
+          "dico",
+          "malum",
+          "ne",
+          "non",
+          "nuntius",
+          "servo"
+        ],
+        "help": "curriculum.compositio-voluntas-5-servo",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Prohibitiō nōn est simplex affirmātiō negātīva nec iussum affirmātīvum.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Prohibitiō nōn est simplex affirmātiō negātīva nec iussum affirmātīvum.",
+            "observed": [
+              "compositio.voluntas.prohibitio-assertio"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Prohibitiō nōn est simplex affirmātiō negātīva nec iussum affirmātīvum.",
+            "observed": [
+              "compositio.voluntas.prohibitio-polaritas"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-voluntatis",
+          "frame": "compositio-voluntas-5-servo",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "nuntius",
+            "f": "malum"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.voluntas.prohibitio-assertio",
+          "name": "Prohibitiōnem ab affirmātiōne distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.subjunctive",
+          "requires": [
+            "compositio.negation-scope"
+          ]
+        },
+        {
+          "id": "compositio.voluntas.prohibitio-polaritas",
+          "name": "Prohibitiōnem ab iussū affirmātīvō distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.subjunctive",
+          "requires": [
+            "compositio.negation-scope"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-malum",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "pomme"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "mālum"
+          },
+          {
+            "id": "1",
+            "text": "medicus"
+          },
+          {
+            "id": "2",
+            "text": "mel"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.malum"
+        ],
+        "item": "malum",
+        "assessment": "lexicon.compositio.malum",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "malum"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "mālum — pomme",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "mālum — pomme",
+            "observed": [
+              "lexicon.compositio.malum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "mālum — pomme",
+            "observed": [
+              "lexicon.compositio.malum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.malum",
+        "name": "Latīnē reddere: mālum",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "malum"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/condiciones-interpretandae/cards/4/card.json",
+      "card": {
+        "id": "4",
+        "name": "Tempora diversa",
+        "subtitle": "Condiciōnēs interpretārī",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/condiciones-interpretandae/3"
+              },
+              {
+                "skill": {
+                  "id": "lectio.curriculum.conditions.3",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.imperfect-perfect",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.past-anteriority",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.condiciones-interpretandae.4"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.condiciones-interpretandae.4",
+        "name": "Tempora diversa",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.condiciones.tempus-apodosis",
+            "lectio.condiciones.tempus-protasis"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-550db4785a60a7d00521",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Medicus dīcit: «Sī mercātor herī viam didicisset, nunc viam scīret.»"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le médecin dit : « Si le marchand avait appris le chemin hier, il le connaîtrait maintenant. »"
+          },
+          {
+            "id": "1",
+            "text": "Le médecin dit : « Si le marchand apprenait le chemin maintenant, il le connaîtrait maintenant. »"
+          },
+          {
+            "id": "2",
+            "text": "Le médecin dit : « Si le marchand avait appris le chemin hier, il l’aurait connu hier. »"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.condiciones.tempus-protasis",
+          "lectio.condiciones.tempus-apodosis"
+        ],
+        "item": "lectio-condicio-4-doctrina|medicus|mercator",
+        "evidenceItem": "lectio-condicio-4-doctrina",
+        "selectionGroup": "lectio-condicio-4-doctrina",
+        "assessment": "lectio.curriculum.conditions.4:lectio-condicio-4-doctrina|medicus|mercator",
+        "requires": [
+          "lectio.curriculum.conditions.3",
+          "lectio.imperfect-perfect",
+          "lectio.past-anteriority",
+          "lexicon.lectio.dico",
+          "lexicon.lectio.disco",
+          "lexicon.lectio.heri",
+          "lexicon.lectio.medicus",
+          "lexicon.lectio.mercator",
+          "lexicon.lectio.nunc",
+          "lexicon.lectio.scio",
+          "lexicon.lectio.si",
+          "lexicon.lectio.via"
+        ],
+        "vocabulary": [
+          "dico",
+          "disco",
+          "heri",
+          "medicus",
+          "mercator",
+          "nunc",
+          "scio",
+          "si",
+          "via"
+        ],
+        "help": "curriculum.lectio-condicio-4-doctrina",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Tempus condiciōnis et tempus consequentiae sēparātim distinguenda sunt.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Tempus condiciōnis et tempus consequentiae sēparātim distinguenda sunt.",
+            "observed": [
+              "lectio.condiciones.tempus-protasis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Tempus condiciōnis et tempus consequentiae sēparātim distinguenda sunt.",
+            "observed": [
+              "lectio.condiciones.tempus-apodosis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-condicionum",
+          "frame": "lectio-condicio-4-doctrina",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.condiciones.tempus-protasis",
+          "name": "Tempus condiciōnis distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.conditions",
+          "requires": [
+            "lectio.imperfect-perfect",
+            "lectio.past-anteriority"
+          ]
+        },
+        {
+          "id": "lectio.condiciones.tempus-apodosis",
+          "name": "Tempus consequentiae distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.conditions",
+          "requires": [
+            "lectio.imperfect-perfect",
+            "lectio.past-anteriority"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-si",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "sī"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "si"
+          },
+          {
+            "id": "1",
+            "text": "être"
+          },
+          {
+            "id": "2",
+            "text": "cordonnier"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.si"
+        ],
+        "item": "si",
+        "assessment": "lexicon.lectio.si",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "si"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "sī — si",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "sī — si",
+            "observed": [
+              "lexicon.lectio.si"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "sī — si",
+            "observed": [
+              "lexicon.lectio.si"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.si",
+        "name": "Intellegere: sī",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "si"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/condiciones-componendae/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Contrā reī vēritātem",
+        "subtitle": "Condiciōnēs compōnere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/condiciones-componendae/2"
+              },
+              {
+                "skill": {
+                  "id": "compositio.imperfect-perfect",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.past-anteriority",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.condiciones-componendae.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.condiciones-componendae.3",
+        "name": "Contrā reī vēritātem",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.condiciones.irrealis",
+            "compositio.condiciones.tempus-apodosis"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-ff800f0a58efc30039a6",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Si le marchand demandait de l’aide, le médecin l’aiderait maintenant. Présente la situation comme contraire aux faits actuels."
+          },
+          {
+            "type": "text",
+            "text": "\nSī mercātor auxilium peteret, medicus nunc "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "eum iuvāret"
+          },
+          {
+            "id": "1",
+            "text": "eum iuvat"
+          },
+          {
+            "id": "2",
+            "text": "eum iūvisset"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.condiciones.irrealis",
+          "compositio.condiciones.tempus-apodosis"
+        ],
+        "item": "compositio-condicio-3-auxilium|medicus|mercator",
+        "evidenceItem": "compositio-condicio-3-auxilium",
+        "selectionGroup": "compositio-condicio-3-auxilium",
+        "assessment": "compositio.curriculum.conditions.3:compositio-condicio-3-auxilium|medicus|mercator",
+        "requires": [
+          "compositio.imperfect-perfect",
+          "compositio.past-anteriority",
+          "lexicon.compositio.auxilium",
+          "lexicon.compositio.is",
+          "lexicon.compositio.iuvo",
+          "lexicon.compositio.medicus",
+          "lexicon.compositio.mercator",
+          "lexicon.compositio.nunc",
+          "lexicon.compositio.peto",
+          "lexicon.compositio.si"
+        ],
+        "vocabulary": [
+          "auxilium",
+          "is",
+          "iuvo",
+          "medicus",
+          "mercator",
+          "nunc",
+          "peto",
+          "si"
+        ],
+        "help": "curriculum.compositio-condicio-3-auxilium",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Imperfectum coniūnctīvī consequentiam praesentem irrēālem exprimit.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Imperfectum coniūnctīvī consequentiam praesentem irrēālem exprimit.",
+            "observed": [
+              "compositio.condiciones.irrealis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Imperfectum coniūnctīvī consequentiam praesentem irrēālem exprimit.",
+            "observed": [
+              "compositio.condiciones.tempus-apodosis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-condicionum",
+          "frame": "compositio-condicio-3-auxilium",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.condiciones.irrealis",
+          "name": "Condiciōnem contrāriam reī distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.conditions",
+          "requires": [
+            "compositio.imperfect-perfect",
+            "compositio.past-anteriority"
+          ]
+        },
+        {
+          "id": "compositio.condiciones.tempus-apodosis",
+          "name": "Tempus consequentiae distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.conditions",
+          "requires": [
+            "compositio.imperfect-perfect",
+            "compositio.past-anteriority"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-si",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "si"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "sī"
+          },
+          {
+            "id": "1",
+            "text": "sum"
+          },
+          {
+            "id": "2",
+            "text": "sūtor"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.si"
+        ],
+        "item": "si",
+        "assessment": "lexicon.compositio.si",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "si"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "sī — si",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "sī — si",
+            "observed": [
+              "lexicon.compositio.si"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "sī — si",
+            "observed": [
+              "lexicon.compositio.si"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.si",
+        "name": "Latīnē reddere: sī",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "si"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/numerorum-sensus/cards/3/card.json",
+      "card": {
+        "id": "3",
+        "name": "Quot singulī?",
+        "subtitle": "Numerōrum sēnsūs",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/numerorum-sensus/2"
+              },
+              {
+                "skill": {
+                  "id": "lectio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.curriculum.numerals.1",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.subject-number",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.numerorum-sensus.3"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.numerorum-sensus.3",
+        "name": "Quot singulī?",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.numeri.ordo-distributio",
+            "lectio.numeri.quantitas-distributio"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-00007efce25ab13adca8",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Minister et sūtor bīnās formīcās vident."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le serviteur et le cordonnier voient chacun deux fourmis."
+          },
+          {
+            "id": "1",
+            "text": "Le serviteur et le cordonnier voient deux fourmis au total, sans préciser combien chacun en voit."
+          },
+          {
+            "id": "2",
+            "text": "Le serviteur et le cordonnier voient chacun la deuxième fourmi."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.numeri.quantitas-distributio",
+          "lectio.numeri.ordo-distributio"
+        ],
+        "item": "lectio-numerus-3-duo|minister|sutor|formica",
+        "evidenceItem": "lectio-numerus-3-duo",
+        "selectionGroup": "lectio-numerus-3-duo",
+        "assessment": "lectio.curriculum.numerals.3:lectio-numerus-3-duo|minister|sutor|formica",
+        "requires": [
+          "lectio.agent-patient",
+          "lectio.curriculum.numerals.1",
+          "lectio.subject-number",
+          "lexicon.lectio.bini",
+          "lexicon.lectio.et",
+          "lexicon.lectio.formica",
+          "lexicon.lectio.minister",
+          "lexicon.lectio.sutor",
+          "lexicon.lectio.video"
+        ],
+        "vocabulary": [
+          "bini",
+          "et",
+          "formica",
+          "minister",
+          "sutor",
+          "video"
+        ],
+        "help": "curriculum.lectio-numerus-3-duo",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Numerus distribūtīvus ad singulōs pertinet: nōn summa commūnis datur.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Numerus distribūtīvus ad singulōs pertinet: nōn summa commūnis datur.",
+            "observed": [
+              "lectio.numeri.quantitas-distributio"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Numerus distribūtīvus ad singulōs pertinet: nōn summa commūnis datur.",
+            "observed": [
+              "lectio.numeri.ordo-distributio"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-numerorum",
+          "frame": "lectio-numerus-3-duo",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "minister",
+            "b": "sutor",
+            "n": "formica"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.numeri.quantitas-distributio",
+          "name": "Quantitātem commūnem ā distribūtiōne distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.numerals",
+          "requires": [
+            "lectio.subject-number",
+            "lectio.agent-patient"
+          ]
+        },
+        {
+          "id": "lectio.numeri.ordo-distributio",
+          "name": "Ordinem ā distribūtiōne distinguere",
+          "visible": false,
+          "parent": "lectio.curriculum.numerals",
+          "requires": [
+            "lectio.subject-number",
+            "lectio.agent-patient"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-bini",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "bīnī"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "deux chacun"
+          },
+          {
+            "id": "1",
+            "text": "deux fois"
+          },
+          {
+            "id": "2",
+            "text": "bœuf"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.bini"
+        ],
+        "item": "bini",
+        "assessment": "lexicon.lectio.bini",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "bini"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "bīnī — deux chacun",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "bīnī — deux chacun",
+            "observed": [
+              "lexicon.lectio.bini"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "bīnī — deux chacun",
+            "observed": [
+              "lexicon.lectio.bini"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.bini",
+        "name": "Intellegere: bīnī",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "bini"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/numeris-exprimere/cards/4/card.json",
+      "card": {
+        "id": "4",
+        "name": "Quotiēns?",
+        "subtitle": "Numerīs exprimere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/numeris-exprimere/3"
+              },
+              {
+                "skill": {
+                  "id": "compositio.agent-patient",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.curriculum.numerals.1",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.curriculum.pronouns.4",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.subject-number",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.numeris-exprimere.4"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.numeris-exprimere.4",
+        "name": "Quotiēns?",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.numeri.ordo-frequentia",
+            "compositio.numeri.quantitas-frequentia"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-007326a2fe12f499520d",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le marchand observe deux fois la même vache."
+          },
+          {
+            "type": "text",
+            "text": "\nMercātor "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " spectat."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "bis eandem vaccam"
+          },
+          {
+            "id": "1",
+            "text": "duās vaccās"
+          },
+          {
+            "id": "2",
+            "text": "secundam vaccam"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.numeri.quantitas-frequentia",
+          "compositio.numeri.ordo-frequentia"
+        ],
+        "item": "compositio-numerus-4-duo|mercator|vacca",
+        "evidenceItem": "compositio-numerus-4-duo",
+        "selectionGroup": "compositio-numerus-4-duo",
+        "assessment": "compositio.curriculum.numerals.4:compositio-numerus-4-duo|mercator|vacca",
+        "requires": [
+          "compositio.agent-patient",
+          "compositio.curriculum.numerals.1",
+          "compositio.curriculum.pronouns.4",
+          "compositio.subject-number",
+          "lexicon.compositio.bis",
+          "lexicon.compositio.duo",
+          "lexicon.compositio.idem",
+          "lexicon.compositio.mercator",
+          "lexicon.compositio.secundus",
+          "lexicon.compositio.specto",
+          "lexicon.compositio.vacca"
+        ],
+        "vocabulary": [
+          "bis",
+          "duo",
+          "idem",
+          "mercator",
+          "secundus",
+          "specto",
+          "vacca"
+        ],
+        "help": "curriculum.compositio-numerus-4-duo",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Frequentia actiōnis adverbiō numerālī exprimitur, nōn numerō animālium.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Frequentia actiōnis adverbiō numerālī exprimitur, nōn numerō animālium.",
+            "observed": [
+              "compositio.numeri.quantitas-frequentia"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Frequentia actiōnis adverbiō numerālī exprimitur, nōn numerō animālium.",
+            "observed": [
+              "compositio.numeri.ordo-frequentia"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-numerorum",
+          "frame": "compositio-numerus-4-duo",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "mercator",
+            "n": "vacca"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.numeri.quantitas-frequentia",
+          "name": "Quantitātem ā frequentiā distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.numerals",
+          "requires": [
+            "compositio.subject-number",
+            "compositio.agent-patient",
+            "compositio.curriculum.pronouns.4"
+          ]
+        },
+        {
+          "id": "compositio.numeri.ordo-frequentia",
+          "name": "Ordinem ā frequentiā distinguere",
+          "visible": false,
+          "parent": "compositio.curriculum.numerals",
+          "requires": [
+            "compositio.subject-number",
+            "compositio.agent-patient",
+            "compositio.curriculum.pronouns.4"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-bis",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "deux fois"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "bis"
+          },
+          {
+            "id": "1",
+            "text": "bōs"
+          },
+          {
+            "id": "2",
+            "text": "camēlus"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.bis"
+        ],
+        "item": "bis",
+        "assessment": "lexicon.compositio.bis",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "bis"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "bis — deux fois",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "bis — deux fois",
+            "observed": [
+              "lexicon.compositio.bis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "bis — deux fois",
+            "observed": [
+              "lexicon.compositio.bis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.bis",
+        "name": "Latīnē reddere: bis",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "bis"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/referentiae-pronominum/cards/2/card.json",
+      "card": {
+        "id": "2",
+        "name": "Interrogātīva",
+        "subtitle": "Prōnōminum sēnsūs",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "theatrum/referentiae-pronominum/1"
+              },
+              {
+                "skill": {
+                  "id": "lectio.possessor-case",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.question-thing",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "lectio.recipient",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.referentiae-pronominum.2"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.referentiae-pronominum.2",
+        "name": "Interrogātīva",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.agent-patient",
+            "lectio.curriculum.pronouns.2"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-76c57c2bfb28b36b984b",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Quis medicum iuvat? Mercātor respondet."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Qui aide le médecin ? Le marchand répond."
+          },
+          {
+            "id": "1",
+            "text": "Qui le médecin aide-t-il ? Le marchand répond."
+          },
+          {
+            "id": "2",
+            "text": "Qu’est-ce qui aide le médecin ? Le marchand répond."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.curriculum.pronouns.2",
+          "lectio.agent-patient"
+        ],
+        "item": "lectio-pronomen-quis-subject|medicus|mercator",
+        "evidenceItem": "lectio-pronomen-quis-subject",
+        "selectionGroup": "lectio-pronomen-quis-subject",
+        "assessment": "lectio.curriculum.pronouns.2:lectio-pronomen-quis-subject|medicus|mercator",
+        "requires": [
+          "lectio.possessor-case",
+          "lectio.question-thing",
+          "lectio.recipient",
+          "lexicon.lectio.iuvo",
+          "lexicon.lectio.medicus",
+          "lexicon.lectio.mercator",
+          "lexicon.lectio.quis",
+          "lexicon.lectio.respondeo"
+        ],
+        "vocabulary": [
+          "iuvo",
+          "medicus",
+          "mercator",
+          "quis",
+          "respondeo"
+        ],
+        "help": "curriculum.lectio-pronomen-quis-subject",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Quis hominem agentem interrogat; accusātīvus eum quī adiuvātur dēsignat.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Quis hominem agentem interrogat; accusātīvus eum quī adiuvātur dēsignat.",
+            "observed": [
+              "lectio.agent-patient"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Quis hominem agentem interrogat; accusātīvus eum quī adiuvātur dēsignat.",
+            "observed": [
+              "lectio.curriculum.pronouns.2"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-referentiae",
+          "frame": "lectio-pronomen-quis-subject",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.curriculum.pronouns.2",
+          "name": "Intellegere: prōnōmina interrogātīva",
+          "visible": false,
+          "parent": "lectio.curriculum.pronouns",
+          "requires": [
+            "lectio.question-thing",
+            "lectio.recipient",
+            "lectio.possessor-case"
+          ]
+        },
+        {
+          "id": "lectio.agent-patient",
+          "name": "Intellegere: agentem et patientem discernere",
+          "visible": false,
+          "requires": [
+            "nominal.case"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-quis",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "quis"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "qui"
+          },
+          {
+            "id": "1",
+            "text": "chacun"
+          },
+          {
+            "id": "2",
+            "text": "quiconque"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.quis"
+        ],
+        "item": "quis",
+        "assessment": "lexicon.lectio.quis",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "quis"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "quis — qui",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "quis — qui",
+            "observed": [
+              "lexicon.lectio.quis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "quis — qui",
+            "observed": [
+              "lexicon.lectio.quis"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.quis",
+        "name": "quis, quid — intellegere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/pronomina-eligenda/cards/4/card.json",
+      "card": {
+        "id": "4",
+        "name": "Ipse et īdem",
+        "subtitle": "Prōnōmina ēligere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/pronomina-eligenda/3"
+              },
+              {
+                "skill": {
+                  "id": "compositio.adjective-reference",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.relative-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.pronomina-eligenda.4"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.pronomina-eligenda.4",
+        "name": "Ipse et īdem",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.curriculum.pronouns.4"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-8e221b0a509c6f131fa3",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le médecin a un livre. Le marchand lit le même livre."
+          },
+          {
+            "type": "text",
+            "text": "\nMedicus librum habet. Mercātor "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " librum legit."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "eundem"
+          },
+          {
+            "id": "1",
+            "text": "ipsum"
+          },
+          {
+            "id": "2",
+            "text": "alium"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.curriculum.pronouns.4"
+        ],
+        "item": "compositio-pronomen-eundem|medicus|mercator",
+        "evidenceItem": "compositio-pronomen-eundem",
+        "selectionGroup": "compositio-pronomen-eundem",
+        "assessment": "compositio.curriculum.pronouns.4:compositio-pronomen-eundem|medicus|mercator",
+        "requires": [
+          "compositio.adjective-reference",
+          "compositio.relative-reference",
+          "lexicon.compositio.alius",
+          "lexicon.compositio.habeo",
+          "lexicon.compositio.idem",
+          "lexicon.compositio.ipse",
+          "lexicon.compositio.lego",
+          "lexicon.compositio.liber",
+          "lexicon.compositio.medicus",
+          "lexicon.compositio.mercator"
+        ],
+        "vocabulary": [
+          "alius",
+          "habeo",
+          "idem",
+          "ipse",
+          "lego",
+          "liber",
+          "medicus",
+          "mercator"
+        ],
+        "help": "curriculum.compositio-pronomen-eundem",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Eundem ad librum iam dictum refertur.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Eundem ad librum iam dictum refertur.",
+            "observed": [
+              "compositio.curriculum.pronouns.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Eundem ad librum iam dictum refertur.",
+            "observed": [
+              "compositio.curriculum.pronouns.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-pronominum",
+          "frame": "compositio-pronomen-eundem",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.curriculum.pronouns.4",
+          "name": "Latīnē exprimere: ipse et īdem",
+          "visible": false,
+          "parent": "compositio.curriculum.pronouns",
+          "requires": [
+            "compositio.relative-reference",
+            "compositio.adjective-reference"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-idem",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "le même"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "īdem"
+          },
+          {
+            "id": "1",
+            "text": "imperātor"
+          },
+          {
+            "id": "2",
+            "text": "interrogō"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.idem"
+        ],
+        "item": "idem",
+        "assessment": "lexicon.compositio.idem",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "idem"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "īdem — le même",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "īdem — le même",
+            "observed": [
+              "lexicon.compositio.idem"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "īdem — le même",
+            "observed": [
+              "lexicon.compositio.idem"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.idem",
+        "name": "Latīnē reddere: īdem",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "idem"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/res-comparatae/cards/1/card.json",
+      "card": {
+        "id": "1",
+        "name": "Comparātīvus",
+        "subtitle": "Rēs et actiōnēs comparāre",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "skill": {
+                  "id": "lectio.adjective-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.res-comparatae.1"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.res-comparatae.1",
+        "name": "Comparātīvus",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.curriculum.comparison.1"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-0000be27dda7c1e80a3a",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sporta aurīgae longior est quam sporta tabellāriī."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le panier appartenant au cocher est plus long que le panier appartenant au courrier."
+          },
+          {
+            "id": "1",
+            "text": "Le panier appartenant au cocher est moins long que le panier appartenant au courrier."
+          },
+          {
+            "id": "2",
+            "text": "Le panier appartenant au cocher est aussi long que le panier appartenant au courrier."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.curriculum.comparison.1"
+        ],
+        "item": "lectio-comparatio-1-longus|auriga|tabellarius|sporta",
+        "evidenceItem": "lectio-comparatio-1-longus",
+        "selectionGroup": "lectio-comparatio-1-longus",
+        "assessment": "lectio.curriculum.comparison.1:lectio-comparatio-1-longus|auriga|tabellarius|sporta",
+        "requires": [
+          "lectio.adjective-reference",
+          "lexicon.lectio.auriga",
+          "lexicon.lectio.longus",
+          "lexicon.lectio.quam",
+          "lexicon.lectio.sporta",
+          "lexicon.lectio.sum",
+          "lexicon.lectio.tabellarius"
+        ],
+        "vocabulary": [
+          "auriga",
+          "longus",
+          "quam",
+          "sporta",
+          "sum",
+          "tabellarius"
+        ],
+        "help": "curriculum.lectio-comparatio-1-longus",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Comparātīvus gradum maiōrem, nōn aequālem aut minōrem, exprimit.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Comparātīvus gradum maiōrem, nōn aequālem aut minōrem, exprimit.",
+            "observed": [
+              "lectio.curriculum.comparison.1"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Comparātīvus gradum maiōrem, nōn aequālem aut minōrem, exprimit.",
+            "observed": [
+              "lectio.curriculum.comparison.1"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-comparationis",
+          "frame": "lectio-comparatio-1-longus",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "auriga",
+            "b": "tabellarius",
+            "o": "sporta"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.curriculum.comparison.1",
+          "name": "Intellegere: comparātīvus",
+          "visible": false,
+          "parent": "lectio.curriculum.comparison",
+          "requires": [
+            "lectio.adjective-reference"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-calceus",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "calceus"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "chaussure"
+          },
+          {
+            "id": "1",
+            "text": "gobelet"
+          },
+          {
+            "id": "2",
+            "text": "chandelle"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.calceus"
+        ],
+        "item": "calceus",
+        "assessment": "lexicon.lectio.calceus",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "calceus"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "calceus — chaussure",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "calceus — chaussure",
+            "observed": [
+              "lexicon.lectio.calceus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "calceus — chaussure",
+            "observed": [
+              "lexicon.lectio.calceus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.calceus",
+        "name": "Intellegere: calceus",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "calceus"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/gradus-adiectivorum/cards/1/card.json",
+      "card": {
+        "id": "1",
+        "name": "Comparātīvus",
+        "subtitle": "Gradūs compōnere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "skill": {
+                  "id": "compositio.adjective-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.gradus-adiectivorum.1"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.gradus-adiectivorum.1",
+        "name": "Comparātīvus",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.curriculum.comparison.1"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-00013f7bef8ed6dcb323",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "La branche appartenant à l’envoyé est plus longue que la branche appartenant au gardien."
+          },
+          {
+            "type": "text",
+            "text": "\nRāmus lēgātī "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " est quam rāmus custōdis."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "longior"
+          },
+          {
+            "id": "1",
+            "text": "longus"
+          },
+          {
+            "id": "2",
+            "text": "longissimus"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.curriculum.comparison.1"
+        ],
+        "item": "compositio-comparatio-1-longus|legatus|custos|ramus",
+        "evidenceItem": "compositio-comparatio-1-longus",
+        "selectionGroup": "compositio-comparatio-1-longus",
+        "assessment": "compositio.curriculum.comparison.1:compositio-comparatio-1-longus|legatus|custos|ramus",
+        "requires": [
+          "compositio.adjective-reference",
+          "lexicon.compositio.custos",
+          "lexicon.compositio.legatus",
+          "lexicon.compositio.longus",
+          "lexicon.compositio.quam",
+          "lexicon.compositio.ramus",
+          "lexicon.compositio.sum"
+        ],
+        "vocabulary": [
+          "custos",
+          "legatus",
+          "longus",
+          "quam",
+          "ramus",
+          "sum"
+        ],
+        "help": "curriculum.compositio-comparatio-1-longus",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Comparātīvus cum quam comparātiōnem inter duās rēs exprimit. Fōrma cum genere nōminis congruit.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Comparātīvus cum quam comparātiōnem inter duās rēs exprimit. Fōrma cum genere nōminis congruit.",
+            "observed": [
+              "compositio.curriculum.comparison.1"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Comparātīvus cum quam comparātiōnem inter duās rēs exprimit. Fōrma cum genere nōminis congruit.",
+            "observed": [
+              "compositio.curriculum.comparison.1"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-graduum",
+          "frame": "compositio-comparatio-1-longus",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "legatus",
+            "b": "custos",
+            "o": "ramus"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.curriculum.comparison.1",
+          "name": "Latīnē exprimere: comparātīvus",
+          "visible": false,
+          "parent": "compositio.curriculum.comparison",
+          "requires": [
+            "compositio.adjective-reference"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-calceus",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "chaussure"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "calceus"
+          },
+          {
+            "id": "1",
+            "text": "calix"
+          },
+          {
+            "id": "2",
+            "text": "candēla"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.calceus"
+        ],
+        "item": "calceus",
+        "assessment": "lexicon.compositio.calceus",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "calceus"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "calceus — chaussure",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "calceus — chaussure",
+            "observed": [
+              "lexicon.compositio.calceus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "calceus — chaussure",
+            "observed": [
+              "lexicon.compositio.calceus"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.calceus",
+        "name": "Latīnē reddere: calceus",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "calceus"
+          ]
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/theatrum/sections/casuum-sensus/cards/4/card.json",
+      "card": {
+        "id": "4",
+        "name": "Possessiō datīvō expressa",
+        "subtitle": "Cāsūs in nārrātiōne",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "skill": {
+                  "id": "lectio.recipient",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.lectio.casuum-sensus.4"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "theatrum_bg",
+          "hero": "histrio_idle",
+          "opponent": "actor_comoedus",
+          "heroCorrect": "histrio_gesture",
+          "heroWrong": "histrio_hurt",
+          "heroVictory": "histrio_victory",
+          "heroDefeat": "histrio_defeat",
+          "opponentName": "Cōmoedus Rīdēns",
+          "motion": "projectile",
+          "projectile": "persona",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.lectio.casuum-sensus.4",
+        "name": "Possessiō datīvō expressa",
+        "visible": true,
+        "parent": "study.versio",
+        "aggregation": {
+          "skills": [
+            "lectio.curriculum.case-uses.4"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-9d4951432e1c8aa19da4",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Sententiārum sēnsum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Poētae dōnum est. Nauta in hortō manet."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "Le poète a un cadeau. Le marin reste dans le jardin."
+          },
+          {
+            "id": "1",
+            "text": "Le poète est un cadeau. Le marin reste dans le jardin."
+          },
+          {
+            "id": "2",
+            "text": "Le marin a un cadeau. Le poète reste dans le jardin."
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lectio.curriculum.case-uses.4"
+        ],
+        "item": "possession-gift|poeta|nauta|hortus",
+        "evidenceItem": "possession-gift|poeta",
+        "selectionGroup": "possession-gift",
+        "assessment": "lectio.curriculum.case-uses.4:possession-gift|poeta|nauta|hortus",
+        "requires": [
+          "lectio.recipient",
+          "lexicon.lectio.donum",
+          "lexicon.lectio.hortus",
+          "lexicon.lectio.in",
+          "lexicon.lectio.maneo",
+          "lexicon.lectio.nauta",
+          "lexicon.lectio.poeta",
+          "lexicon.lectio.sum"
+        ],
+        "vocabulary": [
+          "donum",
+          "hortus",
+          "in",
+          "maneo",
+          "nauta",
+          "poeta",
+          "sum"
+        ],
+        "help": "curriculum.possession-gift",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Datīvus cum esse possessōrem indicat: dōnum poētae est idem valet atque poēta dōnum habet.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Datīvus cum esse possessōrem indicat: dōnum poētae est idem valet atque poēta dōnum habet.",
+            "observed": [
+              "lectio.curriculum.case-uses.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Datīvus cum esse possessōrem indicat: dōnum poētae est idem valet atque poēta dōnum habet.",
+            "observed": [
+              "lectio.curriculum.case-uses.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "interpretatio-casuum",
+          "frame": "possession-gift",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "la-fr",
+          "bindings": {
+            "a": "poeta",
+            "b": "nauta",
+            "l": "hortus"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "lectio.curriculum.case-uses.4",
+          "name": "Intellegere: datīvus possessīvus",
+          "visible": false,
+          "parent": "lectio.curriculum.case-uses",
+          "requires": [
+            "lectio.recipient"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-donum",
+        "interaction": "choice",
+        "dimension": "course.reading",
+        "prompt": "Vocābulum Gallicē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "dōnum"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "cadeau"
+          },
+          {
+            "id": "1",
+            "text": "deux"
+          },
+          {
+            "id": "2",
+            "text": "chef"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.lectio.donum"
+        ],
+        "item": "donum",
+        "assessment": "lexicon.lectio.donum",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "donum"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "dōnum — cadeau",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "dōnum — cadeau",
+            "observed": [
+              "lexicon.lectio.donum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "dōnum — cadeau",
+            "observed": [
+              "lexicon.lectio.donum"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.lectio.donum",
+        "name": "dōnum — intellegere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/casuum-electio/cards/4/card.json",
+      "card": {
+        "id": "4",
+        "name": "Possessōrem datīvō pōnere",
+        "subtitle": "Cāsibus sententiam compōnere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "skill": {
+                  "id": "compositio.recipient",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.casuum-electio.4"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.casuum-electio.4",
+        "name": "Possessōrem datīvō pōnere",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.curriculum.case-uses.4"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-1b2d7aaf51333f476745",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dans le jardin, le poète dit : « J’ai un livre. »"
+          },
+          {
+            "type": "text",
+            "text": "\nIn hortō poēta dīcit: « "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": " liber est. »"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "mihi"
+          },
+          {
+            "id": "1",
+            "text": "mē"
+          },
+          {
+            "id": "2",
+            "text": "ego"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.curriculum.case-uses.4"
+        ],
+        "item": "dative-owner|poeta|hortus",
+        "evidenceItem": "dative-owner",
+        "selectionGroup": "dative-owner",
+        "assessment": "compositio.curriculum.case-uses.4:dative-owner|poeta|hortus",
+        "requires": [
+          "compositio.recipient",
+          "lexicon.compositio.dico",
+          "lexicon.compositio.ego",
+          "lexicon.compositio.hortus",
+          "lexicon.compositio.in",
+          "lexicon.compositio.liber",
+          "lexicon.compositio.poeta",
+          "lexicon.compositio.sum"
+        ],
+        "vocabulary": [
+          "dico",
+          "ego",
+          "hortus",
+          "in",
+          "liber",
+          "poeta",
+          "sum"
+        ],
+        "help": "curriculum.dative-owner",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Mihi datīvus possessōris est. In ōrātiōne rēctā loquēns sē prīmā persōnā dēsignat.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Mihi datīvus possessōris est. In ōrātiōne rēctā loquēns sē prīmā persōnā dēsignat.",
+            "observed": [
+              "compositio.curriculum.case-uses.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Mihi datīvus possessōris est. In ōrātiōne rēctā loquēns sē prīmā persōnā dēsignat.",
+            "observed": [
+              "compositio.curriculum.case-uses.4"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-casuum",
+          "frame": "dative-owner",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "poeta",
+            "l": "hortus"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.curriculum.case-uses.4",
+          "name": "Latīnē exprimere: datīvus possessīvus",
+          "visible": false,
+          "parent": "compositio.curriculum.case-uses",
+          "requires": [
+            "compositio.recipient"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-liber",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "livre"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "liber"
+          },
+          {
+            "id": "1",
+            "text": "longus"
+          },
+          {
+            "id": "2",
+            "text": "magister"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.liber"
+        ],
+        "item": "liber",
+        "assessment": "lexicon.compositio.liber",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "liber"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "liber — livre",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "liber — livre",
+            "observed": [
+              "lexicon.compositio.liber"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "liber — livre",
+            "observed": [
+              "lexicon.compositio.liber"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.liber",
+        "name": "liber — latīnē ēligere",
+        "visible": false,
+        "requires": [],
+        "masteryRequirements": {
+          "minItems": 1
+        }
+      }
+    },
+    {
+      "cardPath": "/home/kensai/project/latin_game/assets/designs/grammaticon/places/templum/sections/sententiae-subordinatae/cards/8/card.json",
+      "card": {
+        "id": "8",
+        "name": "Relātīvā cōnsilium exprimere",
+        "subtitle": "Sententiās subiungere",
+        "access": {
+          "price": 20,
+          "requires": {
+            "all": [
+              {
+                "mastered": "templum/sententiae-subordinatae/4"
+              },
+              {
+                "skill": {
+                  "id": "compositio.purpose-polarity",
+                  "minLevel": 2
+                }
+              },
+              {
+                "skill": {
+                  "id": "compositio.relative-reference",
+                  "minLevel": 2
+                }
+              }
+            ]
+          }
+        },
+        "skills": [
+          "curriculum.compositio.sententiae-subordinatae.8"
+        ],
+        "encounter": {
+          "lives": 3,
+          "target": 8,
+          "completion": "target"
+        },
+        "questions": "questions.json.gz",
+        "lesson": "lesson.json",
+        "presentation": {
+          "background": "temple_bg",
+          "hero": "temple_hero_idle",
+          "opponent": "priest",
+          "heroCorrect": "temple_hero_gesture",
+          "heroWrong": "temple_hero_hurt",
+          "heroVictory": "temple_hero_victory",
+          "heroDefeat": "temple_hero_defeat",
+          "opponentName": "Sacerdōs",
+          "motion": "projectile",
+          "projectile": "argumentum",
+          "correctSound": "plausus",
+          "wrongSound": "murmur",
+          "cues": {
+            "correct": [
+              {
+                "delayMs": 60,
+                "sound": "oratio"
+              },
+              {
+                "delayMs": 300,
+                "sound": "plausus"
+              }
+            ],
+            "incorrect": [
+              {
+                "delayMs": 120,
+                "sound": "refutatio"
+              },
+              {
+                "delayMs": 320,
+                "sound": "murmur"
+              }
+            ]
+          },
+          "rewardEffect": "laurel",
+          "longText": true,
+          "introductionBlocks": [
+            0,
+            1
+          ]
+        },
+        "questionSelection": "adaptive",
+        "shuffleChoices": true
+      },
+      "composition": {
+        "id": "curriculum.compositio.sententiae-subordinatae.8",
+        "name": "Relātīvā cōnsilium exprimere",
+        "visible": true,
+        "parent": "study.thema",
+        "aggregation": {
+          "skills": [
+            "compositio.curriculum.subordination.1",
+            "compositio.curriculum.subordination.8",
+            "compositio.relative-number"
+          ],
+          "level": "minimum"
+        }
+      },
+      "question": {
+        "id": "casus-93551269c27d786fcfaf",
+        "interaction": "gapChoice",
+        "dimension": "course.production",
+        "prompt": "Sententiam Latīnē complē.",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le médecin envoie les marchands pour qu’ils cherchent de l’aide."
+          },
+          {
+            "type": "text",
+            "text": "\nMedicus mercātōrēs mittit quī auxilium "
+          },
+          {
+            "type": "gap",
+            "text": "…"
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "petant"
+          },
+          {
+            "id": "1",
+            "text": "petunt"
+          },
+          {
+            "id": "2",
+            "text": "petat"
+          },
+          {
+            "id": "3",
+            "text": "peterent"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "compositio.curriculum.subordination.8",
+          "compositio.relative-number",
+          "compositio.curriculum.subordination.1"
+        ],
+        "item": "produce-purpose-plural|medicus|mercator",
+        "evidenceItem": "produce-purpose-plural",
+        "selectionGroup": "produce-purpose-plural",
+        "assessment": "compositio.curriculum.subordination.8:produce-purpose-plural|medicus|mercator",
+        "requires": [
+          "compositio.purpose-polarity",
+          "compositio.relative-reference",
+          "lexicon.compositio.auxilium",
+          "lexicon.compositio.medicus",
+          "lexicon.compositio.mercator",
+          "lexicon.compositio.mitto",
+          "lexicon.compositio.peto",
+          "lexicon.compositio.qui"
+        ],
+        "vocabulary": [
+          "auxilium",
+          "medicus",
+          "mercator",
+          "mitto",
+          "peto",
+          "qui"
+        ],
+        "help": "curriculum.produce-purpose-plural",
+        "outcomes": {
+          "0": {
+            "feedback": "Rēctē. Petant coniūnctīvus praesēns plūrālis est: cōnsilium, tempus prīmārium et numerum antecēdentis servat.",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "Nōn rēctē. Petant coniūnctīvus praesēns plūrālis est: cōnsilium, tempus prīmārium et numerum antecēdentis servat.",
+            "observed": [
+              "compositio.curriculum.subordination.8"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "Nōn rēctē. Petant coniūnctīvus praesēns plūrālis est: cōnsilium, tempus prīmārium et numerum antecēdentis servat.",
+            "observed": [
+              "compositio.relative-number"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "3": {
+            "feedback": "Nōn rēctē. Petant coniūnctīvus praesēns plūrālis est: cōnsilium, tempus prīmārium et numerum antecēdentis servat.",
+            "observed": [
+              "compositio.curriculum.subordination.1"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        },
+        "editorial": {
+          "task": "compositio-subordinationis",
+          "frame": "produce-purpose-plural",
+          "authorship": "original-controlled-composition",
+          "translationDirection": "fr-la",
+          "bindings": {
+            "a": "medicus",
+            "b": "mercator"
+          }
+        }
+      },
+      "assessedSkills": [
+        {
+          "id": "compositio.curriculum.subordination.8",
+          "name": "Latīnē exprimere: sententia relātīva cōnsiliī",
+          "visible": false,
+          "parent": "compositio.curriculum.subordination",
+          "requires": [
+            "compositio.relative-reference",
+            "compositio.purpose-polarity"
+          ]
+        },
+        {
+          "id": "compositio.relative-number",
+          "name": "Latīnē ēligere: numerum antecēdentis discernere",
+          "visible": false,
+          "requires": [
+            "relative.agreement"
+          ]
+        },
+        {
+          "id": "compositio.curriculum.subordination.1",
+          "name": "Latīnē exprimere: consecūtiō temporum",
+          "visible": false,
+          "parent": "compositio.curriculum.subordination",
+          "requires": [
+            "compositio.imperfect-perfect",
+            "compositio.past-anteriority"
+          ]
+        }
+      ],
+      "vocabularyQuestion": {
+        "id": "verbum-auxilium",
+        "interaction": "choice",
+        "dimension": "course.production",
+        "prompt": "Vocābulum Latīnē redde.",
+        "content": [
+          {
+            "type": "text",
+            "text": "aide"
+          }
+        ],
+        "choices": [
+          {
+            "id": "0",
+            "text": "auxilium"
+          },
+          {
+            "id": "1",
+            "text": "captīvus"
+          },
+          {
+            "id": "2",
+            "text": "cocus"
+          }
+        ],
+        "accepted": [
+          "0"
+        ],
+        "skills": [
+          "lexicon.compositio.auxilium"
+        ],
+        "item": "auxilium",
+        "assessment": "lexicon.compositio.auxilium",
+        "help": "curriculum.vocabula",
+        "vocabulary": [
+          "auxilium"
+        ],
+        "outcomes": {
+          "0": {
+            "feedback": "auxilium — aide",
+            "observed": [],
+            "hypotheses": [],
+            "practice": []
+          },
+          "1": {
+            "feedback": "auxilium — aide",
+            "observed": [
+              "lexicon.compositio.auxilium"
+            ],
+            "hypotheses": [],
+            "practice": []
+          },
+          "2": {
+            "feedback": "auxilium — aide",
+            "observed": [
+              "lexicon.compositio.auxilium"
+            ],
+            "hypotheses": [],
+            "practice": []
+          }
+        }
+      },
+      "vocabularySkill": {
+        "id": "lexicon.compositio.auxilium",
+        "name": "Latīnē reddere: auxilium",
+        "visible": false,
+        "masteryRequirements": {
+          "minItems": 1,
+          "successfulItems": [
+            "auxilium"
+          ]
+        }
+      }
+    }
+  ]
+}

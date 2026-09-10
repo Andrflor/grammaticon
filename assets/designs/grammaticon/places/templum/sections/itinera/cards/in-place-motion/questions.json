@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille court pour entrer dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " currit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella in hortum currit."
+        "text": "in hortum"
       },
       {
         "id": "2",
-        "text": "Puella ex hortō currit."
+        "text": "ex hortō"
       },
       {
         "id": "1",
-        "text": "Puella in hortō currit."
+        "text": "in hortō"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q1",
     "assessment": "study.theme.in-place-motion:q1",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "curro",
       "ex",
@@ -44,7 +64,8 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +77,7 @@
       "1": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +85,7 @@
       "2": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +94,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon court à l’intérieur du jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " currit."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer ex hortō currit."
+        "text": "ex hortō"
       },
       {
         "id": "2",
-        "text": "Puer in hortō currit."
+        "text": "in hortō"
       },
       {
         "id": "0",
-        "text": "Puer in hortum currit."
+        "text": "in hortum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q2",
     "assessment": "study.theme.in-place-motion:q2",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "curro",
       "ex",
@@ -116,13 +157,14 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +172,7 @@
       "1": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +187,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme marche pour entrer dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ambulat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina ex scholā ambulat."
+        "text": "ex scholā"
       },
       {
         "id": "2",
-        "text": "Fēmina in scholā ambulat."
+        "text": "in scholā"
       },
       {
         "id": "1",
-        "text": "Fēmina in scholam ambulat."
+        "text": "in scholam"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q3",
     "assessment": "study.theme.in-place-motion:q3",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.schola"
+    ],
     "vocabulary": [
       "ambulo",
       "ex",
@@ -188,13 +250,14 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +271,7 @@
       "2": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -217,39 +280,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître marche à l’intérieur de l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ambulat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister in scholam ambulat."
+        "text": "in scholam"
       },
       {
         "id": "2",
-        "text": "Magister ex scholā ambulat."
+        "text": "ex scholā"
       },
       {
         "id": "0",
-        "text": "Magister in scholā ambulat."
+        "text": "in scholā"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q4",
     "assessment": "study.theme.in-place-motion:q4",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.schola"
+    ],
     "vocabulary": [
       "ambulo",
       "ex",
@@ -260,7 +343,8 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +356,7 @@
       "1": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +364,7 @@
       "2": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +373,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave court pour entrer dans la chambre."
+      },
+      {
+        "type": "text",
+        "text": "\nServus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " currit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Servus in cubiculō currit."
+        "text": "in cubiculō"
       },
       {
         "id": "2",
-        "text": "Servus in cubiculum currit."
+        "text": "in cubiculum"
       },
       {
         "id": "1",
-        "text": "Servus ex cubiculō currit."
+        "text": "ex cubiculō"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q5",
     "assessment": "study.theme.in-place-motion:q5",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.cubiculum",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.in",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "cubiculum",
       "curro",
@@ -332,13 +436,14 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,7 +451,7 @@
       "1": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,39 +466,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon marche à l’intérieur de la chambre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ambulat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer in cubiculō ambulat."
+        "text": "in cubiculō"
       },
       {
         "id": "2",
-        "text": "Puer in cubiculum ambulat."
+        "text": "in cubiculum"
       },
       {
         "id": "0",
-        "text": "Puer ex cubiculō ambulat."
+        "text": "ex cubiculō"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.in-place-motion"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "in-place-motion:q6",
     "assessment": "study.theme.in-place-motion:q6",
     "help": "study.in-place-motion",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.cubiculum",
+      "lexicon.compositio.ex",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "ambulo",
       "cubiculum",
@@ -404,13 +529,14 @@
     "editorial": {
       "language": "la",
       "topic": "in-place-motion",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
         "observed": [
-          "study.confusion.place-exit"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -424,7 +550,7 @@
       "2": {
         "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
         "observed": [
-          "study.confusion.place-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []

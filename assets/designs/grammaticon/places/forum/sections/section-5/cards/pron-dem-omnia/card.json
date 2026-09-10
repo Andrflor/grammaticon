@@ -1,1 +1,100 @@
-{"id":"pron-dem-omnia","name":"Dēmōnstrātīva omnia","subtitle":"is · hic · ille · iste · ipse · īdem","access":{"price":55,"requires":{"all":[{"unlocked":"forum/section-5/pron-is"},{"unlocked":"forum/section-5/pron-hic"},{"unlocked":"forum/section-5/pron-ille"},{"unlocked":"forum/section-5/pron-iste"},{"unlocked":"forum/section-5/pron-ipse"},{"unlocked":"forum/section-5/pron-idem"}]}},"skills":["f.pron.demomnia"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_causidicus","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Causidicus Astūtus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"lemma":{"weight":0.5},"casus":{"weight":1.0},"numerus":{"weight":0.8},"genus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"pron-dem-omnia"}
+{
+  "id": "pron-dem-omnia",
+  "name": "Dēmōnstrātīva omnia",
+  "subtitle": "is · hic · ille · iste · ipse · īdem",
+  "access": {
+    "price": 55,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-5/pron-is"
+        },
+        {
+          "unlocked": "forum/section-5/pron-hic"
+        },
+        {
+          "unlocked": "forum/section-5/pron-ille"
+        },
+        {
+          "unlocked": "forum/section-5/pron-iste"
+        },
+        {
+          "unlocked": "forum/section-5/pron-ipse"
+        },
+        {
+          "unlocked": "forum/section-5/pron-idem"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.pron.demomnia"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_causidicus",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Causidicus Astūtus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "lemma": {
+      "weight": 0.5
+    },
+    "casus": {
+      "weight": 1.0
+    },
+    "numerus": {
+      "weight": 0.8
+    },
+    "genus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "pron-dem-omnia"
+}

@@ -1,39 +1,57 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille portera une rose."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella rosam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella rosam portābit."
+        "text": "portābit."
       },
       {
         "id": "1",
-        "text": "Puella rosam portat."
+        "text": "portat."
       },
       {
         "id": "2",
-        "text": "Puella rosam portāvit."
+        "text": "portāvit."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q1",
     "assessment": "study.theme.future-first-second:q1",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "porto",
       "puella",
@@ -42,7 +60,8 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -54,7 +73,7 @@
       "1": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +81,7 @@
       "2": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -71,39 +90,58 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon chante dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer in hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer in hortō cantāvit."
+        "text": "cantāvit."
       },
       {
         "id": "2",
-        "text": "Puer in hortō cantat."
+        "text": "cantat."
       },
       {
         "id": "0",
-        "text": "Puer in hortō cantābit."
+        "text": "cantābit."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q2",
     "assessment": "study.theme.future-first-second:q2",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "canto",
       "hortus",
@@ -113,13 +151,14 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -127,7 +166,7 @@
       "1": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -142,39 +181,57 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître avertira le garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister puerum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Magister puerum monet."
+        "text": "monet."
       },
       {
         "id": "1",
-        "text": "Magister puerum monēbit."
+        "text": "monēbit."
       },
       {
         "id": "0",
-        "text": "Magister puerum monuit."
+        "text": "monuit."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q3",
     "assessment": "study.theme.future-first-second:q3",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.moneo",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "magister",
       "moneo",
@@ -183,13 +240,14 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -203,7 +261,7 @@
       "2": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -212,39 +270,57 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur a de l’eau."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola aquam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Agricola aquam habēbit."
+        "text": "habēbit."
       },
       {
         "id": "2",
-        "text": "Agricola aquam habuit."
+        "text": "habuit."
       },
       {
         "id": "0",
-        "text": "Agricola aquam habet."
+        "text": "habet."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q4",
     "assessment": "study.theme.future-first-second:q4",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.habeo"
+    ],
     "vocabulary": [
       "agricola",
       "aqua",
@@ -253,7 +329,8 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -265,7 +342,7 @@
       "1": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -273,7 +350,7 @@
       "2": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -282,39 +359,57 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme verra la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina puellam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Fēmina puellam vidēbit."
+        "text": "vidēbit."
       },
       {
         "id": "1",
-        "text": "Fēmina puellam vīdit."
+        "text": "vīdit."
       },
       {
         "id": "0",
-        "text": "Fēmina puellam videt."
+        "text": "videt."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q5",
     "assessment": "study.theme.future-first-second:q5",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "femina",
       "puella",
@@ -323,13 +418,14 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -337,7 +433,7 @@
       "1": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -352,39 +448,57 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand attend l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor servum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Mercātor servum exspectābit."
+        "text": "exspectābit."
       },
       {
         "id": "0",
-        "text": "Mercātor servum exspectāvit."
+        "text": "exspectāvit."
       },
       {
         "id": "1",
-        "text": "Mercātor servum exspectat."
+        "text": "exspectat."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.future-first-second"
+      "compositio.past-future",
+      "compositio.present-future"
     ],
     "item": "04-time:q6",
     "assessment": "study.theme.future-first-second:q6",
     "help": "study.04-time",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.exspecto",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "exspecto",
       "mercator",
@@ -393,13 +507,14 @@
     "editorial": {
       "language": "la",
       "topic": "04-time",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
         "observed": [
-          "study.confusion.future-past"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -413,7 +528,7 @@
       "2": {
         "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
         "observed": [
-          "study.confusion.present-future"
+          "compositio.present-future"
         ],
         "hypotheses": [],
         "practice": []

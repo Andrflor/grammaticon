@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Une fois la lettre lue, le père appelle son fils."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pater fīlium vocat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Antequam epistula legitur, pater fīlium vocat."
+        "text": "Antequam epistula legitur,"
       },
       {
         "id": "1",
-        "text": "Dum epistula legitur, pater fīlium vocat."
+        "text": "Dum epistula legitur,"
       },
       {
         "id": "0",
-        "text": "Epistulā lēctā, pater fīlium vocat."
+        "text": "Epistulā lēctā,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time"
     ],
     "item": "absolute-perfect:q1",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q1",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "antequam",
       "dum",
@@ -46,7 +67,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -58,7 +80,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -66,7 +88,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -75,39 +97,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Une fois la porte ouverte, le voyageur entre dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " viātor oppidum intrat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Dum porta aperītur, viātor oppidum intrat."
+        "text": "Dum porta aperītur,"
       },
       {
         "id": "2",
-        "text": "Antequam porta aperītur, viātor oppidum intrat."
+        "text": "Antequam porta aperītur,"
       },
       {
         "id": "0",
-        "text": "Portā apertā, viātor oppidum intrat."
+        "text": "Portā apertā,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time"
     ],
     "item": "absolute-perfect:q2",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q2",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.aperio",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.intro",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.porta",
+      "lexicon.compositio.viator"
+    ],
     "vocabulary": [
       "antequam",
       "aperio",
@@ -120,7 +163,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -132,7 +176,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -140,7 +184,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -149,39 +193,60 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Une fois le dîner préparé, la jeune fille appelle ses amis."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " puella amīcōs vocat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Cēnā parātā, puella amīcōs vocat."
+        "text": "Cēnā parātā,"
       },
       {
         "id": "2",
-        "text": "Antequam cēna parātur, puella amīcōs vocat."
+        "text": "Antequam cēna parātur,"
       },
       {
         "id": "1",
-        "text": "Dum cēna parātur, puella amīcōs vocat."
+        "text": "Dum cēna parātur,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time"
     ],
     "item": "absolute-perfect:q3",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q3",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.cena",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.paro",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "amicus",
       "antequam",
@@ -194,7 +259,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -206,7 +272,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,7 +280,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -223,39 +289,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Une fois les livres fermés, les élèves sortent."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " discipulī exeunt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Librīs clausīs, discipulī exeunt."
+        "text": "Librīs clausīs,"
       },
       {
         "id": "1",
-        "text": "Dum librī clauduntur, discipulī exeunt."
+        "text": "Dum librī clauduntur,"
       },
       {
         "id": "2",
-        "text": "Antequam librī clauduntur, discipulī exeunt."
+        "text": "Antequam librī clauduntur,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time"
     ],
     "item": "absolute-perfect:q4",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q4",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.claudo",
+      "lexicon.compositio.discipulus",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.exeo",
+      "lexicon.compositio.liber"
+    ],
     "vocabulary": [
       "antequam",
       "claudo",
@@ -267,7 +353,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -279,7 +366,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -287,7 +374,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -296,39 +383,62 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les garçons étant terrifiés, la mère ferme la porte."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " māter iānuam claudit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Antequam puerī perterrentur, māter iānuam claudit."
+        "text": "Antequam puerī perterrentur,"
       },
       {
         "id": "0",
-        "text": "Puerīs perterritīs, māter iānuam claudit."
+        "text": "Puerīs perterritīs,"
       },
       {
         "id": "1",
-        "text": "Dum puerī mātrem perterrent, māter iānuam claudit."
+        "text": "Dum puerī mātrem perterrent,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time",
+      "compositio.absolute-voice"
     ],
     "item": "absolute-perfect:q5",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q5",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "trait.vox",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.claudo",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.ianua",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.perterreo",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "antequam",
       "claudo",
@@ -341,7 +451,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -353,7 +464,7 @@
       "1": {
         "feedback": "Nōn rēctē. Puerīs perterritīs puerōs ipsōs iam perterritōs esse indicat. Responsum autem puerōs mātrem perterrēre dīcit. Nōlī eum quī patitur cum eō quī agit confundere.",
         "observed": [
-          "study.confusion.absolute-perfect-state-passive"
+          "compositio.absolute-voice"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,7 +472,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -370,39 +481,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Une fois la ville détruite, les citoyens s’enfuient."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " cīvēs fugiunt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Antequam urbs dēlētur, cīvēs fugiunt."
+        "text": "Antequam urbs dēlētur,"
       },
       {
         "id": "0",
-        "text": "Urbe dēlētā, cīvēs fugiunt."
+        "text": "Urbe dēlētā,"
       },
       {
         "id": "1",
-        "text": "Dum urbs dēlētur, cīvēs fugiunt."
+        "text": "Dum urbs dēlētur,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-perfect"
+      "compositio.absolute-time"
     ],
     "item": "absolute-perfect:q6",
     "assessment": "study.theme.absolute-perfect:absolute-perfect:q6",
     "help": "study.absolute-perfect",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.civis",
+      "lexicon.compositio.deleo",
+      "lexicon.compositio.dum",
+      "lexicon.compositio.fugio",
+      "lexicon.compositio.urbs"
+    ],
     "vocabulary": [
       "antequam",
       "civis",
@@ -414,7 +545,8 @@
     "editorial": {
       "language": "la",
       "topic": "absolute-perfect",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -426,7 +558,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
         "observed": [
-          "study.confusion.absolute-perfect-ongoing"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -434,7 +566,226 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
         "observed": [
-          "study.confusion.absolute-perfect-before"
+          "compositio.absolute-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-absolute-voice-1",
+    "assessment": "compositio:transfer-absolute-voice-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Une fois la porte fermée, le maître partit.\nIānuā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ", magister discessit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "clausā"
+      },
+      {
+        "id": "1",
+        "text": "claudente"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.compositio.claudo",
+      "lexicon.compositio.discedo",
+      "lexicon.compositio.ianua",
+      "lexicon.compositio.magister"
+    ],
+    "vocabulary": [
+      "claudo",
+      "discedo",
+      "ianua",
+      "magister"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "compositio.absolute-voice"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-absolute-voice-2",
+    "assessment": "compositio:transfer-absolute-voice-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La lettre ayant été lue, la mère se tut.\nEpistulā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ", māter tacuit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "lēctā"
+      },
+      {
+        "id": "1",
+        "text": "legente"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.taceo"
+    ],
+    "vocabulary": [
+      "epistula",
+      "lego",
+      "mater",
+      "taceo"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "compositio.absolute-voice"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-absolute-voice-3",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-absolute-voice-3",
+    "assessment": "compositio:transfer-absolute-voice-3",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La maison ayant été ornée, le père arriva.\nDomō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ", pater vēnit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ōrnātā"
+      },
+      {
+        "id": "1",
+        "text": "ōrnante"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.absolute-voice"
+    ],
+    "requires": [
+      "trait.vox",
+      "lexicon.compositio.domus",
+      "lexicon.compositio.orno",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.venio"
+    ],
+    "vocabulary": [
+      "domus",
+      "orno",
+      "pater",
+      "venio"
+    ],
+    "help": "study.absolute-perfect",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: vōcem participiī absolūtī discernere.",
+        "observed": [
+          "compositio.absolute-voice"
         ],
         "hypotheses": [],
         "practice": []

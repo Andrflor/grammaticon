@@ -30,9 +30,16 @@
       "0"
     ],
     "skills": [
-      "study.version.10-sacred"
+      "lectio.recipient"
     ],
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "lexicon.lectio.filius",
+      "lexicon.lectio.panis",
+      "lexicon.lectio.servo",
+      "lexicon.lectio.vidua",
+      "lexicon.lectio.volo"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
@@ -44,7 +51,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -52,7 +59,7 @@
       "2": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -102,15 +109,24 @@
       "2"
     ],
     "skills": [
-      "study.version.10-sacred"
+      "lectio.agent-patient",
+      "lectio.recipient"
     ],
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "nominal.case",
+      "lexicon.lectio.cum",
+      "lexicon.lectio.panis",
+      "lexicon.lectio.partior",
+      "lexicon.lectio.peregrinus",
+      "lexicon.lectio.sum"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -118,7 +134,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -174,15 +190,21 @@
       "1"
     ],
     "skills": [
-      "study.version.10-sacred"
+      "lectio.negation",
+      "lectio.past-future"
     ],
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.res",
+      "lexicon.lectio.vicinus"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -196,7 +218,7 @@
       "2": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -244,9 +266,17 @@
       "0"
     ],
     "skills": [
-      "study.version.10-sacred"
+      "lectio.negation",
+      "lectio.negation-scope"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.etiam",
+      "lexicon.lectio.exerceo",
+      "lexicon.lectio.in",
+      "lexicon.lectio.inopia",
+      "lexicon.lectio.misericordia",
+      "lexicon.lectio.possum"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
@@ -258,7 +288,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -266,7 +296,7 @@
       "2": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "lectio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []

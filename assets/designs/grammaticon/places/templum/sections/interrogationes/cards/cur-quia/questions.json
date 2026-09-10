@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.cur-quia"
+      "compositio.cause-place",
+      "compositio.cause-question"
     ],
     "item": "cur-quia:q1",
     "assessment": "study.theme.cur-quia:q1",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ubi"
+    ],
     "vocabulary": [
       "cur",
       "dormio",
@@ -44,7 +51,8 @@
     "editorial": {
       "language": "la",
       "topic": "cur-quia",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -56,7 +64,7 @@
       "1": {
         "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
         "observed": [
-          "study.confusion.cause-location"
+          "compositio.cause-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +72,7 @@
       "2": {
         "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
         "observed": [
-          "study.confusion.cause-question"
+          "compositio.cause-question"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +108,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.cur-quia"
+      "compositio.cause-place",
+      "compositio.cause-question"
     ],
     "item": "cur-quia:q2",
     "assessment": "study.theme.cur-quia:q2",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.ploro",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.ubi"
+    ],
     "vocabulary": [
       "cur",
       "ploro",
@@ -116,13 +131,14 @@
     "editorial": {
       "language": "la",
       "topic": "cur-quia",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
         "observed": [
-          "study.confusion.cause-location"
+          "compositio.cause-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +146,7 @@
       "1": {
         "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
         "observed": [
-          "study.confusion.cause-question"
+          "compositio.cause-question"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +188,21 @@
       "1"
     ],
     "skills": [
-      "study.theme.cur-quia"
+      "compositio.cause-contrast",
+      "compositio.cause-result"
     ],
     "item": "cur-quia:q3",
     "assessment": "study.theme.cur-quia:q3",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.fessus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dormio",
       "fessus",
@@ -190,13 +215,14 @@
     "editorial": {
       "language": "la",
       "topic": "cur-quia",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
         "observed": [
-          "study.confusion.cause-contrast"
+          "compositio.cause-contrast"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +236,7 @@
       "2": {
         "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
         "observed": [
-          "study.confusion.cause-reversal"
+          "compositio.cause-result"
         ],
         "hypotheses": [],
         "practice": []
@@ -246,12 +272,21 @@
       "0"
     ],
     "skills": [
-      "study.theme.cur-quia"
+      "compositio.cause-contrast",
+      "compositio.cause-result"
     ],
     "item": "cur-quia:q4",
     "assessment": "study.theme.cur-quia:q4",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.canto",
+      "lexicon.compositio.laetus",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "canto",
       "laetus",
@@ -264,7 +299,8 @@
     "editorial": {
       "language": "la",
       "topic": "cur-quia",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -276,7 +312,7 @@
       "1": {
         "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
         "observed": [
-          "study.confusion.cause-reversal"
+          "compositio.cause-result"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +320,597 @@
       "2": {
         "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
         "observed": [
-          "study.confusion.cause-contrast"
+          "compositio.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-question-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-question-1",
+    "assessment": "compositio:transfer-cause-question-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pourquoi le serviteur court-il ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " servus currit?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cūr"
+      },
+      {
+        "id": "1",
+        "text": "Quia"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-question"
+    ],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.curro",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.servus"
+    ],
+    "vocabulary": [
+      "cur",
+      "curro",
+      "quia",
+      "servus"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: cūr et quia discernere.",
+        "observed": [
+          "compositio.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-question-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-question-2",
+    "assessment": "compositio:transfer-cause-question-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Parce que le père appelle.\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pater vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quia"
+      },
+      {
+        "id": "1",
+        "text": "Cūr"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-question"
+    ],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.voco"
+    ],
+    "vocabulary": [
+      "cur",
+      "pater",
+      "quia",
+      "voco"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: cūr et quia discernere.",
+        "observed": [
+          "compositio.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-place-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-place-1",
+    "assessment": "compositio:transfer-cause-place-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pourquoi la mère attend-elle ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " māter exspectat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cūr"
+      },
+      {
+        "id": "1",
+        "text": "Ubi"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-place"
+    ],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.exspecto",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "cur",
+      "exspecto",
+      "mater",
+      "ubi"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et locum discernere.",
+        "observed": [
+          "compositio.cause-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-place-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-place-2",
+    "assessment": "compositio:transfer-cause-place-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Où le maître enseigne-t-il ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " magister docet?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ubi"
+      },
+      {
+        "id": "1",
+        "text": "Cūr"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-place"
+    ],
+    "requires": [
+      "lexicon.compositio.cur",
+      "lexicon.compositio.doceo",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "cur",
+      "doceo",
+      "magister",
+      "ubi"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et locum discernere.",
+        "observed": [
+          "compositio.cause-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-result-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-result-1",
+    "assessment": "compositio:transfer-cause-result-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon dort parce qu’il est fatigué.\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puer dormit quia fessus est."
+      },
+      {
+        "id": "1",
+        "text": "Puer fessus est quia dormit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-result"
+    ],
+    "requires": [
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.fessus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.sum"
+    ],
+    "vocabulary": [
+      "dormio",
+      "fessus",
+      "puer",
+      "quia",
+      "sum"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et effectum discernere.",
+        "observed": [
+          "compositio.cause-result"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-result-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-result-2",
+    "assessment": "compositio:transfer-cause-result-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La fille rit parce que le récit lui plaît.\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella rīdet quia fābula eam dēlectat."
+      },
+      {
+        "id": "1",
+        "text": "Fābula puellam dēlectat quia rīdet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-result"
+    ],
+    "requires": [
+      "lexicon.compositio.delecto",
+      "lexicon.compositio.fabula",
+      "lexicon.compositio.is",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.rideo"
+    ],
+    "vocabulary": [
+      "delecto",
+      "fabula",
+      "is",
+      "puella",
+      "quia",
+      "rideo"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et effectum discernere.",
+        "observed": [
+          "compositio.cause-result"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-contrast-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-contrast-1",
+    "assessment": "compositio:transfer-cause-contrast-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin est fatigué, mais il veille.\nNauta fessus est, "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vigilat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "sed"
+      },
+      {
+        "id": "1",
+        "text": "quia"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-contrast"
+    ],
+    "requires": [
+      "lexicon.compositio.fessus",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vigilo"
+    ],
+    "vocabulary": [
+      "fessus",
+      "nauta",
+      "quia",
+      "sed",
+      "sum",
+      "vigilo"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et contrārium discernere.",
+        "observed": [
+          "compositio.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-contrast-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-cause-contrast-2",
+    "assessment": "compositio:transfer-cause-contrast-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon se tait parce que le maître parle.\nPuer tacet "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " magister loquitur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "quia"
+      },
+      {
+        "id": "1",
+        "text": "sed"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.cause-contrast"
+    ],
+    "requires": [
+      "lexicon.compositio.loquor",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quia",
+      "lexicon.compositio.sed",
+      "lexicon.compositio.taceo"
+    ],
+    "vocabulary": [
+      "loquor",
+      "magister",
+      "puer",
+      "quia",
+      "sed",
+      "taceo"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: causam et contrārium discernere.",
+        "observed": [
+          "compositio.cause-contrast"
         ],
         "hypotheses": [],
         "practice": []

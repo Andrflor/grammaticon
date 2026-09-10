@@ -1,1 +1,75 @@
-{"id":"tm-tempora-ind-pass-praes-imperf","name":"Praesēns an imperfectum","subtitle":"indicātīvus passīvum","access":{"price":15,"requires":{"all":[{"unlocked":"amphitheatrum/section-1/ind-praes-pass"},{"unlocked":"amphitheatrum/section-1/ind-imperf-pass"}]}},"skills":["tm.tempus.ind.pass.praes-imperf"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_statua","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Statua Animāta","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,2,3,4]},"selectionGroups":{"tempus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"tm-tempora-ind-pass-praes-imperf"}
+{
+  "id": "tm-tempora-ind-pass-praes-imperf",
+  "name": "Praesēns an imperfectum",
+  "subtitle": "indicātīvus passīvum",
+  "access": {
+    "price": 15,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-1/ind-praes-pass"
+        },
+        {
+          "unlocked": "amphitheatrum/section-1/ind-imperf-pass"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "tm.tempus.ind.pass.praes-imperf"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_statua",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Statua Animāta",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "tempus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "tm-tempora-ind-pass-praes-imperf"
+}

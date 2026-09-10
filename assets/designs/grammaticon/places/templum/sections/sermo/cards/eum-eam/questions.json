@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est présent. La jeune fille l’appelle."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister adest. "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vocat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister adest. Puella eam vocat."
+        "text": "Puella eam"
       },
       {
         "id": "2",
-        "text": "Magister adest. Is puellam vocat."
+        "text": "Is puellam"
       },
       {
         "id": "0",
-        "text": "Magister adest. Puella eum vocat."
+        "text": "Puella eum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.eum-eam"
+      "compositio.agent-patient",
+      "compositio.pronoun-gender"
     ],
     "item": "eum-eam:q1",
     "assessment": "study.theme.eum-eam:q1",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.genus",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -44,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "eum-eam",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +78,7 @@
       "1": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +86,7 @@
       "2": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +95,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est présente. Le garçon la voit."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina adest. "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina adest. Puer eum videt."
+        "text": "Puer eum"
       },
       {
         "id": "2",
-        "text": "Fēmina adest. Puer eam videt."
+        "text": "Puer eam"
       },
       {
         "id": "1",
-        "text": "Fēmina adest. Ea puerum videt."
+        "text": "Ea puerum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.eum-eam"
+      "compositio.agent-patient",
+      "compositio.pronoun-gender"
     ],
     "item": "eum-eam:q2",
     "assessment": "study.theme.eum-eam:q2",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.genus",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -116,13 +159,14 @@
     "editorial": {
       "language": "la",
       "topic": "eum-eam",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +174,7 @@
       "1": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +189,62 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre est sur la table. La jeune fille le porte."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber in mēnsā est. Puella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Liber in mēnsā est. Puella eum portat."
+        "text": "eum"
       },
       {
         "id": "2",
-        "text": "Liber in mēnsā est. Puella eam portat."
+        "text": "eam"
       },
       {
         "id": "0",
-        "text": "Liber in mēnsā est. Puella eōs portat."
+        "text": "eōs"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.eum-eam"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eum-eam:q3",
     "assessment": "study.theme.eum-eam:q3",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.mensa",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "is",
@@ -190,13 +257,14 @@
     "editorial": {
       "language": "la",
       "topic": "eum-eam",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +278,7 @@
       "2": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -219,39 +287,61 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’île est petite. Le maître la voit."
+      },
+      {
+        "type": "text",
+        "text": "\nĪnsula parva est. Magister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Īnsula parva est. Magister eam videt."
+        "text": "eam"
       },
       {
         "id": "1",
-        "text": "Īnsula parva est. Magister eum videt."
+        "text": "eum"
       },
       {
         "id": "2",
-        "text": "Īnsula parva est. Magister eās videt."
+        "text": "eās"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.eum-eam"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eum-eam:q4",
     "assessment": "study.theme.eum-eam:q4",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "insula",
       "is",
@@ -263,7 +353,8 @@
     "editorial": {
       "language": "la",
       "topic": "eum-eam",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -275,7 +366,7 @@
       "1": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -283,7 +374,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []

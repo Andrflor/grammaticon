@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le père dit que le garçon a chanté."
+      },
+      {
+        "type": "text",
+        "text": "\nPater dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Pater dīcit puerum cantāre."
+        "text": "puerum cantāre."
       },
       {
         "id": "0",
-        "text": "Pater dīcit puerum cantāvisse."
+        "text": "puerum cantāvisse."
       },
       {
         "id": "2",
-        "text": "Pater dīcit puerōs cantāvisse."
+        "text": "puerōs cantāvisse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q1",
     "assessment": "study.theme.infinitive-anteriority:q1",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "canto",
       "dico",
@@ -43,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +76,7 @@
       "1": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +84,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +93,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître dit que la jeune fille a lu le livre."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister dīcit puellam librum legere."
+        "text": "puellam librum legere."
       },
       {
         "id": "1",
-        "text": "Magister dīcit puellās librum lēgisse."
+        "text": "puellās librum lēgisse."
       },
       {
         "id": "2",
-        "text": "Magister dīcit puellam librum lēgisse."
+        "text": "puellam librum lēgisse."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q2",
     "assessment": "study.theme.infinitive-anteriority:q2",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "dico",
       "lego",
@@ -115,13 +157,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []
@@ -129,7 +172,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -144,39 +187,60 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison dit que l’esclave a ouvert la porte."
+      },
+      {
+        "type": "text",
+        "text": "\nDominus dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Dominus dīcit servōs portam aperuisse."
+        "text": "servōs portam aperuisse."
       },
       {
         "id": "2",
-        "text": "Dominus dīcit servum portam aperīre."
+        "text": "servum portam aperīre."
       },
       {
         "id": "1",
-        "text": "Dominus dīcit servum portam aperuisse."
+        "text": "servum portam aperuisse."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q3",
     "assessment": "study.theme.infinitive-anteriority:q3",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.aperio",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.porta",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "aperio",
       "dico",
@@ -187,13 +251,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -207,7 +272,7 @@
       "2": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []
@@ -216,39 +281,60 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille dit que la femme a écrit la lettre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella dīcit fēminam epistulam scrīpsisse."
+        "text": "fēminam epistulam scrīpsisse."
       },
       {
         "id": "1",
-        "text": "Puella dīcit fēminam epistulam scrībere."
+        "text": "fēminam epistulam scrībere."
       },
       {
         "id": "2",
-        "text": "Puella dīcit fēminās epistulam scrīpsisse."
+        "text": "fēminās epistulam scrīpsisse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q4",
     "assessment": "study.theme.infinitive-anteriority:q4",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.scribo"
+    ],
     "vocabulary": [
       "dico",
       "epistula",
@@ -259,7 +345,8 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -271,7 +358,7 @@
       "1": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []
@@ -279,7 +366,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -288,39 +375,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand dit que l’agriculteur est venu."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Mercātor dīcit agricolam venīre."
+        "text": "agricolam venīre."
       },
       {
         "id": "2",
-        "text": "Mercātor dīcit agricolam vēnisse."
+        "text": "agricolam vēnisse."
       },
       {
         "id": "1",
-        "text": "Mercātor dīcit agricolās vēnisse."
+        "text": "agricolās vēnisse."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q5",
     "assessment": "study.theme.infinitive-anteriority:q5",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "agricola",
       "dico",
@@ -330,13 +437,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []
@@ -344,7 +452,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -359,39 +467,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme dit que le fils a dormi."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina dīcit "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina dīcit fīlium dormīvisse."
+        "text": "fīlium dormīvisse."
       },
       {
         "id": "0",
-        "text": "Fēmina dīcit fīliōs dormīvisse."
+        "text": "fīliōs dormīvisse."
       },
       {
         "id": "2",
-        "text": "Fēmina dīcit fīlium dormīre."
+        "text": "fīlium dormīre."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.infinitive-anteriority"
+      "compositio.infinitive-before",
+      "compositio.infinitive-number"
     ],
     "item": "infinitive-anteriority:q6",
     "assessment": "study.theme.infinitive-anteriority:q6",
     "help": "study.infinitive-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.dormio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.filius"
+    ],
     "vocabulary": [
       "dico",
       "dormio",
@@ -401,13 +529,14 @@
     "editorial": {
       "language": "la",
       "topic": "infinitive-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "compositio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -421,7 +550,7 @@
       "2": {
         "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
         "observed": [
-          "study.confusion.infinitive-before"
+          "compositio.infinitive-before"
         ],
         "hypotheses": [],
         "practice": []

@@ -109,6 +109,20 @@ void main() {
     final c = d.cards['map-room/discovery/scale']!;
     expect(s.purchasable(c), false);
     s.state['completed']['observatory/discovery/durations'] = 1;
+    expect(s.purchasable(c), false);
+    for (final id in d.skillLeaves('time-units')) {
+      s.state['skills'][id] = {
+        'correct': 20,
+        'wrong': 0,
+        'estimate': 1.0,
+        'highWater': 1.0,
+        'items': ['a', 'b', 'c', 'd'],
+        'successfulItems': ['a', 'b', 'c', 'd'],
+        'recent': [
+          for (var i = 0; i < 20; i++) {'correct': true},
+        ],
+      };
+    }
     expect(s.purchasable(c), true);
     final initial = s.balance;
     await s.buy(c);

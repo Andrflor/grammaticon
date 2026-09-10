@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q1",
     "assessment": "study.theme.third-subject-object:q1",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "mater",
       "pater",
@@ -42,7 +49,8 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -54,7 +62,7 @@
       "1": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +70,7 @@
       "2": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +106,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q2",
     "assessment": "study.theme.third-subject-object:q2",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "mater",
       "pater",
@@ -112,13 +127,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +142,7 @@
       "1": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -168,12 +184,19 @@
       "1"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q3",
     "assessment": "study.theme.third-subject-object:q3",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.frater",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.soror"
+    ],
     "vocabulary": [
       "frater",
       "saluto",
@@ -182,13 +205,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +226,7 @@
       "2": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -238,12 +262,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q4",
     "assessment": "study.theme.third-subject-object:q4",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.exspecto",
+      "lexicon.compositio.frater",
+      "lexicon.compositio.soror"
+    ],
     "vocabulary": [
       "exspecto",
       "frater",
@@ -252,7 +283,8 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -264,7 +296,7 @@
       "1": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +304,7 @@
       "2": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -308,12 +340,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q5",
     "assessment": "study.theme.third-subject-object:q5",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.canis",
+      "lexicon.compositio.pastor",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "canis",
       "pastor",
@@ -322,13 +361,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -336,7 +376,7 @@
       "1": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -378,12 +418,19 @@
       "1"
     ],
     "skills": [
-      "study.theme.third-subject-object"
+      "compositio.agent-patient",
+      "compositio.object-number"
     ],
     "item": "third-subject-object:q6",
     "assessment": "study.theme.third-subject-object:q6",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.canis",
+      "lexicon.compositio.pastor",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "canis",
       "pastor",
@@ -392,13 +439,14 @@
     "editorial": {
       "language": "la",
       "topic": "third-subject-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +460,7 @@
       "2": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []

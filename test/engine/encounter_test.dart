@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grammaticon/engine/design.dart';
 import 'package:grammaticon/engine/session.dart';
@@ -41,15 +43,24 @@ void main() {
       final card = d.cards.values.firstWhere((c) => c.id == 'ind-praes-act');
       await s.start(card);
       await s.begin();
+      var expectedAfterTribute = 0;
       for (var i = 0; i < 3; i++) {
         final q = s.question!;
         await s.answer(
           q.choices.firstWhere((c) => !q.accepted.contains(c['id']))['id'],
         );
+        if (i == 2) {
+          expectedAfterTribute =
+              s.balance -
+              min(
+                s.economy['defeatTributeMax'] as int,
+                (s.balance * (s.economy['defeatTributeRatio'] as num)).ceil(),
+              );
+        }
         await s.advance();
       }
       expect(s.encounter!['phase'], 'defeat');
-      expect(s.balance, 58);
+      expect(s.balance, expectedAfterTribute);
       final tx = s.state['transaction'];
       await s.advance();
       expect(s.state['transaction'], tx);
@@ -59,8 +70,8 @@ void main() {
     final d = await demo();
     final c = d.cards['observatory/discovery/durations']!;
     final q = (await d.questions(c)).firstWhere((q) => q.id == 'hours');
-    expect(q.outcome('1')['observed'], ['unit-factor']);
-    expect(q.outcome('2')['observed'], ['unit-count-omitted']);
+    expect(q.outcome('1')['observed'], ['conversion.factor']);
+    expect(q.outcome('2')['observed'], ['conversion.quantity']);
     final s = GameSession(d, {}, (_) async {});
     expect(
       s

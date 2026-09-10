@@ -1,1 +1,106 @@
-{"id":"mx-tempora-ind-act","name":"Mixta: tempora indicātīvī","subtitle":"āctīvum","access":{"price":60,"requires":{"all":[{"unlocked":"amphitheatrum/section-1/ind-futex-act"},{"unlocked":"amphitheatrum/section-8/tm-tempora-ind-act"}]}},"skills":["mx.tempus.ind"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_leo","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Leō Āfricānus","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,3,4,5]},"selectionGroups":{"tempus":{"weight":1.0},"persona":{"weight":1.0,"rules":[{"when":{"skill":{"id":"mx.tempus.ind","minLevel":2}},"weight":0.5}]},"numerus":{"weight":1.0,"rules":[{"when":{"skill":{"id":"mx.tempus.ind","minLevel":2}},"weight":0.5}]},"analysis":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"mx-tempora-ind-act"}
+{
+  "id": "mx-tempora-ind-act",
+  "name": "Mixta: tempora indicātīvī",
+  "subtitle": "āctīvum",
+  "access": {
+    "price": 60,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-1/ind-futex-act"
+        },
+        {
+          "unlocked": "amphitheatrum/section-8/tm-tempora-ind-act"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "mx.tempus.ind"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_leo",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Leō Āfricānus",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      3,
+      4,
+      5
+    ]
+  },
+  "selectionGroups": {
+    "tempus": {
+      "weight": 1.0
+    },
+    "persona": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "mx.tempus.ind",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "numerus": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "mx.tempus.ind",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "analysis": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "mx-tempora-ind-act"
+}

@@ -1,876 +1,5 @@
 [
   {
-    "id": "capra",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "capra",
-    "assessment": "study.lexicon.theatrum.actiones:capra",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "capra"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "chèvre"
-      },
-      {
-        "id": "2",
-        "text": "cheval"
-      },
-      {
-        "id": "1",
-        "text": "voir"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "capra"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: capra — chèvre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: capra — chèvre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: capra — chèvre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "video",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "video",
-    "assessment": "study.lexicon.theatrum.actiones:video",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "vidēre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "cheval"
-      },
-      {
-        "id": "2",
-        "text": "voir"
-      },
-      {
-        "id": "1",
-        "text": "conduire"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "video"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: vidēre — voir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "equus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "equus",
-    "assessment": "study.lexicon.theatrum.actiones:equus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "equus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "conduire"
-      },
-      {
-        "id": "0",
-        "text": "agriculteur"
-      },
-      {
-        "id": "1",
-        "text": "cheval"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "equus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: equus — cheval.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: equus — cheval.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: equus — cheval.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "duco",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "duco",
-    "assessment": "study.lexicon.theatrum.actiones:duco",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dūcere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "agriculteur"
-      },
-      {
-        "id": "0",
-        "text": "conduire"
-      },
-      {
-        "id": "2",
-        "text": "louer, faire l’éloge de"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "duco"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dūcere — conduire.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dūcere — conduire.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dūcere — conduire.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "agricola",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "agricola",
-    "assessment": "study.lexicon.theatrum.actiones:agricola",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "agricola"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "louer, faire l’éloge de"
-      },
-      {
-        "id": "1",
-        "text": "maître de maison"
-      },
-      {
-        "id": "2",
-        "text": "agriculteur"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "agricola"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: agricola — agriculteur.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "laudo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "laudo",
-    "assessment": "study.lexicon.theatrum.actiones:laudo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "laudāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "maître de maison"
-      },
-      {
-        "id": "1",
-        "text": "louer, faire l’éloge de"
-      },
-      {
-        "id": "0",
-        "text": "attendre"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "laudo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: laudāre — louer, faire l’éloge de.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "dominus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "dominus",
-    "assessment": "study.lexicon.theatrum.actiones:dominus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dominus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "jeune fille"
-      },
-      {
-        "id": "0",
-        "text": "maître de maison"
-      },
-      {
-        "id": "1",
-        "text": "attendre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "dominus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dominus — maître de maison.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "exspecto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "exspecto",
-    "assessment": "study.lexicon.theatrum.actiones:exspecto",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "exspectāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "attendre"
-      },
-      {
-        "id": "0",
-        "text": "jeune fille"
-      },
-      {
-        "id": "1",
-        "text": "enseigner"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "exspecto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: exspectāre — attendre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "puella",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "puella",
-    "assessment": "study.lexicon.theatrum.actiones:puella",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "puella"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "enseigner"
-      },
-      {
-        "id": "0",
-        "text": "esclave"
-      },
-      {
-        "id": "1",
-        "text": "jeune fille"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "puella"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: puella — jeune fille.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "doceo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "doceo",
-    "assessment": "study.lexicon.theatrum.actiones:doceo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "docēre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "esclave"
-      },
-      {
-        "id": "0",
-        "text": "enseigner"
-      },
-      {
-        "id": "2",
-        "text": "appeler"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "doceo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: docēre — enseigner.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "servus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "servus",
-    "assessment": "study.lexicon.theatrum.actiones:servus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "servus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "appeler"
-      },
-      {
-        "id": "1",
-        "text": "ne… pas"
-      },
-      {
-        "id": "2",
-        "text": "esclave"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "servus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: servus — esclave.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "voco",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "voco",
-    "assessment": "study.lexicon.theatrum.actiones:voco",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "vocāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "par (agent), de (provenance)"
-      },
-      {
-        "id": "1",
-        "text": "appeler"
-      },
-      {
-        "id": "2",
-        "text": "ne… pas"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "voco"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: vocāre — appeler.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "non",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "non",
-    "assessment": "study.lexicon.theatrum.actiones:non",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "nōn"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "femme"
-      },
-      {
-        "id": "1",
-        "text": "par (agent), de (provenance)"
-      },
-      {
-        "id": "0",
-        "text": "ne… pas"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "non"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: nōn — ne… pas.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "ab",
     "interaction": "choice",
     "dimension": "lemma",
@@ -901,7 +30,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.ab"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
@@ -916,7 +45,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ā, ab — par (agent), de (provenance).",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ab"
         ],
         "hypotheses": [],
         "practice": []
@@ -924,214 +53,13 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ā, ab — par (agent), de (provenance).",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ab"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
         "feedback": "Rēctē: ā, ab — par (agent), de (provenance).",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "femina",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "femina",
-    "assessment": "study.lexicon.theatrum.actiones:femina",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "fēmina"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "femme"
-      },
-      {
-        "id": "2",
-        "text": "saluer"
-      },
-      {
-        "id": "0",
-        "text": "ami"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "femina"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: fēmina — femme.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "saluto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "saluto",
-    "assessment": "study.lexicon.theatrum.actiones:saluto",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "salūtāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ami"
-      },
-      {
-        "id": "2",
-        "text": "champ"
-      },
-      {
-        "id": "0",
-        "text": "saluer"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "saluto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: salūtāre — saluer.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "amicus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "amicus",
-    "assessment": "study.lexicon.theatrum.actiones:amicus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "amīcus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "arroser"
-      },
-      {
-        "id": "0",
-        "text": "champ"
-      },
-      {
-        "id": "2",
-        "text": "ami"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "amicus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus — ami.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus — ami.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: amīcus — ami.",
         "observed": [],
         "hypotheses": [],
         "practice": []
@@ -1169,7 +97,7 @@
       "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.ager"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
@@ -1184,7 +112,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ager"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +126,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ager"
         ],
         "hypotheses": [],
         "practice": []
@@ -1206,109 +134,109 @@
     }
   },
   {
-    "id": "rigo",
+    "id": "agricola",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "rigo",
-    "assessment": "study.lexicon.theatrum.actiones:rigo",
+    "item": "agricola",
+    "assessment": "study.lexicon.theatrum.actiones:agricola",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "rigāre"
+        "text": "agricola"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "louer, faire l’éloge de"
+      },
+      {
+        "id": "1",
+        "text": "maître de maison"
+      },
+      {
+        "id": "2",
+        "text": "agriculteur"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.agricola"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "agricola"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
+        "observed": [
+          "lexicon.lectio.agricola"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
+        "observed": [
+          "lexicon.lectio.agricola"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: agricola — agriculteur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "amicus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "amicus",
+    "assessment": "study.lexicon.theatrum.actiones:amicus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "amīcus"
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "maîtresse de maison"
-      },
-      {
-        "id": "0",
         "text": "arroser"
       },
       {
-        "id": "2",
-        "text": "branche"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "rigo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: rigāre — arroser.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: rigāre — arroser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: rigāre — arroser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "domina",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "domina",
-    "assessment": "study.lexicon.theatrum.actiones:domina",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "domina"
-      }
-    ],
-    "choices": [
-      {
         "id": "0",
-        "text": "branche"
+        "text": "champ"
       },
       {
         "id": "2",
-        "text": "maîtresse de maison"
-      },
-      {
-        "id": "1",
-        "text": "couteau"
+        "text": "ami"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.amicus"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
     "vocabulary": [
-      "domina"
+      "amicus"
     ],
     "editorial": {
       "language": "la",
@@ -1316,761 +244,24 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: domina — maîtresse de maison.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus — ami.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.amicus"
         ],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: domina — maîtresse de maison.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus — ami.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.amicus"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: domina — maîtresse de maison.",
+        "feedback": "Rēctē: amīcus — ami.",
         "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "ramus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "ramus",
-    "assessment": "study.lexicon.theatrum.actiones:ramus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "rāmus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "couteau"
-      },
-      {
-        "id": "0",
-        "text": "couper"
-      },
-      {
-        "id": "1",
-        "text": "branche"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "ramus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: rāmus — branche.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: rāmus — branche.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: rāmus — branche.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "culter",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "culter",
-    "assessment": "study.lexicon.theatrum.actiones:culter",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "culter"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "clou"
-      },
-      {
-        "id": "0",
-        "text": "couteau"
-      },
-      {
-        "id": "1",
-        "text": "couper"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "culter"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: culter — couteau.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: culter — couteau.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: culter — couteau.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "seco",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "seco",
-    "assessment": "study.lexicon.theatrum.actiones:seco",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "secāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "clou"
-      },
-      {
-        "id": "1",
-        "text": "marteau"
-      },
-      {
-        "id": "2",
-        "text": "couper"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "seco"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: secāre — couper.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: secāre — couper.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: secāre — couper.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "clavus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "clavus",
-    "assessment": "study.lexicon.theatrum.actiones:clavus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "clāvus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "clou"
-      },
-      {
-        "id": "2",
-        "text": "marteau"
-      },
-      {
-        "id": "0",
-        "text": "frapper"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "clavus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvus — clou.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: clāvus — clou.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvus — clou.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "malleus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "malleus",
-    "assessment": "study.lexicon.theatrum.actiones:malleus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "malleus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "marteau"
-      },
-      {
-        "id": "2",
-        "text": "corde"
-      },
-      {
-        "id": "1",
-        "text": "frapper"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "malleus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: malleus — marteau.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: malleus — marteau.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: malleus — marteau.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "tundo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "tundo",
-    "assessment": "study.lexicon.theatrum.actiones:tundo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "tundere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "frapper"
-      },
-      {
-        "id": "0",
-        "text": "corde"
-      },
-      {
-        "id": "1",
-        "text": "ciseaux"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "tundo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: tundere — frapper.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: tundere — frapper.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: tundere — frapper.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "funis",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "funis",
-    "assessment": "study.lexicon.theatrum.actiones:funis",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "fūnis"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "ciseaux"
-      },
-      {
-        "id": "1",
-        "text": "corde"
-      },
-      {
-        "id": "0",
-        "text": "porte"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "funis"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fūnis — corde.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: fūnis — corde.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fūnis — corde.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "forfex",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "forfex",
-    "assessment": "study.lexicon.theatrum.actiones:forfex",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "forfex"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "ciseaux"
-      },
-      {
-        "id": "2",
-        "text": "garçon"
-      },
-      {
-        "id": "1",
-        "text": "porte"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "forfex"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: forfex — ciseaux.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: forfex — ciseaux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: forfex — ciseaux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "ostium",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "ostium",
-    "assessment": "study.lexicon.theatrum.actiones:ostium",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "ostium"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "porte"
-      },
-      {
-        "id": "0",
-        "text": "garçon"
-      },
-      {
-        "id": "1",
-        "text": "clé"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "ostium"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostium — porte.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostium — porte.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: ostium — porte.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "puer",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "puer",
-    "assessment": "study.lexicon.theatrum.actiones:puer",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "puer"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "clé"
-      },
-      {
-        "id": "0",
-        "text": "ouvrir"
-      },
-      {
-        "id": "1",
-        "text": "garçon"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "puer"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: puer — garçon.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "clavis",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "clavis",
-    "assessment": "study.lexicon.theatrum.actiones:clavis",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "clāvis"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ouvrir"
-      },
-      {
-        "id": "0",
-        "text": "clé"
-      },
-      {
-        "id": "2",
-        "text": "terre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.actiones"
-    ],
-    "requires": [],
-    "help": "study.lexicon.actiones",
-    "vocabulary": [
-      "clavis"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: clāvis — clé.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
-        "observed": [
-          "study.error"
-        ],
         "hypotheses": [],
         "practice": []
       }
@@ -2107,7 +298,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.aperio"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
@@ -2122,7 +313,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aperio"
         ],
         "hypotheses": [],
         "practice": []
@@ -2130,7 +321,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aperio"
         ],
         "hypotheses": [],
         "practice": []
@@ -2144,42 +335,42 @@
     }
   },
   {
-    "id": "terra",
+    "id": "aqua",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "terra",
-    "assessment": "study.lexicon.theatrum.actiones:terra",
+    "item": "aqua",
+    "assessment": "study.lexicon.theatrum.actiones:aqua",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "terra"
+        "text": "aqua"
       }
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "chèvre"
+      },
+      {
         "id": "0",
-        "text": "retourner"
+        "text": "eau"
       },
       {
         "id": "2",
-        "text": "charrue"
-      },
-      {
-        "id": "1",
-        "text": "terre"
+        "text": "voir"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.aqua"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
     "vocabulary": [
-      "terra"
+      "aqua"
     ],
     "editorial": {
       "language": "la",
@@ -2187,23 +378,23 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: terra — terre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: terra — terre.",
+        "feedback": "Rēctē: aqua — eau.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: terra — terre.",
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aqua"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
+        "observed": [
+          "lexicon.lectio.aqua"
         ],
         "hypotheses": [],
         "practice": []
@@ -2241,7 +432,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.aratrum"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
@@ -2262,7 +453,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: arātrum — charrue.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aratrum"
         ],
         "hypotheses": [],
         "practice": []
@@ -2270,7 +461,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: arātrum — charrue.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aratrum"
         ],
         "hypotheses": [],
         "practice": []
@@ -2278,42 +469,42 @@
     }
   },
   {
-    "id": "verto",
+    "id": "capra",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "verto",
-    "assessment": "study.lexicon.theatrum.actiones:verto",
+    "item": "capra",
+    "assessment": "study.lexicon.theatrum.actiones:capra",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "vertere"
+        "text": "capra"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "jardin"
+        "text": "chèvre"
       },
       {
         "id": "2",
-        "text": "retourner"
+        "text": "cheval"
       },
       {
         "id": "1",
-        "text": "eau"
+        "text": "voir"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.capra"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
     "vocabulary": [
-      "verto"
+      "capra"
     ],
     "editorial": {
       "language": "la",
@@ -2321,24 +512,828 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vertere — retourner.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: capra — chèvre.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: vertere — retourner.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: capra — chèvre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.capra"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: vertere — retourner.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: capra — chèvre.",
+        "observed": [
+          "lexicon.lectio.capra"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "clavis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "clavis",
+    "assessment": "study.lexicon.theatrum.actiones:clavis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "clāvis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "ouvrir"
+      },
+      {
+        "id": "0",
+        "text": "clé"
+      },
+      {
+        "id": "2",
+        "text": "terre"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.clavis"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "clavis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: clāvis — clé.",
         "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
+        "observed": [
+          "lexicon.lectio.clavis"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
+        "observed": [
+          "lexicon.lectio.clavis"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "clavus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "clavus",
+    "assessment": "study.lexicon.theatrum.actiones:clavus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "clāvus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "clou"
+      },
+      {
+        "id": "2",
+        "text": "marteau"
+      },
+      {
+        "id": "0",
+        "text": "frapper"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.clavus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "clavus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvus — clou.",
+        "observed": [
+          "lexicon.lectio.clavus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: clāvus — clou.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvus — clou.",
+        "observed": [
+          "lexicon.lectio.clavus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "culter",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "culter",
+    "assessment": "study.lexicon.theatrum.actiones:culter",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "culter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "clou"
+      },
+      {
+        "id": "0",
+        "text": "couteau"
+      },
+      {
+        "id": "1",
+        "text": "couper"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.culter"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "culter"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: culter — couteau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: culter — couteau.",
+        "observed": [
+          "lexicon.lectio.culter"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: culter — couteau.",
+        "observed": [
+          "lexicon.lectio.culter"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "doceo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "doceo",
+    "assessment": "study.lexicon.theatrum.actiones:doceo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "docēre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "esclave"
+      },
+      {
+        "id": "0",
+        "text": "enseigner"
+      },
+      {
+        "id": "2",
+        "text": "appeler"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.doceo"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "doceo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: docēre — enseigner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
+        "observed": [
+          "lexicon.lectio.doceo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
+        "observed": [
+          "lexicon.lectio.doceo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "domina",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "domina",
+    "assessment": "study.lexicon.theatrum.actiones:domina",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "domina"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "branche"
+      },
+      {
+        "id": "2",
+        "text": "maîtresse de maison"
+      },
+      {
+        "id": "1",
+        "text": "couteau"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.domina"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "domina"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: domina — maîtresse de maison.",
+        "observed": [
+          "lexicon.lectio.domina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: domina — maîtresse de maison.",
+        "observed": [
+          "lexicon.lectio.domina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: domina — maîtresse de maison.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dominus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "dominus",
+    "assessment": "study.lexicon.theatrum.actiones:dominus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dominus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "jeune fille"
+      },
+      {
+        "id": "0",
+        "text": "maître de maison"
+      },
+      {
+        "id": "1",
+        "text": "attendre"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.dominus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "dominus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dominus — maître de maison.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "observed": [
+          "lexicon.lectio.dominus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "observed": [
+          "lexicon.lectio.dominus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "duco",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "duco",
+    "assessment": "study.lexicon.theatrum.actiones:duco",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dūcere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "agriculteur"
+      },
+      {
+        "id": "0",
+        "text": "conduire"
+      },
+      {
+        "id": "2",
+        "text": "louer, faire l’éloge de"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.duco"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "duco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dūcere — conduire.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dūcere — conduire.",
+        "observed": [
+          "lexicon.lectio.duco"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dūcere — conduire.",
+        "observed": [
+          "lexicon.lectio.duco"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "equus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "equus",
+    "assessment": "study.lexicon.theatrum.actiones:equus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "equus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "conduire"
+      },
+      {
+        "id": "0",
+        "text": "agriculteur"
+      },
+      {
+        "id": "1",
+        "text": "cheval"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.equus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "equus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: equus — cheval.",
+        "observed": [
+          "lexicon.lectio.equus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: equus — cheval.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: equus — cheval.",
+        "observed": [
+          "lexicon.lectio.equus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "exspecto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "exspecto",
+    "assessment": "study.lexicon.theatrum.actiones:exspecto",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "exspectāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "attendre"
+      },
+      {
+        "id": "0",
+        "text": "jeune fille"
+      },
+      {
+        "id": "1",
+        "text": "enseigner"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.exspecto"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "exspecto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
+        "observed": [
+          "lexicon.lectio.exspecto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
+        "observed": [
+          "lexicon.lectio.exspecto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: exspectāre — attendre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "femina",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "femina",
+    "assessment": "study.lexicon.theatrum.actiones:femina",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fēmina"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "femme"
+      },
+      {
+        "id": "2",
+        "text": "saluer"
+      },
+      {
+        "id": "0",
+        "text": "ami"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.femina"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "femina"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "lexicon.lectio.femina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: fēmina — femme.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "lexicon.lectio.femina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "forfex",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "forfex",
+    "assessment": "study.lexicon.theatrum.actiones:forfex",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "forfex"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ciseaux"
+      },
+      {
+        "id": "2",
+        "text": "garçon"
+      },
+      {
+        "id": "1",
+        "text": "porte"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.forfex"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "forfex"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: forfex — ciseaux.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: forfex — ciseaux.",
+        "observed": [
+          "lexicon.lectio.forfex"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: forfex — ciseaux.",
+        "observed": [
+          "lexicon.lectio.forfex"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "funis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "funis",
+    "assessment": "study.lexicon.theatrum.actiones:funis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fūnis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "ciseaux"
+      },
+      {
+        "id": "1",
+        "text": "corde"
+      },
+      {
+        "id": "0",
+        "text": "porte"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.funis"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "funis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fūnis — corde.",
+        "observed": [
+          "lexicon.lectio.funis"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: fūnis — corde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fūnis — corde.",
+        "observed": [
+          "lexicon.lectio.funis"
+        ],
         "hypotheses": [],
         "practice": []
       }
@@ -2375,7 +1370,7 @@
       "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.hortus"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
@@ -2390,7 +1385,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2404,7 +1399,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2412,42 +1407,42 @@
     }
   },
   {
-    "id": "aqua",
+    "id": "laudo",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "aqua",
-    "assessment": "study.lexicon.theatrum.actiones:aqua",
+    "item": "laudo",
+    "assessment": "study.lexicon.theatrum.actiones:laudo",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "aqua"
+        "text": "laudāre"
       }
     ],
     "choices": [
       {
+        "id": "2",
+        "text": "maître de maison"
+      },
+      {
         "id": "1",
-        "text": "chèvre"
+        "text": "louer, faire l’éloge de"
       },
       {
         "id": "0",
-        "text": "eau"
-      },
-      {
-        "id": "2",
-        "text": "voir"
+        "text": "attendre"
       }
     ],
     "accepted": [
-      "0"
+      "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.actiones"
+      "lexicon.lectio.laudo"
     ],
     "requires": [],
     "help": "study.lexicon.actiones",
     "vocabulary": [
-      "aqua"
+      "laudo"
     ],
     "editorial": {
       "language": "la",
@@ -2455,23 +1450,961 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: aqua — eau.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
+        "observed": [
+          "lexicon.lectio.laudo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: laudāre — louer, faire l’éloge de.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
+        "observed": [
+          "lexicon.lectio.laudo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "malleus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "malleus",
+    "assessment": "study.lexicon.theatrum.actiones:malleus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "malleus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "marteau"
+      },
+      {
+        "id": "2",
+        "text": "corde"
+      },
+      {
+        "id": "1",
+        "text": "frapper"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.malleus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "malleus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: malleus — marteau.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: malleus — marteau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.malleus"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: malleus — marteau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.malleus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ostium",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ostium",
+    "assessment": "study.lexicon.theatrum.actiones:ostium",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ostium"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "porte"
+      },
+      {
+        "id": "0",
+        "text": "garçon"
+      },
+      {
+        "id": "1",
+        "text": "clé"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.ostium"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "ostium"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostium — porte.",
+        "observed": [
+          "lexicon.lectio.ostium"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostium — porte.",
+        "observed": [
+          "lexicon.lectio.ostium"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: ostium — porte.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puella",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puella",
+    "assessment": "study.lexicon.theatrum.actiones:puella",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puella"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "enseigner"
+      },
+      {
+        "id": "0",
+        "text": "esclave"
+      },
+      {
+        "id": "1",
+        "text": "jeune fille"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.puella"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "lexicon.lectio.puella"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: puella — jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "lexicon.lectio.puella"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puer",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puer",
+    "assessment": "study.lexicon.theatrum.actiones:puer",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "clé"
+      },
+      {
+        "id": "0",
+        "text": "ouvrir"
+      },
+      {
+        "id": "1",
+        "text": "garçon"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.puer"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "lexicon.lectio.puer"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: puer — garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "lexicon.lectio.puer"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ramus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ramus",
+    "assessment": "study.lexicon.theatrum.actiones:ramus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "rāmus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "couteau"
+      },
+      {
+        "id": "0",
+        "text": "couper"
+      },
+      {
+        "id": "1",
+        "text": "branche"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.ramus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "ramus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: rāmus — branche.",
+        "observed": [
+          "lexicon.lectio.ramus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: rāmus — branche.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: rāmus — branche.",
+        "observed": [
+          "lexicon.lectio.ramus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "rigo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "rigo",
+    "assessment": "study.lexicon.theatrum.actiones:rigo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "rigāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "maîtresse de maison"
+      },
+      {
+        "id": "0",
+        "text": "arroser"
+      },
+      {
+        "id": "2",
+        "text": "branche"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.rigo"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "rigo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: rigāre — arroser.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: rigāre — arroser.",
+        "observed": [
+          "lexicon.lectio.rigo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: rigāre — arroser.",
+        "observed": [
+          "lexicon.lectio.rigo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "saluto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "saluto",
+    "assessment": "study.lexicon.theatrum.actiones:saluto",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "salūtāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "ami"
+      },
+      {
+        "id": "2",
+        "text": "champ"
+      },
+      {
+        "id": "0",
+        "text": "saluer"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.saluto"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: salūtāre — saluer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
+        "observed": [
+          "lexicon.lectio.saluto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
+        "observed": [
+          "lexicon.lectio.saluto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "seco",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "seco",
+    "assessment": "study.lexicon.theatrum.actiones:seco",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "secāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "clou"
+      },
+      {
+        "id": "1",
+        "text": "marteau"
+      },
+      {
+        "id": "2",
+        "text": "couper"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.seco"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "seco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: secāre — couper.",
+        "observed": [
+          "lexicon.lectio.seco"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: secāre — couper.",
+        "observed": [
+          "lexicon.lectio.seco"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: secāre — couper.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "servus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "servus",
+    "assessment": "study.lexicon.theatrum.actiones:servus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "servus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "appeler"
+      },
+      {
+        "id": "1",
+        "text": "ne… pas"
+      },
+      {
+        "id": "2",
+        "text": "esclave"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.servus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "lexicon.lectio.servus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "lexicon.lectio.servus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: servus — esclave.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "terra",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "terra",
+    "assessment": "study.lexicon.theatrum.actiones:terra",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "terra"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "retourner"
+      },
+      {
+        "id": "2",
+        "text": "charrue"
+      },
+      {
+        "id": "1",
+        "text": "terre"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.terra"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "terra"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: terra — terre.",
+        "observed": [
+          "lexicon.lectio.terra"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: terra — terre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: terra — terre.",
+        "observed": [
+          "lexicon.lectio.terra"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "tundo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "tundo",
+    "assessment": "study.lexicon.theatrum.actiones:tundo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "tundere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "frapper"
+      },
+      {
+        "id": "0",
+        "text": "corde"
+      },
+      {
+        "id": "1",
+        "text": "ciseaux"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.tundo"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "tundo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: tundere — frapper.",
+        "observed": [
+          "lexicon.lectio.tundo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: tundere — frapper.",
+        "observed": [
+          "lexicon.lectio.tundo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: tundere — frapper.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "verto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "verto",
+    "assessment": "study.lexicon.theatrum.actiones:verto",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "vertere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "jardin"
+      },
+      {
+        "id": "2",
+        "text": "retourner"
+      },
+      {
+        "id": "1",
+        "text": "eau"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.verto"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "verto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vertere — retourner.",
+        "observed": [
+          "lexicon.lectio.verto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vertere — retourner.",
+        "observed": [
+          "lexicon.lectio.verto"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: vertere — retourner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "video",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "video",
+    "assessment": "study.lexicon.theatrum.actiones:video",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "vidēre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "cheval"
+      },
+      {
+        "id": "2",
+        "text": "voir"
+      },
+      {
+        "id": "1",
+        "text": "conduire"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.video"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "lexicon.lectio.video"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "lexicon.lectio.video"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: vidēre — voir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "voco",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "voco",
+    "assessment": "study.lexicon.theatrum.actiones:voco",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "vocāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "par (agent), de (provenance)"
+      },
+      {
+        "id": "1",
+        "text": "appeler"
+      },
+      {
+        "id": "2",
+        "text": "ne… pas"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.voco"
+    ],
+    "requires": [],
+    "help": "study.lexicon.actiones",
+    "vocabulary": [
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
+        "observed": [
+          "lexicon.lectio.voco"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: vocāre — appeler.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
+        "observed": [
+          "lexicon.lectio.voco"
         ],
         "hypotheses": [],
         "practice": []

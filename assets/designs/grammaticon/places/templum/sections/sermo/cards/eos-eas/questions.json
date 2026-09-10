@@ -1,39 +1,60 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les garçons sont présents. Le maître les appelle."
+      },
+      {
+        "type": "text",
+        "text": "\nPuerī adsunt. Magister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vocat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puerī adsunt. Magister eum vocat."
+        "text": "eum"
       },
       {
         "id": "1",
-        "text": "Puerī adsunt. Magister eās vocat."
+        "text": "eās"
       },
       {
         "id": "0",
-        "text": "Puerī adsunt. Magister eōs vocat."
+        "text": "eōs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.eos-eas"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eos-eas:q1",
     "assessment": "study.theme.eos-eas:q1",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -44,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "eos-eas",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +78,7 @@
       "1": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +86,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +95,60 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les jeunes filles sont présentes. La femme les entend."
+      },
+      {
+        "type": "text",
+        "text": "\nPuellae adsunt. Fēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " audit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puellae adsunt. Fēmina eōs audit."
+        "text": "eōs"
       },
       {
         "id": "1",
-        "text": "Puellae adsunt. Fēmina eam audit."
+        "text": "eam"
       },
       {
         "id": "2",
-        "text": "Puellae adsunt. Fēmina eās audit."
+        "text": "eās"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.eos-eas"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eos-eas:q2",
     "assessment": "study.theme.eos-eas:q2",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "adsum",
       "audio",
@@ -116,13 +159,14 @@
     "editorial": {
       "language": "la",
       "topic": "eos-eas",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +174,7 @@
       "1": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +189,62 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les livres sont dans l’école. Le garçon les porte."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrī in scholā sunt. Puer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Librī in scholā sunt. Puer eōs portat."
+        "text": "eōs"
       },
       {
         "id": "0",
-        "text": "Librī in scholā sunt. Puer eum portat."
+        "text": "eum"
       },
       {
         "id": "2",
-        "text": "Librī in scholā sunt. Puer eās portat."
+        "text": "eās"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.eos-eas"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eos-eas:q3",
     "assessment": "study.theme.eos-eas:q3",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "is",
@@ -190,13 +257,14 @@
     "editorial": {
       "language": "la",
       "topic": "eos-eas",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +278,7 @@
       "2": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -219,39 +287,62 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les roses sont dans le jardin. La jeune fille les voit."
+      },
+      {
+        "type": "text",
+        "text": "\nRosae in hortō sunt. Puella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Rosae in hortō sunt. Puella eōs videt."
+        "text": "eōs"
       },
       {
         "id": "0",
-        "text": "Rosae in hortō sunt. Puella eās videt."
+        "text": "eās"
       },
       {
         "id": "2",
-        "text": "Rosae in hortō sunt. Puella eam videt."
+        "text": "eam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.eos-eas"
+      "compositio.pronoun-gender",
+      "compositio.pronoun-number"
     ],
     "item": "eos-eas:q4",
     "assessment": "study.theme.eos-eas:q4",
     "help": "study.eos-eas",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -264,7 +355,8 @@
     "editorial": {
       "language": "la",
       "topic": "eos-eas",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -276,7 +368,7 @@
       "1": {
         "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
         "observed": [
-          "study.confusion.pronoun-gender"
+          "compositio.pronoun-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +376,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "compositio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []

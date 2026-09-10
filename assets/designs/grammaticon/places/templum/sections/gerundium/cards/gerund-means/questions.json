@@ -1,39 +1,58 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon apprend en lisant."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " discit."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer legendī discit."
+        "text": "legendī"
       },
       {
         "id": "0",
-        "text": "Puer legendō discit."
+        "text": "legendō"
       },
       {
         "id": "2",
-        "text": "Puer ad legendum discit."
+        "text": "ad legendum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q1",
     "assessment": "study.theme.gerund-means:q1",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.disco",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "ad",
       "disco",
@@ -43,7 +62,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +75,7 @@
       "1": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +83,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +92,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille réjouit ses amis en chantant."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " amīcōs dēlectat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puella cantandō amīcōs dēlectat."
+        "text": "cantandō"
       },
       {
         "id": "0",
-        "text": "Puella cantandī amīcōs dēlectat."
+        "text": "cantandī"
       },
       {
         "id": "1",
-        "text": "Puella ad cantandum amīcōs dēlectat."
+        "text": "ad cantandum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q2",
     "assessment": "study.theme.gerund-means:q2",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.delecto",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "ad",
       "amicus",
@@ -115,13 +155,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -129,7 +170,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -144,39 +185,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand se procure de l’argent en vendant."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pecūniam parat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Mercātor vēndendī pecūniam parat."
+        "text": "vēndendī"
       },
       {
         "id": "0",
-        "text": "Mercātor ad vēndendum pecūniam parat."
+        "text": "ad vēndendum"
       },
       {
         "id": "1",
-        "text": "Mercātor vēndendō pecūniam parat."
+        "text": "vēndendō"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q3",
     "assessment": "study.theme.gerund-means:q3",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.paro",
+      "lexicon.compositio.pecunia",
+      "lexicon.compositio.vendo"
+    ],
     "vocabulary": [
       "ad",
       "mercator",
@@ -187,13 +248,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -207,7 +269,7 @@
       "2": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -216,39 +278,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme exerce son corps en marchant."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " corpus exercet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina ambulandō corpus exercet."
+        "text": "ambulandō"
       },
       {
         "id": "1",
-        "text": "Fēmina ambulandī corpus exercet."
+        "text": "ambulandī"
       },
       {
         "id": "2",
-        "text": "Fēmina ad ambulandum corpus exercet."
+        "text": "ad ambulandum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q4",
     "assessment": "study.theme.gerund-means:q4",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.corpus",
+      "lexicon.compositio.exerceo",
+      "lexicon.compositio.femina"
+    ],
     "vocabulary": [
       "ad",
       "ambulo",
@@ -259,7 +341,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -271,7 +354,7 @@
       "1": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -279,7 +362,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -288,39 +371,58 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître enseigne en écrivant."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " docet."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister ad scrībendum docet."
+        "text": "ad scrībendum"
       },
       {
         "id": "0",
-        "text": "Magister scrībendī docet."
+        "text": "scrībendī"
       },
       {
         "id": "2",
-        "text": "Magister scrībendō docet."
+        "text": "scrībendō"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q5",
     "assessment": "study.theme.gerund-means:q5",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.doceo",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.scribo"
+    ],
     "vocabulary": [
       "ad",
       "doceo",
@@ -330,13 +432,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -344,7 +447,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -359,39 +462,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le voyageur trouve le chemin en cherchant."
+      },
+      {
+        "type": "text",
+        "text": "\nViātor "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " viam invenit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Viātor ad quaerendum viam invenit."
+        "text": "ad quaerendum"
       },
       {
         "id": "1",
-        "text": "Viātor quaerendō viam invenit."
+        "text": "quaerendō"
       },
       {
         "id": "2",
-        "text": "Viātor quaerendī viam invenit."
+        "text": "quaerendī"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-means"
+      "compositio.gerund-means-case",
+      "compositio.gerund-purpose-means"
     ],
     "item": "gerund-means:q6",
     "assessment": "study.theme.gerund-means:q6",
     "help": "study.gerund-means",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.invenio",
+      "lexicon.compositio.quaero",
+      "lexicon.compositio.via",
+      "lexicon.compositio.viator"
+    ],
     "vocabulary": [
       "ad",
       "invenio",
@@ -402,13 +525,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-means",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
         "observed": [
-          "study.confusion.gerund-means-purpose"
+          "compositio.gerund-purpose-means"
         ],
         "hypotheses": [],
         "practice": []
@@ -422,7 +546,7 @@
       "2": {
         "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
         "observed": [
-          "study.confusion.gerund-means-genitive"
+          "compositio.gerund-means-case"
         ],
         "hypotheses": [],
         "practice": []

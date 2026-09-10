@@ -28,12 +28,21 @@
       "0"
     ],
     "skills": [
-      "study.version.eum-eam"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eum-eam:q1",
     "assessment": "study.version.eum-eam:q1",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.adsum",
+      "lexicon.lectio.is",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -56,7 +65,7 @@
       "1": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +73,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +109,21 @@
       "2"
     ],
     "skills": [
-      "study.version.eum-eam"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eum-eam:q2",
     "assessment": "study.version.eum-eam:q2",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.adsum",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.is",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -122,7 +140,7 @@
       "0": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +148,7 @@
       "1": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +190,23 @@
       "1"
     ],
     "skills": [
-      "study.version.eum-eam"
+      "lectio.pronoun-number",
+      "lectio.pronoun-reference"
     ],
     "item": "eum-eam:q3",
     "assessment": "study.version.eum-eam:q3",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.lectio.in",
+      "lexicon.lectio.is",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.mensa",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "is",
@@ -196,7 +225,7 @@
       "0": {
         "feedback": "Prōnōmen ad rem anteā memorātam refertur; antecedēns nōn est aliud nōmen propinquum.",
         "observed": [
-          "study.confusion.pronoun-antecedent"
+          "lectio.pronoun-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +239,7 @@
       "2": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -246,12 +275,22 @@
       "0"
     ],
     "skills": [
-      "study.version.eum-eam"
+      "lectio.agent-patient",
+      "lectio.pronoun-number"
     ],
     "item": "eum-eam:q4",
     "assessment": "study.version.eum-eam:q4",
     "help": "study.eum-eam",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.is",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "insula",
       "is",
@@ -275,7 +314,7 @@
       "1": {
         "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
         "observed": [
-          "study.confusion.pronoun-number"
+          "lectio.pronoun-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -283,7 +322,147 @@
       "2": {
         "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
         "observed": [
-          "study.confusion.pronoun-role"
+          "lectio.agent-patient"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-pronoun-reference-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-pronoun-reference-1",
+    "assessment": "lectio:transfer-pronoun-reference-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella mercātōrem videt. Eum salūtat. Quem salūtat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marchand."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.pronoun-reference"
+    ],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.lectio.is",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.saluto",
+      "lexicon.lectio.video"
+    ],
+    "vocabulary": [
+      "is",
+      "mercator",
+      "puella",
+      "quis",
+      "saluto",
+      "video"
+    ],
+    "help": "study.eum-eam",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: antecēdēns prōnōminis agnōscere.",
+        "observed": [
+          "lectio.pronoun-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-pronoun-reference-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-pronoun-reference-2",
+    "assessment": "lectio:transfer-pronoun-reference-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer rosam mātrī dat. Ea puerum laudat. Quis laudat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La mère."
+      },
+      {
+        "id": "1",
+        "text": "La rose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.pronoun-reference"
+    ],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.lectio.do",
+      "lexicon.lectio.is",
+      "lexicon.lectio.laudo",
+      "lexicon.lectio.mater",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.rosa"
+    ],
+    "vocabulary": [
+      "do",
+      "is",
+      "laudo",
+      "mater",
+      "puer",
+      "quis",
+      "rosa"
+    ],
+    "help": "study.eum-eam",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: antecēdēns prōnōminis agnōscere.",
+        "observed": [
+          "lectio.pronoun-reference"
         ],
         "hypotheses": [],
         "practice": []

@@ -1,39 +1,61 @@
 [
   {
     "id": "meus-tuus-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Mon livre est dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " in scholā est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Liber tuus in scholā est."
+        "text": "tuus"
       },
       {
         "id": "2",
-        "text": "Liber mea in scholā est."
+        "text": "mea"
       },
       {
         "id": "0",
-        "text": "Liber meus in scholā est."
+        "text": "meus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.adjective-gender",
+      "compositio.possessive-person"
     ],
     "item": "meus-tuus:q1",
     "assessment": "study.theme.personae-reference:meus-tuus:q1",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.persona",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -45,7 +67,8 @@
     "editorial": {
       "language": "la",
       "topic": "meus-tuus",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -57,7 +80,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.meus-tuus"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -65,7 +88,7 @@
       "2": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -74,39 +97,61 @@
   },
   {
     "id": "meus-tuus-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Ta maison de campagne est en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nVīlla "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " in Italiā est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Vīlla tuus in Italiā est."
+        "text": "tuus"
       },
       {
         "id": "0",
-        "text": "Vīlla mea in Italiā est."
+        "text": "mea"
       },
       {
         "id": "2",
-        "text": "Vīlla tua in Italiā est."
+        "text": "tua"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.adjective-gender",
+      "compositio.possessive-person"
     ],
     "item": "meus-tuus:q2",
     "assessment": "study.theme.personae-reference:meus-tuus:q2",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.persona",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.tuus",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "italia",
@@ -118,13 +163,14 @@
     "editorial": {
       "language": "la",
       "topic": "meus-tuus",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.meus-tuus"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -132,7 +178,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -147,39 +193,60 @@
   },
   {
     "id": "meus-tuus-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Tes livres sont petits."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrī "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " parvī sunt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Librī tuī parvī sunt."
+        "text": "tuī"
       },
       {
         "id": "0",
-        "text": "Librī tuae parvī sunt."
+        "text": "tuae"
       },
       {
         "id": "2",
-        "text": "Librī meī parvī sunt."
+        "text": "meī"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.adjective-gender",
+      "compositio.possessive-person"
     ],
     "item": "meus-tuus:q3",
     "assessment": "study.theme.personae-reference:meus-tuus:q3",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.persona",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "liber",
       "meus",
@@ -190,13 +257,14 @@
     "editorial": {
       "language": "la",
       "topic": "meus-tuus",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +278,7 @@
       "2": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.meus-tuus"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -219,39 +287,60 @@
   },
   {
     "id": "meus-tuus-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Mes temples sont grands."
+      },
+      {
+        "type": "text",
+        "text": "\nTempla "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " magna sunt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Templa meī magna sunt."
+        "text": "meī"
       },
       {
         "id": "0",
-        "text": "Templa mea magna sunt."
+        "text": "mea"
       },
       {
         "id": "1",
-        "text": "Templa tua magna sunt."
+        "text": "tua"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.adjective-gender",
+      "compositio.possessive-person"
     ],
     "item": "meus-tuus:q4",
     "assessment": "study.theme.personae-reference:meus-tuus:q4",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "trait.persona",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "magnus",
       "meus",
@@ -262,7 +351,8 @@
     "editorial": {
       "language": "la",
       "topic": "meus-tuus",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -274,7 +364,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.meus-tuus"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -282,7 +372,7 @@
       "2": {
         "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -291,39 +381,61 @@
   },
   {
     "id": "suus-eius-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est présent. Le garçon porte son propre livre."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister adest. Puer librum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister adest. Puer librum suum portat."
+        "text": "suum"
       },
       {
         "id": "2",
-        "text": "Magister adest. Puer librum tuum portat."
+        "text": "tuum"
       },
       {
         "id": "1",
-        "text": "Magister adest. Puer librum eius portat."
+        "text": "eius"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.possessive-reflexive"
     ],
     "item": "suus-eius:q1",
     "assessment": "study.theme.personae-reference:suus-eius:q1",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -337,7 +449,8 @@
     "editorial": {
       "language": "la",
       "topic": "suus-eius",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -349,7 +462,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -357,7 +470,7 @@
       "2": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -366,39 +479,61 @@
   },
   {
     "id": "suus-eius-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est présente. Le garçon porte le livre de la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella adest. Puer librum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella adest. Puer librum suum portat."
+        "text": "suum"
       },
       {
         "id": "1",
-        "text": "Puella adest. Puer librum meum portat."
+        "text": "meum"
       },
       {
         "id": "2",
-        "text": "Puella adest. Puer librum eius portat."
+        "text": "eius"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.possessive-reflexive"
     ],
     "item": "suus-eius:q2",
     "assessment": "study.theme.personae-reference:suus-eius:q2",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.suus"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -412,13 +547,14 @@
     "editorial": {
       "language": "la",
       "topic": "suus-eius",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -426,7 +562,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -441,39 +577,61 @@
   },
   {
     "id": "suus-eius-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est présente. Le maître voit sa propre maison de campagne."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina adest. Magister vīllam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina adest. Magister vīllam meam videt."
+        "text": "meam"
       },
       {
         "id": "2",
-        "text": "Fēmina adest. Magister vīllam eius videt."
+        "text": "eius"
       },
       {
         "id": "1",
-        "text": "Fēmina adest. Magister vīllam suam videt."
+        "text": "suam"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.possessive-reflexive"
     ],
     "item": "suus-eius:q3",
     "assessment": "study.theme.personae-reference:suus-eius:q3",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.video",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -487,13 +645,14 @@
     "editorial": {
       "language": "la",
       "topic": "suus-eius",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -507,7 +666,7 @@
       "2": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -516,39 +675,61 @@
   },
   {
     "id": "suus-eius-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est présent. La jeune fille voit les livres du maître."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister adest. Puella librōs "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Magister adest. Puella librōs meōs videt."
+        "text": "meōs"
       },
       {
         "id": "0",
-        "text": "Magister adest. Puella librōs eius videt."
+        "text": "eius"
       },
       {
         "id": "1",
-        "text": "Magister adest. Puella librōs suōs videt."
+        "text": "suōs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.possessive-reflexive"
     ],
     "item": "suus-eius:q4",
     "assessment": "study.theme.personae-reference:suus-eius:q4",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -562,7 +743,8 @@
     "editorial": {
       "language": "la",
       "topic": "suus-eius",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -574,7 +756,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -582,7 +764,7 @@
       "2": {
         "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
         "observed": [
-          "study.confusion.suus-eius"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -591,39 +773,63 @@
   },
   {
     "id": "reflexive-object-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est présent. Le maître se voit lui-même dans le miroir."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer adest. Magister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer adest. Magister sē in speculō videt."
+        "text": "sē in speculō"
       },
       {
         "id": "1",
-        "text": "Puer adest. Magister eum in speculō videt."
+        "text": "eum in speculō"
       },
       {
         "id": "2",
-        "text": "Puer adest. Magister sē in speculō nōn videt."
+        "text": "sē in speculō nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q1",
     "assessment": "study.theme.personae-reference:reflexive-object:q1",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.se",
+      "lexicon.compositio.speculum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "in",
@@ -638,7 +844,8 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -650,7 +857,7 @@
       "1": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -658,7 +865,7 @@
       "2": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -667,39 +874,63 @@
   },
   {
     "id": "reflexive-object-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est présente. La femme voit la jeune fille dans le miroir."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella adest. Fēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella adest. Fēmina eam in speculō nōn videt."
+        "text": "eam in speculō nōn"
       },
       {
         "id": "2",
-        "text": "Puella adest. Fēmina eam in speculō videt."
+        "text": "eam in speculō"
       },
       {
         "id": "0",
-        "text": "Puella adest. Fēmina sē in speculō videt."
+        "text": "sē in speculō"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q2",
     "assessment": "study.theme.personae-reference:reflexive-object:q2",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.se",
+      "lexicon.compositio.speculum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -714,13 +945,14 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -728,7 +960,7 @@
       "1": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -743,39 +975,61 @@
   },
   {
     "id": "reflexive-object-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand est présent. Le maître de maison fait son propre éloge."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor adest. Dominus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " laudat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Mercātor adest. Dominus sē laudat."
+        "text": "sē"
       },
       {
         "id": "2",
-        "text": "Mercātor adest. Dominus eum laudat."
+        "text": "eum"
       },
       {
         "id": "0",
-        "text": "Mercātor adest. Dominus sē nōn laudat."
+        "text": "sē nōn"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q3",
     "assessment": "study.theme.personae-reference:reflexive-object:q3",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.is",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.non",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "dominus",
@@ -788,13 +1042,14 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -808,7 +1063,7 @@
       "2": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -817,39 +1072,61 @@
   },
   {
     "id": "reflexive-object-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave est présent. L’agriculteur lave l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nServus adest. Agricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " lavat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Servus adest. Agricola eum nōn lavat."
+        "text": "eum nōn"
       },
       {
         "id": "0",
-        "text": "Servus adest. Agricola eum lavat."
+        "text": "eum"
       },
       {
         "id": "1",
-        "text": "Servus adest. Agricola sē lavat."
+        "text": "sē"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q4",
     "assessment": "study.theme.personae-reference:reflexive-object:q4",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.is",
+      "lexicon.compositio.lavo",
+      "lexicon.compositio.non",
+      "lexicon.compositio.se",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "adsum",
       "agricola",
@@ -862,7 +1139,8 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -874,7 +1152,7 @@
       "1": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -882,7 +1160,7 @@
       "2": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -891,39 +1169,61 @@
   },
   {
     "id": "reflexive-object-q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est présente. La femme se pare elle-même."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella adest. Fēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ōrnat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella adest. Fēmina sē nōn ōrnat."
+        "text": "sē nōn"
       },
       {
         "id": "0",
-        "text": "Puella adest. Fēmina eam ōrnat."
+        "text": "eam"
       },
       {
         "id": "2",
-        "text": "Puella adest. Fēmina sē ōrnat."
+        "text": "sē"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q5",
     "assessment": "study.theme.personae-reference:reflexive-object:q5",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.non",
+      "lexicon.compositio.orno",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -936,13 +1236,14 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -950,7 +1251,7 @@
       "1": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -965,39 +1266,61 @@
   },
   {
     "id": "reflexive-object-q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est présent. Le maître fait l’éloge du garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer adest. Magister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " laudat."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer adest. Magister sē laudat."
+        "text": "sē"
       },
       {
         "id": "0",
-        "text": "Puer adest. Magister eum nōn laudat."
+        "text": "eum nōn"
       },
       {
         "id": "1",
-        "text": "Puer adest. Magister eum laudat."
+        "text": "eum"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "reflexive-object:q6",
     "assessment": "study.theme.personae-reference:reflexive-object:q6",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -1010,13 +1333,14 @@
     "editorial": {
       "language": "la",
       "topic": "reflexive-object",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Sententia actiōnem affirmat. Nōn adiectum sēnsum mūtat; negātiō nōn adicienda est.",
         "observed": [
-          "study.confusion.reference-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1030,7 +1354,7 @@
       "2": {
         "feedback": "Sē ad subiectum eiusdem verbi refertur; eum aut eam hīc ad alteram persōnam anteā dictam refertur. Quaere quis agat et quem actiō attingat.",
         "observed": [
-          "study.confusion.reflexive-reference"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1039,39 +1363,60 @@
   },
   {
     "id": "extra-1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille porte mes roses."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella rosās meās portat."
+        "text": "rosās meās"
       },
       {
         "id": "1",
-        "text": "Puella rosās tuās portat."
+        "text": "rosās tuās"
       },
       {
         "id": "2",
-        "text": "Puella rosam meam portat."
+        "text": "rosam meam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-1",
     "assessment": "study.theme.personae-reference:extra-1",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "meus",
       "porto",
@@ -1081,7 +1426,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1093,7 +1439,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1101,7 +1447,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1110,39 +1456,60 @@
   },
   {
     "id": "extra-2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon lit ta lettre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer epistulam tuam legit."
+        "text": "epistulam tuam"
       },
       {
         "id": "1",
-        "text": "Puer epistulam meam legit."
+        "text": "epistulam meam"
       },
       {
         "id": "2",
-        "text": "Puer epistulās tuās legit."
+        "text": "epistulās tuās"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-2",
     "assessment": "study.theme.personae-reference:extra-2",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -1152,7 +1519,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1164,7 +1532,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1172,7 +1540,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1181,39 +1549,60 @@
   },
   {
     "id": "extra-3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître a mes livres."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister librōs meōs habet."
+        "text": "librōs meōs"
       },
       {
         "id": "1",
-        "text": "Magister librōs tuōs habet."
+        "text": "librōs tuōs"
       },
       {
         "id": "2",
-        "text": "Magister librum meum habet."
+        "text": "librum meum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-3",
     "assessment": "study.theme.personae-reference:extra-3",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "habeo",
       "liber",
@@ -1223,7 +1612,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1235,7 +1625,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1243,7 +1633,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1252,39 +1642,60 @@
   },
   {
     "id": "extra-4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme voit ton cadeau."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina dōnum tuum videt."
+        "text": "dōnum tuum"
       },
       {
         "id": "1",
-        "text": "Fēmina dōnum meum videt."
+        "text": "dōnum meum"
       },
       {
         "id": "2",
-        "text": "Fēmina dōna tua videt."
+        "text": "dōna tua"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-4",
     "assessment": "study.theme.personae-reference:extra-4",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.tuus",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -1294,7 +1705,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1306,7 +1718,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1314,7 +1726,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1323,39 +1735,60 @@
   },
   {
     "id": "extra-5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave décore ma maison de campagne."
+      },
+      {
+        "type": "text",
+        "text": "\nServus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ōrnat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Servus vīllam meam ōrnat."
+        "text": "vīllam meam"
       },
       {
         "id": "1",
-        "text": "Servus vīllam tuam ōrnat."
+        "text": "vīllam tuam"
       },
       {
         "id": "2",
-        "text": "Servus vīllās meās ōrnat."
+        "text": "vīllās meās"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-5",
     "assessment": "study.theme.personae-reference:extra-5",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.orno",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.tuus",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "meus",
       "orno",
@@ -1365,7 +1798,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1377,7 +1811,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1385,7 +1819,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1394,39 +1828,60 @@
   },
   {
     "id": "extra-6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan salue ton fils."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " salūtat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Agricola fīlium tuum salūtat."
+        "text": "fīlium tuum"
       },
       {
         "id": "1",
-        "text": "Agricola fīlium meum salūtat."
+        "text": "fīlium meum"
       },
       {
         "id": "2",
-        "text": "Agricola fīliōs tuōs salūtat."
+        "text": "fīliōs tuōs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-person"
     ],
     "item": "personae-reference:extra-6",
     "assessment": "study.theme.personae-reference:extra-6",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.persona",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.meus",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.tuus"
+    ],
     "vocabulary": [
       "agricola",
       "filius",
@@ -1436,7 +1891,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1448,7 +1904,7 @@
       "1": {
         "feedback": "Nōn rēctē. Meus et tuus ad dīversās persōnās referuntur. Possessōrem nōlī mūtāre.",
         "observed": [
-          "study.confusion.personae-possessive-person"
+          "compositio.possessive-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1456,7 +1912,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1465,39 +1921,62 @@
   },
   {
     "id": "extra-7",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est présente. La jeune fille porte sa propre rose."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina adest. Puella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina adest. Puella rosam suam portat."
+        "text": "rosam suam"
       },
       {
         "id": "1",
-        "text": "Fēmina adest. Puella rosam eius portat."
+        "text": "rosam eius"
       },
       {
         "id": "2",
-        "text": "Fēmina adest. Puella rosās suās portat."
+        "text": "rosās suās"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-7",
     "assessment": "study.theme.personae-reference:extra-7",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.suus"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -1509,7 +1988,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1521,7 +2001,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1529,7 +2009,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1538,39 +2018,62 @@
   },
   {
     "id": "extra-8",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin est présent. Le garçon lit la lettre du marin."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta adest. Puer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta adest. Puer epistulam eius legit."
+        "text": "epistulam eius"
       },
       {
         "id": "1",
-        "text": "Nauta adest. Puer epistulam suam legit."
+        "text": "epistulam suam"
       },
       {
         "id": "2",
-        "text": "Nauta adest. Puer epistulās eius legit."
+        "text": "epistulās eius"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-8",
     "assessment": "study.theme.personae-reference:extra-8",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.is",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.suus"
+    ],
     "vocabulary": [
       "adsum",
       "epistula",
@@ -1582,7 +2085,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1594,7 +2098,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1602,7 +2106,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1611,39 +2115,62 @@
   },
   {
     "id": "extra-9",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme est présent. L’esclave a son propre cadeau."
+      },
+      {
+        "type": "text",
+        "text": "\nVir adest. Servus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir adest. Servus dōnum suum habet."
+        "text": "dōnum suum"
       },
       {
         "id": "1",
-        "text": "Vir adest. Servus dōnum eius habet."
+        "text": "dōnum eius"
       },
       {
         "id": "2",
-        "text": "Vir adest. Servus dōna sua habet."
+        "text": "dōna sua"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-9",
     "assessment": "study.theme.personae-reference:extra-9",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.is",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "adsum",
       "donum",
@@ -1655,7 +2182,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1667,7 +2195,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1675,7 +2203,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1684,39 +2212,62 @@
   },
   {
     "id": "extra-10",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est présente. La femme porte les livres de la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella adest. Fēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella adest. Fēmina librōs eius portat."
+        "text": "librōs eius"
       },
       {
         "id": "1",
-        "text": "Puella adest. Fēmina librōs suōs portat."
+        "text": "librōs suōs"
       },
       {
         "id": "2",
-        "text": "Puella adest. Fēmina librum eius portat."
+        "text": "librum eius"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-10",
     "assessment": "study.theme.personae-reference:extra-10",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.suus"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -1728,7 +2279,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1740,7 +2292,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1748,7 +2300,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1757,39 +2309,62 @@
   },
   {
     "id": "extra-11",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est présent. Le marin appelle son propre fils."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister adest. Nauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vocat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister adest. Nauta fīlium suum vocat."
+        "text": "fīlium suum"
       },
       {
         "id": "1",
-        "text": "Magister adest. Nauta fīlium eius vocat."
+        "text": "fīlium eius"
       },
       {
         "id": "2",
-        "text": "Magister adest. Nauta fīliōs suōs vocat."
+        "text": "fīliōs suōs"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-11",
     "assessment": "study.theme.personae-reference:extra-11",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.is",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.voco"
+    ],
     "vocabulary": [
       "adsum",
       "filius",
@@ -1801,7 +2376,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1813,7 +2389,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1821,7 +2397,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1830,39 +2406,62 @@
   },
   {
     "id": "extra-12",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est présent. Le paysan voit les roses du garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer adest. Agricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer adest. Agricola rosās eius videt."
+        "text": "rosās eius"
       },
       {
         "id": "1",
-        "text": "Puer adest. Agricola rosās suās videt."
+        "text": "rosās suās"
       },
       {
         "id": "2",
-        "text": "Puer adest. Agricola rosam eius videt."
+        "text": "rosam eius"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.object-number",
+      "compositio.possessive-reflexive"
     ],
     "item": "personae-reference:extra-12",
     "assessment": "study.theme.personae-reference:extra-12",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.is",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.suus",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "agricola",
@@ -1874,7 +2473,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1886,7 +2486,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc suus ad subiectum refertur, eius ad alteram persōnam anteā nōminātam.",
         "observed": [
-          "study.confusion.personae-own-other"
+          "compositio.possessive-reflexive"
         ],
         "hypotheses": [],
         "practice": []
@@ -1894,7 +2494,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1903,39 +2503,61 @@
   },
   {
     "id": "extra-13",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est présent. Le marin se lave lui-même."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer adest. Nauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " lavat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer adest. Nauta sē lavat."
+        "text": "sē"
       },
       {
         "id": "1",
-        "text": "Puer adest. Nauta eum lavat."
+        "text": "eum"
       },
       {
         "id": "2",
-        "text": "Puer adest. Nauta sē nōn lavat."
+        "text": "sē nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-13",
     "assessment": "study.theme.personae-reference:extra-13",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.lavo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -1947,7 +2569,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1959,7 +2582,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -1967,7 +2590,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -1976,39 +2599,61 @@
   },
   {
     "id": "extra-14",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est présente. La jeune fille fait l’éloge de la femme."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina adest. Puella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " laudat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina adest. Puella eam laudat."
+        "text": "eam"
       },
       {
         "id": "1",
-        "text": "Fēmina adest. Puella sē laudat."
+        "text": "sē"
       },
       {
         "id": "2",
-        "text": "Fēmina adest. Puella eam nōn laudat."
+        "text": "eam nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-14",
     "assessment": "study.theme.personae-reference:extra-14",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.non",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -2020,7 +2665,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2032,7 +2678,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -2040,7 +2686,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2049,39 +2695,63 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave est présent. Le maître de maison se voit lui-même dans le miroir."
+      },
+      {
+        "type": "text",
+        "text": "\nServus adest. Dominus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Servus adest. Dominus sē in speculō videt."
+        "text": "sē in speculō"
       },
       {
         "id": "1",
-        "text": "Servus adest. Dominus eum in speculō videt."
+        "text": "eum in speculō"
       },
       {
         "id": "2",
-        "text": "Servus adest. Dominus sē in speculō nōn videt."
+        "text": "sē in speculō nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-15",
     "assessment": "study.theme.personae-reference:extra-15",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.is",
+      "lexicon.compositio.non",
+      "lexicon.compositio.se",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.speculum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "adsum",
       "dominus",
@@ -2095,7 +2765,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2107,7 +2778,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -2115,7 +2786,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2124,39 +2795,61 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est présente. La femme pare la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella adest. Fēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " ōrnat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella adest. Fēmina eam ōrnat."
+        "text": "eam"
       },
       {
         "id": "1",
-        "text": "Puella adest. Fēmina sē ōrnat."
+        "text": "sē"
       },
       {
         "id": "2",
-        "text": "Puella adest. Fēmina eam nōn ōrnat."
+        "text": "eam nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-16",
     "assessment": "study.theme.personae-reference:extra-16",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.is",
+      "lexicon.compositio.non",
+      "lexicon.compositio.orno",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "femina",
@@ -2168,7 +2861,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2180,7 +2874,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -2188,7 +2882,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2197,39 +2891,61 @@
   },
   {
     "id": "extra-17",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme est présent. Le maître fait son propre éloge."
+      },
+      {
+        "type": "text",
+        "text": "\nVir adest. Magister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " laudat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir adest. Magister sē laudat."
+        "text": "sē"
       },
       {
         "id": "1",
-        "text": "Vir adest. Magister eum laudat."
+        "text": "eum"
       },
       {
         "id": "2",
-        "text": "Vir adest. Magister sē nōn laudat."
+        "text": "sē nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-17",
     "assessment": "study.theme.personae-reference:extra-17",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.is",
+      "lexicon.compositio.laudo",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.se",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "adsum",
       "is",
@@ -2241,7 +2957,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2253,7 +2970,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -2261,7 +2978,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -2270,39 +2987,61 @@
   },
   {
     "id": "extra-18",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin est présent. Le paysan salue le marin."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta adest. Agricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " salūtat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta adest. Agricola eum salūtat."
+        "text": "eum"
       },
       {
         "id": "1",
-        "text": "Nauta adest. Agricola sē salūtat."
+        "text": "sē"
       },
       {
         "id": "2",
-        "text": "Nauta adest. Agricola eum nōn salūtat."
+        "text": "eum nōn"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-reference"
+      "compositio.negation",
+      "compositio.reflexive-reference"
     ],
     "item": "personae-reference:extra-18",
     "assessment": "study.theme.personae-reference:extra-18",
     "help": "study.personae-reference",
-    "requires": [],
+    "requires": [
+      "trait.quodNomen",
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.is",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.non",
+      "lexicon.compositio.saluto",
+      "lexicon.compositio.se"
+    ],
     "vocabulary": [
       "adsum",
       "agricola",
@@ -2314,7 +3053,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2326,7 +3066,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc sē ad subiectum refertur; eum vel eam ad alteram persōnam referās.",
         "observed": [
-          "study.confusion.personae-self-other"
+          "compositio.reflexive-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -2334,7 +3074,7 @@
       "2": {
         "feedback": "Nōn rēctē. Negātiō addita est. Actiō affirmāta et actiō negāta nōn idem sunt.",
         "observed": [
-          "study.confusion.personae-negation"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []

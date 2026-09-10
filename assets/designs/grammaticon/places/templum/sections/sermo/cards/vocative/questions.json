@@ -1,39 +1,56 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Ami, porte le livre !"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portā librum!"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Amīce, portā librum!"
+        "text": "Amīce,"
       },
       {
         "id": "1",
-        "text": "Amīcus, portā librum!"
+        "text": "Amīcus,"
       },
       {
         "id": "2",
-        "text": "Amīcum, portā librum!"
+        "text": "Amīcum,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.vocative"
+      "compositio.address-case"
     ],
     "item": "vocative:q1",
     "assessment": "study.theme.vocative:q1",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto"
+    ],
     "vocabulary": [
       "amicus",
       "liber",
@@ -42,7 +59,8 @@
     "editorial": {
       "language": "la",
       "topic": "vocative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -54,7 +72,7 @@
       "1": {
         "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
         "observed": [
-          "study.confusion.vocative-nominative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +80,7 @@
       "2": {
         "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
         "observed": [
-          "study.confusion.vocative-accusative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -71,39 +89,57 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Bon ami, écoute la jeune fille !"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " audī puellam!"
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Bonum amīcum, audī puellam!"
+        "text": "Bonum amīcum,"
       },
       {
         "id": "2",
-        "text": "Bone amīce, audī puellam!"
+        "text": "Bone amīce,"
       },
       {
         "id": "0",
-        "text": "Bonus amīcus, audī puellam!"
+        "text": "Bonus amīcus,"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.vocative"
+      "compositio.address-case"
     ],
     "item": "vocative:q2",
     "assessment": "study.theme.vocative:q2",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.bonus",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "amicus",
       "audio",
@@ -113,13 +149,14 @@
     "editorial": {
       "language": "la",
       "topic": "vocative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
         "observed": [
-          "study.confusion.vocative-nominative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -127,7 +164,7 @@
       "1": {
         "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
         "observed": [
-          "study.confusion.vocative-accusative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -142,39 +179,58 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Esclave, pose le livre sur la table !"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " pōne librum in mēnsā!"
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Servus, pōne librum in mēnsā!"
+        "text": "Servus,"
       },
       {
         "id": "0",
-        "text": "Servum, pōne librum in mēnsā!"
+        "text": "Servum,"
       },
       {
         "id": "1",
-        "text": "Serve, pōne librum in mēnsā!"
+        "text": "Serve,"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.vocative"
+      "compositio.address-case"
     ],
     "item": "vocative:q3",
     "assessment": "study.theme.vocative:q3",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.mensa",
+      "lexicon.compositio.pono",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -185,13 +241,14 @@
     "editorial": {
       "language": "la",
       "topic": "vocative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
         "observed": [
-          "study.confusion.vocative-accusative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +262,7 @@
       "2": {
         "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
         "observed": [
-          "study.confusion.vocative-nominative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,39 +271,56 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Maître, regarde le jardin !"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " vidē hortum!"
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magistrum, vidē hortum!"
+        "text": "Magistrum,"
       },
       {
         "id": "0",
-        "text": "Magister, vidē hortum!"
+        "text": "Magister,"
       },
       {
         "id": "2",
-        "text": "Magistrī, vidē hortum!"
+        "text": "Magistrī,"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.vocative"
+      "compositio.address-case"
     ],
     "item": "vocative:q4",
     "assessment": "study.theme.vocative:q4",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "hortus",
       "magister",
@@ -255,7 +329,8 @@
     "editorial": {
       "language": "la",
       "topic": "vocative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -267,7 +342,7 @@
       "1": {
         "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
         "observed": [
-          "study.confusion.vocative-accusative"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -275,7 +350,7 @@
       "2": {
         "feedback": "Magister hīc appellātur. Genetīvus magistrī possessōrem indicāret.",
         "observed": [
-          "study.confusion.vocative-genitive"
+          "compositio.address-case"
         ],
         "hypotheses": [],
         "practice": []

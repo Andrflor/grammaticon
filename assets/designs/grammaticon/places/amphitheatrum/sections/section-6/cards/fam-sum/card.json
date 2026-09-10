@@ -1,1 +1,106 @@
-{"id":"fam-sum","name":"sum et composita","subtitle":"sum · possum · absum · prōsum","access":{"price":20,"requires":{"all":[{"unlocked":"amphitheatrum/section-1/ind-praes-act"}]}},"skills":["v.fam.sum"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"arena_bg","hero":"hero_idle","opponent":"enemy_statua","heroCorrect":"hero_attack","heroWrong":"hero_hurt","heroVictory":"hero_victory","heroDefeat":"hero_defeat","opponentName":"Statua Animāta","motion":"lunge","projectile":"impact","correctSound":"ictus","wrongSound":"vulnus","cues":{"correct":[{"delayMs":60,"sound":"impetus"},{"delayMs":170,"sound":"ictus"}],"incorrect":[{"delayMs":170,"sound":"vulnus"}]},"rewardEffect":"gem","introductionBlocks":[0,3,4,5]},"selectionGroups":{"tempus":{"weight":1.0},"modus":{"weight":1.0},"persona":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.fam.sum","minLevel":2}},"weight":0.5}]},"numerus":{"weight":1.0,"rules":[{"when":{"skill":{"id":"v.fam.sum","minLevel":2}},"weight":0.5}]},"lemma":{"weight":0.5},"personaNumerus":{"weight":1.2}},"legacyId":"fam-sum"}
+{
+  "id": "fam-sum",
+  "name": "sum et composita",
+  "subtitle": "sum · possum · absum · prōsum",
+  "access": {
+    "price": 20,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "amphitheatrum/section-1/ind-praes-act"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "v.fam.sum"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "arena_bg",
+    "hero": "hero_idle",
+    "opponent": "enemy_statua",
+    "heroCorrect": "hero_attack",
+    "heroWrong": "hero_hurt",
+    "heroVictory": "hero_victory",
+    "heroDefeat": "hero_defeat",
+    "opponentName": "Statua Animāta",
+    "motion": "lunge",
+    "projectile": "impact",
+    "correctSound": "ictus",
+    "wrongSound": "vulnus",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "impetus"
+        },
+        {
+          "delayMs": 170,
+          "sound": "ictus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 170,
+          "sound": "vulnus"
+        }
+      ]
+    },
+    "rewardEffect": "gem",
+    "introductionBlocks": [
+      0,
+      3,
+      4,
+      5
+    ]
+  },
+  "selectionGroups": {
+    "tempus": {
+      "weight": 1.0
+    },
+    "modus": {
+      "weight": 1.0
+    },
+    "persona": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.fam.sum",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "numerus": {
+      "weight": 1.0,
+      "rules": [
+        {
+          "when": {
+            "skill": {
+              "id": "v.fam.sum",
+              "minLevel": 2
+            }
+          },
+          "weight": 0.5
+        }
+      ]
+    },
+    "lemma": {
+      "weight": 0.5
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "fam-sum"
+}

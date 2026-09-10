@@ -30,15 +30,25 @@
       "2"
     ],
     "skills": [
-      "study.theme.10-sacred"
+      "compositio.negation",
+      "compositio.recipient-case"
     ],
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "lexicon.compositio.do",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.nolo",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.servo",
+      "lexicon.compositio.vidua",
+      "lexicon.compositio.volo"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.recipient-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -46,7 +56,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -70,7 +80,8 @@
     "editorial": {
       "language": "la",
       "topic": "10-sacred",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -104,15 +115,28 @@
       "1"
     ],
     "skills": [
-      "study.theme.10-sacred"
+      "compositio.agent-patient",
+      "compositio.recipient"
     ],
-    "requires": [],
+    "requires": [
+      "construction.dative",
+      "nominal.case",
+      "lexicon.compositio.a",
+      "lexicon.compositio.aufero",
+      "lexicon.compositio.cum",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.panis",
+      "lexicon.compositio.partior",
+      "lexicon.compositio.peregrinus",
+      "lexicon.compositio.solus",
+      "lexicon.compositio.sum"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +150,7 @@
       "2": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.recipient"
         ],
         "hypotheses": [],
         "practice": []
@@ -146,7 +170,8 @@
     "editorial": {
       "language": "la",
       "topic": "10-sacred",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -180,9 +205,15 @@
       "0"
     ],
     "skills": [
-      "study.theme.10-sacred"
+      "compositio.past-anteriority",
+      "compositio.past-future"
     ],
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.res",
+      "lexicon.compositio.vicinus"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
@@ -194,7 +225,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.past-future"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +233,7 @@
       "2": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -216,49 +247,73 @@
     "editorial": {
       "language": "la",
       "topic": "10-sacred",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "item": "10-sacred:q4",
     "assessment": "study.theme.10-sacred:q4",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La compassion peut s’exercer même dans le manque."
+      },
+      {
+        "type": "text",
+        "text": "\nMisericordia "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " potest."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Misericordia tantum in dīvitiīs exercērī potest."
+        "text": "tantum in dīvitiīs exercērī"
       },
       {
         "id": "2",
-        "text": "Misericordia etiam in inopiā exercērī potest."
+        "text": "etiam in inopiā exercērī"
       },
       {
         "id": "1",
-        "text": "Misericordia in inopiā exercērī nōn potest."
+        "text": "in inopiā exercērī nōn"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.10-sacred"
+      "compositio.negation",
+      "compositio.negation-scope"
     ],
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.divitiae",
+      "lexicon.compositio.etiam",
+      "lexicon.compositio.exerceo",
+      "lexicon.compositio.in",
+      "lexicon.compositio.inopia",
+      "lexicon.compositio.misericordia",
+      "lexicon.compositio.non",
+      "lexicon.compositio.possum",
+      "lexicon.compositio.tantum"
+    ],
     "help": "study.10-sacred",
     "outcomes": {
       "0": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.negation-scope"
         ],
         "hypotheses": [],
         "practice": []
@@ -266,7 +321,7 @@
       "1": {
         "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
         "observed": [
-          "study.error"
+          "compositio.negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -292,7 +347,8 @@
     "editorial": {
       "language": "la",
       "topic": "10-sacred",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     }
   }
 ]

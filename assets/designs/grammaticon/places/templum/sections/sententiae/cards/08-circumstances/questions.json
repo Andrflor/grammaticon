@@ -1,39 +1,61 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Pendant que le garçon chante, la mère écrit une lettre."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " epistulam scrībit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Antequam puer cantat, māter epistulam scrībit."
+        "text": "Antequam puer cantat, māter"
       },
       {
         "id": "1",
-        "text": "Puer cantāns epistulam scrībit."
+        "text": "Puer cantāns"
       },
       {
         "id": "0",
-        "text": "Puerō cantante, māter epistulam scrībit."
+        "text": "Puerō cantante, māter"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q1",
     "assessment": "study.theme.absolute-present:q1",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.scribo"
+    ],
     "vocabulary": [
       "antequam",
       "canto",
@@ -45,7 +67,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -57,7 +80,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -65,7 +88,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -74,39 +97,61 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Pendant que le marin travaille, le garçon porte de l’eau."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " aquam portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nautā labōrante, puer aquam portat."
+        "text": "Nautā labōrante, puer"
       },
       {
         "id": "2",
-        "text": "Antequam nauta labōrat, puer aquam portat."
+        "text": "Antequam nauta labōrat, puer"
       },
       {
         "id": "1",
-        "text": "Nauta labōrāns aquam portat."
+        "text": "Nauta labōrāns"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q2",
     "assessment": "study.theme.absolute-present:q2",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.laboro",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "antequam",
       "aqua",
@@ -118,7 +163,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -130,7 +176,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -138,7 +184,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -147,39 +193,61 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Pendant que la femme marche, la jeune fille cueille les roses."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " rosās carpit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēminā ambulante, puella rosās carpit."
+        "text": "Fēminā ambulante, puella"
       },
       {
         "id": "1",
-        "text": "Fēmina ambulāns rosās carpit."
+        "text": "Fēmina ambulāns"
       },
       {
         "id": "2",
-        "text": "Antequam fēmina ambulat, puella rosās carpit."
+        "text": "Antequam fēmina ambulat, puella"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q3",
     "assessment": "study.theme.absolute-present:q3",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.ambulo",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.carpo",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "ambulo",
       "antequam",
@@ -191,7 +259,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -203,7 +272,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,7 +280,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -220,39 +289,61 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Pendant que le marchand crie, l’esclave ouvre la porte."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " iānuam aperit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Antequam mercātor clāmat, servus iānuam aperit."
+        "text": "Antequam mercātor clāmat, servus"
       },
       {
         "id": "0",
-        "text": "Mercātōre clāmante, servus iānuam aperit."
+        "text": "Mercātōre clāmante, servus"
       },
       {
         "id": "1",
-        "text": "Mercātor clāmāns iānuam aperit."
+        "text": "Mercātor clāmāns"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q4",
     "assessment": "study.theme.absolute-present:q4",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.aperio",
+      "lexicon.compositio.clamo",
+      "lexicon.compositio.ianua",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "antequam",
       "aperio",
@@ -264,7 +355,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -276,7 +368,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +376,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -293,39 +385,61 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Pendant que les amis arrivent, les garçons préparent le dîner."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " cēnam parant."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Amīcī venientēs cēnam parant."
+        "text": "Amīcī venientēs"
       },
       {
         "id": "2",
-        "text": "Antequam amīcī veniunt, puerī cēnam parant."
+        "text": "Antequam amīcī veniunt, puerī"
       },
       {
         "id": "0",
-        "text": "Amīcīs venientibus, puerī cēnam parant."
+        "text": "Amīcīs venientibus, puerī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q5",
     "assessment": "study.theme.absolute-present:q5",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.cena",
+      "lexicon.compositio.paro",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "amicus",
       "antequam",
@@ -337,7 +451,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -349,7 +464,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -357,7 +472,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []
@@ -393,12 +508,22 @@
       "0"
     ],
     "skills": [
-      "study.theme.absolute-present"
+      "compositio.absolute-agent",
+      "compositio.absolute-time"
     ],
     "item": "absolute-present:q6",
     "assessment": "study.theme.absolute-present:q6",
     "help": "study.08-circumstances",
-    "requires": [],
+    "requires": [
+      "construction.ablative",
+      "trait.tempus",
+      "lexicon.compositio.antequam",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.paro",
+      "lexicon.compositio.velum",
+      "lexicon.compositio.viator"
+    ],
     "vocabulary": [
       "antequam",
       "narro",
@@ -410,7 +535,8 @@
     "editorial": {
       "language": "la",
       "topic": "08-circumstances",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -422,7 +548,7 @@
       "1": {
         "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
         "observed": [
-          "study.confusion.absolute-present-agent"
+          "compositio.absolute-agent"
         ],
         "hypotheses": [],
         "practice": []
@@ -430,7 +556,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
         "observed": [
-          "study.confusion.absolute-present-time"
+          "compositio.absolute-time"
         ],
         "hypotheses": [],
         "practice": []

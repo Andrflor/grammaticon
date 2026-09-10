@@ -1,26 +1,38 @@
 [
   {
     "id": "feminine-agreement-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est joyeuse."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella laetus est."
+        "text": "laetus"
       },
       {
         "id": "2",
-        "text": "Puella laetum est."
+        "text": "laetum"
       },
       {
         "id": "0",
-        "text": "Puella laeta est."
+        "text": "laeta"
       }
     ],
     "accepted": [
@@ -31,18 +43,24 @@
       "puella",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "feminine-agreement:q1",
     "assessment": "study.theme.early-concordia:feminine-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.laetus",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -54,7 +72,7 @@
       "1": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +80,7 @@
       "2": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -71,26 +89,38 @@
   },
   {
     "id": "feminine-agreement-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les écoles sont grandes."
+      },
+      {
+        "type": "text",
+        "text": "\nScholae "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Scholae magnī sunt."
+        "text": "magnī"
       },
       {
         "id": "2",
-        "text": "Scholae magnae sunt."
+        "text": "magnae"
       },
       {
         "id": "1",
-        "text": "Scholae magna sunt."
+        "text": "magna"
       }
     ],
     "accepted": [
@@ -101,24 +131,30 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "feminine-agreement:q2",
     "assessment": "study.theme.early-concordia:feminine-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +162,7 @@
       "1": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -141,26 +177,38 @@
   },
   {
     "id": "feminine-agreement-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "L’île est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nĪnsula "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Īnsula parvus est."
+        "text": "parvus"
       },
       {
         "id": "0",
-        "text": "Īnsula parvum est."
+        "text": "parvum"
       },
       {
         "id": "1",
-        "text": "Īnsula parva est."
+        "text": "parva"
       }
     ],
     "accepted": [
@@ -171,24 +219,30 @@
       "parvus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "feminine-agreement:q3",
     "assessment": "study.theme.early-concordia:feminine-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +256,7 @@
       "2": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,26 +265,38 @@
   },
   {
     "id": "feminine-agreement-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les femmes sont joyeuses."
+      },
+      {
+        "type": "text",
+        "text": "\nFēminae "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēminae laetae sunt."
+        "text": "laetae"
       },
       {
         "id": "2",
-        "text": "Fēminae laeta sunt."
+        "text": "laeta"
       },
       {
         "id": "1",
-        "text": "Fēminae laetī sunt."
+        "text": "laetī"
       }
     ],
     "accepted": [
@@ -241,18 +307,24 @@
       "laetus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "feminine-agreement:q4",
     "assessment": "study.theme.early-concordia:feminine-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.laetus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -264,7 +336,7 @@
       "1": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +344,7 @@
       "2": {
         "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -281,26 +353,38 @@
   },
   {
     "id": "masculine-agreement-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est joyeux."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer laeta est."
+        "text": "laeta"
       },
       {
         "id": "2",
-        "text": "Puer laetum est."
+        "text": "laetum"
       },
       {
         "id": "0",
-        "text": "Puer laetus est."
+        "text": "laetus"
       }
     ],
     "accepted": [
@@ -311,18 +395,24 @@
       "puer",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "masculine-agreement:q1",
     "assessment": "study.theme.early-concordia:masculine-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.laetus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -334,7 +424,7 @@
       "1": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -342,7 +432,7 @@
       "2": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -351,26 +441,38 @@
   },
   {
     "id": "masculine-agreement-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les livres sont petits."
+      },
+      {
+        "type": "text",
+        "text": "\nLibrī "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Librī parvī sunt."
+        "text": "parvī"
       },
       {
         "id": "0",
-        "text": "Librī parvae sunt."
+        "text": "parvae"
       },
       {
         "id": "1",
-        "text": "Librī parva sunt."
+        "text": "parva"
       }
     ],
     "accepted": [
@@ -381,24 +483,30 @@
       "parvus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "masculine-agreement:q2",
     "assessment": "study.theme.early-concordia:masculine-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -406,7 +514,7 @@
       "1": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -421,26 +529,38 @@
   },
   {
     "id": "masculine-agreement-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le jardin est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nHortus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Hortus magnum est."
+        "text": "magnum"
       },
       {
         "id": "1",
-        "text": "Hortus magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Hortus magna est."
+        "text": "magna"
       }
     ],
     "accepted": [
@@ -451,24 +571,30 @@
       "magnus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "masculine-agreement:q3",
     "assessment": "study.theme.early-concordia:masculine-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -482,7 +608,7 @@
       "2": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -491,26 +617,38 @@
   },
   {
     "id": "masculine-agreement-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les maîtres sont joyeux."
+      },
+      {
+        "type": "text",
+        "text": "\nMagistrī "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magistrī laetī sunt."
+        "text": "laetī"
       },
       {
         "id": "2",
-        "text": "Magistrī laeta sunt."
+        "text": "laeta"
       },
       {
         "id": "1",
-        "text": "Magistrī laetae sunt."
+        "text": "laetae"
       }
     ],
     "accepted": [
@@ -521,18 +659,24 @@
       "magister",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "masculine-agreement:q4",
     "assessment": "study.theme.early-concordia:masculine-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.laetus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -544,7 +688,7 @@
       "1": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -552,7 +696,7 @@
       "2": {
         "feedback": "Puer et liber masculīna sunt, quamquam in -us nōn dēsinunt. Puer laetus est; librī parvī sunt. Genus nōminis, nōn sōla littera extrēma, fōrmam adiectīvī regit.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -561,26 +705,38 @@
   },
   {
     "id": "neuter-agreement-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le temple est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nTemplum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Templum magna est."
+        "text": "magna"
       },
       {
         "id": "1",
-        "text": "Templum magnus est."
+        "text": "magnus"
       },
       {
         "id": "0",
-        "text": "Templum magnum est."
+        "text": "magnum"
       }
     ],
     "accepted": [
@@ -591,18 +747,24 @@
       "sum",
       "templum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "neuter-agreement:q1",
     "assessment": "study.theme.early-concordia:neuter-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -614,7 +776,7 @@
       "1": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -622,7 +784,7 @@
       "2": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -631,26 +793,38 @@
   },
   {
     "id": "neuter-agreement-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les villes sont petites."
+      },
+      {
+        "type": "text",
+        "text": "\nOppida "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Oppida parvae sunt."
+        "text": "parvae"
       },
       {
         "id": "2",
-        "text": "Oppida parva sunt."
+        "text": "parva"
       },
       {
         "id": "0",
-        "text": "Oppida parvī sunt."
+        "text": "parvī"
       }
     ],
     "accepted": [
@@ -661,24 +835,30 @@
       "parvus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "neuter-agreement:q2",
     "assessment": "study.theme.early-concordia:neuter-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -686,7 +866,7 @@
       "1": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -701,26 +881,38 @@
   },
   {
     "id": "neuter-agreement-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Les temples sont grands."
+      },
+      {
+        "type": "text",
+        "text": "\nTempla "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Templa magna sunt."
+        "text": "magna"
       },
       {
         "id": "2",
-        "text": "Templa magnī sunt."
+        "text": "magnī"
       },
       {
         "id": "0",
-        "text": "Templa magnae sunt."
+        "text": "magnae"
       }
     ],
     "accepted": [
@@ -731,24 +923,30 @@
       "sum",
       "templum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "neuter-agreement:q3",
     "assessment": "study.theme.early-concordia:neuter-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -762,7 +960,7 @@
       "2": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -771,26 +969,38 @@
   },
   {
     "id": "neuter-agreement-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La ville est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nOppidum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Oppidum parva est."
+        "text": "parva"
       },
       {
         "id": "0",
-        "text": "Oppidum parvum est."
+        "text": "parvum"
       },
       {
         "id": "1",
-        "text": "Oppidum parvus est."
+        "text": "parvus"
       }
     ],
     "accepted": [
@@ -801,18 +1011,24 @@
       "parvus",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender"
     ],
     "item": "neuter-agreement:q4",
     "assessment": "study.theme.early-concordia:neuter-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -824,7 +1040,7 @@
       "1": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -832,7 +1048,7 @@
       "2": {
         "feedback": "Nōmen neutrum adiectīvum neutrum postulat. Templum magnum est; templa magna sunt. Utrumque vocābulum plūrāle in -a dēsinit. Fōrmae magnī et magnae hīc nōn conveniunt.",
         "observed": [
-          "study.confusion.gender-agreement"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -841,39 +1057,58 @@
   },
   {
     "id": "extra-1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir magnus est."
+        "text": "magnus"
       },
       {
         "id": "1",
-        "text": "Vir parvus est."
+        "text": "parvus"
       },
       {
         "id": "2",
-        "text": "Vir magna est."
+        "text": "magna"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-1",
     "assessment": "study.theme.early-concordia:extra-1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -882,7 +1117,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -894,7 +1130,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -902,7 +1138,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -911,39 +1147,58 @@
   },
   {
     "id": "extra-2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La maison est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nVīlla "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vīlla parva est."
+        "text": "parva"
       },
       {
         "id": "1",
-        "text": "Vīlla magna est."
+        "text": "magna"
       },
       {
         "id": "2",
-        "text": "Vīlla parvus est."
+        "text": "parvus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-2",
     "assessment": "study.theme.early-concordia:extra-2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -952,7 +1207,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -964,7 +1220,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -972,7 +1228,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -981,39 +1237,58 @@
   },
   {
     "id": "extra-3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister magnus est."
+        "text": "magnus"
       },
       {
         "id": "1",
-        "text": "Magister parvus est."
+        "text": "parvus"
       },
       {
         "id": "2",
-        "text": "Magister magnum est."
+        "text": "magnum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-3",
     "assessment": "study.theme.early-concordia:extra-3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magister",
       "magnus",
@@ -1022,7 +1297,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1034,7 +1310,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1042,7 +1318,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1051,39 +1327,58 @@
   },
   {
     "id": "extra-4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’école est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nSchola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Schola parva est."
+        "text": "parva"
       },
       {
         "id": "1",
-        "text": "Schola magna est."
+        "text": "magna"
       },
       {
         "id": "2",
-        "text": "Schola parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-4",
     "assessment": "study.theme.early-concordia:extra-4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -1092,7 +1387,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1104,7 +1400,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1112,7 +1408,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1121,39 +1417,58 @@
   },
   {
     "id": "extra-5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le temple est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nTemplum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Templum parvum est."
+        "text": "parvum"
       },
       {
         "id": "1",
-        "text": "Templum magnum est."
+        "text": "magnum"
       },
       {
         "id": "2",
-        "text": "Templum parva est."
+        "text": "parva"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-5",
     "assessment": "study.theme.early-concordia:extra-5",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -1162,7 +1477,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1174,7 +1490,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1182,7 +1498,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1191,39 +1507,58 @@
   },
   {
     "id": "extra-6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Liber magnus est."
+        "text": "magnus"
       },
       {
         "id": "1",
-        "text": "Liber parvus est."
+        "text": "parvus"
       },
       {
         "id": "2",
-        "text": "Liber magna est."
+        "text": "magna"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-6",
     "assessment": "study.theme.early-concordia:extra-6",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "liber",
       "magnus",
@@ -1232,7 +1567,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1244,7 +1580,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1252,7 +1588,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1261,39 +1597,58 @@
   },
   {
     "id": "extra-7",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Puer magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Puer parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-7",
     "assessment": "study.theme.early-concordia:extra-7",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -1302,7 +1657,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1314,7 +1670,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1322,7 +1678,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1331,39 +1687,58 @@
   },
   {
     "id": "extra-8",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella magna est."
+        "text": "magna"
       },
       {
         "id": "1",
-        "text": "Puella parva est."
+        "text": "parva"
       },
       {
         "id": "2",
-        "text": "Puella magnus est."
+        "text": "magnus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-8",
     "assessment": "study.theme.early-concordia:extra-8",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -1372,7 +1747,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1384,7 +1760,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1392,7 +1768,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1401,39 +1777,58 @@
   },
   {
     "id": "extra-9",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’île est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nĪnsula "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Īnsula magna est."
+        "text": "magna"
       },
       {
         "id": "1",
-        "text": "Īnsula parva est."
+        "text": "parva"
       },
       {
         "id": "2",
-        "text": "Īnsula magnum est."
+        "text": "magnum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-9",
     "assessment": "study.theme.early-concordia:extra-9",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "insula",
       "magnus",
@@ -1442,7 +1837,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1454,7 +1850,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1462,7 +1858,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1471,39 +1867,58 @@
   },
   {
     "id": "extra-10",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le jardin est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nHortus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Hortus parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Hortus magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Hortus parva est."
+        "text": "parva"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-10",
     "assessment": "study.theme.early-concordia:extra-10",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "magnus",
@@ -1512,7 +1927,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1524,7 +1940,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1532,7 +1948,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1541,39 +1957,58 @@
   },
   {
     "id": "extra-11",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La ville est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nOppidum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Oppidum magnum est."
+        "text": "magnum"
       },
       {
         "id": "1",
-        "text": "Oppidum parvum est."
+        "text": "parvum"
       },
       {
         "id": "2",
-        "text": "Oppidum magnus est."
+        "text": "magnus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-11",
     "assessment": "study.theme.early-concordia:extra-11",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "oppidum",
@@ -1582,7 +2017,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1594,7 +2030,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1602,7 +2038,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1611,39 +2047,58 @@
   },
   {
     "id": "extra-12",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina parva est."
+        "text": "parva"
       },
       {
         "id": "1",
-        "text": "Fēmina magna est."
+        "text": "magna"
       },
       {
         "id": "2",
-        "text": "Fēmina parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-12",
     "assessment": "study.theme.early-concordia:extra-12",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "magnus",
@@ -1652,7 +2107,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1664,7 +2120,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1672,7 +2128,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1681,39 +2137,58 @@
   },
   {
     "id": "extra-13",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin est grand."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta magnus est."
+        "text": "magnus"
       },
       {
         "id": "1",
-        "text": "Nauta parvus est."
+        "text": "parvus"
       },
       {
         "id": "2",
-        "text": "Nauta magna est."
+        "text": "magna"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-13",
     "assessment": "study.theme.early-concordia:extra-13",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "nauta",
@@ -1722,7 +2197,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1734,7 +2210,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1742,7 +2218,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1751,39 +2227,58 @@
   },
   {
     "id": "extra-14",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Magister magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Magister parva est."
+        "text": "parva"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-14",
     "assessment": "study.theme.early-concordia:extra-14",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magister",
       "magnus",
@@ -1792,7 +2287,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1804,7 +2300,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1812,7 +2308,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1821,39 +2317,58 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Liber parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Liber magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Liber parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-15",
     "assessment": "study.theme.early-concordia:extra-15",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "liber",
       "magnus",
@@ -1862,7 +2377,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1874,7 +2390,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1882,7 +2398,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1891,39 +2407,58 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille est petite."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella parva est."
+        "text": "parva"
       },
       {
         "id": "1",
-        "text": "Puella magna est."
+        "text": "magna"
       },
       {
         "id": "2",
-        "text": "Puella parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-16",
     "assessment": "study.theme.early-concordia:extra-16",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -1932,7 +2467,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1944,7 +2480,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1952,7 +2488,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -1961,39 +2497,58 @@
   },
   {
     "id": "extra-17",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Vir magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Vir parva est."
+        "text": "parva"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-17",
     "assessment": "study.theme.early-concordia:extra-17",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -2002,7 +2557,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2014,7 +2570,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2022,7 +2578,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -2031,39 +2587,58 @@
   },
   {
     "id": "extra-18",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La maison est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nVīlla "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vīlla magna est."
+        "text": "magna"
       },
       {
         "id": "1",
-        "text": "Vīlla parva est."
+        "text": "parva"
       },
       {
         "id": "2",
-        "text": "Vīlla magnus est."
+        "text": "magnus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-18",
     "assessment": "study.theme.early-concordia:extra-18",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "magnus",
       "parvus",
@@ -2072,7 +2647,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2084,7 +2660,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2092,7 +2668,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -2101,39 +2677,58 @@
   },
   {
     "id": "extra-19",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme est grande."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina magna est."
+        "text": "magna"
       },
       {
         "id": "1",
-        "text": "Fēmina parva est."
+        "text": "parva"
       },
       {
         "id": "2",
-        "text": "Fēmina magnus est."
+        "text": "magnus"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-19",
     "assessment": "study.theme.early-concordia:extra-19",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "magnus",
@@ -2142,7 +2737,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2154,7 +2750,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2162,7 +2758,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []
@@ -2171,39 +2767,58 @@
   },
   {
     "id": "extra-20",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin est petit."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta parvus est."
+        "text": "parvus"
       },
       {
         "id": "1",
-        "text": "Nauta magnus est."
+        "text": "magnus"
       },
       {
         "id": "2",
-        "text": "Nauta parvum est."
+        "text": "parvum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-concordia"
+      "compositio.adjective-gender",
+      "compositio.magnitude"
     ],
     "item": "early-concordia:extra-20",
     "assessment": "study.theme.early-concordia:extra-20",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.genus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "nauta",
@@ -2212,7 +2827,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2224,7 +2840,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "compositio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2232,7 +2848,7 @@
       "2": {
         "feedback": "Nōn rēctē. Adiectīvum cum nōmine genere congruere dēbet.",
         "observed": [
-          "study.confusion.early-adjective-gender"
+          "compositio.adjective-gender"
         ],
         "hypotheses": [],
         "practice": []

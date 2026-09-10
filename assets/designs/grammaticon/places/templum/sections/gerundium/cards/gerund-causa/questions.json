@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon vient auprès du maître pour apprendre."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā puer ad magistrum venit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Discendō causā puer ad magistrum venit."
+        "text": "Discendō"
       },
       {
         "id": "1",
-        "text": "Discendum causā puer ad magistrum venit."
+        "text": "Discendum"
       },
       {
         "id": "0",
-        "text": "Discendī causā puer ad magistrum venit."
+        "text": "Discendī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q1",
     "assessment": "study.theme.gerund-causa:q1",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.disco",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "ad",
       "causa",
@@ -45,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -57,7 +78,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -65,7 +86,7 @@
       "2": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -74,39 +95,58 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les garçons se dirigent vers le jardin pour jouer."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā puerī hortum petunt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Lūdendō causā puerī hortum petunt."
+        "text": "Lūdendō"
       },
       {
         "id": "2",
-        "text": "Lūdendī causā puerī hortum petunt."
+        "text": "Lūdendī"
       },
       {
         "id": "0",
-        "text": "Lūdendum causā puerī hortum petunt."
+        "text": "Lūdendum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q2",
     "assessment": "study.theme.gerund-causa:q2",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.ludo",
+      "lexicon.compositio.peto",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "causa",
       "hortus",
@@ -117,13 +157,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -131,7 +172,7 @@
       "1": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -146,39 +187,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin va dans la ville pour acheter."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā nauta in oppidum it."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Emendō causā nauta in oppidum it."
+        "text": "Emendō"
       },
       {
         "id": "1",
-        "text": "Emendī causā nauta in oppidum it."
+        "text": "Emendī"
       },
       {
         "id": "2",
-        "text": "Emendum causā nauta in oppidum it."
+        "text": "Emendum"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q3",
     "assessment": "study.theme.gerund-causa:q3",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.emo",
+      "lexicon.compositio.eo",
+      "lexicon.compositio.in",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.oppidum"
+    ],
     "vocabulary": [
       "causa",
       "emo",
@@ -190,13 +251,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -210,7 +272,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -219,39 +281,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille vient au théâtre pour chanter."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā puella in theātrum venit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Cantandī causā puella in theātrum venit."
+        "text": "Cantandī"
       },
       {
         "id": "1",
-        "text": "Cantandum causā puella in theātrum venit."
+        "text": "Cantandum"
       },
       {
         "id": "2",
-        "text": "Cantandō causā puella in theātrum venit."
+        "text": "Cantandō"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q4",
     "assessment": "study.theme.gerund-causa:q4",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.canto",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.theatrum",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "canto",
       "causa",
@@ -263,7 +345,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -275,7 +358,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -283,7 +366,7 @@
       "2": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -292,39 +375,57 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les amis se réunissent pour dîner."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā amīcī conveniunt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Cēnandō causā amīcī conveniunt."
+        "text": "Cēnandō"
       },
       {
         "id": "0",
-        "text": "Cēnandum causā amīcī conveniunt."
+        "text": "Cēnandum"
       },
       {
         "id": "2",
-        "text": "Cēnandī causā amīcī conveniunt."
+        "text": "Cēnandī"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q5",
     "assessment": "study.theme.gerund-causa:q5",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.ceno",
+      "lexicon.compositio.convenio"
+    ],
     "vocabulary": [
       "amicus",
       "causa",
@@ -334,13 +435,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -348,7 +450,7 @@
       "1": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -363,39 +465,59 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan vient au forum pour vendre."
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " causā agricola ad forum venit."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Vēndendī causā agricola ad forum venit."
+        "text": "Vēndendī"
       },
       {
         "id": "2",
-        "text": "Vēndendum causā agricola ad forum venit."
+        "text": "Vēndendum"
       },
       {
         "id": "0",
-        "text": "Vēndendō causā agricola ad forum venit."
+        "text": "Vēndendō"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-causa"
+      "compositio.gerund-causa"
     ],
     "item": "gerund-causa:q6",
     "assessment": "study.theme.gerund-causa:q6",
     "help": "study.gerund-causa",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.ad",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.causa",
+      "lexicon.compositio.forum",
+      "lexicon.compositio.vendo",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "ad",
       "agricola",
@@ -407,13 +529,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-causa",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-causa-ablative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []
@@ -427,7 +550,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-causa-accusative"
+          "compositio.gerund-causa"
         ],
         "hypotheses": [],
         "practice": []

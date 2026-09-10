@@ -1,39 +1,57 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand vient à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " venit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Mercātor Rōmam venit."
+        "text": "Rōmam"
       },
       {
         "id": "2",
-        "text": "Mercātor Rōmae venit."
+        "text": "Rōmae"
       },
       {
         "id": "1",
-        "text": "Mercātor Rōmā venit."
+        "text": "Rōmā"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q1",
     "assessment": "study.theme.town-destination:q1",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.roma",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "mercator",
       "roma",
@@ -42,7 +60,8 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -54,7 +73,7 @@
       "1": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +81,7 @@
       "2": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -71,39 +90,57 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille va à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " it."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puella Tūsculum it."
+        "text": "Tūsculum"
       },
       {
         "id": "1",
-        "text": "Puella Tūsculī it."
+        "text": "Tūsculī"
       },
       {
         "id": "0",
-        "text": "Puella Tūsculō it."
+        "text": "Tūsculō"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q2",
     "assessment": "study.theme.town-destination:q2",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.eo",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.tusculum"
+    ],
     "vocabulary": [
       "eo",
       "puella",
@@ -112,13 +149,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +164,7 @@
       "1": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -141,39 +179,57 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître retourne à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " redit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Magister Rōmā redit."
+        "text": "Rōmā"
       },
       {
         "id": "1",
-        "text": "Magister Rōmam redit."
+        "text": "Rōmam"
       },
       {
         "id": "0",
-        "text": "Magister Rōmae redit."
+        "text": "Rōmae"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q3",
     "assessment": "study.theme.town-destination:q3",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.redeo",
+      "lexicon.compositio.roma"
+    ],
     "vocabulary": [
       "magister",
       "redeo",
@@ -182,13 +238,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +259,7 @@
       "2": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,39 +268,57 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur vient à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " venit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Agricola Tūsculī venit."
+        "text": "Tūsculī"
       },
       {
         "id": "0",
-        "text": "Agricola Tūsculum venit."
+        "text": "Tūsculum"
       },
       {
         "id": "1",
-        "text": "Agricola Tūsculō venit."
+        "text": "Tūsculō"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q4",
     "assessment": "study.theme.town-destination:q4",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.tusculum",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "agricola",
       "tusculum",
@@ -252,7 +327,8 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -264,7 +340,7 @@
       "1": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +348,7 @@
       "2": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -281,39 +357,57 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave va à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nServus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " it."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Servus Rōmae it."
+        "text": "Rōmae"
       },
       {
         "id": "0",
-        "text": "Servus Rōmā it."
+        "text": "Rōmā"
       },
       {
         "id": "2",
-        "text": "Servus Rōmam it."
+        "text": "Rōmam"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q5",
     "assessment": "study.theme.town-destination:q5",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.eo",
+      "lexicon.compositio.roma",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "eo",
       "roma",
@@ -322,13 +416,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []
@@ -336,7 +431,7 @@
       "1": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -351,39 +446,57 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme retourne à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " redit."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Fēmina Tūsculō redit."
+        "text": "Tūsculō"
       },
       {
         "id": "0",
-        "text": "Fēmina Tūsculī redit."
+        "text": "Tūsculī"
       },
       {
         "id": "1",
-        "text": "Fēmina Tūsculum redit."
+        "text": "Tūsculum"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.town-destination"
+      "compositio.location-motion",
+      "compositio.location-origin"
     ],
     "item": "town-destination:q6",
     "assessment": "study.theme.town-destination:q6",
     "help": "study.town-destination",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.redeo",
+      "lexicon.compositio.tusculum"
+    ],
     "vocabulary": [
       "femina",
       "redeo",
@@ -392,13 +505,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-destination",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
         "observed": [
-          "study.confusion.destination-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +526,7 @@
       "2": {
         "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
         "observed": [
-          "study.confusion.destination-origin"
+          "compositio.location-origin"
         ],
         "hypotheses": [],
         "practice": []

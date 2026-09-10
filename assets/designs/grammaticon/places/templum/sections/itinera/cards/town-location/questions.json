@@ -1,39 +1,56 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille habite à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habitat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella Rōmam habitat."
+        "text": "Rōmam"
       },
       {
         "id": "0",
-        "text": "Puella Rōmae habitat."
+        "text": "Rōmae"
       },
       {
         "id": "2",
-        "text": "Puella Rōmā habitat."
+        "text": "Rōmā"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q1",
     "assessment": "study.theme.town-location:q1",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.habito",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.roma"
+    ],
     "vocabulary": [
       "habito",
       "puella",
@@ -42,7 +59,8 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -54,7 +72,7 @@
       "1": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +80,7 @@
       "2": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -71,39 +89,56 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer Tūsculī est."
+        "text": "Tūsculī"
       },
       {
         "id": "1",
-        "text": "Puer Tūsculō est."
+        "text": "Tūsculō"
       },
       {
         "id": "0",
-        "text": "Puer Tūsculum est."
+        "text": "Tūsculum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q2",
     "assessment": "study.theme.town-location:q2",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.tusculum"
+    ],
     "vocabulary": [
       "puer",
       "sum",
@@ -112,13 +147,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +162,7 @@
       "1": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -141,39 +177,56 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître reste à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " manet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister Rōmā manet."
+        "text": "Rōmā"
       },
       {
         "id": "2",
-        "text": "Magister Rōmam manet."
+        "text": "Rōmam"
       },
       {
         "id": "1",
-        "text": "Magister Rōmae manet."
+        "text": "Rōmae"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q3",
     "assessment": "study.theme.town-location:q3",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.roma"
+    ],
     "vocabulary": [
       "magister",
       "maneo",
@@ -182,13 +235,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +256,7 @@
       "2": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,39 +265,56 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’agriculteur habite à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habitat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Agricola Tūsculum habitat."
+        "text": "Tūsculum"
       },
       {
         "id": "0",
-        "text": "Agricola Tūsculī habitat."
+        "text": "Tūsculī"
       },
       {
         "id": "2",
-        "text": "Agricola Tūsculō habitat."
+        "text": "Tūsculō"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q4",
     "assessment": "study.theme.town-location:q4",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.habito",
+      "lexicon.compositio.tusculum"
+    ],
     "vocabulary": [
       "agricola",
       "habito",
@@ -252,7 +323,8 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -264,7 +336,7 @@
       "1": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +344,7 @@
       "2": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -281,39 +353,56 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand est à Rome."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Mercātor Rōmae est."
+        "text": "Rōmae"
       },
       {
         "id": "0",
-        "text": "Mercātor Rōmam est."
+        "text": "Rōmam"
       },
       {
         "id": "1",
-        "text": "Mercātor Rōmā est."
+        "text": "Rōmā"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q5",
     "assessment": "study.theme.town-location:q5",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.roma",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "mercator",
       "roma",
@@ -322,13 +411,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -336,7 +426,7 @@
       "1": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -351,39 +441,56 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme reste à Tusculum."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " manet."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Fēmina Tūsculum manet."
+        "text": "Tūsculum"
       },
       {
         "id": "0",
-        "text": "Fēmina Tūsculō manet."
+        "text": "Tūsculō"
       },
       {
         "id": "1",
-        "text": "Fēmina Tūsculī manet."
+        "text": "Tūsculī"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.town-location"
+      "compositio.location-locative"
     ],
     "item": "town-location:q6",
     "assessment": "study.theme.town-location:q6",
     "help": "study.town-location",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.maneo",
+      "lexicon.compositio.tusculum"
+    ],
     "vocabulary": [
       "femina",
       "maneo",
@@ -392,13 +499,14 @@
     "editorial": {
       "language": "la",
       "topic": "town-location",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
         "observed": [
-          "study.confusion.locative-origin"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +520,7 @@
       "2": {
         "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
         "observed": [
-          "study.confusion.locative-destination"
+          "compositio.location-locative"
         ],
         "hypotheses": [],
         "practice": []

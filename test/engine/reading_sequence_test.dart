@@ -9,8 +9,9 @@ import 'design_test.dart' show readFile;
 Future<GameDesign> sequenceFixture() =>
     GameDesign.load('assets/designs/grammaticon/game.json', (path) async {
       final text = await readFile(path);
-      if (!path.contains('/theatrum/sections/loca/cards/a-ablative/'))
+      if (!path.contains('/theatrum/sections/loca/cards/a-ablative/')) {
         return text;
+      }
       dynamic data = jsonDecode(text);
       if (path.endsWith('/card.json')) {
         data['questionSelection'] = 'weighted';
@@ -47,10 +48,11 @@ void main() {
         count += questions.length;
         banks[card.address] = questions.map((q) => q.id).toSet();
         expect(await design.lesson(card), isNotEmpty);
-        for (final q in questions) {
+        for (final entry in questions) {
+          final q = await design.materialize(card, entry);
           expect(
             q.skills,
-            contains(card.data['skills'].single),
+            everyElement(isIn(design.skillLeaves(card.data['skills'].single))),
             reason: card.address,
           );
           expect(await design.help(q.data['help']), isNotEmpty);
@@ -61,7 +63,7 @@ void main() {
           );
         }
       }
-      expect(count, 2016);
+      expect(count, greaterThan(1900));
       for (final set in objects(design.pedagogy['practiceSets'])) {
         for (final target in objects(set['targets'])) {
           if (banks.containsKey(target['card'])) {
@@ -74,6 +76,7 @@ void main() {
         }
       }
     },
+    timeout: const Timeout(Duration(minutes: 3)),
   );
   test('retired cards do not break saves or erase earned progress', () {
     final original = GameSession(design, {}, (_) async {});

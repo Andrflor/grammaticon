@@ -1,39 +1,57 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon a envie d’apprendre."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer cupidus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer cupidus discendum est."
+        "text": "discendum"
       },
       {
         "id": "0",
-        "text": "Puer cupidus discendī est."
+        "text": "discendī"
       },
       {
         "id": "2",
-        "text": "Puer cupidus discendō est."
+        "text": "discendō"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q1",
     "assessment": "study.theme.gerund-desire:q1",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.cupidus",
+      "lexicon.compositio.disco",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "cupidus",
       "disco",
@@ -43,7 +61,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +74,7 @@
       "1": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +82,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,39 +91,57 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille s’intéresse vivement à la lecture."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella studiōsa "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella studiōsa legendō est."
+        "text": "legendō"
       },
       {
         "id": "0",
-        "text": "Puella studiōsa legendum est."
+        "text": "legendum"
       },
       {
         "id": "2",
-        "text": "Puella studiōsa legendī est."
+        "text": "legendī"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q2",
     "assessment": "study.theme.gerund-desire:q2",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.studiosus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "lego",
       "puella",
@@ -114,13 +151,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -128,7 +166,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -143,39 +181,57 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand a envie de vendre."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor cupidus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Mercātor cupidus vēndendō est."
+        "text": "vēndendō"
       },
       {
         "id": "2",
-        "text": "Mercātor cupidus vēndendum est."
+        "text": "vēndendum"
       },
       {
         "id": "1",
-        "text": "Mercātor cupidus vēndendī est."
+        "text": "vēndendī"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q3",
     "assessment": "study.theme.gerund-desire:q3",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.cupidus",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vendo"
+    ],
     "vocabulary": [
       "cupidus",
       "mercator",
@@ -185,13 +241,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +262,7 @@
       "2": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,39 +271,57 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les garçons ont envie de jouer."
+      },
+      {
+        "type": "text",
+        "text": "\nPuerī cupidī "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puerī cupidī lūdendō sunt."
+        "text": "lūdendō"
       },
       {
         "id": "0",
-        "text": "Puerī cupidī lūdendī sunt."
+        "text": "lūdendī"
       },
       {
         "id": "1",
-        "text": "Puerī cupidī lūdendum sunt."
+        "text": "lūdendum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q4",
     "assessment": "study.theme.gerund-desire:q4",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.cupidus",
+      "lexicon.compositio.ludo",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "cupidus",
       "ludo",
@@ -256,7 +331,8 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -268,7 +344,7 @@
       "1": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +352,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -285,39 +361,57 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Les amis aiment raconter."
+      },
+      {
+        "type": "text",
+        "text": "\nAmīcī studiōsī "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " sunt."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Amīcī studiōsī nārrandī sunt."
+        "text": "nārrandī"
       },
       {
         "id": "1",
-        "text": "Amīcī studiōsī nārrandō sunt."
+        "text": "nārrandō"
       },
       {
         "id": "0",
-        "text": "Amīcī studiōsī nārrandum sunt."
+        "text": "nārrandum"
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q5",
     "assessment": "study.theme.gerund-desire:q5",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.narro",
+      "lexicon.compositio.studiosus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "amicus",
       "narro",
@@ -327,13 +421,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -341,7 +436,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -356,39 +451,57 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin a envie de naviguer."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta cupidus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Nauta cupidus nāvigandī est."
+        "text": "nāvigandī"
       },
       {
         "id": "2",
-        "text": "Nauta cupidus nāvigandum est."
+        "text": "nāvigandum"
       },
       {
         "id": "0",
-        "text": "Nauta cupidus nāvigandō est."
+        "text": "nāvigandō"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.gerund-desire"
+      "compositio.gerund-desire-case"
     ],
     "item": "gerund-desire:q6",
     "assessment": "study.theme.gerund-desire:q6",
     "help": "study.gerund-desire",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.cupidus",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.navigo",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "cupidus",
       "nauta",
@@ -398,13 +511,14 @@
     "editorial": {
       "language": "la",
       "topic": "gerund-desire",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hīc genetīvus gerundiī cupiditātem vel studium definit. Ablātīvus in -ndō hanc cōnstrūctiōnem nōn servat.",
         "observed": [
-          "study.confusion.gerund-desire-ablative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -418,7 +532,7 @@
       "2": {
         "feedback": "Nōn rēctē. Post cupidus vel studiōsus hīc genetīvus in -ndī, nōn accūsātīvus in -ndum, pōnitur.",
         "observed": [
-          "study.confusion.gerund-desire-accusative"
+          "compositio.gerund-desire-case"
         ],
         "hypotheses": [],
         "practice": []

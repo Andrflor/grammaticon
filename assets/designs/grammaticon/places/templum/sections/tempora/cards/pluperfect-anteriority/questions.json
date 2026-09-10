@@ -1,39 +1,58 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître est venu. Le garçon avait lu le livre."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister vēnit. Puer librum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister vēnit. Puer librum lēgerat."
+        "text": "lēgerat."
       },
       {
         "id": "1",
-        "text": "Magister vēnit. Puer librum lēgit."
+        "text": "lēgit."
       },
       {
         "id": "2",
-        "text": "Magister vēnit. Puer librum legēbat."
+        "text": "legēbat."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q1",
     "assessment": "study.theme.pluperfect-anteriority:q1",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "lego",
       "liber",
@@ -44,7 +63,8 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -56,7 +76,7 @@
       "1": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +84,7 @@
       "2": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -73,39 +93,58 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est venu. La jeune fille avait cueilli la rose."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer vēnit. Puella rosam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer vēnit. Puella rosam carpēbat."
+        "text": "carpēbat."
       },
       {
         "id": "2",
-        "text": "Puer vēnit. Puella rosam carpserat."
+        "text": "carpserat."
       },
       {
         "id": "0",
-        "text": "Puer vēnit. Puella rosam carpsit."
+        "text": "carpsit."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q2",
     "assessment": "study.theme.pluperfect-anteriority:q2",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.carpo",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "carpo",
       "puella",
@@ -116,13 +155,14 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +170,7 @@
       "1": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -145,39 +185,58 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave est venu. La femme avait écrit la lettre."
+      },
+      {
+        "type": "text",
+        "text": "\nServus vēnit. Fēmina epistulam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Servus vēnit. Fēmina epistulam scrībēbat."
+        "text": "scrībēbat."
       },
       {
         "id": "2",
-        "text": "Servus vēnit. Fēmina epistulam scrīpsit."
+        "text": "scrīpsit."
       },
       {
         "id": "1",
-        "text": "Servus vēnit. Fēmina epistulam scrīpserat."
+        "text": "scrīpserat."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q3",
     "assessment": "study.theme.pluperfect-anteriority:q3",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.scribo",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "epistula",
       "femina",
@@ -188,13 +247,14 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -208,7 +268,7 @@
       "2": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -217,39 +277,58 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le père est venu. Le maître avait averti l’élève."
+      },
+      {
+        "type": "text",
+        "text": "\nPater vēnit. Magister discipulum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Pater vēnit. Magister discipulum monēbat."
+        "text": "monēbat."
       },
       {
         "id": "0",
-        "text": "Pater vēnit. Magister discipulum monuerat."
+        "text": "monuerat."
       },
       {
         "id": "1",
-        "text": "Pater vēnit. Magister discipulum monuit."
+        "text": "monuit."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q4",
     "assessment": "study.theme.pluperfect-anteriority:q4",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.discipulus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.moneo",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "discipulus",
       "magister",
@@ -260,7 +339,8 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -272,7 +352,7 @@
       "1": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +360,7 @@
       "2": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -289,39 +369,58 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marchand est venu. L’agriculteur avait conduit le cheval."
+      },
+      {
+        "type": "text",
+        "text": "\nMercātor vēnit. Agricola equum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Mercātor vēnit. Agricola equum dūxerat."
+        "text": "dūxerat."
       },
       {
         "id": "1",
-        "text": "Mercātor vēnit. Agricola equum dūcēbat."
+        "text": "dūcēbat."
       },
       {
         "id": "0",
-        "text": "Mercātor vēnit. Agricola equum dūxit."
+        "text": "dūxit."
       }
     ],
     "accepted": [
       "2"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q5",
     "assessment": "study.theme.pluperfect-anteriority:q5",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.duco",
+      "lexicon.compositio.equus",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "agricola",
       "duco",
@@ -332,13 +431,14 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,7 +446,7 @@
       "1": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -361,39 +461,58 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître de maison est venu. L’esclave avait ouvert la porte."
+      },
+      {
+        "type": "text",
+        "text": "\nDominus vēnit. Servus portam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Dominus vēnit. Servus portam aperuit."
+        "text": "aperuit."
       },
       {
         "id": "0",
-        "text": "Dominus vēnit. Servus portam aperiēbat."
+        "text": "aperiēbat."
       },
       {
         "id": "1",
-        "text": "Dominus vēnit. Servus portam aperuerat."
+        "text": "aperuerat."
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.pluperfect-anteriority"
+      "compositio.past-anteriority"
     ],
     "item": "pluperfect-anteriority:q6",
     "assessment": "study.theme.pluperfect-anteriority:q6",
     "help": "study.pluperfect-anteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.aperio",
+      "lexicon.compositio.dominus",
+      "lexicon.compositio.porta",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.venio"
+    ],
     "vocabulary": [
       "aperio",
       "dominus",
@@ -404,13 +523,14 @@
     "editorial": {
       "language": "la",
       "topic": "pluperfect-anteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
         "observed": [
-          "study.confusion.anteriority-imperfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []
@@ -424,7 +544,7 @@
       "2": {
         "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
         "observed": [
-          "study.confusion.anteriority-perfect"
+          "compositio.past-anteriority"
         ],
         "hypotheses": [],
         "practice": []

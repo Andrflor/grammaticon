@@ -30,7 +30,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.ager"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -51,7 +51,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ager"
         ],
         "hypotheses": [],
         "practice": []
@@ -59,7 +59,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ager"
         ],
         "hypotheses": [],
         "practice": []
@@ -97,7 +97,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.canto"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -118,7 +118,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canto"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +126,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canto"
         ],
         "hypotheses": [],
         "practice": []
@@ -164,7 +164,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.dormio"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -185,7 +185,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.dormio"
         ],
         "hypotheses": [],
         "practice": []
@@ -193,74 +193,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "et",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "et",
-    "assessment": "study.lexicon.theatrum.loca:et",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "et"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "et"
-      },
-      {
-        "id": "1",
-        "text": "femme"
-      },
-      {
-        "id": "2",
-        "text": "jardin"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.loca"
-    ],
-    "requires": [],
-    "help": "study.lexicon.loca",
-    "vocabulary": [
-      "et"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: et — et.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.dormio"
         ],
         "hypotheses": [],
         "practice": []
@@ -298,7 +231,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.femina"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -319,7 +252,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -327,7 +260,62 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "habito",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "habito",
+    "assessment": "lexicon.lectio.habito",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "habitāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "habiter"
+      },
+      {
+        "id": "1",
+        "text": "jardin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.habito"
+    ],
+    "requires": [],
+    "vocabulary": [
+      "habito"
+    ],
+    "help": "study.lexicon.loca",
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: habitāre — habiter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "habitāre — habiter.",
+        "observed": [
+          "lexicon.lectio.habito"
         ],
         "hypotheses": [],
         "practice": []
@@ -365,7 +353,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.hortus"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -386,7 +374,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -394,7 +382,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -432,7 +420,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.in"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -453,7 +441,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -461,7 +449,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -499,7 +487,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.insula"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -520,7 +508,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: īnsula — île.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.insula"
         ],
         "hypotheses": [],
         "practice": []
@@ -528,7 +516,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: īnsula — île.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.insula"
         ],
         "hypotheses": [],
         "practice": []
@@ -566,7 +554,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.italia"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -587,7 +575,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: Italia — Italie.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.italia"
         ],
         "hypotheses": [],
         "practice": []
@@ -595,7 +583,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: Italia — Italie.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.italia"
         ],
         "hypotheses": [],
         "practice": []
@@ -633,7 +621,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.laetus"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -654,7 +642,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laetus"
         ],
         "hypotheses": [],
         "practice": []
@@ -662,7 +650,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laetus"
         ],
         "hypotheses": [],
         "practice": []
@@ -700,7 +688,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.liber"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -721,7 +709,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -729,7 +717,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -767,7 +755,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.magister"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -788,7 +776,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magister"
         ],
         "hypotheses": [],
         "practice": []
@@ -796,7 +784,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magister"
         ],
         "hypotheses": [],
         "practice": []
@@ -834,7 +822,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.magnus"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -855,7 +843,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magnus"
         ],
         "hypotheses": [],
         "practice": []
@@ -863,7 +851,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magnus"
         ],
         "hypotheses": [],
         "practice": []
@@ -901,7 +889,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.nauta"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -922,7 +910,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -930,7 +918,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -968,7 +956,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.non"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -989,7 +977,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.non"
         ],
         "hypotheses": [],
         "practice": []
@@ -997,74 +985,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "num",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "num",
-    "assessment": "study.lexicon.theatrum.loca:num",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "num"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "est-ce que… ? (réponse négative généralement attendue)"
-      },
-      {
-        "id": "1",
-        "text": "ville fortifiée"
-      },
-      {
-        "id": "2",
-        "text": "petit"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.loca"
-    ],
-    "requires": [],
-    "help": "study.lexicon.loca",
-    "vocabulary": [
-      "num"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: num — est-ce que… ? (réponse négative généralement attendue).",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: num — est-ce que… ? (réponse négative généralement attendue).",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: num — est-ce que… ? (réponse négative généralement attendue).",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.non"
         ],
         "hypotheses": [],
         "practice": []
@@ -1102,7 +1023,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.oppidum"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1123,7 +1044,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: oppidum — ville fortifiée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.oppidum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1131,7 +1052,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: oppidum — ville fortifiée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.oppidum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1169,7 +1090,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.parvus"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1190,7 +1111,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus — petit.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.parvus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +1119,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus — petit.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.parvus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1236,7 +1157,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.puella"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1257,7 +1178,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -1265,7 +1186,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -1303,7 +1224,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.puer"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1324,7 +1245,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -1332,74 +1253,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "quis",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "quis",
-    "assessment": "study.lexicon.theatrum.loca:quis",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "quis, quid (pl. quī)"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "qui ? quoi ?"
-      },
-      {
-        "id": "1",
-        "text": "école"
-      },
-      {
-        "id": "2",
-        "text": "mais"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.loca"
-    ],
-    "requires": [],
-    "help": "study.lexicon.loca",
-    "vocabulary": [
-      "quis"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quis, quid (pl. quī) — qui ? quoi ?.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quis, quid (pl. quī) — qui ? quoi ?.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quis, quid (pl. quī) — qui ? quoi ?.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -1437,7 +1291,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.schola"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1458,7 +1312,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.schola"
         ],
         "hypotheses": [],
         "practice": []
@@ -1466,7 +1320,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.schola"
         ],
         "hypotheses": [],
         "practice": []
@@ -1504,7 +1358,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.sed"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1525,7 +1379,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sed — mais.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sed"
         ],
         "hypotheses": [],
         "practice": []
@@ -1533,7 +1387,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sed — mais.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sed"
         ],
         "hypotheses": [],
         "practice": []
@@ -1571,7 +1425,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.sum"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1592,7 +1446,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1600,7 +1454,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1638,7 +1492,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.templum"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1659,7 +1513,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.templum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1667,7 +1521,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.templum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1705,7 +1559,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.ubi"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1726,7 +1580,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ubi"
         ],
         "hypotheses": [],
         "practice": []
@@ -1734,7 +1588,62 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ubi"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "urbs",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "urbs",
+    "assessment": "lexicon.lectio.urbs",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "urbs"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ville"
+      },
+      {
+        "id": "1",
+        "text": "jardin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.urbs"
+    ],
+    "requires": [],
+    "vocabulary": [
+      "urbs"
+    ],
+    "help": "study.lexicon.loca",
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: urbs — ville.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "urbs — ville.",
+        "observed": [
+          "lexicon.lectio.urbs"
         ],
         "hypotheses": [],
         "practice": []
@@ -1772,7 +1681,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.villa"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1793,7 +1702,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīlla — maison de campagne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.villa"
         ],
         "hypotheses": [],
         "practice": []
@@ -1801,7 +1710,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīlla — maison de campagne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.villa"
         ],
         "hypotheses": [],
         "practice": []
@@ -1839,7 +1748,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.loca"
+      "lexicon.lectio.vir"
     ],
     "requires": [],
     "help": "study.lexicon.loca",
@@ -1860,7 +1769,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vir — homme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vir"
         ],
         "hypotheses": [],
         "practice": []
@@ -1868,7 +1777,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vir — homme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vir"
         ],
         "hypotheses": [],
         "practice": []

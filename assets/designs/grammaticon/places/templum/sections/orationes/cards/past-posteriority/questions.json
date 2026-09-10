@@ -1,39 +1,59 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon pensait qu’il verrait son ami."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer putābat sē amīcum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer putābat sē amīcum vīsūrum esse."
+        "text": "vīsūrum esse."
       },
       {
         "id": "1",
-        "text": "Puer putābat sē amīcum vidēre."
+        "text": "vidēre."
       },
       {
         "id": "2",
-        "text": "Puer putābat sē amīcum vīdisse."
+        "text": "vīdisse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q1",
     "assessment": "study.theme.past-posteriority:past-posteriority:q1",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.puto",
+      "lexicon.compositio.se",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "amicus",
       "puer",
@@ -45,7 +65,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -57,7 +78,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -65,7 +86,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -74,39 +95,59 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La mère a dit que son fils reviendrait à la maison."
+      },
+      {
+        "type": "text",
+        "text": "\nMāter dīxit fīlium domum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Māter dīxit fīlium domum rediisse."
+        "text": "rediisse."
       },
       {
         "id": "0",
-        "text": "Māter dīxit fīlium domum reditūrum esse."
+        "text": "reditūrum esse."
       },
       {
         "id": "1",
-        "text": "Māter dīxit fīlium domum redīre."
+        "text": "redīre."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q2",
     "assessment": "study.theme.past-posteriority:past-posteriority:q2",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.domus",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.mater",
+      "lexicon.compositio.redeo",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "domus",
@@ -118,7 +159,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -130,7 +172,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -138,7 +180,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -147,39 +189,59 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan croyait que l’esclave labourerait le champ."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola crēdēbat servum agrum "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Agricola crēdēbat servum agrum arāre."
+        "text": "arāre."
       },
       {
         "id": "0",
-        "text": "Agricola crēdēbat servum agrum arātūrum esse."
+        "text": "arātūrum esse."
       },
       {
         "id": "2",
-        "text": "Agricola crēdēbat servum agrum arāvisse."
+        "text": "arāvisse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q3",
     "assessment": "study.theme.past-posteriority:past-posteriority:q3",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.ager",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.aro",
+      "lexicon.compositio.credo",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "ager",
       "agricola",
@@ -191,7 +253,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -203,7 +266,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -211,7 +274,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -220,39 +283,59 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin a dit que le marchand achèterait le navire."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta dīxit mercātōrem nāvem "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Nauta dīxit mercātōrem nāvem ēmisse."
+        "text": "ēmisse."
       },
       {
         "id": "1",
-        "text": "Nauta dīxit mercātōrem nāvem emere."
+        "text": "emere."
       },
       {
         "id": "0",
-        "text": "Nauta dīxit mercātōrem nāvem ēmptūrum esse."
+        "text": "ēmptūrum esse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q4",
     "assessment": "study.theme.past-posteriority:past-posteriority:q4",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.emo",
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.navis",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "dico",
       "emo",
@@ -264,7 +347,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -276,7 +360,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -284,7 +368,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -293,39 +377,59 @@
   },
   {
     "id": "q5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille a dit qu’elle porterait de l’eau."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella dīxit sē aquam "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella dīxit sē aquam portāre."
+        "text": "portāre."
       },
       {
         "id": "2",
-        "text": "Puella dīxit sē aquam portāvisse."
+        "text": "portāvisse."
       },
       {
         "id": "0",
-        "text": "Puella dīxit sē aquam portātūram esse."
+        "text": "portātūram esse."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q5",
     "assessment": "study.theme.past-posteriority:past-posteriority:q5",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.aqua",
+      "lexicon.compositio.dico",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.se",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "aqua",
       "dico",
@@ -337,7 +441,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -349,7 +454,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -357,7 +462,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -366,39 +471,60 @@
   },
   {
     "id": "q6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le père pensait que les amis dîneraient dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPater putābat amīcōs in hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Pater putābat amīcōs in hortō cēnātūrōs esse."
+        "text": "cēnātūrōs esse."
       },
       {
         "id": "2",
-        "text": "Pater putābat amīcōs in hortō cēnāvisse."
+        "text": "cēnāvisse."
       },
       {
         "id": "1",
-        "text": "Pater putābat amīcōs in hortō cēnāre."
+        "text": "cēnāre."
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.past-posteriority"
+      "compositio.reported-after"
     ],
     "item": "past-posteriority:q6",
     "assessment": "study.theme.past-posteriority:past-posteriority:q6",
     "help": "study.past-posteriority",
-    "requires": [],
+    "requires": [
+      "trait.tempus",
+      "lexicon.compositio.amicus",
+      "lexicon.compositio.ceno",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puto",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "amicus",
       "ceno",
@@ -411,7 +537,8 @@
     "editorial": {
       "language": "la",
       "topic": "past-posteriority",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -423,7 +550,7 @@
       "1": {
         "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
         "observed": [
-          "study.confusion.reported-past-posteriority-same-time"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []
@@ -431,7 +558,7 @@
       "2": {
         "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
         "observed": [
-          "study.confusion.reported-past-posteriority-earlier"
+          "compositio.reported-after"
         ],
         "hypotheses": [],
         "practice": []

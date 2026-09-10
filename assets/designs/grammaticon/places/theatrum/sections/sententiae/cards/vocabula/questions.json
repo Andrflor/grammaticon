@@ -1,72 +1,5 @@
 [
   {
-    "id": "a",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "a",
-    "assessment": "study.lexicon.theatrum.sententiae:a",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "ā"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "de, depuis ; par"
-      },
-      {
-        "id": "1",
-        "text": "vers, auprès de ; pour"
-      },
-      {
-        "id": "2",
-        "text": "apporter"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "a"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: ā — de, depuis ; par.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ā — de, depuis ; par.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ā — de, depuis ; par.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "ad",
     "interaction": "choice",
     "dimension": "lemma",
@@ -97,7 +30,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ad"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -118,7 +51,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +59,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ad"
         ],
         "hypotheses": [],
         "practice": []
@@ -164,7 +97,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.affero"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -185,7 +118,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.affero"
         ],
         "hypotheses": [],
         "practice": []
@@ -193,7 +126,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.affero"
         ],
         "hypotheses": [],
         "practice": []
@@ -231,7 +164,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.agricola"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -252,7 +185,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
@@ -260,7 +193,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
@@ -298,7 +231,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ambulo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -319,7 +252,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -327,7 +260,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -365,7 +298,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.amicus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -386,7 +319,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus, amīca — ami, amie.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.amicus"
         ],
         "hypotheses": [],
         "practice": []
@@ -394,74 +327,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus, amīca — ami, amie.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "antequam",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "antequam",
-    "assessment": "study.lexicon.theatrum.sententiae:antequam",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "antequam"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ouvrir"
-      },
-      {
-        "id": "0",
-        "text": "avant que"
-      },
-      {
-        "id": "2",
-        "text": "eau"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "antequam"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: antequam — avant que.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: antequam — avant que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: antequam — avant que.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.amicus"
         ],
         "hypotheses": [],
         "practice": []
@@ -499,7 +365,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.aperio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -520,7 +386,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aperio"
         ],
         "hypotheses": [],
         "practice": []
@@ -528,7 +394,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aperio"
         ],
         "hypotheses": [],
         "practice": []
@@ -566,7 +432,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.aqua"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -587,7 +453,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aqua"
         ],
         "hypotheses": [],
         "practice": []
@@ -595,7 +461,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aqua"
         ],
         "hypotheses": [],
         "practice": []
@@ -633,7 +499,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.aresco"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -654,7 +520,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aresco"
         ],
         "hypotheses": [],
         "practice": []
@@ -662,7 +528,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aresco"
         ],
         "hypotheses": [],
         "practice": []
@@ -700,7 +566,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.audio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -721,7 +587,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: audīre — entendre, apprendre une nouvelle.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.audio"
         ],
         "hypotheses": [],
         "practice": []
@@ -729,74 +595,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: audīre — entendre, apprendre une nouvelle.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "aufero",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "aufero",
-    "assessment": "study.lexicon.theatrum.sententiae:aufero",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "auferre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "chien"
-      },
-      {
-        "id": "1",
-        "text": "tomber"
-      },
-      {
-        "id": "0",
-        "text": "emporter, enlever"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "aufero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: auferre — emporter, enlever.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: auferre — emporter, enlever.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: auferre — emporter, enlever.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.audio"
         ],
         "hypotheses": [],
         "practice": []
@@ -834,7 +633,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.cado"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -855,7 +654,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cadere — tomber.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cado"
         ],
         "hypotheses": [],
         "practice": []
@@ -863,7 +662,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cadere — tomber.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cado"
         ],
         "hypotheses": [],
         "practice": []
@@ -901,7 +700,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.canis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -922,7 +721,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canis"
         ],
         "hypotheses": [],
         "practice": []
@@ -930,7 +729,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canis"
         ],
         "hypotheses": [],
         "practice": []
@@ -968,7 +767,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.canto"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -989,7 +788,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canto"
         ],
         "hypotheses": [],
         "practice": []
@@ -997,7 +796,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.canto"
         ],
         "hypotheses": [],
         "practice": []
@@ -1035,7 +834,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.carpo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1056,7 +855,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: carpere — cueillir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.carpo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1064,7 +863,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: carpere — cueillir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.carpo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1102,7 +901,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.celo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1123,7 +922,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.celo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1131,7 +930,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.celo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1169,7 +968,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.cena"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1190,7 +989,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cēna — dîner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cena"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +997,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cēna — dîner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cena"
         ],
         "hypotheses": [],
         "practice": []
@@ -1236,7 +1035,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.civis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1257,7 +1056,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cīvis — citoyen.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.civis"
         ],
         "hypotheses": [],
         "practice": []
@@ -1265,7 +1064,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cīvis — citoyen.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.civis"
         ],
         "hypotheses": [],
         "practice": []
@@ -1303,7 +1102,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.clamo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1324,7 +1123,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: clāmāre — crier.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.clamo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1332,7 +1131,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: clāmāre — crier.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.clamo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1370,7 +1169,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.claudo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1391,7 +1190,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: claudere — fermer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.claudo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1399,7 +1198,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: claudere — fermer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.claudo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1437,7 +1236,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.clavis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1458,7 +1257,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.clavis"
         ],
         "hypotheses": [],
         "practice": []
@@ -1466,7 +1265,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.clavis"
         ],
         "hypotheses": [],
         "practice": []
@@ -1504,7 +1303,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.cum"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1525,7 +1324,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cum — avec.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1533,7 +1332,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cum — avec.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1571,7 +1370,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.curro"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1592,7 +1391,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.curro"
         ],
         "hypotheses": [],
         "practice": []
@@ -1600,7 +1399,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.curro"
         ],
         "hypotheses": [],
         "practice": []
@@ -1638,7 +1437,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.custodio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1659,7 +1458,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.custodio"
         ],
         "hypotheses": [],
         "practice": []
@@ -1667,7 +1466,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.custodio"
         ],
         "hypotheses": [],
         "practice": []
@@ -1705,7 +1504,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.deleo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1726,7 +1525,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dēlēre — détruire, effacer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.deleo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1734,7 +1533,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dēlēre — détruire, effacer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.deleo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1772,7 +1571,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.discedo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1793,7 +1592,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: discēdere — s’en aller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.discedo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1801,7 +1600,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: discēdere — s’en aller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.discedo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1839,7 +1638,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.discipulus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -1860,7 +1659,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: discipulus — élève.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.discipulus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1868,74 +1667,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: discipulus — élève.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "divitiae",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "divitiae",
-    "assessment": "study.lexicon.theatrum.sententiae:divitiae",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dīvitiae"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "richesses"
-      },
-      {
-        "id": "2",
-        "text": "pendant que"
-      },
-      {
-        "id": "1",
-        "text": "donner"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "divitiae"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dīvitiae — richesses.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīvitiae — richesses.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīvitiae — richesses.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.discipulus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1947,7 +1679,7 @@
     "interaction": "choice",
     "dimension": "lemma",
     "item": "do",
-    "assessment": "study.lexicon.theatrum.sententiae:do",
+    "assessment": "study.lexicon.theatrum.personae:do",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
@@ -1957,26 +1689,26 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "pendant que"
-      },
-      {
         "id": "0",
         "text": "donner"
       },
       {
+        "id": "1",
+        "text": "enseigner"
+      },
+      {
         "id": "2",
-        "text": "lettre envoyée"
+        "text": "maître de maison"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.do"
     ],
     "requires": [],
-    "help": "study.lexicon.sententiae",
+    "help": "study.lexicon.personae",
     "vocabulary": [
       "do"
     ],
@@ -1994,7 +1726,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dare — donner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.do"
         ],
         "hypotheses": [],
         "practice": []
@@ -2002,7 +1734,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dare — donner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.do"
         ],
         "hypotheses": [],
         "practice": []
@@ -2010,42 +1742,42 @@
     }
   },
   {
-    "id": "dum",
+    "id": "donum",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "dum",
-    "assessment": "study.lexicon.theatrum.sententiae:dum",
+    "item": "donum",
+    "assessment": "study.lexicon.theatrum.personae:donum",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "dum"
+        "text": "dōnum"
       }
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "même, aussi"
-      },
-      {
         "id": "0",
-        "text": "pendant que"
+        "text": "cadeau"
       },
       {
         "id": "1",
-        "text": "lettre envoyée"
+        "text": "lettre"
+      },
+      {
+        "id": "2",
+        "text": "histoire, récit"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.donum"
     ],
     "requires": [],
-    "help": "study.lexicon.sententiae",
+    "help": "study.lexicon.personae",
     "vocabulary": [
-      "dum"
+      "donum"
     ],
     "editorial": {
       "language": "la",
@@ -2053,23 +1785,23 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: dum — pendant que.",
+        "feedback": "Rēctē: dōnum — cadeau.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dum — pendant que.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.donum"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dum — pendant que.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.donum"
         ],
         "hypotheses": [],
         "practice": []
@@ -2107,7 +1839,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.epistula"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2128,7 +1860,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.epistula"
         ],
         "hypotheses": [],
         "practice": []
@@ -2136,7 +1868,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.epistula"
         ],
         "hypotheses": [],
         "practice": []
@@ -2174,7 +1906,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.etiam"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2195,7 +1927,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: etiam — même, aussi.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.etiam"
         ],
         "hypotheses": [],
         "practice": []
@@ -2203,7 +1935,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: etiam — même, aussi.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.etiam"
         ],
         "hypotheses": [],
         "practice": []
@@ -2241,7 +1973,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.excito"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2262,7 +1994,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: excitāre — réveiller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.excito"
         ],
         "hypotheses": [],
         "practice": []
@@ -2270,7 +2002,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: excitāre — réveiller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.excito"
         ],
         "hypotheses": [],
         "practice": []
@@ -2308,7 +2040,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.exeo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2329,7 +2061,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: exīre — sortir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.exeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2337,7 +2069,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: exīre — sortir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.exeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2375,7 +2107,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.exerceo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2396,7 +2128,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: exercēre — exercer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.exerceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2404,7 +2136,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: exercēre — exercer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.exerceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2442,7 +2174,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.femina"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2463,7 +2195,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -2471,7 +2203,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -2509,7 +2241,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.filius"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2530,7 +2262,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filius"
         ],
         "hypotheses": [],
         "practice": []
@@ -2538,7 +2270,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filius"
         ],
         "hypotheses": [],
         "practice": []
@@ -2576,7 +2308,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.flumen"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2597,7 +2329,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: flūmen — fleuve.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.flumen"
         ],
         "hypotheses": [],
         "practice": []
@@ -2605,7 +2337,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: flūmen — fleuve.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.flumen"
         ],
         "hypotheses": [],
         "practice": []
@@ -2643,7 +2375,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.frigus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2664,7 +2396,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: frīgus — froid.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.frigus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2672,7 +2404,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: frīgus — froid.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.frigus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2710,7 +2442,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.fugio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2731,7 +2463,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fugere — s’enfuir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.fugio"
         ],
         "hypotheses": [],
         "practice": []
@@ -2739,74 +2471,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fugere — s’enfuir.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "habeo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "habeo",
-    "assessment": "study.lexicon.theatrum.sententiae:habeo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "habēre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "dans, sur"
-      },
-      {
-        "id": "1",
-        "text": "porte"
-      },
-      {
-        "id": "0",
-        "text": "avoir"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "habeo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: habēre — avoir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: habēre — avoir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: habēre — avoir.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.fugio"
         ],
         "hypotheses": [],
         "practice": []
@@ -2844,7 +2509,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ianua"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2865,7 +2530,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: iānua — porte.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ianua"
         ],
         "hypotheses": [],
         "practice": []
@@ -2873,7 +2538,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: iānua — porte.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ianua"
         ],
         "hypotheses": [],
         "practice": []
@@ -2911,7 +2576,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.in"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2932,7 +2597,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -2940,7 +2605,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -2978,7 +2643,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.inopia"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -2999,7 +2664,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: inopia — manque, pauvreté.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.inopia"
         ],
         "hypotheses": [],
         "practice": []
@@ -3007,7 +2672,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: inopia — manque, pauvreté.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.inopia"
         ],
         "hypotheses": [],
         "practice": []
@@ -3045,7 +2710,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.intro"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3066,7 +2731,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: intrāre — entrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.intro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3074,7 +2739,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: intrāre — entrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.intro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3112,7 +2777,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.laboro"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3133,7 +2798,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: labōrāre — travailler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laboro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3141,7 +2806,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: labōrāre — travailler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laboro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3179,7 +2844,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.lego"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3200,7 +2865,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lego"
         ],
         "hypotheses": [],
         "practice": []
@@ -3208,7 +2873,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lego"
         ],
         "hypotheses": [],
         "practice": []
@@ -3246,7 +2911,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.liber"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3267,7 +2932,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -3275,7 +2940,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -3313,7 +2978,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.lucerna"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3334,7 +2999,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lucerna"
         ],
         "hypotheses": [],
         "practice": []
@@ -3342,7 +3007,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lucerna"
         ],
         "hypotheses": [],
         "practice": []
@@ -3380,7 +3045,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.mater"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3401,7 +3066,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: māter — mère.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mater"
         ],
         "hypotheses": [],
         "practice": []
@@ -3409,7 +3074,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: māter — mère.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mater"
         ],
         "hypotheses": [],
         "practice": []
@@ -3447,7 +3112,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.mercator"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3468,7 +3133,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
         ],
         "hypotheses": [],
         "practice": []
@@ -3476,7 +3141,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
         ],
         "hypotheses": [],
         "practice": []
@@ -3514,7 +3179,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.misericordia"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3535,7 +3200,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: misericordia — compassion.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.misericordia"
         ],
         "hypotheses": [],
         "practice": []
@@ -3543,7 +3208,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: misericordia — compassion.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.misericordia"
         ],
         "hypotheses": [],
         "practice": []
@@ -3581,7 +3246,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.mitto"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3602,7 +3267,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mitto"
         ],
         "hypotheses": [],
         "practice": []
@@ -3610,7 +3275,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mitto"
         ],
         "hypotheses": [],
         "practice": []
@@ -3648,7 +3313,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.moneo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3669,7 +3334,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: monēre — avertir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.moneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3677,7 +3342,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: monēre — avertir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.moneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3715,7 +3380,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.narro"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3736,7 +3401,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.narro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3744,7 +3409,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.narro"
         ],
         "hypotheses": [],
         "practice": []
@@ -3782,7 +3447,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.nauta"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3803,7 +3468,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -3811,7 +3476,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -3849,7 +3514,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.navis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3870,7 +3535,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nāvis — navire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.navis"
         ],
         "hypotheses": [],
         "practice": []
@@ -3878,7 +3543,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nāvis — navire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.navis"
         ],
         "hypotheses": [],
         "practice": []
@@ -3916,7 +3581,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ne"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -3937,7 +3602,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nē — pour que… ne… pas.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ne"
         ],
         "hypotheses": [],
         "practice": []
@@ -3945,141 +3610,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nē — pour que… ne… pas.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "nolo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "nolo",
-    "assessment": "study.lexicon.theatrum.sententiae:nolo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "nōlle"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ne… pas"
-      },
-      {
-        "id": "0",
-        "text": "ne pas vouloir"
-      },
-      {
-        "id": "2",
-        "text": "ville fortifiée"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "nolo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: nōlle — ne pas vouloir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōlle — ne pas vouloir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōlle — ne pas vouloir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "non",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "non",
-    "assessment": "study.lexicon.theatrum.sententiae:non",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "nōn"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "montrer"
-      },
-      {
-        "id": "0",
-        "text": "ne… pas"
-      },
-      {
-        "id": "1",
-        "text": "ville fortifiée"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "non"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: nōn — ne… pas.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.ne"
         ],
         "hypotheses": [],
         "practice": []
@@ -4117,7 +3648,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.oppidum"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4138,7 +3669,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: oppidum — ville fortifiée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.oppidum"
         ],
         "hypotheses": [],
         "practice": []
@@ -4146,7 +3677,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: oppidum — ville fortifiée.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.oppidum"
         ],
         "hypotheses": [],
         "practice": []
@@ -4184,7 +3715,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ostendo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4205,7 +3736,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ostendo"
         ],
         "hypotheses": [],
         "practice": []
@@ -4213,7 +3744,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ostendo"
         ],
         "hypotheses": [],
         "practice": []
@@ -4251,7 +3782,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ovis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4272,7 +3803,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ovis"
         ],
         "hypotheses": [],
         "practice": []
@@ -4280,7 +3811,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ovis"
         ],
         "hypotheses": [],
         "practice": []
@@ -4318,7 +3849,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.panis"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4339,7 +3870,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pānis — pain.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.panis"
         ],
         "hypotheses": [],
         "practice": []
@@ -4347,7 +3878,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pānis — pain.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.panis"
         ],
         "hypotheses": [],
         "practice": []
@@ -4385,7 +3916,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.paro"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4406,7 +3937,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.paro"
         ],
         "hypotheses": [],
         "practice": []
@@ -4414,7 +3945,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.paro"
         ],
         "hypotheses": [],
         "practice": []
@@ -4452,7 +3983,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.partior"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4473,7 +4004,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: partīrī — partager.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.partior"
         ],
         "hypotheses": [],
         "practice": []
@@ -4481,7 +4012,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: partīrī — partager.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.partior"
         ],
         "hypotheses": [],
         "practice": []
@@ -4519,7 +4050,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.pater"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4540,7 +4071,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pater"
         ],
         "hypotheses": [],
         "practice": []
@@ -4548,7 +4079,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pater"
         ],
         "hypotheses": [],
         "practice": []
@@ -4586,7 +4117,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.peregrinus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4607,7 +4138,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: peregrīnus — étranger, voyageur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.peregrinus"
         ],
         "hypotheses": [],
         "practice": []
@@ -4615,7 +4146,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: peregrīnus — étranger, voyageur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.peregrinus"
         ],
         "hypotheses": [],
         "practice": []
@@ -4653,7 +4184,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.perterreo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4674,7 +4205,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: perterrēre — terrifier.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.perterreo"
         ],
         "hypotheses": [],
         "practice": []
@@ -4682,7 +4213,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: perterrēre — terrifier.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.perterreo"
         ],
         "hypotheses": [],
         "practice": []
@@ -4720,7 +4251,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.pervenio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4741,7 +4272,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pervenīre — parvenir, arriver.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pervenio"
         ],
         "hypotheses": [],
         "practice": []
@@ -4749,7 +4280,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pervenīre — parvenir, arriver.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pervenio"
         ],
         "hypotheses": [],
         "practice": []
@@ -4787,7 +4318,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.peto"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4808,7 +4339,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.peto"
         ],
         "hypotheses": [],
         "practice": []
@@ -4816,7 +4347,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.peto"
         ],
         "hypotheses": [],
         "practice": []
@@ -4854,7 +4385,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.porta"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4875,7 +4406,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: porta — porte d’une ville.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porta"
         ],
         "hypotheses": [],
         "practice": []
@@ -4883,7 +4414,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: porta — porte d’une ville.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porta"
         ],
         "hypotheses": [],
         "practice": []
@@ -4921,7 +4452,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.porto"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -4942,7 +4473,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porto"
         ],
         "hypotheses": [],
         "practice": []
@@ -4950,7 +4481,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porto"
         ],
         "hypotheses": [],
         "practice": []
@@ -4988,7 +4519,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.possum"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5009,7 +4540,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: posse — pouvoir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.possum"
         ],
         "hypotheses": [],
         "practice": []
@@ -5017,7 +4548,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: posse — pouvoir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.possum"
         ],
         "hypotheses": [],
         "practice": []
@@ -5055,7 +4586,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.puella"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5076,7 +4607,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -5084,7 +4615,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -5122,7 +4653,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.puer"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5143,7 +4674,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -5151,7 +4682,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -5189,7 +4720,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.quaero"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5210,7 +4741,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.quaero"
         ],
         "hypotheses": [],
         "practice": []
@@ -5218,74 +4749,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "quia",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "quia",
-    "assessment": "study.lexicon.theatrum.sententiae:quia",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "quia"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "rose"
-      },
-      {
-        "id": "1",
-        "text": "chose, événement"
-      },
-      {
-        "id": "0",
-        "text": "parce que"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "quia"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quia — parce que.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quia — parce que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quia — parce que.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.quaero"
         ],
         "hypotheses": [],
         "practice": []
@@ -5323,7 +4787,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.res"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5344,7 +4808,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rēs — chose, événement.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.res"
         ],
         "hypotheses": [],
         "practice": []
@@ -5352,7 +4816,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rēs — chose, événement.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.res"
         ],
         "hypotheses": [],
         "practice": []
@@ -5390,7 +4854,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.rosa"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5411,7 +4875,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rosa — rose.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rosa"
         ],
         "hypotheses": [],
         "practice": []
@@ -5419,7 +4883,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rosa — rose.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rosa"
         ],
         "hypotheses": [],
         "practice": []
@@ -5457,7 +4921,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.scribo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5478,7 +4942,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: scrībere — écrire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.scribo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5486,7 +4950,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: scrībere — écrire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.scribo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5524,7 +4988,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.servo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5545,7 +5009,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servāre — garder.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.servo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5553,7 +5017,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servāre — garder.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.servo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5591,7 +5055,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.servus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5612,7 +5076,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.servus"
         ],
         "hypotheses": [],
         "practice": []
@@ -5620,74 +5084,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "solus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "solus",
-    "assessment": "study.lexicon.theatrum.sententiae:solus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "sōlus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "se taire"
-      },
-      {
-        "id": "0",
-        "text": "seul"
-      },
-      {
-        "id": "1",
-        "text": "être"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "solus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: sōlus — seul.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sōlus — seul.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sōlus — seul.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.servus"
         ],
         "hypotheses": [],
         "practice": []
@@ -5725,7 +5122,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.sum"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5746,7 +5143,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -5754,7 +5151,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -5792,7 +5189,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.taceo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5813,7 +5210,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tacēre — se taire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.taceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5821,74 +5218,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tacēre — se taire.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "tantum",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "tantum",
-    "assessment": "study.lexicon.theatrum.sententiae:tantum",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "tantum"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "seulement"
-      },
-      {
-        "id": "1",
-        "text": "tenir"
-      },
-      {
-        "id": "2",
-        "text": "ville"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "tantum"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: tantum — seulement.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: tantum — seulement.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: tantum — seulement.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.taceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5926,7 +5256,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.teneo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -5947,7 +5277,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tenēre — tenir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.teneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5955,7 +5285,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tenēre — tenir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.teneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -5993,7 +5323,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.urbs"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6014,7 +5344,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: urbs — ville.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.urbs"
         ],
         "hypotheses": [],
         "practice": []
@@ -6022,7 +5352,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: urbs — ville.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.urbs"
         ],
         "hypotheses": [],
         "practice": []
@@ -6060,7 +5390,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.ut"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6081,7 +5411,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ut — pour que.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ut"
         ],
         "hypotheses": [],
         "practice": []
@@ -6089,7 +5419,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ut — pour que.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ut"
         ],
         "hypotheses": [],
         "practice": []
@@ -6127,7 +5457,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.velum"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6148,7 +5478,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vēlum — voile de bateau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.velum"
         ],
         "hypotheses": [],
         "practice": []
@@ -6156,7 +5486,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vēlum — voile de bateau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.velum"
         ],
         "hypotheses": [],
         "practice": []
@@ -6194,7 +5524,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.venio"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6215,7 +5545,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.venio"
         ],
         "hypotheses": [],
         "practice": []
@@ -6223,7 +5553,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.venio"
         ],
         "hypotheses": [],
         "practice": []
@@ -6261,7 +5591,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.via"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6282,7 +5612,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: via — route.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.via"
         ],
         "hypotheses": [],
         "practice": []
@@ -6290,7 +5620,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: via — route.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.via"
         ],
         "hypotheses": [],
         "practice": []
@@ -6328,7 +5658,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.viator"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6349,7 +5679,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: viātor — voyageur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.viator"
         ],
         "hypotheses": [],
         "practice": []
@@ -6357,7 +5687,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: viātor — voyageur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.viator"
         ],
         "hypotheses": [],
         "practice": []
@@ -6395,7 +5725,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.vicinus"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6416,7 +5746,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīcīnus — voisin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vicinus"
         ],
         "hypotheses": [],
         "practice": []
@@ -6424,7 +5754,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīcīnus — voisin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vicinus"
         ],
         "hypotheses": [],
         "practice": []
@@ -6462,7 +5792,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.video"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6483,7 +5813,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.video"
         ],
         "hypotheses": [],
         "practice": []
@@ -6491,7 +5821,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.video"
         ],
         "hypotheses": [],
         "practice": []
@@ -6529,7 +5859,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.vidua"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6550,7 +5880,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidua — veuve.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vidua"
         ],
         "hypotheses": [],
         "practice": []
@@ -6558,7 +5888,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidua — veuve.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vidua"
         ],
         "hypotheses": [],
         "practice": []
@@ -6596,7 +5926,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.voco"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6617,7 +5947,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.voco"
         ],
         "hypotheses": [],
         "practice": []
@@ -6625,7 +5955,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.voco"
         ],
         "hypotheses": [],
         "practice": []
@@ -6663,7 +5993,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.sententiae"
+      "lexicon.lectio.volo"
     ],
     "requires": [],
     "help": "study.lexicon.sententiae",
@@ -6684,7 +6014,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: velle — vouloir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.volo"
         ],
         "hypotheses": [],
         "practice": []
@@ -6692,7 +6022,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: velle — vouloir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.volo"
         ],
         "hypotheses": [],
         "practice": []

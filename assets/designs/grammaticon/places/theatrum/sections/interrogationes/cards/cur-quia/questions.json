@@ -28,12 +28,17 @@
       "0"
     ],
     "skills": [
-      "study.version.cur-quia"
+      "lectio.cause-place",
+      "lectio.cause-question"
     ],
     "item": "cur-quia:q1",
     "assessment": "study.version.cur-quia:q1",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.cur",
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "cur",
       "dormio",
@@ -54,7 +59,7 @@
       "1": {
         "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
         "observed": [
-          "study.confusion.cause-location"
+          "lectio.cause-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +67,7 @@
       "2": {
         "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
         "observed": [
-          "study.confusion.cause-question"
+          "lectio.cause-question"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +103,17 @@
       "2"
     ],
     "skills": [
-      "study.version.cur-quia"
+      "lectio.cause-place",
+      "lectio.cause-question"
     ],
     "item": "cur-quia:q2",
     "assessment": "study.version.cur-quia:q2",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.cur",
+      "lexicon.lectio.ploro",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "cur",
       "ploro",
@@ -118,7 +128,7 @@
       "0": {
         "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
         "observed": [
-          "study.confusion.cause-location"
+          "lectio.cause-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +136,7 @@
       "1": {
         "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
         "observed": [
-          "study.confusion.cause-question"
+          "lectio.cause-question"
         ],
         "hypotheses": [],
         "practice": []
@@ -168,12 +178,19 @@
       "1"
     ],
     "skills": [
-      "study.version.cur-quia"
+      "lectio.cause-contrast",
+      "lectio.cause-result"
     ],
     "item": "cur-quia:q3",
     "assessment": "study.version.cur-quia:q3",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.dormio",
+      "lexicon.lectio.fessus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "dormio",
       "fessus",
@@ -190,7 +207,7 @@
       "0": {
         "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
         "observed": [
-          "study.confusion.cause-contrast"
+          "lectio.cause-contrast"
         ],
         "hypotheses": [],
         "practice": []
@@ -204,7 +221,7 @@
       "2": {
         "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
         "observed": [
-          "study.confusion.cause-reversal"
+          "lectio.cause-result"
         ],
         "hypotheses": [],
         "practice": []
@@ -240,12 +257,19 @@
       "0"
     ],
     "skills": [
-      "study.version.cur-quia"
+      "lectio.cause-contrast",
+      "lectio.cause-result"
     ],
     "item": "cur-quia:q4",
     "assessment": "study.version.cur-quia:q4",
     "help": "study.cur-quia",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.canto",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "canto",
       "laetus",
@@ -268,7 +292,7 @@
       "1": {
         "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
         "observed": [
-          "study.confusion.cause-reversal"
+          "lectio.cause-result"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +300,565 @@
       "2": {
         "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
         "observed": [
-          "study.confusion.cause-contrast"
+          "lectio.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-place-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-place-1",
+    "assessment": "lectio:transfer-cause-place-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta in nāve manet quia ventum timet. Quid causa est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il reste parce qu’il craint le vent."
+      },
+      {
+        "id": "1",
+        "text": "Il reste parce qu’il est sur le bateau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-place"
+    ],
+    "requires": [
+      "lexicon.lectio.in",
+      "lexicon.lectio.maneo",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.navis",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.timeo",
+      "lexicon.lectio.ventus"
+    ],
+    "vocabulary": [
+      "in",
+      "maneo",
+      "nauta",
+      "navis",
+      "quia",
+      "timeo",
+      "ventus"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et locum discernere.",
+        "observed": [
+          "lectio.cause-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-place-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-place-2",
+    "assessment": "lectio:transfer-cause-place-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella in hortō plōrat quia canem nōn videt. Cūr plōrat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Elle ne voit pas le chien."
+      },
+      {
+        "id": "1",
+        "text": "Elle est dans le jardin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-place"
+    ],
+    "requires": [
+      "lexicon.lectio.canis",
+      "lexicon.lectio.cur",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.non",
+      "lexicon.lectio.ploro",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.video"
+    ],
+    "vocabulary": [
+      "canis",
+      "cur",
+      "hortus",
+      "in",
+      "non",
+      "ploro",
+      "puella",
+      "quia",
+      "video"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et locum discernere.",
+        "observed": [
+          "lectio.cause-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-question-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-question-1",
+    "assessment": "lectio:transfer-cause-question-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cūr puer tacet? » « Quia magister legit. » Quis causam quaerit?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Celui qui demande pourquoi le garçon se tait."
+      },
+      {
+        "id": "1",
+        "text": "Celui qui répond que le maître lit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-question"
+    ],
+    "requires": [
+      "lexicon.lectio.causa",
+      "lexicon.lectio.cur",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quaero",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.taceo"
+    ],
+    "vocabulary": [
+      "causa",
+      "cur",
+      "lego",
+      "magister",
+      "puer",
+      "quaero",
+      "quia",
+      "quis",
+      "taceo"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: cūr et quia discernere.",
+        "observed": [
+          "lectio.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-question-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-question-2",
+    "assessment": "lectio:transfer-cause-question-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cūr mercātor discedit? » « Quia pretium nōn placet. » Quid responsum explicat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La raison du départ."
+      },
+      {
+        "id": "1",
+        "text": "Une nouvelle question sur le départ."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-question"
+    ],
+    "requires": [
+      "lexicon.lectio.cur",
+      "lexicon.lectio.discedo",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.non",
+      "lexicon.lectio.placeo",
+      "lexicon.lectio.pretium",
+      "lexicon.lectio.quia"
+    ],
+    "vocabulary": [
+      "cur",
+      "discedo",
+      "mercator",
+      "non",
+      "placeo",
+      "pretium",
+      "quia"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: cūr et quia discernere.",
+        "observed": [
+          "lectio.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-result-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-result-1",
+    "assessment": "lectio:transfer-cause-result-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola fessus est quia labōrāvit. Quid ex labōre sequitur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La fatigue du paysan."
+      },
+      {
+        "id": "1",
+        "text": "Le travail est causé par sa fatigue."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-result"
+    ],
+    "requires": [
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.fessus",
+      "lexicon.lectio.laboro",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "agricola",
+      "fessus",
+      "laboro",
+      "quia",
+      "sum"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et effectum discernere.",
+        "observed": [
+          "lectio.cause-result"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-result-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-result-2",
+    "assessment": "lectio:transfer-cause-result-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer rīdet quia fābula eum dēlectat. Quid rīsum efficit?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le récit lui plaît et le fait rire."
+      },
+      {
+        "id": "1",
+        "text": "Son rire rend le récit plaisant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-result"
+    ],
+    "requires": [
+      "lexicon.lectio.delecto",
+      "lexicon.lectio.fabula",
+      "lexicon.lectio.is",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quia",
+      "lexicon.lectio.rideo"
+    ],
+    "vocabulary": [
+      "delecto",
+      "fabula",
+      "is",
+      "puer",
+      "quia",
+      "rideo"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et effectum discernere.",
+        "observed": [
+          "lectio.cause-result"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-contrast-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-contrast-1",
+    "assessment": "lectio:transfer-cause-contrast-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater fessus est, sed labōrat. Quid sed significat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il travaille malgré sa fatigue."
+      },
+      {
+        "id": "1",
+        "text": "Il travaille à cause de sa fatigue."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-contrast"
+    ],
+    "requires": [
+      "lexicon.lectio.fessus",
+      "lexicon.lectio.laboro",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.sed",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "fessus",
+      "laboro",
+      "pater",
+      "sed",
+      "sum"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et contrārium discernere.",
+        "observed": [
+          "lectio.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-cause-contrast-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-cause-contrast-2",
+    "assessment": "lectio:transfer-cause-contrast-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor pecūniam habet, sed pānem nōn emit. Quid discimus?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Avoir de l’argent ne le conduit pas ici à acheter du pain."
+      },
+      {
+        "id": "1",
+        "text": "Il n’achète pas parce qu’il a de l’argent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.cause-contrast"
+    ],
+    "requires": [
+      "lexicon.lectio.emo",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.non",
+      "lexicon.lectio.panis",
+      "lexicon.lectio.pecunia",
+      "lexicon.lectio.sed"
+    ],
+    "vocabulary": [
+      "emo",
+      "habeo",
+      "mercator",
+      "non",
+      "panis",
+      "pecunia",
+      "sed"
+    ],
+    "help": "study.cur-quia",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: causam et contrārium discernere.",
+        "observed": [
+          "lectio.cause-contrast"
         ],
         "hypotheses": [],
         "practice": []

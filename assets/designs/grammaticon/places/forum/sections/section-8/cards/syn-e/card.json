@@ -1,1 +1,82 @@
-{"id":"syn-e","name":"Dēsinentia -e / -ē","subtitle":"rēge · serve · rē · mare","access":{"price":45,"requires":{"all":[{"unlocked":"forum/section-8/syn-us"},{"unlocked":"forum/section-1/dec-5"},{"unlocked":"forum/section-1/dec-3-i"}]}},"skills":["f.syn.e"],"encounter":{"lives":3,"target":10},"questions":"questions.json.gz","lesson":"lesson.json","presentation":{"background":"forum_bg","hero":"orator_idle","opponent":"rhetor_sophista","heroCorrect":"orator_gesture","heroWrong":"orator_hurt","heroVictory":"orator_victory","heroDefeat":"orator_defeat","opponentName":"Sophista Graeculus","motion":"projectile","projectile":"argumentum","correctSound":"plausus","wrongSound":"murmur","cues":{"correct":[{"delayMs":60,"sound":"oratio"},{"delayMs":300,"sound":"plausus"}],"incorrect":[{"delayMs":120,"sound":"refutatio"},{"delayMs":320,"sound":"murmur"}]},"rewardEffect":"laurel","introductionBlocks":[0,2,3,4]},"selectionGroups":{"casus":{"weight":1.0},"personaNumerus":{"weight":1.2}},"legacyId":"syn-e"}
+{
+  "id": "syn-e",
+  "name": "Dēsinentia -e / -ē",
+  "subtitle": "rēge · serve · rē · mare",
+  "access": {
+    "price": 45,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "forum/section-8/syn-us"
+        },
+        {
+          "unlocked": "forum/section-1/dec-5"
+        },
+        {
+          "unlocked": "forum/section-1/dec-3-i"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "f.syn.e"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json.gz",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "forum_bg",
+    "hero": "orator_idle",
+    "opponent": "rhetor_sophista",
+    "heroCorrect": "orator_gesture",
+    "heroWrong": "orator_hurt",
+    "heroVictory": "orator_victory",
+    "heroDefeat": "orator_defeat",
+    "opponentName": "Sophista Graeculus",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "introductionBlocks": [
+      0,
+      2,
+      3,
+      4
+    ]
+  },
+  "selectionGroups": {
+    "casus": {
+      "weight": 1.0
+    },
+    "personaNumerus": {
+      "weight": 1.2
+    }
+  },
+  "legacyId": "syn-e"
+}

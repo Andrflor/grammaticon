@@ -44,6 +44,7 @@ class GameSession extends ChangeNotifier {
       return {
         'schemaVersion': 1,
         'designId': d.id,
+        'masteryRevision': d.root['masteryRevision'],
         'balance': d.rules['economy']['startingBalance'],
         'purchased': <String>[],
         'skills': <String, dynamic>{},
@@ -65,6 +66,11 @@ class GameSession extends ChangeNotifier {
         throw const FormatException('Save belongs to another design');
       }
       final restored = object(jsonDecode(jsonEncode(saved)));
+      if (d.root['masteryRevision'] != null &&
+          restored['masteryRevision'] != d.root['masteryRevision']) {
+        _retireCoarseEvidence(d, restored);
+        restored['masteryRevision'] = d.root['masteryRevision'];
+      }
       final purchaseAliases = object(
         d.root['migration']?['purchaseAliases'] ?? {},
       );
@@ -77,8 +83,11 @@ class GameSession extends ChangeNotifier {
       final battle = restored['encounter'];
       if (battle != null &&
           (!d.cards.containsKey(battle['card']) ||
-              strings(battle['question']?['skills'])
-                  .any((id) => !d.knowledge.containsKey(id)))) {
+              strings(battle['question']?['skills']).any(
+                (id) =>
+                    !d.knowledge.containsKey(id) ||
+                    d.knowledge[id]?['aggregation'] != null,
+              ))) {
         restored['retiredEncounters'] = [
           ...objects(restored['retiredEncounters']),
           object(battle),
@@ -179,14 +188,59 @@ class GameSession extends ChangeNotifier {
       next['errors'][e.key] = record;
     }
     next['legacyEncounter'] = saved[m['encounterField']];
+    if (d.root['masteryRevision'] != null) _retireCoarseEvidence(d, next);
     return next;
+  }
+
+  static void _retireCoarseEvidence(GameDesign d, Json saved) {
+    final retired = strings(d.root['migration']?['retiredSkillIds']).toSet();
+    bool affected(String id) => retired.isEmpty || retired.contains(id);
+    final records = object(saved['skills']);
+    final archive = <String, dynamic>{};
+    for (final id in records.keys.toList()) {
+      if (affected(id)) archive[id] = records.remove(id);
+    }
+    saved['skills'] = records;
+    final errors = object(saved['errors']);
+    final oldErrors = <String, dynamic>{};
+    for (final key in errors.keys.toList()) {
+      if (strings(errors[key]['question']?['skills']).any(affected)) {
+        oldErrors[key] = errors.remove(key);
+      }
+    }
+    saved['errors'] = errors;
+    final battle = saved['encounter'];
+    final oldBattle =
+        battle != null && strings(battle['question']?['skills']).any(affected);
+    saved['previousMastery'] = {
+      'revision': saved['masteryRevision'],
+      if (saved['previousMastery'] != null)
+        'previous': saved['previousMastery'],
+      'skills': archive,
+      'errors': oldErrors,
+      if (oldBattle) 'encounter': battle,
+    };
+    if (oldBattle) saved.remove('encounter');
   }
 
   Json skill(String id) => object(state['skills']?[id] ?? {});
   double? progress(String id) {
+    if (design.knowledge[id]?['aggregation'] != null) {
+      final values = design.skillLeaves(id).map(progress).toList();
+      if (values.every((value) => value == null)) return null;
+      return values.map((value) => value ?? 0.0).reduce(min);
+    }
     final record = skill(id);
-    final value = estimate(record, skillId: id);
+    var value = estimate(record, skillId: id);
     if (value == null) return null;
+    final minimumItems =
+        (design.knowledge[id]?['masteryRequirements']?['minItems'] ??
+                objects(mastery['levels']).last['minItems'] ??
+                0)
+            as num;
+    if (minimumItems > 0) {
+      value = min(value, _successfulItems(record).length / minimumItems);
+    }
     final required = strings(
       design.knowledge[id]?['masteryRequirements']?['successfulItems'],
     );
@@ -200,17 +254,9 @@ class GameSession extends ChangeNotifier {
   int level(String id, {bool rewards = false}) {
     final aggregate = design.knowledge[id]?['aggregation'];
     if (aggregate != null) {
-      final ids = strings(aggregate['skills'])
-          .where(
-            (s) =>
-                (skill(s)['correct'] as num? ?? 0) +
-                    (skill(s)['wrong'] as num? ?? 0) >
-                0,
-          )
-          .toList();
-      if (ids.isEmpty) return 0;
-      return ids
-          .map((s) => _level(skill(s), skillId: s, rewards: rewards))
+      return design
+          .skillLeaves(id)
+          .map((leaf) => _level(skill(leaf), skillId: leaf, rewards: rewards))
           .reduce(min);
     }
     return _level(skill(id), skillId: id, rewards: rewards);
@@ -289,6 +335,13 @@ class GameSession extends ChangeNotifier {
         }
       }
       final l = levels[i];
+      var minimumItems = l['minItems'] as num? ?? 0;
+      if (!rewards && i == levels.length - 1) {
+        minimumItems =
+            design.knowledge[skillId]?['masteryRequirements']?['minItems']
+                as num? ??
+            minimumItems;
+      }
       final recent = objects(record['recent'])
           .where((r) => r['assisted'] != true)
           .toList();
@@ -297,7 +350,10 @@ class GameSession extends ChangeNotifier {
           : recent.where((r) => r['correct'] == true).length / recent.length;
       if (est >= (l['threshold'] as num? ?? 0) &&
           count >= (l['minObservations'] as num? ?? 0) &&
-          strings(record['items']).length >= (l['minItems'] as num? ?? 0) &&
+          (rewards
+                  ? strings(record['items']).length
+                  : _successfulItems(record).length) >=
+              minimumItems &&
           (rewards || rate >= (l['minRecentSuccess'] as num? ?? 0))) {
         result = i;
       }
@@ -313,17 +369,30 @@ class GameSession extends ChangeNotifier {
       'any' => objects(e.value).any((r) => meets(r, active)),
       'not' => !meets(object(e.value), active),
       'unlocked' => unlocked(design.nodes[e.value]!, active),
-      'completed' => (state['completed']?[e.value] as num? ?? 0) > 0,
+      'completed' => cardMastered(design.cards[e.value]!),
+      'mastered' => cardMastered(design.cards[e.value]!),
       'count' =>
         (state['completed']?[e.value['card']] as num? ?? 0) >=
             e.value['atLeast'],
       'skill' =>
         level(e.value['id']) >= (e.value['minLevel'] as int? ?? 0) &&
-            ((skill(e.value['id'])['correct'] as num? ?? 0) +
-                    (skill(e.value['id'])['wrong'] as num? ?? 0)) >=
+            observations(e.value['id']) >=
                 (e.value['minObservations'] as num? ?? 0),
       _ => throw FormatException('Unsupported requirement ${e.key}'),
     };
+  }
+
+  bool cardMastered(ContentNode card) =>
+      strings(card.data['skills']).isNotEmpty &&
+      strings(card.data['skills'])
+          .every((id) => level(id) == objects(mastery['levels']).length - 1);
+
+  num observations(String id) {
+    if (design.knowledge[id]?['aggregation'] != null) {
+      return design.skillLeaves(id).map(observations).reduce(min);
+    }
+    return (skill(id)['correct'] as num? ?? 0) +
+        (skill(id)['wrong'] as num? ?? 0);
   }
 
   bool unlocked(ContentNode node, [Set<String>? evaluating]) {
@@ -348,28 +417,78 @@ class GameSession extends ChangeNotifier {
     await _commit(next);
   }
 
-  /// Expands only declared addresses. No concept similarity or inferred edge.
+  /// Resolves explicit routes and cards assessing the same failed leaves.
   final Map<String, List<Json>> _practiceCache = {};
   final Map<String, Map<String, Set<String>?>> _practiceMembership = {};
   List<Json> practiceTargets(Json error) {
+    final failed = strings(error['outcome']?['observed']).toSet();
     final declared = objects(design.pedagogy['practiceSets']);
-    return [
-      for (final id in strings(error['practice']))
-        ...(_practiceCache[id] ??= objects(
-          declared.firstWhere((s) => s['id'] == id)['targets'],
-        )),
-    ];
+    final result = <String, Json>{};
+    for (final id in strings(error['practice'])) {
+      for (final target in (_practiceCache[id] ??= objects(
+        declared.firstWhere((set) => set['id'] == id)['targets'],
+      ))) {
+        result[target['card']] = target;
+      }
+    }
+    for (final card in design.cards.values) {
+      final matching = strings(card.data['skills'])
+          .expand(design.skillLeaves)
+          .where(failed.contains)
+          .toSet();
+      if (matching.isNotEmpty) {
+        result.putIfAbsent(
+          card.address,
+          () => {'card': card.address, 'skills': matching.toList()},
+        );
+      }
+    }
+    return result.values.toList();
+  }
+
+  late final Set<String> _assessableSkills = {
+    for (final card in design.cards.values) ...design.cardSkills(card),
+  };
+  final Map<String, Set<String>> _dependencyLeaves = {};
+
+  Set<String> _requiredLeaves(String id) => _dependencyLeaves.putIfAbsent(
+    id,
+    () => {
+      ...design.skillLeaves(id),
+      for (final prerequisite in design.skillPrerequisites(id))
+        ...design.skillLeaves(prerequisite),
+    }.intersection(_assessableSkills),
+  );
+
+  double _readiness(QuestionEntry q) {
+    final required = {
+      for (final id in strings(q.data['requires'])) ..._requiredLeaves(id),
+      for (final skill in q.skills)
+        for (final id in strings(design.knowledge[skill]?['requires']))
+          ..._requiredLeaves(id),
+    }..removeAll(q.skills);
+    if (required.isEmpty) return 1;
+    // This is a selection preference, not mastery: a known grammatical
+    // prerequisite should help even while a word has not yet been practiced.
+    return required.fold<double>(0, (sum, id) => sum + (progress(id) ?? 0)) /
+        required.length;
   }
 
   double weight(ContentNode card, QuestionEntry q, {String? encounterId}) {
-    final record = skill(q.skills.first);
-    final est = estimate(record, skillId: q.skills.first);
+    final estimates = q.skills.map(progress).toList();
+    final est = estimates.any((v) => v == null)
+        ? null
+        : estimates.cast<double>().reduce(min);
     var result = est == null
         ? (selection['unknownWeight'] as num).toDouble()
         : 1.0 + (selection['weakScale'] as num) * (1 - est);
     for (final e in object(state['errors']).values) {
       final error = object(e);
       if (error['encounterId'] == encounterId) continue;
+      if (strings(error['outcome']?['observed']).any(q.skills.contains)) {
+        result *= (selection['linkedQuestionBoost'] as num).toDouble();
+        break;
+      }
       if (error['assessment'] == q.assessment ||
           strings(q.data['legacyKeys']).contains(error['legacyKey'])) {
         result *= (selection['sameQuestionBoost'] as num).toDouble();
@@ -396,9 +515,15 @@ class GameSession extends ChangeNotifier {
       }
     }
     if (card.data['questionSelection'] == 'adaptive') {
+      if (q.skills.any(
+        (id) => !_successfulItems(skill(id)).contains(q.evidenceItem),
+      )) {
+        result *= (selection['unprovenItemBoost'] as num? ?? 2);
+      }
       final history = object(
         state['questionResults']?[card.address]?[q.id] ?? {},
       );
+
       final correct = history['correct'] as num? ?? 0;
       final wrong = history['wrong'] as num? ?? 0;
       if (correct + wrong == 0) {
@@ -407,7 +532,9 @@ class GameSession extends ChangeNotifier {
         result /= 1 + correct / (1 + wrong);
       }
     }
-    return result;
+    // Prerequisites guide selection without claiming evidence for them. Keep
+    // questions available even before vocabulary practice at section end.
+    return result * (0.25 + 0.75 * _readiness(q));
   }
 
   QuestionEntry _select(
@@ -450,23 +577,42 @@ class GameSession extends ChangeNotifier {
           )
           .add(q);
     }
+    final adaptiveWeights = adaptive
+        ? {
+            for (final q in candidates)
+              q.id: weight(card, q, encounterId: battle['id'] as String),
+          }
+        : <String, double>{};
     final groupNames = groups.keys.toList();
     final policies = object(card.data['selectionGroups'] ?? {});
     final group = _pick(
       groupNames,
       groupNames.map((id) {
         final policy = object(policies[id] ?? {});
+        var policyWeight = (policy['weight'] as num? ?? 1).toDouble();
         for (final r in objects(policy['rules'])) {
-          if (meets(object(r['when']))) return (r['weight'] as num).toDouble();
+          if (meets(object(r['when']))) {
+            policyWeight = (r['weight'] as num).toDouble();
+            break;
+          }
         }
-        return (policy['weight'] as num? ?? 1).toDouble();
+        if (!adaptive) return policyWeight;
+        // Average evidence need, so extra scenery cannot inflate a group's weight.
+        final members = groups[id]!;
+        return policyWeight *
+            members.map((q) => adaptiveWeights[q.id]!).reduce((a, b) => a + b) /
+            members.length;
       }).toList(),
     );
     candidates = groups[group]!;
     final chosen = _pick(
       candidates,
       candidates
-          .map((q) => weight(card, q, encounterId: battle['id'] as String))
+          .map(
+            (q) =>
+                adaptiveWeights[q.id] ??
+                weight(card, q, encounterId: battle['id'] as String),
+          )
           .toList(),
     );
     if (adaptive) {
@@ -488,8 +634,9 @@ class GameSession extends ChangeNotifier {
     if ((materialized.data['shuffleChoices'] ??
             card.data['shuffleChoices'] ??
             false) !=
-        true)
+        true) {
       return materialized;
+    }
     final data = object(jsonDecode(jsonEncode(materialized.data)));
     (data['choices'] as List).shuffle(random);
     return QuestionEntry(data);
@@ -624,6 +771,20 @@ class GameSession extends ChangeNotifier {
     if (!q.choices.any((c) => c['id'] == choice)) {
       throw ArgumentError('Answer is not an authored choice');
     }
+    final outcome = q.outcome(choice);
+    final failed = strings(outcome['observed']);
+    if (q.skills.isEmpty ||
+        q.skills.any(
+          (id) =>
+              !design.knowledge.containsKey(id) ||
+              design.knowledge[id]?['aggregation'] != null,
+        ) ||
+        (q.accepted.contains(choice) ? failed.isNotEmpty : failed.isEmpty) ||
+        failed.any((id) => !q.skills.contains(id))) {
+      throw const FormatException(
+        'Snapshot violates fine-skill evidence contract',
+      );
+    }
     _timer.stop();
     final next = _copy(), battle = object(next['encounter']);
     final correct = q.accepted.contains(choice),
@@ -659,7 +820,10 @@ class GameSession extends ChangeNotifier {
     delta = after - balance;
     next['balance'] = after;
     final timestamp = clock().millisecondsSinceEpoch;
-    for (final id in q.skills.toSet()) {
+    final assessed = !correct
+        ? strings(outcome['observed']).toSet()
+        : q.skills.toSet();
+    for (final id in assessed) {
       final r = object(next['skills'][id] ?? {});
       var est = estimate(r, skillId: id);
       if (!assisted) {
@@ -683,13 +847,13 @@ class GameSession extends ChangeNotifier {
       }
       r['estimate'] = est;
       r['last'] = timestamp;
-      r['items'] = {...strings(r['items']), q.item}.toList();
+      r['items'] = {...strings(r['items']), q.evidenceItem}.toList();
       if (!assisted && design.knowledge[id]?['masteryRequirements'] != null) {
         final successful = _successfulItems(r);
         if (correct) {
-          successful.add(q.item);
+          successful.add(q.evidenceItem);
         } else {
-          successful.remove(q.item);
+          successful.remove(q.evidenceItem);
         }
         r['successfulItems'] = successful.toList();
       }
@@ -700,7 +864,7 @@ class GameSession extends ChangeNotifier {
           'at': timestamp,
           'correct': correct,
           'assisted': assisted,
-          'item': q.item,
+          'item': q.evidenceItem,
           'card': battle['card'],
         },
       ];
@@ -709,7 +873,6 @@ class GameSession extends ChangeNotifier {
           .toList();
       next['skills'][id] = r;
     }
-    final outcome = q.outcome(choice);
     final observation = <String, dynamic>{
       'transaction': (next['transaction'] as int) + 1,
       'balanceDelta': delta,
@@ -744,6 +907,22 @@ class GameSession extends ChangeNotifier {
     } else if (!assisted) {
       for (final key in errors.keys.toList()) {
         final e = object(errors[key]);
+        final failed = strings(e['outcome']?['observed']);
+        if (failed.isNotEmpty) {
+          final successes = object(e['skillSuccesses'] ?? {});
+          for (final id in failed.where(q.skills.contains)) {
+            successes[id] = (successes[id] as int? ?? 0) + 1;
+          }
+          e['skillSuccesses'] = successes;
+          if (failed.every(
+            (id) => (successes[id] as int? ?? 0) >= selection['retireAfter'],
+          )) {
+            errors.remove(key);
+          } else {
+            errors[key] = e;
+          }
+          continue;
+        }
         if (e['assessment'] == q.assessment ||
             strings(q.data['legacyKeys']).contains(e['legacyKey'])) {
           e['successes'] = (e['successes'] as int? ?? 0) + 1;
@@ -786,8 +965,9 @@ class GameSession extends ChangeNotifier {
     final phase = encounter!['phase'];
     if (phase != 'feedback' &&
         !(encounterExhausted &&
-            ['question', 'paused', 'introduction'].contains(phase)))
+            ['question', 'paused', 'introduction'].contains(phase))) {
       return;
+    }
     final next = _copy(), battle = object(next['encounter']);
     final currentCard = design.cards[battle['card']]!;
     final ordered = currentCard.data['encounter']['completion'] == 'sequence';
@@ -797,9 +977,7 @@ class GameSession extends ChangeNotifier {
       final won = battle['remaining'] <= 0 && battle['lives'] > 0;
       final card = design.cards[battle['card']]!;
       var adjustment = won ? economy['victoryBonus'] as int : 0;
-      if (won &&
-          level(strings(card.data['skills']).first) ==
-              objects(mastery['levels']).length - 1) {
+      if (won && cardMastered(card)) {
         final prices = design.cards.values
             .where(
               (c) =>

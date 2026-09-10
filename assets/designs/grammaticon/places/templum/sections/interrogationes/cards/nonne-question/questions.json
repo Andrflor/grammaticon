@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.nonne-question"
+      "compositio.question-expectation",
+      "compositio.question-negation"
     ],
     "item": "nonne-question:q1",
     "assessment": "study.theme.nonne-question:q1",
     "help": "study.nonne-question",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.non",
+      "lexicon.compositio.nonne",
+      "lexicon.compositio.num"
+    ],
     "vocabulary": [
       "adsum",
       "magister",
@@ -44,7 +51,8 @@
     "editorial": {
       "language": "la",
       "topic": "nonne-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -56,7 +64,7 @@
       "1": {
         "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
         "observed": [
-          "study.confusion.question-expectation"
+          "compositio.question-expectation"
         ],
         "hypotheses": [],
         "practice": []
@@ -64,7 +72,7 @@
       "2": {
         "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
         "observed": [
-          "study.confusion.question-negation"
+          "compositio.question-negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -100,12 +108,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.nonne-question"
+      "compositio.question-expectation",
+      "compositio.question-negation"
     ],
     "item": "nonne-question:q2",
     "assessment": "study.theme.nonne-question:q2",
     "help": "study.nonne-question",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.adsum",
+      "lexicon.compositio.non",
+      "lexicon.compositio.nonne",
+      "lexicon.compositio.num",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "adsum",
       "non",
@@ -116,13 +131,14 @@
     "editorial": {
       "language": "la",
       "topic": "nonne-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
         "observed": [
-          "study.confusion.question-expectation"
+          "compositio.question-expectation"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +146,7 @@
       "1": {
         "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
         "observed": [
-          "study.confusion.question-negation"
+          "compositio.question-negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +188,20 @@
       "1"
     ],
     "skills": [
-      "study.theme.nonne-question"
+      "compositio.question-expectation",
+      "compositio.question-negation"
     ],
     "item": "nonne-question:q3",
     "assessment": "study.theme.nonne-question:q3",
     "help": "study.nonne-question",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.non",
+      "lexicon.compositio.nonne",
+      "lexicon.compositio.num",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "non",
@@ -189,13 +213,14 @@
     "editorial": {
       "language": "la",
       "topic": "nonne-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
         "observed": [
-          "study.confusion.question-negation"
+          "compositio.question-negation"
         ],
         "hypotheses": [],
         "practice": []
@@ -209,7 +234,7 @@
       "2": {
         "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
         "observed": [
-          "study.confusion.question-expectation"
+          "compositio.question-expectation"
         ],
         "hypotheses": [],
         "practice": []
@@ -245,12 +270,20 @@
       "0"
     ],
     "skills": [
-      "study.theme.nonne-question"
+      "compositio.question-expectation",
+      "compositio.question-negation"
     ],
     "item": "nonne-question:q4",
     "assessment": "study.theme.nonne-question:q4",
     "help": "study.nonne-question",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.non",
+      "lexicon.compositio.nonne",
+      "lexicon.compositio.num",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "non",
@@ -262,7 +295,8 @@
     "editorial": {
       "language": "la",
       "topic": "nonne-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -274,7 +308,7 @@
       "1": {
         "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
         "observed": [
-          "study.confusion.question-expectation"
+          "compositio.question-expectation"
         ],
         "hypotheses": [],
         "practice": []
@@ -282,7 +316,7 @@
       "2": {
         "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
         "observed": [
-          "study.confusion.question-negation"
+          "compositio.question-negation"
         ],
         "hypotheses": [],
         "practice": []

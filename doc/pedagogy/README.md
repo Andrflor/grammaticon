@@ -1,3 +1,9 @@
+# Contrat actuel
+
+Le contrat demandé est désormais [le graphe de compétences fines](skills/README.md). Les ouvrages sont des repères de largeur, sans audit chapitre par chapitre. Le parcours actuel reste très inférieur à l’étendue et au volume demandés.
+
+La description ci-dessous est historique : ses critères de complétion et de certification des sources sont remplacés par le contrat ci-dessus.
+
 # Theatrum et Templum : objectif en cours
 
 L’objectif actif est la couverture vérifiable de Familia Romana, Fabellae Latinae, Fabulae Syrae et Epitome Historiae Sacrae. Le catalogue actuel ne constitue pas encore cette couverture complète.

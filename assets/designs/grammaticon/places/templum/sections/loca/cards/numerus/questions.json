@@ -1,26 +1,38 @@
 [
   {
     "id": "est-sunt-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Un garçon est dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nIn scholā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In scholā puer est."
+        "text": "puer est."
       },
       {
         "id": "plural",
-        "text": "In scholā puerī sunt."
+        "text": "puerī sunt."
       },
       {
         "id": "form",
-        "text": "In scholā puerī est."
+        "text": "puerī est."
       }
     ],
     "accepted": [
@@ -32,18 +44,26 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "est-sunt:q1",
     "assessment": "study.theme.early-numerus:est-sunt:q1",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "est-sunt",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -55,7 +75,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +83,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,26 +92,38 @@
   },
   {
     "id": "est-sunt-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Des garçons sont dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nIn scholā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In scholā puer est."
+        "text": "puer est."
       },
       {
         "id": "plural",
-        "text": "In scholā puerī sunt."
+        "text": "puerī sunt."
       },
       {
         "id": "form",
-        "text": "In scholā puerī est."
+        "text": "puerī est."
       }
     ],
     "accepted": [
@@ -103,24 +135,32 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "est-sunt:q2",
     "assessment": "study.theme.early-numerus:est-sunt:q2",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "est-sunt",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -134,7 +174,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -143,26 +183,38 @@
   },
   {
     "id": "est-sunt-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Une jeune fille est dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nIn hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In hortō puella est."
+        "text": "puella est."
       },
       {
         "id": "plural",
-        "text": "In hortō puellae sunt."
+        "text": "puellae sunt."
       },
       {
         "id": "form",
-        "text": "In hortō puellae est."
+        "text": "puellae est."
       }
     ],
     "accepted": [
@@ -174,18 +226,26 @@
       "puella",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "est-sunt:q3",
     "assessment": "study.theme.early-numerus:est-sunt:q3",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "est-sunt",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -197,7 +257,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +265,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,26 +274,38 @@
   },
   {
     "id": "est-sunt-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Des jeunes filles sont dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nIn hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In hortō puella est."
+        "text": "puella est."
       },
       {
         "id": "plural",
-        "text": "In hortō puellae sunt."
+        "text": "puellae sunt."
       },
       {
         "id": "form",
-        "text": "In hortō puellae est."
+        "text": "puellae est."
       }
     ],
     "accepted": [
@@ -245,24 +317,32 @@
       "puella",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "est-sunt:q4",
     "assessment": "study.theme.early-numerus:est-sunt:q4",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "est-sunt",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +356,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -285,26 +365,38 @@
   },
   {
     "id": "first-declension-number-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Une jeune fille est dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nIn scholā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In scholā puella est."
+        "text": "puella est."
       },
       {
         "id": "plural",
-        "text": "In scholā puellae sunt."
+        "text": "puellae sunt."
       },
       {
         "id": "form",
-        "text": "In scholā puellam est."
+        "text": "puellam est."
       }
     ],
     "accepted": [
@@ -316,18 +408,26 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "first-declension-number:q1",
     "assessment": "study.theme.early-numerus:first-declension-number:q1",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "first-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -339,7 +439,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -347,7 +447,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -356,26 +456,38 @@
   },
   {
     "id": "first-declension-number-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Des femmes sont sur l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nIn īnsulā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In īnsulā fēmina est."
+        "text": "fēmina est."
       },
       {
         "id": "plural",
-        "text": "In īnsulā fēminae sunt."
+        "text": "fēminae sunt."
       },
       {
         "id": "form",
-        "text": "In īnsulā fēminam sunt."
+        "text": "fēminam sunt."
       }
     ],
     "accepted": [
@@ -387,24 +499,32 @@
       "insula",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "first-declension-number:q2",
     "assessment": "study.theme.early-numerus:first-declension-number:q2",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "first-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -418,7 +538,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -427,26 +547,38 @@
   },
   {
     "id": "first-declension-number-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a des maisons de campagne en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nIn Italiā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In Italiā vīlla est."
+        "text": "vīlla est."
       },
       {
         "id": "plural",
-        "text": "In Italiā vīllae sunt."
+        "text": "vīllae sunt."
       },
       {
         "id": "form",
-        "text": "In Italiā vīllam sunt."
+        "text": "vīllam sunt."
       }
     ],
     "accepted": [
@@ -458,24 +590,32 @@
       "sum",
       "villa"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "first-declension-number:q3",
     "assessment": "study.theme.early-numerus:first-declension-number:q3",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "editorial": {
       "language": "la",
       "topic": "first-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -489,7 +629,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -498,26 +638,38 @@
   },
   {
     "id": "first-declension-number-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a une école dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nIn oppidō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In oppidō schola est."
+        "text": "schola est."
       },
       {
         "id": "plural",
-        "text": "In oppidō scholae sunt."
+        "text": "scholae sunt."
       },
       {
         "id": "form",
-        "text": "In oppidō scholam est."
+        "text": "scholam est."
       }
     ],
     "accepted": [
@@ -529,18 +681,26 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "first-declension-number:q4",
     "assessment": "study.theme.early-numerus:first-declension-number:q4",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "first-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -552,7 +712,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -560,7 +720,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -569,26 +729,38 @@
   },
   {
     "id": "second-declension-number-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a un jardin dans la maison de campagne."
+      },
+      {
+        "type": "text",
+        "text": "\nIn vīllā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In vīllā hortus est."
+        "text": "hortus est."
       },
       {
         "id": "plural",
-        "text": "In vīllā hortī sunt."
+        "text": "hortī sunt."
       },
       {
         "id": "form",
-        "text": "In vīllā hortum est."
+        "text": "hortum est."
       }
     ],
     "accepted": [
@@ -600,18 +772,26 @@
       "sum",
       "villa"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "second-declension-number:q1",
     "assessment": "study.theme.early-numerus:second-declension-number:q1",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "editorial": {
       "language": "la",
       "topic": "second-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -623,7 +803,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -631,7 +811,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -640,26 +820,38 @@
   },
   {
     "id": "second-declension-number-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Des livres sont dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nIn scholā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In scholā liber est."
+        "text": "liber est."
       },
       {
         "id": "plural",
-        "text": "In scholā librī sunt."
+        "text": "librī sunt."
       },
       {
         "id": "form",
-        "text": "In scholā librum sunt."
+        "text": "librum sunt."
       }
     ],
     "accepted": [
@@ -671,24 +863,32 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "second-declension-number:q2",
     "assessment": "study.theme.early-numerus:second-declension-number:q2",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "second-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -702,7 +902,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -711,26 +911,38 @@
   },
   {
     "id": "second-declension-number-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Des garçons sont dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nIn hortō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In hortō puer est."
+        "text": "puer est."
       },
       {
         "id": "plural",
-        "text": "In hortō puerī sunt."
+        "text": "puerī sunt."
       },
       {
         "id": "form",
-        "text": "In hortō puerum sunt."
+        "text": "puerum sunt."
       }
     ],
     "accepted": [
@@ -742,24 +954,32 @@
       "puer",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "second-declension-number:q3",
     "assessment": "study.theme.early-numerus:second-declension-number:q3",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "second-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -773,7 +993,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -782,26 +1002,38 @@
   },
   {
     "id": "second-declension-number-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Un maître est dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nIn oppidō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In oppidō magister est."
+        "text": "magister est."
       },
       {
         "id": "plural",
-        "text": "In oppidō magistrī sunt."
+        "text": "magistrī sunt."
       },
       {
         "id": "form",
-        "text": "In oppidō magistrum est."
+        "text": "magistrum est."
       }
     ],
     "accepted": [
@@ -813,18 +1045,26 @@
       "oppidum",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "second-declension-number:q4",
     "assessment": "study.theme.early-numerus:second-declension-number:q4",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "second-declension-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -836,7 +1076,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -844,7 +1084,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -853,26 +1093,38 @@
   },
   {
     "id": "neuter-number-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a un temple dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nIn oppidō "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In oppidō templum est."
+        "text": "templum est."
       },
       {
         "id": "plural",
-        "text": "In oppidō templa sunt."
+        "text": "templa sunt."
       },
       {
         "id": "form",
-        "text": "In oppidō templī sunt."
+        "text": "templī sunt."
       }
     ],
     "accepted": [
@@ -884,18 +1136,26 @@
       "sum",
       "templum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "neuter-number:q1",
     "assessment": "study.theme.early-numerus:neuter-number:q1",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -907,7 +1167,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -915,7 +1175,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -924,26 +1184,38 @@
   },
   {
     "id": "neuter-number-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a des temples sur l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nIn īnsulā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In īnsulā templum est."
+        "text": "templum est."
       },
       {
         "id": "plural",
-        "text": "In īnsulā templa sunt."
+        "text": "templa sunt."
       },
       {
         "id": "form",
-        "text": "In īnsulā templae sunt."
+        "text": "templae sunt."
       }
     ],
     "accepted": [
@@ -955,24 +1227,32 @@
       "sum",
       "templum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "neuter-number:q2",
     "assessment": "study.theme.early-numerus:neuter-number:q2",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -986,7 +1266,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -995,26 +1275,38 @@
   },
   {
     "id": "neuter-number-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a des villes en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nIn Italiā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In Italiā oppidum est."
+        "text": "oppidum est."
       },
       {
         "id": "plural",
-        "text": "In Italiā oppida sunt."
+        "text": "oppida sunt."
       },
       {
         "id": "form",
-        "text": "In Italiā oppidī sunt."
+        "text": "oppidī sunt."
       }
     ],
     "accepted": [
@@ -1026,24 +1318,32 @@
       "oppidum",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "neuter-number:q3",
     "assessment": "study.theme.early-numerus:neuter-number:q3",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1057,7 +1357,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1066,26 +1366,38 @@
   },
   {
     "id": "neuter-number-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Il y a une ville sur l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nIn īnsulā "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": ""
       }
     ],
     "choices": [
       {
         "id": "singular",
-        "text": "In īnsulā oppidum est."
+        "text": "oppidum est."
       },
       {
         "id": "plural",
-        "text": "In īnsulā oppida sunt."
+        "text": "oppida sunt."
       },
       {
         "id": "form",
-        "text": "In īnsulā oppidae sunt."
+        "text": "oppidae sunt."
       }
     ],
     "accepted": [
@@ -1097,18 +1409,26 @@
       "oppidum",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.subject-number",
+      "compositio.verb-number"
     ],
     "item": "neuter-number:q4",
     "assessment": "study.theme.early-numerus:neuter-number:q4",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-number",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "singular": {
@@ -1120,7 +1440,7 @@
       "plural": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs distinguendae sunt.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1128,7 +1448,7 @@
       "form": {
         "feedback": "Nōn rēctē. Fōrma nōminis vel verbī nōn congruit. Nōminātīvus singulāris cum est, nōminātīvus plūrālis cum sunt adhibendus est.",
         "observed": [
-          "study.confusion.early-subject-form"
+          "compositio.verb-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1164,12 +1484,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-1",
     "assessment": "study.theme.early-numerus:extra-1",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "puella",
@@ -1178,7 +1505,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1190,7 +1518,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +1526,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1234,12 +1562,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-2",
     "assessment": "study.theme.early-numerus:extra-2",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1248,7 +1583,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1260,7 +1596,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1268,7 +1604,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1304,12 +1640,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-3",
     "assessment": "study.theme.early-numerus:extra-3",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -1318,7 +1661,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1330,7 +1674,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1338,7 +1682,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1374,12 +1718,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-4",
     "assessment": "study.theme.early-numerus:extra-4",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "in",
@@ -1388,7 +1739,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1400,7 +1752,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1408,7 +1760,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1444,12 +1796,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-5",
     "assessment": "study.theme.early-numerus:extra-5",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "oppidum",
@@ -1458,7 +1817,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1470,7 +1830,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1478,7 +1838,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1514,12 +1874,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-6",
     "assessment": "study.theme.early-numerus:extra-6",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.ager",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "ager",
       "in",
@@ -1528,7 +1895,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1540,7 +1908,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1548,7 +1916,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1584,12 +1952,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-7",
     "assessment": "study.theme.early-numerus:extra-7",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1598,7 +1973,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1610,7 +1986,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1618,7 +1994,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1654,12 +2030,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-8",
     "assessment": "study.theme.early-numerus:extra-8",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "oppidum",
@@ -1668,7 +2051,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1680,7 +2064,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1688,7 +2072,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1724,12 +2108,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-9",
     "assessment": "study.theme.early-numerus:extra-9",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -1738,7 +2129,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1750,7 +2142,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1758,7 +2150,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1794,12 +2186,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-10",
     "assessment": "study.theme.early-numerus:extra-10",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "oppidum",
@@ -1808,7 +2207,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1820,7 +2220,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1828,7 +2228,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1864,12 +2264,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-11",
     "assessment": "study.theme.early-numerus:extra-11",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "nauta",
@@ -1878,7 +2285,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1890,7 +2298,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1898,7 +2306,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1934,12 +2342,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-12",
     "assessment": "study.theme.early-numerus:extra-12",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "in",
       "schola",
@@ -1948,7 +2363,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1960,7 +2376,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1968,7 +2384,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2004,12 +2420,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-13",
     "assessment": "study.theme.early-numerus:extra-13",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "hortus",
@@ -2018,7 +2441,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2030,7 +2454,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2038,7 +2462,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2074,12 +2498,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-14",
     "assessment": "study.theme.early-numerus:extra-14",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "puer",
@@ -2088,7 +2519,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2100,7 +2532,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2108,7 +2540,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2144,12 +2576,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-15",
     "assessment": "study.theme.early-numerus:extra-15",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -2158,7 +2597,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2170,7 +2610,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2178,7 +2618,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2214,12 +2654,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.early-numerus"
+      "compositio.place-number",
+      "compositio.subject-number"
     ],
     "item": "early-numerus:extra-16",
     "assessment": "study.theme.early-numerus:extra-16",
     "help": "study.early-numerus",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -2228,7 +2675,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -2240,7 +2688,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "compositio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2248,7 +2696,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūnus locus et plūrēs locī distinguendī sunt.",
         "observed": [
-          "study.confusion.early-place-number"
+          "compositio.place-number"
         ],
         "hypotheses": [],
         "practice": []

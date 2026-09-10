@@ -29,7 +29,14 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puella portat; librum ūnam rem portātam indicat; puerī possessōrem librī indicat.",
@@ -40,7 +47,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc responsiōne puer portat et liber puellae est. In sententiā quaesītā puella portat et liber puerī est.",
         "observed": [
-          "study.confusion.genitive-agent-reference"
+          "compositio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -48,7 +55,7 @@
       "2": {
         "feedback": "Nōn rēctē. Librum singulāris est; librōs plūrālis esset. Ūnus liber portātur.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -61,13 +68,15 @@
       "puer"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-reference"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -100,12 +109,19 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.compositio.domus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Fēmina domūs fēminam describit; domus fēminae domum describit. Genetīvus ad aliud nōmen pertinet.",
         "observed": [
-          "study.confusion.genitive-head-reference"
+          "compositio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -113,7 +129,7 @@
       "1": {
         "feedback": "Nōn rēctē. Domus est magna ūnam domum indicat. Domūs sunt magnae plūrēs domōs indicāret.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -132,13 +148,15 @@
       "sum"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-reference"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -171,12 +189,18 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.video",
+      "lexicon.compositio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hāc responsiōne fīlius videt et vir vidētur. In sententiā quaesītā vir videt et fīlius vidētur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "compositio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -190,7 +214,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne magister videt et vir pater fīliī est. In sententiā quaesītā vir videt et magister pater fīliī est.",
         "observed": [
-          "study.confusion.genitive-agent-reference"
+          "compositio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -203,13 +227,15 @@
       "vir"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.possessor-reference",
+      "compositio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -242,7 +268,14 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.audio",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.filia",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puer audit; fīliam audit. Fēminae ad fīliam pertinet: fēmina māter illīus fīliae est.",
@@ -253,7 +286,7 @@
       "1": {
         "feedback": "Nōn rēctē. Fēminae mātrem fīliae indicat; virī patrem indicāret.",
         "observed": [
-          "study.confusion.genitive-kinship-reference"
+          "compositio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -261,7 +294,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne fīlia audit et puer audītur. In sententiā quaesītā puer audit et fīlia audītur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "compositio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -275,13 +308,15 @@
       "vir"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.possessor-reference",
+      "compositio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -314,12 +349,18 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Liber singulāris est; librī sunt parvī plūrēs librōs indicāret.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -327,7 +368,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magistrī genetīvus singulāris est; magistrōrum genetīvus plūrālis est. Numerus possessōrum mutātus est.",
         "observed": [
-          "study.confusion.owner-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -346,13 +387,15 @@
       "sum"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -385,12 +428,19 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.filia",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.vir",
+      "lexicon.compositio.voco"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Virī patrem fīliae indicat; fēminae mātrem indicāret.",
         "observed": [
-          "study.confusion.genitive-kinship-reference"
+          "compositio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -404,7 +454,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne puella vocat et fīlia vocātur. In sententiā quaesītā fīlia vocat et puella vocātur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "compositio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -418,13 +468,15 @@
       "voco"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.possessor-reference",
+      "compositio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
       "language": "la",
       "topic": "possession",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     }
   },
   {
@@ -456,12 +508,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "genitive-plural:q1",
     "assessment": "study.theme.personae-possession:genitive-plural:q1",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.parvus",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "liber",
       "parvus",
@@ -471,7 +530,8 @@
     "editorial": {
       "language": "la",
       "topic": "genitive-plural",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -483,7 +543,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -491,7 +551,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -527,12 +587,19 @@
       "2"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "genitive-plural:q2",
     "assessment": "study.theme.personae-possession:genitive-plural:q2",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.magnus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "magnus",
@@ -542,13 +609,14 @@
     "editorial": {
       "language": "la",
       "topic": "genitive-plural",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -556,7 +624,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -571,39 +639,58 @@
   },
   {
     "id": "genitive-plural-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille porte les livres des maîtres."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella librōs magistrōrum portat."
+        "text": "librōs magistrōrum"
       },
       {
         "id": "2",
-        "text": "Puella librōs magistrī portat."
+        "text": "librōs magistrī"
       },
       {
         "id": "0",
-        "text": "Puella librum magistrōrum portat."
+        "text": "librum magistrōrum"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "genitive-plural:q3",
     "assessment": "study.theme.personae-possession:genitive-plural:q3",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "liber",
       "magister",
@@ -613,13 +700,14 @@
     "editorial": {
       "language": "la",
       "topic": "genitive-plural",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -633,7 +721,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -642,39 +730,58 @@
   },
   {
     "id": "genitive-plural-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon voit la maison de campagne des femmes."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer vīllam fēminae videt."
+        "text": "vīllam fēminae"
       },
       {
         "id": "2",
-        "text": "Puer vīllās fēminārum videt."
+        "text": "vīllās fēminārum"
       },
       {
         "id": "0",
-        "text": "Puer vīllam fēminārum videt."
+        "text": "vīllam fēminārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "genitive-plural:q4",
     "assessment": "study.theme.personae-possession:genitive-plural:q4",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.video",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "femina",
       "puer",
@@ -684,7 +791,8 @@
     "editorial": {
       "language": "la",
       "topic": "genitive-plural",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -696,7 +804,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -704,7 +812,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -713,39 +821,57 @@
   },
   {
     "id": "cuius-question-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "item": "cuius-question:q1",
     "assessment": "study.theme.personae-possession:cuius-question:q1",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "À qui est le livre ?"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est liber?"
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Quid est liber?"
+        "text": "Quid"
       },
       {
         "id": "0",
-        "text": "Cuius est liber?"
+        "text": "Cuius"
       },
       {
         "id": "1",
-        "text": "Ubi est liber?"
+        "text": "Ubi"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-place",
+      "compositio.question-thing"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.liber",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
     "vocabulary": [
       "liber",
       "quis",
@@ -755,7 +881,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -767,7 +894,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "compositio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -775,7 +902,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quid est liber? genus reī quaerit; cuius est liber? possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-definition"
+          "compositio.question-thing"
         ],
         "hypotheses": [],
         "practice": []
@@ -813,10 +940,16 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-number",
+      "compositio.question-person"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.filia",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.rideo"
+    ],
     "vocabulary": [
       "filia",
       "quis",
@@ -825,7 +958,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -837,7 +971,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "compositio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -845,7 +979,7 @@
       "2": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "compositio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -883,10 +1017,17 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-person",
+      "compositio.question-role"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.doceo",
+      "lexicon.compositio.filius",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.quis"
+    ],
     "vocabulary": [
       "doceo",
       "filius",
@@ -896,7 +1037,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -908,7 +1050,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "compositio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -916,7 +1058,7 @@
       "2": {
         "feedback": "Nōn rēctē. Fīlium magister docet: magister docet. Fīlius magistrum docet: fīlius docet. Cuius in utrāque sententiā patrem vel mātrem fīliī quaerit; cāsūs agentem et patientem distinguunt.",
         "observed": [
-          "study.confusion.question-roles"
+          "compositio.question-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -954,10 +1096,17 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-number",
+      "compositio.question-person"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quis"
+    ],
     "vocabulary": [
       "liber",
       "porto",
@@ -967,7 +1116,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -979,7 +1129,7 @@
       "1": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "compositio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -987,7 +1137,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "compositio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1025,10 +1175,19 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-number",
+      "compositio.question-place"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1040,7 +1199,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1052,7 +1212,7 @@
       "1": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "compositio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1060,7 +1220,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "compositio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -1098,10 +1258,18 @@
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.question-number",
+      "compositio.question-place"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.ubi",
+      "lexicon.compositio.video",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "puer",
       "quis",
@@ -1112,7 +1280,8 @@
     "editorial": {
       "language": "la",
       "topic": "cuius-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -1124,7 +1293,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "compositio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -1132,7 +1301,7 @@
       "2": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "compositio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1141,39 +1310,58 @@
   },
   {
     "id": "extra-1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille porte la rose du maître."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella rosam magistrī portat."
+        "text": "rosam magistrī"
       },
       {
         "id": "1",
-        "text": "Puella rosam magistrōrum portat."
+        "text": "rosam magistrōrum"
       },
       {
         "id": "2",
-        "text": "Puella rosās magistrī portat."
+        "text": "rosās magistrī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-1",
     "assessment": "study.theme.personae-possession:extra-1",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.rosa"
+    ],
     "vocabulary": [
       "magister",
       "porto",
@@ -1182,7 +1370,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1194,7 +1383,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1202,7 +1391,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1211,39 +1400,58 @@
   },
   {
     "id": "extra-2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon lit la lettre des jeunes filles."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer epistulam puellārum legit."
+        "text": "epistulam puellārum"
       },
       {
         "id": "1",
-        "text": "Puer epistulam puellae legit."
+        "text": "epistulam puellae"
       },
       {
         "id": "2",
-        "text": "Puer epistulās puellārum legit."
+        "text": "epistulās puellārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-2",
     "assessment": "study.theme.personae-possession:extra-2",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -1252,7 +1460,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1264,7 +1473,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1272,7 +1481,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1281,39 +1490,58 @@
   },
   {
     "id": "extra-3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme lit le livre des garçons."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina librum puerōrum legit."
+        "text": "librum puerōrum"
       },
       {
         "id": "1",
-        "text": "Fēmina librum puerī legit."
+        "text": "librum puerī"
       },
       {
         "id": "2",
-        "text": "Fēmina librōs puerōrum legit."
+        "text": "librōs puerōrum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-3",
     "assessment": "study.theme.personae-possession:extra-3",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.puer"
+    ],
     "vocabulary": [
       "femina",
       "lego",
@@ -1322,7 +1550,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1334,7 +1563,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1342,7 +1571,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1351,39 +1580,58 @@
   },
   {
     "id": "extra-4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme porte les cadeaux de la femme."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir dōna fēminae portat."
+        "text": "dōna fēminae"
       },
       {
         "id": "1",
-        "text": "Vir dōna fēminārum portat."
+        "text": "dōna fēminārum"
       },
       {
         "id": "2",
-        "text": "Vir dōnum fēminae portat."
+        "text": "dōnum fēminae"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-4",
     "assessment": "study.theme.personae-possession:extra-4",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -1392,7 +1640,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1404,7 +1653,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1412,7 +1661,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1421,39 +1670,58 @@
   },
   {
     "id": "extra-5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin a la lettre du paysan."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta epistulam agricolae habet."
+        "text": "epistulam agricolae"
       },
       {
         "id": "1",
-        "text": "Nauta epistulam agricolārum habet."
+        "text": "epistulam agricolārum"
       },
       {
         "id": "2",
-        "text": "Nauta epistulās agricolae habet."
+        "text": "epistulās agricolae"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-5",
     "assessment": "study.theme.personae-possession:extra-5",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.nauta"
+    ],
     "vocabulary": [
       "agricola",
       "epistula",
@@ -1462,7 +1730,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1474,7 +1743,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1482,7 +1751,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1491,39 +1760,58 @@
   },
   {
     "id": "extra-6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître voit les livres des esclaves."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister librōs servōrum videt."
+        "text": "librōs servōrum"
       },
       {
         "id": "1",
-        "text": "Magister librōs servī videt."
+        "text": "librōs servī"
       },
       {
         "id": "2",
-        "text": "Magister librum servōrum videt."
+        "text": "librum servōrum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-6",
     "assessment": "study.theme.personae-possession:extra-6",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "liber",
       "magister",
@@ -1532,7 +1820,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1544,7 +1833,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1552,7 +1841,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1561,39 +1850,58 @@
   },
   {
     "id": "extra-7",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille a le cadeau des marins."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella dōnum nautārum habet."
+        "text": "dōnum nautārum"
       },
       {
         "id": "1",
-        "text": "Puella dōnum nautae habet."
+        "text": "dōnum nautae"
       },
       {
         "id": "2",
-        "text": "Puella dōna nautārum habet."
+        "text": "dōna nautārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-7",
     "assessment": "study.theme.personae-possession:extra-7",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "donum",
       "habeo",
@@ -1602,7 +1910,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1614,7 +1923,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1622,7 +1931,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1631,39 +1940,58 @@
   },
   {
     "id": "extra-8",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon porte les roses de l’homme."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer rosās virī portat."
+        "text": "rosās virī"
       },
       {
         "id": "1",
-        "text": "Puer rosās virōrum portat."
+        "text": "rosās virōrum"
       },
       {
         "id": "2",
-        "text": "Puer rosam virī portat."
+        "text": "rosam virī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-8",
     "assessment": "study.theme.personae-possession:extra-8",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "porto",
       "puer",
@@ -1672,7 +2000,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1684,7 +2013,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1692,7 +2021,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1701,39 +2030,58 @@
   },
   {
     "id": "extra-9",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’esclave porte les lettres du maître."
+      },
+      {
+        "type": "text",
+        "text": "\nServus "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Servus epistulās magistrī portat."
+        "text": "epistulās magistrī"
       },
       {
         "id": "1",
-        "text": "Servus epistulās magistrōrum portat."
+        "text": "epistulās magistrōrum"
       },
       {
         "id": "2",
-        "text": "Servus epistulam magistrī portat."
+        "text": "epistulam magistrī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-9",
     "assessment": "study.theme.personae-possession:extra-9",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "epistula",
       "magister",
@@ -1742,7 +2090,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1754,7 +2103,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1762,7 +2111,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1771,39 +2120,58 @@
   },
   {
     "id": "extra-10",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le paysan a le livre de la jeune fille."
+      },
+      {
+        "type": "text",
+        "text": "\nAgricola "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Agricola librum puellae habet."
+        "text": "librum puellae"
       },
       {
         "id": "1",
-        "text": "Agricola librum puellārum habet."
+        "text": "librum puellārum"
       },
       {
         "id": "2",
-        "text": "Agricola librōs puellae habet."
+        "text": "librōs puellae"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-10",
     "assessment": "study.theme.personae-possession:extra-10",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.puella"
+    ],
     "vocabulary": [
       "agricola",
       "habeo",
@@ -1812,7 +2180,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1824,7 +2193,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1832,7 +2201,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1841,39 +2210,58 @@
   },
   {
     "id": "extra-11",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme voit les cadeaux du garçon."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Fēmina dōna puerī videt."
+        "text": "dōna puerī"
       },
       {
         "id": "1",
-        "text": "Fēmina dōna puerōrum videt."
+        "text": "dōna puerōrum"
       },
       {
         "id": "2",
-        "text": "Fēmina dōnum puerī videt."
+        "text": "dōnum puerī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-11",
     "assessment": "study.theme.personae-possession:extra-11",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -1882,7 +2270,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1894,7 +2283,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1902,7 +2291,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1911,39 +2300,58 @@
   },
   {
     "id": "extra-12",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme a la rose des femmes."
+      },
+      {
+        "type": "text",
+        "text": "\nVir "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " habet."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir rosam fēminārum habet."
+        "text": "rosam fēminārum"
       },
       {
         "id": "1",
-        "text": "Vir rosam fēminae habet."
+        "text": "rosam fēminae"
       },
       {
         "id": "2",
-        "text": "Vir rosās fēminārum habet."
+        "text": "rosās fēminārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-12",
     "assessment": "study.theme.personae-possession:extra-12",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.habeo",
+      "lexicon.compositio.rosa",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "femina",
       "habeo",
@@ -1952,7 +2360,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1964,7 +2373,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1972,7 +2381,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1981,39 +2390,58 @@
   },
   {
     "id": "extra-13",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître lit la lettre des marins."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Magister epistulam nautārum legit."
+        "text": "epistulam nautārum"
       },
       {
         "id": "1",
-        "text": "Magister epistulam nautae legit."
+        "text": "epistulam nautae"
       },
       {
         "id": "2",
-        "text": "Magister epistulās nautārum legit."
+        "text": "epistulās nautārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-13",
     "assessment": "study.theme.personae-possession:extra-13",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.nauta"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -2022,7 +2450,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2034,7 +2463,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2042,7 +2471,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2051,39 +2480,58 @@
   },
   {
     "id": "extra-14",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin porte les livres des hommes."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " portat."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Nauta librōs virōrum portat."
+        "text": "librōs virōrum"
       },
       {
         "id": "1",
-        "text": "Nauta librōs virī portat."
+        "text": "librōs virī"
       },
       {
         "id": "2",
-        "text": "Nauta librum virōrum portat."
+        "text": "librum virōrum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-14",
     "assessment": "study.theme.personae-possession:extra-14",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.porto",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "liber",
       "nauta",
@@ -2092,7 +2540,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2104,7 +2553,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2112,7 +2561,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2121,39 +2570,58 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille lit les lettres de l’esclave."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " legit."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puella epistulās servī legit."
+        "text": "epistulās servī"
       },
       {
         "id": "1",
-        "text": "Puella epistulās servōrum legit."
+        "text": "epistulās servōrum"
       },
       {
         "id": "2",
-        "text": "Puella epistulam servī legit."
+        "text": "epistulam servī"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-15",
     "assessment": "study.theme.personae-possession:extra-15",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.epistula",
+      "lexicon.compositio.lego",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.servus"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -2162,7 +2630,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2174,7 +2643,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2182,7 +2651,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2191,39 +2660,58 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon voit les cadeaux des paysans."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " videt."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Puer dōna agricolārum videt."
+        "text": "dōna agricolārum"
       },
       {
         "id": "1",
-        "text": "Puer dōna agricolae videt."
+        "text": "dōna agricolae"
       },
       {
         "id": "2",
-        "text": "Puer dōnum agricolārum videt."
+        "text": "dōnum agricolārum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.personae-possession"
+      "compositio.object-number",
+      "compositio.possessor-number"
     ],
     "item": "personae-possession:extra-16",
     "assessment": "study.theme.personae-possession:extra-16",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.compositio.agricola",
+      "lexicon.compositio.donum",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.video"
+    ],
     "vocabulary": [
       "agricola",
       "donum",
@@ -2232,7 +2720,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2244,7 +2733,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "compositio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2252,7 +2741,581 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "compositio.object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-possessor-roles-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-possessor-roles-1",
+    "assessment": "compositio:transfer-possessor-roles-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le père de la fille voit le garçon.\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " puerum videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pater puellae"
+      },
+      {
+        "id": "1",
+        "text": "Puella patris"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.possessor-roles"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.pater",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.video"
+    ],
+    "vocabulary": [
+      "pater",
+      "puella",
+      "puer",
+      "video"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: agentem in sententiā cum genetīvō discernere.",
+        "observed": [
+          "compositio.possessor-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-place-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-place-1",
+    "assessment": "compositio:transfer-question-place-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "À qui appartient cette maison ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est haec domus?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius"
+      },
+      {
+        "id": "1",
+        "text": "Ubi"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-place"
+    ],
+    "requires": [
+      "lexicon.compositio.domus",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "domus",
+      "hic",
+      "quis",
+      "sum",
+      "ubi"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: locum et possessōrem discernere.",
+        "observed": [
+          "compositio.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-thing-1",
+    "assessment": "compositio:transfer-question-thing-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "À qui appartient ce cadeau ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est hoc dōnum?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius"
+      },
+      {
+        "id": "1",
+        "text": "Quid"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-thing"
+    ],
+    "requires": [
+      "lexicon.compositio.donum",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum"
+    ],
+    "vocabulary": [
+      "donum",
+      "hic",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: rem et possessōrem discernere.",
+        "observed": [
+          "compositio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-thing-2",
+    "assessment": "compositio:transfer-question-thing-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qu’est-ce que ceci ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est hoc?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quid"
+      },
+      {
+        "id": "1",
+        "text": "Cuius"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-thing"
+    ],
+    "requires": [
+      "lexicon.compositio.hic",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum"
+    ],
+    "vocabulary": [
+      "hic",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: rem et possessōrem discernere.",
+        "observed": [
+          "compositio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-3",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-thing-3",
+    "assessment": "compositio:transfer-question-thing-3",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "À qui appartient ce chien ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est hic canis?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius"
+      },
+      {
+        "id": "1",
+        "text": "Quid"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-thing"
+    ],
+    "requires": [
+      "lexicon.compositio.canis",
+      "lexicon.compositio.hic",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum"
+    ],
+    "vocabulary": [
+      "canis",
+      "hic",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: rem et possessōrem discernere.",
+        "observed": [
+          "compositio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-role-1",
+    "assessment": "compositio:transfer-question-role-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qui le serviteur appelle-t-il ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " servus vocat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quem"
+      },
+      {
+        "id": "1",
+        "text": "Quis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.voco"
+    ],
+    "vocabulary": [
+      "quis",
+      "servus",
+      "voco"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "compositio.question-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-role-2",
+    "assessment": "compositio:transfer-question-role-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qui appelle le serviteur ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " servum vocat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quis"
+      },
+      {
+        "id": "1",
+        "text": "Quem"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.servus",
+      "lexicon.compositio.voco"
+    ],
+    "vocabulary": [
+      "quis",
+      "servus",
+      "voco"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "compositio.question-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-3",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-question-role-3",
+    "assessment": "compositio:transfer-question-role-3",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qui la fille voit-elle ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " puella videt?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quem"
+      },
+      {
+        "id": "1",
+        "text": "Quis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.video"
+    ],
+    "vocabulary": [
+      "puella",
+      "quis",
+      "video"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "compositio.question-role"
         ],
         "hypotheses": [],
         "practice": []

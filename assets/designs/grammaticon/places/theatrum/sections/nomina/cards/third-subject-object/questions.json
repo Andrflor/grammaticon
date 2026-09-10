@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q1",
     "assessment": "study.version.third-subject-object:q1",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.mater",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "mater",
       "pater",
@@ -54,7 +61,7 @@
       "1": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +69,7 @@
       "2": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +105,19 @@
       "2"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q2",
     "assessment": "study.version.third-subject-object:q2",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.mater",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "mater",
       "pater",
@@ -118,7 +132,7 @@
       "0": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +140,7 @@
       "1": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -168,12 +182,19 @@
       "1"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q3",
     "assessment": "study.version.third-subject-object:q3",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.frater",
+      "lexicon.lectio.saluto",
+      "lexicon.lectio.soror"
+    ],
     "vocabulary": [
       "frater",
       "saluto",
@@ -188,7 +209,7 @@
       "0": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +223,7 @@
       "2": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -238,12 +259,19 @@
       "0"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q4",
     "assessment": "study.version.third-subject-object:q4",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.exspecto",
+      "lexicon.lectio.frater",
+      "lexicon.lectio.soror"
+    ],
     "vocabulary": [
       "exspecto",
       "frater",
@@ -264,7 +292,7 @@
       "1": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +300,7 @@
       "2": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -308,12 +336,19 @@
       "2"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q5",
     "assessment": "study.version.third-subject-object:q5",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.canis",
+      "lexicon.lectio.pastor",
+      "lexicon.lectio.voco"
+    ],
     "vocabulary": [
       "canis",
       "pastor",
@@ -328,7 +363,7 @@
       "0": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []
@@ -336,7 +371,7 @@
       "1": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -378,12 +413,19 @@
       "1"
     ],
     "skills": [
-      "study.version.third-subject-object"
+      "lectio.agent-patient",
+      "lectio.object-number"
     ],
     "item": "third-subject-object:q6",
     "assessment": "study.version.third-subject-object:q6",
     "help": "study.third-subject-object",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.canis",
+      "lexicon.lectio.pastor",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "canis",
       "pastor",
@@ -398,7 +440,7 @@
       "0": {
         "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
         "observed": [
-          "study.confusion.case-third-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +454,7 @@
       "2": {
         "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
         "observed": [
-          "study.confusion.case-third-roles"
+          "lectio.agent-patient"
         ],
         "hypotheses": [],
         "practice": []

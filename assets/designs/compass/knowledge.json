@@ -28,6 +28,14 @@
       "name": {
         "fr": "Mesures",
         "en": "Measurements"
+      },
+      "aggregation": {
+        "skills": [
+          "time-units",
+          "orbits"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -36,6 +44,14 @@
       "name": {
         "fr": "Unités de durée",
         "en": "Units of duration"
+      },
+      "aggregation": {
+        "skills": [
+          "conversion.factor",
+          "conversion.quantity"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -44,6 +60,13 @@
       "name": {
         "fr": "Cycles astronomiques",
         "en": "Astronomical cycles"
+      },
+      "aggregation": {
+        "skills": [
+          "cycles.distinction"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -51,6 +74,14 @@
       "name": {
         "fr": "Chronologie",
         "en": "Chronology"
+      },
+      "aggregation": {
+        "skills": [
+          "centuries",
+          "ordering"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -59,6 +90,13 @@
       "name": {
         "fr": "Années et siècles",
         "en": "Years and centuries"
+      },
+      "aggregation": {
+        "skills": [
+          "centuries.boundary"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -67,6 +105,13 @@
       "name": {
         "fr": "Avant et après",
         "en": "Before and after"
+      },
+      "aggregation": {
+        "skills": [
+          "chronology.order"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -74,6 +119,14 @@
       "name": {
         "fr": "Lecture des cartes",
         "en": "Reading maps"
+      },
+      "aggregation": {
+        "skills": [
+          "scale",
+          "orientation"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -82,6 +135,13 @@
       "name": {
         "fr": "Échelles",
         "en": "Scales"
+      },
+      "aggregation": {
+        "skills": [
+          "scale.conversion"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
@@ -90,63 +150,81 @@
       "name": {
         "fr": "Orientation",
         "en": "Orientation"
+      },
+      "aggregation": {
+        "skills": [
+          "orientation.opposite"
+        ],
+        "level": "minimum",
+        "estimate": "minimum"
       }
     },
     {
-      "id": "rotation-revolution",
+      "id": "conversion.factor",
       "name": {
-        "fr": "Rotation confondue avec révolution",
-        "en": "Rotation confused with revolution"
+        "fr": "Appliquer le facteur de conversion",
+        "en": "Apply the conversion factor"
       },
-      "visible": false
+      "visible": false,
+      "requires": []
     },
     {
-      "id": "unit-factor",
+      "id": "conversion.quantity",
       "name": {
-        "fr": "Facteur de conversion incorrect",
-        "en": "Incorrect conversion factor"
+        "fr": "Prendre en compte la quantité",
+        "en": "Account for the quantity"
       },
-      "visible": false
+      "visible": false,
+      "requires": [
+        "conversion.factor"
+      ]
     },
     {
-      "id": "century-boundary",
+      "id": "cycles.distinction",
       "name": {
-        "fr": "Début ou fin du siècle confondu",
-        "en": "Confused century boundary"
+        "fr": "Distinguer rotation et révolution",
+        "en": "Distinguish rotation and revolution"
       },
-      "visible": false
+      "visible": false,
+      "requires": []
     },
     {
-      "id": "order-reversed",
+      "id": "centuries.boundary",
       "name": {
-        "fr": "Ordre chronologique inversé",
-        "en": "Chronological order reversed"
+        "fr": "Repérer les limites d’un siècle",
+        "en": "Identify century boundaries"
       },
-      "visible": false
+      "visible": false,
+      "requires": []
     },
     {
-      "id": "scale-direction",
+      "id": "chronology.order",
       "name": {
-        "fr": "Conversion de distance inversée",
-        "en": "Distance conversion reversed"
+        "fr": "Comparer les dates",
+        "en": "Compare dates"
       },
-      "visible": false
+      "visible": false,
+      "requires": []
     },
     {
-      "id": "direction-reversed",
+      "id": "scale.conversion",
       "name": {
-        "fr": "Direction opposée choisie",
-        "en": "Opposite direction selected"
+        "fr": "Convertir entre carte et terrain",
+        "en": "Convert between map and ground"
       },
-      "visible": false
+      "visible": false,
+      "requires": [
+        "conversion.factor"
+      ]
     },
     {
-      "id": "unit-count-omitted",
+      "id": "orientation.opposite",
       "name": {
-        "fr": "Une seule unité comptée au lieu de deux",
-        "en": "One unit counted instead of two"
+        "fr": "Repérer les directions et leurs opposées",
+        "en": "Identify directions and their opposites"
       },
-      "visible": false
+      "visible": false,
+      "requires": []
     }
   ],
   "practiceSets": [

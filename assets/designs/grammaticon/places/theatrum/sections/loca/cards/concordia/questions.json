@@ -33,12 +33,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "feminine-agreement:q1",
     "assessment": "study.version.early-concordia:feminine-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
@@ -54,7 +60,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +68,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -103,12 +109,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "feminine-agreement:q2",
     "assessment": "study.version.early-concordia:feminine-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
@@ -118,7 +130,7 @@
       "0": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +138,7 @@
       "1": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -173,12 +185,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "feminine-agreement:q3",
     "assessment": "study.version.early-concordia:feminine-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
@@ -188,7 +206,7 @@
       "0": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -202,7 +220,7 @@
       "2": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -243,12 +261,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "feminine-agreement:q4",
     "assessment": "study.version.early-concordia:feminine-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "feminine-agreement",
@@ -264,7 +288,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -272,7 +296,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -313,12 +337,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "masculine-agreement:q1",
     "assessment": "study.version.early-concordia:masculine-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
@@ -334,7 +364,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -342,7 +372,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -383,12 +413,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "masculine-agreement:q2",
     "assessment": "study.version.early-concordia:masculine-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
@@ -398,7 +434,7 @@
       "0": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -406,7 +442,7 @@
       "1": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -453,12 +489,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "masculine-agreement:q3",
     "assessment": "study.version.early-concordia:masculine-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
@@ -468,7 +510,7 @@
       "0": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -482,7 +524,7 @@
       "2": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -523,12 +565,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "masculine-agreement:q4",
     "assessment": "study.version.early-concordia:masculine-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.laetus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "masculine-agreement",
@@ -544,7 +592,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -552,7 +600,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -593,12 +641,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "neuter-agreement:q1",
     "assessment": "study.version.early-concordia:neuter-agreement:q1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
@@ -614,7 +668,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -622,7 +676,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -663,12 +717,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "neuter-agreement:q2",
     "assessment": "study.version.early-concordia:neuter-agreement:q2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
@@ -678,7 +738,7 @@
       "0": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -686,7 +746,7 @@
       "1": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -733,12 +793,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "neuter-agreement:q3",
     "assessment": "study.version.early-concordia:neuter-agreement:q3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
@@ -748,7 +814,7 @@
       "0": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -762,7 +828,7 @@
       "2": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -803,12 +869,18 @@
     ],
     "prompt": "Sententiam Gallicē redde.",
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "neuter-agreement:q4",
     "assessment": "study.version.early-concordia:neuter-agreement:q4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "neuter-agreement",
@@ -824,7 +896,7 @@
       "1": {
         "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
         "observed": [
-          "study.confusion.number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -832,7 +904,7 @@
       "2": {
         "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
         "observed": [
-          "study.confusion.meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -868,12 +940,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-1",
     "assessment": "study.version.early-concordia:extra-1",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "magnus",
       "sum",
@@ -893,7 +971,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -901,7 +979,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -937,12 +1015,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-2",
     "assessment": "study.version.early-concordia:extra-2",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "parvus",
       "sum",
@@ -962,7 +1046,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -970,7 +1054,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1006,12 +1090,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-3",
     "assessment": "study.version.early-concordia:extra-3",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "magister",
       "magnus",
@@ -1031,7 +1121,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1039,7 +1129,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1075,12 +1165,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-4",
     "assessment": "study.version.early-concordia:extra-4",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "parvus",
       "schola",
@@ -1100,7 +1196,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1108,7 +1204,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1144,12 +1240,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-5",
     "assessment": "study.version.early-concordia:extra-5",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.templum"
+    ],
     "vocabulary": [
       "parvus",
       "sum",
@@ -1169,7 +1271,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1177,7 +1279,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1213,12 +1315,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-6",
     "assessment": "study.version.early-concordia:extra-6",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "liber",
       "magnus",
@@ -1238,7 +1346,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1246,7 +1354,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1282,12 +1390,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-7",
     "assessment": "study.version.early-concordia:extra-7",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "parvus",
       "puer",
@@ -1307,7 +1421,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1315,7 +1429,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1351,12 +1465,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-8",
     "assessment": "study.version.early-concordia:extra-8",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "puella",
@@ -1376,7 +1496,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1384,7 +1504,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1420,12 +1540,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-9",
     "assessment": "study.version.early-concordia:extra-9",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.insula",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "insula",
       "magnus",
@@ -1445,7 +1571,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1453,7 +1579,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1489,12 +1615,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-10",
     "assessment": "study.version.early-concordia:extra-10",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "parvus",
@@ -1514,7 +1646,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1522,7 +1654,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1558,12 +1690,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-11",
     "assessment": "study.version.early-concordia:extra-11",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.oppidum",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "oppidum",
@@ -1583,7 +1721,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1591,7 +1729,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1627,12 +1765,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-12",
     "assessment": "study.version.early-concordia:extra-12",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "femina",
       "parvus",
@@ -1652,7 +1796,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1660,7 +1804,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1696,12 +1840,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-13",
     "assessment": "study.version.early-concordia:extra-13",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "magnus",
       "nauta",
@@ -1721,7 +1871,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1729,7 +1879,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1765,12 +1915,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-14",
     "assessment": "study.version.early-concordia:extra-14",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "magister",
       "parvus",
@@ -1790,7 +1946,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1798,7 +1954,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1834,12 +1990,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-15",
     "assessment": "study.version.early-concordia:extra-15",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "liber",
       "parvus",
@@ -1859,7 +2021,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1867,7 +2029,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1903,12 +2065,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-16",
     "assessment": "study.version.early-concordia:extra-16",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "parvus",
       "puella",
@@ -1928,7 +2096,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -1936,7 +2104,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1972,12 +2140,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-17",
     "assessment": "study.version.early-concordia:extra-17",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "parvus",
       "sum",
@@ -1997,7 +2171,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2005,7 +2179,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2041,12 +2215,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-18",
     "assessment": "study.version.early-concordia:extra-18",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "magnus",
       "sum",
@@ -2066,7 +2246,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2074,7 +2254,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2110,12 +2290,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-19",
     "assessment": "study.version.early-concordia:extra-19",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "femina",
       "magnus",
@@ -2135,7 +2321,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2143,7 +2329,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2179,12 +2365,18 @@
       "0"
     ],
     "skills": [
-      "study.version.early-concordia"
+      "lectio.magnitude",
+      "lectio.subject-number"
     ],
     "item": "early-concordia:extra-20",
     "assessment": "study.version.early-concordia:extra-20",
     "help": "study.early-concordia",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "nauta",
       "parvus",
@@ -2204,7 +2396,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magnus et parvus contrāria significant.",
         "observed": [
-          "study.confusion.early-adjective-meaning"
+          "lectio.magnitude"
         ],
         "hypotheses": [],
         "practice": []
@@ -2212,7 +2404,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ūna rēs et plūrēs rēs nōn idem sunt. Numerum nōminis et verbī servā.",
         "observed": [
-          "study.confusion.early-subject-number"
+          "lectio.subject-number"
         ],
         "hypotheses": [],
         "practice": []

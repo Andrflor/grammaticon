@@ -28,12 +28,19 @@
       "0"
     ],
     "skills": [
-      "study.version.vocative"
+      "lectio.address-role",
+      "lectio.command-mood"
     ],
     "item": "vocative:q1",
     "assessment": "study.version.vocative:q1",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.modus",
+      "lexicon.lectio.amicus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto"
+    ],
     "vocabulary": [
       "amicus",
       "liber",
@@ -54,7 +61,7 @@
       "1": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -62,7 +69,7 @@
       "2": {
         "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
         "observed": [
-          "study.confusion.vocative-possessor"
+          "lectio.address-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -98,12 +105,20 @@
       "2"
     ],
     "skills": [
-      "study.version.vocative"
+      "lectio.address-role",
+      "lectio.command-mood"
     ],
     "item": "vocative:q2",
     "assessment": "study.version.vocative:q2",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.modus",
+      "lexicon.lectio.amicus",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.bonus",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "amicus",
       "audio",
@@ -119,7 +134,7 @@
       "0": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -127,7 +142,7 @@
       "1": {
         "feedback": "Amīcus appellātur et puellam audīre iubētur. Puella hīc nōn agit.",
         "observed": [
-          "study.confusion.address-role"
+          "lectio.address-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -169,12 +184,21 @@
       "1"
     ],
     "skills": [
-      "study.version.vocative"
+      "lectio.address-role",
+      "lectio.command-mood"
     ],
     "item": "vocative:q3",
     "assessment": "study.version.vocative:q3",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.modus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.mensa",
+      "lexicon.lectio.pono",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -191,7 +215,7 @@
       "0": {
         "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
         "observed": [
-          "study.confusion.vocative-possessor"
+          "lectio.address-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +229,7 @@
       "2": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -241,12 +265,19 @@
       "0"
     ],
     "skills": [
-      "study.version.vocative"
+      "lectio.address-role",
+      "lectio.command-mood"
     ],
     "item": "vocative:q4",
     "assessment": "study.version.vocative:q4",
     "help": "study.vocative",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.modus",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "hortus",
       "magister",
@@ -267,7 +298,7 @@
       "1": {
         "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
         "observed": [
-          "study.confusion.command-mood"
+          "lectio.command-mood"
         ],
         "hypotheses": [],
         "practice": []
@@ -275,7 +306,7 @@
       "2": {
         "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
         "observed": [
-          "study.confusion.vocative-possessor"
+          "lectio.address-role"
         ],
         "hypotheses": [],
         "practice": []

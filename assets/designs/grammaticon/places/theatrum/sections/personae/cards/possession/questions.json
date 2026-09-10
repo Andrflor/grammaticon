@@ -29,7 +29,14 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puella portat; librum ūnam rem portātam indicat; puerī possessōrem librī indicat.",
@@ -40,7 +47,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hāc responsiōne puer portat et liber puellae est. In sententiā quaesītā puella portat et liber puerī est.",
         "observed": [
-          "study.confusion.genitive-agent-reference"
+          "lectio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -48,7 +55,7 @@
       "2": {
         "feedback": "Nōn rēctē. Librum singulāris est; librōs plūrālis esset. Ūnus liber portātur.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -61,7 +68,8 @@
       "puer"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-reference"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -100,12 +108,19 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "trait.numerus",
+      "lexicon.lectio.domus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Fēmina domūs fēminam describit; domus fēminae domum describit. Genetīvus ad aliud nōmen pertinet.",
         "observed": [
-          "study.confusion.genitive-head-reference"
+          "lectio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -113,7 +128,7 @@
       "1": {
         "feedback": "Nōn rēctē. Domus est magna ūnam domum indicat. Domūs sunt magnae plūrēs domōs indicāret.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -132,7 +147,8 @@
       "sum"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-reference"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -171,12 +187,18 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.filius",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.video",
+      "lexicon.lectio.vir"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Hāc responsiōne fīlius videt et vir vidētur. In sententiā quaesītā vir videt et fīlius vidētur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "lectio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -190,7 +212,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne magister videt et vir pater fīliī est. In sententiā quaesītā vir videt et magister pater fīliī est.",
         "observed": [
-          "study.confusion.genitive-agent-reference"
+          "lectio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -203,7 +225,8 @@
       "vir"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.possessor-reference",
+      "lectio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -242,7 +265,13 @@
     "accepted": [
       "0"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.audio",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.filia",
+      "lexicon.lectio.puer"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Rēctē. Puer audit; fīliam audit. Fēminae ad fīliam pertinet: fēmina māter illīus fīliae est.",
@@ -253,7 +282,7 @@
       "1": {
         "feedback": "Nōn rēctē. Fēminae mātrem fīliae indicat; virī patrem indicāret.",
         "observed": [
-          "study.confusion.genitive-kinship-reference"
+          "lectio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -261,7 +290,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne fīlia audit et puer audītur. In sententiā quaesītā puer audit et fīlia audītur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "lectio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -274,7 +303,8 @@
       "puer"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.possessor-reference",
+      "lectio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -313,12 +343,18 @@
     "accepted": [
       "2"
     ],
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.sum"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Liber singulāris est; librī sunt parvī plūrēs librōs indicāret.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -326,7 +362,7 @@
       "1": {
         "feedback": "Nōn rēctē. Magistrī genetīvus singulāris est; magistrōrum genetīvus plūrālis est. Numerus possessōrum mutātus est.",
         "observed": [
-          "study.confusion.owner-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -345,7 +381,8 @@
       "sum"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -384,12 +421,18 @@
     "accepted": [
       "1"
     ],
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.filia",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.vir",
+      "lexicon.lectio.voco"
+    ],
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Virī patrem fīliae indicat; fēminae mātrem indicāret.",
         "observed": [
-          "study.confusion.genitive-kinship-reference"
+          "lectio.possessor-reference"
         ],
         "hypotheses": [],
         "practice": []
@@ -403,7 +446,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hāc responsiōne puella vocat et fīlia vocātur. In sententiā quaesītā fīlia vocat et puella vocātur.",
         "observed": [
-          "study.confusion.genitive-agent-object"
+          "lectio.possessor-roles"
         ],
         "hypotheses": [],
         "practice": []
@@ -416,7 +459,8 @@
       "voco"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.possessor-reference",
+      "lectio.possessor-roles"
     ],
     "help": "study.personae-possession",
     "editorial": {
@@ -454,12 +498,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "genitive-plural:q1",
     "assessment": "study.version.personae-possession:genitive-plural:q1",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.parvus",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "liber",
       "parvus",
@@ -481,7 +532,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -489,7 +540,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -525,12 +576,19 @@
       "2"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "genitive-plural:q2",
     "assessment": "study.version.personae-possession:genitive-plural:q2",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.magnus",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "magnus",
@@ -546,7 +604,7 @@
       "0": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -554,7 +612,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -596,12 +654,19 @@
       "1"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "genitive-plural:q3",
     "assessment": "study.version.personae-possession:genitive-plural:q3",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "liber",
       "magister",
@@ -617,7 +682,7 @@
       "0": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -631,7 +696,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -667,12 +732,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "genitive-plural:q4",
     "assessment": "study.version.personae-possession:genitive-plural:q4",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "femina",
       "puer",
@@ -694,7 +766,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owner-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -702,7 +774,7 @@
       "2": {
         "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
         "observed": [
-          "study.confusion.owned-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -740,10 +812,15 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-place",
+      "lectio.question-thing"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "lexicon.lectio.liber",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "liber",
       "quis",
@@ -764,7 +841,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "lectio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -772,7 +849,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quid est liber? genus reī quaerit; cuius est liber? possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-definition"
+          "lectio.question-thing"
         ],
         "hypotheses": [],
         "practice": []
@@ -810,10 +887,16 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-number",
+      "lectio.question-person"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.filia",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.rideo"
+    ],
     "vocabulary": [
       "filia",
       "quis",
@@ -834,7 +917,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -842,7 +925,7 @@
       "2": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "lectio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -880,10 +963,17 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-person",
+      "lectio.question-role"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.doceo",
+      "lexicon.lectio.filius",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.quis"
+    ],
     "vocabulary": [
       "doceo",
       "filius",
@@ -905,7 +995,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -913,7 +1003,7 @@
       "2": {
         "feedback": "Nōn rēctē. Fīlium magister docet: magister docet. Fīlius magistrum docet: fīlius docet. Cuius in utrāque sententiā patrem vel mātrem fīliī quaerit; cāsūs agentem et patientem distinguunt.",
         "observed": [
-          "study.confusion.question-roles"
+          "lectio.question-role"
         ],
         "hypotheses": [],
         "practice": []
@@ -951,10 +1041,17 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-number",
+      "lectio.question-person"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quis"
+    ],
     "vocabulary": [
       "liber",
       "porto",
@@ -976,7 +1073,7 @@
       "1": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "lectio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -984,7 +1081,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
         "observed": [
-          "study.confusion.question-person"
+          "lectio.question-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -1022,10 +1119,18 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-number",
+      "lectio.question-place"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1048,7 +1153,7 @@
       "1": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "lectio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1056,7 +1161,7 @@
       "2": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "lectio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -1094,10 +1199,17 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.question-number",
+      "lectio.question-place"
     ],
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.video",
+      "lexicon.lectio.villa"
+    ],
     "vocabulary": [
       "puer",
       "quis",
@@ -1119,7 +1231,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
         "observed": [
-          "study.confusion.question-place"
+          "lectio.question-place"
         ],
         "hypotheses": [],
         "practice": []
@@ -1127,7 +1239,7 @@
       "2": {
         "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
         "observed": [
-          "study.confusion.question-number"
+          "lectio.question-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1163,12 +1275,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-1",
     "assessment": "study.version.personae-possession:extra-1",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.rosa"
+    ],
     "vocabulary": [
       "magister",
       "porto",
@@ -1189,7 +1308,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1197,7 +1316,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1233,12 +1352,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-2",
     "assessment": "study.version.personae-possession:extra-2",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -1259,7 +1385,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1267,7 +1393,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1303,12 +1429,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-3",
     "assessment": "study.version.personae-possession:extra-3",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "femina",
       "lego",
@@ -1329,7 +1462,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1337,7 +1470,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1373,12 +1506,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-4",
     "assessment": "study.version.personae-possession:extra-4",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.donum",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -1399,7 +1539,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1407,7 +1547,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1443,12 +1583,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-5",
     "assessment": "study.version.personae-possession:extra-5",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.nauta"
+    ],
     "vocabulary": [
       "agricola",
       "epistula",
@@ -1469,7 +1616,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1477,7 +1624,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1513,12 +1660,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-6",
     "assessment": "study.version.personae-possession:extra-6",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.servus",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "liber",
       "magister",
@@ -1539,7 +1693,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1547,7 +1701,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1583,12 +1737,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-7",
     "assessment": "study.version.personae-possession:extra-7",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.donum",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "donum",
       "habeo",
@@ -1609,7 +1770,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1617,7 +1778,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1653,12 +1814,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-8",
     "assessment": "study.version.personae-possession:extra-8",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.rosa",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "porto",
       "puer",
@@ -1679,7 +1847,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1687,7 +1855,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1723,12 +1891,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-9",
     "assessment": "study.version.personae-possession:extra-9",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "epistula",
       "magister",
@@ -1749,7 +1924,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1757,7 +1932,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1793,12 +1968,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-10",
     "assessment": "study.version.personae-possession:extra-10",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.puella"
+    ],
     "vocabulary": [
       "agricola",
       "habeo",
@@ -1819,7 +2001,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1827,7 +2009,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1863,12 +2045,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-11",
     "assessment": "study.version.personae-possession:extra-11",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.donum",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "donum",
       "femina",
@@ -1889,7 +2078,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1897,7 +2086,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1933,12 +2122,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-12",
     "assessment": "study.version.personae-possession:extra-12",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.habeo",
+      "lexicon.lectio.rosa",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "femina",
       "habeo",
@@ -1959,7 +2155,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -1967,7 +2163,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2003,12 +2199,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-13",
     "assessment": "study.version.personae-possession:extra-13",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.nauta"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -2029,7 +2232,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2037,7 +2240,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2073,12 +2276,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-14",
     "assessment": "study.version.personae-possession:extra-14",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.liber",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.porto",
+      "lexicon.lectio.vir"
+    ],
     "vocabulary": [
       "liber",
       "nauta",
@@ -2099,7 +2309,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2107,7 +2317,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2143,12 +2353,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-15",
     "assessment": "study.version.personae-possession:extra-15",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.epistula",
+      "lexicon.lectio.lego",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "epistula",
       "lego",
@@ -2169,7 +2386,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2177,7 +2394,7 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2213,12 +2430,19 @@
       "0"
     ],
     "skills": [
-      "study.version.personae-possession"
+      "lectio.object-number",
+      "lectio.possessor-number"
     ],
     "item": "personae-possession:extra-16",
     "assessment": "study.version.personae-possession:extra-16",
     "help": "study.personae-possession",
-    "requires": [],
+    "requires": [
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.donum",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.video"
+    ],
     "vocabulary": [
       "agricola",
       "donum",
@@ -2239,7 +2463,7 @@
       "1": {
         "feedback": "Nōn rēctē. Genetīvus singulāris et genetīvus plūrālis nōn eundem numerum possessōrum indicant.",
         "observed": [
-          "study.confusion.personae-possessor-number"
+          "lectio.possessor-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -2247,7 +2471,525 @@
       "2": {
         "feedback": "Nōn rēctē. Numerus reī possessae vel portātae mutātus est. Rem ūnam et rēs plūrēs distingue.",
         "observed": [
-          "study.confusion.personae-object-number"
+          "lectio.object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-possessor-roles-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-possessor-roles-1",
+    "assessment": "lectio:transfer-possessor-roles-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater puellae nautam salūtat. Quis salūtat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père de la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille du père."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.possessor-roles"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.saluto"
+    ],
+    "vocabulary": [
+      "nauta",
+      "pater",
+      "puella",
+      "quis",
+      "saluto"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: agentem in sententiā cum genetīvō discernere.",
+        "observed": [
+          "lectio.possessor-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-place-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-place-1",
+    "assessment": "lectio:transfer-question-place-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cuius est hortus? » « Agricolae. » Quid quaeritur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "À qui appartient le jardin."
+      },
+      {
+        "id": "1",
+        "text": "Où se trouve le jardin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-place"
+    ],
+    "requires": [
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "agricola",
+      "hortus",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: locum et possessōrem discernere.",
+        "observed": [
+          "lectio.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-thing-1",
+    "assessment": "lectio:transfer-question-thing-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cuius est liber? » « Magistrī. » Quid responsum indicat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le possesseur du livre."
+      },
+      {
+        "id": "1",
+        "text": "La nature de l’objet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-thing"
+    ],
+    "requires": [
+      "lexicon.lectio.liber",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "liber",
+      "magister",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: rem et possessōrem discernere.",
+        "observed": [
+          "lectio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-thing-2",
+    "assessment": "lectio:transfer-question-thing-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cuius est canis? » « Puerī. » Quid discimus?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "À qui est le chien."
+      },
+      {
+        "id": "1",
+        "text": "Ce qu’est un chien."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-thing"
+    ],
+    "requires": [
+      "lexicon.lectio.canis",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "canis",
+      "puer",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: rem et possessōrem discernere.",
+        "observed": [
+          "lectio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-thing-3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-thing-3",
+    "assessment": "lectio:transfer-question-thing-3",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "« Cuius est nāvis? » « Nautae. » Quid quaeritur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le propriétaire du bateau."
+      },
+      {
+        "id": "1",
+        "text": "Le type d’objet désigné par bateau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-thing"
+    ],
+    "requires": [
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.navis",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.sum"
+    ],
+    "vocabulary": [
+      "nauta",
+      "navis",
+      "quis",
+      "sum"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: rem et possessōrem discernere.",
+        "observed": [
+          "lectio.question-thing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-role-1",
+    "assessment": "lectio:transfer-question-role-1",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quem puer videt? Puellam videt. Quis videt?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.puer",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.video"
+    ],
+    "vocabulary": [
+      "puella",
+      "puer",
+      "quis",
+      "video"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "lectio.question-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-role-2",
+    "assessment": "lectio:transfer-question-role-2",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quis nautam vocat? Magister nautam vocat. Quis vocātur?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin."
+      },
+      {
+        "id": "1",
+        "text": "Le maître."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.nauta",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.voco"
+    ],
+    "vocabulary": [
+      "magister",
+      "nauta",
+      "quis",
+      "voco"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "lectio.question-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-question-role-3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "transfer-question-role-3",
+    "assessment": "lectio:transfer-question-role-3",
+    "prompt": "Textum lege et responde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quem māter salūtat? Mercātōrem salūtat. Quis salūtat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La mère."
+      },
+      {
+        "id": "1",
+        "text": "Le marchand."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lectio.question-role"
+    ],
+    "requires": [
+      "nominal.case",
+      "lexicon.lectio.mater",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.quis",
+      "lexicon.lectio.saluto"
+    ],
+    "vocabulary": [
+      "mater",
+      "mercator",
+      "quis",
+      "saluto"
+    ],
+    "help": "study.personae-possession",
+    "editorial": {
+      "language": "la",
+      "task": "reading-in-context",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Intellegere: agentem in interrogātiōne discernere.",
+        "observed": [
+          "lectio.question-role"
         ],
         "hypotheses": [],
         "practice": []

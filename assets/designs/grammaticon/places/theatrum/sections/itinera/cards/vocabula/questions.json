@@ -1,175 +1,41 @@
 [
   {
-    "id": "puella",
+    "id": "agricola",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "puella",
-    "assessment": "study.lexicon.theatrum.itinera:puella",
+    "item": "agricola",
+    "assessment": "study.lexicon.theatrum.itinera:agricola",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "puella"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "jardin"
-      },
-      {
-        "id": "1",
-        "text": "dans, sur"
-      },
-      {
-        "id": "0",
-        "text": "jeune fille"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "puella"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: puella — jeune fille.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "in",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "in",
-    "assessment": "study.lexicon.theatrum.itinera:in",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "in"
+        "text": "agricola"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "jardin"
-      },
-      {
-        "id": "2",
-        "text": "dans, sur"
+        "text": "venir"
       },
       {
         "id": "1",
-        "text": "courir"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "in"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: in — dans, sur.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "hortus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "hortus",
-    "assessment": "study.lexicon.theatrum.itinera:hortus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "hortus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "garçon"
-      },
-      {
-        "id": "1",
-        "text": "jardin"
+        "text": "agriculteur"
       },
       {
         "id": "2",
-        "text": "courir"
+        "text": "marchand"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.agricola"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
     "vocabulary": [
-      "hortus"
+      "agricola"
     ],
     "editorial": {
       "language": "la",
@@ -177,291 +43,23 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Rēctē: hortus — jardin.",
+        "feedback": "Rēctē: agricola — agriculteur.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "curro",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "curro",
-    "assessment": "study.lexicon.theatrum.itinera:curro",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "currere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "garçon"
-      },
-      {
-        "id": "2",
-        "text": "femme"
-      },
-      {
-        "id": "0",
-        "text": "courir"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "curro"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: currere — courir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "puer",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "puer",
-    "assessment": "study.lexicon.theatrum.itinera:puer",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "puer"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "garçon"
-      },
-      {
-        "id": "0",
-        "text": "femme"
-      },
-      {
-        "id": "1",
-        "text": "école"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "puer"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: puer — garçon.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "femina",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "femina",
-    "assessment": "study.lexicon.theatrum.itinera:femina",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "fēmina"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "marcher"
-      },
-      {
-        "id": "1",
-        "text": "femme"
-      },
-      {
-        "id": "2",
-        "text": "école"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "femina"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: fēmina — femme.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "schola",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "schola",
-    "assessment": "study.lexicon.theatrum.itinera:schola",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "schola"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "marcher"
-      },
-      {
-        "id": "0",
-        "text": "école"
-      },
-      {
-        "id": "2",
-        "text": "maître"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "schola"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: schola — école.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
@@ -499,7 +97,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.ambulo"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -514,7 +112,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -522,7 +120,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -530,140 +128,6 @@
       "2": {
         "feedback": "Rēctē: ambulāre — marcher.",
         "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "magister",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "magister",
-    "assessment": "study.lexicon.theatrum.itinera:magister",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "magister"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "maître"
-      },
-      {
-        "id": "2",
-        "text": "esclave"
-      },
-      {
-        "id": "0",
-        "text": "chambre"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "magister"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: magister — maître.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "servus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "servus",
-    "assessment": "study.lexicon.theatrum.itinera:servus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "servus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "esclave"
-      },
-      {
-        "id": "2",
-        "text": "hors de, depuis"
-      },
-      {
-        "id": "1",
-        "text": "chambre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "servus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: servus — esclave.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
         "hypotheses": [],
         "practice": []
       }
@@ -700,7 +164,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.cubiculum"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -715,7 +179,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cubiculum — chambre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cubiculum"
         ],
         "hypotheses": [],
         "practice": []
@@ -723,7 +187,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: cubiculum — chambre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.cubiculum"
         ],
         "hypotheses": [],
         "practice": []
@@ -737,42 +201,42 @@
     }
   },
   {
-    "id": "ex",
+    "id": "curro",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "ex",
-    "assessment": "study.lexicon.theatrum.itinera:ex",
+    "item": "curro",
+    "assessment": "study.lexicon.theatrum.itinera:curro",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "ex"
+        "text": "currere"
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "hors de, depuis"
-      },
-      {
-        "id": "0",
-        "text": "habiter"
+        "text": "garçon"
       },
       {
         "id": "2",
-        "text": "Rome"
+        "text": "femme"
+      },
+      {
+        "id": "0",
+        "text": "courir"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.curro"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
     "vocabulary": [
-      "ex"
+      "curro"
     ],
     "editorial": {
       "language": "la",
@@ -780,23 +244,23 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ex — hors de, depuis.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: ex — hors de, depuis.",
+        "feedback": "Rēctē: currere — courir.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ex — hors de, depuis.",
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.curro"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
+        "observed": [
+          "lexicon.lectio.curro"
         ],
         "hypotheses": [],
         "practice": []
@@ -804,42 +268,42 @@
     }
   },
   {
-    "id": "roma",
+    "id": "eo",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "roma",
-    "assessment": "study.lexicon.theatrum.itinera:roma",
+    "item": "eo",
+    "assessment": "study.lexicon.theatrum.itinera:eo",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "Rōma"
+        "text": "īre"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Rome"
+        "text": "jeune fille"
       },
       {
         "id": "2",
-        "text": "Tusculum"
+        "text": "revenir"
       },
       {
         "id": "1",
-        "text": "habiter"
+        "text": "aller"
       }
     ],
     "accepted": [
-      "0"
+      "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.eo"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
     "vocabulary": [
-      "roma"
+      "eo"
     ],
     "editorial": {
       "language": "la",
@@ -847,23 +311,90 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: Rōma — Rome.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: Rōma — Rome.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: īre — aller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.eo"
         ],
         "hypotheses": [],
         "practice": []
       },
+      "1": {
+        "feedback": "Rēctē: īre — aller.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: Rōma — Rome.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: īre — aller.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.eo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "femina",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "femina",
+    "assessment": "study.lexicon.theatrum.itinera:femina",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fēmina"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "marcher"
+      },
+      {
+        "id": "1",
+        "text": "femme"
+      },
+      {
+        "id": "2",
+        "text": "école"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.femina"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "femina"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "lexicon.lectio.femina"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: fēmina — femme.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -901,7 +432,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.habito"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -916,7 +447,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: habitāre — habiter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.habito"
         ],
         "hypotheses": [],
         "practice": []
@@ -924,7 +455,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: habitāre — habiter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.habito"
         ],
         "hypotheses": [],
         "practice": []
@@ -938,42 +469,42 @@
     }
   },
   {
-    "id": "tusculum",
+    "id": "hortus",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "tusculum",
-    "assessment": "study.lexicon.theatrum.itinera:tusculum",
+    "item": "hortus",
+    "assessment": "study.lexicon.theatrum.itinera:hortus",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "Tūsculum"
+        "text": "hortus"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "rester"
-      },
-      {
-        "id": "2",
-        "text": "être"
+        "text": "garçon"
       },
       {
         "id": "1",
-        "text": "Tusculum"
+        "text": "jardin"
+      },
+      {
+        "id": "2",
+        "text": "courir"
       }
     ],
     "accepted": [
       "1"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.hortus"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
     "vocabulary": [
-      "tusculum"
+      "hortus"
     ],
     "editorial": {
       "language": "la",
@@ -981,23 +512,23 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: Tūsculum — Tusculum.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Rēctē: Tūsculum — Tusculum.",
+        "feedback": "Rēctē: hortus — jardin.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: Tūsculum — Tusculum.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1005,42 +536,42 @@
     }
   },
   {
-    "id": "sum",
+    "id": "in",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "sum",
-    "assessment": "study.lexicon.theatrum.itinera:sum",
+    "item": "in",
+    "assessment": "study.lexicon.theatrum.itinera:in",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "esse"
+        "text": "in"
       }
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "jardin"
+      },
+      {
         "id": "2",
-        "text": "agriculteur"
+        "text": "dans, sur"
       },
       {
         "id": "1",
-        "text": "rester"
-      },
-      {
-        "id": "0",
-        "text": "être"
+        "text": "courir"
       }
     ],
     "accepted": [
-      "0"
+      "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.in"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
     "vocabulary": [
-      "sum"
+      "in"
     ],
     "editorial": {
       "language": "la",
@@ -1048,23 +579,90 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: esse — être.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
+        "observed": [
+          "lexicon.lectio.in"
+        ],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "feedback": "Rēctē: in — dans, sur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "magister",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "magister",
+    "assessment": "study.lexicon.theatrum.itinera:magister",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "magister"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "maître"
+      },
+      {
+        "id": "2",
+        "text": "esclave"
+      },
+      {
+        "id": "0",
+        "text": "chambre"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.magister"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magister"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: magister — maître.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "observed": [
+          "lexicon.lectio.magister"
         ],
         "hypotheses": [],
         "practice": []
@@ -1102,7 +700,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.maneo"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -1117,7 +715,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: manēre — rester.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.maneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1125,7 +723,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: manēre — rester.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.maneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1133,73 +731,6 @@
       "2": {
         "feedback": "Rēctē: manēre — rester.",
         "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "agricola",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "agricola",
-    "assessment": "study.lexicon.theatrum.itinera:agricola",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "agricola"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "venir"
-      },
-      {
-        "id": "1",
-        "text": "agriculteur"
-      },
-      {
-        "id": "2",
-        "text": "marchand"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "agricola"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: agricola — agriculteur.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
         "hypotheses": [],
         "practice": []
       }
@@ -1236,7 +767,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.mercator"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -1257,7 +788,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
         ],
         "hypotheses": [],
         "practice": []
@@ -1265,7 +796,543 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puella",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puella",
+    "assessment": "study.lexicon.theatrum.itinera:puella",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puella"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "jardin"
+      },
+      {
+        "id": "1",
+        "text": "dans, sur"
+      },
+      {
+        "id": "0",
+        "text": "jeune fille"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.puella"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: puella — jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "lexicon.lectio.puella"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "lexicon.lectio.puella"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puer",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puer",
+    "assessment": "study.lexicon.theatrum.itinera:puer",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "garçon"
+      },
+      {
+        "id": "0",
+        "text": "femme"
+      },
+      {
+        "id": "1",
+        "text": "école"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "lexicon.lectio.puer"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "lexicon.lectio.puer"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "lexicon.lectio.puer"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: puer — garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "redeo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "redeo",
+    "assessment": "study.lexicon.theatrum.itinera:redeo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "redīre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "jeune fille"
+      },
+      {
+        "id": "2",
+        "text": "dans, sur"
+      },
+      {
+        "id": "0",
+        "text": "revenir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.redeo"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "redeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: redīre — revenir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
+        "observed": [
+          "lexicon.lectio.redeo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
+        "observed": [
+          "lexicon.lectio.redeo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "roma",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "roma",
+    "assessment": "study.lexicon.theatrum.itinera:roma",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rōma"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Rome"
+      },
+      {
+        "id": "2",
+        "text": "Tusculum"
+      },
+      {
+        "id": "1",
+        "text": "habiter"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.roma"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "roma"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: Rōma — Rome.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: Rōma — Rome.",
+        "observed": [
+          "lexicon.lectio.roma"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: Rōma — Rome.",
+        "observed": [
+          "lexicon.lectio.roma"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "schola",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "schola",
+    "assessment": "study.lexicon.theatrum.itinera:schola",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "schola"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "marcher"
+      },
+      {
+        "id": "0",
+        "text": "école"
+      },
+      {
+        "id": "2",
+        "text": "maître"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.schola"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: schola — école.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
+        "observed": [
+          "lexicon.lectio.schola"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
+        "observed": [
+          "lexicon.lectio.schola"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "servus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "servus",
+    "assessment": "study.lexicon.theatrum.itinera:servus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "servus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "esclave"
+      },
+      {
+        "id": "2",
+        "text": "hors de, depuis"
+      },
+      {
+        "id": "1",
+        "text": "chambre"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.servus"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: servus — esclave.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "lexicon.lectio.servus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "lexicon.lectio.servus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "sum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "sum",
+    "assessment": "study.lexicon.theatrum.itinera:sum",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "esse"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "agriculteur"
+      },
+      {
+        "id": "1",
+        "text": "rester"
+      },
+      {
+        "id": "0",
+        "text": "être"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.sum"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: esse — être.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "lexicon.lectio.sum"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "lexicon.lectio.sum"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "tusculum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "tusculum",
+    "assessment": "study.lexicon.theatrum.itinera:tusculum",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Tūsculum"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "rester"
+      },
+      {
+        "id": "2",
+        "text": "être"
+      },
+      {
+        "id": "1",
+        "text": "Tusculum"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "lexicon.lectio.tusculum"
+    ],
+    "requires": [],
+    "help": "study.lexicon.itinera",
+    "vocabulary": [
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: Tūsculum — Tusculum.",
+        "observed": [
+          "lexicon.lectio.tusculum"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: Tūsculum — Tusculum.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: Tūsculum — Tusculum.",
+        "observed": [
+          "lexicon.lectio.tusculum"
         ],
         "hypotheses": [],
         "practice": []
@@ -1303,7 +1370,7 @@
       "2"
     ],
     "skills": [
-      "study.lexicon.theatrum.itinera"
+      "lexicon.lectio.venio"
     ],
     "requires": [],
     "help": "study.lexicon.itinera",
@@ -1318,7 +1385,7 @@
       "0": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.venio"
         ],
         "hypotheses": [],
         "practice": []
@@ -1326,7 +1393,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.venio"
         ],
         "hypotheses": [],
         "practice": []
@@ -1334,140 +1401,6 @@
       "2": {
         "feedback": "Rēctē: venīre — venir.",
         "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "eo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "eo",
-    "assessment": "study.lexicon.theatrum.itinera:eo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "īre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "jeune fille"
-      },
-      {
-        "id": "2",
-        "text": "revenir"
-      },
-      {
-        "id": "1",
-        "text": "aller"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "eo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: īre — aller.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: īre — aller.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: īre — aller.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "redeo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "redeo",
-    "assessment": "study.lexicon.theatrum.itinera:redeo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "redīre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "jeune fille"
-      },
-      {
-        "id": "2",
-        "text": "dans, sur"
-      },
-      {
-        "id": "0",
-        "text": "revenir"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.itinera"
-    ],
-    "requires": [],
-    "help": "study.lexicon.itinera",
-    "vocabulary": [
-      "redeo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: redīre — revenir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
-        "observed": [
-          "study.error"
-        ],
         "hypotheses": [],
         "practice": []
       }

@@ -25,6 +25,15 @@ class TrialView {
   String label(String key) => session.text(
     presentation['labels']?[key] ?? place.data['presentation']['labels'][key],
   );
+
+  /// Optional labels fall back to a required one when a place does not
+  /// author them.
+  String labelOr(String key, String fallback) {
+    final value =
+        presentation['labels']?[key] ??
+        place.data['presentation']['labels'][key];
+    return value == null ? label(fallback) : session.text(value);
+  }
 }
 
 enum BattlePhase { intro, question, correct, wrong, victory, defeat }
@@ -55,6 +64,11 @@ class BattleView {
   int get maxHearts => trial.hearts;
   int get answered => data['answered'] as int;
   int get correctCount => data['correct'] as int;
+
+  /// A win without a single wrong answer: only then may a place claim the
+  /// encounter was performed perfectly.
+  bool get flawless =>
+      phase == BattlePhase.victory && correctCount == answered;
   int get gemsDelta => data['gain'] as int;
   int get victoryBonus => data['adjustment'] as int? ?? 0;
   int get defeatPenalty => -(data['adjustment'] as int? ?? 0);
@@ -75,6 +89,13 @@ class QuestionView {
       objects(entry.data['content']).map((p) => session.text(p['text'])).join();
   List<Json>? get syntagma =>
       entry.interaction == 'choice' ? null : objects(entry.data['content']);
+
+  /// Length of the longest authored line: the gloss above a Latin sentence
+  /// must not shrink the sentence it glosses.
+  int get syntagmaWidth => surface
+      .split('\n')
+      .map((line) => line.trim().length)
+      .fold(0, (a, b) => a > b ? a : b);
   List<String> get context =>
       (entry.data['context'] as List? ?? []).map(session.text).toList();
   String get prompt => session.text(entry.data['prompt']);

@@ -30,7 +30,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.adsum"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -51,7 +51,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: adesse — être présent.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.adsum"
         ],
         "hypotheses": [],
         "practice": []
@@ -59,7 +59,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: adesse — être présent.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.adsum"
         ],
         "hypotheses": [],
         "practice": []
@@ -97,7 +97,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.agricola"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -118,7 +118,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — paysan.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
@@ -126,7 +126,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — paysan.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.agricola"
         ],
         "hypotheses": [],
         "practice": []
@@ -164,7 +164,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.ambulo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -185,7 +185,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -193,7 +193,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ambulo"
         ],
         "hypotheses": [],
         "practice": []
@@ -231,7 +231,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.aqua"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -252,7 +252,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aqua"
         ],
         "hypotheses": [],
         "practice": []
@@ -260,7 +260,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.aqua"
         ],
         "hypotheses": [],
         "practice": []
@@ -298,7 +298,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.audio"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -319,7 +319,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: audīre — entendre, apprendre une nouvelle.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.audio"
         ],
         "hypotheses": [],
         "practice": []
@@ -327,7 +327,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: audīre — entendre, apprendre une nouvelle.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.audio"
         ],
         "hypotheses": [],
         "practice": []
@@ -365,7 +365,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.bonus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -386,7 +386,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: bonus, bona, bonum — bon, bonne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.bonus"
         ],
         "hypotheses": [],
         "practice": []
@@ -394,7 +394,62 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: bonus, bona, bonum — bon, bonne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.bonus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "canis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "canis",
+    "assessment": "lexicon.lectio.canis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "canis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "chien"
+      },
+      {
+        "id": "1",
+        "text": "jardin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.canis"
+    ],
+    "requires": [],
+    "vocabulary": [
+      "canis"
+    ],
+    "help": "study.lexicon.personae",
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: canis — chien.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "canis — chien.",
+        "observed": [
+          "lexicon.lectio.canis"
         ],
         "hypotheses": [],
         "practice": []
@@ -432,7 +487,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.curro"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -453,7 +508,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.curro"
         ],
         "hypotheses": [],
         "practice": []
@@ -461,7 +516,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.curro"
         ],
         "hypotheses": [],
         "practice": []
@@ -499,7 +554,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.do"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -520,7 +575,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dare — donner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.do"
         ],
         "hypotheses": [],
         "practice": []
@@ -528,7 +583,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dare — donner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.do"
         ],
         "hypotheses": [],
         "practice": []
@@ -566,7 +621,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.doceo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -587,7 +642,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.doceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -595,7 +650,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: docēre — enseigner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.doceo"
         ],
         "hypotheses": [],
         "practice": []
@@ -633,7 +688,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.dominus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -654,7 +709,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.dominus"
         ],
         "hypotheses": [],
         "practice": []
@@ -662,7 +717,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.dominus"
         ],
         "hypotheses": [],
         "practice": []
@@ -700,7 +755,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.domus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -721,7 +776,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.domus"
         ],
         "hypotheses": [],
         "practice": []
@@ -729,7 +784,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.domus"
         ],
         "hypotheses": [],
         "practice": []
@@ -767,7 +822,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.donum"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -788,7 +843,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.donum"
         ],
         "hypotheses": [],
         "practice": []
@@ -796,7 +851,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — cadeau.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.donum"
         ],
         "hypotheses": [],
         "practice": []
@@ -834,7 +889,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.epistula"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -855,7 +910,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.epistula"
         ],
         "hypotheses": [],
         "practice": []
@@ -863,7 +918,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.epistula"
         ],
         "hypotheses": [],
         "practice": []
@@ -901,7 +956,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.fabula"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -922,7 +977,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.fabula"
         ],
         "hypotheses": [],
         "practice": []
@@ -930,7 +985,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fābula — histoire, récit.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.fabula"
         ],
         "hypotheses": [],
         "practice": []
@@ -968,7 +1023,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.femina"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -989,7 +1044,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -997,7 +1052,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.femina"
         ],
         "hypotheses": [],
         "practice": []
@@ -1035,7 +1090,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.filia"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1056,7 +1111,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlia — fille de quelqu’un.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filia"
         ],
         "hypotheses": [],
         "practice": []
@@ -1064,7 +1119,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlia — fille de quelqu’un.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filia"
         ],
         "hypotheses": [],
         "practice": []
@@ -1102,7 +1157,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.filius"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1123,7 +1178,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filius"
         ],
         "hypotheses": [],
         "practice": []
@@ -1131,7 +1186,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.filius"
         ],
         "hypotheses": [],
         "practice": []
@@ -1169,7 +1224,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.habeo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1190,7 +1245,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: habēre — avoir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.habeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +1253,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: habēre — avoir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.habeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1236,7 +1291,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.hortus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1257,7 +1312,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1265,7 +1320,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.hortus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1303,7 +1358,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.in"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1324,7 +1379,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -1332,7 +1387,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.in"
         ],
         "hypotheses": [],
         "practice": []
@@ -1370,7 +1425,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.is"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1391,7 +1446,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: is, ea, id — celui-ci, celle-ci, cela.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.is"
         ],
         "hypotheses": [],
         "practice": []
@@ -1399,7 +1454,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: is, ea, id — celui-ci, celle-ci, cela.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.is"
         ],
         "hypotheses": [],
         "practice": []
@@ -1437,7 +1492,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.italia"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1458,7 +1513,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: Italia — Italie.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.italia"
         ],
         "hypotheses": [],
         "practice": []
@@ -1466,7 +1521,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: Italia — Italie.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.italia"
         ],
         "hypotheses": [],
         "practice": []
@@ -1504,7 +1559,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.laetus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1525,7 +1580,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus, laeta, laetum — joyeux, joyeuse.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laetus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1533,7 +1588,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus, laeta, laetum — joyeux, joyeuse.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laetus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1571,7 +1626,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.laudo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1592,7 +1647,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laudo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1600,7 +1655,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: laudāre — louer, faire l’éloge de.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.laudo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1638,7 +1693,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.lavo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1659,7 +1714,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: lavāre — laver.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lavo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1667,7 +1722,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: lavāre — laver.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lavo"
         ],
         "hypotheses": [],
         "practice": []
@@ -1705,7 +1760,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.lego"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1726,7 +1781,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lego"
         ],
         "hypotheses": [],
         "practice": []
@@ -1734,7 +1789,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.lego"
         ],
         "hypotheses": [],
         "practice": []
@@ -1772,7 +1827,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.liber"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1793,7 +1848,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -1801,7 +1856,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.liber"
         ],
         "hypotheses": [],
         "practice": []
@@ -1839,7 +1894,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.magister"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1860,7 +1915,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magister"
         ],
         "hypotheses": [],
         "practice": []
@@ -1868,7 +1923,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magister"
         ],
         "hypotheses": [],
         "practice": []
@@ -1906,7 +1961,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.magnus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1927,7 +1982,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magnus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1935,7 +1990,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.magnus"
         ],
         "hypotheses": [],
         "practice": []
@@ -1973,7 +2028,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.maneo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -1994,7 +2049,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: manēre — rester.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.maneo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2002,7 +2057,62 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: manēre — rester.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.maneo"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "mater",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "mater",
+    "assessment": "lexicon.lectio.mater",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "māter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "mère"
+      },
+      {
+        "id": "1",
+        "text": "jardin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.mater"
+    ],
+    "requires": [],
+    "vocabulary": [
+      "mater"
+    ],
+    "help": "study.lexicon.personae",
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: māter — mère.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "māter — mère.",
+        "observed": [
+          "lexicon.lectio.mater"
         ],
         "hypotheses": [],
         "practice": []
@@ -2040,7 +2150,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.mercator"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2061,7 +2171,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
         ],
         "hypotheses": [],
         "practice": []
@@ -2069,7 +2179,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mercator"
         ],
         "hypotheses": [],
         "practice": []
@@ -2107,7 +2217,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.meus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2128,7 +2238,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: meus, mea, meum — mon, ma, mes.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.meus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2136,7 +2246,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: meus, mea, meum — mon, ma, mes.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.meus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2174,7 +2284,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.mitto"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2195,7 +2305,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mitto"
         ],
         "hypotheses": [],
         "practice": []
@@ -2203,7 +2313,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: mittere — envoyer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.mitto"
         ],
         "hypotheses": [],
         "practice": []
@@ -2241,7 +2351,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.narro"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2262,7 +2372,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.narro"
         ],
         "hypotheses": [],
         "practice": []
@@ -2270,7 +2380,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nārrāre — raconter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.narro"
         ],
         "hypotheses": [],
         "practice": []
@@ -2308,7 +2418,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.nauta"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2329,7 +2439,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -2337,7 +2447,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.nauta"
         ],
         "hypotheses": [],
         "practice": []
@@ -2345,66 +2455,54 @@
     }
   },
   {
-    "id": "non",
+    "id": "navis",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "non",
-    "assessment": "study.lexicon.theatrum.personae:non",
+    "item": "navis",
+    "assessment": "lexicon.lectio.navis",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "nōn"
+        "text": "nāvis"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "ne… pas"
+        "text": "navire"
       },
       {
         "id": "1",
-        "text": "parer, orner"
-      },
-      {
-        "id": "2",
-        "text": "montrer"
+        "text": "jardin"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.navis"
     ],
     "requires": [],
-    "help": "study.lexicon.personae",
     "vocabulary": [
-      "non"
+      "navis"
     ],
+    "help": "study.lexicon.personae",
     "editorial": {
       "language": "la",
       "translationDirection": "la-fr"
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: nōn — ne… pas.",
+        "feedback": "Rēctē: nāvis — navire.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
+        "feedback": "nāvis — navire.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.navis"
         ],
         "hypotheses": [],
         "practice": []
@@ -2442,7 +2540,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.orno"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2463,7 +2561,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ōrnāre — parer, orner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.orno"
         ],
         "hypotheses": [],
         "practice": []
@@ -2471,7 +2569,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ōrnāre — parer, orner.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.orno"
         ],
         "hypotheses": [],
         "practice": []
@@ -2509,7 +2607,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.ostendo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2530,7 +2628,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ostendo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2538,7 +2636,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.ostendo"
         ],
         "hypotheses": [],
         "practice": []
@@ -2576,7 +2674,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.panis"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2597,7 +2695,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pānis — pain.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.panis"
         ],
         "hypotheses": [],
         "practice": []
@@ -2605,7 +2703,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pānis — pain.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.panis"
         ],
         "hypotheses": [],
         "practice": []
@@ -2643,7 +2741,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.parvus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2664,7 +2762,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus, parva, parvum — petit, petite.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.parvus"
         ],
         "hypotheses": [],
         "practice": []
@@ -2672,7 +2770,62 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus, parva, parvum — petit, petite.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.parvus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "pater",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "pater",
+    "assessment": "lexicon.lectio.pater",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pater"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "père"
+      },
+      {
+        "id": "1",
+        "text": "jardin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "lexicon.lectio.pater"
+    ],
+    "requires": [],
+    "vocabulary": [
+      "pater"
+    ],
+    "help": "study.lexicon.personae",
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: pater — père.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "pater — père.",
+        "observed": [
+          "lexicon.lectio.pater"
         ],
         "hypotheses": [],
         "practice": []
@@ -2710,7 +2863,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.porto"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2731,7 +2884,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porto"
         ],
         "hypotheses": [],
         "practice": []
@@ -2739,7 +2892,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.porto"
         ],
         "hypotheses": [],
         "practice": []
@@ -2777,7 +2930,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.puella"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2798,7 +2951,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -2806,7 +2959,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puella"
         ],
         "hypotheses": [],
         "practice": []
@@ -2844,7 +2997,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.puer"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2865,7 +3018,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -2873,7 +3026,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.puer"
         ],
         "hypotheses": [],
         "practice": []
@@ -2911,7 +3064,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.pulcher"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2932,7 +3085,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pulcher, pulchra, pulchrum — beau, belle.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pulcher"
         ],
         "hypotheses": [],
         "practice": []
@@ -2940,7 +3093,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pulcher, pulchra, pulchrum — beau, belle.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.pulcher"
         ],
         "hypotheses": [],
         "practice": []
@@ -2978,7 +3131,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.qui"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -2999,7 +3152,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.qui"
         ],
         "hypotheses": [],
         "practice": []
@@ -3007,7 +3160,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.qui"
         ],
         "hypotheses": [],
         "practice": []
@@ -3045,7 +3198,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.quis"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3066,7 +3219,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quis, quid — qui ? quoi ? (cuius : de qui ?).",
         "observed": [
-          "study.error"
+          "lexicon.lectio.quis"
         ],
         "hypotheses": [],
         "practice": []
@@ -3074,7 +3227,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: quis, quid — qui ? quoi ? (cuius : de qui ?).",
         "observed": [
-          "study.error"
+          "lexicon.lectio.quis"
         ],
         "hypotheses": [],
         "practice": []
@@ -3112,7 +3265,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.rideo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3133,7 +3286,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rīdēre — rire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rideo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3141,7 +3294,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rīdēre — rire.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rideo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3179,7 +3332,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.rosa"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3200,7 +3353,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rosa — rose.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rosa"
         ],
         "hypotheses": [],
         "practice": []
@@ -3208,7 +3361,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: rosa — rose.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.rosa"
         ],
         "hypotheses": [],
         "practice": []
@@ -3246,7 +3399,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.saluto"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3267,7 +3420,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.saluto"
         ],
         "hypotheses": [],
         "practice": []
@@ -3275,7 +3428,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: salūtāre — saluer.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.saluto"
         ],
         "hypotheses": [],
         "practice": []
@@ -3313,7 +3466,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.schola"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3334,7 +3487,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.schola"
         ],
         "hypotheses": [],
         "practice": []
@@ -3342,7 +3495,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.schola"
         ],
         "hypotheses": [],
         "practice": []
@@ -3380,7 +3533,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.se"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3401,7 +3554,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.se"
         ],
         "hypotheses": [],
         "practice": []
@@ -3409,7 +3562,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.se"
         ],
         "hypotheses": [],
         "practice": []
@@ -3447,7 +3600,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.sedeo"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3468,7 +3621,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sedeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3476,7 +3629,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sedeo"
         ],
         "hypotheses": [],
         "practice": []
@@ -3514,7 +3667,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.servus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3535,7 +3688,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.servus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3543,7 +3696,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.servus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3581,7 +3734,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.speculum"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3602,7 +3755,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: speculum — miroir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.speculum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3610,7 +3763,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: speculum — miroir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.speculum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3648,7 +3801,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.sum"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3669,7 +3822,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3677,7 +3830,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.sum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3715,7 +3868,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.suus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3736,7 +3889,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: suus, sua, suum — son propre, sa propre, ses propres.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.suus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3744,7 +3897,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: suus, sua, suum — son propre, sa propre, ses propres.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.suus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3782,7 +3935,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.templum"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3803,7 +3956,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.templum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3811,7 +3964,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.templum"
         ],
         "hypotheses": [],
         "practice": []
@@ -3849,7 +4002,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.tuus"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -3870,7 +4023,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tuus, tua, tuum — ton, ta, tes.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.tuus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3878,74 +4031,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tuus, tua, tuum — ton, ta, tes.",
         "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "ubi",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "ubi",
-    "assessment": "study.lexicon.theatrum.personae:ubi",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "ubi"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "où"
-      },
-      {
-        "id": "1",
-        "text": "voir"
-      },
-      {
-        "id": "2",
-        "text": "maison de campagne"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.personae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.personae",
-    "vocabulary": [
-      "ubi"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: ubi — où.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
-        "observed": [
-          "study.error"
+          "lexicon.lectio.tuus"
         ],
         "hypotheses": [],
         "practice": []
@@ -3983,7 +4069,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.video"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -4004,7 +4090,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.video"
         ],
         "hypotheses": [],
         "practice": []
@@ -4012,7 +4098,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.video"
         ],
         "hypotheses": [],
         "practice": []
@@ -4050,7 +4136,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.villa"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -4071,7 +4157,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīlla — maison de campagne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.villa"
         ],
         "hypotheses": [],
         "practice": []
@@ -4079,7 +4165,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vīlla — maison de campagne.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.villa"
         ],
         "hypotheses": [],
         "practice": []
@@ -4117,7 +4203,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.vir"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -4138,7 +4224,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vir — homme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vir"
         ],
         "hypotheses": [],
         "practice": []
@@ -4146,7 +4232,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vir — homme.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.vir"
         ],
         "hypotheses": [],
         "practice": []
@@ -4184,7 +4270,7 @@
       "0"
     ],
     "skills": [
-      "study.lexicon.theatrum.personae"
+      "lexicon.lectio.voco"
     ],
     "requires": [],
     "help": "study.lexicon.personae",
@@ -4205,7 +4291,7 @@
       "1": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.voco"
         ],
         "hypotheses": [],
         "practice": []
@@ -4213,7 +4299,7 @@
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: vocāre — appeler.",
         "observed": [
-          "study.error"
+          "lexicon.lectio.voco"
         ],
         "hypotheses": [],
         "practice": []

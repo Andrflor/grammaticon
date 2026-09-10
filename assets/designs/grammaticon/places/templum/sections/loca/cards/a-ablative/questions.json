@@ -1,26 +1,38 @@
 [
   {
     "id": "q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puella in Italiam est."
+        "text": "Italiam"
       },
       {
         "id": "1",
-        "text": "Puella in Italia est."
+        "text": "Italia"
       },
       {
         "id": "0",
-        "text": "Puella in Italiā est."
+        "text": "Italiā"
       }
     ],
     "accepted": [
@@ -32,18 +44,26 @@
       "puella",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "a-ablative:q1",
     "assessment": "study.theme.early-loca:a-ablative:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -55,7 +75,7 @@
       "1": {
         "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
         "observed": [
-          "study.confusion.unmarked-location"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +83,7 @@
       "2": {
         "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
         "observed": [
-          "study.confusion.motion-for-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -72,26 +92,38 @@
   },
   {
     "id": "q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est sur une île."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer in īnsulā est."
+        "text": "īnsulā"
       },
       {
         "id": "0",
-        "text": "Puer in īnsula est."
+        "text": "īnsula"
       },
       {
         "id": "1",
-        "text": "Puer in īnsulam est."
+        "text": "īnsulam"
       }
     ],
     "accepted": [
@@ -103,24 +135,32 @@
       "puer",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "a-ablative:q2",
     "assessment": "study.theme.early-loca:a-ablative:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
         "observed": [
-          "study.confusion.unmarked-location"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -128,7 +168,7 @@
       "1": {
         "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
         "observed": [
-          "study.confusion.motion-for-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -143,26 +183,38 @@
   },
   {
     "id": "q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le maître est dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister in scholā est."
+        "text": "scholā"
       },
       {
         "id": "2",
-        "text": "Magister in schola est."
+        "text": "schola"
       },
       {
         "id": "0",
-        "text": "Magister in scholam est."
+        "text": "scholam"
       }
     ],
     "accepted": [
@@ -174,24 +226,32 @@
       "schola",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "a-ablative:q3",
     "assessment": "study.theme.early-loca:a-ablative:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
         "observed": [
-          "study.confusion.motion-for-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -205,7 +265,7 @@
       "2": {
         "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
         "observed": [
-          "study.confusion.unmarked-location"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -214,26 +274,38 @@
   },
   {
     "id": "q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La femme est dans la maison de campagne."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina in vīlla est."
+        "text": "vīlla"
       },
       {
         "id": "2",
-        "text": "Fēmina in vīllam est."
+        "text": "vīllam"
       },
       {
         "id": "0",
-        "text": "Fēmina in vīllā est."
+        "text": "vīllā"
       }
     ],
     "accepted": [
@@ -245,18 +317,26 @@
       "sum",
       "villa"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "a-ablative:q4",
     "assessment": "study.theme.early-loca:a-ablative:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "editorial": {
       "language": "la",
       "topic": "a-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -268,7 +348,7 @@
       "1": {
         "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
         "observed": [
-          "study.confusion.unmarked-location"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -276,7 +356,7 @@
       "2": {
         "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
         "observed": [
-          "study.confusion.motion-for-location"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -285,26 +365,38 @@
   },
   {
     "id": "o-ablative-q1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "Le garçon est dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Puer in hortum est."
+        "text": "hortum"
       },
       {
         "id": "1",
-        "text": "Puer in hortus est."
+        "text": "hortus"
       },
       {
         "id": "0",
-        "text": "Puer in hortō est."
+        "text": "hortō"
       }
     ],
     "accepted": [
@@ -316,18 +408,26 @@
       "puer",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "o-ablative:q1",
     "assessment": "study.theme.early-loca:o-ablative:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -339,7 +439,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hortus nōminātīvus est. Post in cum locō ubi persōna est ablātīvus hortō adhibendus est.",
         "observed": [
-          "study.confusion.static-nominative"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -347,7 +447,7 @@
       "2": {
         "feedback": "Nōn rēctē. In hortō est locum indicat. In hortum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -356,26 +456,38 @@
   },
   {
     "id": "o-ablative-q2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "L’homme est dans le temple."
+      },
+      {
+        "type": "text",
+        "text": "\nVir in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "Vir in templum est."
+        "text": "templum"
       },
       {
         "id": "1",
-        "text": "Vir in templī est."
+        "text": "templī"
       },
       {
         "id": "2",
-        "text": "Vir in templō est."
+        "text": "templō"
       }
     ],
     "accepted": [
@@ -387,24 +499,32 @@
       "templum",
       "vir"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "o-ablative:q2",
     "assessment": "study.theme.early-loca:o-ablative:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum",
+      "lexicon.compositio.vir"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. In templō est locum indicat. In templum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -412,7 +532,7 @@
       "1": {
         "feedback": "Nōn rēctē. Templī genetīvus est. Hīc in cum ablātīvō templō locum indicat.",
         "observed": [
-          "study.confusion.static-genitive"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -427,26 +547,38 @@
   },
   {
     "id": "o-ablative-q3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La jeune fille est dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella in oppidō est."
+        "text": "oppidō"
       },
       {
         "id": "2",
-        "text": "Puella in oppidum est."
+        "text": "oppidum"
       },
       {
         "id": "0",
-        "text": "Puella in oppidī est."
+        "text": "oppidī"
       }
     ],
     "accepted": [
@@ -458,24 +590,32 @@
       "puella",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "o-ablative:q3",
     "assessment": "study.theme.early-loca:o-ablative:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Oppidī genetīvus est. Hīc in cum ablātīvō oppidō locum indicat.",
         "observed": [
-          "study.confusion.static-genitive"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -489,7 +629,7 @@
       "2": {
         "feedback": "Nōn rēctē. In oppidō est locum indicat. In oppidum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -498,26 +638,38 @@
   },
   {
     "id": "o-ablative-q4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
     "content": [
       {
         "type": "text",
         "text": "La femme est dans le champ."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "Fēmina in agrum est."
+        "text": "agrum"
       },
       {
         "id": "0",
-        "text": "Fēmina in agrō est."
+        "text": "agrō"
       },
       {
         "id": "1",
-        "text": "Fēmina in ager est."
+        "text": "ager"
       }
     ],
     "accepted": [
@@ -529,18 +681,26 @@
       "in",
       "sum"
     ],
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case",
+      "compositio.location-motion"
     ],
     "item": "o-ablative:q4",
     "assessment": "study.theme.early-loca:o-ablative:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ager",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum"
+    ],
     "editorial": {
       "language": "la",
       "topic": "o-ablative",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -552,7 +712,7 @@
       "1": {
         "feedback": "Nōn rēctē. Ager nōminātīvus est. Post in cum locō ubi persōna est ablātīvus agrō adhibendus est.",
         "observed": [
-          "study.confusion.static-nominative"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -560,7 +720,7 @@
       "2": {
         "feedback": "Nōn rēctē. In agrō est locum indicat. In agrum cum intrat mōtum in locum indicāret. Sententia quaesīta nōn dīcit persōnam intrāre.",
         "observed": [
-          "study.confusion.static-motion"
+          "compositio.location-motion"
         ],
         "hypotheses": [],
         "practice": []
@@ -603,16 +763,24 @@
     ],
     "prompt": "Sententiam Latīnē redde.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-person",
+      "compositio.question-statement"
     ],
     "item": "ubi-question:q1",
     "assessment": "study.theme.early-loca:ubi-question:q1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.num",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -624,7 +792,7 @@
       "1": {
         "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
         "observed": [
-          "study.confusion.location-person"
+          "compositio.location-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -632,7 +800,7 @@
       "2": {
         "feedback": "Nōn rēctē. Num nōn locum quaerit, sed utrum rēs ita sit; plērumque responsum negātīvum exspectat. Ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "compositio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -675,22 +843,30 @@
     ],
     "prompt": "Sententiam Latīnē redde.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-person",
+      "compositio.question-statement"
     ],
     "item": "ubi-question:q2",
     "assessment": "study.theme.early-loca:ubi-question:q2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.num",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
         "observed": [
-          "study.confusion.location-person"
+          "compositio.location-person"
         ],
         "hypotheses": [],
         "practice": []
@@ -698,7 +874,7 @@
       "1": {
         "feedback": "Nōn rēctē. Num nōn locum quaerit, sed utrum rēs ita sit; plērumque responsum negātīvum exspectat. Ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "compositio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -747,22 +923,30 @@
     ],
     "prompt": "Sententiam Latīnē redde.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-definition",
+      "compositio.question-statement"
     ],
     "item": "ubi-question:q3",
     "assessment": "study.theme.early-loca:ubi-question:q3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.num",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
         "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.location-definition"
+          "compositio.location-definition"
         ],
         "hypotheses": [],
         "practice": []
@@ -776,7 +960,7 @@
       "2": {
         "feedback": "Nōn rēctē. Num nōn locum quaerit, sed utrum rēs ita sit; plērumque responsum negātīvum exspectat. Ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "compositio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -819,16 +1003,24 @@
     ],
     "prompt": "Sententiam Latīnē redde.",
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-definition",
+      "compositio.question-statement"
     ],
     "item": "ubi-question:q4",
     "assessment": "study.theme.early-loca:ubi-question:q4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "lexicon.compositio.num",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum",
+      "lexicon.compositio.ubi"
+    ],
     "editorial": {
       "language": "la",
       "topic": "ubi-question",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-formulation"
     },
     "outcomes": {
       "0": {
@@ -840,7 +1032,7 @@
       "1": {
         "feedback": "Nōn rēctē. Num nōn locum quaerit, sed utrum rēs ita sit; plērumque responsum negātīvum exspectat. Ubi locum quaerit.",
         "observed": [
-          "study.confusion.location-polar"
+          "compositio.question-statement"
         ],
         "hypotheses": [],
         "practice": []
@@ -848,7 +1040,7 @@
       "2": {
         "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
         "observed": [
-          "study.confusion.location-definition"
+          "compositio.location-definition"
         ],
         "hypotheses": [],
         "practice": []
@@ -857,39 +1049,57 @@
   },
   {
     "id": "extra-1",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin se trouve dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Nauta in schola est."
+        "text": "schola"
       },
       {
         "id": "0",
-        "text": "Nauta in scholā est."
+        "text": "scholā"
       },
       {
         "id": "2",
-        "text": "Nauta in scholam est."
+        "text": "scholam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-1",
     "assessment": "study.theme.early-loca:extra-1",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "nauta",
@@ -898,7 +1108,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -910,7 +1121,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -918,7 +1129,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -927,39 +1138,57 @@
   },
   {
     "id": "extra-2",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître se trouve dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister in hortus est."
+        "text": "hortus"
       },
       {
         "id": "0",
-        "text": "Magister in hortō est."
+        "text": "hortō"
       },
       {
         "id": "2",
-        "text": "Magister in hortum est."
+        "text": "hortum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-2",
     "assessment": "study.theme.early-loca:extra-2",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -968,7 +1197,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -980,7 +1210,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -988,7 +1218,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -997,39 +1227,57 @@
   },
   {
     "id": "extra-3",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille se trouve dans la maison."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella in villa est."
+        "text": "villa"
       },
       {
         "id": "0",
-        "text": "Puella in vīllā est."
+        "text": "vīllā"
       },
       {
         "id": "2",
-        "text": "Puella in villam est."
+        "text": "villam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-3",
     "assessment": "study.theme.early-loca:extra-3",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "puella",
@@ -1038,7 +1286,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1050,7 +1299,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1058,7 +1307,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1067,39 +1316,57 @@
   },
   {
     "id": "extra-4",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon se trouve dans le temple."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer in templo est."
+        "text": "templo"
       },
       {
         "id": "0",
-        "text": "Puer in templō est."
+        "text": "templō"
       },
       {
         "id": "2",
-        "text": "Puer in templum est."
+        "text": "templum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-4",
     "assessment": "study.theme.early-loca:extra-4",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "in",
       "puer",
@@ -1108,7 +1375,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1120,7 +1388,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1128,7 +1396,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1137,39 +1405,57 @@
   },
   {
     "id": "extra-5",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme se trouve dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina in oppido est."
+        "text": "oppido"
       },
       {
         "id": "0",
-        "text": "Fēmina in oppidō est."
+        "text": "oppidō"
       },
       {
         "id": "2",
-        "text": "Fēmina in oppidum est."
+        "text": "oppidum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-5",
     "assessment": "study.theme.early-loca:extra-5",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "in",
@@ -1178,7 +1464,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1190,7 +1477,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1198,7 +1485,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1207,39 +1494,57 @@
   },
   {
     "id": "extra-6",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme se trouve dans le champ."
+      },
+      {
+        "type": "text",
+        "text": "\nVir in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Vir in ager est."
+        "text": "ager"
       },
       {
         "id": "0",
-        "text": "Vir in agrō est."
+        "text": "agrō"
       },
       {
         "id": "2",
-        "text": "Vir in agrum est."
+        "text": "agrum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-6",
     "assessment": "study.theme.early-loca:extra-6",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ager",
+      "lexicon.compositio.in",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "ager",
       "in",
@@ -1248,7 +1553,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1260,7 +1566,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1268,7 +1574,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1277,39 +1583,57 @@
   },
   {
     "id": "extra-7",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre se trouve dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Liber in schola est."
+        "text": "schola"
       },
       {
         "id": "0",
-        "text": "Liber in scholā est."
+        "text": "scholā"
       },
       {
         "id": "2",
-        "text": "Liber in scholam est."
+        "text": "scholam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-7",
     "assessment": "study.theme.early-loca:extra-7",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1318,7 +1642,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1330,7 +1655,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1338,7 +1663,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1347,39 +1672,57 @@
   },
   {
     "id": "extra-8",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le temple se trouve dans l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nTemplum in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Templum in insula est."
+        "text": "insula"
       },
       {
         "id": "0",
-        "text": "Templum in īnsulā est."
+        "text": "īnsulā"
       },
       {
         "id": "2",
-        "text": "Templum in insulam est."
+        "text": "insulam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-8",
     "assessment": "study.theme.early-loca:extra-8",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1388,7 +1731,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1400,7 +1744,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1408,7 +1752,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1417,39 +1761,57 @@
   },
   {
     "id": "extra-9",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’école se trouve dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nSchola in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Schola in oppido est."
+        "text": "oppido"
       },
       {
         "id": "0",
-        "text": "Schola in oppidō est."
+        "text": "oppidō"
       },
       {
         "id": "2",
-        "text": "Schola in oppidum est."
+        "text": "oppidum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-9",
     "assessment": "study.theme.early-loca:extra-9",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "oppidum",
@@ -1458,7 +1820,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1470,7 +1833,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1478,7 +1841,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1487,39 +1850,57 @@
   },
   {
     "id": "extra-10",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître se trouve en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister in Italia est."
+        "text": "Italia"
       },
       {
         "id": "0",
-        "text": "Magister in Italiā est."
+        "text": "Italiā"
       },
       {
         "id": "2",
-        "text": "Magister in Italiam est."
+        "text": "Italiam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-10",
     "assessment": "study.theme.early-loca:extra-10",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "italia",
@@ -1528,7 +1909,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1540,7 +1922,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1548,7 +1930,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1557,39 +1939,57 @@
   },
   {
     "id": "extra-11",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin se trouve dans le jardin."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Nauta in hortus est."
+        "text": "hortus"
       },
       {
         "id": "0",
-        "text": "Nauta in hortō est."
+        "text": "hortō"
       },
       {
         "id": "2",
-        "text": "Nauta in hortum est."
+        "text": "hortum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-11",
     "assessment": "study.theme.early-loca:extra-11",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.hortus",
+      "lexicon.compositio.in",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "hortus",
       "in",
@@ -1598,7 +1998,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1610,7 +2011,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1618,7 +2019,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1627,39 +2028,57 @@
   },
   {
     "id": "extra-12",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La femme se trouve dans l’école."
+      },
+      {
+        "type": "text",
+        "text": "\nFēmina in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Fēmina in schola est."
+        "text": "schola"
       },
       {
         "id": "0",
-        "text": "Fēmina in scholā est."
+        "text": "scholā"
       },
       {
         "id": "2",
-        "text": "Fēmina in scholam est."
+        "text": "scholam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-12",
     "assessment": "study.theme.early-loca:extra-12",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.femina",
+      "lexicon.compositio.in",
+      "lexicon.compositio.schola",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "femina",
       "in",
@@ -1668,7 +2087,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1680,7 +2100,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1688,7 +2108,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1697,39 +2117,57 @@
   },
   {
     "id": "extra-13",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le garçon se trouve dans la maison."
+      },
+      {
+        "type": "text",
+        "text": "\nPuer in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puer in villa est."
+        "text": "villa"
       },
       {
         "id": "0",
-        "text": "Puer in vīllā est."
+        "text": "vīllā"
       },
       {
         "id": "2",
-        "text": "Puer in villam est."
+        "text": "villam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-13",
     "assessment": "study.theme.early-loca:extra-13",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puer",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "puer",
@@ -1738,7 +2176,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1750,7 +2189,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1758,7 +2197,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1767,39 +2206,57 @@
   },
   {
     "id": "extra-14",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "L’homme se trouve dans l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nVir in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Vir in insula est."
+        "text": "insula"
       },
       {
         "id": "0",
-        "text": "Vir in īnsulā est."
+        "text": "īnsulā"
       },
       {
         "id": "2",
-        "text": "Vir in insulam est."
+        "text": "insulam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-14",
     "assessment": "study.theme.early-loca:extra-14",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.vir"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -1808,7 +2265,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1820,7 +2278,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1828,7 +2286,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1837,39 +2295,57 @@
   },
   {
     "id": "extra-15",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La fille se trouve dans le temple."
+      },
+      {
+        "type": "text",
+        "text": "\nPuella in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Puella in templo est."
+        "text": "templo"
       },
       {
         "id": "0",
-        "text": "Puella in templō est."
+        "text": "templō"
       },
       {
         "id": "2",
-        "text": "Puella in templum est."
+        "text": "templum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-15",
     "assessment": "study.theme.early-loca:extra-15",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.puella",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "in",
       "puella",
@@ -1878,7 +2354,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1890,7 +2367,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1898,7 +2375,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1907,39 +2384,57 @@
   },
   {
     "id": "extra-16",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le livre se trouve dans la maison."
+      },
+      {
+        "type": "text",
+        "text": "\nLiber in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Liber in villa est."
+        "text": "villa"
       },
       {
         "id": "0",
-        "text": "Liber in vīllā est."
+        "text": "vīllā"
       },
       {
         "id": "2",
-        "text": "Liber in villam est."
+        "text": "villam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-16",
     "assessment": "study.theme.early-loca:extra-16",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.liber",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "liber",
@@ -1948,7 +2443,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -1960,7 +2456,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1968,7 +2464,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -1977,39 +2473,57 @@
   },
   {
     "id": "extra-17",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le marin se trouve dans la ville."
+      },
+      {
+        "type": "text",
+        "text": "\nNauta in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Nauta in oppido est."
+        "text": "oppido"
       },
       {
         "id": "0",
-        "text": "Nauta in oppidō est."
+        "text": "oppidō"
       },
       {
         "id": "2",
-        "text": "Nauta in oppidum est."
+        "text": "oppidum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-17",
     "assessment": "study.theme.early-loca:extra-17",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.nauta",
+      "lexicon.compositio.oppidum",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "in",
       "nauta",
@@ -2018,7 +2532,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2030,7 +2545,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2038,7 +2553,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2047,39 +2562,57 @@
   },
   {
     "id": "extra-18",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le maître se trouve dans le champ."
+      },
+      {
+        "type": "text",
+        "text": "\nMagister in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Magister in ager est."
+        "text": "ager"
       },
       {
         "id": "0",
-        "text": "Magister in agrō est."
+        "text": "agrō"
       },
       {
         "id": "2",
-        "text": "Magister in agrum est."
+        "text": "agrum"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-18",
     "assessment": "study.theme.early-loca:extra-18",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.ager",
+      "lexicon.compositio.in",
+      "lexicon.compositio.magister",
+      "lexicon.compositio.sum"
+    ],
     "vocabulary": [
       "ager",
       "in",
@@ -2088,7 +2621,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2100,7 +2634,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2108,7 +2642,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2117,39 +2651,57 @@
   },
   {
     "id": "extra-19",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "La maison se trouve dans l’île."
+      },
+      {
+        "type": "text",
+        "text": "\nVīlla in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Vīlla in insula est."
+        "text": "insula"
       },
       {
         "id": "0",
-        "text": "Vīlla in īnsulā est."
+        "text": "īnsulā"
       },
       {
         "id": "2",
-        "text": "Vīlla in insulam est."
+        "text": "insulam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-19",
     "assessment": "study.theme.early-loca:extra-19",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.insula",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.villa"
+    ],
     "vocabulary": [
       "in",
       "insula",
@@ -2158,7 +2710,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2170,7 +2723,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2178,7 +2731,7 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2187,39 +2740,57 @@
   },
   {
     "id": "extra-20",
-    "interaction": "choice",
+    "interaction": "gapChoice",
     "dimension": "course.production",
-    "prompt": "Sententiam Latīnē redde.",
+    "prompt": "Sententiam Latīnē complē.",
     "content": [
       {
         "type": "text",
         "text": "Le temple se trouve en Italie."
+      },
+      {
+        "type": "text",
+        "text": "\nTemplum in "
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est."
       }
     ],
     "choices": [
       {
         "id": "1",
-        "text": "Templum in Italia est."
+        "text": "Italia"
       },
       {
         "id": "0",
-        "text": "Templum in Italiā est."
+        "text": "Italiā"
       },
       {
         "id": "2",
-        "text": "Templum in Italiam est."
+        "text": "Italiam"
       }
     ],
     "accepted": [
       "0"
     ],
     "skills": [
-      "study.theme.early-loca"
+      "compositio.location-case"
     ],
     "item": "early-loca:extra-20",
     "assessment": "study.theme.early-loca:extra-20",
     "help": "study.early-loca",
-    "requires": [],
+    "requires": [
+      "construction.location",
+      "lexicon.compositio.in",
+      "lexicon.compositio.italia",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum"
+    ],
     "vocabulary": [
       "in",
       "italia",
@@ -2228,7 +2799,8 @@
     ],
     "editorial": {
       "language": "la",
-      "translationDirection": "fr-la"
+      "translationDirection": "fr-la",
+      "task": "guided-completion"
     },
     "outcomes": {
       "0": {
@@ -2240,7 +2812,7 @@
       "1": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
         ],
         "hypotheses": [],
         "practice": []
@@ -2248,7 +2820,297 @@
       "2": {
         "feedback": "Nōn rēctē. Hīc locus ubi rēs est indicātur: in cum ablātīvō adhibendum est. Quantitās vocālis et fōrma cāsūs observandae sunt.",
         "observed": [
-          "study.confusion.early-location-case"
+          "compositio.location-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-person-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-location-person-1",
+    "assessment": "compositio:transfer-location-person-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qui est dans le temple ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " in templō est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quis"
+      },
+      {
+        "id": "1",
+        "text": "Ubi"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.location-person"
+    ],
+    "requires": [
+      "lexicon.compositio.in",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.templum",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "in",
+      "quis",
+      "sum",
+      "templum",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: locum et persōnam discernere.",
+        "observed": [
+          "compositio.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-person-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-location-person-2",
+    "assessment": "compositio:transfer-location-person-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Où est le marchand ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " mercātor est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ubi"
+      },
+      {
+        "id": "1",
+        "text": "Quis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.location-person"
+    ],
+    "requires": [
+      "lexicon.compositio.mercator",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "mercator",
+      "quis",
+      "sum",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: locum et persōnam discernere.",
+        "observed": [
+          "compositio.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-definition-1",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-location-definition-1",
+    "assessment": "compositio:transfer-location-definition-1",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Où est la ville ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est urbs?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ubi"
+      },
+      {
+        "id": "1",
+        "text": "Quid"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.location-definition"
+    ],
+    "requires": [
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi",
+      "lexicon.compositio.urbs"
+    ],
+    "vocabulary": [
+      "quis",
+      "sum",
+      "ubi",
+      "urbs"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: locum et genus reī discernere.",
+        "observed": [
+          "compositio.location-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "transfer-location-definition-2",
+    "interaction": "gapChoice",
+    "dimension": "course.production",
+    "item": "transfer-location-definition-2",
+    "assessment": "compositio:transfer-location-definition-2",
+    "prompt": "Sententiam Latīnē complē.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Qu’est-ce qu’un bateau ?\n"
+      },
+      {
+        "type": "gap",
+        "text": "…"
+      },
+      {
+        "type": "text",
+        "text": " est nāvis?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quid"
+      },
+      {
+        "id": "1",
+        "text": "Ubi"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "compositio.location-definition"
+    ],
+    "requires": [
+      "lexicon.compositio.navis",
+      "lexicon.compositio.quis",
+      "lexicon.compositio.sum",
+      "lexicon.compositio.ubi"
+    ],
+    "vocabulary": [
+      "navis",
+      "quis",
+      "sum",
+      "ubi"
+    ],
+    "help": "study.early-loca",
+    "editorial": {
+      "language": "la",
+      "task": "guided-completion",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Latīnē ēligere: locum et genus reī discernere.",
+        "observed": [
+          "compositio.location-definition"
         ],
         "hypotheses": [],
         "practice": []

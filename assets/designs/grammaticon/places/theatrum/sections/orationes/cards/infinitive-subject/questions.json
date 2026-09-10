@@ -28,12 +28,20 @@
       "0"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q1",
     "assessment": "study.version.infinitive-subject:q1",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.canto",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puer"
+    ],
     "vocabulary": [
       "canto",
       "dico",
@@ -55,7 +63,7 @@
       "1": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
@@ -63,7 +71,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -99,12 +107,22 @@
       "2"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q2",
     "assessment": "study.version.infinitive-subject:q2",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.femina",
+      "lexicon.lectio.hortus",
+      "lexicon.lectio.in",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "dico",
       "femina",
@@ -122,7 +140,7 @@
       "0": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
@@ -130,7 +148,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -172,12 +190,20 @@
       "1"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q3",
     "assessment": "study.version.infinitive-subject:q3",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.ambulo",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.mercator",
+      "lexicon.lectio.servus"
+    ],
     "vocabulary": [
       "ambulo",
       "dico",
@@ -193,7 +219,7 @@
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -207,7 +233,7 @@
       "2": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
@@ -243,12 +269,22 @@
       "0"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q4",
     "assessment": "study.version.infinitive-subject:q4",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.filius",
+      "lexicon.lectio.in",
+      "lexicon.lectio.pater",
+      "lexicon.lectio.schola",
+      "lexicon.lectio.sum"
+    ],
     "vocabulary": [
       "dico",
       "filius",
@@ -272,7 +308,7 @@
       "1": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
@@ -280,7 +316,7 @@
       "2": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -316,12 +352,20 @@
       "2"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q5",
     "assessment": "study.version.infinitive-subject:q5",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.agricola",
+      "lexicon.lectio.curro",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.mercator"
+    ],
     "vocabulary": [
       "agricola",
       "curro",
@@ -337,7 +381,7 @@
       "0": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
@@ -345,7 +389,7 @@
       "1": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -387,12 +431,20 @@
       "1"
     ],
     "skills": [
-      "study.version.infinitive-subject"
+      "lectio.infinitive-number",
+      "lectio.infinitive-speaker"
     ],
     "item": "infinitive-subject:q6",
     "assessment": "study.version.infinitive-subject:q6",
     "help": "study.infinitive-subject",
-    "requires": [],
+    "requires": [
+      "trait.persona",
+      "trait.numerus",
+      "lexicon.lectio.dico",
+      "lexicon.lectio.magister",
+      "lexicon.lectio.puella",
+      "lexicon.lectio.sedeo"
+    ],
     "vocabulary": [
       "dico",
       "magister",
@@ -408,7 +460,7 @@
       "0": {
         "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
         "observed": [
-          "study.confusion.infinitive-number"
+          "lectio.infinitive-number"
         ],
         "hypotheses": [],
         "practice": []
@@ -422,7 +474,7 @@
       "2": {
         "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
         "observed": [
-          "study.confusion.infinitive-speaker"
+          "lectio.infinitive-speaker"
         ],
         "hypotheses": [],
         "practice": []
