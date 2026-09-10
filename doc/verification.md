@@ -1,3 +1,26 @@
+# Correction du parcours thématique — 10 septembre 2026
+
+- Suite complète : **31 tests réussis**, y compris une progression par carte, relations concept/lecture/version/thème/lexique, sauvegarde d’une carte retirée, icônes et sélection à 420 et 1500 pixels.
+- Comparaisons graphiques d’origine conservées. Captures de sélection inspectées : cartes compactes et portraits présents.
+- Catalogue courant : **238 cartes et 891 078 questions**, dont 67 cartes et 524 questions pour Theatrum/Templum. Les séries alphabétiques ont été retirées ; leur taille n’est pas une mesure de couverture pédagogique.
+- Les rapports ci-dessous décrivent les états précédents.
+
+---
+
+# Vérification de l’intégration déclarative — 10 septembre 2026
+
+- `flutter test --no-pub` : **29 tests réussis**, dont les comparaisons graphiques d’origine, les parcours Compass, les nouvelles scènes à 420 et 1500 pixels, les banques intégrées et les séquences avec sauvegarde. Après extraction de la validation des séquences pour les banques indexées, les cinq tests concernés ont été rejoués avec succès.
+- `dart analyze lib test` : aucune anomalie.
+- Validation Grammaticon : **4 lieux, 288 cartes et 892 268 questions** ; cours, ressources et destinations de révision résolus. Les 1 714 nouvelles questions sont chargées et validées intégralement par les tests. Les anciennes banques indexées utilisent la validation de leurs index et d’un échantillon matérialisé par carte.
+- Temple et théâtre : captures des widgets inspectées aux deux tailles ; décor du temple et prêtre intégrés. Ce contrôle hors écran ne constitue pas une session utilisateur sur appareil.
+- La validation technique ne certifie pas la couverture complète des livres ni la justesse de tous les distracteurs. Voir `pedagogy/README.md` pour les limites éditoriales.
+
+---
+
+# Historique de vérification avant le moteur déclaratif
+
+Les commandes de génération et les classes citées ci-dessous décrivent des outils historiques supprimés ; elles ne sont plus des instructions valides pour le moteur actuel.
+
 # Vérifications effectuées
 
 ## Automatisées (`flutter test`, 176 tests, tous verts)

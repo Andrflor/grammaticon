@@ -22,7 +22,16 @@ void main() {
       ),
     );
     final aliases = object(design.root['migration']['nodeAliases']);
-    expect(design.cards.length, baseline.length);
+    expect(
+      design.cards.values
+          .where(
+            (c) =>
+                c.address.startsWith('amphitheatrum/') ||
+                c.address.startsWith('forum/'),
+          )
+          .length,
+      baseline.length,
+    );
     for (final original in baseline) {
       final card = design.cards[aliases[original['id']]]!;
       expect(card.price, original['price'], reason: card.id);

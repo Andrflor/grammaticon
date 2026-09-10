@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.myths:q1",
+    "prompt": "Quel fait est affirmé par le narrateur ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit. Senex, quī prope sedēbat, dīxit concham dōnum maris esse. Puer putāvit sē, sī concham domum portāvisset, semper fēlīcem futūrum esse. Senex rīsit: « Fēlīx eris, sī aliīs auxiliō fueris. » Puer igitur concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le coquillage garantit réellement le bonheur éternel."
+      },
+      {
+        "id": "1",
+        "text": "La mer parle au garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon trouve un coquillage."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Invēnit est un fait du récit ; le bonheur assuré est une pensée du garçon.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Invēnit est un fait du récit ; le bonheur assuré est une pensée du garçon.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.1"
+        ]
+      },
+      "2": {
+        "feedback": "Invēnit est un fait du récit ; le bonheur assuré est une pensée du garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.myths:q2",
+    "prompt": "Qui présente le coquillage comme un don de la mer ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit. Senex, quī prope sedēbat, dīxit concham dōnum maris esse. Puer putāvit sē, sī concham domum portāvisset, semper fēlīcem futūrum esse. Senex rīsit: « Fēlīx eris, sī aliīs auxiliō fueris. » Puer igitur concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon dans une parole directe."
+      },
+      {
+        "id": "1",
+        "text": "Le vieillard."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Senex est le sujet de dīxit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.2"
+        ]
+      },
+      "1": {
+        "feedback": "Senex est le sujet de dīxit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Senex est le sujet de dīxit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.myths:q3",
+    "prompt": "De quoi le vieillard fait-il dépendre le bonheur ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit. Senex, quī prope sedēbat, dīxit concham dōnum maris esse. Puer putāvit sē, sī concham domum portāvisset, semper fēlīcem futūrum esse. Senex rīsit: « Fēlīx eris, sī aliīs auxiliō fueris. » Puer igitur concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "De l’aide apportée aux autres."
+      },
+      {
+        "id": "1",
+        "text": "De la possession du coquillage."
+      },
+      {
+        "id": "2",
+        "text": "Du fait de rester seul sur le rivage."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Sī aliīs auxiliō fueris lie le bonheur à l’aide aux autres.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Sī aliīs auxiliō fueris lie le bonheur à l’aide aux autres.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Sī aliīs auxiliō fueris lie le bonheur à l’aide aux autres.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.myths:q4",
+    "prompt": "À qui le garçon donne-t-il le coquillage ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit. Senex, quī prope sedēbat, dīxit concham dōnum maris esse. Puer putāvit sē, sī concham domum portāvisset, semper fēlīcem futūrum esse. Senex rīsit: « Fēlīx eris, sī aliīs auxiliō fueris. » Puer igitur concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Au vieillard."
+      },
+      {
+        "id": "1",
+        "text": "À la mer."
+      },
+      {
+        "id": "2",
+        "text": "À une jeune fille triste."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Puellae est le destinataire ; quae trīstis erat décrit cette jeune fille.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Puellae est le destinataire ; quae trīstis erat décrit cette jeune fille.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.myths"
+        ],
+        "practice": [
+          "course.review.myths.4"
+        ]
+      },
+      "2": {
+        "feedback": "Puellae est le destinataire ; quae trīstis erat décrit cette jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

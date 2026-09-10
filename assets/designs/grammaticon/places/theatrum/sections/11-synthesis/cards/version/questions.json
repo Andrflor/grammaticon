@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.11-synthesis:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater fīlium mīsit ut nautās monēret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père envoya son fils pour avertir les marins."
+      },
+      {
+        "id": "1",
+        "text": "Le fils envoya son père pour avertir les marins."
+      },
+      {
+        "id": "2",
+        "text": "Le père envoya son fils pour que les marins l’avertissent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le père envoya son fils pour avertir les marins. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le père envoya son fils pour avertir les marins. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le père envoya son fils pour avertir les marins. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.11-synthesis:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quamquam properābat, senem adiūvit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Parce qu’il se hâtait, il refusa d’aider le vieillard."
+      },
+      {
+        "id": "1",
+        "text": "Bien que le vieillard se hâtât, celui-ci l’aida."
+      },
+      {
+        "id": "2",
+        "text": "Bien qu’il se hâtât, il aida le vieillard."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Bien qu’il se hâtât, il aida le vieillard. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Bien qu’il se hâtât, il aida le vieillard. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Bien qu’il se hâtât, il aida le vieillard. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.11-synthesis:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulā lectā, nauta exspectāre cōnstituit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Après avoir écrit la lettre, le marin ordonna d’attendre."
+      },
+      {
+        "id": "1",
+        "text": "Après avoir lu la lettre, le marin décida d’attendre."
+      },
+      {
+        "id": "2",
+        "text": "Avant de lire la lettre, le marin décida de partir."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Après avoir lu la lettre, le marin décida d’attendre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Après avoir lu la lettre, le marin décida d’attendre. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Après avoir lu la lettre, le marin décida d’attendre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.11-synthesis:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il n’avait ni abandonné le vieillard ni négligé le message."
+      },
+      {
+        "id": "1",
+        "text": "Il avait abandonné le vieillard mais conservé le message."
+      },
+      {
+        "id": "2",
+        "text": "Il avait à la fois abandonné le vieillard et négligé le message."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il n’avait ni abandonné le vieillard ni négligé le message. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il n’avait ni abandonné le vieillard ni négligé le message. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il n’avait ni abandonné le vieillard ni négligé le message. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.11-synthesis"
+        ],
+        "practice": [
+          "concept.version.review.11-synthesis.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

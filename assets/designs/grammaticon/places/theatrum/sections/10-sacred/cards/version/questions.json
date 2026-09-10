@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.10-sacred:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vidua pānem fīliō servāre volēbat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La veuve voulait garder le pain pour son fils."
+      },
+      {
+        "id": "1",
+        "text": "Le fils voulait garder le pain pour la veuve."
+      },
+      {
+        "id": "2",
+        "text": "La veuve voulait prendre le pain de son fils."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « La veuve voulait garder le pain pour son fils. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « La veuve voulait garder le pain pour son fils. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « La veuve voulait garder le pain pour son fils. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.10-sacred:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pānem cum peregrīnō partīta est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Elle prit tout le pain à l’étranger."
+      },
+      {
+        "id": "1",
+        "text": "Elle partagea l’étranger avec le pain."
+      },
+      {
+        "id": "2",
+        "text": "Elle partagea le pain avec l’étranger."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Elle partagea le pain avec l’étranger. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Elle partagea le pain avec l’étranger. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Elle partagea le pain avec l’étranger. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.10-sacred:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vīcīnī rem audīverant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les voisins n’avaient rien appris de ce qui s’était passé."
+      },
+      {
+        "id": "1",
+        "text": "Les voisins avaient appris ce qui s’était passé."
+      },
+      {
+        "id": "2",
+        "text": "Les voisins apprendront plus tard ce qui s’est passé."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Les voisins avaient appris ce qui s’était passé. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Les voisins avaient appris ce qui s’était passé. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Les voisins avaient appris ce qui s’était passé. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.10-sacred:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Misericordia etiam in inopiā exercērī potest."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La compassion peut s’exercer même dans le manque."
+      },
+      {
+        "id": "1",
+        "text": "Le manque empêche toujours d’exercer la compassion."
+      },
+      {
+        "id": "2",
+        "text": "La compassion doit s’exercer seulement dans l’abondance."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « La compassion peut s’exercer même dans le manque. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « La compassion peut s’exercer même dans le manque. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « La compassion peut s’exercer même dans le manque. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.10-sacred"
+        ],
+        "practice": [
+          "concept.version.review.10-sacred.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

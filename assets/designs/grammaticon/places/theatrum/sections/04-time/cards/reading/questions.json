@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.time:q1",
+    "prompt": "Quel trajet est le plus court ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hodiē puer ad oppidum ambulat. Iter brevius est quam herī. Herī enim puer per silvam ambulāvit. Nunc viam rēctam sequitur et ante noctem advenīre vult."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Celui d’hier."
+      },
+      {
+        "id": "1",
+        "text": "Le texte les dit égaux."
+      },
+      {
+        "id": "2",
+        "text": "Celui d’aujourd’hui."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Brevius … quam herī compare le trajet actuel à celui d’hier.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Brevius … quam herī compare le trajet actuel à celui d’hier.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.1"
+        ]
+      },
+      "2": {
+        "feedback": "Brevius … quam herī compare le trajet actuel à celui d’hier.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.time:q2",
+    "prompt": "Quand le garçon a-t-il traversé la forêt ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hodiē puer ad oppidum ambulat. Iter brevius est quam herī. Herī enim puer per silvam ambulāvit. Nunc viam rēctam sequitur et ante noctem advenīre vult."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Demain."
+      },
+      {
+        "id": "1",
+        "text": "Hier."
+      },
+      {
+        "id": "2",
+        "text": "Aujourd’hui."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Herī situe ambulāvit dans le passé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.2"
+        ]
+      },
+      "1": {
+        "feedback": "Herī situe ambulāvit dans le passé.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Herī situe ambulāvit dans le passé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.time:q3",
+    "prompt": "Quelle route suit-il maintenant ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hodiē puer ad oppidum ambulat. Iter brevius est quam herī. Herī enim puer per silvam ambulāvit. Nunc viam rēctam sequitur et ante noctem advenīre vult."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La route directe."
+      },
+      {
+        "id": "1",
+        "text": "La route de la forêt est explicitement reprise."
+      },
+      {
+        "id": "2",
+        "text": "Aucune route."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Nunc viam rēctam sequitur décrit son choix actuel.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Nunc viam rēctam sequitur décrit son choix actuel.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Nunc viam rēctam sequitur décrit son choix actuel.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.time:q4",
+    "prompt": "Que dit ante noctem advenīre vult ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hodiē puer ad oppidum ambulat. Iter brevius est quam herī. Herī enim puer per silvam ambulāvit. Nunc viam rēctam sequitur et ante noctem advenīre vult."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il est déjà arrivé avant la nuit."
+      },
+      {
+        "id": "1",
+        "text": "Il veut partir après la nuit."
+      },
+      {
+        "id": "2",
+        "text": "Il veut arriver avant la nuit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Vult exprime une intention ; ante veut dire avant.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Vult exprime une intention ; ante veut dire avant.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.time"
+        ],
+        "practice": [
+          "course.review.time.4"
+        ]
+      },
+      "2": {
+        "feedback": "Vult exprime une intention ; ante veut dire avant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

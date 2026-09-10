@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.09-myths:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon trouva un coquillage sur le rivage."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon perdit le coquillage sur le rivage."
+      },
+      {
+        "id": "2",
+        "text": "Le rivage trouva le garçon dans un coquillage."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.09-myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le garçon trouva un coquillage sur le rivage. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le garçon trouva un coquillage sur le rivage. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le garçon trouva un coquillage sur le rivage. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.09-myths:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Senex dīxit concham dōnum maris esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le vieillard dit que la mer était un don du coquillage."
+      },
+      {
+        "id": "1",
+        "text": "Le vieillard donna la mer au garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le vieillard dit que le coquillage était un don de la mer."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.09-myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le vieillard dit que le coquillage était un don de la mer. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le vieillard dit que le coquillage était un don de la mer. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le vieillard dit que le coquillage était un don de la mer. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.09-myths:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Putābat sē fēlīcem futūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il avait été heureux avant d’y penser."
+      },
+      {
+        "id": "1",
+        "text": "Il pensait qu’il serait heureux."
+      },
+      {
+        "id": "2",
+        "text": "Il pensait qu’une autre personne avait été heureuse."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.09-myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il pensait qu’il serait heureux. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il pensait qu’il serait heureux. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il pensait qu’il serait heureux. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.09-myths:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il donna le coquillage à la jeune fille qui était triste."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille triste lui donna le coquillage."
+      },
+      {
+        "id": "2",
+        "text": "Il donna le coquillage à la jeune fille qui était joyeuse."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.09-myths"
+    ],
+    "requires": [],
+    "help": "course.myths",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il donna le coquillage à la jeune fille qui était triste. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il donna le coquillage à la jeune fille qui était triste. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il donna le coquillage à la jeune fille qui était triste. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.09-myths"
+        ],
+        "practice": [
+          "concept.version.review.09-myths.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

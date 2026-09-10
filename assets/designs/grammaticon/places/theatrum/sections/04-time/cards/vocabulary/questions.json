@@ -1,0 +1,578 @@
+[
+  {
+    "id": "hodie",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:hodie",
+    "assessment": "concept.word.reading.04-time.hodie",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "hodie"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "aujourd’hui"
+      },
+      {
+        "id": "1",
+        "text": "hier"
+      },
+      {
+        "id": "2",
+        "text": "chemin, marche"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.hodie"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "hodie signifie « aujourd’hui ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "hodie signifie « aujourd’hui ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.hodie"
+        ],
+        "practice": [
+          "concept.word.review.04-time.hodie"
+        ]
+      },
+      "2": {
+        "feedback": "hodie signifie « aujourd’hui ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.hodie"
+        ],
+        "practice": [
+          "concept.word.review.04-time.hodie"
+        ]
+      }
+    }
+  },
+  {
+    "id": "heri",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:heri",
+    "assessment": "concept.word.reading.04-time.heri",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "heri"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "chemin, marche"
+      },
+      {
+        "id": "1",
+        "text": "forêt"
+      },
+      {
+        "id": "2",
+        "text": "hier"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.heri"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "heri signifie « hier ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.heri"
+        ],
+        "practice": [
+          "concept.word.review.04-time.heri"
+        ]
+      },
+      "1": {
+        "feedback": "heri signifie « hier ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.heri"
+        ],
+        "practice": [
+          "concept.word.review.04-time.heri"
+        ]
+      },
+      "2": {
+        "feedback": "heri signifie « hier ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "iter",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:iter",
+    "assessment": "concept.word.reading.04-time.iter",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "iter"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "route, chemin, voyage"
+      },
+      {
+        "id": "1",
+        "text": "chemin, marche"
+      },
+      {
+        "id": "2",
+        "text": "forêt"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.iter"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "iter signifie « chemin, marche ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.iter"
+        ],
+        "practice": [
+          "concept.word.review.04-time.iter"
+        ]
+      },
+      "1": {
+        "feedback": "iter signifie « chemin, marche ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "iter signifie « chemin, marche ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.iter"
+        ],
+        "practice": [
+          "concept.word.review.04-time.iter"
+        ]
+      }
+    }
+  },
+  {
+    "id": "silua",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:silua",
+    "assessment": "concept.word.reading.04-time.silua",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "silva"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "forêt"
+      },
+      {
+        "id": "1",
+        "text": "route, chemin, voyage"
+      },
+      {
+        "id": "2",
+        "text": "nuit"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.silua"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "silva signifie « forêt ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "silva signifie « forêt ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.silua"
+        ],
+        "practice": [
+          "concept.word.review.04-time.silua"
+        ]
+      },
+      "2": {
+        "feedback": "silva signifie « forêt ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.silua"
+        ],
+        "practice": [
+          "concept.word.review.04-time.silua"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uia",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:uia",
+    "assessment": "concept.word.reading.04-time.uia",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "uia"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nuit"
+      },
+      {
+        "id": "1",
+        "text": "marcher"
+      },
+      {
+        "id": "2",
+        "text": "route, chemin, voyage"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.uia"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.uia"
+        ],
+        "practice": [
+          "concept.word.review.04-time.uia"
+        ]
+      },
+      "1": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.uia"
+        ],
+        "practice": [
+          "concept.word.review.04-time.uia"
+        ]
+      },
+      "2": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "nox",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:nox",
+    "assessment": "concept.word.reading.04-time.nox",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "nox"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ville fortifiée"
+      },
+      {
+        "id": "1",
+        "text": "nuit"
+      },
+      {
+        "id": "2",
+        "text": "marcher"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.nox"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "nox signifie « nuit ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.nox"
+        ],
+        "practice": [
+          "concept.word.review.04-time.nox"
+        ]
+      },
+      "1": {
+        "feedback": "nox signifie « nuit ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "nox signifie « nuit ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.nox"
+        ],
+        "practice": [
+          "concept.word.review.04-time.nox"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ambulo",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:ambulo",
+    "assessment": "concept.word.reading.04-time.ambulo",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ambulō"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "marcher"
+      },
+      {
+        "id": "1",
+        "text": "ville fortifiée"
+      },
+      {
+        "id": "2",
+        "text": "aujourd’hui"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.ambulo"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.ambulo"
+        ],
+        "practice": [
+          "concept.word.review.04-time.ambulo"
+        ]
+      },
+      "2": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.ambulo"
+        ],
+        "practice": [
+          "concept.word.review.04-time.ambulo"
+        ]
+      }
+    }
+  },
+  {
+    "id": "oppidum",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "04-time:oppidum",
+    "assessment": "concept.word.reading.04-time.oppidum",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "oppidum"
+      }
+    ],
+    "context": [
+      "Iter breve"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "aujourd’hui"
+      },
+      {
+        "id": "1",
+        "text": "hier"
+      },
+      {
+        "id": "2",
+        "text": "ville fortifiée"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.04-time",
+      "concept.word.reading.04-time.oppidum"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.04-time",
+    "outcomes": {
+      "0": {
+        "feedback": "oppidum signifie « ville fortifiée ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.oppidum"
+        ],
+        "practice": [
+          "concept.word.review.04-time.oppidum"
+        ]
+      },
+      "1": {
+        "feedback": "oppidum signifie « ville fortifiée ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.04-time.oppidum"
+        ],
+        "practice": [
+          "concept.word.review.04-time.oppidum"
+        ]
+      },
+      "2": {
+        "feedback": "oppidum signifie « ville fortifiée ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

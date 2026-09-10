@@ -21,6 +21,32 @@ import 'package:grammaticon/ui/help/help_sheet.dart';
 
 import 'design_test.dart' show readFile;
 
+Future<String> readVisualBaseline(String path) async {
+  if (path == 'assets/designs/grammaticon/game.json') {
+    return readFile('test/fixtures/visual/original-design.json');
+  }
+  if (path.endsWith('/grammaticon/knowledge.json.gz')) {
+    final data = jsonDecode(await readFile(path)) as Map<String, dynamic>;
+    final ids = (jsonDecode(
+      await readFile('test/fixtures/visual/original-knowledge-ids.json'),
+    ) as List).toSet();
+    data['nodes'] = (data['nodes'] as List)
+        .where((n) => ids.contains(n['id']))
+        .toList();
+    data['practiceSets'] = (data['practiceSets'] as List)
+        .where(
+          (p) =>
+              !(p['id'] as String).startsWith('concept.') &&
+              !(p['id'] as String).startsWith('pilot.') &&
+              !(p['id'] as String).startsWith('course.') &&
+              !(p['id'] as String).startsWith('word.review.'),
+        )
+        .toList();
+    return jsonEncode(data);
+  }
+  return readFile(path);
+}
+
 void main() {
   for (final width in [1600.0, 420.0]) {
     testWidgets('original presentation survives JSON binding at $width', (
@@ -38,7 +64,10 @@ void main() {
         'MaterialIcons',
       )..addFont(rootBundle.load('fonts/MaterialIcons-Regular.otf'))).load();
       final d = (await tester.runAsync(
-        () => GameDesign.load('assets/designs/grammaticon/game.json', readFile),
+        () => GameDesign.load(
+          'assets/designs/grammaticon/game.json',
+          readVisualBaseline,
+        ),
       ))!;
       final s = GameSession(d, {}, (_) async {});
       s.state['settings']['sound'] = false;

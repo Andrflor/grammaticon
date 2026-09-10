@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q1",
+    "assessment": "course.production.time:q1",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le trajet est plus court qu’hier."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Iter longius est quam herī."
+      },
+      {
+        "id": "1",
+        "text": "Iter tam longum est quam herī."
+      },
+      {
+        "id": "2",
+        "text": "Iter brevius est quam herī."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Brevius signifie plus court ; longius signifie plus long.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Brevius signifie plus court ; longius signifie plus long.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.1"
+        ]
+      },
+      "2": {
+        "feedback": "Brevius signifie plus court ; longius signifie plus long.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q2",
+    "assessment": "course.production.time:q2",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hier le garçon a marché dans la forêt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Crās puer per silvam ambulābit."
+      },
+      {
+        "id": "1",
+        "text": "Herī puer per silvam ambulāvit."
+      },
+      {
+        "id": "2",
+        "text": "Hodiē puer per silvam ambulat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.production.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Herī et ambulāvit conservent le passé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.2"
+        ]
+      },
+      "1": {
+        "feedback": "Herī et ambulāvit conservent le passé.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Herī et ambulāvit conservent le passé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q3",
+    "assessment": "course.production.time:q3",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Il veut arriver avant la nuit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ante noctem advenīre vult."
+      },
+      {
+        "id": "1",
+        "text": "Post noctem advenīre vult."
+      },
+      {
+        "id": "2",
+        "text": "Ante noctem advēnit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.production.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Conserve avant et veut ; l’arrivée ne doit pas être présentée comme accomplie.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Conserve avant et veut ; l’arrivée ne doit pas être présentée comme accomplie.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Conserve avant et veut ; l’arrivée ne doit pas être présentée comme accomplie.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q4",
+    "assessment": "course.production.time:q4",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Maintenant il suit la route directe."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Herī viam rēctam secūtus est."
+      },
+      {
+        "id": "1",
+        "text": "Nunc viam relinquit."
+      },
+      {
+        "id": "2",
+        "text": "Nunc viam rēctam sequitur."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.time"
+    ],
+    "requires": [],
+    "help": "course.time",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Nunc fixe le présent ; sequitur signifie suit, pas abandonne.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Nunc fixe le présent ; sequitur signifie suit, pas abandonne.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.time"
+        ],
+        "practice": [
+          "course.review.time.4"
+        ]
+      },
+      "2": {
+        "feedback": "Nunc fixe le présent ; sequitur signifie suit, pas abandonne.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

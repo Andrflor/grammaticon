@@ -1,0 +1,412 @@
+[
+  {
+    "id": "giver",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "giver",
+    "assessment": "theatrum/giving/roles:giver",
+    "prompt": "Qui donne le pain ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta puellae pānem dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "Le pain."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.agent"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le marin est le sujet de dat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Puellae désigne ici la destinataire, pas la personne qui donne.",
+        "observed": [
+          "pilot.evidence.agent-recipient-swap"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "2": {
+        "feedback": "Pānem désigne ce qui est donné, pas la personne qui donne.",
+        "observed": [
+          "pilot.evidence.argument-role-mismatch"
+        ],
+        "hypotheses": [
+          "pilot.reading.object"
+        ],
+        "practice": [
+          "pilot.review.object"
+        ]
+      }
+    }
+  },
+  {
+    "id": "recipient",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "recipient",
+    "assessment": "theatrum/giving/roles:recipient",
+    "prompt": "À qui le garçon donne-t-il de l’eau ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer nautae aquam dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "À la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "Au marin."
+      },
+      {
+        "id": "2",
+        "text": "À l’eau."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.recipient"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Aucune jeune fille n’est mentionnée.",
+        "observed": [
+          "pilot.evidence.unsupported-reference"
+        ],
+        "hypotheses": [],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "1": {
+        "feedback": "Nautae désigne ici le destinataire du don.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Aquam désigne ce qui est donné, pas le destinataire.",
+        "observed": [
+          "pilot.evidence.argument-role-mismatch"
+        ],
+        "hypotheses": [
+          "pilot.reading.object"
+        ],
+        "practice": [
+          "pilot.review.object"
+        ]
+      }
+    }
+  },
+  {
+    "id": "object",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "object",
+    "assessment": "theatrum/giving/roles:object",
+    "prompt": "Que donne la jeune fille ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella puerō pānem dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Un garçon."
+      },
+      {
+        "id": "1",
+        "text": "De l’eau."
+      },
+      {
+        "id": "2",
+        "text": "Du pain."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.object"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Puerō désigne le destinataire : le garçon n’est pas ce qui est donné.",
+        "observed": [
+          "pilot.evidence.argument-role-mismatch"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "1": {
+        "feedback": "Le mot est pānem, pas aquam.",
+        "observed": [
+          "pilot.evidence.object-change"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      },
+      "2": {
+        "feedback": "Pānem désigne le pain donné au garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "fronted",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "fronted",
+    "assessment": "theatrum/giving/roles:fronted",
+    "prompt": "Qui reçoit le pain ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pānem nauta puellae dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "Le marin."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.recipient"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Puellae désigne la destinataire malgré l’ordre des mots.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nauta désigne la personne qui donne, même après pānem.",
+        "observed": [
+          "pilot.evidence.agent-recipient-swap"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "2": {
+        "feedback": "Aucun garçon n’est mentionné.",
+        "observed": [
+          "pilot.evidence.unsupported-reference"
+        ],
+        "hypotheses": [],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      }
+    }
+  },
+  {
+    "id": "plural",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "plural",
+    "assessment": "theatrum/giving/roles:plural",
+    "prompt": "Combien de marins la phrase présente-t-elle ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nautae aquam habent."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Un seul."
+      },
+      {
+        "id": "1",
+        "text": "Plusieurs."
+      },
+      {
+        "id": "2",
+        "text": "Aucun."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.number"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le verbe habent est au pluriel. Nautae est ici le sujet pluriel.",
+        "observed": [
+          "pilot.evidence.number-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.number"
+        ],
+        "practice": [
+          "pilot.review.number"
+        ]
+      },
+      "1": {
+        "feedback": "Habent et nautae présentent plusieurs marins.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase mentionne des marins qui ont de l’eau.",
+        "observed": [
+          "pilot.evidence.number-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.number"
+        ],
+        "practice": [
+          "pilot.review.number"
+        ]
+      }
+    }
+  },
+  {
+    "id": "negative",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "negative",
+    "assessment": "theatrum/giving/roles:negative",
+    "prompt": "Que dit la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella pānem nōn portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Elle porte du pain."
+      },
+      {
+        "id": "1",
+        "text": "Elle ne porte pas de pain."
+      },
+      {
+        "id": "2",
+        "text": "Elle donne du pain."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.roles",
+      "pilot.reading.negation"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn nie l’action de porter.",
+        "observed": [
+          "pilot.evidence.negation-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.negation"
+        ],
+        "practice": [
+          "pilot.review.negation"
+        ]
+      },
+      "1": {
+        "feedback": "La négation porte sur portat : elle ne porte pas de pain.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Portat signifie porter ; la phrase ne dit pas dat.",
+        "observed": [
+          "pilot.evidence.action-change"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "id": "reading",
+  "name": "Iter breve",
+  "subtitle": "Compréhension · Situer et comparer les événements",
+  "access": {
+    "price": 15,
+    "requires": {
+      "all": [
+        {
+          "completed": "theatrum/03-descriptions/reading"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "course.reading.time"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 3,
+    "completion": "sequence"
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_mimus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Mīmus Versicolor",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true
+  }
+}

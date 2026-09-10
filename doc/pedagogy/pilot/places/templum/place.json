@@ -1,0 +1,49 @@
+{
+  "id": "templum",
+  "name": "Templum",
+  "subtitle": "Latīnē exprimere",
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": []
+    }
+  },
+  "presentation": {
+    "image": "bld_templum",
+    "position": {
+      "x": 0.5,
+      "y": 0.42
+    },
+    "width": 0.2,
+    "labels": {
+      "title": "Templum",
+      "blurb": "Ēlige exercitātiōnem.",
+      "encounter": "Exercitātiō",
+      "interrupted": "Exercitātiō interrupta",
+      "resume": "Redī in templum",
+      "back": "Redī in templum",
+      "leaveTitle": "Exercitātiōnem relinquere?",
+      "leaveBody": "Exercitātiō servātur.",
+      "pausedBody": "Exercitātiō suspēnsa est.",
+      "victoryTitle": "BENE FĒCISTĪ!",
+      "victoryBody": "Exercitātiō perfecta est.",
+      "defeatTitle": "ITERUM TEMPTĀ",
+      "defeatBody": "Perītiae et gemmae servātae manent.",
+      "gemsLine": "Gemmae",
+      "penaltyLine": "Tribūtum",
+      "hits": "respōnsa",
+      "opponentResource": "cōnstantia",
+      "wonTally": "Exercitātiōnēs perfectae",
+      "lostTally": "interruptae",
+      "omit": "Omitte"
+    },
+    "hero": "orator_idle",
+    "startIcon": "speak"
+  },
+  "children": [
+    {
+      "kind": "section",
+      "id": "giving"
+    }
+  ]
+}

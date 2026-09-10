@@ -484,99 +484,109 @@ class _Center extends StatelessWidget {
                     : (q.surface.length > 100 ? 21.0 : 25.0)))
         : (w / (q.surface.length + 6)).clamp(22.0, compact ? 34.0 : 48.0);
 
+    final questionPanel = RomanPanel(
+      skin: skin,
+      key: cardKey,
+      width: min(w - 24, long ? 900 : 760),
+      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  '${trial.name} · ${state.answered}/${state.enemyMaxHp}',
+                  style: skin.body(12, color: skin.inkSoft, weight: 700),
+                ),
+              ),
+              RomanButton(
+                skin: skin,
+                label: state.session.label('actions.help'),
+                icon: Icons.help_outline,
+                style: RomanButtonStyle.neutral,
+                dense: true,
+                cue: 'page',
+                onPressed: () async {
+                  final open = state.phase == BattlePhase.question;
+                  if (open) ctrl.help();
+
+                  await onHelp(context, q.entry, trial.node);
+                },
+              ),
+            ],
+          ),
+          SizedBox(height: 6),
+          // A contextual item shows the whole phrase with the asked
+          // word highlighted; an isolated form is scaled to the width.
+          if (q.syntagma != null)
+            QuestionContent(
+              session: state.session,
+              parts: q.syntagma!,
+              size: (w / (q.surface.length + 4)).clamp(
+                18.0,
+                compact ? 26.0 : 34.0,
+              ),
+            )
+          else
+            Text(
+              q.surface,
+              textAlign: TextAlign.center,
+              style: skin
+                  .display(
+                    surfaceSize,
+                    color: skin.purpleDark,
+                    letterSpacing: long ? 0.3 : 2,
+                  )
+                  .copyWith(height: long ? 1.3 : null),
+            ),
+          // Context lines (dictionary entry) never give the answer away.
+          for (final line in q.context)
+            Text(
+              line,
+              textAlign: TextAlign.center,
+              style: skin.body(
+                compact ? 13 : 15,
+                color: skin.inkSoft,
+                style: FontStyle.italic,
+              ),
+            ),
+          SizedBox(height: 4),
+          Text(
+            q.prompt,
+            style: skin.body(
+              compact ? 16 : 20,
+              color: skin.inkSoft,
+              weight: 700,
+            ),
+          ),
+          if (q.ambiguous)
+            Text(
+              state.session.label('labels.multipleCorrect'),
+              style: skin.body(
+                12,
+                color: skin.inkSoft,
+                style: FontStyle.italic,
+              ),
+            ),
+        ],
+      ),
+    );
+
     return SafeArea(
       child: Column(
         children: [
           // Room for the HUD (two lines on narrow screens).
           SizedBox(height: compact ? 132 : 72),
           // Question card
-          RomanPanel(
-            skin: skin,
-            key: cardKey,
-            width: min(w - 24, long ? 900 : 760),
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 12),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        '${trial.name} · ${state.answered}/${state.enemyMaxHp}',
-                        style: skin.body(12, color: skin.inkSoft, weight: 700),
-                      ),
-                    ),
-                    RomanButton(
-                      skin: skin,
-                      label: state.session.label('actions.help'),
-                      icon: Icons.help_outline,
-                      style: RomanButtonStyle.neutral,
-                      dense: true,
-                      cue: 'page',
-                      onPressed: () async {
-                        final open = state.phase == BattlePhase.question;
-                        if (open) ctrl.help();
-
-                        await onHelp(context, q.entry, trial.node);
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(height: 6),
-                // A contextual item shows the whole phrase with the asked
-                // word highlighted; an isolated form is scaled to the width.
-                if (q.syntagma != null)
-                  QuestionContent(
-                    session: state.session,
-                    parts: q.syntagma!,
-                    size: (w / (q.surface.length + 4)).clamp(
-                      18.0,
-                      compact ? 26.0 : 34.0,
-                    ),
-                  )
-                else
-                  Text(
-                    q.surface,
-                    textAlign: TextAlign.center,
-                    style: skin
-                        .display(
-                          surfaceSize,
-                          color: skin.purpleDark,
-                          letterSpacing: long ? 0.3 : 2,
-                        )
-                        .copyWith(height: long ? 1.3 : null),
-                  ),
-                // Context lines (dictionary entry) never give the answer away.
-                for (final line in q.context)
-                  Text(
-                    line,
-                    textAlign: TextAlign.center,
-                    style: skin.body(
-                      compact ? 13 : 15,
-                      color: skin.inkSoft,
-                      style: FontStyle.italic,
-                    ),
-                  ),
-                SizedBox(height: 4),
-                Text(
-                  q.prompt,
-                  style: skin.body(
-                    compact ? 16 : 20,
-                    color: skin.inkSoft,
-                    weight: 700,
-                  ),
-                ),
-                if (q.ambiguous)
-                  Text(
-                    state.session.label('labels.multipleCorrect'),
-                    style: skin.body(
-                      12,
-                      color: skin.inkSoft,
-                      style: FontStyle.italic,
-                    ),
-                  ),
-              ],
-            ),
-          ),
+          if (long)
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height * .46,
+              ),
+              child: SingleChildScrollView(child: questionPanel),
+            )
+          else
+            questionPanel,
           SizedBox(height: 10),
           // Feedback
           SizedBox(

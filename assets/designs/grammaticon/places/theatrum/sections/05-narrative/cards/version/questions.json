@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.05-narrative:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola ad fluvium ambulābat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan marchait vers le fleuve."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan marchera vers le fleuve."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan vient de quitter le fleuve."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.05-narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le paysan marchait vers le fleuve. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le paysan marchait vers le fleuve. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le paysan marchait vers le fleuve. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.05-narrative:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pontem herī vīderat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il verra le pont demain."
+      },
+      {
+        "id": "1",
+        "text": "Il voyait le pont au moment même où il parlait."
+      },
+      {
+        "id": "2",
+        "text": "Il avait vu le pont la veille."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.05-narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il avait vu le pont la veille. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il avait vu le pont la veille. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il avait vu le pont la veille. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.05-narrative:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola cōnstitit et nautam vocāvit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le paysan s’arrêta parce que le marin l’avait appelé."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan s’arrêta et appela le marin."
+      },
+      {
+        "id": "2",
+        "text": "Le marin s’arrêta et appela le paysan."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.05-narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le paysan s’arrêta et appela le marin. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le paysan s’arrêta et appela le marin. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le paysan s’arrêta et appela le marin. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.05-narrative:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta agricolam trāns fluvium vēxit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin transporta le paysan au-delà du fleuve."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan transporta le marin au-delà du fleuve."
+      },
+      {
+        "id": "2",
+        "text": "Le marin transporta le paysan jusqu’au fleuve, sans le traverser."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.05-narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le marin transporta le paysan au-delà du fleuve. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le marin transporta le paysan au-delà du fleuve. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le marin transporta le paysan au-delà du fleuve. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.05-narrative"
+        ],
+        "practice": [
+          "concept.version.review.05-narrative.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

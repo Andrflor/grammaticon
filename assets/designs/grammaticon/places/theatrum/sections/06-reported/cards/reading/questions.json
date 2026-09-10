@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.reported:q1",
+    "prompt": "Qu’affirme d’abord le messager ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nūntius ad vīllam vēnit. Dominō dīxit viam tūtam esse. Dominus autem sciēbat pontem fractum esse. Itaque rogāvit utrum nūntius pontem vīdisset. Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le pont est réparé."
+      },
+      {
+        "id": "1",
+        "text": "Il n’existe aucune autre route."
+      },
+      {
+        "id": "2",
+        "text": "La route est sûre."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Viam tūtam esse est le contenu de dīxit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Viam tūtam esse est le contenu de dīxit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.1"
+        ]
+      },
+      "2": {
+        "feedback": "Viam tūtam esse est le contenu de dīxit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.reported:q2",
+    "prompt": "Que sait le maître ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nūntius ad vīllam vēnit. Dominō dīxit viam tūtam esse. Dominus autem sciēbat pontem fractum esse. Itaque rogāvit utrum nūntius pontem vīdisset. Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La route n’existe pas."
+      },
+      {
+        "id": "1",
+        "text": "Le pont est brisé."
+      },
+      {
+        "id": "2",
+        "text": "Le messager a réparé le pont."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Pontem fractum esse est le contenu de sciēbat.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.2"
+        ]
+      },
+      "1": {
+        "feedback": "Pontem fractum esse est le contenu de sciēbat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Pontem fractum esse est le contenu de sciēbat.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.reported:q3",
+    "prompt": "Que demande le maître ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nūntius ad vīllam vēnit. Dominō dīxit viam tūtam esse. Dominus autem sciēbat pontem fractum esse. Itaque rogāvit utrum nūntius pontem vīdisset. Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Si le messager avait vu le pont."
+      },
+      {
+        "id": "1",
+        "text": "Pourquoi le maître devait partir."
+      },
+      {
+        "id": "2",
+        "text": "Qui avait construit la maison."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Utrum … vīdisset rapporte la question sur le pont.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Utrum … vīdisset rapporte la question sur le pont.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Utrum … vīdisset rapporte la question sur le pont.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.reported:q4",
+    "prompt": "Qui est passé par une autre route ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nūntius ad vīllam vēnit. Dominō dīxit viam tūtam esse. Dominus autem sciēbat pontem fractum esse. Itaque rogāvit utrum nūntius pontem vīdisset. Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître."
+      },
+      {
+        "id": "1",
+        "text": "Le pont."
+      },
+      {
+        "id": "2",
+        "text": "Le messager."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Sē reprend le sujet nūntius de respondit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Sē reprend le sujet nūntius de respondit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.reported"
+        ],
+        "practice": [
+          "course.review.reported.4"
+        ]
+      },
+      "2": {
+        "feedback": "Sē reprend le sujet nūntius de respondit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

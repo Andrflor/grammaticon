@@ -1,0 +1,618 @@
+[
+  {
+    "id": "water",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "water",
+    "assessment": "theatrum/giving/words:water",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer "
+      },
+      {
+        "type": "highlight",
+        "text": "aquam"
+      },
+      {
+        "type": "text",
+        "text": " habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "du pain"
+      },
+      {
+        "id": "1",
+        "text": "de l’eau"
+      },
+      {
+        "id": "2",
+        "text": "un garçon"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.water"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "« du pain » ne correspond pas au mot mis en évidence. Aquam désigne ici de l’eau.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.water"
+        ],
+        "practice": [
+          "pilot.word.water"
+        ]
+      },
+      "1": {
+        "feedback": "Aquam désigne ici de l’eau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "« un garçon » ne correspond pas au mot mis en évidence. Aquam désigne ici de l’eau.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.water"
+        ],
+        "practice": [
+          "pilot.word.water"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bread",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "bread",
+    "assessment": "theatrum/giving/words:bread",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella "
+      },
+      {
+        "type": "highlight",
+        "text": "pānem"
+      },
+      {
+        "type": "text",
+        "text": " portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "du pain"
+      },
+      {
+        "id": "1",
+        "text": "un marin"
+      },
+      {
+        "id": "2",
+        "text": "une jeune fille"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.bread"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Pānem désigne ici du pain.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "« un marin » ne correspond pas au mot mis en évidence. Pānem désigne ici du pain.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      },
+      "2": {
+        "feedback": "« une jeune fille » ne correspond pas au mot mis en évidence. Pānem désigne ici du pain.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sailor",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "sailor",
+    "assessment": "theatrum/giving/words:sailor",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": ""
+      },
+      {
+        "type": "highlight",
+        "text": "Nauta"
+      },
+      {
+        "type": "text",
+        "text": " aquam portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "un garçon"
+      },
+      {
+        "id": "1",
+        "text": "de l’eau"
+      },
+      {
+        "id": "2",
+        "text": "un marin"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.sailor"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "« un garçon » ne correspond pas au mot mis en évidence. Nauta désigne un marin.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.sailor"
+        ],
+        "practice": [
+          "pilot.word.sailor"
+        ]
+      },
+      "1": {
+        "feedback": "« de l’eau » ne correspond pas au mot mis en évidence. Nauta désigne un marin.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.sailor"
+        ],
+        "practice": [
+          "pilot.word.sailor"
+        ]
+      },
+      "2": {
+        "feedback": "Nauta désigne un marin.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "girl",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "girl",
+    "assessment": "theatrum/giving/words:girl",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": ""
+      },
+      {
+        "type": "highlight",
+        "text": "Puella"
+      },
+      {
+        "type": "text",
+        "text": " aquam habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "une jeune fille"
+      },
+      {
+        "id": "1",
+        "text": "un marin"
+      },
+      {
+        "id": "2",
+        "text": "du pain"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.girl"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Puella désigne une jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "« un marin » ne correspond pas au mot mis en évidence. Puella désigne une jeune fille.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.girl"
+        ],
+        "practice": [
+          "pilot.word.girl"
+        ]
+      },
+      "2": {
+        "feedback": "« du pain » ne correspond pas au mot mis en évidence. Puella désigne une jeune fille.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.girl"
+        ],
+        "practice": [
+          "pilot.word.girl"
+        ]
+      }
+    }
+  },
+  {
+    "id": "boy",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "boy",
+    "assessment": "theatrum/giving/words:boy",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": ""
+      },
+      {
+        "type": "highlight",
+        "text": "Puer"
+      },
+      {
+        "type": "text",
+        "text": " pānem habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "un marin"
+      },
+      {
+        "id": "1",
+        "text": "un garçon"
+      },
+      {
+        "id": "2",
+        "text": "une jeune fille"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.boy"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "« un marin » ne correspond pas au mot mis en évidence. Puer désigne un garçon.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.boy"
+        ],
+        "practice": [
+          "pilot.word.boy"
+        ]
+      },
+      "1": {
+        "feedback": "Puer désigne un garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "« une jeune fille » ne correspond pas au mot mis en évidence. Puer désigne un garçon.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.boy"
+        ],
+        "practice": [
+          "pilot.word.boy"
+        ]
+      }
+    }
+  },
+  {
+    "id": "give",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "give",
+    "assessment": "theatrum/giving/words:give",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella nautae pānem "
+      },
+      {
+        "type": "highlight",
+        "text": "dat"
+      },
+      {
+        "type": "text",
+        "text": "."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "avoir"
+      },
+      {
+        "id": "1",
+        "text": "porter"
+      },
+      {
+        "id": "2",
+        "text": "donner"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.give"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "« avoir » ne correspond pas au mot mis en évidence. Dat exprime le fait de donner.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.give"
+        ],
+        "practice": [
+          "pilot.word.give"
+        ]
+      },
+      "1": {
+        "feedback": "« porter » ne correspond pas au mot mis en évidence. Dat exprime le fait de donner.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.give"
+        ],
+        "practice": [
+          "pilot.word.give"
+        ]
+      },
+      "2": {
+        "feedback": "Dat exprime le fait de donner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "carry",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "carry",
+    "assessment": "theatrum/giving/words:carry",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta pānem "
+      },
+      {
+        "type": "highlight",
+        "text": "portat"
+      },
+      {
+        "type": "text",
+        "text": "."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "donner"
+      },
+      {
+        "id": "1",
+        "text": "porter"
+      },
+      {
+        "id": "2",
+        "text": "avoir"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.carry"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "« donner » ne correspond pas au mot mis en évidence. Portat exprime le fait de porter.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      },
+      "1": {
+        "feedback": "Portat exprime le fait de porter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "« avoir » ne correspond pas au mot mis en évidence. Portat exprime le fait de porter.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      }
+    }
+  },
+  {
+    "id": "have",
+    "interaction": "highlightChoice",
+    "dimension": "reading",
+    "item": "have",
+    "assessment": "theatrum/giving/words:have",
+    "prompt": "Que signifie le mot mis en évidence dans cette phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer aquam "
+      },
+      {
+        "type": "highlight",
+        "text": "habet"
+      },
+      {
+        "type": "text",
+        "text": "."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "avoir"
+      },
+      {
+        "id": "1",
+        "text": "donner"
+      },
+      {
+        "id": "2",
+        "text": "porter"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.card.theatrum.giving.words",
+      "pilot.reading.word.have"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Habet exprime le fait d’avoir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "« donner » ne correspond pas au mot mis en évidence. Habet exprime le fait d’avoir.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.have"
+        ],
+        "practice": [
+          "pilot.word.have"
+        ]
+      },
+      "2": {
+        "feedback": "« porter » ne correspond pas au mot mis en évidence. Habet exprime le fait d’avoir.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.have"
+        ],
+        "practice": [
+          "pilot.word.have"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "mercator",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:mercator",
+    "assessment": "concept.word.reading.03-descriptions.mercator",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "mercātor"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "marchand"
+      },
+      {
+        "id": "1",
+        "text": "livre"
+      },
+      {
+        "id": "2",
+        "text": "jeune fille"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.mercator"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "mercātor signifie « marchand ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "mercātor signifie « marchand ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.mercator"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.mercator"
+        ]
+      },
+      "2": {
+        "feedback": "mercātor signifie « marchand ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.mercator"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.mercator"
+        ]
+      }
+    }
+  },
+  {
+    "id": "liber",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:liber",
+    "assessment": "concept.word.reading.03-descriptions.liber",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "liber"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "jeune fille"
+      },
+      {
+        "id": "1",
+        "text": "garçon"
+      },
+      {
+        "id": "2",
+        "text": "livre"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.liber"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "liber signifie « livre ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.liber"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.liber"
+        ]
+      },
+      "1": {
+        "feedback": "liber signifie « livre ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.liber"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.liber"
+        ]
+      },
+      "2": {
+        "feedback": "liber signifie « livre ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puella",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:puella",
+    "assessment": "concept.word.reading.03-descriptions.puella",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puella"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "histoire, fable"
+      },
+      {
+        "id": "1",
+        "text": "jeune fille"
+      },
+      {
+        "id": "2",
+        "text": "garçon"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.puella"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "puella signifie « jeune fille ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.puella"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.puella"
+        ]
+      },
+      "1": {
+        "feedback": "puella signifie « jeune fille ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "puella signifie « jeune fille ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.puella"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.puella"
+        ]
+      }
+    }
+  },
+  {
+    "id": "puer",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:puer",
+    "assessment": "concept.word.reading.03-descriptions.puer",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puer"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "garçon"
+      },
+      {
+        "id": "1",
+        "text": "histoire, fable"
+      },
+      {
+        "id": "2",
+        "text": "lire, choisir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.puer"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "puer signifie « garçon ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "puer signifie « garçon ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.puer"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.puer"
+        ]
+      },
+      "2": {
+        "feedback": "puer signifie « garçon ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.puer"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.puer"
+        ]
+      }
+    }
+  },
+  {
+    "id": "fabula",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:fabula",
+    "assessment": "concept.word.reading.03-descriptions.fabula",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fābula"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "lire, choisir"
+      },
+      {
+        "id": "1",
+        "text": "porter"
+      },
+      {
+        "id": "2",
+        "text": "histoire, fable"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.fabula"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "fābula signifie « histoire, fable ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.fabula"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.fabula"
+        ]
+      },
+      "1": {
+        "feedback": "fābula signifie « histoire, fable ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.fabula"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.fabula"
+        ]
+      },
+      "2": {
+        "feedback": "fābula signifie « histoire, fable ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "lego",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:lego",
+    "assessment": "concept.word.reading.03-descriptions.lego",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "legō"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "avoir, posséder, tenir, considérer comme"
+      },
+      {
+        "id": "1",
+        "text": "lire, choisir"
+      },
+      {
+        "id": "2",
+        "text": "porter"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.lego"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "legō signifie « lire, choisir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.lego"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.lego"
+        ]
+      },
+      "1": {
+        "feedback": "legō signifie « lire, choisir ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "legō signifie « lire, choisir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.lego"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.lego"
+        ]
+      }
+    }
+  },
+  {
+    "id": "porto",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:porto",
+    "assessment": "concept.word.reading.03-descriptions.porto",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "portō"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "porter"
+      },
+      {
+        "id": "1",
+        "text": "avoir, posséder, tenir, considérer comme"
+      },
+      {
+        "id": "2",
+        "text": "marchand"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.porto"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "portō signifie « porter ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "portō signifie « porter ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.porto"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.porto"
+        ]
+      },
+      "2": {
+        "feedback": "portō signifie « porter ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.porto"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.porto"
+        ]
+      }
+    }
+  },
+  {
+    "id": "habeo",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "03-descriptions:habeo",
+    "assessment": "concept.word.reading.03-descriptions.habeo",
+    "prompt": "Quel sens correspond à ce mot du texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "habeo"
+      }
+    ],
+    "context": [
+      "Duo librī"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "marchand"
+      },
+      {
+        "id": "1",
+        "text": "livre"
+      },
+      {
+        "id": "2",
+        "text": "avoir, posséder, tenir, considérer comme"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.reading.03-descriptions",
+      "concept.word.reading.03-descriptions.habeo"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.03-descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "habeo signifie « avoir, posséder, tenir, considérer comme ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.habeo"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.habeo"
+        ]
+      },
+      "1": {
+        "feedback": "habeo signifie « avoir, posséder, tenir, considérer comme ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.reading.03-descriptions.habeo"
+        ],
+        "practice": [
+          "concept.word.review.03-descriptions.habeo"
+        ]
+      },
+      "2": {
+        "feedback": "habeo signifie « avoir, posséder, tenir, considérer comme ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

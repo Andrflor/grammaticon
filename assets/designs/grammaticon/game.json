@@ -14,7 +14,9 @@
   "rules": "rules.json",
   "places": [
     "amphitheatrum",
-    "forum"
+    "forum",
+    "theatrum",
+    "templum"
   ],
   "theme": {
     "colors": {
@@ -165,28 +167,7 @@
       "theatrum",
       "forum"
     ],
-    "decorations": [
-      {
-        "id": "templum",
-        "name": "Templum",
-        "subtitle": "Gallicē → Latīnē · ventūrum",
-        "image": "bld_templum",
-        "x": 0.5,
-        "y": 0.42,
-        "width": 0.2,
-        "future": true
-      },
-      {
-        "id": "theatrum",
-        "name": "Theātrum",
-        "subtitle": "Latīnē → Gallicē",
-        "image": "bld_theatrum",
-        "x": 0.22,
-        "y": 0.74,
-        "width": 0.26,
-        "future": false
-      }
-    ],
+    "decorations": [],
     "settingsHero": "hero_victory",
     "languageControl": {
       "field": "translationLanguage",
@@ -226,6 +207,14 @@
           "theatrum"
         ],
         "won": "Fābulae victae",
+        "lost": "āmissae"
+      },
+      {
+        "path": [
+          "statistics",
+          "templum"
+        ],
+        "won": "Exercitātiōnēs perfectae",
         "lost": "āmissae"
       }
     ],

@@ -1,0 +1,62 @@
+{
+  "id": "th-nonfinita",
+  "name": "Lectiō · nonfinita",
+  "subtitle": "Lecture biblique · version",
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": [
+        {
+          "completed": "theatrum/10-sacred/reading"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "course.reading.sacred.th-nonfinita"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 6
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_dominus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Dominus Gregis",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true
+  }
+}

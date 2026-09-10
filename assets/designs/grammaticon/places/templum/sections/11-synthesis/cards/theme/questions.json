@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q1",
+    "assessment": "course.production.synthesis:q1",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le père envoya son fils pour avertir les marins."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pater fīlium mīsit nē nautās monēret."
+      },
+      {
+        "id": "1",
+        "text": "Fīlius patrem mīsit ut nautās monēret."
+      },
+      {
+        "id": "2",
+        "text": "Pater fīlium mīsit ut nautās monēret."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Conserve qui envoie qui et le but positif introduit par ut.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Conserve qui envoie qui et le but positif introduit par ut.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.1"
+        ]
+      },
+      "2": {
+        "feedback": "Conserve qui envoie qui et le but positif introduit par ut.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q2",
+    "assessment": "course.production.synthesis:q2",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Bien qu’il se hâtât, il aida le vieillard."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Quamquam properābat, senem nōn adiūvit."
+      },
+      {
+        "id": "1",
+        "text": "Quamquam properābat, senem adiūvit."
+      },
+      {
+        "id": "2",
+        "text": "Quia properābat, senem dēseruit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.production.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. La concession accompagne une aide réelle, pas un abandon.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.2"
+        ]
+      },
+      "1": {
+        "feedback": "La concession accompagne une aide réelle, pas un abandon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. La concession accompagne une aide réelle, pas un abandon.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q3",
+    "assessment": "course.production.synthesis:q3",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Après avoir lu la lettre, le marin décida d’attendre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Epistulā lectā, nauta exspectāre cōnstituit."
+      },
+      {
+        "id": "1",
+        "text": "Epistulā scrībendā, nauta discēdere cōnstituit."
+      },
+      {
+        "id": "2",
+        "text": "Epistulā lectā, puer nautam exspectāvit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.production.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Lectā situe la lecture accomplie ; cōnstituit exprime la décision du marin.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Lectā situe la lecture accomplie ; cōnstituit exprime la décision du marin.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Lectā situe la lecture accomplie ; cōnstituit exprime la décision du marin.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q4",
+    "assessment": "course.production.synthesis:q4",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Il n’avait ni abandonné le vieillard ni négligé le message."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Et senem dēseruerat et nūntium neglexerat."
+      },
+      {
+        "id": "1",
+        "text": "Neque senem dēseret neque nūntium negleget."
+      },
+      {
+        "id": "2",
+        "text": "Neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. La double négation et les plus-que-parfaits doivent être conservés.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. La double négation et les plus-que-parfaits doivent être conservés.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.4"
+        ]
+      },
+      "2": {
+        "feedback": "La double négation et les plus-que-parfaits doivent être conservés.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

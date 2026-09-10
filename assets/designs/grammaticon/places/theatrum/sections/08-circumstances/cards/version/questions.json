@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.08-circumstances:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Sōle occidente, viātōrēs pervēnērunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les voyageurs arrivèrent au coucher du soleil."
+      },
+      {
+        "id": "1",
+        "text": "Les voyageurs partirent au lever du soleil."
+      },
+      {
+        "id": "2",
+        "text": "Les voyageurs firent se coucher le soleil."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.08-circumstances"
+    ],
+    "requires": [],
+    "help": "course.circumstances",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Les voyageurs arrivèrent au coucher du soleil. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Les voyageurs arrivèrent au coucher du soleil. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Les voyageurs arrivèrent au coucher du soleil. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.08-circumstances:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Portīs clausīs, intrāre nōn poterant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ils fermèrent les portes afin de pouvoir entrer."
+      },
+      {
+        "id": "1",
+        "text": "Les portes étant ouvertes, ils pouvaient entrer."
+      },
+      {
+        "id": "2",
+        "text": "Les portes étant fermées, ils ne pouvaient entrer."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.08-circumstances"
+    ],
+    "requires": [],
+    "help": "course.circumstances",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Les portes étant fermées, ils ne pouvaient entrer. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Les portes étant fermées, ils ne pouvaient entrer. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Les portes étant fermées, ils ne pouvaient entrer. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.08-circumstances:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Sī epistulam habētis, portās aperiam."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Si vous avez une lettre, j’ai déjà ouvert les portes hier."
+      },
+      {
+        "id": "1",
+        "text": "Si vous avez une lettre, j’ouvrirai les portes."
+      },
+      {
+        "id": "2",
+        "text": "Puisque vous avez déjà ouvert les portes, je donne une lettre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.08-circumstances"
+    ],
+    "requires": [],
+    "help": "course.circumstances",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Si vous avez une lettre, j’ouvrirai les portes. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Si vous avez une lettre, j’ouvrirai les portes. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Si vous avez une lettre, j’ouvrirai les portes. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.08-circumstances:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ūnus viātor epistulam ostendit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Un voyageur montra la lettre."
+      },
+      {
+        "id": "1",
+        "text": "La lettre montra un voyageur."
+      },
+      {
+        "id": "2",
+        "text": "Tous les voyageurs cachèrent la lettre."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.08-circumstances"
+    ],
+    "requires": [],
+    "help": "course.circumstances",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Un voyageur montra la lettre. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Un voyageur montra la lettre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Un voyageur montra la lettre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.08-circumstances"
+        ],
+        "practice": [
+          "concept.version.review.08-circumstances.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

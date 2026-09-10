@@ -1,0 +1,58 @@
+{
+  "id": "vocabulary",
+  "name": "Verba · Nūntius",
+  "subtitle": "Lexique du texte · français → latin",
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": []
+    }
+  },
+  "skills": [
+    "concept.lexicon.production.06-reported"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 6
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "temple_bg",
+    "hero": "temple_hero_idle",
+    "opponent": "temple_priest_augur",
+    "heroCorrect": "temple_hero_gesture",
+    "heroWrong": "temple_hero_hurt",
+    "heroVictory": "temple_hero_victory",
+    "heroDefeat": "temple_hero_defeat",
+    "opponentName": "Augur",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true
+  }
+}

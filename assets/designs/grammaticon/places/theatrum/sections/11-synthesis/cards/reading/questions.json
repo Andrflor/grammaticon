@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.synthesis:q1",
+    "prompt": "Pourquoi le père envoie-t-il son fils au port ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cum tempestās appropinquāret, mercātor fīlium ad portum mīsit ut nautās monēret. Puer epistulam, quam pater scrīpserat, sēcum tulit. In viā senem invēnit, quī ambulāre vix poterat. Quamquam puer properābat, senem ad proximam domum dūxit. Deinde ad portum cucurrit. Nāvis iam solvenda erat, sed nauta, epistulā lectā, exspectāre cōnstituit. Nocte tempestās vēnit. Māne mercātor puerum laudāvit: neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pour abandonner le vieillard."
+      },
+      {
+        "id": "1",
+        "text": "Pour déchirer la lettre."
+      },
+      {
+        "id": "2",
+        "text": "Pour avertir les marins de la tempête."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Ut nautās monēret est le but de l’envoi ; la tempête constitue le contexte.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Ut nautās monēret est le but de l’envoi ; la tempête constitue le contexte.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.1"
+        ]
+      },
+      "2": {
+        "feedback": "Ut nautās monēret est le but de l’envoi ; la tempête constitue le contexte.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.synthesis:q2",
+    "prompt": "Que fait le garçon malgré sa hâte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cum tempestās appropinquāret, mercātor fīlium ad portum mīsit ut nautās monēret. Puer epistulam, quam pater scrīpserat, sēcum tulit. In viā senem invēnit, quī ambulāre vix poterat. Quamquam puer properābat, senem ad proximam domum dūxit. Deinde ad portum cucurrit. Nāvis iam solvenda erat, sed nauta, epistulā lectā, exspectāre cōnstituit. Nocte tempestās vēnit. Māne mercātor puerum laudāvit: neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il retourne immédiatement chez son père."
+      },
+      {
+        "id": "1",
+        "text": "Il conduit le vieillard à une maison proche."
+      },
+      {
+        "id": "2",
+        "text": "Il laisse le vieillard seul."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Quamquam signale une concession : il aide malgré la hâte.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.2"
+        ]
+      },
+      "1": {
+        "feedback": "Quamquam signale une concession : il aide malgré la hâte.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Quamquam signale une concession : il aide malgré la hâte.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.synthesis:q3",
+    "prompt": "Qu’est-ce qui précède la décision du marin d’attendre ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cum tempestās appropinquāret, mercātor fīlium ad portum mīsit ut nautās monēret. Puer epistulam, quam pater scrīpserat, sēcum tulit. In viā senem invēnit, quī ambulāre vix poterat. Quamquam puer properābat, senem ad proximam domum dūxit. Deinde ad portum cucurrit. Nāvis iam solvenda erat, sed nauta, epistulā lectā, exspectāre cōnstituit. Nocte tempestās vēnit. Māne mercātor puerum laudāvit: neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La lecture de la lettre."
+      },
+      {
+        "id": "1",
+        "text": "La louange du père le lendemain."
+      },
+      {
+        "id": "2",
+        "text": "Le départ accompli du bateau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Epistulā lectā présente la lecture antérieure à la décision.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Epistulā lectā présente la lecture antérieure à la décision.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Epistulā lectā présente la lecture antérieure à la décision.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.synthesis:q4",
+    "prompt": "Pourquoi le père le félicite-t-il ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cum tempestās appropinquāret, mercātor fīlium ad portum mīsit ut nautās monēret. Puer epistulam, quam pater scrīpserat, sēcum tulit. In viā senem invēnit, quī ambulāre vix poterat. Quamquam puer properābat, senem ad proximam domum dūxit. Deinde ad portum cucurrit. Nāvis iam solvenda erat, sed nauta, epistulā lectā, exspectāre cōnstituit. Nocte tempestās vēnit. Māne mercātor puerum laudāvit: neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il a ignoré le vieillard pour être plus rapide."
+      },
+      {
+        "id": "1",
+        "text": "Il a laissé partir le bateau sans prévenir."
+      },
+      {
+        "id": "2",
+        "text": "Il a aidé le vieillard et transmis l’avertissement."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.synthesis"
+    ],
+    "requires": [],
+    "help": "course.synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Neque … neque nie à la fois l’abandon du vieillard et la négligence du message.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Neque … neque nie à la fois l’abandon du vieillard et la négligence du message.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.synthesis"
+        ],
+        "practice": [
+          "course.review.synthesis.4"
+        ]
+      },
+      "2": {
+        "feedback": "Neque … neque nie à la fois l’abandon du vieillard et la négligence du message.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

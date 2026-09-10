@@ -64,7 +64,25 @@ class GameSession extends ChangeNotifier {
       if (saved['designId'] != d.id) {
         throw const FormatException('Save belongs to another design');
       }
-      return object(jsonDecode(jsonEncode(saved)));
+      final restored = object(jsonDecode(jsonEncode(saved)));
+      final battle = restored['encounter'];
+      if (battle != null && !d.cards.containsKey(battle['card'])) {
+        restored['retiredEncounters'] = [
+          ...objects(restored['retiredEncounters']),
+          object(battle),
+        ];
+        restored.remove('encounter');
+      }
+      final errors = object(restored['errors']);
+      final retired = object(restored['retiredErrors'] ?? {});
+      for (final key in errors.keys.toList()) {
+        if (!d.cards.containsKey(errors[key]['card'])) {
+          retired[key] = errors.remove(key);
+        }
+      }
+      restored['errors'] = errors;
+      if (retired.isNotEmpty) restored['retiredErrors'] = retired;
+      return restored;
     }
     if (saved.containsKey('schemaVersion')) {
       throw const FormatException('Unsupported save schema');
@@ -602,7 +620,7 @@ class GameSession extends ChangeNotifier {
     battle['gain'] = (battle['gain'] as int) + delta;
     battle['answered'] = (battle['answered'] as int) + 1;
     if (correct) {
-      battle['remaining'] = (battle['remaining'] as int) - 1;
+      battle['remaining'] = max(0, (battle['remaining'] as int) - 1);
       battle['correct'] = (battle['correct'] as int) + 1;
     } else if (!assisted) {
       battle['lives'] = (battle['lives'] as int) - 1;
@@ -616,8 +634,13 @@ class GameSession extends ChangeNotifier {
   Future<void> advance() async {
     if (busy || encounter?['phase'] != 'feedback') return;
     final next = _copy(), battle = object(next['encounter']);
-    if (battle['remaining'] <= 0 || battle['lives'] <= 0) {
-      final won = battle['remaining'] <= 0;
+    final currentCard = design.cards[battle['card']]!;
+    final ordered = currentCard.data['encounter']['completion'] == 'sequence';
+    final completed = ordered
+        ? question!.data['next'] == null
+        : battle['remaining'] <= 0;
+    if (completed || battle['lives'] <= 0) {
+      final won = battle['remaining'] <= 0 && battle['lives'] > 0;
       final card = design.cards[battle['card']]!;
       var adjustment = won ? economy['victoryBonus'] as int : 0;
       if (won &&

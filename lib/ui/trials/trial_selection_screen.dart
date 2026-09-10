@@ -422,10 +422,13 @@ class TrialCard extends StatelessWidget {
                               dense: true,
                               expand: true,
                               icon: accessible
-                                  ? (place.data['presentation']['startIcon'] ==
-                                            'speak'
-                                        ? Icons.record_voice_over
-                                        : Icons.sports_martial_arts)
+                                  ? switch (place
+                                        .data['presentation']['startIcon']) {
+                                      'speak' => Icons.record_voice_over,
+                                      'theater' => Icons.theater_comedy,
+                                      'temple' => Icons.account_balance,
+                                      _ => Icons.sports_martial_arts,
+                                    }
                                   : !eligible
                                   ? Icons.lock
                                   : null,

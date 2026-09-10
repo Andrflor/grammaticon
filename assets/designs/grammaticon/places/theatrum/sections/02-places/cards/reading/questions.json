@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.places:q1",
+    "prompt": "Où habite le marin ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta in oppidō habitat. Puella ex oppidō venit et ad fluvium ambulat. Puer in viā puellam videt. Puella nōn ad puerum, sed ad fluvium it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Près du garçon."
+      },
+      {
+        "id": "1",
+        "text": "Dans le fleuve."
+      },
+      {
+        "id": "2",
+        "text": "Dans la ville."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.places"
+    ],
+    "requires": [],
+    "help": "course.places",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. In oppidō situe son habitation. Le garçon et le fleuve appartiennent à d’autres informations.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. In oppidō situe son habitation. Le garçon et le fleuve appartiennent à d’autres informations.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.1"
+        ]
+      },
+      "2": {
+        "feedback": "In oppidō situe son habitation. Le garçon et le fleuve appartiennent à d’autres informations.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.places:q2",
+    "prompt": "D’où vient la jeune fille ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta in oppidō habitat. Puella ex oppidō venit et ad fluvium ambulat. Puer in viā puellam videt. Puella nōn ad puerum, sed ad fluvium it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Du garçon."
+      },
+      {
+        "id": "1",
+        "text": "De la ville."
+      },
+      {
+        "id": "2",
+        "text": "Du fleuve."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.places"
+    ],
+    "requires": [],
+    "help": "course.places",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Ex oppidō donne le point de départ, ad fluvium la destination.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.2"
+        ]
+      },
+      "1": {
+        "feedback": "Ex oppidō donne le point de départ, ad fluvium la destination.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Ex oppidō donne le point de départ, ad fluvium la destination.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.places:q3",
+    "prompt": "Où le garçon voit-il la jeune fille ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta in oppidō habitat. Puella ex oppidō venit et ad fluvium ambulat. Puer in viā puellam videt. Puella nōn ad puerum, sed ad fluvium it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Sur la route."
+      },
+      {
+        "id": "1",
+        "text": "Dans la ville."
+      },
+      {
+        "id": "2",
+        "text": "Dans le fleuve."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.places"
+    ],
+    "requires": [],
+    "help": "course.places",
+    "outcomes": {
+      "0": {
+        "feedback": "In viā situe la rencontre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. In viā situe la rencontre.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. In viā situe la rencontre.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.places:q4",
+    "prompt": "Vers quoi la jeune fille se dirige-t-elle ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta in oppidō habitat. Puella ex oppidō venit et ad fluvium ambulat. Puer in viā puellam videt. Puella nōn ad puerum, sed ad fluvium it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vers le garçon."
+      },
+      {
+        "id": "1",
+        "text": "Vers le marin."
+      },
+      {
+        "id": "2",
+        "text": "Vers le fleuve."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.places"
+    ],
+    "requires": [],
+    "help": "course.places",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Nōn ad puerum, sed ad fluvium oppose explicitement les deux destinations.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Nōn ad puerum, sed ad fluvium oppose explicitement les deux destinations.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.places"
+        ],
+        "practice": [
+          "course.review.places.4"
+        ]
+      },
+      "2": {
+        "feedback": "Nōn ad puerum, sed ad fluvium oppose explicitement les deux destinations.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

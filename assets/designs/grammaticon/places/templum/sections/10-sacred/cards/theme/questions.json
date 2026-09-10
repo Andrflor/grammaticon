@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q1",
+    "assessment": "course.production.sacred:q1",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La veuve voulait garder le pain pour son fils."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vidua pānem fīlium servāre volēbat."
+      },
+      {
+        "id": "1",
+        "text": "Vidua fīliō pānem dare nōlēbat."
+      },
+      {
+        "id": "2",
+        "text": "Vidua pānem fīliō servāre volēbat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Fīliō exprime pour son fils ; ne remplace pas son projet par un refus de donner.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Fīliō exprime pour son fils ; ne remplace pas son projet par un refus de donner.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.1"
+        ]
+      },
+      "2": {
+        "feedback": "Fīliō exprime pour son fils ; ne remplace pas son projet par un refus de donner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q2",
+    "assessment": "course.production.sacred:q2",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Elle partagea le pain avec l’étranger."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pānem peregrīnus sōlus habuit."
+      },
+      {
+        "id": "1",
+        "text": "Pānem cum peregrīnō partīta est."
+      },
+      {
+        "id": "2",
+        "text": "Pānem ā peregrīnō abstulit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.production.sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Partīta est décrit un partage ; cum désigne celui avec qui elle partage.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.2"
+        ]
+      },
+      "1": {
+        "feedback": "Partīta est décrit un partage ; cum désigne celui avec qui elle partage.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Partīta est décrit un partage ; cum désigne celui avec qui elle partage.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q3",
+    "assessment": "course.production.sacred:q3",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les voisins avaient appris ce qui s’était passé."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vīcīnī rem audīverant."
+      },
+      {
+        "id": "1",
+        "text": "Vīcīnī rem audient."
+      },
+      {
+        "id": "2",
+        "text": "Vīcīnus rem audit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.production.sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Audīverant exprime une connaissance acquise dans le passé ; vīcīnī est pluriel.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Audīverant exprime une connaissance acquise dans le passé ; vīcīnī est pluriel.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Audīverant exprime une connaissance acquise dans le passé ; vīcīnī est pluriel.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q4",
+    "assessment": "course.production.sacred:q4",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La compassion peut s’exercer même dans le manque."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Misericordia tantum in dīvitiīs exercērī potest."
+      },
+      {
+        "id": "1",
+        "text": "Misericordia in inopiā exercērī nōn potest."
+      },
+      {
+        "id": "2",
+        "text": "Misericordia etiam in inopiā exercērī potest."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.sacred"
+    ],
+    "requires": [],
+    "help": "course.sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Etiam inclut le manque ; nōn ou tantum in dīvitiīs contredirait le sens.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Etiam inclut le manque ; nōn ou tantum in dīvitiīs contredirait le sens.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.sacred"
+        ],
+        "practice": [
+          "course.review.sacred.4"
+        ]
+      },
+      "2": {
+        "feedback": "Etiam inclut le manque ; nōn ou tantum in dīvitiīs contredirait le sens.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

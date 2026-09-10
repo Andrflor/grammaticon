@@ -1,0 +1,408 @@
+[
+  {
+    "id": "delivery",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "delivery",
+    "assessment": "theatrum/giving/versions:delivery",
+    "prompt": "Choisis la version française qui conserve le sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer aquam portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon porte de l’eau."
+      },
+      {
+        "id": "1",
+        "text": "L’eau porte le garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon donne de l’eau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Puer est le sujet ; aquam est ce qu’il porte.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Aquam est le complément de portat, pas son sujet.",
+        "observed": [
+          "pilot.evidence.argument-role-mismatch"
+        ],
+        "hypotheses": [
+          "pilot.reading.object"
+        ],
+        "practice": [
+          "pilot.review.object"
+        ]
+      },
+      "2": {
+        "feedback": "Portat signifie porte, pas donne.",
+        "observed": [
+          "pilot.evidence.action-change"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      }
+    }
+  },
+  {
+    "id": "gift",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "gift",
+    "assessment": "theatrum/giving/versions:gift",
+    "prompt": "Choisis la version française qui conserve le sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella nautae pānem dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin donne du pain à la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille donne du pain au marin."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille donne de l’eau au marin."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Tu as inversé la personne qui donne et le destinataire.",
+        "observed": [
+          "pilot.evidence.agent-recipient-swap"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "1": {
+        "feedback": "Puella donne, nautae reçoit et pānem est le pain donné.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Pānem signifie du pain, pas de l’eau.",
+        "observed": [
+          "pilot.evidence.object-change"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      }
+    }
+  },
+  {
+    "id": "possession",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "possession",
+    "assessment": "theatrum/giving/versions:possession",
+    "prompt": "Choisis la version française qui conserve le sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta pānem habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin porte du pain."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon a du pain."
+      },
+      {
+        "id": "2",
+        "text": "Le marin a du pain."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Habet dit qu’il en a ; cela ne dit pas qu’il le porte.",
+        "observed": [
+          "pilot.evidence.action-change"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.have"
+        ],
+        "practice": [
+          "pilot.word.have"
+        ]
+      },
+      "1": {
+        "feedback": "Nauta désigne le marin, pas le garçon.",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.word.sailor"
+        ],
+        "practice": [
+          "pilot.word.sailor"
+        ]
+      },
+      "2": {
+        "feedback": "Habet exprime ici la possession.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "fronted-object",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "fronted-object",
+    "assessment": "theatrum/giving/versions:fronted-object",
+    "prompt": "Choisis la version française qui conserve le sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Aquam puella puerō dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille donne de l’eau au garçon."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon donne de l’eau à la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "L’eau donne la jeune fille au garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "L’ordre commence par l’objet aquam ; puella reste le sujet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Puerō désigne le destinataire, pas le sujet.",
+        "observed": [
+          "pilot.evidence.agent-recipient-swap"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "2": {
+        "feedback": "Aquam n’est pas le sujet de dat.",
+        "observed": [
+          "pilot.evidence.argument-role-mismatch"
+        ],
+        "hypotheses": [
+          "pilot.reading.object"
+        ],
+        "practice": [
+          "pilot.review.object"
+        ]
+      }
+    }
+  },
+  {
+    "id": "short-story",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "short-story",
+    "assessment": "theatrum/giving/versions:short-story",
+    "prompt": "Qui a de l’eau et en donne ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta aquam habet. Puella pānem habet. Nauta puellae aquam dat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le premier énoncé attribue l’eau au marin ; le dernier lui attribue le don.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La jeune fille a du pain et reçoit de l’eau.",
+        "observed": [
+          "pilot.evidence.agent-recipient-swap"
+        ],
+        "hypotheses": [
+          "pilot.reading.recipient"
+        ],
+        "practice": [
+          "pilot.review.recipient"
+        ]
+      },
+      "2": {
+        "feedback": "Le texte ne mentionne aucun garçon.",
+        "observed": [
+          "pilot.evidence.unsupported-reference"
+        ],
+        "hypotheses": [],
+        "practice": [
+          "pilot.review.agent"
+        ]
+      }
+    }
+  },
+  {
+    "id": "denial",
+    "interaction": "choice",
+    "dimension": "reading",
+    "item": "denial",
+    "assessment": "theatrum/giving/versions:denial",
+    "prompt": "Quelle affirmation correspond au texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer pānem habet. Pānem nōn portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il a du pain et le porte."
+      },
+      {
+        "id": "1",
+        "text": "Il n’a pas de pain."
+      },
+      {
+        "id": "2",
+        "text": "Il a du pain mais ne le porte pas."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "pilot.reading.version"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "La seconde phrase nie le fait de porter le pain.",
+        "observed": [
+          "pilot.evidence.negation-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.negation"
+        ],
+        "practice": [
+          "pilot.review.negation"
+        ]
+      },
+      "1": {
+        "feedback": "La première phrase affirme qu’il a du pain.",
+        "observed": [
+          "pilot.evidence.negation-choice"
+        ],
+        "hypotheses": [
+          "pilot.reading.negation"
+        ],
+        "practice": [
+          "pilot.review.negation"
+        ]
+      },
+      "2": {
+        "feedback": "La possession est affirmée ; l’action de porter est niée.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

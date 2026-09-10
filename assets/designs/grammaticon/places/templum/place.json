@@ -1,0 +1,89 @@
+{
+  "id": "templum",
+  "name": "Templum",
+  "subtitle": "Gallicē → Latīnē",
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": []
+    }
+  },
+  "presentation": {
+    "image": "bld_templum",
+    "position": {
+      "x": 0.5,
+      "y": 0.42
+    },
+    "width": 0.2,
+    "labels": {
+      "title": "Templum",
+      "blurb": "Ēlige rītum.",
+      "encounter": "Rītus",
+      "interrupted": "Rītus interruptus",
+      "resume": "Redī in templum",
+      "back": "Redī in templum",
+      "leaveTitle": "Rītum relinquere?",
+      "leaveBody": "Rītus servātur: postea redīre poteris.",
+      "pausedBody": "Rītus suspēnsus est.",
+      "victoryTitle": "RĪTUS PERFECTUS",
+      "victoryBody": "Rītum perfēcistī.",
+      "defeatTitle": "RĪTUS INTERRUPTUS",
+      "defeatBody": "Perītiae et gemmae servātae manent.",
+      "gemsLine": "Gemmae rītūs",
+      "penaltyLine": "Tribūtum",
+      "hits": "respōnsa",
+      "opponentResource": "auctōritās",
+      "wonTally": "Rītūs perfectī",
+      "lostTally": "interruptī",
+      "omit": "Omitte"
+    },
+    "hero": "temple_hero_idle",
+    "startIcon": "temple"
+  },
+  "children": [
+    {
+      "kind": "section",
+      "id": "giving"
+    },
+    {
+      "kind": "section",
+      "id": "02-places"
+    },
+    {
+      "kind": "section",
+      "id": "03-descriptions"
+    },
+    {
+      "kind": "section",
+      "id": "04-time"
+    },
+    {
+      "kind": "section",
+      "id": "05-narrative"
+    },
+    {
+      "kind": "section",
+      "id": "06-reported"
+    },
+    {
+      "kind": "section",
+      "id": "07-purpose"
+    },
+    {
+      "kind": "section",
+      "id": "08-circumstances"
+    },
+    {
+      "kind": "section",
+      "id": "09-myths"
+    },
+    {
+      "kind": "section",
+      "id": "10-sacred"
+    },
+    {
+      "kind": "section",
+      "id": "11-synthesis"
+    }
+  ]
+}

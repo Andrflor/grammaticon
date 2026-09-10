@@ -138,3 +138,9 @@ Tous les designs utilisent les widgets originaux de `lib/ui` et les scènes de `
 `introductionBlocks` sélectionne les blocs du cours utilisés par l’introduction originale. Les tableaux d’aide restent pré-écrits dans le design ; leur rendu utilise le tableau et la fenêtre déroulante d’origine.
 
 Le panneau de reprise reprend la présentation originale. Chaque lieu déclare `presentation.labels.interrupted`, `resume` et `omit` ; une carte peut les remplacer dans son propre `presentation.labels`. L’action d’abandon retire seulement la rencontre en cours de la sauvegarde, sans retirer les récompenses ni les observations déjà enregistrées.
+
+### Séquences intégrales
+
+Une carte peut déclarer `encounter.completion: "sequence"` (défaut : `"target"`). La banque doit avoir exactement une entrée sans `followUpOnly: true`, puis une chaîne `next` sans cycle qui traverse toutes ses questions. Le moteur continue jusqu’à la fin de cette chaîne ou à l’épuisement des vies. À la fin, `target` bonnes réponses et une vie restante sont nécessaires pour gagner. Le validateur refuse un quota supérieur à la taille de la séquence. La question courante est conservée dans la sauvegarde.
+
+`presentation.longText: true` rend le panneau de question défilable, avec une hauteur maximale de 46 % de l’écran, pour les lectures longues. Les cartes ordinaires conservent leur disposition originale.

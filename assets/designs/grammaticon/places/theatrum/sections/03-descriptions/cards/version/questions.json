@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.03-descriptions:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella librum veterem legit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille lit le vieux livre."
+      },
+      {
+        "id": "1",
+        "text": "La vieille jeune fille lit le livre."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille lit le nouveau livre."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.03-descriptions"
+    ],
+    "requires": [],
+    "help": "course.descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « La jeune fille lit le vieux livre. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « La jeune fille lit le vieux livre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « La jeune fille lit le vieux livre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.03-descriptions:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber parvus est, sed multās fābulās continet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le livre est grand et contient peu de récits."
+      },
+      {
+        "id": "1",
+        "text": "Le livre est petit et ne contient aucun récit."
+      },
+      {
+        "id": "2",
+        "text": "Le livre est petit mais contient beaucoup de récits."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.03-descriptions"
+    ],
+    "requires": [],
+    "help": "course.descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le livre est petit mais contient beaucoup de récits. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le livre est petit mais contient beaucoup de récits. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le livre est petit mais contient beaucoup de récits. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.03-descriptions:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librum novum puer portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon porte le vieux livre."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon porte le nouveau livre."
+      },
+      {
+        "id": "2",
+        "text": "Le nouveau garçon porte le livre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.03-descriptions"
+    ],
+    "requires": [],
+    "help": "course.descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le garçon porte le nouveau livre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le garçon porte le nouveau livre. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le garçon porte le nouveau livre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.03-descriptions:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor duōs librōs habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marchand a deux livres."
+      },
+      {
+        "id": "1",
+        "text": "Deux marchands ont un livre."
+      },
+      {
+        "id": "2",
+        "text": "Le marchand a un deuxième livre."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.03-descriptions"
+    ],
+    "requires": [],
+    "help": "course.descriptions",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le marchand a deux livres. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le marchand a deux livres. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le marchand a deux livres. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.03-descriptions"
+        ],
+        "practice": [
+          "concept.version.review.03-descriptions.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

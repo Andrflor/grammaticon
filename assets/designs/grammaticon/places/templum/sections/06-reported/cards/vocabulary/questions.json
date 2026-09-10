@@ -1,0 +1,650 @@
+[
+  {
+    "id": "nuntius",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:nuntius",
+    "assessment": "concept.word.production.06-reported.nuntius",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "messager ; la nouvelle"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nuntius"
+      },
+      {
+        "id": "1",
+        "text": "vīlla"
+      },
+      {
+        "id": "2",
+        "text": "dominus"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.nuntius"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "nuntius signifie « messager ; la nouvelle ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "nuntius signifie « messager ; la nouvelle ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.nuntius"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.nuntius"
+        ]
+      },
+      "2": {
+        "feedback": "nuntius signifie « messager ; la nouvelle ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.nuntius"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.nuntius"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uilla",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:uilla",
+    "assessment": "concept.word.production.06-reported.uilla",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "maison de campagne"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dominus"
+      },
+      {
+        "id": "1",
+        "text": "uia"
+      },
+      {
+        "id": "2",
+        "text": "vīlla"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.uilla"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "vīlla signifie « maison de campagne ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uilla"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uilla"
+        ]
+      },
+      "1": {
+        "feedback": "vīlla signifie « maison de campagne ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uilla"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uilla"
+        ]
+      },
+      "2": {
+        "feedback": "vīlla signifie « maison de campagne ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dominus",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:dominus",
+    "assessment": "concept.word.production.06-reported.dominus",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "maître"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "pōns"
+      },
+      {
+        "id": "1",
+        "text": "dominus"
+      },
+      {
+        "id": "2",
+        "text": "uia"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.dominus"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "dominus signifie « maître ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.dominus"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.dominus"
+        ]
+      },
+      "1": {
+        "feedback": "dominus signifie « maître ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "dominus signifie « maître ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.dominus"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.dominus"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uia",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:uia",
+    "assessment": "concept.word.production.06-reported.uia",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "route, chemin, voyage"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "uia"
+      },
+      {
+        "id": "1",
+        "text": "pōns"
+      },
+      {
+        "id": "2",
+        "text": "dīcō"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.uia"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uia"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uia"
+        ]
+      },
+      "2": {
+        "feedback": "uia signifie « route, chemin, voyage ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uia"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uia"
+        ]
+      }
+    }
+  },
+  {
+    "id": "pons",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:pons",
+    "assessment": "concept.word.production.06-reported.pons",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pont"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dīcō"
+      },
+      {
+        "id": "1",
+        "text": "scio"
+      },
+      {
+        "id": "2",
+        "text": "pōns"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.pons"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.pons"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.pons"
+        ]
+      },
+      "1": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.pons"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.pons"
+        ]
+      },
+      "2": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dico",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:dico",
+    "assessment": "concept.word.production.06-reported.dico",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dire"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "uenio"
+      },
+      {
+        "id": "1",
+        "text": "dīcō"
+      },
+      {
+        "id": "2",
+        "text": "scio"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.dico"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "dīcō signifie « dire ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.dico"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.dico"
+        ]
+      },
+      "1": {
+        "feedback": "dīcō signifie « dire ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "dīcō signifie « dire ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.dico"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.dico"
+        ]
+      }
+    }
+  },
+  {
+    "id": "scio",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:scio",
+    "assessment": "concept.word.production.06-reported.scio",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "savoir"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "scio"
+      },
+      {
+        "id": "1",
+        "text": "uenio"
+      },
+      {
+        "id": "2",
+        "text": "videō"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.scio"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "scio signifie « savoir ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "scio signifie « savoir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.scio"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.scio"
+        ]
+      },
+      "2": {
+        "feedback": "scio signifie « savoir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.scio"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.scio"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uenio",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:uenio",
+    "assessment": "concept.word.production.06-reported.uenio",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "venir"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "videō"
+      },
+      {
+        "id": "1",
+        "text": "nuntius"
+      },
+      {
+        "id": "2",
+        "text": "uenio"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.uenio"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "uenio signifie « venir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uenio"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uenio"
+        ]
+      },
+      "1": {
+        "feedback": "uenio signifie « venir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uenio"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uenio"
+        ]
+      },
+      "2": {
+        "feedback": "uenio signifie « venir ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "uideo",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "06-reported:uideo",
+    "assessment": "concept.word.production.06-reported.uideo",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "voir"
+      }
+    ],
+    "context": [
+      "Nūntius"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "vīlla"
+      },
+      {
+        "id": "1",
+        "text": "videō"
+      },
+      {
+        "id": "2",
+        "text": "nuntius"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.production.06-reported",
+      "concept.word.production.06-reported.uideo"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.06-reported",
+    "outcomes": {
+      "0": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uideo"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uideo"
+        ]
+      },
+      "1": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.06-reported.uideo"
+        ],
+        "practice": [
+          "concept.word.review.06-reported.uideo"
+        ]
+      }
+    }
+  }
+]

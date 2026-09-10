@@ -1,0 +1,578 @@
+[
+  {
+    "id": "agricola",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:agricola",
+    "assessment": "concept.word.production.05-narrative.agricola",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "paysan"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "agricola"
+      },
+      {
+        "id": "1",
+        "text": "fluvius"
+      },
+      {
+        "id": "2",
+        "text": "pōns"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.agricola"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "agricola signifie « paysan ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "agricola signifie « paysan ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.agricola"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.agricola"
+        ]
+      },
+      "2": {
+        "feedback": "agricola signifie « paysan ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.agricola"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.agricola"
+        ]
+      }
+    }
+  },
+  {
+    "id": "fluuius",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:fluuius",
+    "assessment": "concept.word.production.05-narrative.fluuius",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fleuve, rivière"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "pōns"
+      },
+      {
+        "id": "1",
+        "text": "nauta"
+      },
+      {
+        "id": "2",
+        "text": "fluvius"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.fluuius"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "fluvius signifie « fleuve, rivière ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.fluuius"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.fluuius"
+        ]
+      },
+      "1": {
+        "feedback": "fluvius signifie « fleuve, rivière ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.fluuius"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.fluuius"
+        ]
+      },
+      "2": {
+        "feedback": "fluvius signifie « fleuve, rivière ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "pons",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:pons",
+    "assessment": "concept.word.production.05-narrative.pons",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pont"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nāvis"
+      },
+      {
+        "id": "1",
+        "text": "pōns"
+      },
+      {
+        "id": "2",
+        "text": "nauta"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.pons"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.pons"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.pons"
+        ]
+      },
+      "1": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "pōns signifie « pont ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.pons"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.pons"
+        ]
+      }
+    }
+  },
+  {
+    "id": "nauta",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:nauta",
+    "assessment": "concept.word.production.05-narrative.nauta",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "marin"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nauta"
+      },
+      {
+        "id": "1",
+        "text": "nāvis"
+      },
+      {
+        "id": "2",
+        "text": "uoco"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.nauta"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "nauta signifie « marin ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "nauta signifie « marin ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.nauta"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.nauta"
+        ]
+      },
+      "2": {
+        "feedback": "nauta signifie « marin ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.nauta"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.nauta"
+        ]
+      }
+    }
+  },
+  {
+    "id": "nauis",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:nauis",
+    "assessment": "concept.word.production.05-narrative.nauis",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "navire"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "uoco"
+      },
+      {
+        "id": "1",
+        "text": "ambulō"
+      },
+      {
+        "id": "2",
+        "text": "nāvis"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.nauis"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "nāvis signifie « navire ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.nauis"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.nauis"
+        ]
+      },
+      "1": {
+        "feedback": "nāvis signifie « navire ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.nauis"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.nauis"
+        ]
+      },
+      "2": {
+        "feedback": "nāvis signifie « navire ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "uoco",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:uoco",
+    "assessment": "concept.word.production.05-narrative.uoco",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "appeler"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "videō"
+      },
+      {
+        "id": "1",
+        "text": "uoco"
+      },
+      {
+        "id": "2",
+        "text": "ambulō"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.uoco"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "uoco signifie « appeler ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.uoco"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.uoco"
+        ]
+      },
+      "1": {
+        "feedback": "uoco signifie « appeler ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "uoco signifie « appeler ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.uoco"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.uoco"
+        ]
+      }
+    }
+  },
+  {
+    "id": "ambulo",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:ambulo",
+    "assessment": "concept.word.production.05-narrative.ambulo",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "marcher"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ambulō"
+      },
+      {
+        "id": "1",
+        "text": "videō"
+      },
+      {
+        "id": "2",
+        "text": "agricola"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.ambulo"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.ambulo"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.ambulo"
+        ]
+      },
+      "2": {
+        "feedback": "ambulō signifie « marcher ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.ambulo"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.ambulo"
+        ]
+      }
+    }
+  },
+  {
+    "id": "uideo",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "05-narrative:uideo",
+    "assessment": "concept.word.production.05-narrative.uideo",
+    "prompt": "Quel mot latin exprime ce sens dans le texte ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "voir"
+      }
+    ],
+    "context": [
+      "Pōns fractus"
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "agricola"
+      },
+      {
+        "id": "1",
+        "text": "fluvius"
+      },
+      {
+        "id": "2",
+        "text": "videō"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.lexicon.production.05-narrative",
+      "concept.word.production.05-narrative.uideo"
+    ],
+    "requires": [],
+    "help": "concept.lexicon.05-narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.uideo"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.uideo"
+        ]
+      },
+      "1": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.word.production.05-narrative.uideo"
+        ],
+        "practice": [
+          "concept.word.review.05-narrative.uideo"
+        ]
+      },
+      "2": {
+        "feedback": "videō signifie « voir ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

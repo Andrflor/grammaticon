@@ -24,6 +24,7 @@ flutter:
   uses-material-design: true
   # BEGIN DESIGN ASSETS
   assets:
+    - assets/audio/
     - assets/designs/compass/
     - assets/designs/compass/locales/
     - assets/designs/compass/places/archives/
@@ -236,8 +237,98 @@ flutter:
     - assets/designs/grammaticon/places/forum/sections/section-9/cards/con-distans/
     - assets/designs/grammaticon/places/forum/sections/section-9/cards/con-omnia/
     - assets/designs/grammaticon/places/forum/sections/section-9/cards/con-plura/
-    - assets/images/
-    - assets/audio/
-
+    - assets/designs/grammaticon/places/templum/
+    - assets/designs/grammaticon/places/templum/sections/02-places/
+    - assets/designs/grammaticon/places/templum/sections/02-places/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/02-places/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/03-descriptions/
+    - assets/designs/grammaticon/places/templum/sections/03-descriptions/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/03-descriptions/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/04-time/
+    - assets/designs/grammaticon/places/templum/sections/04-time/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/04-time/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/05-narrative/
+    - assets/designs/grammaticon/places/templum/sections/05-narrative/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/05-narrative/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/06-reported/
+    - assets/designs/grammaticon/places/templum/sections/06-reported/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/06-reported/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/07-purpose/
+    - assets/designs/grammaticon/places/templum/sections/07-purpose/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/07-purpose/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/08-circumstances/
+    - assets/designs/grammaticon/places/templum/sections/08-circumstances/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/08-circumstances/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/09-myths/
+    - assets/designs/grammaticon/places/templum/sections/09-myths/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/09-myths/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/10-sacred/
+    - assets/designs/grammaticon/places/templum/sections/10-sacred/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/10-sacred/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/11-synthesis/
+    - assets/designs/grammaticon/places/templum/sections/11-synthesis/cards/theme/
+    - assets/designs/grammaticon/places/templum/sections/11-synthesis/cards/vocabulary/
+    - assets/designs/grammaticon/places/templum/sections/giving/
+    - assets/designs/grammaticon/places/templum/sections/giving/cards/construction/
+    - assets/designs/grammaticon/places/templum/sections/giving/cards/themes/
+    - assets/designs/grammaticon/places/templum/sections/giving/cards/words/
+    - assets/designs/grammaticon/places/theatrum/
+    - assets/designs/grammaticon/places/theatrum/sections/02-places/
+    - assets/designs/grammaticon/places/theatrum/sections/02-places/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/02-places/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/02-places/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/03-descriptions/
+    - assets/designs/grammaticon/places/theatrum/sections/03-descriptions/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/03-descriptions/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/03-descriptions/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/04-time/
+    - assets/designs/grammaticon/places/theatrum/sections/04-time/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/04-time/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/04-time/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/05-narrative/
+    - assets/designs/grammaticon/places/theatrum/sections/05-narrative/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/05-narrative/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/05-narrative/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/06-reported/
+    - assets/designs/grammaticon/places/theatrum/sections/06-reported/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/06-reported/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/06-reported/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/07-purpose/
+    - assets/designs/grammaticon/places/theatrum/sections/07-purpose/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/07-purpose/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/07-purpose/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/08-circumstances/
+    - assets/designs/grammaticon/places/theatrum/sections/08-circumstances/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/08-circumstances/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/08-circumstances/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/09-myths/
+    - assets/designs/grammaticon/places/theatrum/sections/09-myths/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/09-myths/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/09-myths/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/10-sacred/
+    - assets/designs/grammaticon/places/theatrum/sections/10-sacred/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/10-sacred/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/10-sacred/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/11-synthesis/
+    - assets/designs/grammaticon/places/theatrum/sections/11-synthesis/cards/reading/
+    - assets/designs/grammaticon/places/theatrum/sections/11-synthesis/cards/version/
+    - assets/designs/grammaticon/places/theatrum/sections/11-synthesis/cards/vocabulary/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-casus-obliqui/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-casus-recti/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-congruentia/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-modus-imperativus/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-modus-subiunctivus/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-nonfinita/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-numerus/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-persona/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-tempus-futurum/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-tempus-praeteritum/
+    - assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/cards/th-vox/
+    - assets/designs/grammaticon/places/theatrum/sections/giving/
+    - assets/designs/grammaticon/places/theatrum/sections/giving/cards/roles/
+    - assets/designs/grammaticon/places/theatrum/sections/giving/cards/versions/
+    - assets/designs/grammaticon/places/theatrum/sections/giving/cards/words/
     - assets/fonts/
+    - assets/images/
   # END DESIGN ASSETS

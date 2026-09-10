@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "concept.version.06-reported:q1",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dīcit viam tūtam esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il dit que la route est sûre."
+      },
+      {
+        "id": "1",
+        "text": "Il dit que la route a été sûre autrefois."
+      },
+      {
+        "id": "2",
+        "text": "La route sûre dit quelque chose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.06-reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il dit que la route est sûre. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il dit que la route est sûre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q1"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il dit que la route est sûre. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q1"
+        ]
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "concept.version.06-reported:q2",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dominus sciēbat pontem fractum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître savait que le pont serait brisé plus tard."
+      },
+      {
+        "id": "1",
+        "text": "Le pont savait que le maître était brisé."
+      },
+      {
+        "id": "2",
+        "text": "Le maître savait que le pont était brisé."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "concept.version.06-reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le maître savait que le pont était brisé. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q2"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le maître savait que le pont était brisé. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q2"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le maître savait que le pont était brisé. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "concept.version.06-reported:q3",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rogāvit utrum nūntius pontem vīdisset."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il affirma que le messager verrait le pont."
+      },
+      {
+        "id": "1",
+        "text": "Il demanda si le messager avait vu le pont."
+      },
+      {
+        "id": "2",
+        "text": "Il demanda au pont de regarder le messager."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "concept.version.06-reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Il demanda si le messager avait vu le pont. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q3"
+        ]
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Il demanda si le messager avait vu le pont. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Il demanda si le messager avait vu le pont. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "concept.version.06-reported:q4",
+    "prompt": "Quelle traduction conserve le sens de la phrase ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le messager répondit qu’il était venu par une autre route."
+      },
+      {
+        "id": "1",
+        "text": "Le messager répondit qu’un autre était venu par la route."
+      },
+      {
+        "id": "2",
+        "text": "Le messager répondit qu’il viendrait par une autre route."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "concept.version.06-reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "La phrase signifie : « Le messager répondit qu’il était venu par une autre route. ».",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "La phrase signifie : « Le messager répondit qu’il était venu par une autre route. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q4"
+        ]
+      },
+      "2": {
+        "feedback": "La phrase signifie : « Le messager répondit qu’il était venu par une autre route. ». Ce choix change les rôles, le temps ou la relation exprimée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "concept.version.06-reported"
+        ],
+        "practice": [
+          "concept.version.review.06-reported.q4"
+        ]
+      }
+    },
+    "followUpOnly": true
+  }
+]

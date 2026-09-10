@@ -1,0 +1,93 @@
+{
+  "id": "theatrum",
+  "name": "Theātrum",
+  "subtitle": "Latīnē → Gallicē",
+  "access": {
+    "price": 0,
+    "requires": {
+      "all": []
+    }
+  },
+  "presentation": {
+    "image": "bld_theatrum",
+    "position": {
+      "x": 0.22,
+      "y": 0.74
+    },
+    "width": 0.26,
+    "labels": {
+      "title": "Theātrum · Interpretātiō",
+      "blurb": "Ēlige fābulam.",
+      "encounter": "Fābula",
+      "interrupted": "Fābula interrupta",
+      "resume": "Redī in theātrum",
+      "back": "Redī in Theātrum",
+      "leaveTitle": "Relinquere scaenam?",
+      "leaveBody": "Fābula servātur: postea redīre poteris.",
+      "pausedBody": "Fābula suspēnsa est.",
+      "victoryTitle": "PLAUSUS!",
+      "victoryBody": "Adversārius ē scaenā cessit; populus tibi plaudit.",
+      "defeatTitle": "FĀBULA ĀMISSA",
+      "defeatBody": "Adversārius scaenam vīcit. Emptiōnēs et perītiae manent: iterum temptā!",
+      "gemsLine": "Gemmae fābulae",
+      "penaltyLine": "Tribūtum fābulae āmissae",
+      "hits": "versūs",
+      "opponentResource": "favor populī",
+      "wonTally": "Fābulae victae",
+      "lostTally": "āmissae",
+      "omit": "Omitte"
+    },
+    "hero": "histrio_idle",
+    "startIcon": "theater"
+  },
+  "children": [
+    {
+      "kind": "section",
+      "id": "giving"
+    },
+    {
+      "kind": "section",
+      "id": "02-places"
+    },
+    {
+      "kind": "section",
+      "id": "03-descriptions"
+    },
+    {
+      "kind": "section",
+      "id": "04-time"
+    },
+    {
+      "kind": "section",
+      "id": "05-narrative"
+    },
+    {
+      "kind": "section",
+      "id": "06-reported"
+    },
+    {
+      "kind": "section",
+      "id": "07-purpose"
+    },
+    {
+      "kind": "section",
+      "id": "08-circumstances"
+    },
+    {
+      "kind": "section",
+      "id": "09-myths"
+    },
+    {
+      "kind": "section",
+      "id": "10-sacred"
+    },
+    {
+      "kind": "section",
+      "id": "11-synthesis"
+    },
+    {
+      "kind": "section",
+      "id": "12-sacred-readings"
+    }
+  ]
+}

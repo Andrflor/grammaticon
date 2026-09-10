@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q1",
+    "assessment": "course.reading.narrative:q1",
+    "prompt": "Que faisait le paysan au début ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola ad fluvium ambulābat. Pōns, quem herī vīderat, fractus erat. Itaque agricola cōnstitit et nautam vocāvit. Nauta nāvem parāvit atque agricolam trāns fluvium vēxit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il avait déjà traversé."
+      },
+      {
+        "id": "1",
+        "text": "Il réparait le pont."
+      },
+      {
+        "id": "2",
+        "text": "Il marchait vers le fleuve."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Ambulābat décrit l’action en cours au début du récit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Ambulābat décrit l’action en cours au début du récit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.1"
+        ]
+      },
+      "2": {
+        "feedback": "Ambulābat décrit l’action en cours au début du récit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q2",
+    "assessment": "course.reading.narrative:q2",
+    "prompt": "Quand avait-il vu le pont ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola ad fluvium ambulābat. Pōns, quem herī vīderat, fractus erat. Itaque agricola cōnstitit et nautam vocāvit. Nauta nāvem parāvit atque agricolam trāns fluvium vēxit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Après la traversée."
+      },
+      {
+        "id": "1",
+        "text": "La veille."
+      },
+      {
+        "id": "2",
+        "text": "Après avoir appelé le marin."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.reading.narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Herī vīderat indique une observation antérieure.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.2"
+        ]
+      },
+      "1": {
+        "feedback": "Herī vīderat indique une observation antérieure.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Herī vīderat indique une observation antérieure.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q3",
+    "assessment": "course.reading.narrative:q3",
+    "prompt": "Pourquoi s’arrête-t-il ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola ad fluvium ambulābat. Pōns, quem herī vīderat, fractus erat. Itaque agricola cōnstitit et nautam vocāvit. Nauta nāvem parāvit atque agricolam trāns fluvium vēxit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le pont est brisé."
+      },
+      {
+        "id": "1",
+        "text": "Il a perdu son bateau."
+      },
+      {
+        "id": "2",
+        "text": "Le marin l’a déjà transporté."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.reading.narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "Itaque relie l’arrêt à l’état du pont.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Itaque relie l’arrêt à l’état du pont.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Itaque relie l’arrêt à l’état du pont.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "q4",
+    "assessment": "course.reading.narrative:q4",
+    "prompt": "Comment traverse-t-il finalement ?",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola ad fluvium ambulābat. Pōns, quem herī vīderat, fractus erat. Itaque agricola cōnstitit et nautam vocāvit. Nauta nāvem parāvit atque agricolam trāns fluvium vēxit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il traverse le pont réparé."
+      },
+      {
+        "id": "1",
+        "text": "Il reste nécessairement sur place."
+      },
+      {
+        "id": "2",
+        "text": "Le marin le transporte en bateau."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.reading.narrative"
+    ],
+    "requires": [],
+    "help": "course.narrative",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Nāvem parāvit puis vēxit décrivent la solution trouvée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Nāvem parāvit puis vēxit décrivent la solution trouvée.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.narrative"
+        ],
+        "practice": [
+          "course.review.narrative.4"
+        ]
+      },
+      "2": {
+        "feedback": "Nāvem parāvit puis vēxit décrivent la solution trouvée.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

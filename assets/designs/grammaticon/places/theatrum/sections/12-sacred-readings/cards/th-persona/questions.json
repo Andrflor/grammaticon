@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "th-persona|PSA 50:6|peccavi",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "PSA.50.6",
+    "assessment": "th-persona|PSA 50:6|peccavi",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Tibi soli peccavi, et malum coram te feci"
+      }
+    ],
+    "context": [
+      "PSA 50:6 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "J’ai péché contre toi seul, Et j’ai fait ce qui est mal à tes yeux"
+      },
+      {
+        "id": "a1",
+        "text": "Il a péché contre toi seul, et il a fait ce qui est mal à tes yeux"
+      },
+      {
+        "id": "a2",
+        "text": "J’ai péché contre moi seul, et j’ai fait ce qui est mal à mes yeux"
+      },
+      {
+        "id": "a3",
+        "text": "J’ai péché contre toi seul, et tu as fait ce qui est mal à tes yeux"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Ce n’est plus celui qui prie qui avoue, mais un tiers. Dēsinentia -ī perfectī prīmam persōnam ostendit; -it esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "La faute n’est plus commise contre Dieu mais contre soi-même. Tibi et te secundam persōnam significant; mihi, me essent prīma.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "C’est Dieu qui aurait fait le mal. Feci prīma persōna est; fecisti esset secunda.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|JOH 21:17|amo",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "JOH.21.17",
+    "assessment": "th-persona|JOH 21:17|amo",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Domine, tu omnia nosti, tu scis quia amo te."
+      }
+    ],
+    "context": [
+      "JOH 21:17 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Seigneur, tu sais toutes choses, tu sais que je t’aime."
+      },
+      {
+        "id": "a1",
+        "text": "Seigneur, je sais toutes choses, je sais que je t’aime."
+      },
+      {
+        "id": "a2",
+        "text": "Seigneur, tu sais toutes choses, tu sais qu’il t’aime."
+      },
+      {
+        "id": "a3",
+        "text": "Seigneur, tu sais toutes choses, tu sais que je l’aime."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Pierre prétend tout savoir lui-même. Tu … scis secunda persōna est (-s); scio esset prīma.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Un autre aime le Seigneur, non Pierre. Amo (-ō) prīma persōna est; amat esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Pierre aime quelqu’un d’autre que le Seigneur. Te secundam persōnam significat; eum esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|MAT 8:8|intres",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "MAT.8.8",
+    "assessment": "th-persona|MAT 8:8|intres",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Domine, non sum dignus ut intres sub tectum meum"
+      }
+    ],
+    "context": [
+      "MAT 8:8 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Seigneur, je ne suis pas digne que tu entres sous mon toit"
+      },
+      {
+        "id": "a1",
+        "text": "Seigneur, il n’est pas digne que tu entres sous mon toit"
+      },
+      {
+        "id": "a2",
+        "text": "Seigneur, je ne suis pas digne qu’il entre sous mon toit"
+      },
+      {
+        "id": "a3",
+        "text": "Seigneur, je ne suis pas digne que tu entres sous ton toit"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Le centurion parle d’un autre indigne. Sum prīma persōna est; est esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Ce n’est plus le Seigneur qui entrerait. Intres (-s) secunda persōna est; intret esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Le toit devient celui du Seigneur. Meum ad loquentem refertur; tuum ad Dominum referrētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|LUK 15:18|ibo",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "LUK.15.18",
+    "assessment": "th-persona|LUK 15:18|ibo",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "surgam, et ibo ad patrem meum, et dicam ei: Pater, peccavi in cælum, et coram te"
+      }
+    ],
+    "context": [
+      "LUK 15:18 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Je me lèverai, j’irai vers mon père, et je lui dirai: Mon père, j’ai péché contre le ciel et contre toi"
+      },
+      {
+        "id": "a1",
+        "text": "Il se lèvera, il ira vers son père, et il lui dira: Mon père, j’ai péché contre le ciel et contre toi"
+      },
+      {
+        "id": "a2",
+        "text": "Je me lèverai, j’irai vers mon père, et je lui dirai: Mon père, il a péché contre le ciel et contre toi"
+      },
+      {
+        "id": "a3",
+        "text": "Je me lèverai, j’irai vers ton père, et je lui dirai: Mon père, j’ai péché contre le ciel et contre toi"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Le récit passe à un autre personnage. Surgam, ibo, dicam prīmam persōnam ostendunt (-m, -ō).",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Le fils accuse un autre. Peccavi (-ī) prīma persōna est; peccavit esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Le père devient celui de l’interlocuteur. Meum ad loquentem refertur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|EXO 20:2|eduxi",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "EXO.20.2",
+    "assessment": "th-persona|EXO 20:2|eduxi",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ego sum Dominus Deus tuus, qui eduxi te de terra Ægypti"
+      }
+    ],
+    "context": [
+      "EXO 20:2 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Je suis l’Éternel, ton Dieu, qui t’ai fait sortir du pays d’Égypte"
+      },
+      {
+        "id": "a1",
+        "text": "Il est l’Éternel, ton Dieu, qui t’a fait sortir du pays d’Égypte"
+      },
+      {
+        "id": "a2",
+        "text": "Je suis l’Éternel, ton Dieu, qui vous ai fait sortir du pays d’Égypte"
+      },
+      {
+        "id": "a3",
+        "text": "Je suis l’Éternel, mon Dieu, qui t’ai fait sortir du pays d’Égypte"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Dieu ne parle plus de lui-même. Ego sum et eduxi prīmam persōnam ostendunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Un peuple entier au lieu d’un interlocuteur singulier. Te et tuus singulāria sunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Dieu serait son propre Dieu. Tuus ad audientem refertur; meus ad loquentem.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|ISA 6:8|mitte",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "ISA.6.8",
+    "assessment": "th-persona|ISA 6:8|mitte",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Et dixi: Ecce ego, mitte me."
+      }
+    ],
+    "context": [
+      "ISA 6:8 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Je répondis: Me voici, envoie-moi."
+      },
+      {
+        "id": "a1",
+        "text": "Il répondit: Me voici, envoie-moi."
+      },
+      {
+        "id": "a2",
+        "text": "Je répondis: Le voici, envoie-le."
+      },
+      {
+        "id": "a3",
+        "text": "Je répondis: Me voici, envoyez-moi."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Un autre répond à la place du prophète. Dixi (-ī) prīma persōna perfectī est; dixit esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Le prophète propose quelqu’un d’autre. Ego et me prīmam persōnam significant.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Plusieurs envoyeurs au lieu du Seigneur seul. Mitte singulāre est; mittite esset plūrāle.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|GEN 3:10|audivi",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "GEN.3.10",
+    "assessment": "th-persona|GEN 3:10|audivi",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vocem tuam audivi in paradiso, et timui"
+      }
+    ],
+    "context": [
+      "GEN 3:10 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "J’ai entendu ta voix dans le jardin, et j’ai eu peur"
+      },
+      {
+        "id": "a1",
+        "text": "Il a entendu ta voix dans le jardin, et il a eu peur"
+      },
+      {
+        "id": "a2",
+        "text": "J’ai entendu sa voix dans le jardin, et j’ai eu peur"
+      },
+      {
+        "id": "a3",
+        "text": "Nous avons entendu ta voix dans le jardin, et nous avons eu peur"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Adam parle d’un autre. Audivi et timui (-ī) prīmam persōnam ostendunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "La voix n’est plus celle de Dieu à qui il parle. Tuam ad audientem refertur; ejus esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Adam parle aussi pour Ève. Audivi, timui singulāria sunt; -imus esset plūrāle.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|JOH 14:9|cognovistis",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "JOH.14.9",
+    "assessment": "th-persona|JOH 14:9|cognovistis",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Tanto tempore vobiscum sum, et non cognovistis me?"
+      }
+    ],
+    "context": [
+      "JOH 14:9 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Depuis si longtemps je suis avec vous, et vous ne m’avez pas connu?"
+      },
+      {
+        "id": "a1",
+        "text": "Depuis si longtemps il est avec vous, et vous ne l’avez pas connu?"
+      },
+      {
+        "id": "a2",
+        "text": "Depuis si longtemps je suis avec vous, et tu ne m’as pas connu?"
+      },
+      {
+        "id": "a3",
+        "text": "Depuis si longtemps je suis avec toi, et vous ne m’avez pas connu?"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "Segond suit un texte grec au singulier (« tu ne m'as pas connu ») ; le latin a cognovistis, deuxième personne du pluriel.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Jésus parlerait d’un autre. Sum et me prīmam persōnam significant.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Un seul disciple est repris. Cognovistis (-istis) plūrāle est; cognovisti singulāre.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Jésus n’aurait été qu’avec un seul. Vobiscum plūrāle est; tecum esset singulāre.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|RUT 1:16|meus",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "RUT.1.16",
+    "assessment": "th-persona|RUT 1:16|meus",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Populus tuus populus meus, et Deus tuus Deus meus."
+      }
+    ],
+    "context": [
+      "RUT 1:16 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "ton peuple sera mon peuple, et ton Dieu sera mon Dieu"
+      },
+      {
+        "id": "a1",
+        "text": "mon peuple sera ton peuple, et mon Dieu sera ton Dieu"
+      },
+      {
+        "id": "a2",
+        "text": "ton peuple sera son peuple, et ton Dieu sera son Dieu"
+      },
+      {
+        "id": "a3",
+        "text": "son peuple sera mon peuple, et son Dieu sera mon Dieu"
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Les possesseurs sont inversés. Tuus ad Noemi, meus ad Ruth refertur: ōrdō sententiae hoc dīcit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Ruth parlerait d’une tierce personne. Meus prīmam persōnam significat.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Ruth ne s’adresserait plus à Noémi. Tuus secundam persōnam significat.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|MAT 3:17|complacui",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "MAT.3.17",
+    "assessment": "th-persona|MAT 3:17|complacui",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hic est Filius meus dilectus, in quo mihi complacui."
+      }
+    ],
+    "context": [
+      "MAT 3:17 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Celui-ci est mon Fils bien-aimé, en qui j’ai mis toute mon affection."
+      },
+      {
+        "id": "a1",
+        "text": "Celui-ci est ton Fils bien-aimé, en qui tu as mis toute ton affection."
+      },
+      {
+        "id": "a2",
+        "text": "Celui-ci est mon Fils bien-aimé, en qui il a mis toute son affection."
+      },
+      {
+        "id": "a3",
+        "text": "Celui-ci est son Fils bien-aimé, en qui j’ai mis toute mon affection."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "La voix du ciel parlerait à un autre père. Meus, mihi, complacui prīmam persōnam ostendunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Un autre se complaît dans le Fils. Complacui (-ī) prīma persōna est.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Le Fils appartiendrait à un autre. Meus ad loquentem refertur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|LUK 23:46|commendo",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "LUK.23.46",
+    "assessment": "th-persona|LUK 23:46|commendo",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater, in manus tuas commendo spiritum meum."
+      }
+    ],
+    "context": [
+      "LUK 23:46 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Père, je remets mon esprit entre tes mains."
+      },
+      {
+        "id": "a1",
+        "text": "Père, il remet mon esprit entre tes mains."
+      },
+      {
+        "id": "a2",
+        "text": "Père, je remets ton esprit entre tes mains."
+      },
+      {
+        "id": "a3",
+        "text": "Père, je remets mon esprit entre ses mains."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "Un autre remet l’esprit. Commendo (-ō) prīma persōna est.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "L’esprit remis serait celui du Père. Meum ad loquentem refertur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Les mains ne sont plus celles du Père. Tuas ad Patrem, cui loquitur, refertur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|JOH 9:25|video",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "JOH.9.25",
+    "assessment": "th-persona|JOH 9:25|video",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "unum scio, quia cæcus cum essem, modo video."
+      }
+    ],
+    "context": [
+      "JOH 9:25 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "je sais une chose, c’est que j’étais aveugle et que maintenant je vois."
+      },
+      {
+        "id": "a1",
+        "text": "il sait une chose, c’est qu’il était aveugle et que maintenant il voit."
+      },
+      {
+        "id": "a2",
+        "text": "je sais une chose, c’est que tu étais aveugle et que maintenant tu vois."
+      },
+      {
+        "id": "a3",
+        "text": "je sais une chose, c’est que j’étais aveugle et que maintenant il voit."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "L’aveugle guéri ne parle plus de lui. Scio, essem, video prīmam persōnam ostendunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "Il parlerait de la cécité de son interlocuteur. Essem et video prīma persōna sunt.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "Un autre voit à sa place. Video (-ō) prīma persōna est; videt esset tertia.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|PSA 17:37|Dilatasti",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "PSA.17.37",
+    "assessment": "th-persona|PSA 17:37|Dilatasti",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dilatasti gressus meos subtus me, et non sunt infirmata vestigia mea."
+      }
+    ],
+    "context": [
+      "PSA 17:37 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Tu as élargi mes pas sous moi, et mes pieds n’ont pas été affaiblis."
+      },
+      {
+        "id": "a1",
+        "text": "Il a élargi mes pas sous moi, et mes pieds n’ont pas été affaiblis."
+      },
+      {
+        "id": "a2",
+        "text": "J’ai élargi mes pas sous moi, et mes pieds n’ont pas été affaiblis."
+      },
+      {
+        "id": "a3",
+        "text": "Vous avez élargi mes pas sous moi, et mes pieds n’ont pas été affaiblis."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "Segond 18:37 a le présent (« Tu élargis… ne chancellent point ») pour les parfaits latins ; rendu pédagogique.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "on parle de Dieu au lieu de s’adresser à lui «Dilatasti» est indicātīvus perfectī āctīvī, secunda persōna singulāris. Sī indicātīvus perfectī āctīvī, tertia persōna singulāris esset, fōrma «dilatauit» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "le psalmiste se l’attribue «Dilatasti» est indicātīvus perfectī āctīvī, secunda persōna singulāris. Sī indicātīvus perfectī āctīvī, prīma persōna singulāris esset, fōrma «dilataui» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "plusieurs destinataires «Dilatasti» est indicātīvus perfectī āctīvī, secunda persōna singulāris. Sī indicātīvus perfectī āctīvī, secunda persōna plūrālis esset, fōrma «dilatastis» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|2MA 6:19|præibat",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "2MA.6.19",
+    "assessment": "th-persona|2MA 6:19|præibat",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "At ille gloriosissimam mortem magis quam odibilem vitam complectens, voluntarie præibat ad supplicium."
+      }
+    ],
+    "context": [
+      "2MA 6:19 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Mais lui, embrassant une mort très glorieuse plutôt qu’une vie odieuse, s’avançait volontairement au supplice."
+      },
+      {
+        "id": "a1",
+        "text": "Mais moi, embrassant une mort très glorieuse plutôt qu’une vie odieuse, je m’avançais volontairement au supplice."
+      },
+      {
+        "id": "a2",
+        "text": "Mais toi, embrassant une mort très glorieuse plutôt qu’une vie odieuse, tu t’avançais volontairement au supplice."
+      },
+      {
+        "id": "a3",
+        "text": "Mais eux, embrassant une mort très glorieuse plutôt qu’une vie odieuse, s’avançaient volontairement au supplice."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "Livre absent de Segond ; rendu pédagogique.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "le narrateur devient le martyr «præibat» est indicātīvus imperfectī āctīvī, tertia persōna singulāris. Sī indicātīvus imperfectī āctīvī, prīma persōna singulāris esset, fōrma «praeibam» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "on s’adresse au martyr «præibat» est indicātīvus imperfectī āctīvī, tertia persōna singulāris. Sī indicātīvus imperfectī āctīvī, secunda persōna singulāris esset, fōrma «praeibas» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "plusieurs martyrs «præibat» est indicātīvus imperfectī āctīvī, tertia persōna singulāris. Sī indicātīvus imperfectī āctīvī, tertia persōna plūrālis esset, fōrma «praeibant» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  },
+  {
+    "id": "th-persona|JDG 9:31|misit",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "JDG.9.31",
+    "assessment": "th-persona|JDG 9:31|misit",
+    "prompt": "Choisis une version qui conserve le sens du passage.",
+    "content": [
+      {
+        "type": "text",
+        "text": "et misit clam ad Abimelech nuntios, dicens: Ecce Gaal filius Obed venit in Sichimam cum fratribus suis, et oppugnat adversum te civitatem."
+      }
+    ],
+    "context": [
+      "JDG 9:31 · Vulgate clémentine"
+    ],
+    "choices": [
+      {
+        "id": "a0",
+        "text": "Il envoya secrètement des messagers à Abimélec, pour lui dire: Voici, Gaal, fils d’Ébed, et ses frères, sont venus à Sichem, et ils soulèvent la ville contre toi."
+      },
+      {
+        "id": "a1",
+        "text": "J’envoyai secrètement des messagers à Abimélec, pour lui dire: Voici, Gaal, fils d’Ébed, et ses frères, sont venus à Sichem, et ils soulèvent la ville contre toi."
+      },
+      {
+        "id": "a2",
+        "text": "Tu envoyas secrètement des messagers à Abimélec, pour lui dire: Voici, Gaal, fils d’Ébed, et ses frères, sont venus à Sichem, et ils soulèvent la ville contre toi."
+      },
+      {
+        "id": "a3",
+        "text": "Ils envoyèrent secrètement des messagers à Abimélec, pour lui dire: Voici, Gaal, fils d’Ébed, et ses frères, sont venus à Sichem, et ils soulèvent la ville contre toi."
+      }
+    ],
+    "accepted": [
+      "a0"
+    ],
+    "skills": [
+      "course.reading.sacred.th-persona"
+    ],
+    "requires": [],
+    "help": "course.source.th-persona",
+    "outcomes": {
+      "a0": {
+        "feedback": "Segond a « sont venus… ils soulèvent » (pluriel) pour venit… oppugnat ; la cible est misit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "a1": {
+        "feedback": "le narrateur devient l’envoyeur «misit» est indicātīvus perfectī āctīvī, tertia persōna singulāris. Sī indicātīvus perfectī āctīvī, prīma persōna singulāris esset, fōrma «misi» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a2": {
+        "feedback": "on s’adresse à l’envoyeur «misit» est indicātīvus perfectī āctīvī, tertia persōna singulāris. Sī indicātīvus perfectī āctīvī, secunda persōna singulāris esset, fōrma «misisti» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      },
+      "a3": {
+        "feedback": "plusieurs envoyeurs «misit» est indicātīvus perfectī āctīvī, tertia persōna singulāris. Sī indicātīvus perfectī āctīvī, tertia persōna plūrālis esset, fōrma «misere» legerētur.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.reading.sacred.th-persona"
+        ],
+        "practice": [
+          "course.sacred.th-persona"
+        ]
+      }
+    }
+  }
+]

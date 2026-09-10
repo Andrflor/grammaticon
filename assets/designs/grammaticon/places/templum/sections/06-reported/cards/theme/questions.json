@@ -1,0 +1,281 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q1",
+    "assessment": "course.production.reported:q1",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Il dit que la route est sûre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Dīcit viam tūtam fuisse."
+      },
+      {
+        "id": "1",
+        "text": "Dīcit pontem fractum esse."
+      },
+      {
+        "id": "2",
+        "text": "Dīcit viam tūtam esse."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Esse garde la simultanéité et viam tūtam le contenu demandé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.1"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Esse garde la simultanéité et viam tūtam le contenu demandé.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.1"
+        ]
+      },
+      "2": {
+        "feedback": "Esse garde la simultanéité et viam tūtam le contenu demandé.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q2",
+    "assessment": "course.production.reported:q2",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître savait que le pont était brisé."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nūntius pontem frēgit."
+      },
+      {
+        "id": "1",
+        "text": "Dominus sciēbat pontem fractum esse."
+      },
+      {
+        "id": "2",
+        "text": "Dominus sciēbat pontem integrum esse."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "course.production.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Fractum exprime l’état brisé ; le sujet de sciēbat est dominus.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.2"
+        ]
+      },
+      "1": {
+        "feedback": "Fractum exprime l’état brisé ; le sujet de sciēbat est dominus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Fractum exprime l’état brisé ; le sujet de sciēbat est dominus.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.2"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q3",
+    "assessment": "course.production.reported:q3",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Il demanda si le messager avait vu le pont."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Rogāvit utrum nūntius pontem vīdisset."
+      },
+      {
+        "id": "1",
+        "text": "Rogāvit utrum nūntius pontem vidēret."
+      },
+      {
+        "id": "2",
+        "text": "Rogāvit utrum dominus pontem vīdisset."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "course.production.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Vīdisset place la vision avant la question ; nūntius reste celui qui voit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Vīdisset place la vision avant la question ; nūntius reste celui qui voit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.3"
+        ]
+      },
+      "2": {
+        "feedback": "Ce choix change le sens. Vīdisset place la vision avant la question ; nūntius reste celui qui voit.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.3"
+        ]
+      }
+    },
+    "followUpOnly": true,
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "q4",
+    "assessment": "course.production.reported:q4",
+    "prompt": "Choisis la formulation latine fidèle au sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le messager répondit qu’il était venu par une autre route."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nūntius respondit dominum per aliam viam vēnisse."
+      },
+      {
+        "id": "1",
+        "text": "Nūntius respondit sē per eandem viam vēnisse."
+      },
+      {
+        "id": "2",
+        "text": "Nūntius respondit sē per aliam viam vēnisse."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "course.production.reported"
+    ],
+    "requires": [],
+    "help": "course.reported",
+    "outcomes": {
+      "0": {
+        "feedback": "Ce choix change le sens. Sē reprend le messager et aliam signifie autre, pas la même.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.4"
+        ]
+      },
+      "1": {
+        "feedback": "Ce choix change le sens. Sē reprend le messager et aliam signifie autre, pas la même.",
+        "observed": [
+          "course.evidence.meaning"
+        ],
+        "hypotheses": [
+          "course.production.reported"
+        ],
+        "practice": [
+          "course.review.reported.4"
+        ]
+      },
+      "2": {
+        "feedback": "Sē reprend le messager et aliam signifie autre, pas la même.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true
+  }
+]

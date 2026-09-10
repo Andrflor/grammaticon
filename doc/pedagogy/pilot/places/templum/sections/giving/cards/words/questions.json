@@ -1,0 +1,546 @@
+[
+  {
+    "id": "water",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "water",
+    "assessment": "templum/giving/words:water",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "eau"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "pānis"
+      },
+      {
+        "id": "1",
+        "text": "aqua"
+      },
+      {
+        "id": "2",
+        "text": "puer"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "pilot.production.word.water"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "pānis ne correspond pas au sens demandé ; ici, il faut aqua (eau).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.water"
+        ],
+        "practice": [
+          "pilot.word.water"
+        ]
+      },
+      "1": {
+        "feedback": "Le mot de dictionnaire attendu est aqua : eau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "puer ne correspond pas au sens demandé ; ici, il faut aqua (eau).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.water"
+        ],
+        "practice": [
+          "pilot.word.water"
+        ]
+      }
+    }
+  },
+  {
+    "id": "bread",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "bread",
+    "assessment": "templum/giving/words:bread",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "pain"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "pānis"
+      },
+      {
+        "id": "1",
+        "text": "nauta"
+      },
+      {
+        "id": "2",
+        "text": "puella"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.production.word.bread"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le mot de dictionnaire attendu est pānis : pain.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "nauta ne correspond pas au sens demandé ; ici, il faut pānis (pain).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      },
+      "2": {
+        "feedback": "puella ne correspond pas au sens demandé ; ici, il faut pānis (pain).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.bread"
+        ],
+        "practice": [
+          "pilot.word.bread"
+        ]
+      }
+    }
+  },
+  {
+    "id": "sailor",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "sailor",
+    "assessment": "templum/giving/words:sailor",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "marin"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "puer"
+      },
+      {
+        "id": "1",
+        "text": "aqua"
+      },
+      {
+        "id": "2",
+        "text": "nauta"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "pilot.production.word.sailor"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "puer ne correspond pas au sens demandé ; ici, il faut nauta (marin).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.sailor"
+        ],
+        "practice": [
+          "pilot.word.sailor"
+        ]
+      },
+      "1": {
+        "feedback": "aqua ne correspond pas au sens demandé ; ici, il faut nauta (marin).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.sailor"
+        ],
+        "practice": [
+          "pilot.word.sailor"
+        ]
+      },
+      "2": {
+        "feedback": "Le mot de dictionnaire attendu est nauta : marin.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "girl",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "girl",
+    "assessment": "templum/giving/words:girl",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "jeune fille"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "puella"
+      },
+      {
+        "id": "1",
+        "text": "nauta"
+      },
+      {
+        "id": "2",
+        "text": "pānis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.production.word.girl"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le mot de dictionnaire attendu est puella : jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "nauta ne correspond pas au sens demandé ; ici, il faut puella (jeune fille).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.girl"
+        ],
+        "practice": [
+          "pilot.word.girl"
+        ]
+      },
+      "2": {
+        "feedback": "pānis ne correspond pas au sens demandé ; ici, il faut puella (jeune fille).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.girl"
+        ],
+        "practice": [
+          "pilot.word.girl"
+        ]
+      }
+    }
+  },
+  {
+    "id": "boy",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "boy",
+    "assessment": "templum/giving/words:boy",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "garçon"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nauta"
+      },
+      {
+        "id": "1",
+        "text": "puer"
+      },
+      {
+        "id": "2",
+        "text": "puella"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "pilot.production.word.boy"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "nauta ne correspond pas au sens demandé ; ici, il faut puer (garçon).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.boy"
+        ],
+        "practice": [
+          "pilot.word.boy"
+        ]
+      },
+      "1": {
+        "feedback": "Le mot de dictionnaire attendu est puer : garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "puella ne correspond pas au sens demandé ; ici, il faut puer (garçon).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.boy"
+        ],
+        "practice": [
+          "pilot.word.boy"
+        ]
+      }
+    }
+  },
+  {
+    "id": "give",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "give",
+    "assessment": "templum/giving/words:give",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "donner"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "habēre"
+      },
+      {
+        "id": "1",
+        "text": "portāre"
+      },
+      {
+        "id": "2",
+        "text": "dare"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "pilot.production.word.give"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "habēre ne correspond pas au sens demandé ; ici, il faut dare (donner).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.give"
+        ],
+        "practice": [
+          "pilot.word.give"
+        ]
+      },
+      "1": {
+        "feedback": "portāre ne correspond pas au sens demandé ; ici, il faut dare (donner).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.give"
+        ],
+        "practice": [
+          "pilot.word.give"
+        ]
+      },
+      "2": {
+        "feedback": "Le mot de dictionnaire attendu est dare : donner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "carry",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "carry",
+    "assessment": "templum/giving/words:carry",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "porter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dare"
+      },
+      {
+        "id": "1",
+        "text": "portāre"
+      },
+      {
+        "id": "2",
+        "text": "habēre"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "pilot.production.word.carry"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "dare ne correspond pas au sens demandé ; ici, il faut portāre (porter).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      },
+      "1": {
+        "feedback": "Le mot de dictionnaire attendu est portāre : porter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "habēre ne correspond pas au sens demandé ; ici, il faut portāre (porter).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.carry"
+        ],
+        "practice": [
+          "pilot.word.carry"
+        ]
+      }
+    }
+  },
+  {
+    "id": "have",
+    "interaction": "choice",
+    "dimension": "guided-production",
+    "item": "have",
+    "assessment": "templum/giving/words:have",
+    "prompt": "Choisis le mot latin de dictionnaire correspondant à ce sens.",
+    "content": [
+      {
+        "type": "text",
+        "text": "avoir"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "habēre"
+      },
+      {
+        "id": "1",
+        "text": "dare"
+      },
+      {
+        "id": "2",
+        "text": "portāre"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "pilot.production.word.have"
+    ],
+    "requires": [],
+    "help": "pilot.giving",
+    "outcomes": {
+      "0": {
+        "feedback": "Le mot de dictionnaire attendu est habēre : avoir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "dare ne correspond pas au sens demandé ; ici, il faut habēre (avoir).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.have"
+        ],
+        "practice": [
+          "pilot.word.have"
+        ]
+      },
+      "2": {
+        "feedback": "portāre ne correspond pas au sens demandé ; ici, il faut habēre (avoir).",
+        "observed": [
+          "pilot.evidence.lexical-choice"
+        ],
+        "hypotheses": [
+          "pilot.production.word.have"
+        ],
+        "practice": [
+          "pilot.word.have"
+        ]
+      }
+    }
+  }
+]

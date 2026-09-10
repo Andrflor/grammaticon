@@ -236,6 +236,7 @@ class GameDesign {
         for (final q in index)
           q.id: [if (q.data['next'] != null) q.data['next'] as String],
       }, 'question sequences');
+      _validateCompletionSequence(card, index);
       if (_questions.length >= 3) _questions.remove(_questions.keys.first);
       return _questions[card.address] = index;
     }
@@ -431,6 +432,12 @@ class GameDesign {
         if (view[key] != null) asset(view[key] as String);
       }
       if (n.kind == 'card') {
+        if (!{
+          'target',
+          'sequence',
+        }.contains(n.data['encounter']?['completion'] ?? 'target')) {
+          throw FormatException('Unsupported completion rule ${n.address}');
+        }
         if ((n.data['encounter']?['target'] as num? ?? 0) <= 0 ||
             (n.data['encounter']?['lives'] as num? ?? 0) <= 0) {
           throw FormatException('Invalid encounter ${n.address}');
@@ -667,10 +674,37 @@ class GameDesign {
         throw FormatException('Unknown next question ${q.data['next']}');
       }
     }
+    if (sequenceIds == null) _validateCompletionSequence(card, questions);
     _acyclic({
       for (final q in questions)
         q.id: [if (q.data['next'] != null) q.data['next'] as String],
     }, 'question sequence');
+  }
+
+  void _validateCompletionSequence(
+    ContentNode card,
+    List<QuestionEntry> questions,
+  ) {
+    if (card.data['encounter']['completion'] == 'sequence') {
+      final starts = questions
+          .where((q) => q.data['followUpOnly'] != true)
+          .toList();
+      if (starts.length != 1) {
+        throw FormatException('Sequence needs one start: ${card.address}');
+      }
+      final indexed = {for (final q in questions) q.id: q};
+      final seen = <String>{};
+      String? id = starts.single.id;
+      while (id != null && seen.add(id)) {
+        id = indexed[id]!.data['next'] as String?;
+      }
+      if (id != null || seen.length != questions.length) {
+        throw FormatException('Incomplete or cyclic sequence: ${card.address}');
+      }
+      if (card.data['encounter']['target'] > questions.length) {
+        throw FormatException('Impossible sequence target: ${card.address}');
+      }
+    }
   }
 
   void _reference(Map target, String id, String label) {
