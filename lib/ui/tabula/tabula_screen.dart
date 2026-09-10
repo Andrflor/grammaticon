@@ -59,7 +59,7 @@ class TabulaScreen extends StatelessWidget {
                             session.label('progress.levels'),
                             style: skin.body(
                               16,
-                              color: const Color(0xFFF3E9D2),
+                              color: skin.paint('FFF3E9D2'),
                               weight: 800,
                             ),
                           ),
@@ -277,7 +277,7 @@ class _SkillNodeState extends State<_SkillNode> {
               horizontal: 12,
               vertical: root ? 9 : 7,
             ),
-            color: s['future'] == true ? const Color(0xFFEFE6D4) : skin.marble,
+            color: s['future'] == true ? skin.paint('FFEFE6D4') : skin.marble,
             borderColor: root ? skin.gold : skin.goldPale,
             borderWidth: root ? 3 : 2,
             radius: root ? 16 : 12,
@@ -639,9 +639,9 @@ class CollectionRow extends StatelessWidget {
               children: [
                 Container(
                   height: 12,
-                  decoration: const ShapeDecoration(
+                  decoration: ShapeDecoration(
                     shape: StadiumBorder(),
-                    color: Color(0x66200A40),
+                    color: skin.paint('66200A40'),
                   ),
                 ),
                 FractionallySizedBox(

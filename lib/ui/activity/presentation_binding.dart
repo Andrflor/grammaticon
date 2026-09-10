@@ -22,8 +22,9 @@ class TrialView {
   }
 
   Json get presentation => object(node.data['presentation']);
-  String label(String key) =>
-      session.text(place.data['presentation']['labels'][key]);
+  String label(String key) => session.text(
+    presentation['labels']?[key] ?? place.data['presentation']['labels'][key],
+  );
 }
 
 enum BattlePhase { intro, question, correct, wrong, victory, defeat }

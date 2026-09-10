@@ -1,3 +1,5 @@
+import 'package:grammaticon/ui/activity/presentation_binding.dart';
+
 import 'dart:io';
 import 'dart:ui' as ui;
 
@@ -84,6 +86,7 @@ void main() {
             await tester.tap(find.text(s.text(place.data['name'])));
             await tester.pumpAndSettle();
             expect(find.byType(TrialSelectionScreen), findsOneWidget);
+            await capture('${place.id}-selection');
             expect(tester.takeException(), isNull);
             await tester.tap(find.widgetWithText(RomanButton, 'Retour').first);
             await tester.pumpAndSettle();
@@ -108,7 +111,9 @@ void main() {
         }
         await tester.runAsync(() => s.start(card));
         await tester.pumpAndSettle();
-        await tester.tap(find.widgetWithText(RomanButton, 'Reprendre'));
+        await tester.tap(
+          find.widgetWithText(RomanButton, TrialView(s, card).label('resume')),
+        );
         await tester.pump();
         await tester.runAsync(
           () => Future<void>.delayed(const Duration(milliseconds: 100)),
@@ -143,6 +148,25 @@ void main() {
         await tester.pump(const Duration(milliseconds: 800));
         expect(s.encounter!['phase'], 'feedback');
         expect(tester.takeException(), isNull);
+        final balance = s.balance;
+        final observations = s.state['observations'].toString();
+        await tester.tap(find.byIcon(Icons.arrow_back).first);
+        await tester.pumpAndSettle();
+        expect(find.byType(CityScreen), findsOneWidget);
+        expect(find.text(TrialView(s, card).label('resume')), findsOneWidget);
+        final omit = find.widgetWithText(
+          RomanButton,
+          TrialView(s, card).label('omit'),
+        );
+        expect(
+          tester.widget<RomanButton>(omit).style,
+          RomanButtonStyle.neutral,
+        );
+        await tester.tap(omit);
+        await tester.pumpAndSettle();
+        expect(s.encounter, isNull);
+        expect(s.balance, balance);
+        expect(s.state['observations'].toString(), observations);
         await tester.pumpWidget(const SizedBox());
         await tester.pump(const Duration(seconds: 2));
         s.dispose();

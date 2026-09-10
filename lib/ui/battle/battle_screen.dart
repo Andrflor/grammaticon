@@ -339,7 +339,7 @@ class _Hud extends StatelessWidget {
               height: 14,
               decoration: ShapeDecoration(
                 shape: StadiumBorder(),
-                color: Color(0xAA200A40),
+                color: skin.paint('AA200A40'),
               ),
             ),
             AnimatedFractionallySizedBox(
@@ -351,7 +351,7 @@ class _Hud extends StatelessWidget {
                 decoration: ShapeDecoration(
                   shape: StadiumBorder(),
                   gradient: LinearGradient(
-                    colors: [skin.red, Color(0xFFFF8A94)],
+                    colors: [skin.red, skin.paint('FFFF8A94')],
                   ),
                 ),
               ),
@@ -611,7 +611,7 @@ class _Center extends StatelessWidget {
                               compact ? 22 : 28,
                               color: outcome.gemsDelta > 0
                                   ? skin.goldLight
-                                  : Color(0xFFFF8A94),
+                                  : skin.paint('FFFF8A94'),
                             ),
                           ),
                           SizedBox(width: 4),
@@ -638,7 +638,7 @@ class _Center extends StatelessWidget {
                         child: RomanPanel(
                           skin: skin,
                           width: min(w - 24, long ? 900 : 760),
-                          color: Color(0xFFFFF4F5),
+                          color: skin.paint('FFFFF4F5'),
                           borderColor: skin.red,
                           padding: EdgeInsets.symmetric(
                             horizontal: 14,
@@ -849,6 +849,7 @@ class _IntroOverlay extends StatelessWidget {
   final VoidCallback onStart;
   @override
   Widget build(BuildContext context) => _Dim(
+    skin: skin,
     child: RomanPanel(
       skin: skin,
       width: min(MediaQuery.sizeOf(context).width - 32, 640),
@@ -939,6 +940,7 @@ class _PauseOverlay extends StatelessWidget {
   final VoidCallback onLeave;
   @override
   Widget build(BuildContext context) => _Dim(
+    skin: skin,
     child: RomanPanel(
       skin: skin,
       child: Column(
@@ -999,6 +1001,7 @@ class _ResultOverlay extends StatelessWidget {
     final session = state.session;
 
     return _Dim(
+      skin: skin,
       child: RomanPanel(
         skin: skin,
         width: min(MediaQuery.sizeOf(context).width - 32, 560),
@@ -1116,11 +1119,12 @@ class _ResultOverlay extends StatelessWidget {
 }
 
 class _Dim extends StatelessWidget {
-  const _Dim({required this.child});
+  const _Dim({required this.skin, required this.child});
+  final G skin;
   final Widget child;
   @override
   Widget build(BuildContext context) => Container(
-    color: Color(0xAA1A0A30),
+    color: skin.paint('AA1A0A30'),
     alignment: Alignment.center,
     padding: EdgeInsets.all(16),
     child: child,

@@ -1,3 +1,5 @@
+import '../activity/presentation_binding.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../engine/design.dart';
@@ -48,6 +50,9 @@ class CityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final design = session.design;
     final layout = object(design.root['presentation']);
+    final active = session.encounter == null
+        ? null
+        : TrialView(session, design.cards[session.encounter!['card']]!);
     final buildings =
         [
           for (final node in design.places)
@@ -129,16 +134,39 @@ class CityScreen extends StatelessWidget {
                         gems: session.balance,
                       ),
                       const Spacer(),
-                      if (session.encounter != null)
+                      if (active != null)
                         RomanPanel(
                           skin: skin,
                           color: skin.purpleDark,
-                          child: RomanButton(
-                            skin: skin,
-                            label: session.label('actions.resume'),
-                            style: RomanButtonStyle.gold,
-                            dense: true,
-                            onPressed: onResume,
+                          child: Wrap(
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            spacing: 12,
+                            runSpacing: 8,
+                            children: [
+                              Text(
+                                '${active.label('interrupted')}: ${active.name}',
+                                style: skin.body(
+                                  16,
+                                  color: skin.goldLight,
+                                  weight: 700,
+                                ),
+                              ),
+                              RomanButton(
+                                skin: skin,
+                                label: active.label('resume'),
+                                style: RomanButtonStyle.gold,
+                                dense: true,
+                                cue: null,
+                                onPressed: onResume,
+                              ),
+                              RomanButton(
+                                skin: skin,
+                                label: active.label('omit'),
+                                style: RomanButtonStyle.neutral,
+                                dense: true,
+                                onPressed: session.discardEncounter,
+                              ),
+                            ],
                           ),
                         ),
                     ],

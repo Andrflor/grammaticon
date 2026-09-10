@@ -1,3 +1,5 @@
+import 'package:grammaticon/ui/activity/presentation_binding.dart';
+
 import 'dart:io';
 import 'dart:convert';
 
@@ -205,7 +207,10 @@ void main() {
       );
       await tester.pumpAndSettle();
       await tester.tap(
-        find.widgetWithText(RomanButton, s.label('actions.resume')),
+        find.widgetWithText(
+          RomanButton,
+          TrialView(s, forumCard).label('resume'),
+        ),
       );
       await tester.pump();
       await tester.runAsync(

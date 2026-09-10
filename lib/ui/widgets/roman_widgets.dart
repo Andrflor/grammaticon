@@ -979,11 +979,11 @@ class SectionTitle extends StatelessWidget {
             width: 150,
             height: 2,
             margin: const EdgeInsets.only(top: 6),
-            decoration: const BoxDecoration(
-              color: Color(0xFFF7DE8C),
+            decoration: BoxDecoration(
+              color: skin.paint('FFF7DE8C'),
               boxShadow: [
                 BoxShadow(
-                  color: Color(0xCC200A40),
+                  color: skin.paint('CC200A40'),
                   blurRadius: 3,
                   offset: Offset(0, 1),
                 ),
@@ -1049,7 +1049,7 @@ class _ChevronPainter extends CustomPainter {
       ..strokeWidth = 3
       ..strokeCap = StrokeCap.round
       ..strokeJoin = StrokeJoin.round
-      ..color = const Color(0xE624103F)
+      ..color = skin.paint('E624103F')
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 1.5);
     final stroke = Paint()
       ..style = PaintingStyle.stroke
@@ -1062,7 +1062,8 @@ class _ChevronPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _ChevronPainter old) => old.open != open;
+  bool shouldRepaint(covariant _ChevronPainter old) =>
+      old.open != open || old.skin != skin;
 }
 
 class LevelBadge extends StatelessWidget {
@@ -1088,9 +1089,9 @@ class LevelBadge extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color(int.parse(item['color'], radix: 16)),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Color(0x22000000),
+            color: skin.paint('22000000'),
             blurRadius: 3,
             offset: Offset(0, 1),
           ),

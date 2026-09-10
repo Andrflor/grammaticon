@@ -685,6 +685,15 @@ class GameSession extends ChangeNotifier {
     if (battle['phase'] == 'question') _timer.start();
   }
 
+  /// Dismiss only the resumable encounter; recorded learning and rewards remain.
+  Future<void> discardEncounter() async {
+    if (busy || encounter == null) return;
+    final next = _copy()..remove('encounter');
+    await _commit(next);
+    _timer.stop();
+    _timer.reset();
+  }
+
   Future<void> finish() async {
     if (!{'victory', 'defeat'}.contains(encounter?['phase'])) return;
     final next = _copy();
