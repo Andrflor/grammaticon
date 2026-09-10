@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q1",
+    "assessment": "study.version.possession:q1",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella librum puerī portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le garçon porte le livre de la jeune fille."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille porte le livre du garçon."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille porte les livres du garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puella portat; librum ūnam rem portātam indicat; puerī possessōrem librī indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hāc responsiōne puer portat et liber puellae est. In sententiā quaesītā puella portat et liber puerī est.",
+        "observed": [
+          "study.confusion.genitive-agent-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Librum singulāris est; librōs plūrālis esset. Ūnus liber portātur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "liber",
+      "porto",
+      "puella",
+      "puer"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q2",
+    "assessment": "study.version.possession:q2",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Domus fēminae est magna."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La maison de la femme est grande."
+      },
+      {
+        "id": "1",
+        "text": "Les maisons de la femme sont grandes."
+      },
+      {
+        "id": "0",
+        "text": "La femme de la maison est grande."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Fēmina domūs fēminam describit; domus fēminae domum describit. Genetīvus ad aliud nōmen pertinet.",
+        "observed": [
+          "study.confusion.genitive-head-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Domus est magna ūnam domum indicat. Domūs sunt magnae plūrēs domōs indicāret.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Domus est magna. Fēminae genetīvus est et possessōrem domūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "domus",
+      "femina",
+      "magnus",
+      "sum"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q3",
+    "assessment": "study.version.possession:q3",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vir fīlium magistrī videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le fils du maître voit l’homme."
+      },
+      {
+        "id": "2",
+        "text": "Le maître voit le fils de l’homme."
+      },
+      {
+        "id": "1",
+        "text": "L’homme voit le fils du maître."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hāc responsiōne fīlius videt et vir vidētur. In sententiā quaesītā vir videt et fīlius vidētur.",
+        "observed": [
+          "study.confusion.genitive-agent-object"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Vir videt; fīlium videt. Magistrī ad fīlium pertinet: magister pater illīus fīliī est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hāc responsiōne magister videt et vir pater fīliī est. In sententiā quaesītā vir videt et magister pater fīliī est.",
+        "observed": [
+          "study.confusion.genitive-agent-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "filius",
+      "magister",
+      "video",
+      "vir"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q4",
+    "assessment": "study.version.possession:q4",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer fīliam fēminae audit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le garçon entend la fille de l’homme."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon entend la fille de la femme."
+      },
+      {
+        "id": "2",
+        "text": "La fille de la femme entend le garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer audit; fīliam audit. Fēminae ad fīliam pertinet: fēmina māter illīus fīliae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Fēminae mātrem fīliae indicat; virī patrem indicāret.",
+        "observed": [
+          "study.confusion.genitive-kinship-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hāc responsiōne fīlia audit et puer audītur. In sententiā quaesītā puer audit et fīlia audītur.",
+        "observed": [
+          "study.confusion.genitive-agent-object"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "audio",
+      "femina",
+      "filia",
+      "puer"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q5",
+    "assessment": "study.version.possession:q5",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber magistrī est parvus."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les livres du maître sont petits."
+      },
+      {
+        "id": "1",
+        "text": "Le livre des maîtres est petit."
+      },
+      {
+        "id": "2",
+        "text": "Le livre du maître est petit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Liber singulāris est; librī sunt parvī plūrēs librōs indicāret.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Magistrī genetīvus singulāris est; magistrōrum genetīvus plūrālis est. Numerus possessōrum mutātus est.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ūnus liber parvus est. Magistrī ūnum magistrum possessōrem indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "liber",
+      "magister",
+      "parvus",
+      "sum"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "possession:q6",
+    "assessment": "study.version.possession:q6",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fīlia virī puellam vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La fille de l’homme appelle la jeune fille."
+      },
+      {
+        "id": "0",
+        "text": "La fille de la femme appelle la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille appelle la fille de l’homme."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Virī patrem fīliae indicat; fēminae mātrem indicāret.",
+        "observed": [
+          "study.confusion.genitive-kinship-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Fīlia vocat; puellam vocat. Virī ad fīliam pertinet: vir pater illīus fīliae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hāc responsiōne puella vocat et fīlia vocātur. In sententiā quaesītā fīlia vocat et puella vocātur.",
+        "observed": [
+          "study.confusion.genitive-agent-object"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "filia",
+      "puella",
+      "vir",
+      "voco"
+    ],
+    "skills": [
+      "study.version.possession"
+    ],
+    "help": "study.possession",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "possession",
+      "translationDirection": "la-fr"
+    }
+  }
+]

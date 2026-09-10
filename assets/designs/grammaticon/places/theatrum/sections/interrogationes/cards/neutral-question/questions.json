@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Estne puer in scholā?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon est-il dans l’école ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "1",
+        "text": "Le garçon est dans l’école."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon est-il dans l’école ? [Interrogāns responsum negātīvum exspectat.]"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.neutral-question"
+    ],
+    "item": "neutral-question:q1",
+    "assessment": "study.version.neutral-question:q1",
+    "help": "study.neutral-question",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "in",
+      "ne",
+      "puer",
+      "schola",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "neutral-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Particula -ne prīmō vocābulō adhaeret et interrogātiōnem facit. In hīs exemplīs interrogāns neque ita neque nōn anteā exspectat. Estne puer in scholā? rem quaerit; puer in scholā est rem affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Interrogātiō rem quaerit; haec sententia rem affirmat. Modum loquendī servā.",
+        "observed": [
+          "study.confusion.question-statement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Suntne puellae in hortō?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les jeunes filles ne sont-elles pas dans le jardin ? [Interrogāns responsum affirmātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "Les jeunes filles sont dans le jardin."
+      },
+      {
+        "id": "2",
+        "text": "Les jeunes filles sont-elles dans le jardin ? [Interrogāns nihil praesūmit.]"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.neutral-question"
+    ],
+    "item": "neutral-question:q2",
+    "assessment": "study.version.neutral-question:q2",
+    "help": "study.neutral-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "in",
+      "ne",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "neutral-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Interrogātiō rem quaerit; haec sententia rem affirmat. Modum loquendī servā.",
+        "observed": [
+          "study.confusion.question-statement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Particula -ne prīmō vocābulō adhaeret et interrogātiōnem facit. In hīs exemplīs interrogāns neque ita neque nōn anteā exspectat. Estne puer in scholā? rem quaerit; puer in scholā est rem affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dormitne magister?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître dort-il ? [Interrogāns responsum negātīvum exspectat.]"
+      },
+      {
+        "id": "1",
+        "text": "Le maître dort-il ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "2",
+        "text": "Le maître dort."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.neutral-question"
+    ],
+    "item": "neutral-question:q3",
+    "assessment": "study.version.neutral-question:q3",
+    "help": "study.neutral-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dormio",
+      "magister",
+      "ne"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "neutral-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Particula -ne prīmō vocābulō adhaeret et interrogātiōnem facit. In hīs exemplīs interrogāns neque ita neque nōn anteā exspectat. Estne puer in scholā? rem quaerit; puer in scholā est rem affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Interrogātiō rem quaerit; haec sententia rem affirmat. Modum loquendī servā.",
+        "observed": [
+          "study.confusion.question-statement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cantatne puella?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille ne chante-t-elle pas ? [Interrogāns responsum affirmātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille chante-t-elle ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille chante."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.neutral-question"
+    ],
+    "item": "neutral-question:q4",
+    "assessment": "study.version.neutral-question:q4",
+    "help": "study.neutral-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "ne",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "neutral-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Particula -ne prīmō vocābulō adhaeret et interrogātiōnem facit. In hīs exemplīs interrogāns neque ita neque nōn anteā exspectat. Estne puer in scholā? rem quaerit; puer in scholā est rem affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Interrogātiō rem quaerit; haec sententia rem affirmat. Modum loquendī servā.",
+        "observed": [
+          "study.confusion.question-statement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

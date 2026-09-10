@@ -1,0 +1,296 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "10-sacred:q1",
+    "assessment": "study.version.10-sacred:q1",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vidua pānem fīliō servāre volēbat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La veuve voulait prendre le pain de son fils."
+      },
+      {
+        "id": "0",
+        "text": "La veuve voulait garder le pain pour son fils."
+      },
+      {
+        "id": "1",
+        "text": "Le fils voulait garder le pain pour la veuve."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "study.10-sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "vocabulary": [
+      "filius",
+      "panis",
+      "servo",
+      "vidua",
+      "volo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "10-sacred",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "10-sacred:q2",
+    "assessment": "study.version.10-sacred:q2",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pānem cum peregrīnō partīta est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Elle partagea l’étranger avec le pain."
+      },
+      {
+        "id": "2",
+        "text": "Elle partagea le pain avec l’étranger."
+      },
+      {
+        "id": "0",
+        "text": "Elle prit tout le pain à l’étranger."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "study.10-sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "cum",
+      "panis",
+      "partior",
+      "peregrinus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "10-sacred",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "10-sacred:q3",
+    "assessment": "study.version.10-sacred:q3",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vīcīnī rem audīverant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les voisins avaient appris ce qui s’était passé."
+      },
+      {
+        "id": "0",
+        "text": "Les voisins n’avaient rien appris de ce qui s’était passé."
+      },
+      {
+        "id": "2",
+        "text": "Les voisins apprendront plus tard ce qui s’est passé."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "study.10-sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "audio",
+      "res",
+      "vicinus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "10-sacred",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "10-sacred:q4",
+    "assessment": "study.version.10-sacred:q4",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Misericordia etiam in inopiā exercērī potest."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La compassion doit s’exercer seulement dans l’abondance."
+      },
+      {
+        "id": "1",
+        "text": "Le manque empêche toujours d’exercer la compassion."
+      },
+      {
+        "id": "0",
+        "text": "La compassion peut s’exercer même dans le manque."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.10-sacred"
+    ],
+    "requires": [],
+    "help": "study.10-sacred",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Cōnsilium persōnae, factum et quod ex factō sequitur distingue. Volēbat cōnsilium, partīta est factum, audīverant rem anteā cognitam indicat. Ex verbīs sententiae responde, nōn ex rēbus quas ipse addis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "etiam",
+      "exerceo",
+      "in",
+      "inopia",
+      "misericordia",
+      "possum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "10-sacred",
+      "translationDirection": "la-fr"
+    }
+  }
+]

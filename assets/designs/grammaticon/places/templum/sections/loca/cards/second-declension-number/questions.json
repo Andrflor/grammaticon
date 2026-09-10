@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Il y a un jardin dans la maison de campagne."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "In vīllā hortī sunt."
+      },
+      {
+        "id": "0",
+        "text": "In vīllā hortus est."
+      },
+      {
+        "id": "2",
+        "text": "In vīllā hortum est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "sum",
+      "villa"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.second-declension-number"
+    ],
+    "item": "second-declension-number:q1",
+    "assessment": "study.theme.second-declension-number:q1",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "fr-la"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Singulāris et plūrālis nōn idem significant. Numerum in sententiā Gallicā datum servā.",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [
+          "study.confusion.case-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Des livres sont dans l’école."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "In scholā librum sunt."
+      },
+      {
+        "id": "0",
+        "text": "In scholā liber est."
+      },
+      {
+        "id": "2",
+        "text": "In scholā librī sunt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "in",
+      "liber",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.second-declension-number"
+    ],
+    "item": "second-declension-number:q2",
+    "assessment": "study.theme.second-declension-number:q2",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "fr-la"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Singulāris et plūrālis nōn idem significant. Numerum in sententiā Gallicā datum servā.",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [
+          "study.confusion.case-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Des garçons sont dans le jardin."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "In hortō puerī sunt."
+      },
+      {
+        "id": "0",
+        "text": "In hortō puerum sunt."
+      },
+      {
+        "id": "2",
+        "text": "In hortō puer est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "puer",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.second-declension-number"
+    ],
+    "item": "second-declension-number:q3",
+    "assessment": "study.theme.second-declension-number:q3",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "fr-la"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [
+          "study.confusion.case-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Singulāris et plūrālis nōn idem significant. Numerum in sententiā Gallicā datum servā.",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Un maître est dans la ville."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "In oppidō magistrī sunt."
+      },
+      {
+        "id": "2",
+        "text": "In oppidō magistrum est."
+      },
+      {
+        "id": "0",
+        "text": "In oppidō magister est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "magister",
+      "oppidum",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.second-declension-number"
+    ],
+    "item": "second-declension-number:q4",
+    "assessment": "study.theme.second-declension-number:q4",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Singulāris et plūrālis nōn idem significant. Numerum in sententiā Gallicā datum servā.",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [
+          "study.confusion.case-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

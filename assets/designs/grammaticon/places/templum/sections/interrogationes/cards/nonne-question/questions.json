@@ -1,0 +1,299 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître n’est-il pas présent ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Magister nōn adest."
+      },
+      {
+        "id": "1",
+        "text": "Num magister adest?"
+      },
+      {
+        "id": "0",
+        "text": "Nōnne magister adest?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.nonne-question"
+    ],
+    "item": "nonne-question:q1",
+    "assessment": "study.theme.nonne-question:q1",
+    "help": "study.nonne-question",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "adsum",
+      "magister",
+      "non",
+      "nonne",
+      "num"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "nonne-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōnne interrogātiōnem facit in quā interrogāns plērumque responsum affirmātīvum exspectat. Nōnne puer adest? nōn idem est atque puer nōn adest. Exspectātiō interrogantis ā rē ipsā distinguenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
+        "observed": [
+          "study.confusion.question-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les jeunes filles ne sont-elles pas présentes ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puellae nōn adsunt."
+      },
+      {
+        "id": "2",
+        "text": "Nōnne puellae adsunt?"
+      },
+      {
+        "id": "0",
+        "text": "Num puellae adsunt?"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.nonne-question"
+    ],
+    "item": "nonne-question:q2",
+    "assessment": "study.theme.nonne-question:q2",
+    "help": "study.nonne-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "non",
+      "nonne",
+      "num",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "nonne-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
+        "observed": [
+          "study.confusion.question-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōnne interrogātiōnem facit in quā interrogāns plērumque responsum affirmātīvum exspectat. Nōnne puer adest? nōn idem est atque puer nōn adest. Exspectātiō interrogantis ā rē ipsā distinguenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’école n’est-elle pas grande ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Nōnne schola magna est?"
+      },
+      {
+        "id": "0",
+        "text": "Schola nōn magna est."
+      },
+      {
+        "id": "2",
+        "text": "Num schola magna est?"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.nonne-question"
+    ],
+    "item": "nonne-question:q3",
+    "assessment": "study.theme.nonne-question:q3",
+    "help": "study.nonne-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magnus",
+      "non",
+      "nonne",
+      "num",
+      "schola",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "nonne-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
+        "observed": [
+          "study.confusion.question-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōnne interrogātiōnem facit in quā interrogāns plērumque responsum affirmātīvum exspectat. Nōnne puer adest? nōn idem est atque puer nōn adest. Exspectātiō interrogantis ā rē ipsā distinguenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les jardins ne sont-ils pas petits ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nōnne hortī parvī sunt?"
+      },
+      {
+        "id": "2",
+        "text": "Hortī nōn parvī sunt."
+      },
+      {
+        "id": "1",
+        "text": "Num hortī parvī sunt?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.nonne-question"
+    ],
+    "item": "nonne-question:q4",
+    "assessment": "study.theme.nonne-question:q4",
+    "help": "study.nonne-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "non",
+      "nonne",
+      "num",
+      "parvus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "nonne-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōnne interrogātiōnem facit in quā interrogāns plērumque responsum affirmātīvum exspectat. Nōnne puer adest? nōn idem est atque puer nōn adest. Exspectātiō interrogantis ā rē ipsā distinguenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōnne rem quaerit cum responsō affirmātīvō exspectātō; nōn rem negat. Haec nōn idem significant.",
+        "observed": [
+          "study.confusion.question-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

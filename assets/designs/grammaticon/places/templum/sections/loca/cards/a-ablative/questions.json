@@ -1,0 +1,437 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est en Italie."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella in Italiam est."
+      },
+      {
+        "id": "1",
+        "text": "Puella in Italia est."
+      },
+      {
+        "id": "0",
+        "text": "Puella in Italiā est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "italia",
+      "puella",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q1",
+    "assessment": "study.theme.a-ablative:q1",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
+        "observed": [
+          "study.confusion.unmarked-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
+        "observed": [
+          "study.confusion.motion-for-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est sur une île."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puer in īnsulā est."
+      },
+      {
+        "id": "0",
+        "text": "Puer in īnsula est."
+      },
+      {
+        "id": "1",
+        "text": "Puer in īnsulam est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "in",
+      "insula",
+      "puer",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q2",
+    "assessment": "study.theme.a-ablative:q2",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
+        "observed": [
+          "study.confusion.unmarked-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
+        "observed": [
+          "study.confusion.motion-for-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est dans l’école."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magister in scholā est."
+      },
+      {
+        "id": "2",
+        "text": "Magister in schola est."
+      },
+      {
+        "id": "0",
+        "text": "Magister in scholam est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "in",
+      "magister",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q3",
+    "assessment": "study.theme.a-ablative:q3",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
+        "observed": [
+          "study.confusion.motion-for-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
+        "observed": [
+          "study.confusion.unmarked-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est dans la maison de campagne."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Fēmina in vīlla est."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina in vīllam est."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina in vīllā est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "femina",
+      "in",
+      "sum",
+      "villa"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q4",
+    "assessment": "study.theme.a-ablative:q4",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "next": "q5",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Post in locus ubi aliquis est ablātīvō exprimitur: -ā longa est. Fōrma in -a brevi nōminātīvus est; hīc nōn convenit.",
+        "observed": [
+          "study.confusion.unmarked-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrma in -am accūsātīvus est. Hīc nōn mōtus in locum, sed locus ubi aliquis est significātur: ablātīvus in -ā requīritur.",
+        "observed": [
+          "study.confusion.motion-for-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’île est petite."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Īnsulā parva est."
+      },
+      {
+        "id": "2",
+        "text": "Īnsula parva est."
+      },
+      {
+        "id": "1",
+        "text": "Īnsulam parva est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "insula",
+      "parvus",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q5",
+    "assessment": "study.theme.a-ablative:q5",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "next": "q6",
+    "outcomes": {
+      "0": {
+        "feedback": "Hīc rēs ipsa subiectum est. Nōminātīvus in -a brevi requīritur; -ā longa ablātīvum indicat.",
+        "observed": [
+          "study.confusion.ablative-for-subject"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Hīc subiectum nōminātīvō, nōn accūsātīvō, exprimitur. Fōrma in -a brevi requīritur, nōn in -am.",
+        "observed": [
+          "study.confusion.accusative-for-subject"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’école est grande."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Scholā magna est."
+      },
+      {
+        "id": "1",
+        "text": "Schola magna est."
+      },
+      {
+        "id": "0",
+        "text": "Scholam magna est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "magnus",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.a-ablative"
+    ],
+    "item": "a-ablative:q6",
+    "assessment": "study.theme.a-ablative:q6",
+    "help": "study.a-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "a-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Hīc subiectum nōminātīvō, nōn accūsātīvō, exprimitur. Fōrma in -a brevi requīritur, nōn in -am.",
+        "observed": [
+          "study.confusion.accusative-for-subject"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōminātīvus in -a dēsinit: Italia, īnsula. Ablātīvus in -ā dēsinit: in Italiā, in īnsulā. Līneā suprā litteram ā positā sonus longus indicātur. Post in, sī locus ubi aliquis est significātur, ablātīvus pōnitur. Discrīmen inter -a et -ā servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Hīc rēs ipsa subiectum est. Nōminātīvus in -a brevi requīritur; -ā longa ablātīvum indicat.",
+        "observed": [
+          "study.confusion.ablative-for-subject"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La chèvre est vue."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Capra nōn vidētur."
+      },
+      {
+        "id": "0",
+        "text": "Capra vidētur."
+      },
+      {
+        "id": "1",
+        "text": "Capra videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q1",
+    "assessment": "study.theme.passive-patient:q1",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "capra",
+      "non",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le cheval est conduit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Equus dūcit."
+      },
+      {
+        "id": "2",
+        "text": "Equus dūcitur."
+      },
+      {
+        "id": "1",
+        "text": "Equus nōn dūcitur."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q2",
+    "assessment": "study.theme.passive-patient:q2",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "duco",
+      "equus",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur est loué."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Agricola laudātur."
+      },
+      {
+        "id": "0",
+        "text": "Agricola nōn laudātur."
+      },
+      {
+        "id": "2",
+        "text": "Agricola laudat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q3",
+    "assessment": "study.theme.passive-patient:q3",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "laudo",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître de maison est attendu."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Dominus nōn exspectātur."
+      },
+      {
+        "id": "1",
+        "text": "Dominus exspectat."
+      },
+      {
+        "id": "0",
+        "text": "Dominus exspectātur."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q4",
+    "assessment": "study.theme.passive-patient:q4",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dominus",
+      "exspecto",
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille reçoit un enseignement."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella docētur."
+      },
+      {
+        "id": "1",
+        "text": "Puella nōn docētur."
+      },
+      {
+        "id": "0",
+        "text": "Puella docet."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q5",
+    "assessment": "study.theme.passive-patient:q5",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "doceo",
+      "non",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave est appelé."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus nōn vocātur."
+      },
+      {
+        "id": "2",
+        "text": "Servus vocat."
+      },
+      {
+        "id": "1",
+        "text": "Servus vocātur."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.passive-patient"
+    ],
+    "item": "passive-patient:q6",
+    "assessment": "study.theme.passive-patient:q6",
+    "help": "study.passive-patient",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "non",
+      "servus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-patient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Sententia actiōnem affirmat. Negātiō nōn adicienda est.",
+        "observed": [
+          "study.confusion.passive-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In vōce passīvā subiectum actiōnem patitur. Capra vidētur: aliquis capram videt. Capra videt: capra ipsa aliquid videt. Fōrmās in -tur et fōrmās in -t dīligenter distingue; agentem nōn dictum nōn adde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

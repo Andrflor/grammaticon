@@ -1,0 +1,289 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ubi est puella?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Est-ce une jeune fille ?"
+      },
+      {
+        "id": "0",
+        "text": "Où est la jeune fille ?"
+      },
+      {
+        "id": "1",
+        "text": "Qui est la jeune fille ?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "puella",
+      "sum",
+      "ubi"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.ubi-question"
+    ],
+    "item": "ubi-question:q1",
+    "assessment": "study.version.ubi-question:q1",
+    "help": "study.ubi-question",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "ubi-question",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ubi locum quaerit, nōn persōnam aut genus reī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
+        "observed": [
+          "study.confusion.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
+        "observed": [
+          "study.confusion.location-polar"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ubi sunt puerī?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Où sont les garçons ?"
+      },
+      {
+        "id": "0",
+        "text": "Qui sont les garçons ?"
+      },
+      {
+        "id": "1",
+        "text": "Sont-ce des garçons ?"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "puer",
+      "sum",
+      "ubi"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.ubi-question"
+    ],
+    "item": "ubi-question:q2",
+    "assessment": "study.version.ubi-question:q2",
+    "help": "study.ubi-question",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "ubi-question",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Quis vel quī persōnam vel persōnās quaerit. Ubi locum ubi sunt quaerit.",
+        "observed": [
+          "study.confusion.location-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
+        "observed": [
+          "study.confusion.location-polar"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ubi locum quaerit, nōn persōnam aut genus reī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ubi est schola?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Qu’est-ce qu’une école ?"
+      },
+      {
+        "id": "2",
+        "text": "Est-ce une école ?"
+      },
+      {
+        "id": "1",
+        "text": "Où est l’école ?"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "schola",
+      "sum",
+      "ubi"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.ubi-question"
+    ],
+    "item": "ubi-question:q3",
+    "assessment": "study.version.ubi-question:q3",
+    "help": "study.ubi-question",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "ubi-question",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.location-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ubi locum quaerit, nōn persōnam aut genus reī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
+        "observed": [
+          "study.confusion.location-polar"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ubi est templum?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Où est le temple ?"
+      },
+      {
+        "id": "2",
+        "text": "Qu’est-ce qu’un temple ?"
+      },
+      {
+        "id": "1",
+        "text": "Est-ce un temple ?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "sum",
+      "templum",
+      "ubi"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.ubi-question"
+    ],
+    "item": "ubi-question:q4",
+    "assessment": "study.version.ubi-question:q4",
+    "help": "study.ubi-question",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "ubi-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ubi locum quaerit, nōn persōnam aut genus reī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hāc interrogātiōne utrum rēs ita sit quaeritur. In sententiā quaesītā autem ubi locum quaerit.",
+        "observed": [
+          "study.confusion.location-polar"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quid est schola? vel quid est templum? genus reī quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.location-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -46,14 +46,15 @@ void main() {
         }
       });
       for (final address in [
-        'theatrum/11-synthesis/reading',
-        'templum/11-synthesis/theme',
+        'theatrum/sententiae/11-synthesis',
+        'templum/sententiae/11-synthesis',
+        'theatrum/interrogationes/num-question',
+        'templum/interrogationes/num-question',
       ]) {
         final card = design.cards[address]!;
         final session = GameSession(design, {}, (_) async {});
         session.state['settings']['sound'] = false;
         session.state['settings']['music'] = false;
-        session.state['purchased'] = [...design.nodes.keys];
         await tester.runAsync(() async {
           await design.lesson(card);
         });
@@ -97,6 +98,7 @@ void main() {
         });
         await tester.tap(find.byIcon(Icons.arrow_back).first);
         await tester.pumpAndSettle();
+        session.state['purchased'] = [...design.nodes.keys];
         await tester.runAsync(() => session.start(card));
         await tester.pumpAndSettle();
         await tester.tap(
@@ -128,8 +130,9 @@ void main() {
                       as RenderRepaintBoundary)
                   .toImage();
           final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-          File('/tmp/${address.split('/').first}-${width.toInt()}.png')
-              .writeAsBytesSync(bytes!.buffer.asUint8List());
+          File(
+            '/tmp/${address.split('/').first}-${card.id}-${width.toInt()}.png',
+          ).writeAsBytesSync(bytes!.buffer.asUint8List());
           image.dispose();
         });
         final q = session.question!;

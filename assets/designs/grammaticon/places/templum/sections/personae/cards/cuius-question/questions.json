@@ -1,0 +1,441 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q1",
+    "assessment": "study.theme.cuius-question:q1",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "À qui est le livre ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Quid est liber?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius est liber?"
+      },
+      {
+        "id": "1",
+        "text": "Ubi est liber?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "liber",
+      "quis",
+      "sum",
+      "ubi"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quid est liber? genus reī quaerit; cuius est liber? possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-definition"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q2",
+    "assessment": "study.theme.cuius-question:q2",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La fille de qui rit ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Quis rīdet?"
+      },
+      {
+        "id": "2",
+        "text": "Cuius fīliae rīdent?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius fīlia rīdet?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "filia",
+      "quis",
+      "rideo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q3",
+    "assessment": "study.theme.cuius-question:q3",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître instruit le fils de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius fīlium magister docet?"
+      },
+      {
+        "id": "1",
+        "text": "Quis fīlium docet?"
+      },
+      {
+        "id": "2",
+        "text": "Cuius fīlius magistrum docet?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "doceo",
+      "filius",
+      "magister",
+      "quis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Fīlium magister docet: magister docet. Fīlius magistrum docet: fīlius docet. Cuius in utrāque sententiā patrem vel mātrem fīliī quaerit; cāsūs agentem et patientem distinguunt.",
+        "observed": [
+          "study.confusion.question-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q4",
+    "assessment": "study.theme.cuius-question:q4",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte les livres de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cuius librōs puella portat?"
+      },
+      {
+        "id": "1",
+        "text": "Cuius librum puella portat?"
+      },
+      {
+        "id": "2",
+        "text": "Quis librōs portat?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "liber",
+      "porto",
+      "puella",
+      "quis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quis persōnam agentem quaerit; cuius ad nōmen pertinet et necessitūdinem vel possessōrem quaerit.",
+        "observed": [
+          "study.confusion.question-person"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q5",
+    "assessment": "study.theme.cuius-question:q5",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les livres de qui sont dans l’école ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Cuius liber in scholā est?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius librī in scholā sunt?"
+      },
+      {
+        "id": "2",
+        "text": "Ubi librī sunt?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "liber",
+      "quis",
+      "schola",
+      "sum",
+      "ubi"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "cuius-question:q6",
+    "assessment": "study.theme.cuius-question:q6",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon voit la villa de qui ?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Cuius vīllās puer videt?"
+      },
+      {
+        "id": "1",
+        "text": "Ubi puer vīllam videt?"
+      },
+      {
+        "id": "0",
+        "text": "Cuius vīllam puer videt?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.cuius-question"
+    ],
+    "help": "study.cuius-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "puer",
+      "quis",
+      "ubi",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cuius-question",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cuius est genetīvus interrogātīvus: possessōrem vel necessitūdinem quaerit. Cuius liber? Liber cuius persōnae? Cuius fīlius? Fīlius cuius patris vel mātris? Quis persōnam, quid rem, ubi locum quaerit. Cuius cum nōmine singulārī vel plūrālī adhibētur; numerus nōminis quoque observandus est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ubi locum quaerit; cuius possessōrem vel necessitūdinem quaerit.",
+        "observed": [
+          "study.confusion.question-place"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Cuius nōn numerum nōminis mutat. Fīlia et fīliae, liber et librī, librum et librōs, vīllam et vīllās distinguenda sunt.",
+        "observed": [
+          "study.confusion.question-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

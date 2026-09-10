@@ -1,0 +1,443 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulā lēctā, pater fīlium vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Avant qu’on lise la lettre, le père appelle son fils."
+      },
+      {
+        "id": "1",
+        "text": "Pendant qu’on lit la lettre, le père appelle son fils."
+      },
+      {
+        "id": "0",
+        "text": "Une fois la lettre lue, le père appelle son fils."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q1",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q1",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "epistula",
+      "filius",
+      "lego",
+      "pater",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
+        "observed": [
+          "study.confusion.absolute-perfect-ongoing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Portā apertā, viātor oppidum intrat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Pendant qu’on ouvre la porte, le voyageur entre dans la ville."
+      },
+      {
+        "id": "2",
+        "text": "Avant qu’on ouvre la porte, le voyageur entre dans la ville."
+      },
+      {
+        "id": "0",
+        "text": "Une fois la porte ouverte, le voyageur entre dans la ville."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q2",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q2",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aperio",
+      "intro",
+      "oppidum",
+      "porta",
+      "viator"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
+        "observed": [
+          "study.confusion.absolute-perfect-ongoing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cēnā parātā, puella amīcōs vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Une fois le dîner préparé, la jeune fille appelle ses amis."
+      },
+      {
+        "id": "1",
+        "text": "Pendant qu’on prépare le dîner, la jeune fille appelle ses amis."
+      },
+      {
+        "id": "2",
+        "text": "Avant qu’on prépare le dîner, la jeune fille appelle ses amis."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q3",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q3",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "cena",
+      "paro",
+      "puella",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
+        "observed": [
+          "study.confusion.absolute-perfect-ongoing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Librīs clausīs, discipulī exeunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Pendant qu’on ferme les livres, les élèves sortent."
+      },
+      {
+        "id": "0",
+        "text": "Une fois les livres fermés, les élèves sortent."
+      },
+      {
+        "id": "2",
+        "text": "Avant qu’on ferme les livres, les élèves sortent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q4",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q4",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "claudo",
+      "discipulus",
+      "exeo",
+      "liber"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
+        "observed": [
+          "study.confusion.absolute-perfect-ongoing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerīs perterritīs, māter iānuam claudit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Pendant que les garçons terrifient la mère, celle-ci ferme la porte."
+      },
+      {
+        "id": "0",
+        "text": "Les garçons étant terrifiés, la mère ferme la porte."
+      },
+      {
+        "id": "2",
+        "text": "Avant que les garçons soient terrifiés, la mère ferme la porte."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q5",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q5",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "claudo",
+      "ianua",
+      "mater",
+      "perterreo",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Puerīs perterritīs puerōs ipsōs iam perterritōs esse indicat. Responsum autem puerōs mātrem perterrēre dīcit. Nōlī eum quī patitur cum eō quī agit confundere.",
+        "observed": [
+          "study.confusion.absolute-perfect-state-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Urbe dēlētā, cīvēs fugiunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Une fois la ville détruite, les citoyens s’enfuient."
+      },
+      {
+        "id": "1",
+        "text": "Pendant qu’on détruit la ville, les citoyens s’enfuient."
+      },
+      {
+        "id": "2",
+        "text": "Avant qu’on détruise la ville, les citoyens s’enfuient."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.absolute-perfect"
+    ],
+    "item": "absolute-perfect:q6",
+    "assessment": "study.version.absolute-perfect:absolute-perfect:q6",
+    "help": "study.absolute-perfect",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "civis",
+      "deleo",
+      "fugio",
+      "urbs"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "absolute-perfect",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Epistulā lēctā, pater fīlium vocat: epistula iam lēcta est cum pater vocat. Nōn dīcitur quis epistulam lēgerit. Epistulā et lēctā ablātīvī sunt. Participium perfectum hīc rem iam factam vel statum inde ortum indicat. Puerīs perterritīs puerōs iam perterritōs esse indicat; nōn dīcit puerōs alium perterrēre. Dum rēs fit et antequam fit aliōs temporum ōrdinēs indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est. Responsum autem eam adhūc fierī dīcit; actiō iam perfecta et actiō quae fit distinguendae sunt.",
+        "observed": [
+          "study.confusion.absolute-perfect-ongoing"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc rēs iam facta est vel status inde ortus adest. Antequam rem nōndum factam indicāret.",
+        "observed": [
+          "study.confusion.absolute-perfect-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

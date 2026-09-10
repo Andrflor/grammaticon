@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister dīcit puerum cantātūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître dit que le garçon chantera."
+      },
+      {
+        "id": "2",
+        "text": "Le maître dit que le garçon a chanté."
+      },
+      {
+        "id": "1",
+        "text": "Le maître dit que le garçon chante."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q1",
+    "assessment": "study.version.infinitive-posteriority:q1",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "canto",
+      "dico",
+      "magister",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater dīcit puellam lēctūram esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père dit que la jeune fille lit."
+      },
+      {
+        "id": "1",
+        "text": "Le père dit que la jeune fille a lu."
+      },
+      {
+        "id": "2",
+        "text": "Le père dit que la jeune fille lira."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q2",
+    "assessment": "study.version.infinitive-posteriority:q2",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "lego",
+      "pater",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina dīcit servum ventūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La femme dit que l’esclave viendra."
+      },
+      {
+        "id": "0",
+        "text": "La femme dit que l’esclave est venu."
+      },
+      {
+        "id": "2",
+        "text": "La femme dit que l’esclave vient."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q3",
+    "assessment": "study.version.infinitive-posteriority:q3",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "femina",
+      "servus",
+      "sum",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer dīcit magistrum scrīptūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le garçon dit que le maître a écrit."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon dit que le maître écrit."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon dit que le maître écrira."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q4",
+    "assessment": "study.version.infinitive-posteriority:q4",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "magister",
+      "puer",
+      "scribo",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dominus dīcit fīlium dormītūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le maître de maison dit que le fils a dormi."
+      },
+      {
+        "id": "2",
+        "text": "Le maître de maison dit que le fils dormira."
+      },
+      {
+        "id": "0",
+        "text": "Le maître de maison dit que le fils dort."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q5",
+    "assessment": "study.version.infinitive-posteriority:q5",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "dominus",
+      "dormio",
+      "filius",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella dīcit fēminam ambulātūram esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille dit que la femme marche."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille dit que la femme marchera."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille dit que la femme a marché."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.infinitive-posteriority"
+    ],
+    "item": "infinitive-posteriority:q6",
+    "assessment": "study.version.infinitive-posteriority:q6",
+    "help": "study.infinitive-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "dico",
+      "femina",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnfīnītīvus futūrus et perfectus contrāriās relātiōnēs temporum indicant: postea futūrum et anteā factum.",
+        "observed": [
+          "study.confusion.infinitive-after-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Īnfīnītīvus futūrus actiōnem post tempus verbi regentis futūram indicat. Dīcit puerum cantātūrum esse: puer postea cantābit. Participium cum subiectō īnfīnītīvī congruit: puerum cantātūrum, puellam cantātūram. Esse pars huius fōrmae est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Participium futūrum cum esse actiōnem postea futūram exprimit. Īnfīnītīvus praesēns eam cum verbō regente simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-after-now"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

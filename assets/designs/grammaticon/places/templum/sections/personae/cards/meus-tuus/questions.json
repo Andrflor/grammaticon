@@ -1,0 +1,299 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mon livre est dans l’école."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Liber tuus in scholā est."
+      },
+      {
+        "id": "2",
+        "text": "Liber mea in scholā est."
+      },
+      {
+        "id": "0",
+        "text": "Liber meus in scholā est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.meus-tuus"
+    ],
+    "item": "meus-tuus:q1",
+    "assessment": "study.theme.meus-tuus:q1",
+    "help": "study.meus-tuus",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "in",
+      "liber",
+      "meus",
+      "schola",
+      "sum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ta maison de campagne est en Italie."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Vīlla tuus in Italiā est."
+      },
+      {
+        "id": "0",
+        "text": "Vīlla mea in Italiā est."
+      },
+      {
+        "id": "2",
+        "text": "Vīlla tua in Italiā est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.meus-tuus"
+    ],
+    "item": "meus-tuus:q2",
+    "assessment": "study.theme.meus-tuus:q2",
+    "help": "study.meus-tuus",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "italia",
+      "meus",
+      "sum",
+      "tuus",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Tes livres sont petits."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Librī tuī parvī sunt."
+      },
+      {
+        "id": "0",
+        "text": "Librī tuae parvī sunt."
+      },
+      {
+        "id": "2",
+        "text": "Librī meī parvī sunt."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.meus-tuus"
+    ],
+    "item": "meus-tuus:q3",
+    "assessment": "study.theme.meus-tuus:q3",
+    "help": "study.meus-tuus",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "liber",
+      "meus",
+      "parvus",
+      "sum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mes temples sont grands."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Templa meī magna sunt."
+      },
+      {
+        "id": "0",
+        "text": "Templa mea magna sunt."
+      },
+      {
+        "id": "1",
+        "text": "Templa tua magna sunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.meus-tuus"
+    ],
+    "item": "meus-tuus:q4",
+    "assessment": "study.theme.meus-tuus:q4",
+    "help": "study.meus-tuus",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magnus",
+      "meus",
+      "sum",
+      "templum",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "meus-tuus",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.meus-tuus"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Meus rem eius quī loquitur indicat; tuus rem eius ad quem loquitur. Adiectīvum possessīvum cum rē possessā congruit: liber meus, vīlla mea, templa mea. Genus possessōris hās fōrmās nōn regit.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -183,7 +183,7 @@ class SkillSummary {
       : strings(node['aggregation']['skills']);
   int get totalLeaves => ids.length;
   int get evaluatedLeaves =>
-      ids.where((id) => session.estimate(session.skill(id)) != null).length;
+      ids.where((id) => session.progress(id) != null).length;
   bool get evaluated => evaluatedLeaves > 0;
   int get tier => session.level(node['id']);
   Color get color => Color(
@@ -193,7 +193,7 @@ class SkillSummary {
     double weighted = 0, total = 0;
     for (final id in ids) {
       final record = session.skill(id);
-      final est = session.estimate(record);
+      final est = session.progress(id);
       if (est != null) {
         final weight =
             ((record['correct'] as num? ?? 0) + (record['wrong'] as num? ?? 0))

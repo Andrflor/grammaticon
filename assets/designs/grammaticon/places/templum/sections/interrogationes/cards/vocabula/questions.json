@@ -1,0 +1,1744 @@
+[
+  {
+    "id": "sum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "sum",
+    "assessment": "study.lexicon.templum.interrogationes:sum",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "être"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "puer"
+      },
+      {
+        "id": "1",
+        "text": "-ne"
+      },
+      {
+        "id": "0",
+        "text": "esse"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: esse — être.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ne",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ne",
+    "assessment": "study.lexicon.templum.interrogationes:ne",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "particule de question neutre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "puer"
+      },
+      {
+        "id": "2",
+        "text": "-ne"
+      },
+      {
+        "id": "1",
+        "text": "in"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "ne"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: -ne — particule de question neutre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: -ne — particule de question neutre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: -ne — particule de question neutre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puer",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puer",
+    "assessment": "study.lexicon.templum.interrogationes:puer",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "garçon"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "schola"
+      },
+      {
+        "id": "2",
+        "text": "in"
+      },
+      {
+        "id": "1",
+        "text": "puer"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: puer — garçon.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "in",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "in",
+    "assessment": "study.lexicon.templum.interrogationes:in",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dans, sur"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "schola"
+      },
+      {
+        "id": "0",
+        "text": "in"
+      },
+      {
+        "id": "2",
+        "text": "puella"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "in"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: in — dans, sur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: in — dans, sur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "schola",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "schola",
+    "assessment": "study.lexicon.templum.interrogationes:schola",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "école"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "hortus"
+      },
+      {
+        "id": "2",
+        "text": "schola"
+      },
+      {
+        "id": "0",
+        "text": "puella"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: schola — école.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puella",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puella",
+    "assessment": "study.lexicon.templum.interrogationes:puella",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "jeune fille"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "puella"
+      },
+      {
+        "id": "0",
+        "text": "dormīre"
+      },
+      {
+        "id": "2",
+        "text": "hortus"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: puella — jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "hortus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "hortus",
+    "assessment": "study.lexicon.templum.interrogationes:hortus",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "jardin"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "magister"
+      },
+      {
+        "id": "1",
+        "text": "dormīre"
+      },
+      {
+        "id": "0",
+        "text": "hortus"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "hortus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: hortus — jardin.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dormio",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "dormio",
+    "assessment": "study.lexicon.templum.interrogationes:dormio",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dormir"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "magister"
+      },
+      {
+        "id": "2",
+        "text": "dormīre"
+      },
+      {
+        "id": "1",
+        "text": "cantāre"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "dormio"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: dormīre — dormir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "magister",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "magister",
+    "assessment": "study.lexicon.templum.interrogationes:magister",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "maître"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "magister"
+      },
+      {
+        "id": "2",
+        "text": "cantāre"
+      },
+      {
+        "id": "0",
+        "text": "num"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: magister — maître.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "canto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "canto",
+    "assessment": "study.lexicon.templum.interrogationes:canto",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "chanter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "cantāre"
+      },
+      {
+        "id": "1",
+        "text": "num"
+      },
+      {
+        "id": "2",
+        "text": "nōnne"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "canto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cantāre — chanter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cantāre — chanter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "num",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "num",
+    "assessment": "study.lexicon.templum.interrogationes:num",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "est-ce que… ? (attente plutôt négative)"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "nōnne"
+      },
+      {
+        "id": "2",
+        "text": "num"
+      },
+      {
+        "id": "1",
+        "text": "fēmina"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "num"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: num — est-ce que… ? (attente plutôt négative).",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: num — est-ce que… ? (attente plutôt négative).",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: num — est-ce que… ? (attente plutôt négative).",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "nonne",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "nonne",
+    "assessment": "study.lexicon.templum.interrogationes:nonne",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ne… pas ? (attente plutôt affirmative)"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "liber"
+      },
+      {
+        "id": "1",
+        "text": "nōnne"
+      },
+      {
+        "id": "2",
+        "text": "fēmina"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "nonne"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōnne — ne… pas ? (attente plutôt affirmative).",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: nōnne — ne… pas ? (attente plutôt affirmative).",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōnne — ne… pas ? (attente plutôt affirmative).",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "femina",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "femina",
+    "assessment": "study.lexicon.templum.interrogationes:femina",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "femme"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "liber"
+      },
+      {
+        "id": "2",
+        "text": "magnus"
+      },
+      {
+        "id": "0",
+        "text": "fēmina"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "femina"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: fēmina — femme.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "liber",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "liber",
+    "assessment": "study.lexicon.templum.interrogationes:liber",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "livre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "magnus"
+      },
+      {
+        "id": "2",
+        "text": "liber"
+      },
+      {
+        "id": "1",
+        "text": "templum"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "liber"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: liber — livre.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: liber — livre.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "magnus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "magnus",
+    "assessment": "study.lexicon.templum.interrogationes:magnus",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "grand"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "magnus"
+      },
+      {
+        "id": "0",
+        "text": "parvus"
+      },
+      {
+        "id": "2",
+        "text": "templum"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "magnus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: magnus — grand.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magnus — grand.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "templum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "templum",
+    "assessment": "study.lexicon.templum.interrogationes:templum",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "temple"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "parvus"
+      },
+      {
+        "id": "2",
+        "text": "adesse"
+      },
+      {
+        "id": "0",
+        "text": "templum"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "templum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: templum — temple.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: templum — temple.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "parvus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "parvus",
+    "assessment": "study.lexicon.templum.interrogationes:parvus",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "petit"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "parvus"
+      },
+      {
+        "id": "0",
+        "text": "adesse"
+      },
+      {
+        "id": "1",
+        "text": "nōn"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "parvus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus — petit.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parvus — petit.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: parvus — petit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "adsum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "adsum",
+    "assessment": "study.lexicon.templum.interrogationes:adsum",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "être présent"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "nōn"
+      },
+      {
+        "id": "0",
+        "text": "cūr"
+      },
+      {
+        "id": "1",
+        "text": "adesse"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "adsum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: adesse — être présent.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: adesse — être présent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: adesse — être présent.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "non",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "non",
+    "assessment": "study.lexicon.templum.interrogationes:non",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ne… pas"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "cūr"
+      },
+      {
+        "id": "2",
+        "text": "plōrāre"
+      },
+      {
+        "id": "0",
+        "text": "nōn"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "non"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: nōn — ne… pas.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nōn — ne… pas.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "cur",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "cur",
+    "assessment": "study.lexicon.templum.interrogationes:cur",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pourquoi"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "cūr"
+      },
+      {
+        "id": "0",
+        "text": "plōrāre"
+      },
+      {
+        "id": "1",
+        "text": "quia"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "cur"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūr — pourquoi.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūr — pourquoi.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: cūr — pourquoi.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ploro",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ploro",
+    "assessment": "study.lexicon.templum.interrogationes:ploro",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pleurer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "plōrāre"
+      },
+      {
+        "id": "0",
+        "text": "fessus"
+      },
+      {
+        "id": "2",
+        "text": "quia"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "ploro"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: plōrāre — pleurer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: plōrāre — pleurer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: plōrāre — pleurer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "quia",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "quia",
+    "assessment": "study.lexicon.templum.interrogationes:quia",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "parce que"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "laetus"
+      },
+      {
+        "id": "1",
+        "text": "fessus"
+      },
+      {
+        "id": "0",
+        "text": "quia"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "quia"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: quia — parce que.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quia — parce que.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quia — parce que.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "fessus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "fessus",
+    "assessment": "study.lexicon.templum.interrogationes:fessus",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "fatigué"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "laetus"
+      },
+      {
+        "id": "1",
+        "text": "ubi"
+      },
+      {
+        "id": "2",
+        "text": "fessus"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "fessus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fessus — fatigué.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fessus — fatigué.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: fessus — fatigué.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "laetus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "laetus",
+    "assessment": "study.lexicon.templum.interrogationes:laetus",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "joyeux"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "ubi"
+      },
+      {
+        "id": "1",
+        "text": "laetus"
+      },
+      {
+        "id": "0",
+        "text": "sed"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "laetus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē: laetus — joyeux.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ubi",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ubi",
+    "assessment": "study.lexicon.templum.interrogationes:ubi",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "où"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "sed"
+      },
+      {
+        "id": "0",
+        "text": "ubi"
+      },
+      {
+        "id": "2",
+        "text": "esse"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "ubi"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ubi — où.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ubi — où.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "sed",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "sed",
+    "assessment": "study.lexicon.templum.interrogationes:sed",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "mais"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "sed"
+      },
+      {
+        "id": "0",
+        "text": "esse"
+      },
+      {
+        "id": "1",
+        "text": "-ne"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.lexicon.templum.interrogationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.interrogationes",
+    "vocabulary": [
+      "sed"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sed — mais.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sed — mais.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē: sed — mais.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

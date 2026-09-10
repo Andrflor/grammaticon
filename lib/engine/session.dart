@@ -66,17 +66,25 @@ class GameSession extends ChangeNotifier {
       }
       final restored = object(jsonDecode(jsonEncode(saved)));
       final battle = restored['encounter'];
-      if (battle != null && !d.cards.containsKey(battle['card'])) {
+      if (battle != null &&
+          (!d.cards.containsKey(battle['card']) ||
+              strings(battle['question']?['skills'])
+                  .any((id) => !d.knowledge.containsKey(id)))) {
         restored['retiredEncounters'] = [
           ...objects(restored['retiredEncounters']),
           object(battle),
         ];
         restored.remove('encounter');
       }
+      final practiceIds = objects(d.pedagogy['practiceSets'])
+          .map((set) => set['id'])
+          .toSet();
       final errors = object(restored['errors']);
       final retired = object(restored['retiredErrors'] ?? {});
       for (final key in errors.keys.toList()) {
-        if (!d.cards.containsKey(errors[key]['card'])) {
+        if (!d.cards.containsKey(errors[key]['card']) ||
+            strings(errors[key]['practice'])
+                .any((id) => !practiceIds.contains(id))) {
           retired[key] = errors.remove(key);
         }
       }
@@ -166,27 +174,45 @@ class GameSession extends ChangeNotifier {
   }
 
   Json skill(String id) => object(state['skills']?[id] ?? {});
+  double? progress(String id) {
+    final record = skill(id);
+    final value = estimate(record, skillId: id);
+    if (value == null) return null;
+    final required = strings(
+      design.knowledge[id]?['masteryRequirements']?['successfulItems'],
+    );
+    if (required.isEmpty) return value;
+    final successful = _successfulItems(record);
+    final coverage =
+        required.where(successful.contains).length / required.length;
+    return min(value, coverage);
+  }
+
   int level(String id, {bool rewards = false}) {
     final aggregate = design.knowledge[id]?['aggregation'];
     if (aggregate != null) {
-      final records = strings(aggregate['skills'])
-          .map(skill)
+      final ids = strings(aggregate['skills'])
           .where(
-            (r) => (r['correct'] as num? ?? 0) + (r['wrong'] as num? ?? 0) > 0,
+            (s) =>
+                (skill(s)['correct'] as num? ?? 0) +
+                    (skill(s)['wrong'] as num? ?? 0) >
+                0,
           )
           .toList();
-      if (records.isEmpty) return 0;
-      return records.map((r) => _level(r, rewards: rewards)).reduce(min);
+      if (ids.isEmpty) return 0;
+      return ids
+          .map((s) => _level(skill(s), skillId: s, rewards: rewards))
+          .reduce(min);
     }
-    return _level(skill(id), rewards: rewards);
+    return _level(skill(id), skillId: id, rewards: rewards);
   }
 
-  double? estimate(Json record) {
+  double? estimate(Json record, {String? skillId}) {
     if (record['estimate'] == null) return null;
     var value = (record['estimate'] as num).toDouble();
     final last = record['last'];
     final levels = objects(mastery['levels']);
-    final index = _level(record, applyDecay: false);
+    final index = _level(record, skillId: skillId, applyDecay: false);
     final grace = (levels[index]['graceDays'] as num? ?? 0).toInt();
     if (last is num && grace > 0) {
       final days = clock()
@@ -204,7 +230,30 @@ class GameSession extends ChangeNotifier {
     return value.clamp(0, 1);
   }
 
-  int _level(Json record, {bool rewards = false, bool applyDecay = true}) {
+  Set<String> _successfulItems(Json record) {
+    if (record['successfulItems'] != null) {
+      return strings(record['successfulItems']).toSet();
+    }
+    // Older saves retain only a bounded recent history. Unrecorded success is
+    // not evidence; preserve the successful items that can still be verified.
+    final result = <String>{};
+    for (final r in objects(record['recent'])) {
+      if (r['assisted'] == true || r['item'] is! String) continue;
+      if (r['correct'] == true) {
+        result.add(r['item']);
+      } else {
+        result.remove(r['item']);
+      }
+    }
+    return result;
+  }
+
+  int _level(
+    Json record, {
+    String? skillId,
+    bool rewards = false,
+    bool applyDecay = true,
+  }) {
     final count =
         (record['correct'] as num? ?? 0) + (record['wrong'] as num? ?? 0);
     final est = rewards
@@ -212,11 +261,24 @@ class GameSession extends ChangeNotifier {
             (record['highWater'] as num? ?? 0),
             (record['estimate'] as num? ?? 0),
           )
-        : (applyDecay ? estimate(record) : record['estimate'] as num?);
+        : (applyDecay
+              ? estimate(record, skillId: skillId)
+              : record['estimate'] as num?);
     if (count == 0 || est == null) return 0;
     final levels = objects(mastery['levels']);
     var result = 0;
     for (var i = 0; i < levels.length; i++) {
+      // Coverage is authored per skill. Reward saturation keeps using the
+      // existing observation-based levels, independently of this mastery requirement.
+      if (!rewards && i == levels.length - 1 && skillId != null) {
+        final required = strings(
+          design.knowledge[skillId]?['masteryRequirements']?['successfulItems'],
+        );
+        if (required.isNotEmpty &&
+            !_successfulItems(record).containsAll(required)) {
+          continue;
+        }
+      }
       final l = levels[i];
       final recent = objects(record['recent'])
           .where((r) => r['assisted'] != true)
@@ -292,7 +354,7 @@ class GameSession extends ChangeNotifier {
 
   double weight(ContentNode card, QuestionEntry q, {String? encounterId}) {
     final record = skill(q.skills.first);
-    final est = estimate(record);
+    final est = estimate(record, skillId: q.skills.first);
     var result = est == null
         ? (selection['unknownWeight'] as num).toDouble()
         : 1.0 + (selection['weakScale'] as num) * (1 - est);
@@ -525,7 +587,7 @@ class GameSession extends ChangeNotifier {
     final timestamp = clock().millisecondsSinceEpoch;
     for (final id in q.skills.toSet()) {
       final r = object(next['skills'][id] ?? {});
-      var est = estimate(r);
+      var est = estimate(r, skillId: id);
       if (!assisted) {
         r[correct ? 'correct' : 'wrong'] =
             (r[correct ? 'correct' : 'wrong'] as int? ?? 0) + 1;
@@ -548,6 +610,15 @@ class GameSession extends ChangeNotifier {
       r['estimate'] = est;
       r['last'] = timestamp;
       r['items'] = {...strings(r['items']), q.item}.toList();
+      if (!assisted && design.knowledge[id]?['masteryRequirements'] != null) {
+        final successful = _successfulItems(r);
+        if (correct) {
+          successful.add(q.item);
+        } else {
+          successful.remove(q.item);
+        }
+        r['successfulItems'] = successful.toList();
+      }
       r['days'] = {...strings(r['days']), day}.toList();
       final recent = [
         ...objects(r['recent']),

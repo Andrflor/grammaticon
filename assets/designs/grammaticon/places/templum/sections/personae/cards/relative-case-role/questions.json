@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon qui voit le maître rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer quem magister videt rīdet."
+      },
+      {
+        "id": "0",
+        "text": "Puer quī magistrum videt rīdet."
+      },
+      {
+        "id": "2",
+        "text": "Magister quem puer videt rīdet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q1",
+    "assessment": "study.theme.relative-case-role:q1",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "magister",
+      "puer",
+      "qui",
+      "rideo",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme que la jeune fille salue marche."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina quae puellam salūtat ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Puella quam fēmina salūtat ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina quam puella salūtat ambulat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q2",
+    "assessment": "study.theme.relative-case-role:q2",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "femina",
+      "puella",
+      "qui",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave que le maître de maison appelle court."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Servus quem dominus vocat currit."
+      },
+      {
+        "id": "2",
+        "text": "Servus quī dominum vocat currit."
+      },
+      {
+        "id": "0",
+        "text": "Dominus quem servus vocat currit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q3",
+    "assessment": "study.theme.relative-case-role:q3",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "curro",
+      "dominus",
+      "qui",
+      "servus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître qui instruit le garçon est assis."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puer quem magister docet sedet."
+      },
+      {
+        "id": "0",
+        "text": "Magister quī puerum docet sedet."
+      },
+      {
+        "id": "1",
+        "text": "Magister quem puer docet sedet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q4",
+    "assessment": "study.theme.relative-case-role:q4",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "doceo",
+      "magister",
+      "puer",
+      "qui",
+      "sedeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille qui fait l’éloge de la femme rit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella quae fēminam laudat rīdet."
+      },
+      {
+        "id": "0",
+        "text": "Puella quam fēmina laudat rīdet."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina quam puella laudat rīdet."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q5",
+    "assessment": "study.theme.relative-case-role:q5",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "laudo",
+      "puella",
+      "qui",
+      "rideo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur que le marchand salue reste."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Agricola quī mercātōrem salūtat manet."
+      },
+      {
+        "id": "0",
+        "text": "Mercātor quem agricola salūtat manet."
+      },
+      {
+        "id": "1",
+        "text": "Agricola quem mercātor salūtat manet."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.relative-case-role"
+    ],
+    "item": "relative-case-role:q6",
+    "assessment": "study.theme.relative-case-role:q6",
+    "help": "study.relative-case-role",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "maneo",
+      "mercator",
+      "qui",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "relative-case-role",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōmen antecedēns indicat dē quā persōnā sententia prīncipālis agat. Nōmen ante prōnōmen relātīvum observā; persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Prōnōmen relātīvum ad nōmen antecedēns refertur; cāsus eius ex officiō in sententiā relātīvā pendet. Puer quī magistrum videt: puer videt. Puer quem magister videt: magister videt. Subiectum et obiectum sententiae relātīvae nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Quī vel quae hīc subiectum verbi relātīvī est; quem vel quam obiectum est. Agentem et eum quem actiō attingit nōn permūtā.",
+        "observed": [
+          "study.confusion.relative-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

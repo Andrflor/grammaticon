@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella in hortum currit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille court pour entrer dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille court à l’intérieur du jardin."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille sort du jardin en courant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q1",
+    "assessment": "study.version.in-place-motion:q1",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "curro",
+      "hortus",
+      "in",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in hortō currit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le garçon sort du jardin en courant."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon court à l’intérieur du jardin."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon court pour entrer dans le jardin."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q2",
+    "assessment": "study.version.in-place-motion:q2",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "curro",
+      "hortus",
+      "in",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina in scholam ambulat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La femme marche pour entrer dans l’école."
+      },
+      {
+        "id": "2",
+        "text": "La femme marche à l’intérieur de l’école."
+      },
+      {
+        "id": "0",
+        "text": "La femme sort de l’école en marchant."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q3",
+    "assessment": "study.version.in-place-motion:q3",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "femina",
+      "in",
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister in scholā ambulat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le maître marche pour entrer dans l’école."
+      },
+      {
+        "id": "2",
+        "text": "Le maître sort de l’école en marchant."
+      },
+      {
+        "id": "0",
+        "text": "Le maître marche à l’intérieur de l’école."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q4",
+    "assessment": "study.version.in-place-motion:q4",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "in",
+      "magister",
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Servus in cubiculum currit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’esclave court à l’intérieur de la chambre."
+      },
+      {
+        "id": "1",
+        "text": "L’esclave sort de la chambre en courant."
+      },
+      {
+        "id": "2",
+        "text": "L’esclave court pour entrer dans la chambre."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q5",
+    "assessment": "study.version.in-place-motion:q5",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cubiculum",
+      "curro",
+      "in",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in cubiculō ambulat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon sort de la chambre en marchant."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon marche à l’intérieur de la chambre."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon marche pour entrer dans la chambre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.in-place-motion"
+    ],
+    "item": "in-place-motion:q6",
+    "assessment": "study.version.in-place-motion:q6",
+    "help": "study.in-place-motion",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "cubiculum",
+      "in",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "in-place-motion",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ex cum ablātīvō exitum indicat. Ex hortō currere nōn idem est ac in hortō currere aut in hortum currere.",
+        "observed": [
+          "study.confusion.place-exit"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In cum ablātīvō locum indicat in quō aliquis est; in cum accūsātīvō locum indicat in quem aliquis intrat. In hortō nōn idem est ac in hortum. Cāsum nōminis et sēnsum verbi simul observā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ubi et quō nōn idem quaerunt. In cum ablātīvō locum in quō aliquis movētur indicat; in cum accūsātīvō locum in quem it indicat.",
+        "observed": [
+          "study.confusion.place-motion"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

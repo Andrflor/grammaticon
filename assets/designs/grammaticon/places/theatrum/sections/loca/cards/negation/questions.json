@@ -1,0 +1,438 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q1",
+    "assessment": "study.version.negation:q1",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer nōn dormit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le garçon dort."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon ne dort pas."
+      },
+      {
+        "id": "2",
+        "text": "Les garçons ne dorment pas."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer nōn dormit; negātiō nōn omittenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Puer dormit negātiōnem omittit. Hīc autem puer nōn dormit.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc ūnus puer indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q2",
+    "assessment": "study.version.negation:q2",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella nōn cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille ne chante pas."
+      },
+      {
+        "id": "1",
+        "text": "Les jeunes filles ne chantent pas."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille chante."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Puella cantat negātiōnem omittit. Hīc autem puella nōn cantat.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc ūna puella indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puella nōn cantat; negātiō nōn omittenda est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "canto",
+      "non",
+      "puella"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q3",
+    "assessment": "study.version.negation:q3",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer dormit, sed puella nōn dormit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le garçon ne dort pas, mais la jeune fille dort."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon et la jeune fille dorment."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon dort, mais la jeune fille ne dort pas."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae dormiunt. Hīc autem puer dormit et puella nōn dormit.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puer dormit. Puella autem nōn dormit. Negātiō ad puellam pertinet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Negātiō ad puellam, nōn ad puerum pertinet. Utramque partem sententiae separātim cōnsīderā.",
+        "observed": [
+          "study.confusion.negation-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puella",
+      "puer",
+      "sed"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q4",
+    "assessment": "study.version.negation:q4",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber nōn est magnus."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le livre est grand."
+      },
+      {
+        "id": "0",
+        "text": "Le livre n’est pas grand."
+      },
+      {
+        "id": "2",
+        "text": "Les livres ne sont pas grands."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Liber nōn est magnus. Vocābulum «nōn» negat librum magnum esse.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Liber est magnus rem affirmat. Hīc autem liber nōn est magnus.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc ūnus liber indicātur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "liber",
+      "magnus",
+      "non",
+      "sum"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q5",
+    "assessment": "study.version.negation:q5",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina cantat, sed vir nōn cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La femme et l’homme chantent."
+      },
+      {
+        "id": "0",
+        "text": "La femme ne chante pas, mais l’homme chante."
+      },
+      {
+        "id": "2",
+        "text": "La femme chante, mais l’homme ne chante pas."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Negātiō ad virum, nōn ad fēminam pertinet. Utramque partem sententiae separātim cōnsīderā.",
+        "observed": [
+          "study.confusion.negation-scope"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hāc responsiōne ambae persōnae cantant. Hīc autem fēmina cantat et vir nōn cantat.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Fēmina cantat. Vir autem nōn cantat. Negātiō ad virum pertinet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "canto",
+      "femina",
+      "non",
+      "sed",
+      "vir"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "negation:q6",
+    "assessment": "study.version.negation:q6",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerī nōn dormiunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les garçons ne dorment pas."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon ne dort pas."
+      },
+      {
+        "id": "2",
+        "text": "Les garçons dorment."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc plūrēs puerī indicantur. Numerum subiectī nōlī mūtāre.",
+        "observed": [
+          "study.confusion.negation-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puerī plūrēs sunt et nōn dormiunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puerī dormiunt negātiōnem omittit. Hīc autem puerī nōn dormiunt.",
+        "observed": [
+          "study.confusion.negation-omitted"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "dormio",
+      "non",
+      "puer"
+    ],
+    "skills": [
+      "study.version.negation"
+    ],
+    "help": "study.negation",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "negation",
+      "translationDirection": "la-fr"
+    }
+  }
+]

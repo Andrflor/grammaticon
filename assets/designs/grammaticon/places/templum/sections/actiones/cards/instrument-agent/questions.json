@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La branche est coupée par l’agriculteur avec un couteau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Rāmus ab agricolā cultrum secātur."
+      },
+      {
+        "id": "2",
+        "text": "Agricola ā rāmō cultrō secātur."
+      },
+      {
+        "id": "0",
+        "text": "Rāmus ab agricolā cultrō secātur."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q1",
+    "assessment": "study.theme.instrument-agent:q1",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ab",
+      "agricola",
+      "culter",
+      "ramus",
+      "seco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le clou est frappé par l’esclave avec un marteau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Clāvus ā servō malleō tunditur."
+      },
+      {
+        "id": "0",
+        "text": "Clāvus ā servō malleum tunditur."
+      },
+      {
+        "id": "1",
+        "text": "Servus ā clāvō malleō tunditur."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q2",
+    "assessment": "study.theme.instrument-agent:q2",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "clavus",
+      "malleus",
+      "servus",
+      "tundo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La corde est coupée par la maîtresse de maison avec des ciseaux."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Domina ā fūne forficibus secātur."
+      },
+      {
+        "id": "1",
+        "text": "Fūnis ā dominā forficibus secātur."
+      },
+      {
+        "id": "2",
+        "text": "Fūnis ā dominā forficēs secātur."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q3",
+    "assessment": "study.theme.instrument-agent:q3",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "domina",
+      "forfex",
+      "funis",
+      "seco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La porte est ouverte par le garçon avec une clé."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ostium ā puerō clāve aperītur."
+      },
+      {
+        "id": "2",
+        "text": "Puer ab ostiō clāve aperītur."
+      },
+      {
+        "id": "1",
+        "text": "Ostium ā puerō clāvem aperītur."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q4",
+    "assessment": "study.theme.instrument-agent:q4",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "aperio",
+      "clavis",
+      "ostium",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La terre est retournée par l’agriculteur avec une charrue."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Terra ab agricolā arātrum vertitur."
+      },
+      {
+        "id": "1",
+        "text": "Agricola ā terrā arātrō vertitur."
+      },
+      {
+        "id": "2",
+        "text": "Terra ab agricolā arātrō vertitur."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q5",
+    "assessment": "study.theme.instrument-agent:q5",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "agricola",
+      "aratrum",
+      "terra",
+      "verto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le jardin est arrosé par la femme avec de l’eau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Hortus ā fēminā aquam rigātur."
+      },
+      {
+        "id": "1",
+        "text": "Hortus ā fēminā aquā rigātur."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina ab hortō aquā rigātur."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.instrument-agent"
+    ],
+    "item": "instrument-agent:q6",
+    "assessment": "study.theme.instrument-agent:q6",
+    "help": "study.instrument-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "aqua",
+      "femina",
+      "hortus",
+      "rigo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "instrument-agent",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Is quī agit, rēs quae actiōnem patitur et īnstrūmentum separātim agnōscenda sunt.",
+        "observed": [
+          "study.confusion.instrument-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ablātīvus sine praepositiōne īnstrūmentum indicāre potest. Rāmus secātur cultrō: culter īnstrūmentum est. Rāmus ab agricolā secātur: agricola agit. In hīs exemplīs nōn idem sunt is quī agit et id quō agit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnstrūmentum hīc ablātīvō exprimitur, nōn accūsātīvō.",
+        "observed": [
+          "study.confusion.instrument-case"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

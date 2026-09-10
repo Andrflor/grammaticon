@@ -1,0 +1,451 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer currit ut aquam petat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon court pour chercher de l’eau."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon court pour ne pas chercher d’eau."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon court parce qu’il cherche de l’eau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q1",
+    "assessment": "study.version.purpose-present:q1",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "aqua",
+      "curro",
+      "peto",
+      "puer",
+      "ut"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella tacet nē puerum excitet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La jeune fille se tait parce qu’elle ne réveille pas le garçon."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille se tait pour réveiller le garçon."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille se tait pour ne pas réveiller le garçon."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q2",
+    "assessment": "study.version.purpose-present:q2",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "excito",
+      "ne",
+      "puella",
+      "puer",
+      "taceo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta vēla parat ut nāvis discēdat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marin prépare les voiles parce que le navire part."
+      },
+      {
+        "id": "0",
+        "text": "Le marin prépare les voiles pour que le navire parte."
+      },
+      {
+        "id": "2",
+        "text": "Le marin prépare les voiles pour que le navire ne parte pas."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q3",
+    "assessment": "study.version.purpose-present:q3",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "discedo",
+      "nauta",
+      "navis",
+      "paro",
+      "ut",
+      "velum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina iānuam claudit nē frīgus intret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La femme ferme la porte pour que le froid entre."
+      },
+      {
+        "id": "0",
+        "text": "La femme ferme la porte pour que le froid n’entre pas."
+      },
+      {
+        "id": "1",
+        "text": "La femme ferme la porte parce que le froid n’entre pas."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q4",
+    "assessment": "study.version.purpose-present:q4",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "claudo",
+      "femina",
+      "frigus",
+      "ianua",
+      "intro",
+      "ne"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Viātor viam quaerit ut ad oppidum perveniat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le voyageur cherche le chemin pour parvenir à la ville."
+      },
+      {
+        "id": "2",
+        "text": "Le voyageur cherche le chemin pour ne pas parvenir à la ville."
+      },
+      {
+        "id": "1",
+        "text": "Le voyageur cherche le chemin parce qu’il parvient à la ville."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q5",
+    "assessment": "study.version.purpose-present:q5",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "oppidum",
+      "pervenio",
+      "quaero",
+      "ut",
+      "via",
+      "viator"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater puerum tenet nē puer in flūmen cadat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le père tient le garçon pour que celui-ci tombe dans le fleuve."
+      },
+      {
+        "id": "1",
+        "text": "Le père tient le garçon parce que celui-ci ne tombe pas dans le fleuve."
+      },
+      {
+        "id": "0",
+        "text": "Le père tient le garçon pour que celui-ci ne tombe pas dans le fleuve."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-present"
+    ],
+    "item": "purpose-present:q6",
+    "assessment": "study.version.purpose-present:q6",
+    "help": "study.07-purpose",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cado",
+      "flumen",
+      "in",
+      "ne",
+      "pater",
+      "puer",
+      "teneo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "07-purpose",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs ut cum subiūnctīvō cōnsilium indicat; nē cōnsilium negātīvum indicat. Puer currit ut aquam petat: aquam petere vult. Puella tacet nē puerum excitet: puerum excitāre nōn vult. Quia causam indicat, nōn cōnsilium. Hīc verba prīncipālia praesentia sunt et in cōnsiliīs subiūnctīvus praesēns adhibētur. Cōnsilia temporis praeteritī aliīs fōrmīs exprimuntur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

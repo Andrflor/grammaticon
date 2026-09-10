@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q1",
+    "assessment": "study.theme.dative-recipient:q1",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille donne du pain au garçon."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pānem puella puerō dat."
+      },
+      {
+        "id": "1",
+        "text": "Puer puellae pānem dat."
+      },
+      {
+        "id": "2",
+        "text": "Puella puerīs pānem dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "do",
+      "panis",
+      "puella",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puella dat; puer accipit. Datīvus puerō ūnum accipientem indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Puella dat; puer accipit. Datīvus puerō ūnum accipientem indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puerō et puerīs numerō differunt. Hīc ūnus accipit.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q2",
+    "assessment": "study.theme.dative-recipient:q2",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin donne de l’eau à la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Nauta puellīs aquam dat."
+      },
+      {
+        "id": "0",
+        "text": "Nauta puellae aquam dat."
+      },
+      {
+        "id": "1",
+        "text": "Puella nautae aquam dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aqua",
+      "do",
+      "nauta",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nauta dat; puella accipit. Datīvus puellae ūnum accipientem indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Nauta dat; puella accipit. Datīvus puellae ūnum accipientem indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puellae et puellīs numerō differunt. Hīc ūnus accipit.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q3",
+    "assessment": "study.theme.dative-recipient:q3",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon donne le livre au maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magister puerō librum dat."
+      },
+      {
+        "id": "2",
+        "text": "Puer magistrīs librum dat."
+      },
+      {
+        "id": "0",
+        "text": "Librum puer magistrō dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "liber",
+      "magister",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer dat; magister accipit. Datīvus magistrō ūnum accipientem indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Puer dat; magister accipit. Datīvus magistrō ūnum accipientem indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Magistrō et magistrīs numerō differunt. Hīc ūnus accipit.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q4",
+    "assessment": "study.theme.dative-recipient:q4",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme donne les roses aux garçons."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puerī fēminae rosās dant."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina puerīs rosās dat."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina puerō rosās dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "femina",
+      "puer",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Fēmina dat; puerī accipiunt. Datīvus puerīs plūrēs accipientēs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Fēmina dat; puerī accipiunt. Datīvus puerīs plūrēs accipientēs indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puerīs et puerō numerō differunt. Hīc plūrēs accipiunt.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q5",
+    "assessment": "study.theme.dative-recipient:q5",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître donne les livres aux jeunes filles."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Librōs magister puellīs dat."
+      },
+      {
+        "id": "2",
+        "text": "Magister puellae librōs dat."
+      },
+      {
+        "id": "1",
+        "text": "Puellae magistrō librōs dant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "liber",
+      "magister",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Magister dat; puellae accipiunt. Datīvus puellīs plūrēs accipientēs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Magister dat; puellae accipiunt. Datīvus puellīs plūrēs accipientēs indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Puellīs et puellae numerō differunt. Hīc plūrēs accipiunt.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "dative-recipient:q6",
+    "assessment": "study.theme.dative-recipient:q6",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme donne du pain au marin."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Vir nautīs pānem dat."
+      },
+      {
+        "id": "1",
+        "text": "Nauta virō pānem dat."
+      },
+      {
+        "id": "0",
+        "text": "Vir nautae pānem dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.dative-recipient"
+    ],
+    "help": "study.giving",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "nauta",
+      "panis",
+      "vir"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "dative-recipient",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Vir dat; nauta accipit. Datīvus nautae ūnum accipientem indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Dāns et accipiēns permūtātī sunt. Vir dat; nauta accipit. Datīvus nautae ūnum accipientem indicat.",
+        "observed": [
+          "study.confusion.gift-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Nautae et nautīs numerō differunt. Hīc ūnus accipit.",
+        "observed": [
+          "study.confusion.recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Māter patrem videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le père voit la mère."
+      },
+      {
+        "id": "0",
+        "text": "La mère voit le père."
+      },
+      {
+        "id": "2",
+        "text": "La mère voit les pères."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q1",
+    "assessment": "study.version.third-subject-object:q1",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "mater",
+      "pater",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mātrem pater vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La mère appelle le père."
+      },
+      {
+        "id": "1",
+        "text": "Le père appelle les mères."
+      },
+      {
+        "id": "2",
+        "text": "Le père appelle la mère."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q2",
+    "assessment": "study.version.third-subject-object:q2",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "mater",
+      "pater",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Frāter sorōrem salūtat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le frère salue la sœur."
+      },
+      {
+        "id": "2",
+        "text": "La sœur salue le frère."
+      },
+      {
+        "id": "0",
+        "text": "Le frère salue les sœurs."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q3",
+    "assessment": "study.version.third-subject-object:q3",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "frater",
+      "saluto",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Frātrem soror exspectat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La sœur attend le frère."
+      },
+      {
+        "id": "1",
+        "text": "Le frère attend la sœur."
+      },
+      {
+        "id": "2",
+        "text": "La sœur attend les frères."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q4",
+    "assessment": "study.version.third-subject-object:q4",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "exspecto",
+      "frater",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pāstor canem vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le berger appelle les chiens."
+      },
+      {
+        "id": "2",
+        "text": "Le berger appelle le chien."
+      },
+      {
+        "id": "0",
+        "text": "Le chien appelle le berger."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q5",
+    "assessment": "study.version.third-subject-object:q5",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canis",
+      "pastor",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pāstōrem canis videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le berger voit le chien."
+      },
+      {
+        "id": "0",
+        "text": "Le chien voit les bergers."
+      },
+      {
+        "id": "1",
+        "text": "Le chien voit le berger."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.third-subject-object"
+    ],
+    "item": "third-subject-object:q6",
+    "assessment": "study.version.third-subject-object:q6",
+    "help": "study.third-subject-object",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canis",
+      "pastor",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-subject-object",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Obiectum hīc singulāre est. Accūsātīvus plūrālis hōrum nōminum in -ēs plūrēs persōnās vel rēs significat.",
+        "observed": [
+          "study.confusion.case-third-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōminātīvus subiectum indicat; accūsātīvus obiectum indicat. In tertiā dēclīnātiōne nōmen saepe mūtātur: māter, mātrem; pater, patrem; soror, sorōrem. Māter patrem videt nōn idem est ac pater mātrem videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōminātīvus subiectum et accūsātīvus obiectum hīc indicant. Ordo verbōrum sōlus nōn sufficit; dēsinentiās observā.",
+        "observed": [
+          "study.confusion.case-third-roles"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

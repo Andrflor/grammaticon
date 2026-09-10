@@ -1,0 +1,301 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les garçons sont présents. Le maître les appelle."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puerī adsunt. Magister eum vocat."
+      },
+      {
+        "id": "1",
+        "text": "Puerī adsunt. Magister eās vocat."
+      },
+      {
+        "id": "0",
+        "text": "Puerī adsunt. Magister eōs vocat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.eos-eas"
+    ],
+    "item": "eos-eas:q1",
+    "assessment": "study.theme.eos-eas:q1",
+    "help": "study.eos-eas",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "magister",
+      "puer",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eos-eas",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eōs et eās accūsātīvī plūrālēs sunt. Eōs ad nōmina masculīna, eās ad nōmina fēminīna referuntur. Eum vel eam ūnum, eōs vel eās plūrēs significant. Genus et numerum antecedentis simul servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les jeunes filles sont présentes. La femme les entend."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puellae adsunt. Fēmina eōs audit."
+      },
+      {
+        "id": "1",
+        "text": "Puellae adsunt. Fēmina eam audit."
+      },
+      {
+        "id": "2",
+        "text": "Puellae adsunt. Fēmina eās audit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.eos-eas"
+    ],
+    "item": "eos-eas:q2",
+    "assessment": "study.theme.eos-eas:q2",
+    "help": "study.eos-eas",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "audio",
+      "femina",
+      "is",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eos-eas",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Eōs et eās accūsātīvī plūrālēs sunt. Eōs ad nōmina masculīna, eās ad nōmina fēminīna referuntur. Eum vel eam ūnum, eōs vel eās plūrēs significant. Genus et numerum antecedentis simul servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les livres sont dans l’école. Le garçon les porte."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Librī in scholā sunt. Puer eōs portat."
+      },
+      {
+        "id": "0",
+        "text": "Librī in scholā sunt. Puer eum portat."
+      },
+      {
+        "id": "2",
+        "text": "Librī in scholā sunt. Puer eās portat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.eos-eas"
+    ],
+    "item": "eos-eas:q3",
+    "assessment": "study.theme.eos-eas:q3",
+    "help": "study.eos-eas",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "is",
+      "liber",
+      "porto",
+      "puer",
+      "schola",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eos-eas",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Eōs et eās accūsātīvī plūrālēs sunt. Eōs ad nōmina masculīna, eās ad nōmina fēminīna referuntur. Eum vel eam ūnum, eōs vel eās plūrēs significant. Genus et numerum antecedentis simul servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les roses sont dans le jardin. La jeune fille les voit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Rosae in hortō sunt. Puella eōs videt."
+      },
+      {
+        "id": "0",
+        "text": "Rosae in hortō sunt. Puella eās videt."
+      },
+      {
+        "id": "2",
+        "text": "Rosae in hortō sunt. Puella eam videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.eos-eas"
+    ],
+    "item": "eos-eas:q4",
+    "assessment": "study.theme.eos-eas:q4",
+    "help": "study.eos-eas",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "in",
+      "is",
+      "puella",
+      "rosa",
+      "sum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eos-eas",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eōs et eās accūsātīvī plūrālēs sunt. Eōs ad nōmina masculīna, eās ad nōmina fēminīna referuntur. Eum vel eam ūnum, eōs vel eās plūrēs significant. Genus et numerum antecedentis simul servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

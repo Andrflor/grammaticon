@@ -1,0 +1,292 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ami, porte le livre !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Amīce, portā librum!"
+      },
+      {
+        "id": "1",
+        "text": "Amīcus, portā librum!"
+      },
+      {
+        "id": "2",
+        "text": "Amīcum, portā librum!"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.vocative"
+    ],
+    "item": "vocative:q1",
+    "assessment": "study.theme.vocative:q1",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "amicus",
+      "liber",
+      "porto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
+        "observed": [
+          "study.confusion.vocative-nominative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
+        "observed": [
+          "study.confusion.vocative-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Bon ami, écoute la jeune fille !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Bonum amīcum, audī puellam!"
+      },
+      {
+        "id": "2",
+        "text": "Bone amīce, audī puellam!"
+      },
+      {
+        "id": "0",
+        "text": "Bonus amīcus, audī puellam!"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.vocative"
+    ],
+    "item": "vocative:q2",
+    "assessment": "study.theme.vocative:q2",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "audio",
+      "bonus",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
+        "observed": [
+          "study.confusion.vocative-nominative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
+        "observed": [
+          "study.confusion.vocative-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Esclave, pose le livre sur la table !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Servus, pōne librum in mēnsā!"
+      },
+      {
+        "id": "0",
+        "text": "Servum, pōne librum in mēnsā!"
+      },
+      {
+        "id": "1",
+        "text": "Serve, pōne librum in mēnsā!"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.vocative"
+    ],
+    "item": "vocative:q3",
+    "assessment": "study.theme.vocative:q3",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "liber",
+      "mensa",
+      "pono",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
+        "observed": [
+          "study.confusion.vocative-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn nōminātīvus in -us, requīritur.",
+        "observed": [
+          "study.confusion.vocative-nominative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Maître, regarde le jardin !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magistrum, vidē hortum!"
+      },
+      {
+        "id": "0",
+        "text": "Magister, vidē hortum!"
+      },
+      {
+        "id": "2",
+        "text": "Magistrī, vidē hortum!"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.vocative"
+    ],
+    "item": "vocative:q4",
+    "assessment": "study.theme.vocative:q4",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "magister",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Persōna appellātur: vocātīvus, nōn accūsātīvus, requīritur.",
+        "observed": [
+          "study.confusion.vocative-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Magister hīc appellātur. Genetīvus magistrī possessōrem indicāret.",
+        "observed": [
+          "study.confusion.vocative-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

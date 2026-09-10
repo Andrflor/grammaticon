@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est venu. Le garçon avait lu le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister vēnit. Puer librum lēgerat."
+      },
+      {
+        "id": "1",
+        "text": "Magister vēnit. Puer librum lēgit."
+      },
+      {
+        "id": "2",
+        "text": "Magister vēnit. Puer librum legēbat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q1",
+    "assessment": "study.theme.pluperfect-anteriority:q1",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "lego",
+      "liber",
+      "magister",
+      "puer",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est venu. La jeune fille avait cueilli la rose."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer vēnit. Puella rosam carpēbat."
+      },
+      {
+        "id": "2",
+        "text": "Puer vēnit. Puella rosam carpserat."
+      },
+      {
+        "id": "0",
+        "text": "Puer vēnit. Puella rosam carpsit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q2",
+    "assessment": "study.theme.pluperfect-anteriority:q2",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "carpo",
+      "puella",
+      "puer",
+      "rosa",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave est venu. La femme avait écrit la lettre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Servus vēnit. Fēmina epistulam scrībēbat."
+      },
+      {
+        "id": "2",
+        "text": "Servus vēnit. Fēmina epistulam scrīpsit."
+      },
+      {
+        "id": "1",
+        "text": "Servus vēnit. Fēmina epistulam scrīpserat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q3",
+    "assessment": "study.theme.pluperfect-anteriority:q3",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "epistula",
+      "femina",
+      "scribo",
+      "servus",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le père est venu. Le maître avait averti l’élève."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Pater vēnit. Magister discipulum monēbat."
+      },
+      {
+        "id": "0",
+        "text": "Pater vēnit. Magister discipulum monuerat."
+      },
+      {
+        "id": "1",
+        "text": "Pater vēnit. Magister discipulum monuit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q4",
+    "assessment": "study.theme.pluperfect-anteriority:q4",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "discipulus",
+      "magister",
+      "moneo",
+      "pater",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand est venu. L’agriculteur avait conduit le cheval."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Mercātor vēnit. Agricola equum dūxerat."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor vēnit. Agricola equum dūcēbat."
+      },
+      {
+        "id": "0",
+        "text": "Mercātor vēnit. Agricola equum dūxit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q5",
+    "assessment": "study.theme.pluperfect-anteriority:q5",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "duco",
+      "equus",
+      "mercator",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître de maison est venu. L’esclave avait ouvert la porte."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Dominus vēnit. Servus portam aperuit."
+      },
+      {
+        "id": "0",
+        "text": "Dominus vēnit. Servus portam aperiēbat."
+      },
+      {
+        "id": "1",
+        "text": "Dominus vēnit. Servus portam aperuerat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.pluperfect-anteriority"
+    ],
+    "item": "pluperfect-anteriority:q6",
+    "assessment": "study.theme.pluperfect-anteriority:q6",
+    "help": "study.pluperfect-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aperio",
+      "dominus",
+      "porta",
+      "servus",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "pluperfect-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Plūsquamperfectum actiōnem anteā perfectam exprimit. Imperfectum eam tum dūrāre vel iterārī significāret.",
+        "observed": [
+          "study.confusion.anteriority-imperfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Plūsquamperfectum actiōnem ante aliud tempus praeteritum factam indicat. Puer librum iam lēgerat, cum magister vēnit: lectiō ante adventum magistrī facta erat. Lēgerat, lēgit et leget nōn idem tempus significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Plūsquamperfectum actiōnem ante tempus praeteritum iam factam indicat. Perfectum simplex hanc relātiōnem temporum nōn eōdem modō exprimit.",
+        "observed": [
+          "study.confusion.anteriority-perfect"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

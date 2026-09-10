@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon marche avec la mère."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer cum mātrem ambulat."
+      },
+      {
+        "id": "0",
+        "text": "Puer cum mātre ambulat."
+      },
+      {
+        "id": "2",
+        "text": "Puer sine mātre ambulat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q1",
+    "assessment": "study.theme.third-ablative:q1",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ambulo",
+      "cum",
+      "mater",
+      "puer",
+      "sine"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille revient avec le père."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella sine patre redit."
+      },
+      {
+        "id": "0",
+        "text": "Puella cum patrem redit."
+      },
+      {
+        "id": "2",
+        "text": "Puella cum patre redit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q2",
+    "assessment": "study.theme.third-ablative:q2",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cum",
+      "pater",
+      "puella",
+      "redeo",
+      "sine"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La sœur court avec le frère."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Soror cum frātre currit."
+      },
+      {
+        "id": "0",
+        "text": "Soror sine frātre currit."
+      },
+      {
+        "id": "2",
+        "text": "Soror cum frātrem currit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q3",
+    "assessment": "study.theme.third-ablative:q3",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cum",
+      "curro",
+      "frater",
+      "sine",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le frère marche avec la sœur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Frāter sine sorōre ambulat."
+      },
+      {
+        "id": "0",
+        "text": "Frāter cum sorōre ambulat."
+      },
+      {
+        "id": "1",
+        "text": "Frāter cum sorōrem ambulat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q4",
+    "assessment": "study.theme.third-ablative:q4",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "cum",
+      "frater",
+      "sine",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur vient avec le berger."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola cum pāstōrem venit."
+      },
+      {
+        "id": "1",
+        "text": "Agricola sine pāstōre venit."
+      },
+      {
+        "id": "2",
+        "text": "Agricola cum pāstōre venit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q5",
+    "assessment": "study.theme.third-ablative:q5",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "cum",
+      "pastor",
+      "sine",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon court avec le chien."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer cum cane currit."
+      },
+      {
+        "id": "2",
+        "text": "Puer cum canem currit."
+      },
+      {
+        "id": "0",
+        "text": "Puer sine cane currit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.third-ablative"
+    ],
+    "item": "third-ablative:q6",
+    "assessment": "study.theme.third-ablative:q6",
+    "help": "study.third-ablative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canis",
+      "cum",
+      "curro",
+      "puer",
+      "sine"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-ablative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Cum comitem adesse, sine eum abesse indicat. Hās praepositiōnēs nōn permūtā.",
+        "observed": [
+          "study.confusion.companion-absence"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cum et sine ablātīvum regunt. In hīs nōminibus tertiae dēclīnātiōnis ablātīvus singulāris in -e dēsinit: mātre, patre, frātre, sorōre, pāstōre, cane. Cum mātre comitem indicat; sine mātre comitem abesse indicat. Ad mātrem fīnem mōtūs indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Cum hīc ablātīvum regit: cum mātre, nōn cum mātrem. Hōrum nōminum ablātīvus singulāris in -e dēsinit.",
+        "observed": [
+          "study.confusion.case-third-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

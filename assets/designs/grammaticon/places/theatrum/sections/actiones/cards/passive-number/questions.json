@@ -1,0 +1,427 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Caprae videntur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La chèvre est vue."
+      },
+      {
+        "id": "0",
+        "text": "Les chèvres sont vues."
+      },
+      {
+        "id": "2",
+        "text": "Les chèvres voient."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q1",
+    "assessment": "study.version.passive-number:q1",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "capra",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Equī dūcuntur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Les chevaux sont conduits."
+      },
+      {
+        "id": "1",
+        "text": "Les chevaux conduisent."
+      },
+      {
+        "id": "0",
+        "text": "Le cheval est conduit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q2",
+    "assessment": "study.version.passive-number:q2",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "duco",
+      "equus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricolae laudantur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les agriculteurs louent."
+      },
+      {
+        "id": "1",
+        "text": "Les agriculteurs sont loués."
+      },
+      {
+        "id": "2",
+        "text": "L’agriculteur est loué."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q3",
+    "assessment": "study.version.passive-number:q3",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "laudo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Dominī exspectantur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Les maîtres de maison attendent."
+      },
+      {
+        "id": "1",
+        "text": "Le maître de maison est attendu."
+      },
+      {
+        "id": "0",
+        "text": "Les maîtres de maison sont attendus."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q4",
+    "assessment": "study.version.passive-number:q4",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dominus",
+      "exspecto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puellae docentur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille reçoit un enseignement."
+      },
+      {
+        "id": "1",
+        "text": "Les jeunes filles enseignent."
+      },
+      {
+        "id": "2",
+        "text": "Les jeunes filles reçoivent un enseignement."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q5",
+    "assessment": "study.version.passive-number:q5",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "doceo",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Servī vocantur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les esclaves sont appelés."
+      },
+      {
+        "id": "0",
+        "text": "Les esclaves appellent."
+      },
+      {
+        "id": "2",
+        "text": "L’esclave est appelé."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.passive-number"
+    ],
+    "item": "passive-number:q6",
+    "assessment": "study.version.passive-number:q6",
+    "help": "study.passive-number",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "servus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum hīc actiōnem patitur. Vōcem passīvam cum actīvā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.active-passive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Subiectum singulāre verbum passīvum singulāre postulat; subiectum plūrāle verbum plūrāle. Capra vidētur, caprae videntur. Equus dūcitur, equī dūcuntur. Numerus agentis nōn dictī numerum verbi nōn regit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerus verbi cum subiectō congruere dēbet: ūnus et plūrēs distinguuntur.",
+        "observed": [
+          "study.confusion.passive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Latīnē",
+  "access": {
+    "price": 30,
+    "requires": {
+      "all": [
+        {
+          "completed": "templum/demonstratives/demonstrative-gender"
+        },
+        {
+          "completed": "templum/demonstratives/demonstrative-accusative"
+        },
+        {
+          "completed": "templum/demonstratives/demonstrative-genitive"
+        },
+        {
+          "completed": "templum/demonstratives/demonstrative-dative"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.templum.demonstratives"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "temple_bg",
+    "hero": "temple_hero_idle",
+    "opponent": "temple_priest_flamen",
+    "heroCorrect": "temple_hero_gesture",
+    "heroWrong": "temple_hero_hurt",
+    "heroVictory": "temple_hero_victory",
+    "heroDefeat": "temple_hero_defeat",
+    "opponentName": "Flāmen",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

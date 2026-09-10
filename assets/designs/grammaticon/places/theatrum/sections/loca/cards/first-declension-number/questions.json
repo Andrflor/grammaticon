@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In scholā puella est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Une jeune fille est dans l’école."
+      },
+      {
+        "id": "2",
+        "text": "L’école est dans la jeune fille."
+      },
+      {
+        "id": "1",
+        "text": "Des jeunes filles sont dans l’école."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "puella",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.first-declension-number"
+    ],
+    "item": "first-declension-number:q1",
+    "assessment": "study.version.first-declension-number:q1",
+    "help": "study.first-declension-number",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "first-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puella ūnam persōnam significat; puellae plūrēs persōnās significant. Hīc nōminātīvus singulāris in -a, nōminātīvus plūrālis in -ae dēsinit. Cum singulārī est, cum plūrālī sunt pōnitur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In īnsulā fēminae sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "L’île est dans les femmes."
+      },
+      {
+        "id": "2",
+        "text": "Des femmes sont sur l’île."
+      },
+      {
+        "id": "0",
+        "text": "Une femme est sur l’île."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "femina",
+      "in",
+      "insula",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.first-declension-number"
+    ],
+    "item": "first-declension-number:q2",
+    "assessment": "study.version.first-declension-number:q2",
+    "help": "study.first-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "first-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puella ūnam persōnam significat; puellae plūrēs persōnās significant. Hīc nōminātīvus singulāris in -a, nōminātīvus plūrālis in -ae dēsinit. Cum singulārī est, cum plūrālī sunt pōnitur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In Italiā vīllae sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Il y a une maison de campagne en Italie."
+      },
+      {
+        "id": "0",
+        "text": "L’Italie est dans une maison de campagne."
+      },
+      {
+        "id": "1",
+        "text": "Il y a des maisons de campagne en Italie."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "in",
+      "italia",
+      "sum",
+      "villa"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.first-declension-number"
+    ],
+    "item": "first-declension-number:q3",
+    "assessment": "study.version.first-declension-number:q3",
+    "help": "study.first-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "first-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puella ūnam persōnam significat; puellae plūrēs persōnās significant. Hīc nōminātīvus singulāris in -a, nōminātīvus plūrālis in -ae dēsinit. Cum singulārī est, cum plūrālī sunt pōnitur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In oppidō schola est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Il y a des écoles dans la ville."
+      },
+      {
+        "id": "2",
+        "text": "La ville est dans une école."
+      },
+      {
+        "id": "0",
+        "text": "Il y a une école dans la ville."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "oppidum",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.first-declension-number"
+    ],
+    "item": "first-declension-number:q4",
+    "assessment": "study.version.first-declension-number:q4",
+    "help": "study.first-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "first-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puella ūnam persōnam significat; puellae plūrēs persōnās significant. Hīc nōminātīvus singulāris in -a, nōminātīvus plūrālis in -ae dēsinit. Cum singulārī est, cum plūrālī sunt pōnitur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

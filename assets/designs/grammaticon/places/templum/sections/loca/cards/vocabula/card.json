@@ -1,0 +1,99 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Latīnē",
+  "access": {
+    "price": 20,
+    "requires": {
+      "all": [
+        {
+          "completed": "templum/loca/a-ablative"
+        },
+        {
+          "completed": "templum/loca/o-ablative"
+        },
+        {
+          "completed": "templum/loca/est-sunt"
+        },
+        {
+          "completed": "templum/loca/ubi-question"
+        },
+        {
+          "completed": "templum/loca/first-declension-number"
+        },
+        {
+          "completed": "templum/loca/second-declension-number"
+        },
+        {
+          "completed": "templum/loca/neuter-number"
+        },
+        {
+          "completed": "templum/loca/feminine-agreement"
+        },
+        {
+          "completed": "templum/loca/masculine-agreement"
+        },
+        {
+          "completed": "templum/loca/neuter-agreement"
+        },
+        {
+          "completed": "templum/loca/negation"
+        },
+        {
+          "completed": "templum/loca/02-places"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.templum.loca"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "temple_bg",
+    "hero": "temple_hero_idle",
+    "opponent": "temple_priest_augur",
+    "heroCorrect": "temple_hero_gesture",
+    "heroWrong": "temple_hero_hurt",
+    "heroVictory": "temple_hero_victory",
+    "heroDefeat": "temple_hero_defeat",
+    "opponentName": "Augur",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

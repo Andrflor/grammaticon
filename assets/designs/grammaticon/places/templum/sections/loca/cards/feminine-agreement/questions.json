@@ -1,0 +1,289 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est joyeuse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella laetus est."
+      },
+      {
+        "id": "2",
+        "text": "Puella laetum est."
+      },
+      {
+        "id": "0",
+        "text": "Puella laeta est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "laetus",
+      "puella",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.feminine-agreement"
+    ],
+    "item": "feminine-agreement:q1",
+    "assessment": "study.theme.feminine-agreement:q1",
+    "help": "study.feminine-agreement",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "feminine-agreement",
+      "translationDirection": "fr-la"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les écoles sont grandes."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Scholae magnī sunt."
+      },
+      {
+        "id": "2",
+        "text": "Scholae magnae sunt."
+      },
+      {
+        "id": "1",
+        "text": "Scholae magna sunt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "magnus",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.feminine-agreement"
+    ],
+    "item": "feminine-agreement:q2",
+    "assessment": "study.theme.feminine-agreement:q2",
+    "help": "study.feminine-agreement",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "feminine-agreement",
+      "translationDirection": "fr-la"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’île est petite."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Īnsula parvus est."
+      },
+      {
+        "id": "0",
+        "text": "Īnsula parvum est."
+      },
+      {
+        "id": "1",
+        "text": "Īnsula parva est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "insula",
+      "parvus",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.feminine-agreement"
+    ],
+    "item": "feminine-agreement:q3",
+    "assessment": "study.theme.feminine-agreement:q3",
+    "help": "study.feminine-agreement",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "feminine-agreement",
+      "translationDirection": "fr-la"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les femmes sont joyeuses."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēminae laetae sunt."
+      },
+      {
+        "id": "2",
+        "text": "Fēminae laeta sunt."
+      },
+      {
+        "id": "1",
+        "text": "Fēminae laetī sunt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "femina",
+      "laetus",
+      "sum"
+    ],
+    "prompt": "Sententiam Latīnē redde.",
+    "skills": [
+      "study.theme.feminine-agreement"
+    ],
+    "item": "feminine-agreement:q4",
+    "assessment": "study.theme.feminine-agreement:q4",
+    "help": "study.feminine-agreement",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "feminine-agreement",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Adiectīvum cum nōmine genere, numerō et cāsū congruit. Puella laeta est; puellae laetae sunt. Nōmen fēminīnum hīc adiectīvum in -a vel -ae postulat.",
+        "observed": [
+          "study.confusion.gender-agreement"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

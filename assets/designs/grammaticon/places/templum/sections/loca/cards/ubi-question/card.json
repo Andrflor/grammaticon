@@ -1,0 +1,67 @@
+{
+  "id": "ubi-question",
+  "name": "Ubi?",
+  "subtitle": "Compositiō sententiarum",
+  "access": {
+    "price": 15,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "templum/loca/est-sunt"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.theme.ubi-question"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 3,
+    "completion": "sequence"
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "temple_bg",
+    "hero": "temple_hero_idle",
+    "opponent": "priest",
+    "heroCorrect": "temple_hero_gesture",
+    "heroWrong": "temple_hero_hurt",
+    "heroVictory": "temple_hero_victory",
+    "heroDefeat": "temple_hero_defeat",
+    "opponentName": "Sacerdōs",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

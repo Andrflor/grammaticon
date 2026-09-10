@@ -1,0 +1,434 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella rosam portābit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille a porté une rose."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille porte une rose."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille portera une rose."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q1",
+    "assessment": "study.version.future-first-second:q1",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "porto",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in hortō cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon chantera dans le jardin."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon chante dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon a chanté dans le jardin."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q2",
+    "assessment": "study.version.future-first-second:q2",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "hortus",
+      "in",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister puerum monēbit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le maître avertit le garçon en ce moment."
+      },
+      {
+        "id": "1",
+        "text": "Le maître avertira le garçon."
+      },
+      {
+        "id": "0",
+        "text": "Le maître a averti le garçon."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q3",
+    "assessment": "study.version.future-first-second:q3",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magister",
+      "moneo",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola aquam habet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "L’agriculteur a de l’eau."
+      },
+      {
+        "id": "1",
+        "text": "L’agriculteur aura de l’eau."
+      },
+      {
+        "id": "2",
+        "text": "L’agriculteur a eu de l’eau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q4",
+    "assessment": "study.version.future-first-second:q4",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "aqua",
+      "habeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina puellam vidēbit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La femme a vu la jeune fille."
+      },
+      {
+        "id": "0",
+        "text": "La femme voit la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "La femme verra la jeune fille."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q5",
+    "assessment": "study.version.future-first-second:q5",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "puella",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor servum exspectat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marchand attend l’esclave."
+      },
+      {
+        "id": "0",
+        "text": "Le marchand a attendu l’esclave."
+      },
+      {
+        "id": "2",
+        "text": "Le marchand attendra l’esclave."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.future-first-second"
+    ],
+    "item": "04-time:q6",
+    "assessment": "study.version.future-first-second:q6",
+    "help": "study.04-time",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "exspecto",
+      "mercator",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "04-time",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In prīmā et secundā coniugātiōne futūrum saepe -b- habet: cantat, cantābit; monet, monēbit. Praesēns rem praesentem indicat; futūrum rem postea futūram. Verbum ipsum observā, etiam sī crās aut nunc nōn additur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

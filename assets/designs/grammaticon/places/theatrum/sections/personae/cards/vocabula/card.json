@@ -1,0 +1,99 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Gallicē",
+  "access": {
+    "price": 25,
+    "requires": {
+      "all": [
+        {
+          "completed": "theatrum/personae/quis-quid"
+        },
+        {
+          "completed": "theatrum/personae/agent-subject"
+        },
+        {
+          "completed": "theatrum/personae/agent-object"
+        },
+        {
+          "completed": "theatrum/personae/possession"
+        },
+        {
+          "completed": "theatrum/personae/genitive-plural"
+        },
+        {
+          "completed": "theatrum/personae/cuius-question"
+        },
+        {
+          "completed": "theatrum/personae/meus-tuus"
+        },
+        {
+          "completed": "theatrum/personae/suus-eius"
+        },
+        {
+          "completed": "theatrum/personae/reflexive-object"
+        },
+        {
+          "completed": "theatrum/personae/giving"
+        },
+        {
+          "completed": "theatrum/personae/relative-case-role"
+        },
+        {
+          "completed": "theatrum/personae/03-descriptions"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.theatrum.personae"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_chorus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Chorī Magister",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

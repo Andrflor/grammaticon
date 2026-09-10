@@ -1,0 +1,300 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister adest. Puella eum vocat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître est présent. La jeune fille l’appelle."
+      },
+      {
+        "id": "1",
+        "text": "Le maître est présent. Il appelle la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "Le maître est présent. La jeune fille appelle les maîtres."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.eum-eam"
+    ],
+    "item": "eum-eam:q1",
+    "assessment": "study.version.eum-eam:q1",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "magister",
+      "puella",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
+        "observed": [
+          "study.confusion.pronoun-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina adest. Puer eam videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La femme est présente. Elle voit le garçon."
+      },
+      {
+        "id": "2",
+        "text": "La femme est présente. Le garçon la voit."
+      },
+      {
+        "id": "1",
+        "text": "La femme est présente. Le garçon voit les femmes."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.eum-eam"
+    ],
+    "item": "eum-eam:q2",
+    "assessment": "study.version.eum-eam:q2",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "puer",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
+        "observed": [
+          "study.confusion.pronoun-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber in mēnsā est. Puella eum portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le livre est sur la table. La jeune fille le porte."
+      },
+      {
+        "id": "2",
+        "text": "Les livres sont sur la table. La jeune fille les porte."
+      },
+      {
+        "id": "0",
+        "text": "Le livre est sur la table. La jeune fille porte la table."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.eum-eam"
+    ],
+    "item": "eum-eam:q3",
+    "assessment": "study.version.eum-eam:q3",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "is",
+      "liber",
+      "mensa",
+      "porto",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen ad rem anteā memorātam refertur; antecedēns nōn est aliud nōmen propinquum.",
+        "observed": [
+          "study.confusion.pronoun-antecedent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Īnsula parva est. Magister eam videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les îles sont petites. Le maître les voit."
+      },
+      {
+        "id": "2",
+        "text": "L’île est petite. Elle voit le maître."
+      },
+      {
+        "id": "0",
+        "text": "L’île est petite. Le maître la voit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.eum-eam"
+    ],
+    "item": "eum-eam:q4",
+    "assessment": "study.version.eum-eam:q4",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "insula",
+      "is",
+      "magister",
+      "parvus",
+      "sum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
+        "observed": [
+          "study.confusion.pronoun-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

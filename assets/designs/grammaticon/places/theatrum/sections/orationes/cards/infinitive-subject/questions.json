@@ -1,0 +1,443 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister dīcit puerum cantāre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le maître dit que le garçon chante."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon dit que le maître chante."
+      },
+      {
+        "id": "2",
+        "text": "Le maître dit que les garçons chantent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q1",
+    "assessment": "study.version.infinitive-subject:q1",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "canto",
+      "dico",
+      "magister",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina dīcit puellam in hortō esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille dit que la femme est dans le jardin."
+      },
+      {
+        "id": "2",
+        "text": "La femme dit que la jeune fille est dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "La femme dit que les jeunes filles sont dans le jardin."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q2",
+    "assessment": "study.version.infinitive-subject:q2",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "femina",
+      "hortus",
+      "in",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor dīcit servum ambulāre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marchand dit que les esclaves marchent."
+      },
+      {
+        "id": "2",
+        "text": "L’esclave dit que le marchand marche."
+      },
+      {
+        "id": "1",
+        "text": "Le marchand dit que l’esclave marche."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q3",
+    "assessment": "study.version.infinitive-subject:q3",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "dico",
+      "mercator",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater dīcit fīlium in scholā esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père dit que le fils est à l’école."
+      },
+      {
+        "id": "2",
+        "text": "Le père dit que les fils sont à l’école."
+      },
+      {
+        "id": "1",
+        "text": "Le fils dit que le père est à l’école."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q4",
+    "assessment": "study.version.infinitive-subject:q4",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "filius",
+      "in",
+      "pater",
+      "schola",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola dīcit mercātōrem currere."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marchand dit que l’agriculteur court."
+      },
+      {
+        "id": "2",
+        "text": "L’agriculteur dit que le marchand court."
+      },
+      {
+        "id": "1",
+        "text": "L’agriculteur dit que les marchands courent."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q5",
+    "assessment": "study.version.infinitive-subject:q5",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "curro",
+      "dico",
+      "mercator"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella dīcit magistrum sedēre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille dit que les maîtres sont assis."
+      },
+      {
+        "id": "2",
+        "text": "Le maître dit que la jeune fille est assise."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille dit que le maître est assis."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.infinitive-subject"
+    ],
+    "item": "infinitive-subject:q6",
+    "assessment": "study.version.infinitive-subject:q6",
+    "help": "study.infinitive-subject",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "magister",
+      "puella",
+      "sedeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-subject",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Post dīcit, accūsātīvus cum īnfīnītīvō sententiam relātam exprimere potest. Magister dīcit puerum cantāre: magister loquitur, puer cantat. Subiectum īnfīnītīvī accūsātīvō pōnitur. Numerum quoque observā: puerum et puerōs nōn idem significant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum verbi dīcit loquitur; subiectum īnfīnītīvī alteram actiōnem agit. Hās persōnās nōn permūtā.",
+        "observed": [
+          "study.confusion.infinitive-speaker"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon donne un livre à la mère."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer mātrem librum dat."
+      },
+      {
+        "id": "0",
+        "text": "Puer mātrī librum dat."
+      },
+      {
+        "id": "2",
+        "text": "Puer mātribus librum dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q1",
+    "assessment": "study.theme.third-dative:q1",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "do",
+      "liber",
+      "mater",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille donne une rose au père."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella patrem rosam dat."
+      },
+      {
+        "id": "2",
+        "text": "Puella patrī rosam dat."
+      },
+      {
+        "id": "1",
+        "text": "Puella patribus rosam dat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q2",
+    "assessment": "study.theme.third-dative:q2",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "pater",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La sœur donne du pain au frère."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Soror frātrī pānem dat."
+      },
+      {
+        "id": "2",
+        "text": "Soror frātrem pānem dat."
+      },
+      {
+        "id": "0",
+        "text": "Soror frātribus pānem dat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q3",
+    "assessment": "study.theme.third-dative:q3",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "frater",
+      "panis",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le frère donne un livre à la sœur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Frāter sorōrem librum dat."
+      },
+      {
+        "id": "2",
+        "text": "Frāter sorōribus librum dat."
+      },
+      {
+        "id": "0",
+        "text": "Frāter sorōrī librum dat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q4",
+    "assessment": "study.theme.third-dative:q4",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "do",
+      "frater",
+      "liber",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur donne de l’eau au berger."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Agricola pāstōribus aquam dat."
+      },
+      {
+        "id": "0",
+        "text": "Agricola pāstōrem aquam dat."
+      },
+      {
+        "id": "2",
+        "text": "Agricola pāstōrī aquam dat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q5",
+    "assessment": "study.theme.third-dative:q5",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "aqua",
+      "do",
+      "pastor"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon donne du pain au chien."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer canī pānem dat."
+      },
+      {
+        "id": "0",
+        "text": "Puer canibus pānem dat."
+      },
+      {
+        "id": "2",
+        "text": "Puer canem pānem dat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.third-dative"
+    ],
+    "item": "third-dative:q6",
+    "assessment": "study.theme.third-dative:q6",
+    "help": "study.third-dative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canis",
+      "do",
+      "panis",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-dative",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Datīvus singulāris in -ī ūnum indicat; datīvus plūrālis in -ibus plūrēs indicat.",
+        "observed": [
+          "study.confusion.case-third-recipient-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Datīvus tertiae dēclīnātiōnis singulāris in -ī dēsinit: mātrī, patrī, frātrī, sorōrī, pāstōrī, canī. Is cui rēs datur datīvō exprimitur; rēs data accūsātīvō. Puer mātrī librum dat: puer dat, māter accipit, liber datur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Is cui aliquid datur datīvō, nōn accūsātīvō, exprimitur: mātrī, nōn mātrem.",
+        "observed": [
+          "study.confusion.case-third-dative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

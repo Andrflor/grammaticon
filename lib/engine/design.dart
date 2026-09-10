@@ -449,6 +449,17 @@ class GameDesign {
     }
     for (final n in knowledge.values) {
       text(n['name']);
+      if (n['masteryRequirements'] != null) {
+        final requirements = object(n['masteryRequirements']);
+        final items = requirements['successfulItems'];
+        if (requirements.keys.any((key) => key != 'successfulItems') ||
+            items is! List ||
+            items.isEmpty ||
+            items.any((item) => item is! String || item.isEmpty) ||
+            items.toSet().length != items.length) {
+          throw FormatException('Invalid mastery requirements ${n['id']}');
+        }
+      }
       if (n['parent'] != null) {
         _reference(knowledge, n['parent'] as String, 'parent');
       }

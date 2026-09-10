@@ -1,0 +1,451 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que le garçon chante, la mère écrit une lettre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Antequam puer cantat, māter epistulam scrībit."
+      },
+      {
+        "id": "1",
+        "text": "Puer cantāns epistulam scrībit."
+      },
+      {
+        "id": "0",
+        "text": "Puerō cantante, māter epistulam scrībit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q1",
+    "assessment": "study.theme.absolute-present:q1",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "antequam",
+      "canto",
+      "epistula",
+      "mater",
+      "puer",
+      "scribo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que le marin travaille, le garçon porte de l’eau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Nautā labōrante, puer aquam portat."
+      },
+      {
+        "id": "2",
+        "text": "Antequam nauta labōrat, puer aquam portat."
+      },
+      {
+        "id": "1",
+        "text": "Nauta labōrāns aquam portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q2",
+    "assessment": "study.theme.absolute-present:q2",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "antequam",
+      "aqua",
+      "laboro",
+      "nauta",
+      "porto",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que la femme marche, la jeune fille cueille les roses."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēminā ambulante, puella rosās carpit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina ambulāns rosās carpit."
+      },
+      {
+        "id": "2",
+        "text": "Antequam fēmina ambulat, puella rosās carpit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q3",
+    "assessment": "study.theme.absolute-present:q3",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "antequam",
+      "carpo",
+      "femina",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que le marchand crie, l’esclave ouvre la porte."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Antequam mercātor clāmat, servus iānuam aperit."
+      },
+      {
+        "id": "0",
+        "text": "Mercātōre clāmante, servus iānuam aperit."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor clāmāns iānuam aperit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q4",
+    "assessment": "study.theme.absolute-present:q4",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "antequam",
+      "aperio",
+      "clamo",
+      "ianua",
+      "mercator",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que les amis arrivent, les garçons préparent le dîner."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Amīcī venientēs cēnam parant."
+      },
+      {
+        "id": "2",
+        "text": "Antequam amīcī veniunt, puerī cēnam parant."
+      },
+      {
+        "id": "0",
+        "text": "Amīcīs venientibus, puerī cēnam parant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q5",
+    "assessment": "study.theme.absolute-present:q5",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "antequam",
+      "cena",
+      "paro",
+      "puer",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pendant que les voyageurs racontent, le marin prépare les voiles."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Antequam viātōrēs nārrant, nauta vēla parat."
+      },
+      {
+        "id": "0",
+        "text": "Viātōribus nārrantibus, nauta vēla parat."
+      },
+      {
+        "id": "1",
+        "text": "Viātōrēs nārrantēs vēla parant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.absolute-present"
+    ],
+    "item": "absolute-present:q6",
+    "assessment": "study.theme.absolute-present:q6",
+    "help": "study.08-circumstances",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "antequam",
+      "narro",
+      "nauta",
+      "paro",
+      "velum",
+      "viator"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "08-circumstances",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puerō cantante, māter epistulam scrībit: puer cantat, māter scrībit. Puerō et cantante ablātīvī sunt; māter subiectum verbī scrībit est. Hīc participium praesēns actiōnem eōdem tempore factam indicat. Puer cantāns epistulam scrībit aliam rem significat: puer ipse scrībit. Antequam autem actiōnem nōndum factam indicat. Ablātīvus absolūtus aliōs quoque sēnsūs habēre potest; hīc duās actiōnēs simul factās distinguimus.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs alius participiō, alius verbō prīncipālī indicātur. Responsum eandem persōnam utramque actiōnem facere dīcit. Subiecta nōlī confundere.",
+        "observed": [
+          "study.confusion.absolute-present-agent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc actiō participiī dum actiō prīncipālis fit prōcēdit. Antequam eam posteā fierī indicāret. Simul et antequam nōn idem significant.",
+        "observed": [
+          "study.confusion.absolute-present-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

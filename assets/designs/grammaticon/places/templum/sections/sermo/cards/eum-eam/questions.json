@@ -1,0 +1,300 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. La jeune fille l’appelle."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magister adest. Puella eam vocat."
+      },
+      {
+        "id": "2",
+        "text": "Magister adest. Is puellam vocat."
+      },
+      {
+        "id": "0",
+        "text": "Magister adest. Puella eum vocat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.eum-eam"
+    ],
+    "item": "eum-eam:q1",
+    "assessment": "study.theme.eum-eam:q1",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "magister",
+      "puella",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
+        "observed": [
+          "study.confusion.pronoun-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est présente. Le garçon la voit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina adest. Puer eum videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina adest. Puer eam videt."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina adest. Ea puerum videt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.eum-eam"
+    ],
+    "item": "eum-eam:q2",
+    "assessment": "study.theme.eum-eam:q2",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "puer",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen accūsātīvum eum quem actiō attingit indicat. Subiectum et obiectum nōn permūtā.",
+        "observed": [
+          "study.confusion.pronoun-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le livre est sur la table. La jeune fille le porte."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Liber in mēnsā est. Puella eum portat."
+      },
+      {
+        "id": "2",
+        "text": "Liber in mēnsā est. Puella eam portat."
+      },
+      {
+        "id": "0",
+        "text": "Liber in mēnsā est. Puella eōs portat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.eum-eam"
+    ],
+    "item": "eum-eam:q3",
+    "assessment": "study.theme.eum-eam:q3",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "is",
+      "liber",
+      "mensa",
+      "porto",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’île est petite. Le maître la voit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Īnsula parva est. Magister eam videt."
+      },
+      {
+        "id": "1",
+        "text": "Īnsula parva est. Magister eum videt."
+      },
+      {
+        "id": "2",
+        "text": "Īnsula parva est. Magister eās videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.eum-eam"
+    ],
+    "item": "eum-eam:q4",
+    "assessment": "study.theme.eum-eam:q4",
+    "help": "study.eum-eam",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "insula",
+      "is",
+      "magister",
+      "parvus",
+      "sum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "eum-eam",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Eum ad nōmen masculīnum, eam ad nōmen fēminīnum refertur. Utraque fōrma accūsātīva est. Prōnōmen nōn eum quī agit, sed eum quem actiō attingit hīc indicat. Antecedēns ex priōre sententiā reperiendum est.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genus prōnōminis cum genere antecedentis congruere dēbet.",
+        "observed": [
+          "study.confusion.pronoun-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum antecedentis servā: ūnum et plūrēs nōn idem significant.",
+        "observed": [
+          "study.confusion.pronoun-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille habite à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella Rōmam habitat."
+      },
+      {
+        "id": "0",
+        "text": "Puella Rōmae habitat."
+      },
+      {
+        "id": "2",
+        "text": "Puella Rōmā habitat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q1",
+    "assessment": "study.theme.town-location:q1",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "habito",
+      "puella",
+      "roma"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon est à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puer Tūsculī est."
+      },
+      {
+        "id": "1",
+        "text": "Puer Tūsculō est."
+      },
+      {
+        "id": "0",
+        "text": "Puer Tūsculum est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q2",
+    "assessment": "study.theme.town-location:q2",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "puer",
+      "sum",
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître reste à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister Rōmā manet."
+      },
+      {
+        "id": "2",
+        "text": "Magister Rōmam manet."
+      },
+      {
+        "id": "1",
+        "text": "Magister Rōmae manet."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q3",
+    "assessment": "study.theme.town-location:q3",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magister",
+      "maneo",
+      "roma"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur habite à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Agricola Tūsculum habitat."
+      },
+      {
+        "id": "0",
+        "text": "Agricola Tūsculī habitat."
+      },
+      {
+        "id": "2",
+        "text": "Agricola Tūsculō habitat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q4",
+    "assessment": "study.theme.town-location:q4",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "habito",
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand est à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Mercātor Rōmae est."
+      },
+      {
+        "id": "0",
+        "text": "Mercātor Rōmam est."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor Rōmā est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q5",
+    "assessment": "study.theme.town-location:q5",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "mercator",
+      "roma",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme reste à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Fēmina Tūsculum manet."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina Tūsculō manet."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina Tūsculī manet."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.town-location"
+    ],
+    "item": "town-location:q6",
+    "assessment": "study.theme.town-location:q6",
+    "help": "study.town-location",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "maneo",
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-location",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est; Rōmā et Tūsculō locum unde venit. Hīc orīgō itineris nōn indicātur.",
+        "observed": [
+          "study.confusion.locative-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ubi? Cum nōminibus oppidōrum singulāris numerī prīmae et secundae dēclīnātiōnis, locātīvus locum indicat: Rōmae, Tūsculī. Hīc praepositiō in nōn additur. Rōmae locum, Rōmam fīnem itineris, Rōmā orīginem itineris indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rōmae et Tūsculī locum indicant ubi aliquis est. Rōmam et Tūsculum fīnem itineris indicant. Hīc dē locō ubi aliquis est agitur.",
+        "observed": [
+          "study.confusion.locative-destination"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

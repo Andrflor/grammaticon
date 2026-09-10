@@ -1,0 +1,291 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerī, portāte librōs!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Garçon, porte les livres !"
+      },
+      {
+        "id": "2",
+        "text": "Les garçons portent les livres."
+      },
+      {
+        "id": "0",
+        "text": "Garçons, portez les livres !"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.plural-command"
+    ],
+    "item": "plural-command:q1",
+    "assessment": "study.version.plural-command:q1",
+    "help": "study.plural-command",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "liber",
+      "porto",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "plural-command",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Imperātīvus plūrālis plūrēs persōnās iubet. Portāte, vidēte, audīte in -te dēsinunt. In tertiā coniugātiōne pōne singulāre est, pōnite plūrāle: -e fit -ite. Hīc sententiae Gallicae plūrēs persōnās, nōn ūnam honōris causā, appellant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puellae, vidēte īnsulam!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les jeunes filles regardent l’île."
+      },
+      {
+        "id": "2",
+        "text": "Jeunes filles, regardez l’île !"
+      },
+      {
+        "id": "0",
+        "text": "Jeune fille, regarde l’île !"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.plural-command"
+    ],
+    "item": "plural-command:q2",
+    "assessment": "study.version.plural-command:q2",
+    "help": "study.plural-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "insula",
+      "puella",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "plural-command",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Imperātīvus plūrālis plūrēs persōnās iubet. Portāte, vidēte, audīte in -te dēsinunt. In tertiā coniugātiōne pōne singulāre est, pōnite plūrāle: -e fit -ite. Hīc sententiae Gallicae plūrēs persōnās, nōn ūnam honōris causā, appellant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerī, pōnite librōs in mēnsā!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les garçons posent les livres sur la table."
+      },
+      {
+        "id": "2",
+        "text": "Garçon, pose les livres sur la table !"
+      },
+      {
+        "id": "1",
+        "text": "Garçons, posez les livres sur la table !"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.plural-command"
+    ],
+    "item": "plural-command:q3",
+    "assessment": "study.version.plural-command:q3",
+    "help": "study.plural-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "liber",
+      "mensa",
+      "pono",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "plural-command",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Imperātīvus plūrālis plūrēs persōnās iubet. Portāte, vidēte, audīte in -te dēsinunt. In tertiā coniugātiōne pōne singulāre est, pōnite plūrāle: -e fit -ite. Hīc sententiae Gallicae plūrēs persōnās, nōn ūnam honōris causā, appellant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puellae, audīte magistrum!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Jeunes filles, écoutez le maître !"
+      },
+      {
+        "id": "1",
+        "text": "Jeune fille, écoute le maître !"
+      },
+      {
+        "id": "2",
+        "text": "Les jeunes filles écoutent le maître."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.plural-command"
+    ],
+    "item": "plural-command:q4",
+    "assessment": "study.version.plural-command:q4",
+    "help": "study.plural-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "audio",
+      "magister",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "plural-command",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Imperātīvus plūrālis plūrēs persōnās iubet. Portāte, vidēte, audīte in -te dēsinunt. In tertiā coniugātiōne pōne singulāre est, pōnite plūrāle: -e fit -ite. Hīc sententiae Gallicae plūrēs persōnās, nōn ūnam honōris causā, appellant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

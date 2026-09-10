@@ -1,0 +1,292 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Amīce, portā librum!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ami, porte le livre !"
+      },
+      {
+        "id": "1",
+        "text": "L’ami porte le livre."
+      },
+      {
+        "id": "2",
+        "text": "Porte le livre de l’ami !"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.vocative"
+    ],
+    "item": "vocative:q1",
+    "assessment": "study.version.vocative:q1",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "amicus",
+      "liber",
+      "porto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
+        "observed": [
+          "study.confusion.vocative-possessor"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Bone amīce, audī puellam!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La jeune fille écoute le bon ami."
+      },
+      {
+        "id": "0",
+        "text": "Le bon ami écoute la jeune fille."
+      },
+      {
+        "id": "2",
+        "text": "Bon ami, écoute la jeune fille !"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.vocative"
+    ],
+    "item": "vocative:q2",
+    "assessment": "study.version.vocative:q2",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "audio",
+      "bonus",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Amīcus appellātur et puellam audīre iubētur. Puella hīc nōn agit.",
+        "observed": [
+          "study.confusion.address-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Serve, pōne librum in mēnsā!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pose le livre de l’esclave sur la table !"
+      },
+      {
+        "id": "1",
+        "text": "Esclave, pose le livre sur la table !"
+      },
+      {
+        "id": "2",
+        "text": "L’esclave pose le livre sur la table."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.vocative"
+    ],
+    "item": "vocative:q3",
+    "assessment": "study.version.vocative:q3",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "liber",
+      "mensa",
+      "pono",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
+        "observed": [
+          "study.confusion.vocative-possessor"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister, vidē hortum!"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Maître, regarde le jardin !"
+      },
+      {
+        "id": "2",
+        "text": "Regarde le jardin du maître !"
+      },
+      {
+        "id": "1",
+        "text": "Le maître regarde le jardin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.vocative"
+    ],
+    "item": "vocative:q4",
+    "assessment": "study.version.vocative:q4",
+    "help": "study.vocative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "magister",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "vocative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Vocātīvus persōnam appellātam indicat. Amīcus nōminātīvus est; amīce vocātīvus. Adiectīvum quoque congruit: bone amīce. Multae aliae fōrmae nōminātīvō similes sunt: puella, puer, magister.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Vocātīvus persōnam appellātam indicat, nōn possessōrem reī.",
+        "observed": [
+          "study.confusion.vocative-possessor"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,244 +1,5775 @@
 {
-  "status": "concept-based-curriculum-in-progress",
-  "units": [
+  "status": "in-progress-not-exhaustive",
+  "groups": [
     {
-      "section": "02-places",
-      "concept": "Lieu, provenance et destination",
-      "text": "Via et oppidum",
+      "id": "loca",
+      "name": "Locī et rēs",
+      "topics": [
+        {
+          "id": "a-ablative",
+          "name": "-a et -ā",
+          "cards": {
+            "version": "theatrum/loca/a-ablative",
+            "theme": "templum/loca/a-ablative"
+          },
+          "vocabulary": [
+            "femina",
+            "in",
+            "insula",
+            "italia",
+            "magister",
+            "magnus",
+            "parvus",
+            "puella",
+            "puer",
+            "schola",
+            "sum",
+            "villa"
+          ]
+        },
+        {
+          "id": "o-ablative",
+          "name": "-us, -um et -ō",
+          "cards": {
+            "version": "theatrum/loca/o-ablative",
+            "theme": "templum/loca/o-ablative"
+          },
+          "vocabulary": [
+            "ager",
+            "femina",
+            "hortus",
+            "in",
+            "oppidum",
+            "puella",
+            "puer",
+            "sum",
+            "templum",
+            "vir"
+          ]
+        },
+        {
+          "id": "est-sunt",
+          "name": "Est et sunt",
+          "cards": {
+            "version": "theatrum/loca/est-sunt",
+            "theme": "templum/loca/est-sunt"
+          },
+          "vocabulary": [
+            "hortus",
+            "in",
+            "puella",
+            "puer",
+            "schola",
+            "sum"
+          ]
+        },
+        {
+          "id": "ubi-question",
+          "name": "Ubi?",
+          "cards": {
+            "version": "theatrum/loca/ubi-question",
+            "theme": "templum/loca/ubi-question"
+          },
+          "vocabulary": [
+            "num",
+            "puella",
+            "puer",
+            "quis",
+            "schola",
+            "sum",
+            "templum",
+            "ubi"
+          ]
+        },
+        {
+          "id": "first-declension-number",
+          "name": "-a et -ae",
+          "cards": {
+            "version": "theatrum/loca/first-declension-number",
+            "theme": "templum/loca/first-declension-number"
+          },
+          "vocabulary": [
+            "femina",
+            "in",
+            "insula",
+            "italia",
+            "oppidum",
+            "puella",
+            "schola",
+            "sum",
+            "villa"
+          ]
+        },
+        {
+          "id": "second-declension-number",
+          "name": "-us et -ī",
+          "cards": {
+            "version": "theatrum/loca/second-declension-number",
+            "theme": "templum/loca/second-declension-number"
+          },
+          "vocabulary": [
+            "hortus",
+            "in",
+            "liber",
+            "magister",
+            "oppidum",
+            "puer",
+            "schola",
+            "sum",
+            "villa"
+          ]
+        },
+        {
+          "id": "neuter-number",
+          "name": "-um et -a",
+          "cards": {
+            "version": "theatrum/loca/neuter-number",
+            "theme": "templum/loca/neuter-number"
+          },
+          "vocabulary": [
+            "in",
+            "insula",
+            "italia",
+            "oppidum",
+            "sum",
+            "templum"
+          ]
+        },
+        {
+          "id": "feminine-agreement",
+          "name": "Puella laeta",
+          "cards": {
+            "version": "theatrum/loca/feminine-agreement",
+            "theme": "templum/loca/feminine-agreement"
+          },
+          "vocabulary": [
+            "femina",
+            "insula",
+            "laetus",
+            "magnus",
+            "parvus",
+            "puella",
+            "schola",
+            "sum"
+          ]
+        },
+        {
+          "id": "masculine-agreement",
+          "name": "Puer laetus",
+          "cards": {
+            "version": "theatrum/loca/masculine-agreement",
+            "theme": "templum/loca/masculine-agreement"
+          },
+          "vocabulary": [
+            "hortus",
+            "laetus",
+            "liber",
+            "magister",
+            "magnus",
+            "parvus",
+            "puer",
+            "sum"
+          ]
+        },
+        {
+          "id": "neuter-agreement",
+          "name": "Templum magnum",
+          "cards": {
+            "version": "theatrum/loca/neuter-agreement",
+            "theme": "templum/loca/neuter-agreement"
+          },
+          "vocabulary": [
+            "magnus",
+            "oppidum",
+            "parvus",
+            "sum",
+            "templum"
+          ]
+        },
+        {
+          "id": "negation",
+          "name": "Nōn et sed",
+          "cards": {
+            "version": "theatrum/loca/negation",
+            "theme": "templum/loca/negation"
+          },
+          "vocabulary": [
+            "canto",
+            "dormio",
+            "et",
+            "femina",
+            "liber",
+            "magnus",
+            "non",
+            "puella",
+            "puer",
+            "sed",
+            "sum",
+            "vir"
+          ]
+        },
+        {
+          "id": "02-places",
+          "name": "Ubi? Unde? Quō?",
+          "cards": {
+            "version": "theatrum/loca/02-places",
+            "theme": "templum/loca/02-places"
+          },
+          "vocabulary": [
+            "ad",
+            "ambulo",
+            "do",
+            "eo",
+            "ex",
+            "fluvius",
+            "habito",
+            "in",
+            "nauta",
+            "non",
+            "oppidum",
+            "puella",
+            "puer",
+            "venio",
+            "via",
+            "video"
+          ]
+        }
+      ],
       "vocabulary": [
-        "oppidum",
-        "fluuius",
-        "uia",
-        "habito",
-        "ambulo",
-        "uenio",
-        "nauta",
-        "puella",
-        "puer"
+        {
+          "id": "ad",
+          "lemma": "ad",
+          "meaning": "vers, auprès de",
+          "encounteredForms": [
+            "ad"
+          ]
+        },
+        {
+          "id": "ager",
+          "lemma": "ager",
+          "meaning": "champ",
+          "encounteredForms": [
+            "ager",
+            "agrum",
+            "agrō"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulat"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantant",
+            "cantat"
+          ]
+        },
+        {
+          "id": "do",
+          "lemma": "dare",
+          "meaning": "donner",
+          "encounteredForms": [
+            "dat"
+          ]
+        },
+        {
+          "id": "dormio",
+          "lemma": "dormīre",
+          "meaning": "dormir",
+          "encounteredForms": [
+            "dormit",
+            "dormiunt"
+          ]
+        },
+        {
+          "id": "eo",
+          "lemma": "īre",
+          "meaning": "aller",
+          "encounteredForms": [
+            "it"
+          ]
+        },
+        {
+          "id": "et",
+          "lemma": "et",
+          "meaning": "et",
+          "encounteredForms": [
+            "et"
+          ]
+        },
+        {
+          "id": "ex",
+          "lemma": "ex",
+          "meaning": "hors de, depuis",
+          "encounteredForms": [
+            "ex"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina",
+            "Fēminae",
+            "fēmina",
+            "fēminae",
+            "fēminam"
+          ]
+        },
+        {
+          "id": "fluvius",
+          "lemma": "fluvius",
+          "meaning": "fleuve",
+          "encounteredForms": [
+            "fluvium",
+            "fluviō"
+          ]
+        },
+        {
+          "id": "habito",
+          "lemma": "habitāre",
+          "meaning": "habiter",
+          "encounteredForms": [
+            "habitat"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "Hortus",
+            "hortum",
+            "hortus",
+            "hortī",
+            "hortō"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "In",
+            "in"
+          ]
+        },
+        {
+          "id": "insula",
+          "lemma": "īnsula",
+          "meaning": "île",
+          "encounteredForms": [
+            "Īnsula",
+            "Īnsulam",
+            "Īnsulā",
+            "īnsula",
+            "īnsulam",
+            "īnsulā"
+          ]
+        },
+        {
+          "id": "italia",
+          "lemma": "Italia",
+          "meaning": "Italie",
+          "encounteredForms": [
+            "Italia",
+            "Italiam",
+            "Italiā"
+          ]
+        },
+        {
+          "id": "laetus",
+          "lemma": "laetus",
+          "meaning": "joyeux",
+          "encounteredForms": [
+            "laeta",
+            "laetae",
+            "laetum",
+            "laetus",
+            "laetī"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "Liber",
+            "Librī",
+            "liber",
+            "librum",
+            "librī"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "Magistrī",
+            "magister",
+            "magistrum",
+            "magistrī"
+          ]
+        },
+        {
+          "id": "magnus",
+          "lemma": "magnus",
+          "meaning": "grand",
+          "encounteredForms": [
+            "magna",
+            "magnae",
+            "magnum",
+            "magnus",
+            "magnī"
+          ]
+        },
+        {
+          "id": "nauta",
+          "lemma": "nauta",
+          "meaning": "marin",
+          "encounteredForms": [
+            "Nauta",
+            "nautae",
+            "nautam"
+          ]
+        },
+        {
+          "id": "non",
+          "lemma": "nōn",
+          "meaning": "ne… pas",
+          "encounteredForms": [
+            "nōn"
+          ]
+        },
+        {
+          "id": "num",
+          "lemma": "num",
+          "meaning": "est-ce que… ? (réponse négative généralement attendue)",
+          "encounteredForms": [
+            "Num"
+          ]
+        },
+        {
+          "id": "oppidum",
+          "lemma": "oppidum",
+          "meaning": "ville fortifiée",
+          "encounteredForms": [
+            "Oppida",
+            "Oppidum",
+            "oppida",
+            "oppidae",
+            "oppidum",
+            "oppidī",
+            "oppidō"
+          ]
+        },
+        {
+          "id": "parvus",
+          "lemma": "parvus",
+          "meaning": "petit",
+          "encounteredForms": [
+            "parva",
+            "parvae",
+            "parvum",
+            "parvus",
+            "parvī"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "Puellae",
+            "puella",
+            "puellae",
+            "puellam"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "Puerī",
+            "puer",
+            "puerum",
+            "puerī"
+          ]
+        },
+        {
+          "id": "quis",
+          "lemma": "quis, quid (pl. quī)",
+          "meaning": "qui ? quoi ?",
+          "encounteredForms": [
+            "Quid",
+            "Quis",
+            "Quī"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "Schola",
+            "Scholae",
+            "Scholam",
+            "Scholā",
+            "schola",
+            "scholae",
+            "scholam",
+            "scholā"
+          ]
+        },
+        {
+          "id": "sed",
+          "lemma": "sed",
+          "meaning": "mais",
+          "encounteredForms": [
+            "sed"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "est",
+            "sunt"
+          ]
+        },
+        {
+          "id": "templum",
+          "lemma": "templum",
+          "meaning": "temple",
+          "encounteredForms": [
+            "Templa",
+            "Templum",
+            "templa",
+            "templae",
+            "templum",
+            "templī",
+            "templō"
+          ]
+        },
+        {
+          "id": "ubi",
+          "lemma": "ubi",
+          "meaning": "où",
+          "encounteredForms": [
+            "Ubi"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir",
+          "encounteredForms": [
+            "venit"
+          ]
+        },
+        {
+          "id": "via",
+          "lemma": "via",
+          "meaning": "route",
+          "encounteredForms": [
+            "viam",
+            "viā"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "videt"
+          ]
+        },
+        {
+          "id": "villa",
+          "lemma": "vīlla",
+          "meaning": "maison de campagne",
+          "encounteredForms": [
+            "vīlla",
+            "vīllae",
+            "vīllam",
+            "vīllā"
+          ]
+        },
+        {
+          "id": "vir",
+          "lemma": "vir",
+          "meaning": "homme",
+          "encounteredForms": [
+            "Vir",
+            "vir"
+          ]
+        }
       ],
-      "reading": "theatrum/02-places/reading",
-      "theme": "templum/02-places/theme",
-      "vocabularyCards": [
-        "theatrum/02-places/vocabulary",
-        "templum/02-places/vocabulary"
-      ],
-      "version": "theatrum/02-places/version"
+      "vocabularyCards": {
+        "version": "theatrum/loca/vocabula",
+        "theme": "templum/loca/vocabula"
+      }
     },
     {
-      "section": "03-descriptions",
-      "concept": "Décrire et retrouver le référent",
-      "text": "Duo librī",
+      "id": "personae",
+      "name": "Persōnae et necessitūdinēs",
+      "topics": [
+        {
+          "id": "quis-quid",
+          "name": "Quis? Quid?",
+          "cards": {
+            "version": "theatrum/personae/quis-quid",
+            "theme": "templum/personae/quis-quid"
+          },
+          "vocabulary": [
+            "hortus",
+            "in",
+            "liber",
+            "porto",
+            "puella",
+            "puer",
+            "quis",
+            "schola",
+            "sum",
+            "ubi",
+            "video"
+          ]
+        },
+        {
+          "id": "agent-subject",
+          "name": "Quis agit?",
+          "cards": {
+            "version": "theatrum/personae/agent-subject",
+            "theme": "templum/personae/agent-subject"
+          },
+          "vocabulary": [
+            "audio",
+            "femina",
+            "liber",
+            "magister",
+            "porto",
+            "puella",
+            "puer",
+            "video",
+            "vir",
+            "voco"
+          ]
+        },
+        {
+          "id": "agent-object",
+          "name": "Quem? Quid?",
+          "cards": {
+            "version": "theatrum/personae/agent-object",
+            "theme": "templum/personae/agent-object"
+          },
+          "vocabulary": [
+            "audio",
+            "femina",
+            "habeo",
+            "liber",
+            "magister",
+            "porto",
+            "puella",
+            "puer",
+            "video",
+            "vir",
+            "voco"
+          ]
+        },
+        {
+          "id": "possession",
+          "name": "Liber puerī",
+          "cards": {
+            "version": "theatrum/personae/possession",
+            "theme": "templum/personae/possession"
+          },
+          "vocabulary": [
+            "audio",
+            "domus",
+            "femina",
+            "filia",
+            "filius",
+            "liber",
+            "magister",
+            "magnus",
+            "parvus",
+            "porto",
+            "puella",
+            "puer",
+            "sum",
+            "video",
+            "vir",
+            "voco"
+          ]
+        },
+        {
+          "id": "genitive-plural",
+          "name": "-ārum et -ōrum",
+          "cards": {
+            "version": "theatrum/personae/genitive-plural",
+            "theme": "templum/personae/genitive-plural"
+          },
+          "vocabulary": [
+            "femina",
+            "hortus",
+            "liber",
+            "magister",
+            "magnus",
+            "parvus",
+            "porto",
+            "puella",
+            "puer",
+            "sum",
+            "video",
+            "villa"
+          ]
+        },
+        {
+          "id": "cuius-question",
+          "name": "Cuius?",
+          "cards": {
+            "version": "theatrum/personae/cuius-question",
+            "theme": "templum/personae/cuius-question"
+          },
+          "vocabulary": [
+            "doceo",
+            "filia",
+            "filius",
+            "in",
+            "liber",
+            "magister",
+            "porto",
+            "puella",
+            "puer",
+            "quis",
+            "rideo",
+            "schola",
+            "sum",
+            "ubi",
+            "video",
+            "villa"
+          ]
+        },
+        {
+          "id": "meus-tuus",
+          "name": "Meus et tuus",
+          "cards": {
+            "version": "theatrum/personae/meus-tuus",
+            "theme": "templum/personae/meus-tuus"
+          },
+          "vocabulary": [
+            "in",
+            "italia",
+            "liber",
+            "magnus",
+            "meus",
+            "parvus",
+            "schola",
+            "sum",
+            "templum",
+            "tuus",
+            "villa"
+          ]
+        },
+        {
+          "id": "suus-eius",
+          "name": "Suus et eius",
+          "cards": {
+            "version": "theatrum/personae/suus-eius",
+            "theme": "templum/personae/suus-eius"
+          },
+          "vocabulary": [
+            "adsum",
+            "femina",
+            "is",
+            "liber",
+            "magister",
+            "meus",
+            "porto",
+            "puella",
+            "puer",
+            "suus",
+            "tuus",
+            "video",
+            "villa"
+          ]
+        },
+        {
+          "id": "reflexive-object",
+          "name": "Sē, eum, eam",
+          "cards": {
+            "version": "theatrum/personae/reflexive-object",
+            "theme": "templum/personae/reflexive-object"
+          },
+          "vocabulary": [
+            "adsum",
+            "agricola",
+            "dominus",
+            "femina",
+            "in",
+            "is",
+            "laudo",
+            "lavo",
+            "magister",
+            "mercator",
+            "non",
+            "orno",
+            "puella",
+            "puer",
+            "se",
+            "servus",
+            "speculum",
+            "video"
+          ]
+        },
+        {
+          "id": "giving",
+          "name": "Cui?",
+          "cards": {
+            "version": "theatrum/personae/giving",
+            "theme": "templum/personae/giving"
+          },
+          "vocabulary": [
+            "aqua",
+            "do",
+            "femina",
+            "liber",
+            "magister",
+            "nauta",
+            "panis",
+            "puella",
+            "puer",
+            "rosa",
+            "vir"
+          ]
+        },
+        {
+          "id": "relative-case-role",
+          "name": "Quī agit? Quem vidēs?",
+          "cards": {
+            "version": "theatrum/personae/relative-case-role",
+            "theme": "templum/personae/relative-case-role"
+          },
+          "vocabulary": [
+            "agricola",
+            "ambulo",
+            "curro",
+            "doceo",
+            "dominus",
+            "femina",
+            "laudo",
+            "magister",
+            "maneo",
+            "mercator",
+            "puella",
+            "puer",
+            "qui",
+            "rideo",
+            "saluto",
+            "sedeo",
+            "servus",
+            "video",
+            "voco"
+          ]
+        },
+        {
+          "id": "03-descriptions",
+          "name": "Cui nōminī convenit?",
+          "cards": {
+            "version": "theatrum/personae/03-descriptions",
+            "theme": "templum/personae/03-descriptions"
+          },
+          "vocabulary": [
+            "bonus",
+            "doceo",
+            "femina",
+            "laetus",
+            "laudo",
+            "lego",
+            "liber",
+            "magister",
+            "mercator",
+            "parvus",
+            "porto",
+            "puella",
+            "puer",
+            "pulcher",
+            "rosa",
+            "saluto",
+            "servus",
+            "video"
+          ]
+        }
+      ],
       "vocabulary": [
-        "mercator",
-        "liber",
-        "puella",
-        "puer",
-        "fabula",
-        "lego",
-        "porto",
-        "habeo"
+        {
+          "id": "adsum",
+          "lemma": "adesse",
+          "meaning": "être présent",
+          "encounteredForms": [
+            "adest"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "paysan",
+          "encounteredForms": [
+            "Agricola",
+            "agricola"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulat"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam"
+          ]
+        },
+        {
+          "id": "audio",
+          "lemma": "audīre",
+          "meaning": "entendre, apprendre une nouvelle",
+          "encounteredForms": [
+            "audit",
+            "audiunt"
+          ]
+        },
+        {
+          "id": "bonus",
+          "lemma": "bonus, bona, bonum",
+          "meaning": "bon, bonne",
+          "encounteredForms": [
+            "bonum",
+            "bonus",
+            "bonōs"
+          ]
+        },
+        {
+          "id": "curro",
+          "lemma": "currere",
+          "meaning": "courir",
+          "encounteredForms": [
+            "currit"
+          ]
+        },
+        {
+          "id": "do",
+          "lemma": "dare",
+          "meaning": "donner",
+          "encounteredForms": [
+            "dant",
+            "dat"
+          ]
+        },
+        {
+          "id": "doceo",
+          "lemma": "docēre",
+          "meaning": "enseigner",
+          "encounteredForms": [
+            "docet"
+          ]
+        },
+        {
+          "id": "dominus",
+          "lemma": "dominus",
+          "meaning": "maître de maison",
+          "encounteredForms": [
+            "Dominus",
+            "dominum",
+            "dominus"
+          ]
+        },
+        {
+          "id": "domus",
+          "lemma": "domus",
+          "meaning": "maison",
+          "encounteredForms": [
+            "Domus",
+            "Domūs",
+            "domūs"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina",
+            "Fēminae",
+            "fēmina",
+            "fēminae",
+            "fēminam",
+            "fēminārum",
+            "fēminās"
+          ]
+        },
+        {
+          "id": "filia",
+          "lemma": "fīlia",
+          "meaning": "fille de quelqu’un",
+          "encounteredForms": [
+            "Fīlia",
+            "fīlia",
+            "fīliae",
+            "fīliam"
+          ]
+        },
+        {
+          "id": "filius",
+          "lemma": "fīlius",
+          "meaning": "fils",
+          "encounteredForms": [
+            "Fīlius",
+            "fīlium",
+            "fīlius"
+          ]
+        },
+        {
+          "id": "habeo",
+          "lemma": "habēre",
+          "meaning": "avoir",
+          "encounteredForms": [
+            "habent",
+            "habet"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "Hortus",
+            "Hortī",
+            "hortus",
+            "hortō"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "is",
+          "lemma": "is, ea, id",
+          "meaning": "celui-ci, celle-ci, cela",
+          "encounteredForms": [
+            "eam",
+            "eius",
+            "eum"
+          ]
+        },
+        {
+          "id": "italia",
+          "lemma": "Italia",
+          "meaning": "Italie",
+          "encounteredForms": [
+            "Italiā"
+          ]
+        },
+        {
+          "id": "laetus",
+          "lemma": "laetus, laeta, laetum",
+          "meaning": "joyeux, joyeuse",
+          "encounteredForms": [
+            "laeta",
+            "laetam",
+            "laetus",
+            "laetās"
+          ]
+        },
+        {
+          "id": "laudo",
+          "lemma": "laudāre",
+          "meaning": "louer, faire l’éloge de",
+          "encounteredForms": [
+            "laudat"
+          ]
+        },
+        {
+          "id": "lavo",
+          "lemma": "lavāre",
+          "meaning": "laver",
+          "encounteredForms": [
+            "lavat"
+          ]
+        },
+        {
+          "id": "lego",
+          "lemma": "legere",
+          "meaning": "lire",
+          "encounteredForms": [
+            "legit"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "Liber",
+            "Librum",
+            "Librī",
+            "Librōs",
+            "liber",
+            "librum",
+            "librī",
+            "librōs"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "Magistrī",
+            "magister",
+            "magistrum",
+            "magistrī",
+            "magistrīs",
+            "magistrō",
+            "magistrōrum"
+          ]
+        },
+        {
+          "id": "magnus",
+          "lemma": "magnus",
+          "meaning": "grand",
+          "encounteredForms": [
+            "magna",
+            "magnae",
+            "magnus",
+            "magnī"
+          ]
+        },
+        {
+          "id": "maneo",
+          "lemma": "manēre",
+          "meaning": "rester",
+          "encounteredForms": [
+            "manet"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor",
+            "mercātor",
+            "mercātōrem"
+          ]
+        },
+        {
+          "id": "meus",
+          "lemma": "meus, mea, meum",
+          "meaning": "mon, ma, mes",
+          "encounteredForms": [
+            "mea",
+            "meam",
+            "meum",
+            "meus",
+            "meī",
+            "meōs"
+          ]
+        },
+        {
+          "id": "nauta",
+          "lemma": "nauta",
+          "meaning": "marin",
+          "encounteredForms": [
+            "Nauta",
+            "nautae",
+            "nautīs"
+          ]
+        },
+        {
+          "id": "non",
+          "lemma": "nōn",
+          "meaning": "ne… pas",
+          "encounteredForms": [
+            "nōn"
+          ]
+        },
+        {
+          "id": "orno",
+          "lemma": "ōrnāre",
+          "meaning": "parer, orner",
+          "encounteredForms": [
+            "ōrnat"
+          ]
+        },
+        {
+          "id": "panis",
+          "lemma": "pānis",
+          "meaning": "pain",
+          "encounteredForms": [
+            "Pānem",
+            "pānem"
+          ]
+        },
+        {
+          "id": "parvus",
+          "lemma": "parvus, parva, parvum",
+          "meaning": "petit, petite",
+          "encounteredForms": [
+            "parva",
+            "parvum",
+            "parvus",
+            "parvī",
+            "parvōs"
+          ]
+        },
+        {
+          "id": "porto",
+          "lemma": "portāre",
+          "meaning": "porter",
+          "encounteredForms": [
+            "portant",
+            "portat"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "Puellae",
+            "Puellam",
+            "puella",
+            "puellae",
+            "puellam",
+            "puellārum",
+            "puellās",
+            "puellīs"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "Puerum",
+            "Puerī",
+            "puer",
+            "puerum",
+            "puerī",
+            "puerīs",
+            "puerō",
+            "puerōrum",
+            "puerōs"
+          ]
+        },
+        {
+          "id": "pulcher",
+          "lemma": "pulcher, pulchra, pulchrum",
+          "meaning": "beau, belle",
+          "encounteredForms": [
+            "pulcher",
+            "pulchram",
+            "pulchrās"
+          ]
+        },
+        {
+          "id": "qui",
+          "lemma": "quī",
+          "meaning": "qui, pronom relatif",
+          "encounteredForms": [
+            "quae",
+            "quam",
+            "quem",
+            "quī"
+          ]
+        },
+        {
+          "id": "quis",
+          "lemma": "quis, quid",
+          "meaning": "qui ? quoi ? (cuius : de qui ?)",
+          "encounteredForms": [
+            "Cuius",
+            "Quid",
+            "Quis"
+          ]
+        },
+        {
+          "id": "rideo",
+          "lemma": "rīdēre",
+          "meaning": "rire",
+          "encounteredForms": [
+            "rīdent",
+            "rīdet"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "rosam",
+            "rosās"
+          ]
+        },
+        {
+          "id": "saluto",
+          "lemma": "salūtāre",
+          "meaning": "saluer",
+          "encounteredForms": [
+            "salūtat"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "schola",
+            "scholā"
+          ]
+        },
+        {
+          "id": "se",
+          "lemma": "sē",
+          "meaning": "soi, se",
+          "encounteredForms": [
+            "sē"
+          ]
+        },
+        {
+          "id": "sedeo",
+          "lemma": "sedēre",
+          "meaning": "être assis",
+          "encounteredForms": [
+            "sedet"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "Servus",
+            "servum",
+            "servus",
+            "servōs"
+          ]
+        },
+        {
+          "id": "speculum",
+          "lemma": "speculum",
+          "meaning": "miroir",
+          "encounteredForms": [
+            "speculō"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "est",
+            "sunt"
+          ]
+        },
+        {
+          "id": "suus",
+          "lemma": "suus, sua, suum",
+          "meaning": "son propre, sa propre, ses propres",
+          "encounteredForms": [
+            "suam",
+            "suum",
+            "suōs"
+          ]
+        },
+        {
+          "id": "templum",
+          "lemma": "templum",
+          "meaning": "temple",
+          "encounteredForms": [
+            "Templa"
+          ]
+        },
+        {
+          "id": "tuus",
+          "lemma": "tuus, tua, tuum",
+          "meaning": "ton, ta, tes",
+          "encounteredForms": [
+            "tua",
+            "tuae",
+            "tuum",
+            "tuus",
+            "tuī"
+          ]
+        },
+        {
+          "id": "ubi",
+          "lemma": "ubi",
+          "meaning": "où",
+          "encounteredForms": [
+            "Ubi"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "vident",
+            "videt"
+          ]
+        },
+        {
+          "id": "villa",
+          "lemma": "vīlla",
+          "meaning": "maison de campagne",
+          "encounteredForms": [
+            "Vīlla",
+            "vīllam",
+            "vīllās"
+          ]
+        },
+        {
+          "id": "vir",
+          "lemma": "vir",
+          "meaning": "homme",
+          "encounteredForms": [
+            "Vir",
+            "Virī",
+            "vir",
+            "virum",
+            "virī",
+            "virō"
+          ]
+        },
+        {
+          "id": "voco",
+          "lemma": "vocāre",
+          "meaning": "appeler",
+          "encounteredForms": [
+            "vocant",
+            "vocat"
+          ]
+        }
       ],
-      "reading": "theatrum/03-descriptions/reading",
-      "theme": "templum/03-descriptions/theme",
-      "vocabularyCards": [
-        "theatrum/03-descriptions/vocabulary",
-        "templum/03-descriptions/vocabulary"
-      ],
-      "version": "theatrum/03-descriptions/version"
+      "vocabularyCards": {
+        "version": "theatrum/personae/vocabula",
+        "theme": "templum/personae/vocabula"
+      }
     },
     {
-      "section": "04-time",
-      "concept": "Situer et comparer les événements",
-      "text": "Iter breve",
+      "id": "nomina",
+      "name": "Locī et nomina",
+      "topics": [
+        {
+          "id": "third-subject-object",
+          "name": "Māter et mātrem",
+          "cards": {
+            "version": "theatrum/nomina/third-subject-object",
+            "theme": "templum/nomina/third-subject-object"
+          },
+          "vocabulary": [
+            "canis",
+            "exspecto",
+            "frater",
+            "mater",
+            "pastor",
+            "pater",
+            "saluto",
+            "soror",
+            "video",
+            "voco"
+          ]
+        },
+        {
+          "id": "third-genitive",
+          "name": "Mātris, patris, sorōris",
+          "cards": {
+            "version": "theatrum/nomina/third-genitive",
+            "theme": "templum/nomina/third-genitive"
+          },
+          "vocabulary": [
+            "ambulo",
+            "amicus",
+            "canto",
+            "curro",
+            "dormio",
+            "filia",
+            "filius",
+            "frater",
+            "mater",
+            "pastor",
+            "pater",
+            "sedeo",
+            "soror"
+          ]
+        },
+        {
+          "id": "third-dative",
+          "name": "Mātrī, patrī, frātrī",
+          "cards": {
+            "version": "theatrum/nomina/third-dative",
+            "theme": "templum/nomina/third-dative"
+          },
+          "vocabulary": [
+            "agricola",
+            "aqua",
+            "canis",
+            "do",
+            "frater",
+            "liber",
+            "mater",
+            "panis",
+            "pastor",
+            "pater",
+            "puella",
+            "puer",
+            "rosa",
+            "soror"
+          ]
+        },
+        {
+          "id": "third-ablative",
+          "name": "Cum mātre, cum patre",
+          "cards": {
+            "version": "theatrum/nomina/third-ablative",
+            "theme": "templum/nomina/third-ablative"
+          },
+          "vocabulary": [
+            "agricola",
+            "ambulo",
+            "canis",
+            "cum",
+            "curro",
+            "frater",
+            "mater",
+            "pastor",
+            "pater",
+            "puella",
+            "puer",
+            "redeo",
+            "sine",
+            "soror",
+            "venio"
+          ]
+        }
+      ],
       "vocabulary": [
-        "hodie",
-        "heri",
-        "iter",
-        "silua",
-        "uia",
-        "nox",
-        "ambulo",
-        "oppidum"
+        {
+          "id": "mater",
+          "lemma": "māter",
+          "meaning": "mère",
+          "encounteredForms": [
+            "Māter",
+            "Mātrem",
+            "Mātrēs",
+            "māter",
+            "mātre",
+            "mātrem",
+            "mātribus",
+            "mātris",
+            "mātrum",
+            "mātrī"
+          ]
+        },
+        {
+          "id": "pater",
+          "lemma": "pater",
+          "meaning": "père",
+          "encounteredForms": [
+            "Pater",
+            "Patrem",
+            "pater",
+            "patre",
+            "patrem",
+            "patribus",
+            "patris",
+            "patrum",
+            "patrēs",
+            "patrī"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "videt"
+          ]
+        },
+        {
+          "id": "voco",
+          "lemma": "vocāre",
+          "meaning": "appeler",
+          "encounteredForms": [
+            "vocat"
+          ]
+        },
+        {
+          "id": "frater",
+          "lemma": "frāter",
+          "meaning": "frère",
+          "encounteredForms": [
+            "Frāter",
+            "Frātrem",
+            "Frātrēs",
+            "frāter",
+            "frātre",
+            "frātrem",
+            "frātribus",
+            "frātris",
+            "frātrum",
+            "frātrī"
+          ]
+        },
+        {
+          "id": "soror",
+          "lemma": "soror",
+          "meaning": "sœur",
+          "encounteredForms": [
+            "Soror",
+            "Sorōrem",
+            "soror",
+            "sorōre",
+            "sorōrem",
+            "sorōribus",
+            "sorōris",
+            "sorōrum",
+            "sorōrēs",
+            "sorōrī"
+          ]
+        },
+        {
+          "id": "saluto",
+          "lemma": "salūtāre",
+          "meaning": "saluer",
+          "encounteredForms": [
+            "salūtat"
+          ]
+        },
+        {
+          "id": "exspecto",
+          "lemma": "exspectāre",
+          "meaning": "attendre",
+          "encounteredForms": [
+            "exspectat"
+          ]
+        },
+        {
+          "id": "pastor",
+          "lemma": "pāstor",
+          "meaning": "berger",
+          "encounteredForms": [
+            "Pāstor",
+            "Pāstōrem",
+            "Pāstōris",
+            "Pāstōrum",
+            "Pāstōrēs",
+            "pāstor",
+            "pāstōre",
+            "pāstōrem",
+            "pāstōribus",
+            "pāstōrī"
+          ]
+        },
+        {
+          "id": "canis",
+          "lemma": "canis",
+          "meaning": "chien",
+          "encounteredForms": [
+            "Canem",
+            "Canis",
+            "cane",
+            "canem",
+            "canibus",
+            "canis",
+            "canēs",
+            "canī"
+          ]
+        },
+        {
+          "id": "filius",
+          "lemma": "fīlius",
+          "meaning": "fils",
+          "encounteredForms": [
+            "Fīlius",
+            "Fīliī",
+            "fīlius",
+            "fīliī"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantat"
+          ]
+        },
+        {
+          "id": "filia",
+          "lemma": "fīlia",
+          "meaning": "fille (enfant de ses parents)",
+          "encounteredForms": [
+            "Fīlia",
+            "fīliae"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulat"
+          ]
+        },
+        {
+          "id": "amicus",
+          "lemma": "amīcus, amīca",
+          "meaning": "ami, amie",
+          "encounteredForms": [
+            "Amīca",
+            "Amīcus",
+            "amīcae",
+            "amīcī"
+          ]
+        },
+        {
+          "id": "sedeo",
+          "lemma": "sedēre",
+          "meaning": "être assis",
+          "encounteredForms": [
+            "sedet"
+          ]
+        },
+        {
+          "id": "curro",
+          "lemma": "currere",
+          "meaning": "courir",
+          "encounteredForms": [
+            "currit"
+          ]
+        },
+        {
+          "id": "dormio",
+          "lemma": "dormīre",
+          "meaning": "dormir",
+          "encounteredForms": [
+            "dormit"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "librum"
+          ]
+        },
+        {
+          "id": "do",
+          "lemma": "dare",
+          "meaning": "donner",
+          "encounteredForms": [
+            "dat"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "rosam"
+          ]
+        },
+        {
+          "id": "panis",
+          "lemma": "pānis",
+          "meaning": "pain",
+          "encounteredForms": [
+            "pānem"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam"
+          ]
+        },
+        {
+          "id": "cum",
+          "lemma": "cum",
+          "meaning": "avec",
+          "encounteredForms": [
+            "cum"
+          ]
+        },
+        {
+          "id": "redeo",
+          "lemma": "redīre",
+          "meaning": "revenir",
+          "encounteredForms": [
+            "redit"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir",
+          "encounteredForms": [
+            "venit"
+          ]
+        },
+        {
+          "id": "sine",
+          "lemma": "sine",
+          "meaning": "sans",
+          "encounteredForms": [
+            "sine"
+          ]
+        }
       ],
-      "reading": "theatrum/04-time/reading",
-      "theme": "templum/04-time/theme",
-      "vocabularyCards": [
-        "theatrum/04-time/vocabulary",
-        "templum/04-time/vocabulary"
-      ],
-      "version": "theatrum/04-time/version"
+      "vocabularyCards": {
+        "version": "theatrum/nomina/vocabula",
+        "theme": "templum/nomina/vocabula"
+      }
     },
     {
-      "section": "05-narrative",
-      "concept": "Premier plan et arrière-plan du récit",
-      "text": "Pōns fractus",
+      "id": "demonstratives",
+      "name": "Locī et demonstratives",
+      "topics": [
+        {
+          "id": "demonstrative-gender",
+          "name": "Hic, haec, hoc",
+          "cards": {
+            "version": "theatrum/demonstratives/demonstrative-gender",
+            "theme": "templum/demonstratives/demonstrative-gender"
+          },
+          "vocabulary": [
+            "anulus",
+            "gemma",
+            "hic",
+            "ille",
+            "magnus",
+            "ornamentum",
+            "parvus",
+            "pulcher",
+            "rosa",
+            "sum",
+            "templum"
+          ]
+        },
+        {
+          "id": "demonstrative-accusative",
+          "name": "Hunc, hanc, hoc",
+          "cards": {
+            "version": "theatrum/demonstratives/demonstrative-accusative",
+            "theme": "templum/demonstratives/demonstrative-accusative"
+          },
+          "vocabulary": [
+            "anulus",
+            "carpo",
+            "emo",
+            "femina",
+            "gemma",
+            "hic",
+            "ille",
+            "liber",
+            "mater",
+            "mercator",
+            "ornamentum",
+            "pater",
+            "porto",
+            "puella",
+            "puer",
+            "rosa",
+            "templum",
+            "vendo",
+            "video"
+          ]
+        },
+        {
+          "id": "demonstrative-genitive",
+          "name": "Huius et illīus",
+          "cards": {
+            "version": "theatrum/demonstratives/demonstrative-genitive",
+            "theme": "templum/demonstratives/demonstrative-genitive"
+          },
+          "vocabulary": [
+            "anulus",
+            "canto",
+            "filius",
+            "gemma",
+            "hic",
+            "ille",
+            "liber",
+            "magnus",
+            "mater",
+            "parvus",
+            "porta",
+            "pretium",
+            "puella",
+            "puer",
+            "pulcher",
+            "rosa",
+            "sum",
+            "templum"
+          ]
+        },
+        {
+          "id": "demonstrative-dative",
+          "name": "Huic et illī",
+          "cards": {
+            "version": "theatrum/demonstratives/demonstrative-dative",
+            "theme": "templum/demonstratives/demonstrative-dative"
+          },
+          "vocabulary": [
+            "agricola",
+            "anulus",
+            "aqua",
+            "do",
+            "frater",
+            "hic",
+            "ille",
+            "liber",
+            "mater",
+            "ornamentum",
+            "panis",
+            "pastor",
+            "pater",
+            "puella",
+            "puer",
+            "rosa",
+            "soror"
+          ]
+        }
+      ],
       "vocabulary": [
-        "agricola",
-        "fluuius",
-        "pons",
-        "nauta",
-        "nauis",
-        "uoco",
-        "ambulo",
-        "uideo"
+        {
+          "id": "hic",
+          "lemma": "hic, haec, hoc",
+          "meaning": "ce…-ci, cette…-ci, ceci",
+          "encounteredForms": [
+            "Haec",
+            "Hic",
+            "Hoc",
+            "haec",
+            "hanc",
+            "hic",
+            "hoc",
+            "huic",
+            "huius",
+            "hunc"
+          ]
+        },
+        {
+          "id": "anulus",
+          "lemma": "ānulus",
+          "meaning": "anneau",
+          "encounteredForms": [
+            "ānulum",
+            "ānulus",
+            "ānulī"
+          ]
+        },
+        {
+          "id": "pulcher",
+          "lemma": "pulcher, pulchra, pulchrum",
+          "meaning": "beau, belle",
+          "encounteredForms": [
+            "pulcher",
+            "pulchra"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "est"
+          ]
+        },
+        {
+          "id": "ille",
+          "lemma": "ille, illa, illud",
+          "meaning": "ce…-là, cette…-là, cela",
+          "encounteredForms": [
+            "Illa",
+            "Ille",
+            "Illud",
+            "illa",
+            "illam",
+            "ille",
+            "illud",
+            "illum",
+            "illī",
+            "illīus"
+          ]
+        },
+        {
+          "id": "gemma",
+          "lemma": "gemma",
+          "meaning": "pierre précieuse",
+          "encounteredForms": [
+            "gemma",
+            "gemmae",
+            "gemmam"
+          ]
+        },
+        {
+          "id": "parvus",
+          "lemma": "parvus, parva, parvum",
+          "meaning": "petit ; faible (prix)",
+          "encounteredForms": [
+            "parva",
+            "parvum",
+            "parvus"
+          ]
+        },
+        {
+          "id": "ornamentum",
+          "lemma": "ōrnāmentum",
+          "meaning": "ornement",
+          "encounteredForms": [
+            "ōrnāmentum"
+          ]
+        },
+        {
+          "id": "magnus",
+          "lemma": "magnus, magna, magnum",
+          "meaning": "grand ; élevé (prix)",
+          "encounteredForms": [
+            "magna",
+            "magnum"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "Rosa",
+            "rosa",
+            "rosam"
+          ]
+        },
+        {
+          "id": "templum",
+          "lemma": "templum",
+          "meaning": "temple",
+          "encounteredForms": [
+            "templum",
+            "templī"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "puellae"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "videt"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor"
+          ]
+        },
+        {
+          "id": "vendo",
+          "lemma": "vēndere",
+          "meaning": "vendre",
+          "encounteredForms": [
+            "vēndit"
+          ]
+        },
+        {
+          "id": "pater",
+          "lemma": "pater",
+          "meaning": "père",
+          "encounteredForms": [
+            "Pater",
+            "patrī"
+          ]
+        },
+        {
+          "id": "emo",
+          "lemma": "emere",
+          "meaning": "acheter",
+          "encounteredForms": [
+            "emit"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "Liber",
+            "librum"
+          ]
+        },
+        {
+          "id": "porto",
+          "lemma": "portāre",
+          "meaning": "porter",
+          "encounteredForms": [
+            "portat"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "puerī",
+            "puerō"
+          ]
+        },
+        {
+          "id": "carpo",
+          "lemma": "carpere",
+          "meaning": "cueillir",
+          "encounteredForms": [
+            "carpit"
+          ]
+        },
+        {
+          "id": "mater",
+          "lemma": "māter",
+          "meaning": "mère",
+          "encounteredForms": [
+            "Māter",
+            "mātris",
+            "mātrī"
+          ]
+        },
+        {
+          "id": "porta",
+          "lemma": "porta",
+          "meaning": "porte d’une ville",
+          "encounteredForms": [
+            "Porta"
+          ]
+        },
+        {
+          "id": "pretium",
+          "lemma": "pretium",
+          "meaning": "prix",
+          "encounteredForms": [
+            "Pretium"
+          ]
+        },
+        {
+          "id": "filius",
+          "lemma": "fīlius",
+          "meaning": "fils",
+          "encounteredForms": [
+            "Fīlius"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantat"
+          ]
+        },
+        {
+          "id": "do",
+          "lemma": "dare",
+          "meaning": "donner",
+          "encounteredForms": [
+            "dat"
+          ]
+        },
+        {
+          "id": "panis",
+          "lemma": "pānis",
+          "meaning": "pain",
+          "encounteredForms": [
+            "pānem"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola"
+          ]
+        },
+        {
+          "id": "pastor",
+          "lemma": "pāstor",
+          "meaning": "berger",
+          "encounteredForms": [
+            "pāstōrī"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam"
+          ]
+        },
+        {
+          "id": "soror",
+          "lemma": "soror",
+          "meaning": "sœur",
+          "encounteredForms": [
+            "Soror"
+          ]
+        },
+        {
+          "id": "frater",
+          "lemma": "frāter",
+          "meaning": "frère",
+          "encounteredForms": [
+            "frātrī"
+          ]
+        }
       ],
-      "reading": "theatrum/05-narrative/reading",
-      "theme": "templum/05-narrative/theme",
-      "vocabularyCards": [
-        "theatrum/05-narrative/vocabulary",
-        "templum/05-narrative/vocabulary"
-      ],
-      "version": "theatrum/05-narrative/version"
+      "vocabularyCards": {
+        "version": "theatrum/demonstratives/vocabula",
+        "theme": "templum/demonstratives/vocabula"
+      }
     },
     {
-      "section": "06-reported",
-      "concept": "Rapporter une parole et une pensée",
-      "text": "Nūntius",
+      "id": "interrogationes",
+      "name": "Quaestiōnēs et responsa",
+      "topics": [
+        {
+          "id": "neutral-question",
+          "name": "-ne",
+          "cards": {
+            "version": "theatrum/interrogationes/neutral-question",
+            "theme": "templum/interrogationes/neutral-question"
+          },
+          "vocabulary": [
+            "canto",
+            "dormio",
+            "hortus",
+            "in",
+            "magister",
+            "ne",
+            "nonne",
+            "num",
+            "puella",
+            "puer",
+            "schola",
+            "sum"
+          ]
+        },
+        {
+          "id": "num-question",
+          "name": "Num?",
+          "cards": {
+            "version": "theatrum/interrogationes/num-question",
+            "theme": "templum/interrogationes/num-question"
+          },
+          "vocabulary": [
+            "canto",
+            "dormio",
+            "femina",
+            "liber",
+            "magnus",
+            "ne",
+            "nonne",
+            "num",
+            "parvus",
+            "puer",
+            "sum",
+            "templum"
+          ]
+        },
+        {
+          "id": "nonne-question",
+          "name": "Nōnne?",
+          "cards": {
+            "version": "theatrum/interrogationes/nonne-question",
+            "theme": "templum/interrogationes/nonne-question"
+          },
+          "vocabulary": [
+            "adsum",
+            "hortus",
+            "magister",
+            "magnus",
+            "non",
+            "nonne",
+            "num",
+            "parvus",
+            "puella",
+            "schola",
+            "sum"
+          ]
+        },
+        {
+          "id": "cur-quia",
+          "name": "Cūr? Quia…",
+          "cards": {
+            "version": "theatrum/interrogationes/cur-quia",
+            "theme": "templum/interrogationes/cur-quia"
+          },
+          "vocabulary": [
+            "canto",
+            "cur",
+            "dormio",
+            "fessus",
+            "laetus",
+            "magister",
+            "non",
+            "ploro",
+            "puella",
+            "puer",
+            "quia",
+            "sed",
+            "sum",
+            "ubi"
+          ]
+        }
+      ],
       "vocabulary": [
-        "nuntius",
-        "uilla",
-        "dominus",
-        "uia",
-        "pons",
-        "dico",
-        "scio",
-        "uenio",
-        "uideo"
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "Estne",
+            "Suntne",
+            "est",
+            "sunt"
+          ]
+        },
+        {
+          "id": "ne",
+          "lemma": "-ne",
+          "meaning": "particule de question neutre",
+          "encounteredForms": [
+            "-ne"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "puer"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "Schola",
+            "schola",
+            "scholā"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "Puellae",
+            "puella",
+            "puellae"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "Hortī",
+            "hortī",
+            "hortō"
+          ]
+        },
+        {
+          "id": "dormio",
+          "lemma": "dormīre",
+          "meaning": "dormir",
+          "encounteredForms": [
+            "Dormitne",
+            "dormit"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "magister"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "Cantatne",
+            "cantat"
+          ]
+        },
+        {
+          "id": "num",
+          "lemma": "num",
+          "meaning": "est-ce que… ? (attente plutôt négative)",
+          "encounteredForms": [
+            "Num"
+          ]
+        },
+        {
+          "id": "nonne",
+          "lemma": "nōnne",
+          "meaning": "ne… pas ? (attente plutôt affirmative)",
+          "encounteredForms": [
+            "Nōnne"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "fēmina"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "librī"
+          ]
+        },
+        {
+          "id": "magnus",
+          "lemma": "magnus",
+          "meaning": "grand",
+          "encounteredForms": [
+            "magna",
+            "magnī"
+          ]
+        },
+        {
+          "id": "templum",
+          "lemma": "templum",
+          "meaning": "temple",
+          "encounteredForms": [
+            "templum"
+          ]
+        },
+        {
+          "id": "parvus",
+          "lemma": "parvus",
+          "meaning": "petit",
+          "encounteredForms": [
+            "parvum",
+            "parvī"
+          ]
+        },
+        {
+          "id": "adsum",
+          "lemma": "adesse",
+          "meaning": "être présent",
+          "encounteredForms": [
+            "adest",
+            "adsunt"
+          ]
+        },
+        {
+          "id": "non",
+          "lemma": "nōn",
+          "meaning": "ne… pas",
+          "encounteredForms": [
+            "nōn"
+          ]
+        },
+        {
+          "id": "cur",
+          "lemma": "cūr",
+          "meaning": "pourquoi",
+          "encounteredForms": [
+            "Cūr"
+          ]
+        },
+        {
+          "id": "ploro",
+          "lemma": "plōrāre",
+          "meaning": "pleurer",
+          "encounteredForms": [
+            "plōrat"
+          ]
+        },
+        {
+          "id": "quia",
+          "lemma": "quia",
+          "meaning": "parce que",
+          "encounteredForms": [
+            "Quia",
+            "quia"
+          ]
+        },
+        {
+          "id": "fessus",
+          "lemma": "fessus",
+          "meaning": "fatigué",
+          "encounteredForms": [
+            "fessus"
+          ]
+        },
+        {
+          "id": "laetus",
+          "lemma": "laetus",
+          "meaning": "joyeux",
+          "encounteredForms": [
+            "laeta"
+          ]
+        },
+        {
+          "id": "ubi",
+          "lemma": "ubi",
+          "meaning": "où",
+          "encounteredForms": [
+            "Ubi"
+          ]
+        },
+        {
+          "id": "sed",
+          "lemma": "sed",
+          "meaning": "mais",
+          "encounteredForms": [
+            "sed"
+          ]
+        }
       ],
-      "reading": "theatrum/06-reported/reading",
-      "theme": "templum/06-reported/theme",
-      "vocabularyCards": [
-        "theatrum/06-reported/vocabulary",
-        "templum/06-reported/vocabulary"
-      ],
-      "version": "theatrum/06-reported/version"
+      "vocabularyCards": {
+        "version": "theatrum/interrogationes/vocabula",
+        "theme": "templum/interrogationes/vocabula"
+      }
     },
     {
-      "section": "07-purpose",
-      "concept": "Exprimer le but et l’obligation",
-      "text": "Auxilium",
+      "id": "sermo",
+      "name": "Sermō et imperia",
+      "topics": [
+        {
+          "id": "singular-command",
+          "name": "Imperā!",
+          "cards": {
+            "version": "theatrum/sermo/singular-command",
+            "theme": "templum/sermo/singular-command"
+          },
+          "vocabulary": [
+            "ad",
+            "audio",
+            "in",
+            "liber",
+            "magister",
+            "magnus",
+            "mensa",
+            "pono",
+            "porto",
+            "schola",
+            "templum",
+            "video"
+          ]
+        },
+        {
+          "id": "plural-command",
+          "name": "Imperāte!",
+          "cards": {
+            "version": "theatrum/sermo/plural-command",
+            "theme": "templum/sermo/plural-command"
+          },
+          "vocabulary": [
+            "audio",
+            "in",
+            "insula",
+            "liber",
+            "magister",
+            "mensa",
+            "pono",
+            "porto",
+            "puella",
+            "puer",
+            "video"
+          ]
+        },
+        {
+          "id": "vocative",
+          "name": "Ō amīce!",
+          "cards": {
+            "version": "theatrum/sermo/vocative",
+            "theme": "templum/sermo/vocative"
+          },
+          "vocabulary": [
+            "amicus",
+            "audio",
+            "bonus",
+            "hortus",
+            "in",
+            "liber",
+            "magister",
+            "mensa",
+            "pono",
+            "porto",
+            "puella",
+            "servus",
+            "video"
+          ]
+        },
+        {
+          "id": "eum-eam",
+          "name": "Eum et eam",
+          "cards": {
+            "version": "theatrum/sermo/eum-eam",
+            "theme": "templum/sermo/eum-eam"
+          },
+          "vocabulary": [
+            "adsum",
+            "femina",
+            "in",
+            "insula",
+            "is",
+            "liber",
+            "magister",
+            "mensa",
+            "parvus",
+            "porto",
+            "puella",
+            "puer",
+            "sum",
+            "video",
+            "voco"
+          ]
+        },
+        {
+          "id": "eos-eas",
+          "name": "Eōs et eās",
+          "cards": {
+            "version": "theatrum/sermo/eos-eas",
+            "theme": "templum/sermo/eos-eas"
+          },
+          "vocabulary": [
+            "adsum",
+            "audio",
+            "femina",
+            "hortus",
+            "in",
+            "is",
+            "liber",
+            "magister",
+            "porto",
+            "puella",
+            "puer",
+            "rosa",
+            "schola",
+            "sum",
+            "video",
+            "voco"
+          ]
+        }
+      ],
       "vocabulary": [
-        "puella",
-        "aqua",
-        "mater",
-        "aeger",
-        "domus",
-        "puer",
-        "cado",
-        "peto",
-        "porto"
+        {
+          "id": "porto",
+          "lemma": "portāre",
+          "meaning": "porter",
+          "encounteredForms": [
+            "Portā",
+            "Portāte",
+            "portant",
+            "portat",
+            "portā",
+            "portāte"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "Liber",
+            "Librum",
+            "Librī",
+            "librum",
+            "librōs"
+          ]
+        },
+        {
+          "id": "ad",
+          "lemma": "ad",
+          "meaning": "vers, auprès de",
+          "encounteredForms": [
+            "ad"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "scholam",
+            "scholā"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "Vidē",
+            "Vidēte",
+            "vident",
+            "videt",
+            "vidē",
+            "vidēte"
+          ]
+        },
+        {
+          "id": "templum",
+          "lemma": "templum",
+          "meaning": "temple",
+          "encounteredForms": [
+            "Templum",
+            "templum"
+          ]
+        },
+        {
+          "id": "magnus",
+          "lemma": "magnus",
+          "meaning": "grand",
+          "encounteredForms": [
+            "magnum"
+          ]
+        },
+        {
+          "id": "pono",
+          "lemma": "pōnere",
+          "meaning": "poser",
+          "encounteredForms": [
+            "Pōne",
+            "Pōnite",
+            "pōne",
+            "pōnit",
+            "pōnite",
+            "pōnunt"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "mensa",
+          "lemma": "mēnsa",
+          "meaning": "table",
+          "encounteredForms": [
+            "mēnsā"
+          ]
+        },
+        {
+          "id": "audio",
+          "lemma": "audīre",
+          "meaning": "entendre, apprendre une nouvelle",
+          "encounteredForms": [
+            "Audī",
+            "Audīte",
+            "audit",
+            "audiunt",
+            "audī",
+            "audīte"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "Magistrum",
+            "Magistrī",
+            "magistrum"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "Puerī",
+            "puerum"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "Puellae",
+            "puellam"
+          ]
+        },
+        {
+          "id": "insula",
+          "lemma": "īnsula",
+          "meaning": "île",
+          "encounteredForms": [
+            "Īnsula",
+            "īnsulam"
+          ]
+        },
+        {
+          "id": "amicus",
+          "lemma": "amīcus",
+          "meaning": "ami",
+          "encounteredForms": [
+            "Amīce",
+            "Amīcum",
+            "Amīcus",
+            "amīce",
+            "amīcum",
+            "amīcus"
+          ]
+        },
+        {
+          "id": "bonus",
+          "lemma": "bonus",
+          "meaning": "bon",
+          "encounteredForms": [
+            "Bone",
+            "Bonum",
+            "Bonus"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "Serve",
+            "Servum",
+            "Servus"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "hortum",
+            "hortō"
+          ]
+        },
+        {
+          "id": "adsum",
+          "lemma": "adesse",
+          "meaning": "être présent",
+          "encounteredForms": [
+            "adest",
+            "adsunt"
+          ]
+        },
+        {
+          "id": "is",
+          "lemma": "is, ea, id",
+          "meaning": "celui-ci, celle-ci, cela",
+          "encounteredForms": [
+            "Ea",
+            "Is",
+            "eam",
+            "eum",
+            "eās",
+            "eōs"
+          ]
+        },
+        {
+          "id": "voco",
+          "lemma": "vocāre",
+          "meaning": "appeler",
+          "encounteredForms": [
+            "vocat"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "est",
+            "sunt"
+          ]
+        },
+        {
+          "id": "parvus",
+          "lemma": "parvus",
+          "meaning": "petit",
+          "encounteredForms": [
+            "parva"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "Rosae"
+          ]
+        }
       ],
-      "reading": "theatrum/07-purpose/reading",
-      "theme": "templum/07-purpose/theme",
-      "vocabularyCards": [
-        "theatrum/07-purpose/vocabulary",
-        "templum/07-purpose/vocabulary"
-      ],
-      "version": "theatrum/07-purpose/version"
+      "vocabularyCards": {
+        "version": "theatrum/sermo/vocabula",
+        "theme": "templum/sermo/vocabula"
+      }
     },
     {
-      "section": "08-circumstances",
-      "concept": "Circonstances et conditions",
-      "text": "Portae clausae",
+      "id": "actiones",
+      "name": "Agentēs et patientēs",
+      "topics": [
+        {
+          "id": "passive-patient",
+          "name": "Quis patitur?",
+          "cards": {
+            "version": "theatrum/actiones/passive-patient",
+            "theme": "templum/actiones/passive-patient"
+          },
+          "vocabulary": [
+            "agricola",
+            "capra",
+            "doceo",
+            "dominus",
+            "duco",
+            "equus",
+            "exspecto",
+            "laudo",
+            "non",
+            "puella",
+            "servus",
+            "video",
+            "voco"
+          ]
+        },
+        {
+          "id": "passive-number",
+          "name": "-tur et -ntur",
+          "cards": {
+            "version": "theatrum/actiones/passive-number",
+            "theme": "templum/actiones/passive-number"
+          },
+          "vocabulary": [
+            "agricola",
+            "capra",
+            "doceo",
+            "dominus",
+            "duco",
+            "equus",
+            "exspecto",
+            "laudo",
+            "puella",
+            "servus",
+            "video",
+            "voco"
+          ]
+        },
+        {
+          "id": "passive-agent",
+          "name": "Ā quō?",
+          "cards": {
+            "version": "theatrum/actiones/passive-agent",
+            "theme": "templum/actiones/passive-agent"
+          },
+          "vocabulary": [
+            "ab",
+            "ager",
+            "agricola",
+            "amicus",
+            "capra",
+            "domina",
+            "dominus",
+            "duco",
+            "equus",
+            "femina",
+            "puella",
+            "rigo",
+            "saluto",
+            "servus",
+            "voco"
+          ]
+        },
+        {
+          "id": "instrument-agent",
+          "name": "Quō īnstrūmentō?",
+          "cards": {
+            "version": "theatrum/actiones/instrument-agent",
+            "theme": "templum/actiones/instrument-agent"
+          },
+          "vocabulary": [
+            "ab",
+            "agricola",
+            "aperio",
+            "aqua",
+            "aratrum",
+            "clavis",
+            "clavus",
+            "culter",
+            "domina",
+            "femina",
+            "forfex",
+            "funis",
+            "hortus",
+            "malleus",
+            "ostium",
+            "puer",
+            "ramus",
+            "rigo",
+            "seco",
+            "servus",
+            "terra",
+            "tundo",
+            "verto"
+          ]
+        }
+      ],
       "vocabulary": [
-        "sol",
-        "urbs",
-        "porta",
-        "epistula",
-        "aperio",
-        "habeo",
-        "dico",
-        "possum"
+        {
+          "id": "capra",
+          "lemma": "capra",
+          "meaning": "chèvre",
+          "encounteredForms": [
+            "Capra",
+            "Caprae",
+            "caprā"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "vident",
+            "videntur",
+            "videt",
+            "vidētur"
+          ]
+        },
+        {
+          "id": "equus",
+          "lemma": "equus",
+          "meaning": "cheval",
+          "encounteredForms": [
+            "Equus",
+            "Equī",
+            "equō"
+          ]
+        },
+        {
+          "id": "duco",
+          "lemma": "dūcere",
+          "meaning": "conduire",
+          "encounteredForms": [
+            "dūcit",
+            "dūcitur",
+            "dūcunt",
+            "dūcuntur"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola",
+            "Agricolae",
+            "agricolam",
+            "agricolā"
+          ]
+        },
+        {
+          "id": "laudo",
+          "lemma": "laudāre",
+          "meaning": "louer, faire l’éloge de",
+          "encounteredForms": [
+            "laudant",
+            "laudantur",
+            "laudat",
+            "laudātur"
+          ]
+        },
+        {
+          "id": "dominus",
+          "lemma": "dominus",
+          "meaning": "maître de maison",
+          "encounteredForms": [
+            "Dominus",
+            "Dominī",
+            "dominum",
+            "dominō"
+          ]
+        },
+        {
+          "id": "exspecto",
+          "lemma": "exspectāre",
+          "meaning": "attendre",
+          "encounteredForms": [
+            "exspectant",
+            "exspectantur",
+            "exspectat",
+            "exspectātur"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "Puellae",
+            "puellā"
+          ]
+        },
+        {
+          "id": "doceo",
+          "lemma": "docēre",
+          "meaning": "enseigner",
+          "encounteredForms": [
+            "docent",
+            "docentur",
+            "docet",
+            "docētur"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "Servus",
+            "Servī",
+            "servīs",
+            "servō",
+            "servōs"
+          ]
+        },
+        {
+          "id": "voco",
+          "lemma": "vocāre",
+          "meaning": "appeler",
+          "encounteredForms": [
+            "vocant",
+            "vocantur",
+            "vocat",
+            "vocātur"
+          ]
+        },
+        {
+          "id": "non",
+          "lemma": "nōn",
+          "meaning": "ne… pas",
+          "encounteredForms": [
+            "nōn"
+          ]
+        },
+        {
+          "id": "ab",
+          "lemma": "ā, ab",
+          "meaning": "par (agent), de (provenance)",
+          "encounteredForms": [
+            "ab",
+            "ā"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina",
+            "fēminam",
+            "fēminā"
+          ]
+        },
+        {
+          "id": "saluto",
+          "lemma": "salūtāre",
+          "meaning": "saluer",
+          "encounteredForms": [
+            "salūtantur",
+            "salūtat",
+            "salūtātur"
+          ]
+        },
+        {
+          "id": "amicus",
+          "lemma": "amīcus",
+          "meaning": "ami",
+          "encounteredForms": [
+            "Amīcus",
+            "amīcum",
+            "amīcō"
+          ]
+        },
+        {
+          "id": "ager",
+          "lemma": "ager",
+          "meaning": "champ",
+          "encounteredForms": [
+            "Agrī",
+            "agrīs"
+          ]
+        },
+        {
+          "id": "rigo",
+          "lemma": "rigāre",
+          "meaning": "arroser",
+          "encounteredForms": [
+            "rigant",
+            "rigantur",
+            "rigātur"
+          ]
+        },
+        {
+          "id": "domina",
+          "lemma": "domina",
+          "meaning": "maîtresse de maison",
+          "encounteredForms": [
+            "Domina",
+            "dominā"
+          ]
+        },
+        {
+          "id": "ramus",
+          "lemma": "rāmus",
+          "meaning": "branche",
+          "encounteredForms": [
+            "Rāmus",
+            "rāmō"
+          ]
+        },
+        {
+          "id": "culter",
+          "lemma": "culter",
+          "meaning": "couteau",
+          "encounteredForms": [
+            "cultrum",
+            "cultrō"
+          ]
+        },
+        {
+          "id": "seco",
+          "lemma": "secāre",
+          "meaning": "couper",
+          "encounteredForms": [
+            "secātur"
+          ]
+        },
+        {
+          "id": "clavus",
+          "lemma": "clāvus",
+          "meaning": "clou",
+          "encounteredForms": [
+            "Clāvus",
+            "clāvō"
+          ]
+        },
+        {
+          "id": "malleus",
+          "lemma": "malleus",
+          "meaning": "marteau",
+          "encounteredForms": [
+            "malleum",
+            "malleō"
+          ]
+        },
+        {
+          "id": "tundo",
+          "lemma": "tundere",
+          "meaning": "frapper",
+          "encounteredForms": [
+            "tunditur"
+          ]
+        },
+        {
+          "id": "funis",
+          "lemma": "fūnis",
+          "meaning": "corde",
+          "encounteredForms": [
+            "Fūnis",
+            "fūne"
+          ]
+        },
+        {
+          "id": "forfex",
+          "lemma": "forfex",
+          "meaning": "ciseaux",
+          "encounteredForms": [
+            "forficibus",
+            "forficēs"
+          ]
+        },
+        {
+          "id": "ostium",
+          "lemma": "ostium",
+          "meaning": "porte",
+          "encounteredForms": [
+            "Ostium",
+            "ostiō"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "puerō"
+          ]
+        },
+        {
+          "id": "clavis",
+          "lemma": "clāvis",
+          "meaning": "clé",
+          "encounteredForms": [
+            "clāve",
+            "clāvem"
+          ]
+        },
+        {
+          "id": "aperio",
+          "lemma": "aperīre",
+          "meaning": "ouvrir",
+          "encounteredForms": [
+            "aperītur"
+          ]
+        },
+        {
+          "id": "terra",
+          "lemma": "terra",
+          "meaning": "terre",
+          "encounteredForms": [
+            "Terra",
+            "terrā"
+          ]
+        },
+        {
+          "id": "aratrum",
+          "lemma": "arātrum",
+          "meaning": "charrue",
+          "encounteredForms": [
+            "arātrum",
+            "arātrō"
+          ]
+        },
+        {
+          "id": "verto",
+          "lemma": "vertere",
+          "meaning": "retourner",
+          "encounteredForms": [
+            "vertitur"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "Hortus",
+            "hortō"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam",
+            "aquā"
+          ]
+        }
       ],
-      "reading": "theatrum/08-circumstances/reading",
-      "theme": "templum/08-circumstances/theme",
-      "vocabularyCards": [
-        "theatrum/08-circumstances/vocabulary",
-        "templum/08-circumstances/vocabulary"
-      ],
-      "version": "theatrum/08-circumstances/version"
+      "vocabularyCards": {
+        "version": "theatrum/actiones/vocabula",
+        "theme": "templum/actiones/vocabula"
+      }
     },
     {
-      "section": "09-myths",
-      "concept": "Distinguer faits, croyances et promesses",
-      "text": "Dōnum maris",
+      "id": "itinera",
+      "name": "Locī et itinera",
+      "topics": [
+        {
+          "id": "in-place-motion",
+          "name": "In: ubi an quō?",
+          "cards": {
+            "version": "theatrum/itinera/in-place-motion",
+            "theme": "templum/itinera/in-place-motion"
+          },
+          "vocabulary": [
+            "ambulo",
+            "cubiculum",
+            "curro",
+            "ex",
+            "femina",
+            "hortus",
+            "in",
+            "magister",
+            "puella",
+            "puer",
+            "schola",
+            "servus"
+          ]
+        },
+        {
+          "id": "town-location",
+          "name": "Rōmae et Tūsculī",
+          "cards": {
+            "version": "theatrum/itinera/town-location",
+            "theme": "templum/itinera/town-location"
+          },
+          "vocabulary": [
+            "agricola",
+            "femina",
+            "habito",
+            "magister",
+            "maneo",
+            "mercator",
+            "puella",
+            "puer",
+            "roma",
+            "sum",
+            "tusculum"
+          ]
+        },
+        {
+          "id": "town-destination",
+          "name": "Quō? Rōmam!",
+          "cards": {
+            "version": "theatrum/itinera/town-destination",
+            "theme": "templum/itinera/town-destination"
+          },
+          "vocabulary": [
+            "agricola",
+            "eo",
+            "femina",
+            "magister",
+            "mercator",
+            "puella",
+            "redeo",
+            "roma",
+            "servus",
+            "tusculum",
+            "venio"
+          ]
+        },
+        {
+          "id": "town-origin",
+          "name": "Unde? Rōmā!",
+          "cards": {
+            "version": "theatrum/itinera/town-origin",
+            "theme": "templum/itinera/town-origin"
+          },
+          "vocabulary": [
+            "agricola",
+            "femina",
+            "magister",
+            "mercator",
+            "puella",
+            "puer",
+            "redeo",
+            "roma",
+            "tusculum",
+            "venio"
+          ]
+        }
+      ],
       "vocabulary": [
-        "litus",
-        "concha",
-        "senex",
-        "donum",
-        "mare",
-        "puer",
-        "domus",
-        "puella",
-        "do",
-        "inuenio",
-        "sedeo"
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "hortum",
+            "hortō"
+          ]
+        },
+        {
+          "id": "curro",
+          "lemma": "currere",
+          "meaning": "courir",
+          "encounteredForms": [
+            "currit"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "scholam",
+            "scholā"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulat"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "Servus"
+          ]
+        },
+        {
+          "id": "cubiculum",
+          "lemma": "cubiculum",
+          "meaning": "chambre",
+          "encounteredForms": [
+            "cubiculum",
+            "cubiculō"
+          ]
+        },
+        {
+          "id": "ex",
+          "lemma": "ex",
+          "meaning": "hors de, depuis",
+          "encounteredForms": [
+            "ex"
+          ]
+        },
+        {
+          "id": "roma",
+          "lemma": "Rōma",
+          "meaning": "Rome",
+          "encounteredForms": [
+            "Rōmae",
+            "Rōmam",
+            "Rōmā"
+          ]
+        },
+        {
+          "id": "habito",
+          "lemma": "habitāre",
+          "meaning": "habiter",
+          "encounteredForms": [
+            "habitat"
+          ]
+        },
+        {
+          "id": "tusculum",
+          "lemma": "Tūsculum",
+          "meaning": "Tusculum",
+          "encounteredForms": [
+            "Tūsculum",
+            "Tūsculī",
+            "Tūsculō"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "est"
+          ]
+        },
+        {
+          "id": "maneo",
+          "lemma": "manēre",
+          "meaning": "rester",
+          "encounteredForms": [
+            "manet"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir",
+          "encounteredForms": [
+            "venit"
+          ]
+        },
+        {
+          "id": "eo",
+          "lemma": "īre",
+          "meaning": "aller",
+          "encounteredForms": [
+            "it"
+          ]
+        },
+        {
+          "id": "redeo",
+          "lemma": "redīre",
+          "meaning": "revenir",
+          "encounteredForms": [
+            "redit"
+          ]
+        }
       ],
-      "reading": "theatrum/09-myths/reading",
-      "theme": "templum/09-myths/theme",
-      "vocabularyCards": [
-        "theatrum/09-myths/vocabulary",
-        "templum/09-myths/vocabulary"
-      ],
-      "version": "theatrum/09-myths/version"
+      "vocabularyCards": {
+        "version": "theatrum/itinera/vocabula",
+        "theme": "templum/itinera/vocabula"
+      }
     },
     {
-      "section": "10-sacred",
-      "concept": "Comprendre un choix et ses conséquences",
-      "text": "Fidēs et pānis",
+      "id": "tempora",
+      "name": "Tempora et nārrātiō",
+      "topics": [
+        {
+          "id": "04-time",
+          "name": "-at et -ābit; -et et -ēbit",
+          "cards": {
+            "version": "theatrum/tempora/04-time",
+            "theme": "templum/tempora/04-time"
+          },
+          "vocabulary": [
+            "agricola",
+            "aqua",
+            "canto",
+            "exspecto",
+            "femina",
+            "habeo",
+            "hortus",
+            "in",
+            "magister",
+            "mercator",
+            "moneo",
+            "porto",
+            "puella",
+            "puer",
+            "rosa",
+            "servus",
+            "video"
+          ]
+        },
+        {
+          "id": "future-third-fourth",
+          "name": "Legit et leget; audit et audiet",
+          "cards": {
+            "version": "theatrum/tempora/future-third-fourth",
+            "theme": "templum/tempora/future-third-fourth"
+          },
+          "vocabulary": [
+            "agricola",
+            "aperio",
+            "audio",
+            "carpo",
+            "duco",
+            "epistula",
+            "equus",
+            "femina",
+            "lego",
+            "liber",
+            "magister",
+            "puella",
+            "puer",
+            "rosa",
+            "scribo",
+            "servus"
+          ]
+        },
+        {
+          "id": "05-narrative",
+          "name": "Cantābat et cantāvit",
+          "cards": {
+            "version": "theatrum/tempora/05-narrative",
+            "theme": "templum/tempora/05-narrative"
+          },
+          "vocabulary": [
+            "agricola",
+            "aperio",
+            "canto",
+            "discipulus",
+            "duco",
+            "epistula",
+            "equus",
+            "femina",
+            "hortus",
+            "in",
+            "lego",
+            "liber",
+            "magister",
+            "moneo",
+            "porta",
+            "puella",
+            "puer",
+            "scribo",
+            "servus"
+          ]
+        },
+        {
+          "id": "pluperfect-anteriority",
+          "name": "Iam fēcerat",
+          "cards": {
+            "version": "theatrum/tempora/pluperfect-anteriority",
+            "theme": "templum/tempora/pluperfect-anteriority"
+          },
+          "vocabulary": [
+            "agricola",
+            "aperio",
+            "carpo",
+            "discipulus",
+            "dominus",
+            "duco",
+            "epistula",
+            "equus",
+            "femina",
+            "lego",
+            "liber",
+            "magister",
+            "mercator",
+            "moneo",
+            "pater",
+            "porta",
+            "puella",
+            "puer",
+            "rosa",
+            "scribo",
+            "servus",
+            "venio"
+          ]
+        }
+      ],
       "vocabulary": [
-        "uidua",
-        "panis",
-        "filius",
-        "peregrinus",
-        "ianua",
-        "cibus",
-        "misericordia",
-        "inopia",
-        "res",
-        "audio",
-        "doceo"
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola"
+          ]
+        },
+        {
+          "id": "aperio",
+          "lemma": "aperīre",
+          "meaning": "ouvrir",
+          "encounteredForms": [
+            "aperiet",
+            "aperit",
+            "aperiēbat",
+            "aperuerat",
+            "aperuit"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam"
+          ]
+        },
+        {
+          "id": "audio",
+          "lemma": "audīre",
+          "meaning": "entendre, apprendre une nouvelle",
+          "encounteredForms": [
+            "audiet",
+            "audit",
+            "audīvit"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantat",
+            "cantābat",
+            "cantābit",
+            "cantāvit"
+          ]
+        },
+        {
+          "id": "carpo",
+          "lemma": "carpere",
+          "meaning": "cueillir",
+          "encounteredForms": [
+            "carpet",
+            "carpit",
+            "carpserat",
+            "carpsit",
+            "carpēbat"
+          ]
+        },
+        {
+          "id": "discipulus",
+          "lemma": "discipulus",
+          "meaning": "élève",
+          "encounteredForms": [
+            "discipulum"
+          ]
+        },
+        {
+          "id": "dominus",
+          "lemma": "dominus",
+          "meaning": "maître de maison",
+          "encounteredForms": [
+            "Dominus"
+          ]
+        },
+        {
+          "id": "duco",
+          "lemma": "dūcere",
+          "meaning": "conduire",
+          "encounteredForms": [
+            "dūcet",
+            "dūcit",
+            "dūcēbat",
+            "dūxerat",
+            "dūxit"
+          ]
+        },
+        {
+          "id": "epistula",
+          "lemma": "epistula",
+          "meaning": "lettre envoyée",
+          "encounteredForms": [
+            "epistulam"
+          ]
+        },
+        {
+          "id": "equus",
+          "lemma": "equus",
+          "meaning": "cheval",
+          "encounteredForms": [
+            "equum"
+          ]
+        },
+        {
+          "id": "exspecto",
+          "lemma": "exspectāre",
+          "meaning": "attendre",
+          "encounteredForms": [
+            "exspectat",
+            "exspectābit",
+            "exspectāvit"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina"
+          ]
+        },
+        {
+          "id": "habeo",
+          "lemma": "habēre",
+          "meaning": "avoir",
+          "encounteredForms": [
+            "habet",
+            "habuit",
+            "habēbit"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "hortō"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "lego",
+          "lemma": "legere",
+          "meaning": "lire",
+          "encounteredForms": [
+            "leget",
+            "legit",
+            "legēbat",
+            "lēgerat",
+            "lēgit"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "librum"
+          ]
+        },
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "magistrum"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor"
+          ]
+        },
+        {
+          "id": "moneo",
+          "lemma": "monēre",
+          "meaning": "avertir",
+          "encounteredForms": [
+            "monet",
+            "monuerat",
+            "monuit",
+            "monēbat",
+            "monēbit"
+          ]
+        },
+        {
+          "id": "pater",
+          "lemma": "pater",
+          "meaning": "père",
+          "encounteredForms": [
+            "Pater"
+          ]
+        },
+        {
+          "id": "porta",
+          "lemma": "porta",
+          "meaning": "porte d’une ville",
+          "encounteredForms": [
+            "portam"
+          ]
+        },
+        {
+          "id": "porto",
+          "lemma": "portāre",
+          "meaning": "porter",
+          "encounteredForms": [
+            "portat",
+            "portābit",
+            "portāvit"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "puellam"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "puerum"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "rosam"
+          ]
+        },
+        {
+          "id": "scribo",
+          "lemma": "scrībere",
+          "meaning": "écrire",
+          "encounteredForms": [
+            "scrībet",
+            "scrībit",
+            "scrībēbat",
+            "scrīpserat",
+            "scrīpsit"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "Servus",
+            "servum"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir",
+          "encounteredForms": [
+            "vēnit"
+          ]
+        },
+        {
+          "id": "video",
+          "lemma": "vidēre",
+          "meaning": "voir",
+          "encounteredForms": [
+            "videt",
+            "vidēbit",
+            "vīdit"
+          ]
+        }
       ],
-      "reading": "theatrum/10-sacred/reading",
-      "theme": "templum/10-sacred/theme",
-      "vocabularyCards": [
-        "theatrum/10-sacred/vocabulary",
-        "templum/10-sacred/vocabulary"
-      ],
-      "version": "theatrum/10-sacred/version"
+      "vocabularyCards": {
+        "version": "theatrum/tempora/vocabula",
+        "theme": "templum/tempora/vocabula"
+      }
     },
     {
-      "section": "11-synthesis",
-      "concept": "Relier les propositions d’un récit",
-      "text": "Epistula servāta",
+      "id": "orationes",
+      "name": "Locī et orationes",
+      "topics": [
+        {
+          "id": "infinitive-subject",
+          "name": "Dīcit puerum cantāre",
+          "cards": {
+            "version": "theatrum/orationes/infinitive-subject",
+            "theme": "templum/orationes/infinitive-subject"
+          },
+          "vocabulary": [
+            "agricola",
+            "ambulo",
+            "canto",
+            "curro",
+            "dico",
+            "femina",
+            "filius",
+            "hortus",
+            "in",
+            "magister",
+            "mercator",
+            "pater",
+            "puella",
+            "puer",
+            "schola",
+            "sedeo",
+            "servus",
+            "sum"
+          ]
+        },
+        {
+          "id": "infinitive-anteriority",
+          "name": "Cantāre et cantāvisse",
+          "cards": {
+            "version": "theatrum/orationes/infinitive-anteriority",
+            "theme": "templum/orationes/infinitive-anteriority"
+          },
+          "vocabulary": [
+            "agricola",
+            "aperio",
+            "canto",
+            "dico",
+            "dominus",
+            "dormio",
+            "epistula",
+            "femina",
+            "filius",
+            "lego",
+            "liber",
+            "magister",
+            "mercator",
+            "pater",
+            "porta",
+            "puella",
+            "puer",
+            "scribo",
+            "servus",
+            "venio"
+          ]
+        },
+        {
+          "id": "infinitive-posteriority",
+          "name": "Cantātūrum esse",
+          "cards": {
+            "version": "theatrum/orationes/infinitive-posteriority",
+            "theme": "templum/orationes/infinitive-posteriority"
+          },
+          "vocabulary": [
+            "ambulo",
+            "canto",
+            "dico",
+            "dominus",
+            "dormio",
+            "femina",
+            "filius",
+            "lego",
+            "magister",
+            "pater",
+            "puella",
+            "puer",
+            "scribo",
+            "servus",
+            "sum",
+            "venio"
+          ]
+        }
+      ],
       "vocabulary": [
-        "tempestas",
-        "mercator",
-        "filius",
-        "portus",
-        "nauta",
-        "moneo",
-        "epistula",
-        "pater",
-        "scribo",
-        "senex",
-        "domus",
-        "nauis",
-        "nox",
-        "mane",
-        "laudo"
+        {
+          "id": "magister",
+          "lemma": "magister",
+          "meaning": "maître",
+          "encounteredForms": [
+            "Magister",
+            "magister",
+            "magistrum",
+            "magistrōs"
+          ]
+        },
+        {
+          "id": "dico",
+          "lemma": "dīcere",
+          "meaning": "dire",
+          "encounteredForms": [
+            "dīcit"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "puer",
+            "puerum",
+            "puerōs"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantāre",
+            "cantātūrum",
+            "cantāvisse"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina",
+            "fēminam",
+            "fēminās"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "puella",
+            "puellam",
+            "puellās"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "hortus",
+          "lemma": "hortus",
+          "meaning": "jardin",
+          "encounteredForms": [
+            "hortō"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "esse"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor",
+            "mercātor",
+            "mercātōrem",
+            "mercātōrēs"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "servum",
+            "servus",
+            "servōs"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulāre",
+            "ambulātūram",
+            "ambulāvisse"
+          ]
+        },
+        {
+          "id": "pater",
+          "lemma": "pater",
+          "meaning": "père",
+          "encounteredForms": [
+            "Pater"
+          ]
+        },
+        {
+          "id": "filius",
+          "lemma": "fīlius",
+          "meaning": "fils",
+          "encounteredForms": [
+            "fīlium",
+            "fīlius",
+            "fīliōs"
+          ]
+        },
+        {
+          "id": "schola",
+          "lemma": "schola",
+          "meaning": "école",
+          "encounteredForms": [
+            "scholā"
+          ]
+        },
+        {
+          "id": "agricola",
+          "lemma": "agricola",
+          "meaning": "agriculteur",
+          "encounteredForms": [
+            "Agricola",
+            "agricolam",
+            "agricolās"
+          ]
+        },
+        {
+          "id": "curro",
+          "lemma": "currere",
+          "meaning": "courir",
+          "encounteredForms": [
+            "currere"
+          ]
+        },
+        {
+          "id": "sedeo",
+          "lemma": "sedēre",
+          "meaning": "être assis",
+          "encounteredForms": [
+            "sedēre"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "librum"
+          ]
+        },
+        {
+          "id": "lego",
+          "lemma": "legere",
+          "meaning": "lire",
+          "encounteredForms": [
+            "legere",
+            "lēctūram",
+            "lēgisse"
+          ]
+        },
+        {
+          "id": "dominus",
+          "lemma": "dominus",
+          "meaning": "maître de maison",
+          "encounteredForms": [
+            "Dominus"
+          ]
+        },
+        {
+          "id": "porta",
+          "lemma": "porta",
+          "meaning": "porte d’une ville",
+          "encounteredForms": [
+            "portam"
+          ]
+        },
+        {
+          "id": "aperio",
+          "lemma": "aperīre",
+          "meaning": "ouvrir",
+          "encounteredForms": [
+            "aperuisse",
+            "aperīre"
+          ]
+        },
+        {
+          "id": "epistula",
+          "lemma": "epistula",
+          "meaning": "lettre envoyée",
+          "encounteredForms": [
+            "epistulam"
+          ]
+        },
+        {
+          "id": "scribo",
+          "lemma": "scrībere",
+          "meaning": "écrire",
+          "encounteredForms": [
+            "scrībere",
+            "scrīpsisse",
+            "scrīptūrum"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir",
+          "encounteredForms": [
+            "ventūrum",
+            "venīre",
+            "vēnisse"
+          ]
+        },
+        {
+          "id": "dormio",
+          "lemma": "dormīre",
+          "meaning": "dormir",
+          "encounteredForms": [
+            "dormīre",
+            "dormītūrum",
+            "dormīvisse"
+          ]
+        }
       ],
-      "reading": "theatrum/11-synthesis/reading",
-      "theme": "templum/11-synthesis/theme",
-      "vocabularyCards": [
-        "theatrum/11-synthesis/vocabulary",
-        "templum/11-synthesis/vocabulary"
+      "vocabularyCards": {
+        "version": "theatrum/orationes/vocabula",
+        "theme": "templum/orationes/vocabula"
+      }
+    },
+    {
+      "id": "sententiae",
+      "name": "Sententiae coniūnctae",
+      "topics": [
+        {
+          "id": "07-purpose",
+          "name": "Ut et nē",
+          "cards": {
+            "version": "theatrum/sententiae/07-purpose",
+            "theme": "templum/sententiae/07-purpose"
+          },
+          "vocabulary": [
+            "ad",
+            "aqua",
+            "cado",
+            "claudo",
+            "curro",
+            "discedo",
+            "excito",
+            "femina",
+            "flumen",
+            "frigus",
+            "ianua",
+            "in",
+            "intro",
+            "nauta",
+            "navis",
+            "ne",
+            "non",
+            "oppidum",
+            "paro",
+            "pater",
+            "pervenio",
+            "peto",
+            "puella",
+            "puer",
+            "quaero",
+            "quia",
+            "taceo",
+            "teneo",
+            "ut",
+            "velum",
+            "via",
+            "viator"
+          ]
+        },
+        {
+          "id": "08-circumstances",
+          "name": "Puerō cantante",
+          "cards": {
+            "version": "theatrum/sententiae/08-circumstances",
+            "theme": "templum/sententiae/08-circumstances"
+          },
+          "vocabulary": [
+            "ambulo",
+            "amicus",
+            "antequam",
+            "aperio",
+            "aqua",
+            "canto",
+            "carpo",
+            "cena",
+            "clamo",
+            "epistula",
+            "femina",
+            "ianua",
+            "laboro",
+            "mater",
+            "mercator",
+            "narro",
+            "nauta",
+            "paro",
+            "porto",
+            "puella",
+            "puer",
+            "rosa",
+            "scribo",
+            "servus",
+            "velum",
+            "venio",
+            "viator"
+          ]
+        },
+        {
+          "id": "absolute-perfect",
+          "name": "Epistulā lēctā",
+          "cards": {
+            "version": "theatrum/sententiae/absolute-perfect",
+            "theme": "templum/sententiae/absolute-perfect"
+          },
+          "vocabulary": [
+            "amicus",
+            "antequam",
+            "aperio",
+            "cena",
+            "civis",
+            "claudo",
+            "deleo",
+            "discipulus",
+            "dum",
+            "epistula",
+            "exeo",
+            "filius",
+            "fugio",
+            "ianua",
+            "intro",
+            "lego",
+            "liber",
+            "mater",
+            "oppidum",
+            "paro",
+            "pater",
+            "perterreo",
+            "porta",
+            "puella",
+            "puer",
+            "urbs",
+            "viator",
+            "voco"
+          ]
+        },
+        {
+          "id": "09-myths",
+          "name": "Futūrum in ōrātiōne oblīquā",
+          "cards": {
+            "version": "theatrum/sententiae/09-myths",
+            "theme": "templum/sententiae/09-myths"
+          },
+          "vocabulary": [
+            "puer",
+            "in",
+            "litus",
+            "concha",
+            "invenio",
+            "senex",
+            "dico",
+            "donum",
+            "mare",
+            "sum",
+            "puto",
+            "se",
+            "felix",
+            "puella",
+            "do",
+            "qui",
+            "tristis",
+            "silva",
+            "perdo",
+            "laetus"
+          ]
+        },
+        {
+          "id": "10-sacred",
+          "name": "Causae et cōnsilia",
+          "cards": {
+            "version": "theatrum/sententiae/10-sacred",
+            "theme": "templum/sententiae/10-sacred"
+          },
+          "vocabulary": [
+            "vidua",
+            "panis",
+            "filius",
+            "servo",
+            "volo",
+            "cum",
+            "peregrinus",
+            "partior",
+            "sum",
+            "vicinus",
+            "res",
+            "audio",
+            "misericordia",
+            "etiam",
+            "in",
+            "inopia",
+            "exerceo",
+            "possum",
+            "do",
+            "nolo",
+            "solus",
+            "habeo",
+            "a",
+            "aufero",
+            "tantum",
+            "divitiae",
+            "non"
+          ]
+        },
+        {
+          "id": "11-synthesis",
+          "name": "Concessiō et antecēdentia",
+          "cards": {
+            "version": "theatrum/sententiae/11-synthesis",
+            "theme": "templum/sententiae/11-synthesis"
+          },
+          "vocabulary": [
+            "pater",
+            "filius",
+            "mitto",
+            "ut",
+            "nauta",
+            "moneo",
+            "quamquam",
+            "propero",
+            "senex",
+            "adiuvo",
+            "epistula",
+            "lego",
+            "exspecto",
+            "constituo",
+            "neque",
+            "desero",
+            "nuntius",
+            "neglego",
+            "ne",
+            "non",
+            "quia",
+            "scribo",
+            "discedo",
+            "puer",
+            "et"
+          ]
+        }
       ],
-      "version": "theatrum/11-synthesis/version"
+      "vocabulary": [
+        {
+          "id": "a",
+          "lemma": "ā",
+          "meaning": "de, depuis ; par",
+          "encounteredForms": [
+            "ā"
+          ]
+        },
+        {
+          "id": "ad",
+          "lemma": "ad",
+          "meaning": "vers, auprès de",
+          "encounteredForms": [
+            "ad"
+          ]
+        },
+        {
+          "id": "adiuvo",
+          "lemma": "adiuvāre",
+          "meaning": "aider",
+          "encounteredForms": [
+            "adiūvit"
+          ]
+        },
+        {
+          "id": "ambulo",
+          "lemma": "ambulāre",
+          "meaning": "marcher",
+          "encounteredForms": [
+            "ambulante",
+            "ambulat",
+            "ambulāns"
+          ]
+        },
+        {
+          "id": "amicus",
+          "lemma": "amīcus, amīca",
+          "meaning": "ami, amie",
+          "encounteredForms": [
+            "Amīcī",
+            "Amīcīs",
+            "amīcī",
+            "amīcōs"
+          ]
+        },
+        {
+          "id": "antequam",
+          "lemma": "antequam",
+          "meaning": "avant que",
+          "encounteredForms": [
+            "Antequam"
+          ]
+        },
+        {
+          "id": "aperio",
+          "lemma": "aperīre",
+          "meaning": "ouvrir",
+          "encounteredForms": [
+            "aperit",
+            "apertā",
+            "aperītur"
+          ]
+        },
+        {
+          "id": "aqua",
+          "lemma": "aqua",
+          "meaning": "eau",
+          "encounteredForms": [
+            "aquam"
+          ]
+        },
+        {
+          "id": "audio",
+          "lemma": "audīre",
+          "meaning": "entendre, apprendre une nouvelle",
+          "encounteredForms": [
+            "audient",
+            "audit",
+            "audīverant"
+          ]
+        },
+        {
+          "id": "aufero",
+          "lemma": "auferre",
+          "meaning": "emporter, enlever",
+          "encounteredForms": [
+            "abstulit"
+          ]
+        },
+        {
+          "id": "cado",
+          "lemma": "cadere",
+          "meaning": "tomber",
+          "encounteredForms": [
+            "cadat",
+            "cadit"
+          ]
+        },
+        {
+          "id": "canto",
+          "lemma": "cantāre",
+          "meaning": "chanter",
+          "encounteredForms": [
+            "cantante",
+            "cantat",
+            "cantāns"
+          ]
+        },
+        {
+          "id": "carpo",
+          "lemma": "carpere",
+          "meaning": "cueillir",
+          "encounteredForms": [
+            "carpit"
+          ]
+        },
+        {
+          "id": "cena",
+          "lemma": "cēna",
+          "meaning": "dîner",
+          "encounteredForms": [
+            "Cēnā",
+            "cēna",
+            "cēnam"
+          ]
+        },
+        {
+          "id": "civis",
+          "lemma": "cīvis",
+          "meaning": "citoyen",
+          "encounteredForms": [
+            "cīvēs"
+          ]
+        },
+        {
+          "id": "clamo",
+          "lemma": "clāmāre",
+          "meaning": "crier",
+          "encounteredForms": [
+            "clāmante",
+            "clāmat",
+            "clāmāns"
+          ]
+        },
+        {
+          "id": "claudo",
+          "lemma": "claudere",
+          "meaning": "fermer",
+          "encounteredForms": [
+            "claudit",
+            "clauduntur",
+            "clausīs"
+          ]
+        },
+        {
+          "id": "concha",
+          "lemma": "concha",
+          "meaning": "coquillage",
+          "encounteredForms": [
+            "Concham",
+            "conchae",
+            "concham"
+          ]
+        },
+        {
+          "id": "constituo",
+          "lemma": "cōnstituere",
+          "meaning": "décider",
+          "encounteredForms": [
+            "cōnstituit"
+          ]
+        },
+        {
+          "id": "cum",
+          "lemma": "cum",
+          "meaning": "avec",
+          "encounteredForms": [
+            "cum"
+          ]
+        },
+        {
+          "id": "curro",
+          "lemma": "currere",
+          "meaning": "courir",
+          "encounteredForms": [
+            "currit"
+          ]
+        },
+        {
+          "id": "deleo",
+          "lemma": "dēlēre",
+          "meaning": "détruire, effacer",
+          "encounteredForms": [
+            "dēlētur",
+            "dēlētā"
+          ]
+        },
+        {
+          "id": "desero",
+          "lemma": "dēserere",
+          "meaning": "abandonner",
+          "encounteredForms": [
+            "dēseret",
+            "dēseruerat",
+            "dēseruit"
+          ]
+        },
+        {
+          "id": "dico",
+          "lemma": "dīcere",
+          "meaning": "dire",
+          "encounteredForms": [
+            "dīxit"
+          ]
+        },
+        {
+          "id": "discedo",
+          "lemma": "discēdere",
+          "meaning": "s’en aller",
+          "encounteredForms": [
+            "discēdat",
+            "discēdere",
+            "discēdit"
+          ]
+        },
+        {
+          "id": "discipulus",
+          "lemma": "discipulus",
+          "meaning": "élève",
+          "encounteredForms": [
+            "discipulī"
+          ]
+        },
+        {
+          "id": "divitiae",
+          "lemma": "dīvitiae",
+          "meaning": "richesses",
+          "encounteredForms": [
+            "dīvitiīs"
+          ]
+        },
+        {
+          "id": "do",
+          "lemma": "dare",
+          "meaning": "donner",
+          "encounteredForms": [
+            "dare",
+            "dedit"
+          ]
+        },
+        {
+          "id": "donum",
+          "lemma": "dōnum",
+          "meaning": "don",
+          "encounteredForms": [
+            "dōnum"
+          ]
+        },
+        {
+          "id": "dum",
+          "lemma": "dum",
+          "meaning": "pendant que",
+          "encounteredForms": [
+            "Dum"
+          ]
+        },
+        {
+          "id": "epistula",
+          "lemma": "epistula",
+          "meaning": "lettre envoyée",
+          "encounteredForms": [
+            "Epistulā",
+            "epistula",
+            "epistulam"
+          ]
+        },
+        {
+          "id": "et",
+          "lemma": "et",
+          "meaning": "et",
+          "encounteredForms": [
+            "Et",
+            "et"
+          ]
+        },
+        {
+          "id": "etiam",
+          "lemma": "etiam",
+          "meaning": "même, aussi",
+          "encounteredForms": [
+            "etiam"
+          ]
+        },
+        {
+          "id": "excito",
+          "lemma": "excitāre",
+          "meaning": "réveiller",
+          "encounteredForms": [
+            "excitat",
+            "excitet"
+          ]
+        },
+        {
+          "id": "exeo",
+          "lemma": "exīre",
+          "meaning": "sortir",
+          "encounteredForms": [
+            "exeunt"
+          ]
+        },
+        {
+          "id": "exerceo",
+          "lemma": "exercēre",
+          "meaning": "exercer",
+          "encounteredForms": [
+            "exercērī"
+          ]
+        },
+        {
+          "id": "exspecto",
+          "lemma": "exspectāre",
+          "meaning": "attendre",
+          "encounteredForms": [
+            "exspectāre",
+            "exspectāvit"
+          ]
+        },
+        {
+          "id": "felix",
+          "lemma": "fēlīx",
+          "meaning": "heureux",
+          "encounteredForms": [
+            "fēlīcem"
+          ]
+        },
+        {
+          "id": "femina",
+          "lemma": "fēmina",
+          "meaning": "femme",
+          "encounteredForms": [
+            "Fēmina",
+            "Fēminā",
+            "fēmina"
+          ]
+        },
+        {
+          "id": "filius",
+          "lemma": "fīlius",
+          "meaning": "fils",
+          "encounteredForms": [
+            "Fīlius",
+            "fīlium",
+            "fīliō"
+          ]
+        },
+        {
+          "id": "flumen",
+          "lemma": "flūmen",
+          "meaning": "fleuve",
+          "encounteredForms": [
+            "flūmen"
+          ]
+        },
+        {
+          "id": "frigus",
+          "lemma": "frīgus",
+          "meaning": "froid",
+          "encounteredForms": [
+            "frīgus"
+          ]
+        },
+        {
+          "id": "fugio",
+          "lemma": "fugere",
+          "meaning": "s’enfuir",
+          "encounteredForms": [
+            "fugiunt"
+          ]
+        },
+        {
+          "id": "habeo",
+          "lemma": "habēre",
+          "meaning": "avoir",
+          "encounteredForms": [
+            "habuit"
+          ]
+        },
+        {
+          "id": "ianua",
+          "lemma": "iānua",
+          "meaning": "porte",
+          "encounteredForms": [
+            "iānuam"
+          ]
+        },
+        {
+          "id": "in",
+          "lemma": "in",
+          "meaning": "dans, sur",
+          "encounteredForms": [
+            "in"
+          ]
+        },
+        {
+          "id": "inopia",
+          "lemma": "inopia",
+          "meaning": "manque, pauvreté",
+          "encounteredForms": [
+            "inopiā"
+          ]
+        },
+        {
+          "id": "intro",
+          "lemma": "intrāre",
+          "meaning": "entrer",
+          "encounteredForms": [
+            "intrat",
+            "intret"
+          ]
+        },
+        {
+          "id": "invenio",
+          "lemma": "invenīre",
+          "meaning": "trouver",
+          "encounteredForms": [
+            "invēnit"
+          ]
+        },
+        {
+          "id": "laboro",
+          "lemma": "labōrāre",
+          "meaning": "travailler",
+          "encounteredForms": [
+            "labōrante",
+            "labōrat",
+            "labōrāns"
+          ]
+        },
+        {
+          "id": "laetus",
+          "lemma": "laetus",
+          "meaning": "joyeux",
+          "encounteredForms": [
+            "laetus"
+          ]
+        },
+        {
+          "id": "lego",
+          "lemma": "legere",
+          "meaning": "lire",
+          "encounteredForms": [
+            "lēctā",
+            "legitur",
+            "lēctā"
+          ]
+        },
+        {
+          "id": "liber",
+          "lemma": "liber",
+          "meaning": "livre",
+          "encounteredForms": [
+            "Librīs",
+            "librī"
+          ]
+        },
+        {
+          "id": "litus",
+          "lemma": "lītus",
+          "meaning": "rivage",
+          "encounteredForms": [
+            "lītore"
+          ]
+        },
+        {
+          "id": "mare",
+          "lemma": "mare",
+          "meaning": "mer",
+          "encounteredForms": [
+            "mare",
+            "maris"
+          ]
+        },
+        {
+          "id": "mater",
+          "lemma": "māter",
+          "meaning": "mère",
+          "encounteredForms": [
+            "māter",
+            "mātrem"
+          ]
+        },
+        {
+          "id": "mercator",
+          "lemma": "mercātor",
+          "meaning": "marchand",
+          "encounteredForms": [
+            "Mercātor",
+            "Mercātōre",
+            "mercātor"
+          ]
+        },
+        {
+          "id": "misericordia",
+          "lemma": "misericordia",
+          "meaning": "compassion",
+          "encounteredForms": [
+            "Misericordia"
+          ]
+        },
+        {
+          "id": "mitto",
+          "lemma": "mittere",
+          "meaning": "envoyer",
+          "encounteredForms": [
+            "mīsit"
+          ]
+        },
+        {
+          "id": "moneo",
+          "lemma": "monēre",
+          "meaning": "avertir",
+          "encounteredForms": [
+            "monēret"
+          ]
+        },
+        {
+          "id": "narro",
+          "lemma": "nārrāre",
+          "meaning": "raconter",
+          "encounteredForms": [
+            "nārrant",
+            "nārrantibus",
+            "nārrantēs"
+          ]
+        },
+        {
+          "id": "nauta",
+          "lemma": "nauta",
+          "meaning": "marin",
+          "encounteredForms": [
+            "Nauta",
+            "Nautā",
+            "nauta",
+            "nautam",
+            "nautās"
+          ]
+        },
+        {
+          "id": "navis",
+          "lemma": "nāvis",
+          "meaning": "navire",
+          "encounteredForms": [
+            "nāvis"
+          ]
+        },
+        {
+          "id": "ne",
+          "lemma": "nē",
+          "meaning": "pour que… ne… pas",
+          "encounteredForms": [
+            "nē"
+          ]
+        },
+        {
+          "id": "neglego",
+          "lemma": "neglegere",
+          "meaning": "négliger",
+          "encounteredForms": [
+            "negleget",
+            "neglexerat"
+          ]
+        },
+        {
+          "id": "neque",
+          "lemma": "neque",
+          "meaning": "et ne… pas, ni",
+          "encounteredForms": [
+            "Neque",
+            "neque"
+          ]
+        },
+        {
+          "id": "nolo",
+          "lemma": "nōlle",
+          "meaning": "ne pas vouloir",
+          "encounteredForms": [
+            "nōlēbat"
+          ]
+        },
+        {
+          "id": "non",
+          "lemma": "nōn",
+          "meaning": "ne… pas",
+          "encounteredForms": [
+            "nōn"
+          ]
+        },
+        {
+          "id": "nuntius",
+          "lemma": "nūntius",
+          "meaning": "messager, message",
+          "encounteredForms": [
+            "nūntium"
+          ]
+        },
+        {
+          "id": "oppidum",
+          "lemma": "oppidum",
+          "meaning": "ville fortifiée",
+          "encounteredForms": [
+            "oppidum"
+          ]
+        },
+        {
+          "id": "panis",
+          "lemma": "pānis",
+          "meaning": "pain",
+          "encounteredForms": [
+            "Pānem",
+            "pānem"
+          ]
+        },
+        {
+          "id": "paro",
+          "lemma": "parāre",
+          "meaning": "préparer",
+          "encounteredForms": [
+            "parant",
+            "parat",
+            "parātur",
+            "parātā"
+          ]
+        },
+        {
+          "id": "partior",
+          "lemma": "partīrī",
+          "meaning": "partager",
+          "encounteredForms": [
+            "partīta"
+          ]
+        },
+        {
+          "id": "pater",
+          "lemma": "pater",
+          "meaning": "père",
+          "encounteredForms": [
+            "Pater",
+            "pater",
+            "patrem"
+          ]
+        },
+        {
+          "id": "perdo",
+          "lemma": "perdere",
+          "meaning": "perdre",
+          "encounteredForms": [
+            "perdidit"
+          ]
+        },
+        {
+          "id": "peregrinus",
+          "lemma": "peregrīnus",
+          "meaning": "étranger, voyageur",
+          "encounteredForms": [
+            "peregrīnus",
+            "peregrīnō"
+          ]
+        },
+        {
+          "id": "perterreo",
+          "lemma": "perterrēre",
+          "meaning": "terrifier",
+          "encounteredForms": [
+            "perterrent",
+            "perterrentur",
+            "perterritīs"
+          ]
+        },
+        {
+          "id": "pervenio",
+          "lemma": "pervenīre",
+          "meaning": "parvenir, arriver",
+          "encounteredForms": [
+            "perveniat",
+            "pervenit"
+          ]
+        },
+        {
+          "id": "peto",
+          "lemma": "petere",
+          "meaning": "chercher à obtenir, demander",
+          "encounteredForms": [
+            "petat",
+            "petit"
+          ]
+        },
+        {
+          "id": "porta",
+          "lemma": "porta",
+          "meaning": "porte d’une ville",
+          "encounteredForms": [
+            "Portā",
+            "porta"
+          ]
+        },
+        {
+          "id": "porto",
+          "lemma": "portāre",
+          "meaning": "porter",
+          "encounteredForms": [
+            "portat"
+          ]
+        },
+        {
+          "id": "possum",
+          "lemma": "posse",
+          "meaning": "pouvoir",
+          "encounteredForms": [
+            "potest"
+          ]
+        },
+        {
+          "id": "propero",
+          "lemma": "properāre",
+          "meaning": "se hâter",
+          "encounteredForms": [
+            "properābat"
+          ]
+        },
+        {
+          "id": "puella",
+          "lemma": "puella",
+          "meaning": "jeune fille",
+          "encounteredForms": [
+            "Puella",
+            "puella",
+            "puellae"
+          ]
+        },
+        {
+          "id": "puer",
+          "lemma": "puer",
+          "meaning": "garçon",
+          "encounteredForms": [
+            "Puer",
+            "Puerīs",
+            "Puerō",
+            "puer",
+            "puerum",
+            "puerī",
+            "puerō"
+          ]
+        },
+        {
+          "id": "puto",
+          "lemma": "putāre",
+          "meaning": "penser",
+          "encounteredForms": [
+            "Putābat"
+          ]
+        },
+        {
+          "id": "quaero",
+          "lemma": "quaerere",
+          "meaning": "chercher, demander",
+          "encounteredForms": [
+            "quaerit"
+          ]
+        },
+        {
+          "id": "quamquam",
+          "lemma": "quamquam",
+          "meaning": "bien que",
+          "encounteredForms": [
+            "Quamquam"
+          ]
+        },
+        {
+          "id": "qui",
+          "lemma": "quī",
+          "meaning": "qui, pronom relatif",
+          "encounteredForms": [
+            "quae",
+            "quī"
+          ]
+        },
+        {
+          "id": "quia",
+          "lemma": "quia",
+          "meaning": "parce que",
+          "encounteredForms": [
+            "Quia",
+            "quia"
+          ]
+        },
+        {
+          "id": "res",
+          "lemma": "rēs",
+          "meaning": "chose, événement",
+          "encounteredForms": [
+            "rem"
+          ]
+        },
+        {
+          "id": "rosa",
+          "lemma": "rosa",
+          "meaning": "rose",
+          "encounteredForms": [
+            "rosās"
+          ]
+        },
+        {
+          "id": "scribo",
+          "lemma": "scrībere",
+          "meaning": "écrire",
+          "encounteredForms": [
+            "scrībendā",
+            "scrībit"
+          ]
+        },
+        {
+          "id": "se",
+          "lemma": "sē",
+          "meaning": "soi, se",
+          "encounteredForms": [
+            "sē"
+          ]
+        },
+        {
+          "id": "senex",
+          "lemma": "senex",
+          "meaning": "vieillard",
+          "encounteredForms": [
+            "Senex",
+            "senem"
+          ]
+        },
+        {
+          "id": "servo",
+          "lemma": "servāre",
+          "meaning": "garder",
+          "encounteredForms": [
+            "servāre"
+          ]
+        },
+        {
+          "id": "servus",
+          "lemma": "servus",
+          "meaning": "esclave",
+          "encounteredForms": [
+            "servus"
+          ]
+        },
+        {
+          "id": "silva",
+          "lemma": "silva",
+          "meaning": "forêt",
+          "encounteredForms": [
+            "silvā"
+          ]
+        },
+        {
+          "id": "solus",
+          "lemma": "sōlus",
+          "meaning": "seul",
+          "encounteredForms": [
+            "sōlus"
+          ]
+        },
+        {
+          "id": "sum",
+          "lemma": "esse",
+          "meaning": "être",
+          "encounteredForms": [
+            "erat",
+            "esse",
+            "est",
+            "fuisse",
+            "futūrum"
+          ]
+        },
+        {
+          "id": "taceo",
+          "lemma": "tacēre",
+          "meaning": "se taire",
+          "encounteredForms": [
+            "tacet"
+          ]
+        },
+        {
+          "id": "tantum",
+          "lemma": "tantum",
+          "meaning": "seulement",
+          "encounteredForms": [
+            "tantum"
+          ]
+        },
+        {
+          "id": "teneo",
+          "lemma": "tenēre",
+          "meaning": "tenir",
+          "encounteredForms": [
+            "tenet"
+          ]
+        },
+        {
+          "id": "tristis",
+          "lemma": "trīstis",
+          "meaning": "triste",
+          "encounteredForms": [
+            "trīstem",
+            "trīstis"
+          ]
+        },
+        {
+          "id": "urbs",
+          "lemma": "urbs",
+          "meaning": "ville",
+          "encounteredForms": [
+            "Urbe",
+            "urbs"
+          ]
+        },
+        {
+          "id": "ut",
+          "lemma": "ut",
+          "meaning": "pour que",
+          "encounteredForms": [
+            "ut"
+          ]
+        },
+        {
+          "id": "velum",
+          "lemma": "vēlum",
+          "meaning": "voile de bateau",
+          "encounteredForms": [
+            "vēla"
+          ]
+        },
+        {
+          "id": "venio",
+          "lemma": "venīre",
+          "meaning": "venir, arriver",
+          "encounteredForms": [
+            "venientibus",
+            "venientēs",
+            "veniunt"
+          ]
+        },
+        {
+          "id": "via",
+          "lemma": "via",
+          "meaning": "route",
+          "encounteredForms": [
+            "viam"
+          ]
+        },
+        {
+          "id": "viator",
+          "lemma": "viātor",
+          "meaning": "voyageur",
+          "encounteredForms": [
+            "Viātor",
+            "Viātōribus",
+            "Viātōrēs",
+            "viātor",
+            "viātōrēs"
+          ]
+        },
+        {
+          "id": "vicinus",
+          "lemma": "vīcīnus",
+          "meaning": "voisin",
+          "encounteredForms": [
+            "Vīcīnus",
+            "Vīcīnī"
+          ]
+        },
+        {
+          "id": "vidua",
+          "lemma": "vidua",
+          "meaning": "veuve",
+          "encounteredForms": [
+            "Vidua"
+          ]
+        },
+        {
+          "id": "voco",
+          "lemma": "vocāre",
+          "meaning": "appeler",
+          "encounteredForms": [
+            "vocat"
+          ]
+        },
+        {
+          "id": "volo",
+          "lemma": "velle",
+          "meaning": "vouloir",
+          "encounteredForms": [
+            "volēbat"
+          ]
+        }
+      ],
+      "vocabularyCards": {
+        "version": "theatrum/sententiae/vocabula",
+        "theme": "templum/sententiae/vocabula"
+      }
     }
   ],
-  "scopeNote": "Les séries alphabétiques ont été retirées. Chaque lexique actif appartient à un texte étudié. La couverture exhaustive des quatre ouvrages reste à réaliser.",
-  "cards": 67,
-  "questions": 524
+  "scope": "Familia Romana, Fabellae Latinae, Fabulae Syrae, Epitome Historiae Sacrae",
+  "completionContract": "doc/pedagogy/contracts/completion.json"
 }

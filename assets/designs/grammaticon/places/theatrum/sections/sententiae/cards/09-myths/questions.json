@@ -1,0 +1,298 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "09-myths:q1",
+    "assessment": "study.version.09-myths:q1",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer in lītore concham invēnit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon trouva un coquillage sur le rivage."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon perdit le coquillage sur le rivage."
+      },
+      {
+        "id": "2",
+        "text": "Le rivage trouva le garçon dans un coquillage."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.09-myths"
+    ],
+    "requires": [],
+    "help": "study.09-myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "vocabulary": [
+      "concha",
+      "in",
+      "invenio",
+      "litus",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "09-myths",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "09-myths:q2",
+    "assessment": "study.version.09-myths:q2",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Senex dīxit concham dōnum maris esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le vieillard donna la mer au garçon."
+      },
+      {
+        "id": "0",
+        "text": "Le vieillard dit que la mer était un don du coquillage."
+      },
+      {
+        "id": "2",
+        "text": "Le vieillard dit que le coquillage était un don de la mer."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.09-myths"
+    ],
+    "requires": [],
+    "help": "study.09-myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "concha",
+      "dico",
+      "donum",
+      "mare",
+      "senex",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "09-myths",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "09-myths:q3",
+    "assessment": "study.version.09-myths:q3",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Putābat sē fēlīcem futūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Il avait été heureux avant d’y penser."
+      },
+      {
+        "id": "2",
+        "text": "Il pensait qu’une autre personne avait été heureuse."
+      },
+      {
+        "id": "1",
+        "text": "Il pensait qu’il serait heureux."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.09-myths"
+    ],
+    "requires": [],
+    "help": "study.09-myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "felix",
+      "puto",
+      "se",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "09-myths",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "09-myths:q4",
+    "assessment": "study.version.09-myths:q4",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Concham puellae dedit, quae trīstis erat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Il donna le coquillage à la jeune fille qui était joyeuse."
+      },
+      {
+        "id": "0",
+        "text": "Il donna le coquillage à la jeune fille qui était triste."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille triste lui donna le coquillage."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.09-myths"
+    ],
+    "requires": [],
+    "help": "study.09-myths",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Nōn omnia quae persōna putat nārrātor affirmat. Putābat sē fēlīcem futūrum esse spem dē tempore futūrō indicat. Prōnōmen sē ad eum quī putat refertur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "concha",
+      "do",
+      "puella",
+      "qui",
+      "sum",
+      "tristis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "09-myths",
+      "translationDirection": "la-fr"
+    }
+  }
+]

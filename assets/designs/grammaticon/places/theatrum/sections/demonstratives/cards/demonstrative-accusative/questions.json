@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella hunc ānulum videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille voit cet anneau-ci."
+      },
+      {
+        "id": "2",
+        "text": "Cette jeune fille-ci voit l’anneau."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille voit cet anneau-là."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q1",
+    "assessment": "study.version.demonstrative-accusative:q1",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "anulus",
+      "hic",
+      "puella",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor illam gemmam vēndit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le marchand vend cette pierre précieuse-là."
+      },
+      {
+        "id": "0",
+        "text": "Le marchand vend cette pierre précieuse-ci."
+      },
+      {
+        "id": "1",
+        "text": "Ce marchand-là vend la pierre précieuse."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q2",
+    "assessment": "study.version.demonstrative-accusative:q2",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "gemma",
+      "ille",
+      "mercator",
+      "vendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater hoc ōrnāmentum emit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Ce père-ci achète l’ornement."
+      },
+      {
+        "id": "1",
+        "text": "Le père achète cet ornement-ci."
+      },
+      {
+        "id": "2",
+        "text": "Le père achète cet ornement-là."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q3",
+    "assessment": "study.version.demonstrative-accusative:q3",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "emo",
+      "hic",
+      "ornamentum",
+      "pater"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina illum librum portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Cette femme-là porte le livre."
+      },
+      {
+        "id": "1",
+        "text": "La femme porte ce livre-ci."
+      },
+      {
+        "id": "0",
+        "text": "La femme porte ce livre-là."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q4",
+    "assessment": "study.version.demonstrative-accusative:q4",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "ille",
+      "liber",
+      "porto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer hanc rosam carpit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon cueille cette rose-là."
+      },
+      {
+        "id": "1",
+        "text": "Ce garçon-ci cueille la rose."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon cueille cette rose-ci."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q5",
+    "assessment": "study.version.demonstrative-accusative:q5",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "carpo",
+      "hic",
+      "puer",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Māter illud templum videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La mère voit ce temple-ci."
+      },
+      {
+        "id": "1",
+        "text": "La mère voit ce temple-là."
+      },
+      {
+        "id": "0",
+        "text": "Cette mère-là voit le temple."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.demonstrative-accusative"
+    ],
+    "item": "demonstrative-accusative:q6",
+    "assessment": "study.version.demonstrative-accusative:q6",
+    "help": "study.demonstrative-accusative",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ille",
+      "mater",
+      "templum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-accusative",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Accūsātīvī singulārēs sunt hunc, hanc, hoc et illum, illam, illud. Prōnōmen cum obiectō congruit: hunc ānulum, hanc gemmam, hoc ōrnāmentum. In neutrō nōminātīvus et accūsātīvus eandem fōrmam habent.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

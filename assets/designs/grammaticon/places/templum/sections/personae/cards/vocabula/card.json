@@ -1,0 +1,99 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Latīnē",
+  "access": {
+    "price": 25,
+    "requires": {
+      "all": [
+        {
+          "completed": "templum/personae/quis-quid"
+        },
+        {
+          "completed": "templum/personae/agent-subject"
+        },
+        {
+          "completed": "templum/personae/agent-object"
+        },
+        {
+          "completed": "templum/personae/possession"
+        },
+        {
+          "completed": "templum/personae/genitive-plural"
+        },
+        {
+          "completed": "templum/personae/cuius-question"
+        },
+        {
+          "completed": "templum/personae/meus-tuus"
+        },
+        {
+          "completed": "templum/personae/suus-eius"
+        },
+        {
+          "completed": "templum/personae/reflexive-object"
+        },
+        {
+          "completed": "templum/personae/giving"
+        },
+        {
+          "completed": "templum/personae/relative-case-role"
+        },
+        {
+          "completed": "templum/personae/03-descriptions"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.templum.personae"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "temple_bg",
+    "hero": "temple_hero_idle",
+    "opponent": "temple_priest_flamen",
+    "heroCorrect": "temple_hero_gesture",
+    "heroWrong": "temple_hero_hurt",
+    "heroVictory": "temple_hero_victory",
+    "heroDefeat": "temple_hero_defeat",
+    "opponentName": "Flāmen",
+    "motion": "projectile",
+    "projectile": "argumentum",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

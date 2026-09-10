@@ -36,3 +36,7 @@ flutter_riverpod / hooks_riverpod / riverpod (MIT), flutter_hooks (MIT), flame (
 Les banques intégrées sous `assets/designs/grammaticon/places/theatrum/sections/12-sacred-readings/` réutilisent les passages et rendus bibliques déjà attribués ci-dessus. Les gloses issues des données Theatrum sont également présentes dans les cartes `vocabulary` associées aux textes des deux lieux : leur attribution et leur licence GPL-3.0 restent applicables. Ces gloses conservent la provenance des données Theatrum attribuées ci-dessus. Les références historiques aux anciens scripts ci-dessus décrivent la préparation d’origine ; ces scripts ne sont plus présents ni utilisés par le jeu.
 
 Les nouveaux récits et thèmes pédagogiques sont des textes originaux, sans reprise des phrases des manuels modernes. `assets/images/temple_bg.png` et `assets/images/priest.png` sont des images créées pour cette intégration avec l’outil ImageGen ; voir `doc/pedagogy/asset-prompts.md` pour leurs consignes et références.
+
+## Parcours de phrases par concept
+
+Les anciennes banques de lectures bibliques et les lexiques associés ont été retirés du design actif Theatrum/Templum lors de cette reprise. Les fichiers sources historiques restent dans le dépôt avec leurs notices précédentes. Le nouveau parcours contient des phrases originales, un inventaire lexical explicite et un bilan commun par section.

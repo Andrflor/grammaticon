@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In scholā puer est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Des garçons sont dans l’école."
+      },
+      {
+        "id": "2",
+        "text": "Un garçon est dans les écoles."
+      },
+      {
+        "id": "0",
+        "text": "Un garçon est dans l’école."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "puer",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.est-sunt"
+    ],
+    "item": "est-sunt:q1",
+    "assessment": "study.version.est-sunt:q1",
+    "help": "study.est-sunt",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "est-sunt",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer ūnam persōnam indicat; est cum subiectō singulārī congruit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc puer ūnam persōnam indicat. Puer et puerī nōn eundem numerum habent.",
+        "observed": [
+          "study.confusion.subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In scholā ūnum locum indicat; in scholīs plūrēs locōs indicāret. Numerus locōrum nōn est numerus persōnārum.",
+        "observed": [
+          "study.confusion.place-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In scholā puerī sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Des garçons sont dans les écoles."
+      },
+      {
+        "id": "2",
+        "text": "Des garçons sont dans l’école."
+      },
+      {
+        "id": "0",
+        "text": "Un garçon est dans l’école."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "in",
+      "puer",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.est-sunt"
+    ],
+    "item": "est-sunt:q2",
+    "assessment": "study.version.est-sunt:q2",
+    "help": "study.est-sunt",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "est-sunt",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc puerī plūrēs persōnās indicat. Puer et puerī nōn eundem numerum habent.",
+        "observed": [
+          "study.confusion.subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In scholā ūnum locum indicat; in scholīs plūrēs locōs indicāret. Numerus locōrum nōn est numerus persōnārum.",
+        "observed": [
+          "study.confusion.place-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puerī plūrēs persōnās indicat; sunt cum subiectō plūrālī congruit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In hortō puella est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Des jeunes filles sont dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "Une jeune fille est dans le jardin."
+      },
+      {
+        "id": "0",
+        "text": "Une jeune fille est dans les jardins."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "puella",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.est-sunt"
+    ],
+    "item": "est-sunt:q3",
+    "assessment": "study.version.est-sunt:q3",
+    "help": "study.est-sunt",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "est-sunt",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. In hortō ūnum locum indicat; in hortīs plūrēs locōs indicāret. Numerus locōrum nōn est numerus persōnārum.",
+        "observed": [
+          "study.confusion.place-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puella ūnam persōnam indicat; est cum subiectō singulārī congruit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc puella ūnam persōnam indicat. Puella et puellae nōn eundem numerum habent.",
+        "observed": [
+          "study.confusion.subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In hortō puellae sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Des jeunes filles sont dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "Une jeune fille est dans le jardin."
+      },
+      {
+        "id": "2",
+        "text": "Des jeunes filles sont dans les jardins."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "puella",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.est-sunt"
+    ],
+    "item": "est-sunt:q4",
+    "assessment": "study.version.est-sunt:q4",
+    "help": "study.est-sunt",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "est-sunt",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puellae plūrēs persōnās indicat; sunt cum subiectō plūrālī congruit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc puellae plūrēs persōnās indicat. Puella et puellae nōn eundem numerum habent.",
+        "observed": [
+          "study.confusion.subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hortō ūnum locum indicat; in hortīs plūrēs locōs indicāret. Numerus locōrum nōn est numerus persōnārum.",
+        "observed": [
+          "study.confusion.place-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

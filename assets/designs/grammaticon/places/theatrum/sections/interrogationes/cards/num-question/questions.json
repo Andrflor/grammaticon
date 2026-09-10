@@ -1,0 +1,291 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Num puer dormit?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le garçon dort-il ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "1",
+        "text": "Le garçon ne dort-il pas ? [Interrogāns responsum affirmātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "Le garçon dort-il ? [Interrogāns responsum negātīvum exspectat.]"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.num-question"
+    ],
+    "item": "num-question:q1",
+    "assessment": "study.version.num-question:q1",
+    "help": "study.num-question",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "dormio",
+      "num",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "num-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Num interrogātiōnem facit in quā interrogāns plērumque responsum negātīvum exspectat. Haec exspectātiō nōn probat rem falsam esse: is quī respondet aliud scīre potest. Num cum nōnne et cum -ne neutro nōn cōnfunde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Num fēmina cantat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La femme chante-t-elle ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "2",
+        "text": "La femme chante-t-elle ? [Interrogāns responsum negātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "La femme ne chante-t-elle pas ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.num-question"
+    ],
+    "item": "num-question:q2",
+    "assessment": "study.version.num-question:q2",
+    "help": "study.num-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "femina",
+      "num"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "num-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Num interrogātiōnem facit in quā interrogāns plērumque responsum negātīvum exspectat. Haec exspectātiō nōn probat rem falsam esse: is quī respondet aliud scīre potest. Num cum nōnne et cum -ne neutro nōn cōnfunde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Num librī magnī sunt?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les livres sont-ils grands ? [Interrogāns responsum negātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "Les livres sont-ils grands ? [Interrogāns nihil praesūmit.]"
+      },
+      {
+        "id": "2",
+        "text": "Les livres ne sont-ils pas grands ? [Interrogāns responsum affirmātīvum exspectat.]"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.num-question"
+    ],
+    "item": "num-question:q3",
+    "assessment": "study.version.num-question:q3",
+    "help": "study.num-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "liber",
+      "magnus",
+      "num",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "num-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Num interrogātiōnem facit in quā interrogāns plērumque responsum negātīvum exspectat. Haec exspectātiō nōn probat rem falsam esse: is quī respondet aliud scīre potest. Num cum nōnne et cum -ne neutro nōn cōnfunde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Num templum parvum est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le temple n’est-il pas petit ? [Interrogāns responsum affirmātīvum exspectat.]"
+      },
+      {
+        "id": "0",
+        "text": "Le temple est-il petit ? [Interrogāns responsum negātīvum exspectat.]"
+      },
+      {
+        "id": "2",
+        "text": "Le temple est-il petit ? [Interrogāns nihil praesūmit.]"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.num-question"
+    ],
+    "item": "num-question:q4",
+    "assessment": "study.version.num-question:q4",
+    "help": "study.num-question",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "num",
+      "parvus",
+      "sum",
+      "templum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "num-question",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Num interrogātiōnem facit in quā interrogāns plērumque responsum negātīvum exspectat. Haec exspectātiō nōn probat rem falsam esse: is quī respondet aliud scīre potest. Num cum nōnne et cum -ne neutro nōn cōnfunde.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Exspectātiō interrogantis servanda est: -ne hīc neutrum est, num responsum negātīvum, nōnne affirmātīvum plērumque exspectat.",
+        "observed": [
+          "study.confusion.question-expectation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

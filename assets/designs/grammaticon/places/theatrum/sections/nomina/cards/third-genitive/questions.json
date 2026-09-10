@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fīlius mātris cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le fils de la mère chante."
+      },
+      {
+        "id": "2",
+        "text": "Le fils des mères chante."
+      },
+      {
+        "id": "1",
+        "text": "La mère du fils chante."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q1",
+    "assessment": "study.version.third-genitive:q1",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "canto",
+      "filius",
+      "mater"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fīlia patris ambulat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La fille des pères marche."
+      },
+      {
+        "id": "0",
+        "text": "Le père de la fille marche."
+      },
+      {
+        "id": "2",
+        "text": "La fille du père marche."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q2",
+    "assessment": "study.version.third-genitive:q2",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ambulo",
+      "filia",
+      "pater"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Amīcus frātris sedet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le frère de l’ami est assis."
+      },
+      {
+        "id": "1",
+        "text": "L’ami du frère est assis."
+      },
+      {
+        "id": "0",
+        "text": "L’ami des frères est assis."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q3",
+    "assessment": "study.version.third-genitive:q3",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "frater",
+      "sedeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Amīca sorōris cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "L’amie des sœurs chante."
+      },
+      {
+        "id": "0",
+        "text": "L’amie de la sœur chante."
+      },
+      {
+        "id": "1",
+        "text": "La sœur de l’amie chante."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q4",
+    "assessment": "study.version.third-genitive:q4",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "canto",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fīlia sorōris currit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La fille de la sœur court."
+      },
+      {
+        "id": "1",
+        "text": "La fille des sœurs court."
+      },
+      {
+        "id": "0",
+        "text": "La sœur de la fille court."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q5",
+    "assessment": "study.version.third-genitive:q5",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "curro",
+      "filia",
+      "soror"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pāstōris fīlius dormit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le fils des bergers dort."
+      },
+      {
+        "id": "2",
+        "text": "Le berger du fils dort."
+      },
+      {
+        "id": "1",
+        "text": "Le fils du berger dort."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.third-genitive"
+    ],
+    "item": "third-genitive:q6",
+    "assessment": "study.version.third-genitive:q6",
+    "help": "study.third-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dormio",
+      "filius",
+      "pastor"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "third-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Genetīvus singulāris hōrum nōminum in -is cum genetīvō plūrālī in -um nōn confundendus est.",
+        "observed": [
+          "study.confusion.case-third-genitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus tertiae dēclīnātiōnis in -is dēsinit: mātris, patris, frātris, sorōris, pāstōris. Fīlius mātris: fīlius est subiectum, mātris necessitūdinem indicat. Genetīvus ante vel post nōmen suum pōnī potest: pāstōris fīlius et fīlius pāstōris.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōmen genetīvō positum cum subiectō nōn permūtā. Fīlius mātris et māter fīliī nōn eandem persōnam significant.",
+        "observed": [
+          "study.confusion.case-third-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

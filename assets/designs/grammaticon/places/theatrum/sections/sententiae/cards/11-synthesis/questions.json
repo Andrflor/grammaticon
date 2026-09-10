@@ -1,0 +1,297 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "11-synthesis:q1",
+    "assessment": "study.version.11-synthesis:q1",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater fīlium mīsit ut nautās monēret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le fils envoya son père pour avertir les marins."
+      },
+      {
+        "id": "0",
+        "text": "Le père envoya son fils pour avertir les marins."
+      },
+      {
+        "id": "2",
+        "text": "Le père envoya son fils pour que les marins l’avertissent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "study.11-synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": false,
+    "vocabulary": [
+      "filius",
+      "mitto",
+      "moneo",
+      "nauta",
+      "pater",
+      "ut"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "11-synthesis",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "11-synthesis:q2",
+    "assessment": "study.version.11-synthesis:q2",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quamquam properābat, senem adiūvit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Parce qu’il se hâtait, il refusa d’aider le vieillard."
+      },
+      {
+        "id": "1",
+        "text": "Bien que le vieillard se hâtât, celui-ci l’aida."
+      },
+      {
+        "id": "2",
+        "text": "Bien qu’il se hâtât, il aida le vieillard."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "study.11-synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "adiuvo",
+      "propero",
+      "quamquam",
+      "senex"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "11-synthesis",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "11-synthesis:q3",
+    "assessment": "study.version.11-synthesis:q3",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Epistulā lēctā, nauta exspectāre cōnstituit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Après avoir lu la lettre, le marin décida d’attendre."
+      },
+      {
+        "id": "0",
+        "text": "Après avoir écrit la lettre, le marin ordonna d’attendre."
+      },
+      {
+        "id": "2",
+        "text": "Avant de lire la lettre, le marin décida de partir."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "study.11-synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "constituo",
+      "epistula",
+      "exspecto",
+      "lego",
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "11-synthesis",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "item": "11-synthesis:q4",
+    "assessment": "study.version.11-synthesis:q4",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Neque senem dēseruerat neque nūntium neglexerat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Il avait abandonné le vieillard mais conservé le message."
+      },
+      {
+        "id": "2",
+        "text": "Il avait à la fois abandonné le vieillard et négligé le message."
+      },
+      {
+        "id": "0",
+        "text": "Il n’avait ni abandonné le vieillard ni négligé le message."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.11-synthesis"
+    ],
+    "requires": [],
+    "help": "study.11-synthesis",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fōrmam et sēnsum iterum cōnsīderā. Ut cōnsilium, quamquam concessiōnem, ablātīvus absolūtus circumstantiam indicat. Plūsquamperfectum rem ante aliam rem praeteritam factam indicat. Neque… neque utramque rem negat. Omnēs partēs sententiae servā.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "followUpOnly": true,
+    "vocabulary": [
+      "desero",
+      "neglego",
+      "neque",
+      "nuntius",
+      "senex"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "11-synthesis",
+      "translationDirection": "la-fr"
+    }
+  }
+]

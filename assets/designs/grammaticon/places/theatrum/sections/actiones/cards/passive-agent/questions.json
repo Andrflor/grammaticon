@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Servus ā dominō vocātur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "L’esclave appelle le maître de maison."
+      },
+      {
+        "id": "1",
+        "text": "Le maître de maison est appelé par l’esclave."
+      },
+      {
+        "id": "0",
+        "text": "L’esclave est appelé par le maître de maison."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q1",
+    "assessment": "study.version.passive-agent:q1",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ab",
+      "dominus",
+      "servus",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella ā fēminā salūtātur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La jeune fille salue la femme."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille est saluée par la femme."
+      },
+      {
+        "id": "0",
+        "text": "La femme est saluée par la jeune fille."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q2",
+    "assessment": "study.version.passive-agent:q2",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "femina",
+      "puella",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Equus ab amīcō dūcitur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le cheval est conduit par l’ami."
+      },
+      {
+        "id": "2",
+        "text": "L’ami est conduit par le cheval."
+      },
+      {
+        "id": "0",
+        "text": "Le cheval conduit l’ami."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q3",
+    "assessment": "study.version.passive-agent:q3",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "amicus",
+      "duco",
+      "equus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agrī ā servīs rigantur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les esclaves sont arrosés par les champs."
+      },
+      {
+        "id": "2",
+        "text": "Les champs arrosent les esclaves."
+      },
+      {
+        "id": "0",
+        "text": "Les champs sont arrosés par les esclaves."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q4",
+    "assessment": "study.version.passive-agent:q4",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "ager",
+      "rigo",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Capra ab agricolā dūcitur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La chèvre est conduite par l’agriculteur."
+      },
+      {
+        "id": "1",
+        "text": "La chèvre conduit l’agriculteur."
+      },
+      {
+        "id": "0",
+        "text": "L’agriculteur est conduit par la chèvre."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q5",
+    "assessment": "study.version.passive-agent:q5",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "agricola",
+      "capra",
+      "duco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Domina ā servīs salūtātur."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La maîtresse de maison salue les esclaves."
+      },
+      {
+        "id": "1",
+        "text": "La maîtresse de maison est saluée par les esclaves."
+      },
+      {
+        "id": "2",
+        "text": "Les esclaves sont salués par la maîtresse de maison."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.passive-agent"
+    ],
+    "item": "passive-agent:q6",
+    "assessment": "study.version.passive-agent:q6",
+    "help": "study.passive-agent",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ab",
+      "domina",
+      "saluto",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "passive-agent",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In sententiā passīvā persōna quae agit per ā vel ab cum ablātīvō exprimitur. Servus ā dominō vocātur: dominus agit, servus vocem audit. Ā dominō et dominus nōn idem munus in sententiā habent. Ante vōcālem ab, ante cōnsonantem ā vel ab adhibērī potest.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Ā vel ab cum ablātīvō agentem indicat. Subiectum passīvum et agentem nōn permūtā.",
+        "observed": [
+          "study.confusion.passive-agent-role"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

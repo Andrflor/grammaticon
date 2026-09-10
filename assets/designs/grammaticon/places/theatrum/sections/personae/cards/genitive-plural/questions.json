@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber puellārum parvus est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le livre des jeunes filles est petit."
+      },
+      {
+        "id": "2",
+        "text": "Les livres de la jeune fille sont petits."
+      },
+      {
+        "id": "1",
+        "text": "Le livre de la jeune fille est petit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.genitive-plural"
+    ],
+    "item": "genitive-plural:q1",
+    "assessment": "study.version.genitive-plural:q1",
+    "help": "study.genitive-plural",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "liber",
+      "parvus",
+      "puella",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Hortus puerōrum magnus est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le jardin du garçon est grand."
+      },
+      {
+        "id": "1",
+        "text": "Les jardins du garçon sont grands."
+      },
+      {
+        "id": "2",
+        "text": "Le jardin des garçons est grand."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.genitive-plural"
+    ],
+    "item": "genitive-plural:q2",
+    "assessment": "study.version.genitive-plural:q2",
+    "help": "study.genitive-plural",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hortus",
+      "magnus",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella librōs magistrōrum portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille porte les livres du maître."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille porte les livres des maîtres."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille porte le livre des maîtres."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.genitive-plural"
+    ],
+    "item": "genitive-plural:q3",
+    "assessment": "study.version.genitive-plural:q3",
+    "help": "study.genitive-plural",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "liber",
+      "magister",
+      "porto",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer vīllam fēminārum videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon voit la maison de campagne des femmes."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon voit les maisons de campagne des femmes."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon voit la maison de campagne de la femme."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.genitive-plural"
+    ],
+    "item": "genitive-plural:q4",
+    "assessment": "study.version.genitive-plural:q4",
+    "help": "study.genitive-plural",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "puer",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "genitive-plural",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owner-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Genetīvus possessōrem indicat. Hīc fōrma «puellae» ūnam puellam possessōrem, «puellārum» plūrēs puellās possessōrēs indicat. Similiter «puerī» ūnum puerum, «puerōrum» plūrēs puerōs indicat. Numerus possessōrum et numerus rērum possessārum separātim observantur.",
+        "observed": [
+          "study.confusion.owned-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

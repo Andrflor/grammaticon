@@ -144,3 +144,15 @@ Le panneau de reprise reprend la présentation originale. Chaque lieu déclare `
 Une carte peut déclarer `encounter.completion: "sequence"` (défaut : `"target"`). La banque doit avoir exactement une entrée sans `followUpOnly: true`, puis une chaîne `next` sans cycle qui traverse toutes ses questions. Le moteur continue jusqu’à la fin de cette chaîne ou à l’épuisement des vies. À la fin, `target` bonnes réponses et une vie restante sont nécessaires pour gagner. Le validateur refuse un quota supérieur à la taille de la séquence. La question courante est conservée dans la sauvegarde.
 
 `presentation.longText: true` rend le panneau de question défilable, avec une hauteur maximale de 46 % de l’écran, pour les lectures longues. Les cartes ordinaires conservent leur disposition originale.
+
+## Couverture exigée pour la maîtrise
+
+Un nœud de connaissance peut déclarer `masteryRequirements: {"successfulItems": ["item-a", "item-b"]}`. Ces identifiants sont ceux du champ `item` des questions, sans signification particulière pour le moteur. La liste doit être non vide, sans doublon ni identifiant vide.
+
+Le niveau maximal exige alors, en plus des seuils habituels, une dernière réponse non aidée correcte pour chacun des éléments déclarés. Une réponse non aidée incorrecte retire cet élément de la liste des réussites ; une réponse aidée ne la modifie pas. Une liste persistante `successfulItems` conserve ces preuves indépendamment de la fenêtre d’observations récentes. Les anciennes sauvegardes peuvent récupérer les preuves présentes dans leur historique récent ; les réussites dont aucune trace ne subsiste ne sont pas supposées.
+
+Cette exigence s’applique au niveau de maîtrise et à sa période de grâce avant décroissance. Les niveaux servant au calcul des récompenses gardent leurs seuils habituels pour éviter de prolonger artificiellement les gains. Les designs sans cette déclaration conservent leur comportement.
+
+La progression affichée est le minimum entre l’estimation habituelle et la proportion des éléments requis actuellement réussis. La barre existante ne peut donc pas être pleine alors que certains éléments déclarés n’ont pas été réussis. Ce calcul ne modifie pas l’estimation employée pour les observations ou les récompenses.
+
+Les bilans lexicaux de Grammaticon déclarent explicitement tous leurs éléments dans cette liste. Le contrôle de catalogue vérifie sa correspondance exacte avec la banque de la carte. Cela garantit une exigence sur les preuves de réussite ; cela ne certifie ni la qualité linguistique des questions ni l’exhaustivité du lexique des ouvrages sources.

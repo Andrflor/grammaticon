@@ -1,0 +1,290 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Porte le livre vers l’école !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Librum ad scholam portat."
+      },
+      {
+        "id": "2",
+        "text": "Portāte librum ad scholam!"
+      },
+      {
+        "id": "0",
+        "text": "Portā librum ad scholam!"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.singular-command"
+    ],
+    "item": "singular-command:q1",
+    "assessment": "study.theme.singular-command:q1",
+    "help": "study.singular-command",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "liber",
+      "porto",
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "singular-command",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Imperātīvus iussum exprimit; indicātīvus rem nārrat. Portā! ūnam persōnam iubet; portat dīcit quid aliquis faciat. Fōrmās imperātīvī observā: portā, vidē, pōne, audī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Regarde le grand temple !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Vidē templum magnum!"
+      },
+      {
+        "id": "0",
+        "text": "Templum magnum videt."
+      },
+      {
+        "id": "1",
+        "text": "Vidēte templum magnum!"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.singular-command"
+    ],
+    "item": "singular-command:q2",
+    "assessment": "study.theme.singular-command:q2",
+    "help": "study.singular-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magnus",
+      "templum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "singular-command",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Imperātīvus iussum exprimit; indicātīvus rem nārrat. Portā! ūnam persōnam iubet; portat dīcit quid aliquis faciat. Fōrmās imperātīvī observā: portā, vidē, pōne, audī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pose le livre sur la table !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Pōnite librum in mēnsā!"
+      },
+      {
+        "id": "1",
+        "text": "Pōne librum in mēnsā!"
+      },
+      {
+        "id": "2",
+        "text": "Librum in mēnsā pōnit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.singular-command"
+    ],
+    "item": "singular-command:q3",
+    "assessment": "study.theme.singular-command:q3",
+    "help": "study.singular-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "liber",
+      "mensa",
+      "pono"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "singular-command",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Imperātīvus iussum exprimit; indicātīvus rem nārrat. Portā! ūnam persōnam iubet; portat dīcit quid aliquis faciat. Fōrmās imperātīvī observā: portā, vidē, pōne, audī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Écoute le maître !"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magistrum audit."
+      },
+      {
+        "id": "2",
+        "text": "Audīte magistrum!"
+      },
+      {
+        "id": "0",
+        "text": "Audī magistrum!"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.singular-command"
+    ],
+    "item": "singular-command:q4",
+    "assessment": "study.theme.singular-command:q4",
+    "help": "study.singular-command",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "audio",
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "singular-command",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Imperātīvus iussum exprimit; indicātīvus rem nārrat. Portā! ūnam persōnam iubet; portat dīcit quid aliquis faciat. Fōrmās imperātīvī observā: portā, vidē, pōne, audī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Imperātīvus iubet; indicātīvus nārrat. Hīc iussum reddendum est.",
+        "observed": [
+          "study.confusion.command-mood"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum persōnārum appellātārum servā: imperātīvus singulāris et plūrālis distinguuntur.",
+        "observed": [
+          "study.confusion.command-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

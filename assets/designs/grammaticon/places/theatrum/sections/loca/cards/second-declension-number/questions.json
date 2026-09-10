@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In vīllā hortus est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Il y a des jardins dans la maison de campagne."
+      },
+      {
+        "id": "0",
+        "text": "Il y a un jardin dans la maison de campagne."
+      },
+      {
+        "id": "2",
+        "text": "La maison de campagne est dans le jardin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "sum",
+      "villa"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.second-declension-number"
+    ],
+    "item": "second-declension-number:q1",
+    "assessment": "study.version.second-declension-number:q1",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q2",
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In scholā librī sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Des livres sont dans l’école."
+      },
+      {
+        "id": "1",
+        "text": "L’école est dans les livres."
+      },
+      {
+        "id": "0",
+        "text": "Un livre est dans l’école."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "vocabulary": [
+      "in",
+      "liber",
+      "schola",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.second-declension-number"
+    ],
+    "item": "second-declension-number:q2",
+    "assessment": "study.version.second-declension-number:q2",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q3",
+    "outcomes": {
+      "0": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In hortō puerī sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Un garçon est dans le jardin."
+      },
+      {
+        "id": "0",
+        "text": "Le jardin est dans les garçons."
+      },
+      {
+        "id": "1",
+        "text": "Des garçons sont dans le jardin."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "vocabulary": [
+      "hortus",
+      "in",
+      "puer",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.second-declension-number"
+    ],
+    "item": "second-declension-number:q3",
+    "assessment": "study.version.second-declension-number:q3",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "next": "q4",
+    "outcomes": {
+      "0": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "content": [
+      {
+        "type": "text",
+        "text": "In oppidō magister est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La ville est dans le maître."
+      },
+      {
+        "id": "0",
+        "text": "Un maître est dans la ville."
+      },
+      {
+        "id": "1",
+        "text": "Des maîtres sont dans la ville."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "vocabulary": [
+      "in",
+      "magister",
+      "oppidum",
+      "sum"
+    ],
+    "prompt": "Sententiam Gallicē redde.",
+    "skills": [
+      "study.version.second-declension-number"
+    ],
+    "item": "second-declension-number:q4",
+    "assessment": "study.version.second-declension-number:q4",
+    "help": "study.second-declension-number",
+    "requires": [],
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "second-declension-number",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hortus ūnum locum, hortī plūrēs locōs significant. Nōminātīvus plūrālis nōminum masculīnōrum secundae dēclīnātiōnis in -ī dēsinit. Etiam puer et liber plūrālem in -ī habent: puerī, librī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Numerum subiectī observā: ūnumne an plūra significantur?",
+        "observed": [
+          "study.confusion.number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Sēnsum tōtīus sententiae servā; relātiōnēs et affirmātiōnem nōn mūtā.",
+        "observed": [
+          "study.confusion.meaning"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

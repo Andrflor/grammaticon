@@ -4,7 +4,7 @@ Un moteur Flutter commun exécute des jeux entièrement décrits en JSON. Il ne 
 
 Deux designs sont fournis :
 
-- **Grammaticon** : Amphitheātrum, Forum, Theatrum et Templum : 238 cartes, 891 078 questions explicites. [Détail et limites de couverture pédagogique](doc/pedagogy/README.md).
+- **Grammaticon** : Amphitheātrum, Forum, Theatrum et Templum : 283 cartes  891 698 questions explicites. [Détail et limites de couverture pédagogique](doc/pedagogy/README.md).
 - **Le Cabinet des repères** : trois lieux, six cartes et douze questions sur les durées, la chronologie et les cartes ; français/anglais, autre thème et autre progression.
 
 ## Compiler un design
@@ -40,7 +40,7 @@ assets/designs/<id>/           design complet et autonome
 
 Les trois interactions disponibles sont `choice`, `highlightChoice` et `gapChoice`. Les propositions conservent leur ordre écrit dans le design. Les enchaînements suivent des identifiants explicites. Les liens proposés après une erreur viennent exclusivement de `practiceSets`, avec les adresses et identifiants des questions cibles déclarés dans le design.
 
-Les anciens générateurs, modèles linguistiques, catalogues Dart et outils de génération ont été supprimés. Le code graphique original est conservé et raccordé au design JSON. Les lectures bibliques sélectionnées sont intégrées dans le design Grammaticon ; leurs sources et attributions restent conservées dans le dépôt.
+Les anciens générateurs, modèles linguistiques, catalogues Dart et outils de génération ont été supprimés. Le code graphique original est conservé et raccordé au design JSON. Les sources bibliques historiques et leurs attributions restent conservées dans le dépôt ; le parcours actuel Theatrum/Templum repose sur les phrases originales organisées par concept.
 
 ## Vérifier
 

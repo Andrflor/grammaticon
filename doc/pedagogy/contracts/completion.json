@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "objective": "Read Familia Romana, Fabellae Latinae, Fabulae Syrae and Epitome Historiae Sacrae with the knowledge acquired in the complete game.",
+  "status": "in-progress",
+  "gates": [
+    {
+      "id": "inventory",
+      "condition": "All four works have a verified inventory of constructions, contrasts, lexical senses and reading demands; no empty placeholders are counted as coverage.",
+      "passed": false
+    },
+    {
+      "id": "mapping",
+      "condition": "Every required learning item has explicit question references in the design, or a verified reference to existing Amphitheatrum/Forum coverage.",
+      "passed": false
+    },
+    {
+      "id": "specific-cards",
+      "condition": "Each learning group has several distinctly named cards, each testing one precise point in complete original sentences.",
+      "passed": false
+    },
+    {
+      "id": "contrasts",
+      "condition": "Morphological distinctions and vowel quantities are intentionally represented and assessed, including Italia versus Italiā in the first group.",
+      "passed": false
+    },
+    {
+      "id": "lexicon",
+      "condition": "Every group's encountered lexemes are tested at its end in both directions, once per lemma per direction, with no lexical quiz interleaved before its sentence activities.",
+      "passed": false
+    },
+    {
+      "id": "language",
+      "condition": "All section/card titles, instructions, courses and feedback are Latin; French occurs only as source/target translation material.",
+      "passed": false
+    },
+    {
+      "id": "economy",
+      "condition": "Only starting cards are free; other cards including vocabulary have positive prices and explicit acyclic prerequisites coherent with Forum.",
+      "passed": false
+    },
+    {
+      "id": "review",
+      "condition": "All authored content has been checked for Latin correctness, unambiguous accepted answers, diagnostic distractors and pedagogical progression.",
+      "passed": false
+    },
+    {
+      "id": "runtime",
+      "condition": "No subject-specific runtime logic or question generator; original visuals preserved; complete design validation, relevant tests and builds pass.",
+      "passed": false
+    }
+  ],
+  "completionRule": "Every gate must pass. A playable subset, card count, build or successful technical suite alone is not completion."
+}

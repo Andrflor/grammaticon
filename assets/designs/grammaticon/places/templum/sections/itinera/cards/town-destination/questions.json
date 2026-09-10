@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand vient à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Mercātor Rōmam venit."
+      },
+      {
+        "id": "2",
+        "text": "Mercātor Rōmae venit."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor Rōmā venit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q1",
+    "assessment": "study.theme.town-destination:q1",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "mercator",
+      "roma",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille va à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella Tūsculum it."
+      },
+      {
+        "id": "1",
+        "text": "Puella Tūsculī it."
+      },
+      {
+        "id": "0",
+        "text": "Puella Tūsculō it."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q2",
+    "assessment": "study.theme.town-destination:q2",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "eo",
+      "puella",
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître retourne à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Magister Rōmā redit."
+      },
+      {
+        "id": "1",
+        "text": "Magister Rōmam redit."
+      },
+      {
+        "id": "0",
+        "text": "Magister Rōmae redit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q3",
+    "assessment": "study.theme.town-destination:q3",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "magister",
+      "redeo",
+      "roma"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur vient à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Agricola Tūsculī venit."
+      },
+      {
+        "id": "0",
+        "text": "Agricola Tūsculum venit."
+      },
+      {
+        "id": "1",
+        "text": "Agricola Tūsculō venit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q4",
+    "assessment": "study.theme.town-destination:q4",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "tusculum",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave va à Rome."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Servus Rōmae it."
+      },
+      {
+        "id": "0",
+        "text": "Servus Rōmā it."
+      },
+      {
+        "id": "2",
+        "text": "Servus Rōmam it."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q5",
+    "assessment": "study.theme.town-destination:q5",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "eo",
+      "roma",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme retourne à Tusculum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Fēmina Tūsculō redit."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina Tūsculī redit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina Tūsculum redit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.town-destination"
+    ],
+    "item": "town-destination:q6",
+    "assessment": "study.theme.town-destination:q6",
+    "help": "study.town-destination",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "redeo",
+      "tusculum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "town-destination",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Hīc fīnis itineris quaeritur, nōn locus ubi aliquis manet. Nōmen oppidī accūsātīvō pōnendum est.",
+        "observed": [
+          "study.confusion.destination-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Quō? Accūsātīvus nōminis oppidī fīnem itineris indicat sine praepositiōne: Rōmam, Tūsculum. Rōmam venit: Rōma fīnis itineris est. Rōmā venit: Rōma initium itineris est. Accūsātīvum et ablātīvum nōn permūtā.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Fīnem et orīginem itineris nōn permūtā: Rōmam venit ad Rōmam; Rōmā venit ā Rōmā. Idem discrīmen inter Tūsculum et Tūsculō est.",
+        "observed": [
+          "study.confusion.destination-origin"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quis in hortō est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Qu’y a-t-il dans le jardin ?"
+      },
+      {
+        "id": "0",
+        "text": "Qui est dans le jardin ?"
+      },
+      {
+        "id": "2",
+        "text": "Où est le jardin ?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.quis-quid"
+    ],
+    "item": "quis-quid:q1",
+    "assessment": "study.version.quis-quid:q1",
+    "help": "study.quis-quid",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "hortus",
+      "in",
+      "quis",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "quis-quid",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quid in scholā est?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Où est l’école ?"
+      },
+      {
+        "id": "2",
+        "text": "Qu’y a-t-il dans l’école ?"
+      },
+      {
+        "id": "0",
+        "text": "Qui est dans l’école ?"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.quis-quid"
+    ],
+    "item": "quis-quid:q2",
+    "assessment": "study.version.quis-quid:q2",
+    "help": "study.quis-quid",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "in",
+      "quis",
+      "schola",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "quis-quid",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quis librum portat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Que porte le garçon ?"
+      },
+      {
+        "id": "0",
+        "text": "Où le garçon porte-t-il le livre ?"
+      },
+      {
+        "id": "1",
+        "text": "Qui porte le livre ?"
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.quis-quid"
+    ],
+    "item": "quis-quid:q3",
+    "assessment": "study.version.quis-quid:q3",
+    "help": "study.quis-quid",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "liber",
+      "porto",
+      "quis"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "quis-quid",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Quid puella videt?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Que voit la jeune fille ?"
+      },
+      {
+        "id": "1",
+        "text": "Qui voit la jeune fille ?"
+      },
+      {
+        "id": "2",
+        "text": "Où est la jeune fille ?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.quis-quid"
+    ],
+    "item": "quis-quid:q4",
+    "assessment": "study.version.quis-quid:q4",
+    "help": "study.quis-quid",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "puella",
+      "quis",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "quis-quid",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Quis persōnam quaerit; quid rem vel genus reī quaerit. Quis in scholā est? persōnam quaerit. Quid est templum? quid templum sit quaerit. Ubi autem locum quaerit.",
+        "observed": [
+          "study.confusion.quis-quid"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

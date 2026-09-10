@@ -1,0 +1,445 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cet anneau-ci est beau."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Ille ānulus pulcher est."
+      },
+      {
+        "id": "1",
+        "text": "Hoc ānulus pulcher est."
+      },
+      {
+        "id": "0",
+        "text": "Hic ānulus pulcher est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q1",
+    "assessment": "study.theme.demonstrative-gender:q1",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "anulus",
+      "hic",
+      "ille",
+      "pulcher",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cette pierre précieuse-là est petite."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Illa gemma parva est."
+      },
+      {
+        "id": "1",
+        "text": "Haec gemma parva est."
+      },
+      {
+        "id": "0",
+        "text": "Illud gemma parva est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q2",
+    "assessment": "study.theme.demonstrative-gender:q2",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "gemma",
+      "hic",
+      "ille",
+      "parvus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cet ornement-ci est grand."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Illud ōrnāmentum magnum est."
+      },
+      {
+        "id": "2",
+        "text": "Hic ōrnāmentum magnum est."
+      },
+      {
+        "id": "1",
+        "text": "Hoc ōrnāmentum magnum est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q3",
+    "assessment": "study.theme.demonstrative-gender:q3",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hic",
+      "ille",
+      "magnus",
+      "ornamentum",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cet anneau-là est petit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Hic ānulus parvus est."
+      },
+      {
+        "id": "0",
+        "text": "Ille ānulus parvus est."
+      },
+      {
+        "id": "1",
+        "text": "Illud ānulus parvus est."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q4",
+    "assessment": "study.theme.demonstrative-gender:q4",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "anulus",
+      "hic",
+      "ille",
+      "parvus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cette rose-ci est belle."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Haec rosa pulchra est."
+      },
+      {
+        "id": "1",
+        "text": "Illa rosa pulchra est."
+      },
+      {
+        "id": "0",
+        "text": "Hic rosa pulchra est."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q5",
+    "assessment": "study.theme.demonstrative-gender:q5",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hic",
+      "ille",
+      "pulcher",
+      "rosa",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Ce temple-là est grand."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Hoc templum magnum est."
+      },
+      {
+        "id": "1",
+        "text": "Illud templum magnum est."
+      },
+      {
+        "id": "2",
+        "text": "Ille templum magnum est."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.demonstrative-gender"
+    ],
+    "item": "demonstrative-gender:q6",
+    "assessment": "study.theme.demonstrative-gender:q6",
+    "help": "study.demonstrative-gender",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hic",
+      "ille",
+      "magnus",
+      "sum",
+      "templum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-gender",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Nōminātīvī singulārēs sunt hic, haec, hoc et ille, illa, illud. Genus nōminis observā: hic ānulus, haec gemma, hoc ōrnāmentum. Gallicē hīc -ci et -là discrīmen aperte indicant.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen cum nōmine genere congruit: hic ānulus, haec gemma, hoc ōrnāmentum. Neutrum cum masculīnō aut fēminīnō nōn cōnfunde.",
+        "observed": [
+          "study.confusion.demonstrative-gender"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

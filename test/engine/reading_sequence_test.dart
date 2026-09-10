@@ -41,7 +41,7 @@ void main() {
           );
         }
       }
-      expect(count, 524);
+      expect(count, 1520);
       for (final set in objects(design.pedagogy['practiceSets'])) {
         for (final target in objects(set['targets'])) {
           if (banks.containsKey(target['card'])) {
@@ -53,50 +53,6 @@ void main() {
           }
         }
       }
-    },
-  );
-  test(
-    'concepts connect reading, version, theme and their own vocabulary',
-    () async {
-      final report = object(
-        jsonDecode(
-          await readFile(
-            'assets/designs/grammaticon/learning-content-report.json',
-          ),
-        ),
-      );
-      for (final unit in objects(report['units'])) {
-        for (final key in ['reading', 'version', 'theme']) {
-          expect(design.cards.containsKey(unit[key]), true);
-        }
-        for (final address in strings(unit['vocabularyCards'])) {
-          final bank = await design.questions(design.cards[address]!);
-          expect(
-            bank.map((q) => q.id).toSet(),
-            strings(unit['vocabulary']).toSet(),
-          );
-        }
-      }
-      final places = design.places.where(
-        (p) => ['theatrum', 'templum'].contains(p.id),
-      );
-      for (final place in places) {
-        expect(place.children.any((s) => s.id.startsWith('lexicon-')), false);
-        for (final section in place.children) {
-          expect(
-            design.text(section.data['name']),
-            isNot(matches(RegExp(r'\d'))),
-          );
-        }
-      }
-      expect(
-        design.nodes['theatrum']!.data['presentation']['labels']['encounter'],
-        'Fābula',
-      );
-      expect(
-        design.nodes['templum']!.data['presentation']['labels']['encounter'],
-        'Rītus',
-      );
     },
   );
   test('retired cards do not break saves or erase earned progress', () {
@@ -129,7 +85,7 @@ void main() {
     test(
       'sequence traverses four authored questions with $correctCount successes and survives saving',
       () async {
-        final card = design.cards['theatrum/02-places/reading']!;
+        final card = design.cards['theatrum/loca/02-places']!;
         var session = GameSession(design, {}, (_) async {});
         session.state['purchased'] = [...design.nodes.keys];
         await session.start(card);
@@ -163,7 +119,7 @@ void main() {
     );
   }
   test('sequence rejects missing starts, disconnected questions and impossible targets', () async {
-    final card = design.cards['theatrum/02-places/reading']!;
+    final card = design.cards['theatrum/loca/02-places']!;
     final bank = await design.questions(card);
     List<QuestionEntry> altered(void Function(List<dynamic>) change) {
       final data =

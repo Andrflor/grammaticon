@@ -709,7 +709,7 @@ class SkillGauge extends StatelessWidget {
   final bool named;
   @override
   Widget build(BuildContext context) {
-    final estimate = session.estimate(session.skill(id));
+    final estimate = session.progress(id);
     final level = objects(session.mastery['levels'])[session.level(id)];
     final color = Color(int.parse(level['color'] as String, radix: 16));
     final label = estimate == null

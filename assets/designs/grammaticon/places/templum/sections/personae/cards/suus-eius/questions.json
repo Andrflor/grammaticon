@@ -1,0 +1,309 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. Le garçon porte son propre livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister adest. Puer librum suum portat."
+      },
+      {
+        "id": "2",
+        "text": "Magister adest. Puer librum tuum portat."
+      },
+      {
+        "id": "1",
+        "text": "Magister adest. Puer librum eius portat."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.suus-eius"
+    ],
+    "item": "suus-eius:q1",
+    "assessment": "study.theme.suus-eius:q1",
+    "help": "study.suus-eius",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "magister",
+      "porto",
+      "puer",
+      "suus",
+      "tuus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille est présente. Le garçon porte le livre de la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella adest. Puer librum suum portat."
+      },
+      {
+        "id": "1",
+        "text": "Puella adest. Puer librum meum portat."
+      },
+      {
+        "id": "2",
+        "text": "Puella adest. Puer librum eius portat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.suus-eius"
+    ],
+    "item": "suus-eius:q2",
+    "assessment": "study.theme.suus-eius:q2",
+    "help": "study.suus-eius",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "meus",
+      "porto",
+      "puella",
+      "puer",
+      "suus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme est présente. Le maître voit sa propre maison de campagne."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina adest. Magister vīllam meam videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina adest. Magister vīllam eius videt."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina adest. Magister vīllam suam videt."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.suus-eius"
+    ],
+    "item": "suus-eius:q3",
+    "assessment": "study.theme.suus-eius:q3",
+    "help": "study.suus-eius",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "femina",
+      "is",
+      "magister",
+      "meus",
+      "suus",
+      "video",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître est présent. La jeune fille voit les livres du maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Magister adest. Puella librōs meōs videt."
+      },
+      {
+        "id": "0",
+        "text": "Magister adest. Puella librōs eius videt."
+      },
+      {
+        "id": "1",
+        "text": "Magister adest. Puella librōs suōs videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.suus-eius"
+    ],
+    "item": "suus-eius:q4",
+    "assessment": "study.theme.suus-eius:q4",
+    "help": "study.suus-eius",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "adsum",
+      "is",
+      "liber",
+      "magister",
+      "meus",
+      "puella",
+      "suus",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "suus-eius",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. In hīs sententiīs simplicibus suus ad subiectum eiusdem verbi refertur. Eius ad aliam persōnam anteā memorātam refertur. Suus cum rē possessā congruit; eius fōrmam nōn mūtat. Antequam respondeās, possessōrem et subiectum reperī.",
+        "observed": [
+          "study.confusion.suus-eius"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

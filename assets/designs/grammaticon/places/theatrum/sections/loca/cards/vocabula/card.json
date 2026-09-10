@@ -1,0 +1,99 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Gallicē",
+  "access": {
+    "price": 20,
+    "requires": {
+      "all": [
+        {
+          "completed": "theatrum/loca/a-ablative"
+        },
+        {
+          "completed": "theatrum/loca/o-ablative"
+        },
+        {
+          "completed": "theatrum/loca/est-sunt"
+        },
+        {
+          "completed": "theatrum/loca/ubi-question"
+        },
+        {
+          "completed": "theatrum/loca/first-declension-number"
+        },
+        {
+          "completed": "theatrum/loca/second-declension-number"
+        },
+        {
+          "completed": "theatrum/loca/neuter-number"
+        },
+        {
+          "completed": "theatrum/loca/feminine-agreement"
+        },
+        {
+          "completed": "theatrum/loca/masculine-agreement"
+        },
+        {
+          "completed": "theatrum/loca/neuter-agreement"
+        },
+        {
+          "completed": "theatrum/loca/negation"
+        },
+        {
+          "completed": "theatrum/loca/02-places"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.theatrum.loca"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_tragoedus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Tragoedus Cothurnātus",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

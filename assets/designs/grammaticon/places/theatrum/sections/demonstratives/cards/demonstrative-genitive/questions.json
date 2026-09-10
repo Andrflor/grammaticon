@@ -1,0 +1,444 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Liber huius puerī parvus est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le livre de ce garçon-là est petit."
+      },
+      {
+        "id": "0",
+        "text": "Le livre de ce garçon-ci est petit."
+      },
+      {
+        "id": "2",
+        "text": "Ce livre-ci du garçon est petit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q1",
+    "assessment": "study.version.demonstrative-genitive:q1",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "hic",
+      "liber",
+      "parvus",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Rosa illīus puellae pulchra est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La rose de cette jeune fille-ci est belle."
+      },
+      {
+        "id": "1",
+        "text": "Cette rose-là de la jeune fille est belle."
+      },
+      {
+        "id": "2",
+        "text": "La rose de cette jeune fille-là est belle."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q2",
+    "assessment": "study.version.demonstrative-genitive:q2",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ille",
+      "puella",
+      "pulcher",
+      "rosa",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Porta huius templī magna est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La porte de ce temple-là est grande."
+      },
+      {
+        "id": "0",
+        "text": "Cette porte-ci du temple est grande."
+      },
+      {
+        "id": "1",
+        "text": "La porte de ce temple-ci est grande."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q3",
+    "assessment": "study.version.demonstrative-genitive:q3",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "hic",
+      "magnus",
+      "porta",
+      "sum",
+      "templum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pretium illīus ānulī magnum est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Ce prix-là de l’anneau est élevé."
+      },
+      {
+        "id": "0",
+        "text": "Le prix de cet anneau-là est élevé."
+      },
+      {
+        "id": "1",
+        "text": "Le prix de cet anneau-ci est élevé."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q4",
+    "assessment": "study.version.demonstrative-genitive:q4",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "anulus",
+      "ille",
+      "magnus",
+      "pretium",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pretium huius gemmae parvum est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le prix de cette pierre précieuse-ci est faible."
+      },
+      {
+        "id": "1",
+        "text": "Ce prix-ci de la pierre précieuse est faible."
+      },
+      {
+        "id": "0",
+        "text": "Le prix de cette pierre précieuse-là est faible."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q5",
+    "assessment": "study.version.demonstrative-genitive:q5",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "gemma",
+      "hic",
+      "parvus",
+      "pretium",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fīlius illīus mātris cantat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le fils de cette mère-là chante."
+      },
+      {
+        "id": "0",
+        "text": "Ce fils-là de la mère chante."
+      },
+      {
+        "id": "2",
+        "text": "Le fils de cette mère-ci chante."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.demonstrative-genitive"
+    ],
+    "item": "demonstrative-genitive:q6",
+    "assessment": "study.version.demonstrative-genitive:q6",
+    "help": "study.demonstrative-genitive",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "filius",
+      "ille",
+      "mater"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "demonstrative-genitive",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Prōnōmen ad nōmen suum pertinet. Nōlī prōnōmen ad subiectum aut ad aliud nōmen trānsferre.",
+        "observed": [
+          "study.confusion.demonstrative-reference"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Genetīvus singulāris omnium generum est huius vel illīus. Nōmen quod sequitur quoque genetīvō pōnitur: huius puerī, huius puellae, huius templī. Haec verba relātiōnem indicant; nōn cum subiectō permūtanda sunt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "In hīs exemplīs hic rem propinquam, ille rem remōtam indicat. Discrīmen quod Gallicē per -ci et -là exprimitur servā.",
+        "observed": [
+          "study.confusion.demonstrative-distance"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

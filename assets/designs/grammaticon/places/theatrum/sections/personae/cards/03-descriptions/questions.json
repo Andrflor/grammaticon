@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella librum parvum legit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La jeune fille lit le petit livre."
+      },
+      {
+        "id": "1",
+        "text": "La petite fille lit le livre."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille lit les petits livres."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q1",
+    "assessment": "study.version.adjective-reference:adjective-reference:q1",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "lego",
+      "liber",
+      "parvus",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer rosam pulchram portat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le beau garçon porte la rose."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon porte la belle rose."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon porte les belles roses."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q2",
+    "assessment": "study.version.adjective-reference:adjective-reference:q2",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "porto",
+      "puer",
+      "pulcher",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina puellam laetam videt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La femme voit les jeunes filles joyeuses."
+      },
+      {
+        "id": "1",
+        "text": "La femme joyeuse voit la jeune fille."
+      },
+      {
+        "id": "0",
+        "text": "La femme voit la jeune fille joyeuse."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q3",
+    "assessment": "study.version.adjective-reference:adjective-reference:q3",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "laetus",
+      "puella",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor servum bonum laudat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le bon marchand fait l’éloge de l’esclave."
+      },
+      {
+        "id": "2",
+        "text": "Le marchand fait l’éloge des bons esclaves."
+      },
+      {
+        "id": "0",
+        "text": "Le marchand fait l’éloge du bon esclave."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q4",
+    "assessment": "study.version.adjective-reference:adjective-reference:q4",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "bonus",
+      "laudo",
+      "mercator",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister puerum parvum docet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le maître de petite taille instruit le garçon."
+      },
+      {
+        "id": "0",
+        "text": "Le maître instruit le petit garçon."
+      },
+      {
+        "id": "2",
+        "text": "Le maître instruit les petits garçons."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q5",
+    "assessment": "study.version.adjective-reference:adjective-reference:q5",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "doceo",
+      "magister",
+      "parvus",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer fēminam laetam salūtat."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon salue la femme joyeuse."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon salue les femmes joyeuses."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon joyeux salue la femme."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.adjective-reference"
+    ],
+    "item": "adjective-reference:q6",
+    "assessment": "study.version.adjective-reference:adjective-reference:q6",
+    "help": "study.03-descriptions",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "femina",
+      "laetus",
+      "puer",
+      "saluto"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "03-descriptions",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Adiectīvum cum nōmine suō genere, numerō et cāsū congruit. Puella librum parvum legit: liber parvus est. Puella parva librum legit: puella parva est. Nōn satis est vocābula singula agnōscere: quaere cui nōminī adiectīvum conveniat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Adiectīvum nōn ad subiectum, sed ad obiectum hīc pertinet. Cāsum nōminis et adiectīvī simul observā.",
+        "observed": [
+          "study.confusion.adjective-referent"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Obiectum et adiectīvum singulārī numerō hīc pōnuntur. Plūrēs persōnās vel rēs nōlī substituere.",
+        "observed": [
+          "study.confusion.adjective-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

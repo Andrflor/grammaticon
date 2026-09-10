@@ -1,0 +1,442 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le père dit que le garçon a chanté."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Pater dīcit puerum cantāre."
+      },
+      {
+        "id": "0",
+        "text": "Pater dīcit puerum cantāvisse."
+      },
+      {
+        "id": "2",
+        "text": "Pater dīcit puerōs cantāvisse."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q1",
+    "assessment": "study.theme.infinitive-anteriority:q1",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "canto",
+      "dico",
+      "pater",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître dit que la jeune fille a lu le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Magister dīcit puellam librum legere."
+      },
+      {
+        "id": "1",
+        "text": "Magister dīcit puellās librum lēgisse."
+      },
+      {
+        "id": "2",
+        "text": "Magister dīcit puellam librum lēgisse."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q2",
+    "assessment": "study.theme.infinitive-anteriority:q2",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "lego",
+      "liber",
+      "magister",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître de maison dit que l’esclave a ouvert la porte."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Dominus dīcit servōs portam aperuisse."
+      },
+      {
+        "id": "2",
+        "text": "Dominus dīcit servum portam aperīre."
+      },
+      {
+        "id": "1",
+        "text": "Dominus dīcit servum portam aperuisse."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q3",
+    "assessment": "study.theme.infinitive-anteriority:q3",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aperio",
+      "dico",
+      "dominus",
+      "porta",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille dit que la femme a écrit la lettre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Puella dīcit fēminam epistulam scrīpsisse."
+      },
+      {
+        "id": "1",
+        "text": "Puella dīcit fēminam epistulam scrībere."
+      },
+      {
+        "id": "2",
+        "text": "Puella dīcit fēminās epistulam scrīpsisse."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q4",
+    "assessment": "study.theme.infinitive-anteriority:q4",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "epistula",
+      "femina",
+      "puella",
+      "scribo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand dit que l’agriculteur est venu."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Mercātor dīcit agricolam venīre."
+      },
+      {
+        "id": "2",
+        "text": "Mercātor dīcit agricolam vēnisse."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor dīcit agricolās vēnisse."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q5",
+    "assessment": "study.theme.infinitive-anteriority:q5",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "dico",
+      "mercator",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme dit que le fils a dormi."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Fēmina dīcit fīlium dormīvisse."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina dīcit fīliōs dormīvisse."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina dīcit fīlium dormīre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.infinitive-anteriority"
+    ],
+    "item": "infinitive-anteriority:q6",
+    "assessment": "study.theme.infinitive-anteriority:q6",
+    "help": "study.infinitive-anteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "dormio",
+      "femina",
+      "filius"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "infinitive-anteriority",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Subiectum īnfīnītīvī hīc singulāre est. Plūrēs persōnās nōlī substituere.",
+        "observed": [
+          "study.confusion.infinitive-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Īnfīnītīvus praesēns actiōnem cum verbō regente simul fierī indicat; īnfīnītīvus perfectus eam anteā factam esse indicat. Dīcit puerum cantāre: puer nunc cantat. Dīcit puerum cantāvisse: puer anteā cantāvit. Tempus īnfīnītīvī ad tempus verbi regentis refertur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Īnfīnītīvus perfectus actiōnem ante tempus verbi regentis factam exprimit. Praesēns īnfīnītīvus eam simul fierī significāret.",
+        "observed": [
+          "study.confusion.infinitive-before"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

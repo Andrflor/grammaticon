@@ -1,0 +1,293 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cūr puer dormit?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Parce que le garçon dort."
+      },
+      {
+        "id": "1",
+        "text": "Où le garçon dort-il ?"
+      },
+      {
+        "id": "0",
+        "text": "Pourquoi le garçon dort-il ?"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.cur-quia"
+    ],
+    "item": "cur-quia:q1",
+    "assessment": "study.version.cur-quia:q1",
+    "help": "study.cur-quia",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "cur",
+      "dormio",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cur-quia",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cūr causam quaerit; quia causam explicat. In sententiā Puer dormit quia fessus est, lassitūdō causa somnī est. Causam et id quod ex causā sequitur nōn permūtā. Ubi locum, nōn causam quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
+        "observed": [
+          "study.confusion.cause-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
+        "observed": [
+          "study.confusion.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cūr puella plōrat?"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Où la jeune fille pleure-t-elle ?"
+      },
+      {
+        "id": "1",
+        "text": "Parce que la jeune fille pleure."
+      },
+      {
+        "id": "2",
+        "text": "Pourquoi la jeune fille pleure-t-elle ?"
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.cur-quia"
+    ],
+    "item": "cur-quia:q2",
+    "assessment": "study.version.cur-quia:q2",
+    "help": "study.cur-quia",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cur",
+      "ploro",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cur-quia",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Cūr causam quaerit; ubi locum quaerit. Causa et locus nōn idem sunt.",
+        "observed": [
+          "study.confusion.cause-location"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Cūr causam quaerit; quia causam reddit. Interrogātiōnem et responsum nōn permūtā.",
+        "observed": [
+          "study.confusion.cause-question"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cūr causam quaerit; quia causam explicat. In sententiā Puer dormit quia fessus est, lassitūdō causa somnī est. Causam et id quod ex causā sequitur nōn permūtā. Ubi locum, nōn causam quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Magister dormit quia fessus est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le maître dort parce qu’il est fatigué."
+      },
+      {
+        "id": "2",
+        "text": "Le maître est fatigué parce qu’il dort."
+      },
+      {
+        "id": "0",
+        "text": "Le maître dort, mais il n’est pas fatigué."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.cur-quia"
+    ],
+    "item": "cur-quia:q3",
+    "assessment": "study.version.cur-quia:q3",
+    "help": "study.cur-quia",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dormio",
+      "fessus",
+      "magister",
+      "quia",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cur-quia",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
+        "observed": [
+          "study.confusion.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cūr causam quaerit; quia causam explicat. In sententiā Puer dormit quia fessus est, lassitūdō causa somnī est. Causam et id quod ex causā sequitur nōn permūtā. Ubi locum, nōn causam quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
+        "observed": [
+          "study.confusion.cause-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella cantat quia laeta est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille chante, mais elle n’est pas joyeuse."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille chante parce qu’elle est joyeuse."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille est joyeuse parce qu’elle chante."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.cur-quia"
+    ],
+    "item": "cur-quia:q4",
+    "assessment": "study.version.cur-quia:q4",
+    "help": "study.cur-quia",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "laetus",
+      "puella",
+      "quia",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "cur-quia",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cūr causam quaerit; quia causam explicat. In sententiā Puer dormit quia fessus est, lassitūdō causa somnī est. Causam et id quod ex causā sequitur nōn permūtā. Ubi locum, nōn causam quaerit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Quod post quia dīcitur causam explicat. Causam et id quod ex eā sequitur nōn permūtā.",
+        "observed": [
+          "study.confusion.cause-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Quia causam explicat; sed contrārium addit. Relātiōnem inter sententiae partēs servā.",
+        "observed": [
+          "study.confusion.cause-contrast"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

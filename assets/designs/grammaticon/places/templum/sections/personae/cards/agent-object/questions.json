@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q1",
+    "assessment": "study.theme.agent-object:q1",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme voit le garçon."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer fēminam videt."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina puerum videt."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina puerōs videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hīc fēmina nōminātīvus subiectum indicat; puerum accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc fēmina nōminātīvus subiectum indicat; puerum accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
+        "observed": [
+          "study.confusion.active-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc puerum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "femina",
+      "puer",
+      "video"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": false,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q2",
+    "assessment": "study.theme.agent-object:q2",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme entend la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Vir puellam audit."
+      },
+      {
+        "id": "0",
+        "text": "Puella virum audit."
+      },
+      {
+        "id": "1",
+        "text": "Vir puellās audit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc vir nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est audit.",
+        "observed": [
+          "study.confusion.active-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc puellam ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Hīc vir nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est audit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "audio",
+      "puella",
+      "vir"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q3",
+    "assessment": "study.theme.agent-object:q3",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon appelle la jeune fille."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella puerum vocat."
+      },
+      {
+        "id": "1",
+        "text": "Puellam puer vocat."
+      },
+      {
+        "id": "0",
+        "text": "Puer puellās vocat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc puellam ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Hīc puer nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est vocat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc puer nōminātīvus subiectum indicat; puellam accūsātīvus obiectum dīrectum indicat. Verbum est vocat.",
+        "observed": [
+          "study.confusion.active-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "puella",
+      "puer",
+      "voco"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q4",
+    "assessment": "study.theme.agent-object:q4",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître voit les garçons."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puerī magistrum vident."
+      },
+      {
+        "id": "2",
+        "text": "Magister puerum videt."
+      },
+      {
+        "id": "0",
+        "text": "Magister puerōs videt."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Hīc magister nōminātīvus subiectum indicat; puerōs accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Subiectum et obiectum permūtāta sunt. Hīc magister nōminātīvus subiectum indicat; puerōs accūsātīvus obiectum dīrectum indicat. Verbum est videt.",
+        "observed": [
+          "study.confusion.active-role-reversal"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc puerōs plūrēs rēs vel persōnās indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "magister",
+      "puer",
+      "video"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q5",
+    "assessment": "study.theme.agent-object:q5",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille porte le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella librum portat."
+      },
+      {
+        "id": "0",
+        "text": "Puellae librum portant."
+      },
+      {
+        "id": "1",
+        "text": "Puella librōs portat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc puella ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
+        "observed": [
+          "study.confusion.active-subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc librum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Hīc puella nōminātīvus subiectum indicat; librum accūsātīvus obiectum dīrectum indicat. Verbum est portat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "liber",
+      "porto",
+      "puella"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "item": "agent-object:q6",
+    "assessment": "study.theme.agent-object:q6",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’homme a le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Vir librōs habet."
+      },
+      {
+        "id": "2",
+        "text": "Virī librum habent."
+      },
+      {
+        "id": "1",
+        "text": "Librum vir habet."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "requires": [],
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc librum ūnam rem vel persōnam indicat. Numerus obiectī in responsō mūtātus est.",
+        "observed": [
+          "study.confusion.active-object-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Hīc vir nōminātīvus subiectum indicat; librum accūsātīvus obiectum dīrectum indicat. Verbum est habet.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc vir ūnam persōnam indicat. Responsum plūrēs persōnās agentēs indicat. Numerus subiectī mūtātus est.",
+        "observed": [
+          "study.confusion.active-subject-number"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "vocabulary": [
+      "habeo",
+      "liber",
+      "vir"
+    ],
+    "skills": [
+      "study.theme.agent-object"
+    ],
+    "help": "study.agent-object",
+    "followUpOnly": true,
+    "editorial": {
+      "language": "la",
+      "topic": "agent-object",
+      "translationDirection": "fr-la"
+    }
+  }
+]

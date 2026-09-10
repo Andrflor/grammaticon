@@ -1,0 +1,433 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille lira le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puella librum legit."
+      },
+      {
+        "id": "2",
+        "text": "Puella librum lēgit."
+      },
+      {
+        "id": "0",
+        "text": "Puella librum leget."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q1",
+    "assessment": "study.theme.future-third-fourth:q1",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "lego",
+      "liber",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon entend le maître."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer magistrum audīvit."
+      },
+      {
+        "id": "0",
+        "text": "Puer magistrum audiet."
+      },
+      {
+        "id": "2",
+        "text": "Puer magistrum audit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q2",
+    "assessment": "study.theme.future-third-fourth:q2",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "audio",
+      "magister",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’agriculteur conduira le cheval."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Agricola equum dūxit."
+      },
+      {
+        "id": "1",
+        "text": "Agricola equum dūcet."
+      },
+      {
+        "id": "2",
+        "text": "Agricola equum dūcit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q3",
+    "assessment": "study.theme.future-third-fourth:q3",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "duco",
+      "equus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme écrit une lettre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Fēmina epistulam scrīpsit."
+      },
+      {
+        "id": "0",
+        "text": "Fēmina epistulam scrībit."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina epistulam scrībet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q4",
+    "assessment": "study.theme.future-third-fourth:q4",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "epistula",
+      "femina",
+      "scribo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "L’esclave cueillera la rose."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Servus rosam carpet."
+      },
+      {
+        "id": "0",
+        "text": "Servus rosam carpit."
+      },
+      {
+        "id": "1",
+        "text": "Servus rosam carpsit."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q5",
+    "assessment": "study.theme.future-third-fourth:q5",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "carpo",
+      "rosa",
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître ouvre le livre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magister librum aperit."
+      },
+      {
+        "id": "2",
+        "text": "Magister librum aperiet."
+      },
+      {
+        "id": "0",
+        "text": "Magister librum aperuit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.future-third-fourth"
+    ],
+    "item": "future-third-fourth:q6",
+    "assessment": "study.theme.future-third-fourth:q6",
+    "help": "study.future-third-fourth",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aperio",
+      "liber",
+      "magister"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "future-third-fourth",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Actiō futūra vel praesēns nōn in praeteritum trānsferenda est. Fōrmam perfectī cum fōrmā quaesītā nōn cōnfunde.",
+        "observed": [
+          "study.confusion.future-past"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. In tertiā et quārtā coniugātiōne -b- nōn additur ad futūrum faciendum: legit, leget; audit, audiet. Dūcit et dūcet, scrībit et scrībet quoque distinguuntur. Parva mūtātiō litterārum tempus sententiae mūtat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Praesēns et futūrum distingue. Verbum ipsum tempus indicat: portat et portābit, legit et leget nōn idem significant.",
+        "observed": [
+          "study.confusion.present-future"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

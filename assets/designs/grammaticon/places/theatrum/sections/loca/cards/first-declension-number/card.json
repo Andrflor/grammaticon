@@ -1,0 +1,67 @@
+{
+  "id": "first-declension-number",
+  "name": "-a et -ae",
+  "subtitle": "Interpretātiō sententiarum",
+  "access": {
+    "price": 15,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "theatrum/loca/ubi-question"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.version.first-declension-number"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 3,
+    "completion": "sequence"
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_mimus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Mīmus Versicolor",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}
