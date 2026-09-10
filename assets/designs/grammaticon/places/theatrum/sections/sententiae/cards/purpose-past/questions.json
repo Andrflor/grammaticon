@@ -1,0 +1,455 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater fīlium ad nāvem mīsit ut nautam monēret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père a envoyé son fils au navire pour qu’il avertisse le marin."
+      },
+      {
+        "id": "2",
+        "text": "Le père a envoyé son fils au navire pour qu’il n’avertisse pas le marin."
+      },
+      {
+        "id": "1",
+        "text": "Le père a envoyé son fils au navire parce qu’il avertissait le marin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q1",
+    "assessment": "study.version.purpose-past:purpose-past:q1",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "filius",
+      "mitto",
+      "moneo",
+      "nauta",
+      "navis",
+      "pater",
+      "ut"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor ad portam cucurrit ut amīcum vidēret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le marchand a couru vers la porte de la ville pour ne pas voir son ami."
+      },
+      {
+        "id": "0",
+        "text": "Le marchand a couru vers la porte de la ville pour voir son ami."
+      },
+      {
+        "id": "1",
+        "text": "Le marchand a couru vers la porte de la ville parce qu’il voyait son ami."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q2",
+    "assessment": "study.version.purpose-past:purpose-past:q2",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "amicus",
+      "curro",
+      "mercator",
+      "porta",
+      "ut",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola canem vocāvit ut ovēs cūstōdīret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le paysan a appelé le chien pour qu’il ne garde pas les moutons."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan a appelé le chien parce qu’il gardait les moutons."
+      },
+      {
+        "id": "0",
+        "text": "Le paysan a appelé le chien pour qu’il garde les moutons."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q3",
+    "assessment": "study.version.purpose-past:purpose-past:q3",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "agricola",
+      "canis",
+      "custodio",
+      "ovis",
+      "ut",
+      "voco"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Māter clāvēs cēlāvit nē puer portam aperīret."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La mère a caché les clés pour que le garçon n’ouvre pas la porte de la ville."
+      },
+      {
+        "id": "2",
+        "text": "La mère a caché les clés pour que le garçon ouvre la porte de la ville."
+      },
+      {
+        "id": "1",
+        "text": "La mère a caché les clés parce que le garçon n’ouvrait pas la porte de la ville."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q4",
+    "assessment": "study.version.purpose-past:purpose-past:q4",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aperio",
+      "celo",
+      "clavis",
+      "mater",
+      "ne",
+      "porta",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella aquam attulit nē rosae ārēscerent."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La fille a apporté de l’eau parce que les roses ne se desséchaient pas."
+      },
+      {
+        "id": "0",
+        "text": "La fille a apporté de l’eau pour que les roses ne se dessèchent pas."
+      },
+      {
+        "id": "2",
+        "text": "La fille a apporté de l’eau pour que les roses se dessèchent."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q5",
+    "assessment": "study.version.purpose-past:purpose-past:q5",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "affero",
+      "aqua",
+      "aresco",
+      "ne",
+      "puella",
+      "rosa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta lūcernam parāvit ut viam ostenderet."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marin a préparé une lampe parce qu’il montrait le chemin."
+      },
+      {
+        "id": "2",
+        "text": "Le marin a préparé une lampe pour ne pas montrer le chemin."
+      },
+      {
+        "id": "0",
+        "text": "Le marin a préparé une lampe pour montrer le chemin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.purpose-past"
+    ],
+    "item": "purpose-past:q6",
+    "assessment": "study.version.purpose-past:purpose-past:q6",
+    "help": "study.purpose-past",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "lucerna",
+      "nauta",
+      "ostendo",
+      "paro",
+      "ut",
+      "via"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "purpose-past",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Post rem praeteritam, cōnsilium hīs sententiīs per ut vel nē et coniūnctīvum imperfectum exprimitur: mīsit ut monēret. Monēret nōn rem anteā factam, sed id quod pater efficere voluit indicat. Ut cōnsilium affirmat; nē id quod fierī nōluerunt indicat. Quia autem causam, nōn cōnsilium, indicat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Quia causam indicat. Hīc autem ut vel nē id quod persōna efficere vult indicat; causa et cōnsilium nōn idem sunt.",
+        "observed": [
+          "study.confusion.purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ut et nē nōn idem significant. Ut cōnsilium affirmat; nē id quod fierī nōn vult persōna indicat. Negātiōnem nōlī addere aut omittere.",
+        "observed": [
+          "study.confusion.purpose-polarity"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

@@ -19,7 +19,7 @@
       },
       {
         "id": "2",
-        "text": "adiuvāre"
+        "text": "afferre"
       },
       {
         "id": "1",
@@ -76,17 +76,17 @@
     "content": [
       {
         "type": "text",
-        "text": "vers, auprès de"
+        "text": "vers, auprès de ; pour"
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "ambulāre"
+        "text": "agricola"
       },
       {
         "id": "1",
-        "text": "adiuvāre"
+        "text": "afferre"
       },
       {
         "id": "0",
@@ -110,13 +110,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: ad — vers, auprès de.",
+        "feedback": "Rēctē: ad — vers, auprès de ; pour.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
           "study.error"
         ],
@@ -124,7 +124,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
           "study.error"
         ],
@@ -134,30 +134,30 @@
     }
   },
   {
-    "id": "adiuvo",
+    "id": "affero",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "adiuvo",
-    "assessment": "study.lexicon.templum.sententiae:adiuvo",
+    "item": "affero",
+    "assessment": "study.lexicon.templum.sententiae:affero",
     "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
     "content": [
       {
         "type": "text",
-        "text": "aider"
+        "text": "apporter"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "adiuvāre"
-      },
-      {
-        "id": "1",
-        "text": "ambulāre"
+        "text": "afferre"
       },
       {
         "id": "2",
-        "text": "amīcus, amīca"
+        "text": "ambulāre"
+      },
+      {
+        "id": "1",
+        "text": "agricola"
       }
     ],
     "accepted": [
@@ -169,7 +169,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "adiuvo"
+      "affero"
     ],
     "editorial": {
       "language": "la",
@@ -177,13 +177,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: adiuvāre — aider.",
+        "feedback": "Rēctē: afferre — apporter.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: adiuvāre — aider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
         "observed": [
           "study.error"
         ],
@@ -191,7 +191,74 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: adiuvāre — aider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "agricola",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "agricola",
+    "assessment": "study.lexicon.templum.sententiae:agricola",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "agriculteur"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "ambulāre"
+      },
+      {
+        "id": "2",
+        "text": "amīcus, amīca"
+      },
+      {
+        "id": "0",
+        "text": "agricola"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "agricola"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: agricola — agriculteur.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
           "study.error"
         ],
@@ -353,12 +420,12 @@
         "text": "aperīre"
       },
       {
-        "id": "2",
-        "text": "aqua"
-      },
-      {
         "id": "0",
         "text": "antequam"
+      },
+      {
+        "id": "2",
+        "text": "aqua"
       }
     ],
     "accepted": [
@@ -420,12 +487,12 @@
         "text": "aqua"
       },
       {
-        "id": "0",
-        "text": "aperīre"
+        "id": "2",
+        "text": "ārēscere"
       },
       {
-        "id": "2",
-        "text": "audīre"
+        "id": "0",
+        "text": "aperīre"
       }
     ],
     "accepted": [
@@ -484,11 +551,11 @@
     "choices": [
       {
         "id": "1",
-        "text": "audīre"
+        "text": "ārēscere"
       },
       {
         "id": "2",
-        "text": "auferre"
+        "text": "audīre"
       },
       {
         "id": "0",
@@ -536,6 +603,73 @@
     }
   },
   {
+    "id": "aresco",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "aresco",
+    "assessment": "study.lexicon.templum.sententiae:aresco",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "se dessécher"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "audīre"
+      },
+      {
+        "id": "2",
+        "text": "auferre"
+      },
+      {
+        "id": "0",
+        "text": "ārēscere"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "aresco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ārēscere — se dessécher.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "audio",
     "interaction": "choice",
     "dimension": "lemma",
@@ -550,16 +684,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "audīre"
+      },
+      {
         "id": "1",
         "text": "auferre"
       },
       {
         "id": "2",
         "text": "cadere"
-      },
-      {
-        "id": "0",
-        "text": "audīre"
       }
     ],
     "accepted": [
@@ -617,16 +751,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "auferre"
+      },
+      {
         "id": "1",
         "text": "cadere"
       },
       {
         "id": "2",
-        "text": "cantāre"
-      },
-      {
-        "id": "0",
-        "text": "auferre"
+        "text": "canis"
       }
     ],
     "accepted": [
@@ -689,11 +823,11 @@
       },
       {
         "id": "2",
-        "text": "carpere"
+        "text": "cantāre"
       },
       {
         "id": "1",
-        "text": "cantāre"
+        "text": "canis"
       }
     ],
     "accepted": [
@@ -737,6 +871,73 @@
     }
   },
   {
+    "id": "canis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "canis",
+    "assessment": "study.lexicon.templum.sententiae:canis",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "chien"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "canis"
+      },
+      {
+        "id": "1",
+        "text": "cantāre"
+      },
+      {
+        "id": "2",
+        "text": "carpere"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "canis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: canis — chien.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "canto",
     "interaction": "choice",
     "dimension": "lemma",
@@ -751,12 +952,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "cantāre"
+        "id": "2",
+        "text": "cēlāre"
       },
       {
-        "id": "2",
-        "text": "cēna"
+        "id": "0",
+        "text": "cantāre"
       },
       {
         "id": "1",
@@ -818,16 +1019,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "carpere"
-      },
-      {
         "id": "2",
-        "text": "cīvis"
+        "text": "cēna"
       },
       {
         "id": "1",
-        "text": "cēna"
+        "text": "cēlāre"
+      },
+      {
+        "id": "0",
+        "text": "carpere"
       }
     ],
     "accepted": [
@@ -871,6 +1072,73 @@
     }
   },
   {
+    "id": "celo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "celo",
+    "assessment": "study.lexicon.templum.sententiae:celo",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "cacher"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "cēna"
+      },
+      {
+        "id": "0",
+        "text": "cēlāre"
+      },
+      {
+        "id": "2",
+        "text": "cīvis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "celo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cēlāre — cacher.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "cena",
     "interaction": "choice",
     "dimension": "lemma",
@@ -885,16 +1153,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "cēna"
-      },
-      {
         "id": "2",
         "text": "clāmāre"
       },
       {
         "id": "1",
         "text": "cīvis"
+      },
+      {
+        "id": "0",
+        "text": "cēna"
       }
     ],
     "accepted": [
@@ -956,12 +1224,12 @@
         "text": "clāmāre"
       },
       {
-        "id": "0",
-        "text": "cīvis"
-      },
-      {
         "id": "2",
         "text": "claudere"
+      },
+      {
+        "id": "0",
+        "text": "cīvis"
       }
     ],
     "accepted": [
@@ -1023,12 +1291,12 @@
         "text": "claudere"
       },
       {
-        "id": "2",
-        "text": "concha"
-      },
-      {
         "id": "0",
         "text": "clāmāre"
+      },
+      {
+        "id": "2",
+        "text": "clāvis"
       }
     ],
     "accepted": [
@@ -1087,15 +1355,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "cōnstituere"
-      },
-      {
-        "id": "1",
-        "text": "concha"
+        "text": "cum"
       },
       {
         "id": "0",
         "text": "claudere"
+      },
+      {
+        "id": "1",
+        "text": "clāvis"
       }
     ],
     "accepted": [
@@ -1139,97 +1407,30 @@
     }
   },
   {
-    "id": "concha",
+    "id": "clavis",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "concha",
-    "assessment": "study.lexicon.templum.sententiae:concha",
+    "item": "clavis",
+    "assessment": "study.lexicon.templum.sententiae:clavis",
     "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
     "content": [
       {
         "type": "text",
-        "text": "coquillage"
+        "text": "clé"
       }
     ],
     "choices": [
-      {
-        "id": "1",
-        "text": "cōnstituere"
-      },
       {
         "id": "0",
-        "text": "concha"
+        "text": "clāvis"
       },
       {
-        "id": "2",
+        "id": "1",
         "text": "cum"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "concha"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: concha — coquillage.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
       },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: concha — coquillage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: concha — coquillage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "constituo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "constituo",
-    "assessment": "study.lexicon.templum.sententiae:constituo",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "décider"
-      }
-    ],
-    "choices": [
       {
         "id": "2",
         "text": "currere"
-      },
-      {
-        "id": "1",
-        "text": "cum"
-      },
-      {
-        "id": "0",
-        "text": "cōnstituere"
       }
     ],
     "accepted": [
@@ -1241,7 +1442,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "constituo"
+      "clavis"
     ],
     "editorial": {
       "language": "la",
@@ -1249,13 +1450,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: cōnstituere — décider.",
+        "feedback": "Rēctē: clāvis — clé.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: cōnstituere — décider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
           "study.error"
         ],
@@ -1263,7 +1464,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: cōnstituere — décider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
           "study.error"
         ],
@@ -1287,16 +1488,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "cum"
+      },
+      {
         "id": "1",
         "text": "currere"
       },
       {
         "id": "2",
-        "text": "dēlēre"
-      },
-      {
-        "id": "0",
-        "text": "cum"
+        "text": "cūstōdīre"
       }
     ],
     "accepted": [
@@ -1354,16 +1555,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "dēlēre"
-      },
-      {
         "id": "0",
         "text": "currere"
       },
       {
+        "id": "1",
+        "text": "cūstōdīre"
+      },
+      {
         "id": "2",
-        "text": "dēserere"
+        "text": "dēlēre"
       }
     ],
     "accepted": [
@@ -1407,6 +1608,73 @@
     }
   },
   {
+    "id": "custodio",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "custodio",
+    "assessment": "study.lexicon.templum.sententiae:custodio",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "garder"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "cūstōdīre"
+      },
+      {
+        "id": "1",
+        "text": "dēlēre"
+      },
+      {
+        "id": "2",
+        "text": "discēdere"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "custodio"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cūstōdīre — garder.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "deleo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1422,7 +1690,7 @@
     "choices": [
       {
         "id": "1",
-        "text": "dēserere"
+        "text": "discēdere"
       },
       {
         "id": "0",
@@ -1430,7 +1698,7 @@
       },
       {
         "id": "2",
-        "text": "dīcere"
+        "text": "discipulus"
       }
     ],
     "accepted": [
@@ -1474,140 +1742,6 @@
     }
   },
   {
-    "id": "desero",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "desero",
-    "assessment": "study.lexicon.templum.sententiae:desero",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "abandonner"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "dēserere"
-      },
-      {
-        "id": "2",
-        "text": "discēdere"
-      },
-      {
-        "id": "1",
-        "text": "dīcere"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "desero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dēserere — abandonner.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dēserere — abandonner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dēserere — abandonner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "dico",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "dico",
-    "assessment": "study.lexicon.templum.sententiae:dico",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dire"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "dīcere"
-      },
-      {
-        "id": "2",
-        "text": "discipulus"
-      },
-      {
-        "id": "1",
-        "text": "discēdere"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "dico"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dīcere — dire.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "discedo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1622,16 +1756,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "discēdere"
-      },
-      {
         "id": "1",
         "text": "discipulus"
       },
       {
         "id": "2",
         "text": "dīvitiae"
+      },
+      {
+        "id": "0",
+        "text": "discēdere"
       }
     ],
     "accepted": [
@@ -1756,12 +1890,12 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "dōnum"
-      },
-      {
         "id": "0",
         "text": "dīvitiae"
+      },
+      {
+        "id": "2",
+        "text": "dum"
       },
       {
         "id": "1",
@@ -1824,11 +1958,11 @@
     "choices": [
       {
         "id": "1",
-        "text": "dōnum"
+        "text": "dum"
       },
       {
         "id": "2",
-        "text": "dum"
+        "text": "epistula"
       },
       {
         "id": "0",
@@ -1876,73 +2010,6 @@
     }
   },
   {
-    "id": "donum",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "donum",
-    "assessment": "study.lexicon.templum.sententiae:donum",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "don"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "dum"
-      },
-      {
-        "id": "0",
-        "text": "dōnum"
-      },
-      {
-        "id": "2",
-        "text": "epistula"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "donum"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dōnum — don.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — don.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — don.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "dum",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1957,16 +2024,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "epistula"
-      },
-      {
         "id": "0",
         "text": "dum"
       },
       {
+        "id": "1",
+        "text": "epistula"
+      },
+      {
         "id": "2",
-        "text": "et"
+        "text": "etiam"
       }
     ],
     "accepted": [
@@ -2024,16 +2091,16 @@
     ],
     "choices": [
       {
+        "id": "2",
+        "text": "excitāre"
+      },
+      {
         "id": "0",
         "text": "epistula"
       },
       {
-        "id": "2",
-        "text": "etiam"
-      },
-      {
         "id": "1",
-        "text": "et"
+        "text": "etiam"
       }
     ],
     "accepted": [
@@ -2068,73 +2135,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "et",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "et",
-    "assessment": "study.lexicon.templum.sententiae:et",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "et"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "et"
-      },
-      {
-        "id": "2",
-        "text": "excitāre"
-      },
-      {
-        "id": "1",
-        "text": "etiam"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "et"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: et — et.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
         "observed": [
           "study.error"
         ],
@@ -2225,12 +2225,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "excitāre"
-      },
-      {
         "id": "2",
         "text": "exercēre"
+      },
+      {
+        "id": "0",
+        "text": "excitāre"
       },
       {
         "id": "1",
@@ -2296,12 +2296,12 @@
         "text": "exercēre"
       },
       {
-        "id": "0",
-        "text": "exīre"
+        "id": "2",
+        "text": "fēmina"
       },
       {
-        "id": "2",
-        "text": "exspectāre"
+        "id": "0",
+        "text": "exīre"
       }
     ],
     "accepted": [
@@ -2360,15 +2360,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "fēlīx"
-      },
-      {
-        "id": "1",
-        "text": "exspectāre"
+        "text": "fīlius"
       },
       {
         "id": "0",
         "text": "exercēre"
+      },
+      {
+        "id": "1",
+        "text": "fēmina"
       }
     ],
     "accepted": [
@@ -2412,140 +2412,6 @@
     }
   },
   {
-    "id": "exspecto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "exspecto",
-    "assessment": "study.lexicon.templum.sententiae:exspecto",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "attendre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "fēlīx"
-      },
-      {
-        "id": "2",
-        "text": "fēmina"
-      },
-      {
-        "id": "0",
-        "text": "exspectāre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "exspecto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: exspectāre — attendre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "felix",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "felix",
-    "assessment": "study.lexicon.templum.sententiae:felix",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "heureux"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "fīlius"
-      },
-      {
-        "id": "0",
-        "text": "fēlīx"
-      },
-      {
-        "id": "1",
-        "text": "fēmina"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "felix"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: fēlīx — heureux.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēlīx — heureux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēlīx — heureux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "femina",
     "interaction": "choice",
     "dimension": "lemma",
@@ -2560,16 +2426,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "fēmina"
+      },
+      {
         "id": "1",
         "text": "fīlius"
       },
       {
         "id": "2",
         "text": "flūmen"
-      },
-      {
-        "id": "0",
-        "text": "fēmina"
       }
     ],
     "accepted": [
@@ -2631,12 +2497,12 @@
         "text": "frīgus"
       },
       {
-        "id": "0",
-        "text": "fīlius"
-      },
-      {
         "id": "1",
         "text": "flūmen"
+      },
+      {
+        "id": "0",
+        "text": "fīlius"
       }
     ],
     "accepted": [
@@ -2694,16 +2560,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "flūmen"
-      },
-      {
         "id": "1",
         "text": "frīgus"
       },
       {
         "id": "2",
         "text": "fugere"
+      },
+      {
+        "id": "0",
+        "text": "flūmen"
       }
     ],
     "accepted": [
@@ -2765,12 +2631,12 @@
         "text": "habēre"
       },
       {
-        "id": "1",
-        "text": "fugere"
-      },
-      {
         "id": "0",
         "text": "frīgus"
+      },
+      {
+        "id": "1",
+        "text": "fugere"
       }
     ],
     "accepted": [
@@ -2828,16 +2694,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "fugere"
+      },
+      {
         "id": "2",
         "text": "iānua"
       },
       {
         "id": "1",
         "text": "habēre"
-      },
-      {
-        "id": "0",
-        "text": "fugere"
       }
     ],
     "accepted": [
@@ -3029,12 +2895,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "in"
-      },
-      {
         "id": "1",
         "text": "inopia"
+      },
+      {
+        "id": "0",
+        "text": "in"
       },
       {
         "id": "2",
@@ -3096,16 +2962,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "inopia"
-      },
-      {
         "id": "2",
-        "text": "invenīre"
+        "text": "labōrāre"
       },
       {
         "id": "1",
         "text": "intrāre"
+      },
+      {
+        "id": "0",
+        "text": "inopia"
       }
     ],
     "accepted": [
@@ -3163,16 +3029,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "labōrāre"
-      },
-      {
         "id": "0",
         "text": "intrāre"
       },
       {
+        "id": "2",
+        "text": "legere"
+      },
+      {
         "id": "1",
-        "text": "invenīre"
+        "text": "labōrāre"
       }
     ],
     "accepted": [
@@ -3216,73 +3082,6 @@
     }
   },
   {
-    "id": "invenio",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "invenio",
-    "assessment": "study.lexicon.templum.sententiae:invenio",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "trouver"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "invenīre"
-      },
-      {
-        "id": "2",
-        "text": "laetus"
-      },
-      {
-        "id": "1",
-        "text": "labōrāre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "invenio"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: invenīre — trouver.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: invenīre — trouver.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: invenīre — trouver.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "laboro",
     "interaction": "choice",
     "dimension": "lemma",
@@ -3298,15 +3097,15 @@
     "choices": [
       {
         "id": "1",
-        "text": "laetus"
+        "text": "legere"
+      },
+      {
+        "id": "2",
+        "text": "liber"
       },
       {
         "id": "0",
         "text": "labōrāre"
-      },
-      {
-        "id": "2",
-        "text": "legere"
       }
     ],
     "accepted": [
@@ -3350,73 +3149,6 @@
     }
   },
   {
-    "id": "laetus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "laetus",
-    "assessment": "study.lexicon.templum.sententiae:laetus",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "joyeux"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "legere"
-      },
-      {
-        "id": "0",
-        "text": "laetus"
-      },
-      {
-        "id": "2",
-        "text": "liber"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "laetus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: laetus — joyeux.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "lego",
     "interaction": "choice",
     "dimension": "lemma",
@@ -3440,7 +3172,7 @@
       },
       {
         "id": "2",
-        "text": "lītus"
+        "text": "lūcerna"
       }
     ],
     "accepted": [
@@ -3498,16 +3230,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "lītus"
-      },
-      {
         "id": "0",
         "text": "liber"
       },
       {
+        "id": "1",
+        "text": "lūcerna"
+      },
+      {
         "id": "2",
-        "text": "mare"
+        "text": "māter"
       }
     ],
     "accepted": [
@@ -3551,89 +3283,22 @@
     }
   },
   {
-    "id": "litus",
+    "id": "lucerna",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "litus",
-    "assessment": "study.lexicon.templum.sententiae:litus",
+    "item": "lucerna",
+    "assessment": "study.lexicon.templum.sententiae:lucerna",
     "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
     "content": [
       {
         "type": "text",
-        "text": "rivage"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "māter"
-      },
-      {
-        "id": "1",
-        "text": "mare"
-      },
-      {
-        "id": "0",
-        "text": "lītus"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "litus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: lītus — rivage.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: lītus — rivage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: lītus — rivage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "mare",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "mare",
-    "assessment": "study.lexicon.templum.sententiae:mare",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "mer"
+        "text": "lampe"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "mare"
+        "text": "lūcerna"
       },
       {
         "id": "1",
@@ -3653,7 +3318,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "mare"
+      "lucerna"
     ],
     "editorial": {
       "language": "la",
@@ -3661,13 +3326,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: mare — mer.",
+        "feedback": "Rēctē: lūcerna — lampe.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mare — mer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
           "study.error"
         ],
@@ -3675,7 +3340,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mare — mer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
           "study.error"
         ],
@@ -3699,16 +3364,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "māter"
+      },
+      {
         "id": "1",
         "text": "mercātor"
       },
       {
         "id": "2",
         "text": "misericordia"
-      },
-      {
-        "id": "0",
-        "text": "māter"
       }
     ],
     "accepted": [
@@ -3770,12 +3435,12 @@
         "text": "mittere"
       },
       {
-        "id": "0",
-        "text": "mercātor"
-      },
-      {
         "id": "1",
         "text": "misericordia"
+      },
+      {
+        "id": "0",
+        "text": "mercātor"
       }
     ],
     "accepted": [
@@ -3833,16 +3498,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "misericordia"
-      },
-      {
         "id": "1",
         "text": "mittere"
       },
       {
         "id": "2",
         "text": "monēre"
+      },
+      {
+        "id": "0",
+        "text": "misericordia"
       }
     ],
     "accepted": [
@@ -3967,16 +3632,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "monēre"
-      },
-      {
         "id": "2",
         "text": "nauta"
       },
       {
         "id": "1",
         "text": "nārrāre"
+      },
+      {
+        "id": "0",
+        "text": "monēre"
       }
     ],
     "accepted": [
@@ -4168,16 +3833,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "nāvis"
+      },
+      {
         "id": "2",
-        "text": "neglegere"
+        "text": "nōlle"
       },
       {
         "id": "1",
         "text": "nē"
-      },
-      {
-        "id": "0",
-        "text": "nāvis"
       }
     ],
     "accepted": [
@@ -4240,11 +3905,11 @@
       },
       {
         "id": "2",
-        "text": "neque"
+        "text": "nōn"
       },
       {
         "id": "1",
-        "text": "neglegere"
+        "text": "nōlle"
       }
     ],
     "accepted": [
@@ -4288,140 +3953,6 @@
     }
   },
   {
-    "id": "neglego",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "neglego",
-    "assessment": "study.lexicon.templum.sententiae:neglego",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "négliger"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "nōlle"
-      },
-      {
-        "id": "1",
-        "text": "neque"
-      },
-      {
-        "id": "0",
-        "text": "neglegere"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "neglego"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: neglegere — négliger.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neglegere — négliger.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neglegere — négliger.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "neque",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "neque",
-    "assessment": "study.lexicon.templum.sententiae:neque",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "et ne… pas, ni"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "nōn"
-      },
-      {
-        "id": "1",
-        "text": "nōlle"
-      },
-      {
-        "id": "0",
-        "text": "neque"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "neque"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: neque — et ne… pas, ni.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neque — et ne… pas, ni.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neque — et ne… pas, ni.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "nolo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4441,7 +3972,7 @@
       },
       {
         "id": "2",
-        "text": "nūntius"
+        "text": "oppidum"
       },
       {
         "id": "0",
@@ -4503,16 +4034,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "oppidum"
+      },
+      {
         "id": "0",
         "text": "nōn"
       },
       {
-        "id": "1",
-        "text": "nūntius"
-      },
-      {
         "id": "2",
-        "text": "oppidum"
+        "text": "ostendere"
       }
     ],
     "accepted": [
@@ -4556,73 +4087,6 @@
     }
   },
   {
-    "id": "nuntius",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "nuntius",
-    "assessment": "study.lexicon.templum.sententiae:nuntius",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "messager, message"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "nūntius"
-      },
-      {
-        "id": "1",
-        "text": "oppidum"
-      },
-      {
-        "id": "2",
-        "text": "pānis"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "nuntius"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: nūntius — messager, message.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nūntius — messager, message.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nūntius — messager, message.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "oppidum",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4637,16 +4101,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "oppidum"
-      },
-      {
         "id": "1",
-        "text": "pānis"
+        "text": "ostendere"
       },
       {
         "id": "2",
-        "text": "parāre"
+        "text": "ovis"
+      },
+      {
+        "id": "0",
+        "text": "oppidum"
       }
     ],
     "accepted": [
@@ -4690,6 +4154,140 @@
     }
   },
   {
+    "id": "ostendo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ostendo",
+    "assessment": "study.lexicon.templum.sententiae:ostendo",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "montrer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "ovis"
+      },
+      {
+        "id": "0",
+        "text": "ostendere"
+      },
+      {
+        "id": "2",
+        "text": "pānis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "ostendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ostendere — montrer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ovis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ovis",
+    "assessment": "study.lexicon.templum.sententiae:ovis",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "mouton, brebis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ovis"
+      },
+      {
+        "id": "2",
+        "text": "parāre"
+      },
+      {
+        "id": "1",
+        "text": "pānis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "ovis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ovis — mouton, brebis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "panis",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4708,12 +4306,12 @@
         "text": "partīrī"
       },
       {
-        "id": "1",
-        "text": "parāre"
-      },
-      {
         "id": "0",
         "text": "pānis"
+      },
+      {
+        "id": "1",
+        "text": "parāre"
       }
     ],
     "accepted": [
@@ -4766,7 +4364,7 @@
     "content": [
       {
         "type": "text",
-        "text": "préparer"
+        "text": "préparer, se procurer"
       }
     ],
     "choices": [
@@ -4800,13 +4398,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: parāre — préparer.",
+        "feedback": "Rēctē: parāre — préparer, se procurer.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
           "study.error"
         ],
@@ -4814,7 +4412,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
           "study.error"
         ],
@@ -4839,15 +4437,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "perdere"
-      },
-      {
-        "id": "1",
-        "text": "pater"
+        "text": "peregrīnus"
       },
       {
         "id": "0",
         "text": "partīrī"
+      },
+      {
+        "id": "1",
+        "text": "pater"
       }
     ],
     "accepted": [
@@ -4905,16 +4503,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "peregrīnus"
-      },
-      {
         "id": "0",
         "text": "pater"
       },
       {
+        "id": "2",
+        "text": "perterrēre"
+      },
+      {
         "id": "1",
-        "text": "perdere"
+        "text": "peregrīnus"
       }
     ],
     "accepted": [
@@ -4949,73 +4547,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "perdo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "perdo",
-    "assessment": "study.lexicon.templum.sententiae:perdo",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "perdre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "perdere"
-      },
-      {
-        "id": "2",
-        "text": "perterrēre"
-      },
-      {
-        "id": "1",
-        "text": "peregrīnus"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "perdo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: perdere — perdre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: perdere — perdre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: perdere — perdre.",
         "observed": [
           "study.error"
         ],
@@ -5106,12 +4637,12 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "petere"
-      },
-      {
         "id": "0",
         "text": "perterrēre"
+      },
+      {
+        "id": "2",
+        "text": "petere"
       },
       {
         "id": "1",
@@ -5235,17 +4766,17 @@
     "content": [
       {
         "type": "text",
-        "text": "chercher à obtenir, demander"
+        "text": "se diriger vers, chercher à obtenir"
       }
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "petere"
-      },
-      {
         "id": "2",
         "text": "portāre"
+      },
+      {
+        "id": "0",
+        "text": "petere"
       },
       {
         "id": "1",
@@ -5269,13 +4800,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: petere — chercher à obtenir, demander.",
+        "feedback": "Rēctē: petere — se diriger vers, chercher à obtenir.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — chercher à obtenir, demander.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
           "study.error"
         ],
@@ -5283,7 +4814,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — chercher à obtenir, demander.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
           "study.error"
         ],
@@ -5307,12 +4838,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "portāre"
-      },
-      {
         "id": "0",
         "text": "porta"
+      },
+      {
+        "id": "1",
+        "text": "portāre"
       },
       {
         "id": "2",
@@ -5374,16 +4905,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "portāre"
-      },
-      {
         "id": "1",
         "text": "posse"
       },
       {
         "id": "2",
-        "text": "properāre"
+        "text": "puella"
+      },
+      {
+        "id": "0",
+        "text": "portāre"
       }
     ],
     "accepted": [
@@ -5441,16 +4972,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "puella"
-      },
-      {
         "id": "0",
         "text": "posse"
       },
       {
+        "id": "2",
+        "text": "puer"
+      },
+      {
         "id": "1",
-        "text": "properāre"
+        "text": "puella"
       }
     ],
     "accepted": [
@@ -5494,73 +5025,6 @@
     }
   },
   {
-    "id": "propero",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "propero",
-    "assessment": "study.lexicon.templum.sententiae:propero",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "se hâter"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "puer"
-      },
-      {
-        "id": "0",
-        "text": "properāre"
-      },
-      {
-        "id": "1",
-        "text": "puella"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "propero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: properāre — se hâter.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: properāre — se hâter.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: properāre — se hâter.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "puella",
     "interaction": "choice",
     "dimension": "lemma",
@@ -5584,7 +5048,7 @@
       },
       {
         "id": "2",
-        "text": "putāre"
+        "text": "quaerere"
       }
     ],
     "accepted": [
@@ -5642,16 +5106,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "puer"
+      },
+      {
         "id": "2",
-        "text": "quaerere"
+        "text": "quia"
       },
       {
         "id": "1",
-        "text": "putāre"
-      },
-      {
-        "id": "0",
-        "text": "puer"
+        "text": "quaerere"
       }
     ],
     "accepted": [
@@ -5695,73 +5159,6 @@
     }
   },
   {
-    "id": "puto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "puto",
-    "assessment": "study.lexicon.templum.sententiae:puto",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "penser"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "putāre"
-      },
-      {
-        "id": "1",
-        "text": "quaerere"
-      },
-      {
-        "id": "2",
-        "text": "quamquam"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "puto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: putāre — penser.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "quaero",
     "interaction": "choice",
     "dimension": "lemma",
@@ -5771,147 +5168,13 @@
     "content": [
       {
         "type": "text",
-        "text": "chercher, demander"
+        "text": "chercher"
       }
     ],
     "choices": [
       {
         "id": "0",
         "text": "quaerere"
-      },
-      {
-        "id": "1",
-        "text": "quamquam"
-      },
-      {
-        "id": "2",
-        "text": "quī"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "quaero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quaerere — chercher, demander.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher, demander.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher, demander.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "quamquam",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "quamquam",
-    "assessment": "study.lexicon.templum.sententiae:quamquam",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "bien que"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "quamquam"
-      },
-      {
-        "id": "2",
-        "text": "quia"
-      },
-      {
-        "id": "1",
-        "text": "quī"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "quamquam"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quamquam — bien que.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quamquam — bien que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quamquam — bien que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "qui",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "qui",
-    "assessment": "study.lexicon.templum.sententiae:qui",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "qui, pronom relatif"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "quī"
       },
       {
         "id": "1",
@@ -5931,7 +5194,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "qui"
+      "quaero"
     ],
     "editorial": {
       "language": "la",
@@ -5939,13 +5202,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: quī — qui, pronom relatif.",
+        "feedback": "Rēctē: quaerere — chercher.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
           "study.error"
         ],
@@ -5953,7 +5216,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
           "study.error"
         ],
@@ -6116,7 +5379,7 @@
       },
       {
         "id": "2",
-        "text": "sē"
+        "text": "servāre"
       },
       {
         "id": "0",
@@ -6183,11 +5446,11 @@
       },
       {
         "id": "1",
-        "text": "sē"
+        "text": "servāre"
       },
       {
         "id": "2",
-        "text": "senex"
+        "text": "servus"
       }
     ],
     "accepted": [
@@ -6231,140 +5494,6 @@
     }
   },
   {
-    "id": "se",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "se",
-    "assessment": "study.lexicon.templum.sententiae:se",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "soi, se"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "servāre"
-      },
-      {
-        "id": "1",
-        "text": "senex"
-      },
-      {
-        "id": "0",
-        "text": "sē"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "se"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: sē — soi, se.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "senex",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "senex",
-    "assessment": "study.lexicon.templum.sententiae:senex",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "vieillard"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "senex"
-      },
-      {
-        "id": "1",
-        "text": "servāre"
-      },
-      {
-        "id": "2",
-        "text": "servus"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "senex"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: senex — vieillard.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: senex — vieillard.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: senex — vieillard.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "servo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -6379,12 +5508,12 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "silva"
-      },
-      {
         "id": "0",
         "text": "servāre"
+      },
+      {
+        "id": "2",
+        "text": "sōlus"
       },
       {
         "id": "1",
@@ -6447,7 +5576,7 @@
     "choices": [
       {
         "id": "1",
-        "text": "silva"
+        "text": "sōlus"
       },
       {
         "id": "0",
@@ -6455,7 +5584,7 @@
       },
       {
         "id": "2",
-        "text": "sōlus"
+        "text": "esse"
       }
     ],
     "accepted": [
@@ -6490,73 +5619,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "silva",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "silva",
-    "assessment": "study.lexicon.templum.sententiae:silva",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "forêt"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "silva"
-      },
-      {
-        "id": "2",
-        "text": "esse"
-      },
-      {
-        "id": "1",
-        "text": "sōlus"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "silva"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: silva — forêt.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: silva — forêt.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: silva — forêt.",
         "observed": [
           "study.error"
         ],
@@ -6647,12 +5709,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "tacēre"
-      },
-      {
         "id": "0",
         "text": "esse"
+      },
+      {
+        "id": "1",
+        "text": "tacēre"
       },
       {
         "id": "2",
@@ -6790,7 +5852,7 @@
       },
       {
         "id": "2",
-        "text": "trīstis"
+        "text": "urbs"
       }
     ],
     "accepted": [
@@ -6848,16 +5910,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "urbs"
+      },
+      {
         "id": "0",
         "text": "tenēre"
       },
       {
-        "id": "1",
-        "text": "trīstis"
-      },
-      {
         "id": "2",
-        "text": "urbs"
+        "text": "ut"
       }
     ],
     "accepted": [
@@ -6892,73 +5954,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: tenēre — tenir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "tristis",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "tristis",
-    "assessment": "study.lexicon.templum.sententiae:tristis",
-    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
-    "content": [
-      {
-        "type": "text",
-        "text": "triste"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "urbs"
-      },
-      {
-        "id": "0",
-        "text": "trīstis"
-      },
-      {
-        "id": "2",
-        "text": "ut"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.templum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "tristis"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "fr-la"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: trīstis — triste.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: trīstis — triste.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: trīstis — triste.",
         "observed": [
           "study.error"
         ],
@@ -7049,16 +6044,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "ut"
+      },
+      {
         "id": "1",
         "text": "vēlum"
       },
       {
         "id": "2",
         "text": "venīre"
-      },
-      {
-        "id": "0",
-        "text": "ut"
       }
     ],
     "accepted": [
@@ -7120,12 +6115,12 @@
         "text": "venīre"
       },
       {
-        "id": "2",
-        "text": "via"
-      },
-      {
         "id": "0",
         "text": "vēlum"
+      },
+      {
+        "id": "2",
+        "text": "via"
       }
     ],
     "accepted": [
@@ -7178,7 +6173,7 @@
     "content": [
       {
         "type": "text",
-        "text": "venir, arriver"
+        "text": "venir"
       }
     ],
     "choices": [
@@ -7212,13 +6207,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: venīre — venir, arriver.",
+        "feedback": "Rēctē: venīre — venir.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir, arriver.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
           "study.error"
         ],
@@ -7226,7 +6221,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir, arriver.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
           "study.error"
         ],
@@ -7250,16 +6245,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "via"
-      },
-      {
         "id": "1",
         "text": "viātor"
       },
       {
         "id": "2",
         "text": "vīcīnus"
+      },
+      {
+        "id": "0",
+        "text": "via"
       }
     ],
     "accepted": [
@@ -7322,7 +6317,7 @@
       },
       {
         "id": "2",
-        "text": "vidua"
+        "text": "vidēre"
       },
       {
         "id": "0",
@@ -7385,7 +6380,7 @@
     "choices": [
       {
         "id": "1",
-        "text": "vidua"
+        "text": "vidēre"
       },
       {
         "id": "0",
@@ -7393,7 +6388,7 @@
       },
       {
         "id": "2",
-        "text": "vocāre"
+        "text": "vidua"
       }
     ],
     "accepted": [
@@ -7437,6 +6432,73 @@
     }
   },
   {
+    "id": "video",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "video",
+    "assessment": "study.lexicon.templum.sententiae:video",
+    "prompt": "Quod vocābulum Latīnum hunc sēnsum habet?",
+    "content": [
+      {
+        "type": "text",
+        "text": "voir"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "vidua"
+      },
+      {
+        "id": "2",
+        "text": "vocāre"
+      },
+      {
+        "id": "0",
+        "text": "vidēre"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.templum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: vidēre — voir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "vidua",
     "interaction": "choice",
     "dimension": "lemma",
@@ -7455,12 +6517,12 @@
         "text": "vocāre"
       },
       {
-        "id": "2",
-        "text": "velle"
-      },
-      {
         "id": "0",
         "text": "vidua"
+      },
+      {
+        "id": "2",
+        "text": "velle"
       }
     ],
     "accepted": [

@@ -1,0 +1,448 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon vient auprès du maître pour apprendre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Discendō causā puer ad magistrum venit."
+      },
+      {
+        "id": "1",
+        "text": "Discendum causā puer ad magistrum venit."
+      },
+      {
+        "id": "0",
+        "text": "Discendī causā puer ad magistrum venit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q1",
+    "assessment": "study.theme.gerund-causa:q1",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "causa",
+      "disco",
+      "magister",
+      "puer",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les garçons se dirigent vers le jardin pour jouer."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Lūdendō causā puerī hortum petunt."
+      },
+      {
+        "id": "2",
+        "text": "Lūdendī causā puerī hortum petunt."
+      },
+      {
+        "id": "0",
+        "text": "Lūdendum causā puerī hortum petunt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q2",
+    "assessment": "study.theme.gerund-causa:q2",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "causa",
+      "hortus",
+      "ludo",
+      "peto",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marin va dans la ville pour acheter."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Emendō causā nauta in oppidum it."
+      },
+      {
+        "id": "1",
+        "text": "Emendī causā nauta in oppidum it."
+      },
+      {
+        "id": "2",
+        "text": "Emendum causā nauta in oppidum it."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q3",
+    "assessment": "study.theme.gerund-causa:q3",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "causa",
+      "emo",
+      "eo",
+      "in",
+      "nauta",
+      "oppidum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille vient au théâtre pour chanter."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Cantandī causā puella in theātrum venit."
+      },
+      {
+        "id": "1",
+        "text": "Cantandum causā puella in theātrum venit."
+      },
+      {
+        "id": "2",
+        "text": "Cantandō causā puella in theātrum venit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q4",
+    "assessment": "study.theme.gerund-causa:q4",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "causa",
+      "in",
+      "puella",
+      "theatrum",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Les amis se réunissent pour dîner."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Cēnandō causā amīcī conveniunt."
+      },
+      {
+        "id": "0",
+        "text": "Cēnandum causā amīcī conveniunt."
+      },
+      {
+        "id": "2",
+        "text": "Cēnandī causā amīcī conveniunt."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q5",
+    "assessment": "study.theme.gerund-causa:q5",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "causa",
+      "ceno",
+      "convenio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le paysan vient au forum pour vendre."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Vēndendī causā agricola ad forum venit."
+      },
+      {
+        "id": "2",
+        "text": "Vēndendum causā agricola ad forum venit."
+      },
+      {
+        "id": "0",
+        "text": "Vēndendō causā agricola ad forum venit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.gerund-causa"
+    ],
+    "item": "gerund-causa:q6",
+    "assessment": "study.theme.gerund-causa:q6",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "agricola",
+      "causa",
+      "forum",
+      "vendo",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Causā hīc post genetīvum gerundiī pōnitur. Fōrma in -ndō ablātīva est et hanc cōnstrūctiōnem nōn servat.",
+        "observed": [
+          "study.confusion.gerund-causa-ablative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ante causā hīc gerundium genetīvō in -ndī, nōn accūsātīvō in -ndum, pōnitur.",
+        "observed": [
+          "study.confusion.gerund-causa-accusative"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

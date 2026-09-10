@@ -5,8 +5,8 @@
   "completionStatus": "not-certified",
   "summary": {
     "sourceCandidates": 1899,
-    "surfaceMatched": 198,
-    "withoutSurfaceMatch": 1701
+    "surfaceMatched": 199,
+    "withoutSurfaceMatch": 1700
   },
   "entries": [
     {
@@ -267,6 +267,45 @@
       "questionEvidence": [
         {
           "lexeme": "ad",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "ad"
+          ]
+        },
+        {
+          "lexeme": "ad",
           "card": "templum/loca/02-places",
           "questions": [
             "q1",
@@ -286,6 +325,14 @@
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q1",
+            "q2"
           ]
         },
         {
@@ -311,6 +358,33 @@
         },
         {
           "lexeme": "ad",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "ad"
+          ]
+        },
+        {
+          "lexeme": "ad",
           "card": "theatrum/loca/02-places",
           "questions": [
             "q4"
@@ -328,6 +402,14 @@
           "card": "theatrum/sententiae/07-purpose",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "ad",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q1",
+            "q2"
           ]
         },
         {
@@ -542,40 +624,9 @@
       "sourceEntry": "fr.lex.0028",
       "headword": "ad-iuvāre",
       "sourcePage": 2,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "adiuvo"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "adiuvo",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "adiuvo",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "adiuvo"
-          ]
-        },
-        {
-          "lexeme": "adiuvo",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "adiuvo",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "adiuvo"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0029",
@@ -765,9 +816,40 @@
       "sourceEntry": "fr.lex.0052",
       "headword": "af-ferre",
       "sourcePage": 3,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "affero"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "affero",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "affero",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "affero"
+          ]
+        },
+        {
+          "lexeme": "affero",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "affero",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "affero"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0053",
@@ -832,6 +914,20 @@
         },
         {
           "lexeme": "ager",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "ager",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "ager"
+          ]
+        },
+        {
+          "lexeme": "ager",
           "card": "theatrum/actiones/passive-agent",
           "questions": [
             "q4"
@@ -854,6 +950,20 @@
         {
           "lexeme": "ager",
           "card": "theatrum/loca/vocabula",
+          "questions": [
+            "ager"
+          ]
+        },
+        {
+          "lexeme": "ager",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "ager",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "ager"
           ]
@@ -945,6 +1055,20 @@
         },
         {
           "lexeme": "agricola",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "agricola"
+          ]
+        },
+        {
+          "lexeme": "agricola",
           "card": "templum/itinera/town-destination",
           "questions": [
             "q4"
@@ -1008,6 +1132,13 @@
         },
         {
           "lexeme": "agricola",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "agricola",
           "card": "templum/orationes/vocabula",
           "questions": [
             "agricola"
@@ -1030,6 +1161,20 @@
         {
           "lexeme": "agricola",
           "card": "templum/personae/vocabula",
+          "questions": [
+            "agricola"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "templum/sententiae/vocabula",
           "questions": [
             "agricola"
           ]
@@ -1121,6 +1266,20 @@
         },
         {
           "lexeme": "agricola",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "agricola"
+          ]
+        },
+        {
+          "lexeme": "agricola",
           "card": "theatrum/itinera/town-destination",
           "questions": [
             "q4"
@@ -1184,6 +1343,13 @@
         },
         {
           "lexeme": "agricola",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "agricola",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "agricola"
@@ -1206,6 +1372,20 @@
         {
           "lexeme": "agricola",
           "card": "theatrum/personae/vocabula",
+          "questions": [
+            "agricola"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "agricola",
+          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "agricola"
           ]
@@ -1418,6 +1598,27 @@
       "questionEvidence": [
         {
           "lexeme": "ambulo",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "ambulo"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
           "card": "templum/itinera/in-place-motion",
           "questions": [
             "q3",
@@ -1513,6 +1714,27 @@
         {
           "lexeme": "ambulo",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "ambulo"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ambulo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "ambulo"
           ]
@@ -1654,6 +1876,41 @@
         },
         {
           "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
           "card": "templum/nomina/third-genitive",
           "questions": [
             "q3",
@@ -1663,6 +1920,21 @@
         {
           "lexeme": "amicus",
           "card": "templum/nomina/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/orationes/vocabula",
           "questions": [
             "amicus"
           ]
@@ -1679,6 +1951,13 @@
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2"
           ]
         },
         {
@@ -1719,6 +1998,41 @@
         },
         {
           "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
           "card": "theatrum/nomina/third-genitive",
           "questions": [
             "q3",
@@ -1728,6 +2042,21 @@
         {
           "lexeme": "amicus",
           "card": "theatrum/nomina/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "amicus"
           ]
@@ -1744,6 +2073,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2"
           ]
         },
         {
@@ -1795,6 +2131,41 @@
         },
         {
           "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
           "card": "templum/nomina/third-genitive",
           "questions": [
             "q3",
@@ -1804,6 +2175,21 @@
         {
           "lexeme": "amicus",
           "card": "templum/nomina/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/orationes/vocabula",
           "questions": [
             "amicus"
           ]
@@ -1820,6 +2206,13 @@
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2"
           ]
         },
         {
@@ -1860,6 +2253,41 @@
         },
         {
           "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
           "card": "theatrum/nomina/third-genitive",
           "questions": [
             "q3",
@@ -1869,6 +2297,21 @@
         {
           "lexeme": "amicus",
           "card": "theatrum/nomina/vocabula",
+          "questions": [
+            "amicus"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "amicus"
           ]
@@ -1885,6 +2328,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "amicus",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2"
           ]
         },
         {
@@ -2240,6 +2690,13 @@
         },
         {
           "lexeme": "aperio",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "aperio",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "aperio"
@@ -2313,6 +2770,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q2"
+          ]
+        },
+        {
+          "lexeme": "aperio",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4"
           ]
         },
         {
@@ -2485,6 +2949,20 @@
         },
         {
           "lexeme": "aqua",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "aqua",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "aqua"
+          ]
+        },
+        {
+          "lexeme": "aqua",
           "card": "templum/personae/giving",
           "questions": [
             "q2"
@@ -2509,6 +2987,13 @@
           "card": "templum/sententiae/08-circumstances",
           "questions": [
             "q2"
+          ]
+        },
+        {
+          "lexeme": "aqua",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q5"
           ]
         },
         {
@@ -2576,6 +3061,20 @@
         },
         {
           "lexeme": "aqua",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "aqua",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "aqua"
+          ]
+        },
+        {
+          "lexeme": "aqua",
           "card": "theatrum/personae/giving",
           "questions": [
             "q2"
@@ -2600,6 +3099,13 @@
           "card": "theatrum/sententiae/08-circumstances",
           "questions": [
             "q2"
+          ]
+        },
+        {
+          "lexeme": "aqua",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q5"
           ]
         },
         {
@@ -2645,9 +3151,40 @@
       "sourceEntry": "fr.lex.0120",
       "headword": "arāre",
       "sourcePage": 4,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "aro"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "aro",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "aro",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "aro"
+          ]
+        },
+        {
+          "lexeme": "aro",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "aro",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "aro"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0121",
@@ -3659,6 +4196,20 @@
         },
         {
           "lexeme": "canis",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "canis",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "canis"
+          ]
+        },
+        {
+          "lexeme": "canis",
           "card": "theatrum/nomina/third-ablative",
           "questions": [
             "q6"
@@ -3685,6 +4236,20 @@
           "questions": [
             "canis"
           ]
+        },
+        {
+          "lexeme": "canis",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "canis",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "canis"
+          ]
         }
       ]
     },
@@ -3707,6 +4272,27 @@
         {
           "lexeme": "canto",
           "card": "templum/demonstratives/vocabula",
+          "questions": [
+            "canto"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "templum/gerundium/vocabula",
           "questions": [
             "canto"
           ]
@@ -3842,6 +4428,27 @@
         {
           "lexeme": "canto",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "canto"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "canto",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "canto"
           ]
@@ -4202,9 +4809,50 @@
       "sourceEntry": "fr.lex.0219",
       "headword": "causa",
       "sourcePage": 6,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "causa"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "causa",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "causa",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "causa"
+          ]
+        },
+        {
+          "lexeme": "causa",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "causa",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "causa"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0220",
@@ -4311,9 +4959,82 @@
       "sourceEntry": "fr.lex.0227",
       "headword": "cēnāre",
       "sourcePage": 6,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "ceno"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "ceno",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "ceno"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "ceno"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "ceno"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ceno",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "ceno"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0228",
@@ -4745,6 +5466,20 @@
         },
         {
           "lexeme": "clavis",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "clavis",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "clavis"
+          ]
+        },
+        {
+          "lexeme": "clavis",
           "card": "theatrum/actiones/instrument-agent",
           "questions": [
             "q4"
@@ -4753,6 +5488,20 @@
         {
           "lexeme": "clavis",
           "card": "theatrum/actiones/vocabula",
+          "questions": [
+            "clavis"
+          ]
+        },
+        {
+          "lexeme": "clavis",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "clavis",
+          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "clavis"
           ]
@@ -5115,40 +5864,9 @@
       "sourceEntry": "fr.lex.0310",
       "headword": "cōn-stituere",
       "sourcePage": 8,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "constituo"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "constituo",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "constituo",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "constituo"
-          ]
-        },
-        {
-          "lexeme": "constituo",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "constituo",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "constituo"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0311",
@@ -5210,17 +5928,79 @@
       "sourceEntry": "fr.lex.0318",
       "headword": "con-venīre",
       "sourcePage": 8,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "convenio"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "convenio",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "convenio"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "convenio"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0319",
       "headword": "convenīre",
       "sourcePage": 8,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "convenio"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "convenio",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "convenio"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "convenio",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "convenio"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0320",
@@ -5306,9 +6086,40 @@
       "sourceEntry": "fr.lex.0330",
       "headword": "corpus",
       "sourcePage": 8,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "corpus"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "corpus",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "corpus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "corpus"
+          ]
+        },
+        {
+          "lexeme": "corpus",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "corpus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "corpus"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0331",
@@ -5338,9 +6149,40 @@
       "sourceEntry": "fr.lex.0334",
       "headword": "crēdere",
       "sourcePage": 8,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "credo"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "credo",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "credo",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "credo"
+          ]
+        },
+        {
+          "lexeme": "credo",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "credo",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "credo"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0335",
@@ -5761,9 +6603,46 @@
       "sourceEntry": "fr.lex.0353",
       "headword": "cupidus",
       "sourcePage": 9,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "cupidus"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "cupidus",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q3",
+            "q4",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "cupidus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "cupidus"
+          ]
+        },
+        {
+          "lexeme": "cupidus",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q3",
+            "q4",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "cupidus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "cupidus"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0354",
@@ -5906,6 +6785,13 @@
         },
         {
           "lexeme": "curro",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "curro",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "curro"
@@ -5986,6 +6872,13 @@
         },
         {
           "lexeme": "curro",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "curro",
           "card": "theatrum/sententiae/vocabula",
           "questions": [
             "curro"
@@ -6013,9 +6906,40 @@
       "sourceEntry": "fr.lex.0360",
       "headword": "cūstōdīre",
       "sourcePage": 9,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "custodio"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "custodio",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "custodio",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "custodio"
+          ]
+        },
+        {
+          "lexeme": "custodio",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "custodio",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "custodio"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0361",
@@ -6099,13 +7023,6 @@
         },
         {
           "lexeme": "do",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "do",
           "card": "templum/sententiae/10-sacred",
           "questions": [
             "q1"
@@ -6180,13 +7097,6 @@
           "card": "theatrum/personae/vocabula",
           "questions": [
             "do"
-          ]
-        },
-        {
-          "lexeme": "do",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q4"
           ]
         },
         {
@@ -6306,9 +7216,40 @@
       "sourceEntry": "fr.lex.0375",
       "headword": "dēlectāre",
       "sourcePage": 9,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "delecto"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "delecto",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "delecto",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "delecto"
+          ]
+        },
+        {
+          "lexeme": "delecto",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "delecto",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "delecto"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0376",
@@ -6457,41 +7398,9 @@
       "sourceEntry": "fr.lex.0390",
       "headword": "dē-serere",
       "sourcePage": 9,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "desero"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "desero",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q2",
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "desero",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "desero"
-          ]
-        },
-        {
-          "lexeme": "desero",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "desero",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "desero"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0391",
@@ -6636,21 +7545,16 @@
         },
         {
           "lexeme": "dico",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q2",
+            "q4",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "dico",
           "card": "templum/orationes/vocabula",
-          "questions": [
-            "dico"
-          ]
-        },
-        {
-          "lexeme": "dico",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "dico",
-          "card": "templum/sententiae/vocabula",
           "questions": [
             "dico"
           ]
@@ -6693,21 +7597,16 @@
         },
         {
           "lexeme": "dico",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q2",
+            "q4",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "dico",
           "card": "theatrum/orationes/vocabula",
-          "questions": [
-            "dico"
-          ]
-        },
-        {
-          "lexeme": "dico",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "dico",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "dico"
           ]
@@ -6820,13 +7719,6 @@
         },
         {
           "lexeme": "discedo",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "discedo",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "discedo"
@@ -6852,9 +7744,82 @@
       "sourceEntry": "fr.lex.0416",
       "headword": "discere",
       "sourcePage": 10,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "disco"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "disco",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "disco"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "disco",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "disco"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0417",
@@ -7041,6 +8006,20 @@
         },
         {
           "lexeme": "doceo",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "doceo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "doceo"
+          ]
+        },
+        {
+          "lexeme": "doceo",
           "card": "templum/personae/03-descriptions",
           "questions": [
             "q5"
@@ -7084,6 +8063,20 @@
         {
           "lexeme": "doceo",
           "card": "theatrum/actiones/vocabula",
+          "questions": [
+            "doceo"
+          ]
+        },
+        {
+          "lexeme": "doceo",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "doceo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "doceo"
           ]
@@ -7401,6 +8394,20 @@
       "questionEvidence": [
         {
           "lexeme": "domus",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "domus",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "domus"
+          ]
+        },
+        {
+          "lexeme": "domus",
           "card": "templum/personae/possession",
           "questions": [
             "q2"
@@ -7409,6 +8416,20 @@
         {
           "lexeme": "domus",
           "card": "templum/personae/vocabula",
+          "questions": [
+            "domus"
+          ]
+        },
+        {
+          "lexeme": "domus",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "domus",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "domus"
           ]
@@ -7449,40 +8470,9 @@
       "sourceEntry": "fr.lex.0435",
       "headword": "dōnum",
       "sourcePage": 10,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "donum"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "donum",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "donum",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "donum"
-          ]
-        },
-        {
-          "lexeme": "donum",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "donum",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "donum"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0436",
@@ -8066,6 +9056,34 @@
         },
         {
           "lexeme": "emo",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "emo"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "emo"
+          ]
+        },
+        {
+          "lexeme": "emo",
           "card": "theatrum/demonstratives/demonstrative-accusative",
           "questions": [
             "q3"
@@ -8074,6 +9092,34 @@
         {
           "lexeme": "emo",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "emo"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "emo"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "emo",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "emo"
           ]
@@ -8152,13 +9198,6 @@
         },
         {
           "lexeme": "epistula",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "epistula",
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q1"
@@ -8218,13 +9257,6 @@
           "card": "theatrum/sententiae/08-circumstances",
           "questions": [
             "q1"
-          ]
-        },
-        {
-          "lexeme": "epistula",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
           ]
         },
         {
@@ -8515,6 +9547,25 @@
         },
         {
           "lexeme": "sum",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "sum"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "templum/interrogationes/cur-quia",
           "questions": [
             "q3",
@@ -8705,6 +9756,18 @@
         },
         {
           "lexeme": "sum",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "templum/orationes/vocabula",
           "questions": [
             "sum"
@@ -8758,15 +9821,6 @@
           "card": "templum/personae/vocabula",
           "questions": [
             "sum"
-          ]
-        },
-        {
-          "lexeme": "sum",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q2",
-            "q3",
-            "q4"
           ]
         },
         {
@@ -8832,6 +9886,25 @@
         {
           "lexeme": "sum",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "sum"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "sum"
           ]
@@ -9028,6 +10101,18 @@
         },
         {
           "lexeme": "sum",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "sum"
@@ -9080,15 +10165,6 @@
           "card": "theatrum/personae/vocabula",
           "questions": [
             "sum"
-          ]
-        },
-        {
-          "lexeme": "sum",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2",
-            "q3",
-            "q4"
           ]
         },
         {
@@ -9171,6 +10247,25 @@
         },
         {
           "lexeme": "sum",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "sum"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "templum/interrogationes/cur-quia",
           "questions": [
             "q3",
@@ -9361,6 +10456,18 @@
         },
         {
           "lexeme": "sum",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "templum/orationes/vocabula",
           "questions": [
             "sum"
@@ -9414,15 +10521,6 @@
           "card": "templum/personae/vocabula",
           "questions": [
             "sum"
-          ]
-        },
-        {
-          "lexeme": "sum",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q2",
-            "q3",
-            "q4"
           ]
         },
         {
@@ -9488,6 +10586,25 @@
         {
           "lexeme": "sum",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "sum"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "sum"
           ]
@@ -9684,6 +10801,18 @@
         },
         {
           "lexeme": "sum",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "sum",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "sum"
@@ -9736,15 +10865,6 @@
           "card": "theatrum/personae/vocabula",
           "questions": [
             "sum"
-          ]
-        },
-        {
-          "lexeme": "sum",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2",
-            "q3",
-            "q4"
           ]
         },
         {
@@ -9812,28 +10932,7 @@
         },
         {
           "lexeme": "et",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "et",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "et"
-          ]
-        },
-        {
-          "lexeme": "et",
           "card": "theatrum/loca/vocabula",
-          "questions": [
-            "et"
-          ]
-        },
-        {
-          "lexeme": "et",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "et"
           ]
@@ -10163,6 +11262,20 @@
       "questionEvidence": [
         {
           "lexeme": "exeo",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "exeo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "exeo"
+          ]
+        },
+        {
+          "lexeme": "exeo",
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q4"
@@ -10171,6 +11284,20 @@
         {
           "lexeme": "exeo",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "exeo"
+          ]
+        },
+        {
+          "lexeme": "exeo",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "exeo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "exeo"
           ]
@@ -10293,20 +11420,6 @@
         },
         {
           "lexeme": "exspecto",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "exspecto",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "exspecto"
-          ]
-        },
-        {
-          "lexeme": "exspecto",
           "card": "templum/tempora/04-time",
           "questions": [
             "q6"
@@ -10350,20 +11463,6 @@
         {
           "lexeme": "exspecto",
           "card": "theatrum/nomina/vocabula",
-          "questions": [
-            "exspecto"
-          ]
-        },
-        {
-          "lexeme": "exspecto",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "exspecto",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "exspecto"
           ]
@@ -10580,40 +11679,9 @@
       "sourceEntry": "fr.lex.0541",
       "headword": "fēlīx",
       "sourcePage": 12,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "felix"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "felix",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "felix",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "felix"
-          ]
-        },
-        {
-          "lexeme": "felix",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "felix",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "felix"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0542",
@@ -10655,6 +11723,27 @@
         {
           "lexeme": "femina",
           "card": "templum/demonstratives/vocabula",
+          "questions": [
+            "femina"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "templum/gerundium/vocabula",
           "questions": [
             "femina"
           ]
@@ -10963,6 +12052,27 @@
         {
           "lexeme": "femina",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "femina"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "femina",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "femina"
           ]
@@ -11570,6 +12680,13 @@
         },
         {
           "lexeme": "filius",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "filius",
           "card": "templum/orationes/vocabula",
           "questions": [
             "filius"
@@ -11605,14 +12722,14 @@
         },
         {
           "lexeme": "filius",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q1"
           ]
         },
         {
           "lexeme": "filius",
-          "card": "templum/sententiae/absolute-perfect",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -11676,6 +12793,13 @@
         },
         {
           "lexeme": "filius",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "filius",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "filius"
@@ -11711,14 +12835,14 @@
         },
         {
           "lexeme": "filius",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q1"
           ]
         },
         {
           "lexeme": "filius",
-          "card": "theatrum/sententiae/absolute-perfect",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -11982,9 +13106,54 @@
       "sourceEntry": "fr.lex.0587",
       "headword": "forum",
       "sourcePage": 13,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "forum"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "forum",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "forum",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "forum",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "forum"
+          ]
+        },
+        {
+          "lexeme": "forum",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "forum",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "forum",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "forum"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0588",
@@ -13207,6 +14376,28 @@
         },
         {
           "lexeme": "hortus",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "hortus"
+          ]
+        },
+        {
+          "lexeme": "hortus",
           "card": "templum/interrogationes/neutral-question",
           "questions": [
             "q2"
@@ -13283,6 +14474,13 @@
           "card": "templum/orationes/infinitive-subject",
           "questions": [
             "q2"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q6"
           ]
         },
         {
@@ -13371,6 +14569,28 @@
         },
         {
           "lexeme": "hortus",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "hortus"
+          ]
+        },
+        {
+          "lexeme": "hortus",
           "card": "theatrum/interrogationes/neutral-question",
           "questions": [
             "q2"
@@ -13447,6 +14667,13 @@
           "card": "theatrum/orationes/infinitive-subject",
           "questions": [
             "q2"
+          ]
+        },
+        {
+          "lexeme": "hortus",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q6"
           ]
         },
         {
@@ -14108,6 +15335,31 @@
       "questionEvidence": [
         {
           "lexeme": "in",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "in",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q3",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "in",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "in"
+          ]
+        },
+        {
+          "lexeme": "in",
           "card": "templum/interrogationes/neutral-question",
           "questions": [
             "q1",
@@ -14226,6 +15478,13 @@
         },
         {
           "lexeme": "in",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "in",
           "card": "templum/orationes/vocabula",
           "questions": [
             "in"
@@ -14274,13 +15533,6 @@
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q6"
-          ]
-        },
-        {
-          "lexeme": "in",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1"
           ]
         },
         {
@@ -14357,6 +15609,31 @@
         {
           "lexeme": "in",
           "card": "templum/tempora/vocabula",
+          "questions": [
+            "in"
+          ]
+        },
+        {
+          "lexeme": "in",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q4",
+            "q5",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "in",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q3",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "in",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "in"
           ]
@@ -14480,6 +15757,13 @@
         },
         {
           "lexeme": "in",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "in",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "in"
@@ -14528,13 +15812,6 @@
           "card": "theatrum/sententiae/07-purpose",
           "questions": [
             "q6"
-          ]
-        },
-        {
-          "lexeme": "in",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q1"
           ]
         },
         {
@@ -15226,6 +16503,20 @@
       "questionEvidence": [
         {
           "lexeme": "intro",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "intro",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "intro"
+          ]
+        },
+        {
+          "lexeme": "intro",
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q4"
@@ -15241,6 +16532,20 @@
         {
           "lexeme": "intro",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "intro"
+          ]
+        },
+        {
+          "lexeme": "intro",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "intro",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "intro"
           ]
@@ -15311,28 +16616,28 @@
       "questionEvidence": [
         {
           "lexeme": "invenio",
-          "card": "templum/sententiae/09-myths",
+          "card": "templum/gerundium/gerund-means",
           "questions": [
-            "q1"
+            "q6"
           ]
         },
         {
           "lexeme": "invenio",
-          "card": "templum/sententiae/vocabula",
+          "card": "templum/gerundium/vocabula",
           "questions": [
             "invenio"
           ]
         },
         {
           "lexeme": "invenio",
-          "card": "theatrum/sententiae/09-myths",
+          "card": "theatrum/gerundium/gerund-means",
           "questions": [
-            "q1"
+            "q6"
           ]
         },
         {
           "lexeme": "invenio",
-          "card": "theatrum/sententiae/vocabula",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "invenio"
           ]
@@ -15406,6 +16711,28 @@
       "questionEvidence": [
         {
           "lexeme": "eo",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "eo",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "eo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "eo"
+          ]
+        },
+        {
+          "lexeme": "eo",
           "card": "templum/itinera/town-destination",
           "questions": [
             "q2",
@@ -15429,6 +16756,28 @@
         {
           "lexeme": "eo",
           "card": "templum/loca/vocabula",
+          "questions": [
+            "eo"
+          ]
+        },
+        {
+          "lexeme": "eo",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q2",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "eo",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "eo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "eo"
           ]
@@ -15932,20 +17281,6 @@
         },
         {
           "lexeme": "laetus",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "laetus",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "laetus"
-          ]
-        },
-        {
-          "lexeme": "laetus",
           "card": "theatrum/interrogationes/cur-quia",
           "questions": [
             "q4"
@@ -15992,13 +17327,6 @@
         {
           "lexeme": "laetus",
           "card": "theatrum/personae/vocabula",
-          "questions": [
-            "laetus"
-          ]
-        },
-        {
-          "lexeme": "laetus",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "laetus"
           ]
@@ -16278,6 +17606,27 @@
       "questionEvidence": [
         {
           "lexeme": "lego",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "lego",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "lego",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "lego"
+          ]
+        },
+        {
+          "lexeme": "lego",
           "card": "templum/orationes/infinitive-anteriority",
           "questions": [
             "q2"
@@ -16309,13 +17658,6 @@
           "card": "templum/personae/vocabula",
           "questions": [
             "lego"
-          ]
-        },
-        {
-          "lexeme": "lego",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
           ]
         },
         {
@@ -16362,6 +17704,27 @@
         },
         {
           "lexeme": "lego",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "lego",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "lego",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "lego"
+          ]
+        },
+        {
+          "lexeme": "lego",
           "card": "theatrum/orationes/infinitive-anteriority",
           "questions": [
             "q2"
@@ -16393,13 +17756,6 @@
           "card": "theatrum/personae/vocabula",
           "questions": [
             "lego"
-          ]
-        },
-        {
-          "lexeme": "lego",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
           ]
         },
         {
@@ -17732,40 +19088,9 @@
       "sourceEntry": "fr.lex.0864",
       "headword": "lītus",
       "sourcePage": 19,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "litus"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "litus",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1"
-          ]
-        },
-        {
-          "lexeme": "litus",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "litus"
-          ]
-        },
-        {
-          "lexeme": "litus",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q1"
-          ]
-        },
-        {
-          "lexeme": "litus",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "litus"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0865",
@@ -17819,9 +19144,40 @@
       "sourceEntry": "fr.lex.0871",
       "headword": "lucerna",
       "sourcePage": 19,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "lucerna"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "lucerna",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "lucerna",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "lucerna"
+          ]
+        },
+        {
+          "lexeme": "lucerna",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "lucerna",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "lucerna"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0872",
@@ -17843,9 +19199,68 @@
       "sourceEntry": "fr.lex.0874",
       "headword": "lūdere",
       "sourcePage": 19,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "ludo"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "ludo",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "ludo"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "ludo",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "ludo"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.0875",
@@ -17920,6 +19335,27 @@
         "magister"
       ],
       "questionEvidence": [
+        {
+          "lexeme": "magister",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "magister",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "magister",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "magister"
+          ]
+        },
         {
           "lexeme": "magister",
           "card": "templum/interrogationes/cur-quia",
@@ -18200,6 +19636,27 @@
         {
           "lexeme": "magister",
           "card": "templum/tempora/vocabula",
+          "questions": [
+            "magister"
+          ]
+        },
+        {
+          "lexeme": "magister",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "magister",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "magister",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "magister"
           ]
@@ -18928,40 +20385,9 @@
       "sourceEntry": "fr.lex.0898",
       "headword": "mare",
       "sourcePage": 20,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "mare"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "mare",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "mare",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "mare"
-          ]
-        },
-        {
-          "lexeme": "mare",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "mare",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "mare"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.0899",
@@ -19071,6 +20497,20 @@
         },
         {
           "lexeme": "mater",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "mater",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "mater"
+          ]
+        },
+        {
+          "lexeme": "mater",
           "card": "templum/sententiae/08-circumstances",
           "questions": [
             "q1"
@@ -19081,6 +20521,13 @@
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "mater",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q4"
           ]
         },
         {
@@ -19157,6 +20604,20 @@
         },
         {
           "lexeme": "mater",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "mater",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "mater"
+          ]
+        },
+        {
+          "lexeme": "mater",
           "card": "theatrum/sententiae/08-circumstances",
           "questions": [
             "q1"
@@ -19167,6 +20628,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "mater",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4"
           ]
         },
         {
@@ -19525,6 +20993,34 @@
         },
         {
           "lexeme": "mercator",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "mercator"
+          ]
+        },
+        {
+          "lexeme": "mercator",
           "card": "templum/itinera/town-destination",
           "questions": [
             "q1"
@@ -19564,6 +21060,13 @@
           "questions": [
             "q3",
             "q5"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q4"
           ]
         },
         {
@@ -19610,6 +21113,13 @@
         },
         {
           "lexeme": "mercator",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "mercator",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "mercator"
@@ -19646,6 +21156,34 @@
         {
           "lexeme": "mercator",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "mercator"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "mercator"
           ]
@@ -19695,6 +21233,13 @@
         },
         {
           "lexeme": "mercator",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "mercator",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "mercator"
@@ -19733,6 +21278,13 @@
           "card": "theatrum/sententiae/08-circumstances",
           "questions": [
             "q4"
+          ]
+        },
+        {
+          "lexeme": "mercator",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2"
           ]
         },
         {
@@ -20052,7 +21604,7 @@
       "questionEvidence": [
         {
           "lexeme": "mitto",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -20066,7 +21618,7 @@
         },
         {
           "lexeme": "mitto",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -20155,7 +21707,7 @@
       "questionEvidence": [
         {
           "lexeme": "moneo",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -20197,7 +21749,7 @@
         },
         {
           "lexeme": "moneo",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -20490,6 +22042,20 @@
       "questionEvidence": [
         {
           "lexeme": "narro",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "narro",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "narro"
+          ]
+        },
+        {
+          "lexeme": "narro",
           "card": "templum/sententiae/08-circumstances",
           "questions": [
             "q6"
@@ -20498,6 +22064,20 @@
         {
           "lexeme": "narro",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "narro"
+          ]
+        },
+        {
+          "lexeme": "narro",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "narro",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "narro"
           ]
@@ -20585,6 +22165,27 @@
       "questionEvidence": [
         {
           "lexeme": "nauta",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "nauta"
+          ]
+        },
+        {
+          "lexeme": "nauta",
           "card": "templum/loca/02-places",
           "questions": [
             "q1",
@@ -20594,6 +22195,20 @@
         {
           "lexeme": "nauta",
           "card": "templum/loca/vocabula",
+          "questions": [
+            "nauta"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "templum/orationes/vocabula",
           "questions": [
             "nauta"
           ]
@@ -20630,15 +22245,36 @@
         },
         {
           "lexeme": "nauta",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
             "q1",
-            "q3"
+            "q6"
           ]
         },
         {
           "lexeme": "nauta",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "nauta"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "nauta"
           ]
@@ -20654,6 +22290,20 @@
         {
           "lexeme": "nauta",
           "card": "theatrum/loca/vocabula",
+          "questions": [
+            "nauta"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "nauta",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "nauta"
           ]
@@ -20690,10 +22340,10 @@
         },
         {
           "lexeme": "nauta",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
             "q1",
-            "q3"
+            "q6"
           ]
         },
         {
@@ -20717,9 +22367,40 @@
       "sourceEntry": "fr.lex.1006",
       "headword": "nāvigāre",
       "sourcePage": 22,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "navigo"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "navigo",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "navigo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "navigo"
+          ]
+        },
+        {
+          "lexeme": "navigo",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "navigo",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "navigo"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1007",
@@ -20740,9 +22421,30 @@
       "questionEvidence": [
         {
           "lexeme": "navis",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "navis",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "navis"
+          ]
+        },
+        {
+          "lexeme": "navis",
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "navis",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q1"
           ]
         },
         {
@@ -20754,9 +22456,30 @@
         },
         {
           "lexeme": "navis",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "navis",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "navis"
+          ]
+        },
+        {
+          "lexeme": "navis",
           "card": "theatrum/sententiae/07-purpose",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "navis",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q1"
           ]
         },
         {
@@ -20818,9 +22541,14 @@
         },
         {
           "lexeme": "ne",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -20854,6 +22582,14 @@
             "q2",
             "q4",
             "q6"
+          ]
+        },
+        {
+          "lexeme": "ne",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4",
+            "q5"
           ]
         },
         {
@@ -20915,9 +22651,14 @@
         },
         {
           "lexeme": "ne",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -20951,6 +22692,14 @@
             "q2",
             "q4",
             "q6"
+          ]
+        },
+        {
+          "lexeme": "ne",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4",
+            "q5"
           ]
         },
         {
@@ -21014,40 +22763,9 @@
       "sourceEntry": "fr.lex.1017",
       "headword": "neglegere",
       "sourcePage": 22,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neglego"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neglego",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neglego",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neglego"
-          ]
-        },
-        {
-          "lexeme": "neglego",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neglego",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neglego"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1018",
@@ -21077,40 +22795,9 @@
       "sourceEntry": "fr.lex.1021",
       "headword": "ne-que/nec",
       "sourcePage": 22,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1022",
@@ -21412,9 +23099,10 @@
         },
         {
           "lexeme": "non",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q2"
+            "q4",
+            "q5"
           ]
         },
         {
@@ -21882,40 +23570,9 @@
       "sourceEntry": "fr.lex.1076",
       "headword": "nūntius",
       "sourcePage": 23,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "nuntius"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "nuntius",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "nuntius",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "nuntius"
-          ]
-        },
-        {
-          "lexeme": "nuntius",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "nuntius",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "nuntius"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1077",
@@ -22184,6 +23841,20 @@
       "questionEvidence": [
         {
           "lexeme": "oppidum",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "oppidum",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "oppidum"
+          ]
+        },
+        {
+          "lexeme": "oppidum",
           "card": "templum/loca/02-places",
           "questions": [
             "q1",
@@ -22253,6 +23924,20 @@
         {
           "lexeme": "oppidum",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "oppidum"
+          ]
+        },
+        {
+          "lexeme": "oppidum",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "oppidum",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "oppidum"
           ]
@@ -22596,9 +24281,40 @@
       "sourceEntry": "fr.lex.1131",
       "headword": "ostendere",
       "sourcePage": 24,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "ostendo"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "ostendo",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ostendo",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "ostendo"
+          ]
+        },
+        {
+          "lexeme": "ostendo",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "ostendo",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "ostendo"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1132",
@@ -22667,9 +24383,40 @@
       "sourceEntry": "fr.lex.1136",
       "headword": "ovis",
       "sourcePage": 25,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "ovis"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "ovis",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "ovis",
+          "card": "templum/sententiae/vocabula",
+          "questions": [
+            "ovis"
+          ]
+        },
+        {
+          "lexeme": "ovis",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "ovis",
+          "card": "theatrum/sententiae/vocabula",
+          "questions": [
+            "ovis"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1137",
@@ -22907,6 +24654,20 @@
       "questionEvidence": [
         {
           "lexeme": "paro",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "paro",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "paro"
+          ]
+        },
+        {
+          "lexeme": "paro",
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q3"
@@ -22929,7 +24690,28 @@
         },
         {
           "lexeme": "paro",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "paro",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "paro"
+          ]
+        },
+        {
+          "lexeme": "paro",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "paro",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "paro"
           ]
@@ -22954,6 +24736,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "paro",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q6"
           ]
         },
         {
@@ -23572,6 +25361,13 @@
         },
         {
           "lexeme": "pater",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "pater",
           "card": "templum/orationes/vocabula",
           "questions": [
             "pater"
@@ -23586,14 +25382,14 @@
         },
         {
           "lexeme": "pater",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q1"
           ]
         },
         {
           "lexeme": "pater",
-          "card": "templum/sententiae/absolute-perfect",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -23700,6 +25496,13 @@
         },
         {
           "lexeme": "pater",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "pater",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "pater"
@@ -23714,14 +25517,14 @@
         },
         {
           "lexeme": "pater",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q1"
           ]
         },
         {
           "lexeme": "pater",
-          "card": "theatrum/sententiae/absolute-perfect",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
             "q1"
           ]
@@ -23857,9 +25660,40 @@
       "sourceEntry": "fr.lex.1180",
       "headword": "pecūnia",
       "sourcePage": 25,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "pecunia"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "pecunia",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "pecunia",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "pecunia"
+          ]
+        },
+        {
+          "lexeme": "pecunia",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "pecunia",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "pecunia"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1181",
@@ -23945,33 +25779,9 @@
       "sourceEntry": "fr.lex.1191",
       "headword": "per-dere",
       "sourcePage": 26,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "perdo"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "perdo",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1"
-          ]
-        },
-        {
-          "lexeme": "perdo",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "perdo"
-          ]
-        },
-        {
-          "lexeme": "perdo",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "perdo"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1192",
@@ -24167,6 +25977,20 @@
       "questionEvidence": [
         {
           "lexeme": "peto",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "peto",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "peto"
+          ]
+        },
+        {
+          "lexeme": "peto",
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q1"
@@ -24175,6 +25999,20 @@
         {
           "lexeme": "peto",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "peto"
+          ]
+        },
+        {
+          "lexeme": "peto",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "peto",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "peto"
           ]
@@ -24555,6 +26393,14 @@
         },
         {
           "lexeme": "porta",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "porta",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "porta"
@@ -24618,6 +26464,14 @@
         },
         {
           "lexeme": "porta",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "porta",
           "card": "theatrum/sententiae/vocabula",
           "questions": [
             "porta"
@@ -24665,6 +26519,20 @@
         {
           "lexeme": "porto",
           "card": "templum/demonstratives/vocabula",
+          "questions": [
+            "porto"
+          ]
+        },
+        {
+          "lexeme": "porto",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "porto",
+          "card": "templum/orationes/vocabula",
           "questions": [
             "porto"
           ]
@@ -24813,6 +26681,20 @@
         {
           "lexeme": "porto",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "porto"
+          ]
+        },
+        {
+          "lexeme": "porto",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "porto",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "porto"
           ]
@@ -25549,40 +27431,9 @@
       "sourceEntry": "fr.lex.1308",
       "headword": "properāre",
       "sourcePage": 28,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "propero"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "propero",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "propero",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "propero"
-          ]
-        },
-        {
-          "lexeme": "propero",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "propero",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "propero"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1309",
@@ -25750,6 +27601,41 @@
         {
           "lexeme": "puella",
           "card": "templum/demonstratives/vocabula",
+          "questions": [
+            "puella"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "templum/gerundium/vocabula",
           "questions": [
             "puella"
           ]
@@ -25932,6 +27818,13 @@
         },
         {
           "lexeme": "puella",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "puella",
           "card": "templum/orationes/vocabula",
           "questions": [
             "puella"
@@ -26048,16 +27941,16 @@
         },
         {
           "lexeme": "puella",
-          "card": "templum/sententiae/09-myths",
+          "card": "templum/sententiae/absolute-perfect",
           "questions": [
-            "q4"
+            "q3"
           ]
         },
         {
           "lexeme": "puella",
-          "card": "templum/sententiae/absolute-perfect",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q3"
+            "q5"
           ]
         },
         {
@@ -26194,6 +28087,41 @@
         {
           "lexeme": "puella",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "puella"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puella",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "puella"
           ]
@@ -26376,6 +28304,13 @@
         },
         {
           "lexeme": "puella",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "puella",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "puella"
@@ -26492,16 +28427,16 @@
         },
         {
           "lexeme": "puella",
-          "card": "theatrum/sententiae/09-myths",
+          "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
-            "q4"
+            "q3"
           ]
         },
         {
           "lexeme": "puella",
-          "card": "theatrum/sententiae/absolute-perfect",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
-            "q3"
+            "q5"
           ]
         },
         {
@@ -26635,6 +28570,44 @@
         {
           "lexeme": "puer",
           "card": "templum/demonstratives/vocabula",
+          "questions": [
+            "puer"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/gerundium/vocabula",
           "questions": [
             "puer"
           ]
@@ -26809,6 +28782,13 @@
         },
         {
           "lexeme": "puer",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "puer",
           "card": "templum/orationes/vocabula",
           "questions": [
             "puer"
@@ -26930,25 +28910,16 @@
         },
         {
           "lexeme": "puer",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1",
-            "q2",
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "puer",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "puer",
           "card": "templum/sententiae/absolute-perfect",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q4"
           ]
         },
         {
@@ -27064,6 +29035,44 @@
         {
           "lexeme": "puer",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "puer"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q1",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q1",
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "puer",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "puer"
           ]
@@ -27238,6 +29247,13 @@
         },
         {
           "lexeme": "puer",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "puer",
           "card": "theatrum/orationes/vocabula",
           "questions": [
             "puer"
@@ -27352,16 +29368,16 @@
         },
         {
           "lexeme": "puer",
-          "card": "theatrum/sententiae/09-myths",
+          "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
-            "q1"
+            "q5"
           ]
         },
         {
           "lexeme": "puer",
-          "card": "theatrum/sententiae/absolute-perfect",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
-            "q5"
+            "q4"
           ]
         },
         {
@@ -27614,28 +29630,30 @@
       "questionEvidence": [
         {
           "lexeme": "puto",
-          "card": "templum/sententiae/09-myths",
+          "card": "templum/orationes/past-posteriority",
           "questions": [
-            "q3"
+            "q1",
+            "q6"
           ]
         },
         {
           "lexeme": "puto",
-          "card": "templum/sententiae/vocabula",
+          "card": "templum/orationes/vocabula",
           "questions": [
             "puto"
           ]
         },
         {
           "lexeme": "puto",
-          "card": "theatrum/sententiae/09-myths",
+          "card": "theatrum/orationes/past-posteriority",
           "questions": [
-            "q3"
+            "q1",
+            "q6"
           ]
         },
         {
           "lexeme": "puto",
-          "card": "theatrum/sententiae/vocabula",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "puto"
           ]
@@ -27677,6 +29695,20 @@
       "questionEvidence": [
         {
           "lexeme": "quaero",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "quaero",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "quaero"
+          ]
+        },
+        {
+          "lexeme": "quaero",
           "card": "templum/sententiae/07-purpose",
           "questions": [
             "q5"
@@ -27685,6 +29717,20 @@
         {
           "lexeme": "quaero",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "quaero"
+          ]
+        },
+        {
+          "lexeme": "quaero",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "quaero",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "quaero"
           ]
@@ -27757,40 +29803,9 @@
       "sourceEntry": "fr.lex.1346",
       "headword": "quamquam",
       "sourcePage": 29,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "quamquam"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "quamquam",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "quamquam",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "quamquam"
-          ]
-        },
-        {
-          "lexeme": "quamquam",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "quamquam",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "quamquam"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1347",
@@ -27950,20 +29965,6 @@
         },
         {
           "lexeme": "qui",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "qui"
-          ]
-        },
-        {
-          "lexeme": "qui",
           "card": "theatrum/personae/relative-case-role",
           "questions": [
             "q1",
@@ -27977,20 +29978,6 @@
         {
           "lexeme": "qui",
           "card": "theatrum/personae/vocabula",
-          "questions": [
-            "qui"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "qui"
           ]
@@ -28027,20 +30014,6 @@
         },
         {
           "lexeme": "qui",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "qui"
-          ]
-        },
-        {
-          "lexeme": "qui",
           "card": "theatrum/personae/relative-case-role",
           "questions": [
             "q1",
@@ -28054,20 +30027,6 @@
         {
           "lexeme": "qui",
           "card": "theatrum/personae/vocabula",
-          "questions": [
-            "qui"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "qui",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "qui"
           ]
@@ -28114,9 +30073,14 @@
         },
         {
           "lexeme": "quia",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q2"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -28232,9 +30196,14 @@
         },
         {
           "lexeme": "ne",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -28272,6 +30241,14 @@
         },
         {
           "lexeme": "ne",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q4",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "ne",
           "card": "theatrum/sententiae/vocabula",
           "questions": [
             "ne"
@@ -28299,40 +30276,9 @@
       "sourceEntry": "fr.lex.1373",
       "headword": "neque/nec",
       "sourcePage": 29,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1374",
@@ -28636,40 +30582,9 @@
       "sourceEntry": "fr.lex.1390",
       "headword": "neque/nec",
       "sourcePage": 30,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1391",
@@ -28966,6 +30881,20 @@
         },
         {
           "lexeme": "redeo",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "redeo",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "redeo"
+          ]
+        },
+        {
+          "lexeme": "redeo",
           "card": "theatrum/itinera/town-destination",
           "questions": [
             "q3",
@@ -28997,6 +30926,20 @@
         {
           "lexeme": "redeo",
           "card": "theatrum/nomina/vocabula",
+          "questions": [
+            "redeo"
+          ]
+        },
+        {
+          "lexeme": "redeo",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "redeo",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "redeo"
           ]
@@ -29542,6 +31485,13 @@
         },
         {
           "lexeme": "rosa",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "rosa",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "rosa"
@@ -29664,6 +31614,13 @@
           "card": "theatrum/sententiae/08-circumstances",
           "questions": [
             "q3"
+          ]
+        },
+        {
+          "lexeme": "rosa",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q5"
           ]
         },
         {
@@ -30169,6 +32126,20 @@
       "questionEvidence": [
         {
           "lexeme": "scribo",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "scribo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "scribo"
+          ]
+        },
+        {
+          "lexeme": "scribo",
           "card": "templum/orationes/infinitive-anteriority",
           "questions": [
             "q4"
@@ -30193,13 +32164,6 @@
           "card": "templum/sententiae/08-circumstances",
           "questions": [
             "q1"
-          ]
-        },
-        {
-          "lexeme": "scribo",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q3"
           ]
         },
         {
@@ -30233,6 +32197,20 @@
         {
           "lexeme": "scribo",
           "card": "templum/tempora/vocabula",
+          "questions": [
+            "scribo"
+          ]
+        },
+        {
+          "lexeme": "scribo",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "scribo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "scribo"
           ]
@@ -30321,6 +32299,21 @@
       "questionEvidence": [
         {
           "lexeme": "se",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "se",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "se"
+          ]
+        },
+        {
+          "lexeme": "se",
           "card": "templum/personae/reflexive-object",
           "questions": [
             "q1",
@@ -30340,14 +32333,15 @@
         },
         {
           "lexeme": "se",
-          "card": "templum/sententiae/09-myths",
+          "card": "theatrum/orationes/past-posteriority",
           "questions": [
-            "q3"
+            "q1",
+            "q5"
           ]
         },
         {
           "lexeme": "se",
-          "card": "templum/sententiae/vocabula",
+          "card": "theatrum/orationes/vocabula",
           "questions": [
             "se"
           ]
@@ -30364,20 +32358,6 @@
         {
           "lexeme": "se",
           "card": "theatrum/personae/vocabula",
-          "questions": [
-            "se"
-          ]
-        },
-        {
-          "lexeme": "se",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "se",
-          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "se"
           ]
@@ -30643,58 +32623,9 @@
       "sourceEntry": "fr.lex.1516",
       "headword": "senex",
       "sourcePage": 32,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "senex"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "senex",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1",
-            "q2",
-            "q3"
-          ]
-        },
-        {
-          "lexeme": "senex",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q2",
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "senex",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "senex"
-          ]
-        },
-        {
-          "lexeme": "senex",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q2"
-          ]
-        },
-        {
-          "lexeme": "senex",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q2",
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "senex",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "senex"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1517",
@@ -30961,6 +32892,13 @@
         },
         {
           "lexeme": "servus",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "servus",
           "card": "templum/orationes/vocabula",
           "questions": [
             "servus"
@@ -31133,6 +33071,13 @@
         {
           "lexeme": "servus",
           "card": "theatrum/orationes/infinitive-subject",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "servus",
+          "card": "theatrum/orationes/past-posteriority",
           "questions": [
             "q3"
           ]
@@ -31394,33 +33339,9 @@
       "sourceEntry": "fr.lex.1555",
       "headword": "silva",
       "sourcePage": 33,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "silva"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "silva",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q1"
-          ]
-        },
-        {
-          "lexeme": "silva",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "silva"
-          ]
-        },
-        {
-          "lexeme": "silva",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "silva"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1556",
@@ -31812,9 +33733,40 @@
       "sourceEntry": "fr.lex.1584",
       "headword": "spectāre",
       "sourcePage": 34,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "specto"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "specto",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "specto",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "specto"
+          ]
+        },
+        {
+          "lexeme": "specto",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "specto",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "specto"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1585",
@@ -31965,9 +33917,42 @@
       "sourceEntry": "fr.lex.1599",
       "headword": "studiōsus",
       "sourcePage": 34,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "studiosus"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "studiosus",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q2",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "studiosus",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "studiosus"
+          ]
+        },
+        {
+          "lexeme": "studiosus",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q2",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "studiosus",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "studiosus"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1600",
@@ -32918,9 +34903,54 @@
       "sourceEntry": "fr.lex.1669",
       "headword": "theātrum",
       "sourcePage": 35,
-      "status": "no-surface-match",
-      "candidateDesignLexemes": [],
-      "questionEvidence": []
+      "status": "surface-match-requires-sense-review",
+      "candidateDesignLexemes": [
+        "theatrum"
+      ],
+      "questionEvidence": [
+        {
+          "lexeme": "theatrum",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "theatrum",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "theatrum",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "theatrum"
+          ]
+        },
+        {
+          "lexeme": "theatrum",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "theatrum",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q4"
+          ]
+        },
+        {
+          "lexeme": "theatrum",
+          "card": "theatrum/gerundium/vocabula",
+          "questions": [
+            "theatrum"
+          ]
+        }
+      ]
     },
     {
       "sourceEntry": "fr.lex.1670",
@@ -33150,41 +35180,9 @@
       "sourceEntry": "fr.lex.1698",
       "headword": "trīstis",
       "sourcePage": 36,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "tristis"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "tristis",
-          "card": "templum/sententiae/09-myths",
-          "questions": [
-            "q3",
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "tristis",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "tristis"
-          ]
-        },
-        {
-          "lexeme": "tristis",
-          "card": "theatrum/sententiae/09-myths",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "tristis",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "tristis"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1699",
@@ -33576,40 +35574,9 @@
       "sourceEntry": "fr.lex.1719",
       "headword": "nec/neque",
       "sourcePage": 36,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1720",
@@ -33679,40 +35646,9 @@
       "sourceEntry": "fr.lex.1728",
       "headword": "nec/neque",
       "sourcePage": 36,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1729",
@@ -33880,9 +35816,14 @@
         },
         {
           "lexeme": "ut",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -33903,9 +35844,12 @@
         },
         {
           "lexeme": "ut",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q6"
           ]
         },
         {
@@ -33940,9 +35884,14 @@
         },
         {
           "lexeme": "ut",
-          "card": "templum/sententiae/11-synthesis",
+          "card": "templum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "q5",
+            "q6"
           ]
         },
         {
@@ -33963,9 +35912,12 @@
         },
         {
           "lexeme": "ut",
-          "card": "theatrum/sententiae/11-synthesis",
+          "card": "theatrum/sententiae/purpose-past",
           "questions": [
-            "q1"
+            "q1",
+            "q2",
+            "q3",
+            "q6"
           ]
         },
         {
@@ -34286,6 +36238,41 @@
         },
         {
           "lexeme": "vendo",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "templum/gerundium/gerund-desire",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "vendo"
+          ]
+        },
+        {
+          "lexeme": "vendo",
           "card": "theatrum/demonstratives/demonstrative-accusative",
           "questions": [
             "q2"
@@ -34294,6 +36281,41 @@
         {
           "lexeme": "vendo",
           "card": "theatrum/demonstratives/vocabula",
+          "questions": [
+            "vendo"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "theatrum/gerundium/gerund-desire",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "vendo",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "vendo"
           ]
@@ -34309,6 +36331,30 @@
         "venio"
       ],
       "questionEvidence": [
+        {
+          "lexeme": "venio",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q3",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "venio",
+          "card": "templum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q4",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "venio",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "venio"
+          ]
+        },
         {
           "lexeme": "venio",
           "card": "templum/itinera/town-destination",
@@ -34413,6 +36459,30 @@
         {
           "lexeme": "venio",
           "card": "templum/tempora/vocabula",
+          "questions": [
+            "venio"
+          ]
+        },
+        {
+          "lexeme": "venio",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q3",
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "venio",
+          "card": "theatrum/gerundium/gerund-causa",
+          "questions": [
+            "q1",
+            "q4",
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "venio",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "venio"
           ]
@@ -34602,40 +36672,9 @@
       "sourceEntry": "fr.lex.1782",
       "headword": "neque/nec",
       "sourcePage": 38,
-      "status": "surface-match-requires-sense-review",
-      "candidateDesignLexemes": [
-        "neque"
-      ],
-      "questionEvidence": [
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "templum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/11-synthesis",
-          "questions": [
-            "q4"
-          ]
-        },
-        {
-          "lexeme": "neque",
-          "card": "theatrum/sententiae/vocabula",
-          "questions": [
-            "neque"
-          ]
-        }
-      ]
+      "status": "no-surface-match",
+      "candidateDesignLexemes": [],
+      "questionEvidence": []
     },
     {
       "sourceEntry": "fr.lex.1783",
@@ -34815,6 +36854,20 @@
       "questionEvidence": [
         {
           "lexeme": "via",
+          "card": "templum/gerundium/gerund-means",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "via",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "via"
+          ]
+        },
+        {
+          "lexeme": "via",
           "card": "templum/loca/02-places",
           "questions": [
             "q3"
@@ -34836,7 +36889,28 @@
         },
         {
           "lexeme": "via",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "via",
           "card": "templum/sententiae/vocabula",
+          "questions": [
+            "via"
+          ]
+        },
+        {
+          "lexeme": "via",
+          "card": "theatrum/gerundium/gerund-means",
+          "questions": [
+            "q6"
+          ]
+        },
+        {
+          "lexeme": "via",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "via"
           ]
@@ -34860,6 +36934,13 @@
           "card": "theatrum/sententiae/07-purpose",
           "questions": [
             "q5"
+          ]
+        },
+        {
+          "lexeme": "via",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q6"
           ]
         },
         {
@@ -34971,6 +37052,20 @@
         },
         {
           "lexeme": "video",
+          "card": "templum/orationes/past-posteriority",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "templum/orationes/vocabula",
+          "questions": [
+            "video"
+          ]
+        },
+        {
+          "lexeme": "video",
           "card": "templum/personae/03-descriptions",
           "questions": [
             "q3"
@@ -35045,6 +37140,20 @@
         {
           "lexeme": "video",
           "card": "templum/personae/vocabula",
+          "questions": [
+            "video"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "templum/sententiae/vocabula",
           "questions": [
             "video"
           ]
@@ -35173,6 +37282,20 @@
         },
         {
           "lexeme": "video",
+          "card": "theatrum/orationes/past-posteriority",
+          "questions": [
+            "q1"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "theatrum/orationes/vocabula",
+          "questions": [
+            "video"
+          ]
+        },
+        {
+          "lexeme": "video",
           "card": "theatrum/personae/03-descriptions",
           "questions": [
             "q3"
@@ -35247,6 +37370,20 @@
         {
           "lexeme": "video",
           "card": "theatrum/personae/vocabula",
+          "questions": [
+            "video"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
+            "q2"
+          ]
+        },
+        {
+          "lexeme": "video",
+          "card": "theatrum/sententiae/vocabula",
           "questions": [
             "video"
           ]
@@ -35353,6 +37490,20 @@
       "questionEvidence": [
         {
           "lexeme": "villa",
+          "card": "templum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "villa",
+          "card": "templum/gerundium/vocabula",
+          "questions": [
+            "villa"
+          ]
+        },
+        {
+          "lexeme": "villa",
           "card": "templum/loca/a-ablative",
           "questions": [
             "q4"
@@ -35410,6 +37561,20 @@
         {
           "lexeme": "villa",
           "card": "templum/personae/vocabula",
+          "questions": [
+            "villa"
+          ]
+        },
+        {
+          "lexeme": "villa",
+          "card": "theatrum/gerundium/gerund-ad",
+          "questions": [
+            "q5"
+          ]
+        },
+        {
+          "lexeme": "villa",
+          "card": "theatrum/gerundium/vocabula",
           "questions": [
             "villa"
           ]
@@ -35856,6 +38021,13 @@
         },
         {
           "lexeme": "voco",
+          "card": "templum/sententiae/purpose-past",
+          "questions": [
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "voco",
           "card": "templum/sententiae/vocabula",
           "questions": [
             "voco"
@@ -35965,6 +38137,13 @@
           "card": "theatrum/sententiae/absolute-perfect",
           "questions": [
             "q1",
+            "q3"
+          ]
+        },
+        {
+          "lexeme": "voco",
+          "card": "theatrum/sententiae/purpose-past",
+          "questions": [
             "q3"
           ]
         },

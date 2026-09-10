@@ -41,7 +41,7 @@ void main() {
           );
         }
       }
-      expect(count, 1520);
+      expect(count, 1670);
       for (final set in objects(design.pedagogy['practiceSets'])) {
         for (final target in objects(set['targets'])) {
           if (banks.containsKey(target['card'])) {

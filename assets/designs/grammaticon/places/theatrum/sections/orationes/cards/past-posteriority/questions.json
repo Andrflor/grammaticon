@@ -1,0 +1,452 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer putābat sē amīcum vīsūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le garçon pensait qu’il avait vu son ami."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon pensait qu’il voyait son ami."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon pensait qu’il verrait son ami."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q1",
+    "assessment": "study.version.past-posteriority:past-posteriority:q1",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "amicus",
+      "puer",
+      "puto",
+      "se",
+      "sum",
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Māter dīxit fīlium domum reditūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "La mère a dit que son fils reviendrait à la maison."
+      },
+      {
+        "id": "2",
+        "text": "La mère a dit que son fils était revenu à la maison."
+      },
+      {
+        "id": "1",
+        "text": "La mère a dit que son fils revenait à la maison."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q2",
+    "assessment": "study.version.past-posteriority:past-posteriority:q2",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "domus",
+      "filius",
+      "mater",
+      "redeo",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Agricola crēdēbat servum agrum arātūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le paysan croyait que l’esclave labourait le champ."
+      },
+      {
+        "id": "0",
+        "text": "Le paysan croyait que l’esclave labourerait le champ."
+      },
+      {
+        "id": "2",
+        "text": "Le paysan croyait que l’esclave avait labouré le champ."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q3",
+    "assessment": "study.version.past-posteriority:past-posteriority:q3",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ager",
+      "agricola",
+      "aro",
+      "credo",
+      "servus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta dīxit mercātōrem nāvem ēmptūrum esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marin a dit que le marchand achetait le navire."
+      },
+      {
+        "id": "0",
+        "text": "Le marin a dit que le marchand achèterait le navire."
+      },
+      {
+        "id": "2",
+        "text": "Le marin a dit que le marchand avait acheté le navire."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q4",
+    "assessment": "study.version.past-posteriority:past-posteriority:q4",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "dico",
+      "emo",
+      "mercator",
+      "nauta",
+      "navis",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella dīxit sē aquam portātūram esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La fille a dit qu’elle avait porté de l’eau."
+      },
+      {
+        "id": "1",
+        "text": "La fille a dit qu’elle portait de l’eau."
+      },
+      {
+        "id": "0",
+        "text": "La fille a dit qu’elle porterait de l’eau."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q5",
+    "assessment": "study.version.past-posteriority:past-posteriority:q5",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "aqua",
+      "dico",
+      "porto",
+      "puella",
+      "se",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Pater putābat amīcōs in hortō cēnātūrōs esse."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le père pensait que les amis dîneraient dans le jardin."
+      },
+      {
+        "id": "1",
+        "text": "Le père pensait que les amis dînaient dans le jardin."
+      },
+      {
+        "id": "2",
+        "text": "Le père pensait que les amis avaient dîné dans le jardin."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.past-posteriority"
+    ],
+    "item": "past-posteriority:q6",
+    "assessment": "study.version.past-posteriority:past-posteriority:q6",
+    "help": "study.past-posteriority",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "ceno",
+      "hortus",
+      "in",
+      "pater",
+      "puto",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "past-posteriority",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Tempus infīnītīvī cum tempore verbī dīcendī vel putandī comparātur. Putābat sē amīcum vīsūrum esse: amīcum posteā vidēre exspectābat. Vidēre rem eōdem tempore fierī, vīdisse rem anteā factam indicat. Vīsūrum esse rem post verba vel cōgitātiōnem futūram indicat; nōn necesse est eam rem nunc quoque futūram esse. Sententia quid quis putāverit vel dīxerit narrat, nōn rem posteā certē factam esse affirmat.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Infīnītīvus futūrī rem post verba praeterita futūram indicat. Responsum autem rem eōdem tempore fierī dīcit.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-same-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Infīnītīvus perfectī rem ante verba factam indicat. Hīc autem rem post verba futūram agnōscere oportet.",
+        "observed": [
+          "study.confusion.reported-past-posteriority-earlier"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

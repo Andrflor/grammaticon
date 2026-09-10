@@ -1,0 +1,449 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer scholam intrat ad discendum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le garçon entre dans l’école avant d’apprendre."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon entre dans l’école pour apprendre."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon entre dans l’école parce qu’il apprend."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q1",
+    "assessment": "study.version.gerund-ad:q1",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "disco",
+      "intro",
+      "puer",
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella in hortum it ad lūdendum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille va dans le jardin pour jouer."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille va dans le jardin parce qu’elle joue."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille va dans le jardin avant de jouer."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q2",
+    "assessment": "study.version.gerund-ad:q2",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "eo",
+      "hortus",
+      "in",
+      "ludo",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor ad forum venit ad vēndendum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marchand vient au forum parce qu’il vend."
+      },
+      {
+        "id": "2",
+        "text": "Le marchand vient au forum avant de vendre."
+      },
+      {
+        "id": "1",
+        "text": "Le marchand vient au forum pour vendre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q3",
+    "assessment": "study.version.gerund-ad:q3",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "forum",
+      "mercator",
+      "vendo",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Fēmina in hortum exit ad ambulandum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La femme sort dans le jardin parce qu’elle marche."
+      },
+      {
+        "id": "1",
+        "text": "La femme sort dans le jardin avant de marcher."
+      },
+      {
+        "id": "0",
+        "text": "La femme sort dans le jardin pour marcher."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q4",
+    "assessment": "study.version.gerund-ad:q4",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "ambulo",
+      "exeo",
+      "femina",
+      "hortus",
+      "in"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Amīcī in vīllam veniunt ad cēnandum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les amis viennent dans la villa parce qu’ils dînent."
+      },
+      {
+        "id": "2",
+        "text": "Les amis viennent dans la villa pour dîner."
+      },
+      {
+        "id": "0",
+        "text": "Les amis viennent dans la villa avant de dîner."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q5",
+    "assessment": "study.version.gerund-ad:q5",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "amicus",
+      "ceno",
+      "in",
+      "venio",
+      "villa"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerī in theātrum eunt ad spectandum."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les garçons vont au théâtre pour regarder."
+      },
+      {
+        "id": "0",
+        "text": "Les garçons vont au théâtre parce qu’ils regardent."
+      },
+      {
+        "id": "2",
+        "text": "Les garçons vont au théâtre avant de regarder."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-ad"
+    ],
+    "item": "gerund-ad:q6",
+    "assessment": "study.version.gerund-ad:q6",
+    "help": "study.gerund-ad",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "eo",
+      "in",
+      "puer",
+      "specto",
+      "theatrum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-ad",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc id quod persōna efficere vult exprimitur. Quia causam indicāret. Causam et cōnsilium distingue.",
+        "observed": [
+          "study.confusion.gerund-purpose-cause"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Ad discendum cōnsilium indicat: discere vult is quī venit. Ad accūsātīvum regit: discendum, nōn discendī nec discere. In hīs sententiīs ad cum gerundiō cōnsilium, nōn causam aut sōlum tempus, exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

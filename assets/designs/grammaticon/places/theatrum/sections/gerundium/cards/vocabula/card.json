@@ -1,0 +1,75 @@
+{
+  "id": "vocabula",
+  "name": "Vocābula",
+  "subtitle": "Vocābula sectiōnis: Gallicē",
+  "access": {
+    "price": 30,
+    "requires": {
+      "all": [
+        {
+          "completed": "theatrum/gerundium/gerund-ad"
+        },
+        {
+          "completed": "theatrum/gerundium/gerund-desire"
+        },
+        {
+          "completed": "theatrum/gerundium/gerund-means"
+        },
+        {
+          "completed": "theatrum/gerundium/gerund-causa"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.lexicon.theatrum.gerundium"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 10
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_chorus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Chorī Magister",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": false,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

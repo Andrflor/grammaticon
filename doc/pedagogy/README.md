@@ -23,7 +23,7 @@ Le registre de 356 unités dans `coverage.json` reste incomplet : les 30 lecture
 
 ## État technique actuel
 
-Onze groupes, 62 sujets dans les deux sens, dont certaines anciennes cartes encore à découper, vingt-deux cartes lexicales finales : 146 cartes et 1 520 questions pour Theatrum/Templum. Le rapport du design déclare les adresses des cartes et leurs inventaires lexicaux. La validation technique et les tests de macrons, d’économie, de progression et de rendu passent ; cela ne certifie pas une couverture exhaustive ni une relecture indépendante de tous les contenus.
+Douze groupes, 66 sujets dans les deux sens, dont certaines anciennes cartes encore à découper, vingt-quatre cartes lexicales finales : 156 cartes et 1 670 questions pour Theatrum/Templum. Le rapport du design déclare les adresses des cartes et leurs inventaires lexicaux. La validation technique et les tests de macrons, d’économie, de progression et de rendu passent ; cela ne certifie pas une couverture exhaustive ni une relecture indépendante de tous les contenus.
 
 Le rapport de rapprochement lexical est recalculé par `python3 tool/audit_lexical_traceability.py`. L’option `--check` détecte un rapport périmé. Ce contrôle examine les références aux questions existantes ; il ne produit aucune question et ne certifie pas les sens lexicaux.
 
@@ -34,3 +34,7 @@ Les premières correspondances avec ces lieux sont enregistrées dans `coverage.
 Les formes des 30 lectures de Fabellae Latinae sont inventoriées dans `contracts/fabellae-surface-inventory.json`. Les exigences de lecture sont relevées dans `coverage.json` et leurs libellés regroupés dans `contracts/fabellae-construction-index.json`. La désambiguïsation des lemmes, la consolidation des libellés et les correspondances pédagogiques restent en cours.
 
 Les références de Fabulae Syrae et d’Epitome sont accessibles pour l’audit. Leurs sommaires et paragraphes sont reliés aux pages dans `contracts/fabulae-syrae-source-map.json` et `contracts/epitome-source-map.json`. Les fichiers de référence restent hors du dépôt et aucun de leurs textes n’est intégré au jeu. Le comptage de Fabulae Syrae distingue les 45 lectures numérotées de l’édition consultée des 50 mythes annoncés par l’éditeur.
+
+Les cinq premières lectures de *Fabulae Syrae* ont désormais un inventaire provisoire, indexé dans [fabulae-syrae-construction-index.json](contracts/fabulae-syrae-construction-index.json). Les fins de trois plages de pages ont été corrigées après lecture du corps du texte. Les quarante lectures suivantes et l’exhaustivité lexicale restent à examiner.
+
+Les dix premiers paragraphes de l’*Epitome* ont un relevé provisoire de 82 constructions dans [epitome-construction-index.json](contracts/epitome-construction-index.json), avec leurs limites de pages vérifiées. Les 236 paragraphes suivants et l’exhaustivité lexicale restent à examiner. La carte **Ut monēret**, placée après **Ut et nē**, apporte une première correspondance partielle pour le but après une action passée.

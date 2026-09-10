@@ -1,0 +1,448 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Discendī causā puer ad magistrum venit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le garçon vient auprès du maître pour apprendre."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon vient auprès du maître avant d’apprendre."
+      },
+      {
+        "id": "2",
+        "text": "Le garçon vient auprès du maître en apprenant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q1",
+    "assessment": "study.version.gerund-causa:q1",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "causa",
+      "disco",
+      "magister",
+      "puer",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Lūdendī causā puerī hortum petunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les garçons se dirigent vers le jardin en jouant."
+      },
+      {
+        "id": "0",
+        "text": "Les garçons se dirigent vers le jardin avant de jouer."
+      },
+      {
+        "id": "2",
+        "text": "Les garçons se dirigent vers le jardin pour jouer."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q2",
+    "assessment": "study.version.gerund-causa:q2",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "causa",
+      "hortus",
+      "ludo",
+      "peto",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Emendī causā nauta in oppidum it."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marin va dans la ville pour acheter."
+      },
+      {
+        "id": "0",
+        "text": "Le marin va dans la ville en achetant."
+      },
+      {
+        "id": "2",
+        "text": "Le marin va dans la ville avant d’acheter."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q3",
+    "assessment": "study.version.gerund-causa:q3",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "causa",
+      "emo",
+      "eo",
+      "in",
+      "nauta",
+      "oppidum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cantandī causā puella in theātrum venit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "La jeune fille vient au théâtre avant de chanter."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille vient au théâtre pour chanter."
+      },
+      {
+        "id": "2",
+        "text": "La jeune fille vient au théâtre en chantant."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q4",
+    "assessment": "study.version.gerund-causa:q4",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "canto",
+      "causa",
+      "in",
+      "puella",
+      "theatrum",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Cēnandī causā amīcī conveniunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Les amis se réunissent avant de dîner."
+      },
+      {
+        "id": "2",
+        "text": "Les amis se réunissent pour dîner."
+      },
+      {
+        "id": "1",
+        "text": "Les amis se réunissent en dînant."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q5",
+    "assessment": "study.version.gerund-causa:q5",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "causa",
+      "ceno",
+      "convenio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Vēndendī causā agricola ad forum venit."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le paysan vient au forum avant de vendre."
+      },
+      {
+        "id": "0",
+        "text": "Le paysan vient au forum en vendant."
+      },
+      {
+        "id": "1",
+        "text": "Le paysan vient au forum pour vendre."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-causa"
+    ],
+    "item": "gerund-causa:q6",
+    "assessment": "study.version.gerund-causa:q6",
+    "help": "study.gerund-causa",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "agricola",
+      "causa",
+      "forum",
+      "vendo",
+      "venio"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-causa",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Causā cum genetīvō gerundiī hīc cōnsilium exprimit. Responsum modum actiōnis exprimit, nōn cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-means"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Discendī causā hīc cōnsilium exprimit, sicut ad discendum. Causā post gerundium genetīvō positum pōnitur. Discendī causā, nōn discendum causā nec discendō causā, hanc cōnstrūctiōnem ostendit. Nōlī cōnsilium cum modō quo rēs fit aut cum sōlō ōrdine temporum confundere.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Hīc cōnsilium exprimitur. Antequam sōlum ōrdinem temporum indicāret; nōn idem est ac cōnsilium.",
+        "observed": [
+          "study.confusion.gerund-purpose-time"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

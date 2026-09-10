@@ -1,0 +1,443 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le garçon apprend en lisant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Puer legendī discit."
+      },
+      {
+        "id": "0",
+        "text": "Puer legendō discit."
+      },
+      {
+        "id": "2",
+        "text": "Puer ad legendum discit."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q1",
+    "assessment": "study.theme.gerund-means:q1",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "ad",
+      "disco",
+      "lego",
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La jeune fille réjouit ses amis en chantant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Puella cantandō amīcōs dēlectat."
+      },
+      {
+        "id": "0",
+        "text": "Puella cantandī amīcōs dēlectat."
+      },
+      {
+        "id": "1",
+        "text": "Puella ad cantandum amīcōs dēlectat."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q2",
+    "assessment": "study.theme.gerund-means:q2",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "amicus",
+      "canto",
+      "delecto",
+      "puella"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le marchand se procure de l’argent en vendant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Mercātor vēndendī pecūniam parat."
+      },
+      {
+        "id": "0",
+        "text": "Mercātor ad vēndendum pecūniam parat."
+      },
+      {
+        "id": "1",
+        "text": "Mercātor vēndendō pecūniam parat."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q3",
+    "assessment": "study.theme.gerund-means:q3",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "mercator",
+      "paro",
+      "pecunia",
+      "vendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "La femme exerce son corps en marchant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Fēmina ambulandō corpus exercet."
+      },
+      {
+        "id": "1",
+        "text": "Fēmina ambulandī corpus exercet."
+      },
+      {
+        "id": "2",
+        "text": "Fēmina ad ambulandum corpus exercet."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q4",
+    "assessment": "study.theme.gerund-means:q4",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "ambulo",
+      "corpus",
+      "exerceo",
+      "femina"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le maître enseigne en écrivant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Magister ad scrībendum docet."
+      },
+      {
+        "id": "0",
+        "text": "Magister scrībendī docet."
+      },
+      {
+        "id": "2",
+        "text": "Magister scrībendō docet."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q5",
+    "assessment": "study.theme.gerund-means:q5",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "doceo",
+      "magister",
+      "scribo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.production",
+    "prompt": "Sententiam Latīnē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Le voyageur trouve le chemin en cherchant."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Viātor ad quaerendum viam invenit."
+      },
+      {
+        "id": "1",
+        "text": "Viātor quaerendō viam invenit."
+      },
+      {
+        "id": "2",
+        "text": "Viātor quaerendī viam invenit."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.theme.gerund-means"
+    ],
+    "item": "gerund-means:q6",
+    "assessment": "study.theme.gerund-means:q6",
+    "help": "study.gerund-means",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "ad",
+      "invenio",
+      "quaero",
+      "via",
+      "viator"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-means",
+      "translationDirection": "fr-la"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Ablātīvus gerundiī hīc modum quo rēs fit indicat. Ad cum gerundiō cōnsilium indicāret; haec distinguenda sunt.",
+        "observed": [
+          "study.confusion.gerund-means-purpose"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Puer legendō discit: legere est via quā discit. Gerundium ablātīvō positum hīc modum vel īnstrūmentum actiōnis indicat. Legendō et ad legendum nōn idem significant: alterum modum, alterum cōnsilium exprimit.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Gerundium ablātīvō in -ndō hīc modum actiōnis indicat. Genetīvus in -ndī nōn idem exprimit.",
+        "observed": [
+          "study.confusion.gerund-means-genitive"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]

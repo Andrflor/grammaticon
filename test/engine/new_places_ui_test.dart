@@ -46,8 +46,8 @@ void main() {
         }
       });
       for (final address in [
-        'theatrum/sententiae/11-synthesis',
-        'templum/sententiae/11-synthesis',
+        'theatrum/sententiae/purpose-past',
+        'templum/sententiae/purpose-past',
         'theatrum/interrogationes/num-question',
         'templum/interrogationes/num-question',
       ]) {

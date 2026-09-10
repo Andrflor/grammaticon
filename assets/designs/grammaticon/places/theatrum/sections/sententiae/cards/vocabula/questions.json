@@ -19,11 +19,11 @@
       },
       {
         "id": "1",
-        "text": "vers, auprès de"
+        "text": "vers, auprès de ; pour"
       },
       {
         "id": "2",
-        "text": "aider"
+        "text": "apporter"
       }
     ],
     "accepted": [
@@ -82,15 +82,15 @@
     "choices": [
       {
         "id": "0",
-        "text": "vers, auprès de"
+        "text": "vers, auprès de ; pour"
       },
       {
         "id": "2",
-        "text": "marcher"
+        "text": "agriculteur"
       },
       {
         "id": "1",
-        "text": "aider"
+        "text": "apporter"
       }
     ],
     "accepted": [
@@ -110,13 +110,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: ad — vers, auprès de.",
+        "feedback": "Rēctē: ad — vers, auprès de ; pour.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
           "study.error"
         ],
@@ -124,7 +124,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ad — vers, auprès de ; pour.",
         "observed": [
           "study.error"
         ],
@@ -134,26 +134,93 @@
     }
   },
   {
-    "id": "adiuvo",
+    "id": "affero",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "adiuvo",
-    "assessment": "study.lexicon.theatrum.sententiae:adiuvo",
+    "item": "affero",
+    "assessment": "study.lexicon.theatrum.sententiae:affero",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "adiuvāre"
+        "text": "afferre"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "aider"
+        "text": "apporter"
       },
       {
         "id": "2",
+        "text": "marcher"
+      },
+      {
+        "id": "1",
+        "text": "agriculteur"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "affero"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: afferre — apporter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: afferre — apporter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "agricola",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "agricola",
+    "assessment": "study.lexicon.theatrum.sententiae:agricola",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "agricola"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
         "text": "ami, amie"
+      },
+      {
+        "id": "0",
+        "text": "agriculteur"
       },
       {
         "id": "1",
@@ -169,7 +236,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "adiuvo"
+      "agricola"
     ],
     "editorial": {
       "language": "la",
@@ -177,13 +244,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: adiuvāre — aider.",
+        "feedback": "Rēctē: agricola — agriculteur.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: adiuvāre — aider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
           "study.error"
         ],
@@ -191,7 +258,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: adiuvāre — aider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
           "study.error"
         ],
@@ -425,7 +492,7 @@
       },
       {
         "id": "2",
-        "text": "entendre, apprendre une nouvelle"
+        "text": "se dessécher"
       }
     ],
     "accepted": [
@@ -484,7 +551,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "emporter, enlever"
+        "text": "entendre, apprendre une nouvelle"
       },
       {
         "id": "0",
@@ -492,7 +559,7 @@
       },
       {
         "id": "1",
-        "text": "entendre, apprendre une nouvelle"
+        "text": "se dessécher"
       }
     ],
     "accepted": [
@@ -536,6 +603,73 @@
     }
   },
   {
+    "id": "aresco",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "aresco",
+    "assessment": "study.lexicon.theatrum.sententiae:aresco",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ārēscere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "se dessécher"
+      },
+      {
+        "id": "1",
+        "text": "entendre, apprendre une nouvelle"
+      },
+      {
+        "id": "2",
+        "text": "emporter, enlever"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "aresco"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ārēscere — se dessécher.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ārēscere — se dessécher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "audio",
     "interaction": "choice",
     "dimension": "lemma",
@@ -554,12 +688,12 @@
         "text": "emporter, enlever"
       },
       {
-        "id": "0",
-        "text": "entendre, apprendre une nouvelle"
-      },
-      {
         "id": "2",
         "text": "tomber"
+      },
+      {
+        "id": "0",
+        "text": "entendre, apprendre une nouvelle"
       }
     ],
     "accepted": [
@@ -618,15 +752,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "chanter"
-      },
-      {
-        "id": "0",
-        "text": "emporter, enlever"
+        "text": "chien"
       },
       {
         "id": "1",
         "text": "tomber"
+      },
+      {
+        "id": "0",
+        "text": "emporter, enlever"
       }
     ],
     "accepted": [
@@ -689,11 +823,11 @@
       },
       {
         "id": "1",
-        "text": "chanter"
+        "text": "chien"
       },
       {
         "id": "2",
-        "text": "cueillir"
+        "text": "chanter"
       }
     ],
     "accepted": [
@@ -737,6 +871,73 @@
     }
   },
   {
+    "id": "canis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "canis",
+    "assessment": "study.lexicon.theatrum.sententiae:canis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "canis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "chanter"
+      },
+      {
+        "id": "0",
+        "text": "chien"
+      },
+      {
+        "id": "2",
+        "text": "cueillir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "canis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: canis — chien.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: canis — chien.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "canto",
     "interaction": "choice",
     "dimension": "lemma",
@@ -752,15 +953,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "dîner"
-      },
-      {
-        "id": "1",
-        "text": "cueillir"
+        "text": "cacher"
       },
       {
         "id": "0",
         "text": "chanter"
+      },
+      {
+        "id": "1",
+        "text": "cueillir"
       }
     ],
     "accepted": [
@@ -819,11 +1020,11 @@
     "choices": [
       {
         "id": "2",
-        "text": "citoyen"
+        "text": "dîner"
       },
       {
         "id": "1",
-        "text": "dîner"
+        "text": "cacher"
       },
       {
         "id": "0",
@@ -871,6 +1072,73 @@
     }
   },
   {
+    "id": "celo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "celo",
+    "assessment": "study.lexicon.theatrum.sententiae:celo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "cēlāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "cacher"
+      },
+      {
+        "id": "1",
+        "text": "dîner"
+      },
+      {
+        "id": "2",
+        "text": "citoyen"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "celo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cēlāre — cacher.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēlāre — cacher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "cena",
     "interaction": "choice",
     "dimension": "lemma",
@@ -885,16 +1153,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "dîner"
-      },
-      {
         "id": "2",
         "text": "crier"
       },
       {
         "id": "1",
         "text": "citoyen"
+      },
+      {
+        "id": "0",
+        "text": "dîner"
       }
     ],
     "accepted": [
@@ -1020,15 +1288,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "coquillage"
-      },
-      {
-        "id": "0",
-        "text": "crier"
+        "text": "clé"
       },
       {
         "id": "1",
         "text": "fermer"
+      },
+      {
+        "id": "0",
+        "text": "crier"
       }
     ],
     "accepted": [
@@ -1086,16 +1354,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "fermer"
+      },
+      {
         "id": "1",
-        "text": "coquillage"
+        "text": "clé"
       },
       {
         "id": "2",
-        "text": "décider"
-      },
-      {
-        "id": "0",
-        "text": "fermer"
+        "text": "avec"
       }
     ],
     "accepted": [
@@ -1139,97 +1407,30 @@
     }
   },
   {
-    "id": "concha",
+    "id": "clavis",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "concha",
-    "assessment": "study.lexicon.theatrum.sententiae:concha",
+    "item": "clavis",
+    "assessment": "study.lexicon.theatrum.sententiae:clavis",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "concha"
+        "text": "clāvis"
       }
     ],
     "choices": [
+      {
+        "id": "1",
+        "text": "avec"
+      },
       {
         "id": "0",
-        "text": "coquillage"
-      },
-      {
-        "id": "2",
-        "text": "avec"
-      },
-      {
-        "id": "1",
-        "text": "décider"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "concha"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: concha — coquillage.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: concha — coquillage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: concha — coquillage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "constituo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "constituo",
-    "assessment": "study.lexicon.theatrum.sententiae:constituo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "cōnstituere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "avec"
+        "text": "clé"
       },
       {
         "id": "2",
         "text": "courir"
-      },
-      {
-        "id": "0",
-        "text": "décider"
       }
     ],
     "accepted": [
@@ -1241,7 +1442,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "constituo"
+      "clavis"
     ],
     "editorial": {
       "language": "la",
@@ -1249,13 +1450,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: cōnstituere — décider.",
+        "feedback": "Rēctē: clāvis — clé.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: cōnstituere — décider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
           "study.error"
         ],
@@ -1263,7 +1464,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: cōnstituere — décider.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: clāvis — clé.",
         "observed": [
           "study.error"
         ],
@@ -1288,15 +1489,15 @@
     "choices": [
       {
         "id": "2",
-        "text": "détruire, effacer"
-      },
-      {
-        "id": "0",
-        "text": "avec"
+        "text": "garder"
       },
       {
         "id": "1",
         "text": "courir"
+      },
+      {
+        "id": "0",
+        "text": "avec"
       }
     ],
     "accepted": [
@@ -1354,16 +1555,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "abandonner"
+        "id": "0",
+        "text": "courir"
       },
       {
-        "id": "1",
+        "id": "2",
         "text": "détruire, effacer"
       },
       {
-        "id": "0",
-        "text": "courir"
+        "id": "1",
+        "text": "garder"
       }
     ],
     "accepted": [
@@ -1407,6 +1608,73 @@
     }
   },
   {
+    "id": "custodio",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "custodio",
+    "assessment": "study.lexicon.theatrum.sententiae:custodio",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "cūstōdīre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "détruire, effacer"
+      },
+      {
+        "id": "0",
+        "text": "garder"
+      },
+      {
+        "id": "2",
+        "text": "s’en aller"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "custodio"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cūstōdīre — garder.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cūstōdīre — garder.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "deleo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1426,11 +1694,11 @@
       },
       {
         "id": "1",
-        "text": "abandonner"
+        "text": "s’en aller"
       },
       {
         "id": "2",
-        "text": "dire"
+        "text": "élève"
       }
     ],
     "accepted": [
@@ -1465,140 +1733,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: dēlēre — détruire, effacer.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "desero",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "desero",
-    "assessment": "study.lexicon.theatrum.sententiae:desero",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dēserere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "s’en aller"
-      },
-      {
-        "id": "0",
-        "text": "abandonner"
-      },
-      {
-        "id": "1",
-        "text": "dire"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "desero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dēserere — abandonner.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dēserere — abandonner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dēserere — abandonner.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "dico",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "dico",
-    "assessment": "study.lexicon.theatrum.sententiae:dico",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dīcere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "s’en aller"
-      },
-      {
-        "id": "0",
-        "text": "dire"
-      },
-      {
-        "id": "2",
-        "text": "élève"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "dico"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dīcere — dire.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
         "observed": [
           "study.error"
         ],
@@ -1756,12 +1890,12 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "don"
-      },
-      {
         "id": "0",
         "text": "richesses"
+      },
+      {
+        "id": "2",
+        "text": "pendant que"
       },
       {
         "id": "1",
@@ -1823,16 +1957,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "pendant que"
+      },
+      {
         "id": "0",
         "text": "donner"
       },
       {
-        "id": "1",
-        "text": "don"
-      },
-      {
         "id": "2",
-        "text": "pendant que"
+        "text": "lettre envoyée"
       }
     ],
     "accepted": [
@@ -1876,73 +2010,6 @@
     }
   },
   {
-    "id": "donum",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "donum",
-    "assessment": "study.lexicon.theatrum.sententiae:donum",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "dōnum"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "pendant que"
-      },
-      {
-        "id": "2",
-        "text": "lettre envoyée"
-      },
-      {
-        "id": "0",
-        "text": "don"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "donum"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: dōnum — don.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — don.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dōnum — don.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "dum",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1957,12 +2024,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "pendant que"
+        "id": "2",
+        "text": "même, aussi"
       },
       {
-        "id": "2",
-        "text": "et"
+        "id": "0",
+        "text": "pendant que"
       },
       {
         "id": "1",
@@ -2024,16 +2091,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "lettre envoyée"
-      },
-      {
         "id": "1",
-        "text": "et"
+        "text": "même, aussi"
       },
       {
         "id": "2",
-        "text": "même, aussi"
+        "text": "réveiller"
+      },
+      {
+        "id": "0",
+        "text": "lettre envoyée"
       }
     ],
     "accepted": [
@@ -2077,73 +2144,6 @@
     }
   },
   {
-    "id": "et",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "et",
-    "assessment": "study.lexicon.theatrum.sententiae:et",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "et"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "et"
-      },
-      {
-        "id": "1",
-        "text": "même, aussi"
-      },
-      {
-        "id": "2",
-        "text": "réveiller"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "et"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: et — et.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: et — et.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "etiam",
     "interaction": "choice",
     "dimension": "lemma",
@@ -2158,12 +2158,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "réveiller"
-      },
-      {
         "id": "0",
         "text": "même, aussi"
+      },
+      {
+        "id": "1",
+        "text": "réveiller"
       },
       {
         "id": "2",
@@ -2229,12 +2229,12 @@
         "text": "sortir"
       },
       {
-        "id": "0",
-        "text": "réveiller"
-      },
-      {
         "id": "2",
         "text": "exercer"
+      },
+      {
+        "id": "0",
+        "text": "réveiller"
       }
     ],
     "accepted": [
@@ -2293,7 +2293,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "attendre"
+        "text": "femme"
       },
       {
         "id": "1",
@@ -2359,16 +2359,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "exercer"
-      },
-      {
         "id": "2",
-        "text": "heureux"
+        "text": "fils"
       },
       {
         "id": "1",
-        "text": "attendre"
+        "text": "femme"
+      },
+      {
+        "id": "0",
+        "text": "exercer"
       }
     ],
     "accepted": [
@@ -2412,140 +2412,6 @@
     }
   },
   {
-    "id": "exspecto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "exspecto",
-    "assessment": "study.lexicon.theatrum.sententiae:exspecto",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "exspectāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "heureux"
-      },
-      {
-        "id": "2",
-        "text": "femme"
-      },
-      {
-        "id": "0",
-        "text": "attendre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "exspecto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: exspectāre — attendre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: exspectāre — attendre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "felix",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "felix",
-    "assessment": "study.lexicon.theatrum.sententiae:felix",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "fēlīx"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "fils"
-      },
-      {
-        "id": "1",
-        "text": "femme"
-      },
-      {
-        "id": "0",
-        "text": "heureux"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "felix"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: fēlīx — heureux.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēlīx — heureux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēlīx — heureux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "femina",
     "interaction": "choice",
     "dimension": "lemma",
@@ -2560,16 +2426,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "femme"
+      },
+      {
         "id": "2",
         "text": "fleuve"
       },
       {
         "id": "1",
         "text": "fils"
-      },
-      {
-        "id": "0",
-        "text": "femme"
       }
     ],
     "accepted": [
@@ -2627,12 +2493,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "fils"
-      },
-      {
         "id": "1",
         "text": "fleuve"
+      },
+      {
+        "id": "0",
+        "text": "fils"
       },
       {
         "id": "2",
@@ -2698,12 +2564,12 @@
         "text": "s’enfuir"
       },
       {
-        "id": "0",
-        "text": "fleuve"
-      },
-      {
         "id": "1",
         "text": "froid"
+      },
+      {
+        "id": "0",
+        "text": "fleuve"
       }
     ],
     "accepted": [
@@ -2828,16 +2694,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "s’enfuir"
+      },
+      {
         "id": "1",
         "text": "avoir"
       },
       {
         "id": "2",
         "text": "porte"
-      },
-      {
-        "id": "0",
-        "text": "s’enfuir"
       }
     ],
     "accepted": [
@@ -2899,12 +2765,12 @@
         "text": "dans, sur"
       },
       {
-        "id": "0",
-        "text": "avoir"
-      },
-      {
         "id": "1",
         "text": "porte"
+      },
+      {
+        "id": "0",
+        "text": "avoir"
       }
     ],
     "accepted": [
@@ -3029,16 +2895,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "dans, sur"
+      },
+      {
         "id": "1",
         "text": "manque, pauvreté"
       },
       {
         "id": "2",
         "text": "entrer"
-      },
-      {
-        "id": "0",
-        "text": "dans, sur"
       }
     ],
     "accepted": [
@@ -3096,16 +2962,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "manque, pauvreté"
-      },
-      {
         "id": "1",
         "text": "entrer"
       },
       {
+        "id": "0",
+        "text": "manque, pauvreté"
+      },
+      {
         "id": "2",
-        "text": "trouver"
+        "text": "travailler"
       }
     ],
     "accepted": [
@@ -3168,11 +3034,11 @@
       },
       {
         "id": "2",
-        "text": "travailler"
+        "text": "lire"
       },
       {
         "id": "1",
-        "text": "trouver"
+        "text": "travailler"
       }
     ],
     "accepted": [
@@ -3216,73 +3082,6 @@
     }
   },
   {
-    "id": "invenio",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "invenio",
-    "assessment": "study.lexicon.theatrum.sententiae:invenio",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "invenīre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "joyeux"
-      },
-      {
-        "id": "0",
-        "text": "trouver"
-      },
-      {
-        "id": "1",
-        "text": "travailler"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "invenio"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: invenīre — trouver.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: invenīre — trouver.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: invenīre — trouver.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "laboro",
     "interaction": "choice",
     "dimension": "lemma",
@@ -3297,16 +3096,16 @@
     ],
     "choices": [
       {
+        "id": "2",
+        "text": "livre"
+      },
+      {
         "id": "0",
         "text": "travailler"
       },
       {
-        "id": "2",
-        "text": "lire"
-      },
-      {
         "id": "1",
-        "text": "joyeux"
+        "text": "lire"
       }
     ],
     "accepted": [
@@ -3350,73 +3149,6 @@
     }
   },
   {
-    "id": "laetus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "laetus",
-    "assessment": "study.lexicon.theatrum.sententiae:laetus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "laetus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "livre"
-      },
-      {
-        "id": "0",
-        "text": "joyeux"
-      },
-      {
-        "id": "1",
-        "text": "lire"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "laetus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: laetus — joyeux.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: laetus — joyeux.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "lego",
     "interaction": "choice",
     "dimension": "lemma",
@@ -3432,7 +3164,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "rivage"
+        "text": "lampe"
       },
       {
         "id": "1",
@@ -3499,7 +3231,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "mer"
+        "text": "mère"
       },
       {
         "id": "0",
@@ -3507,7 +3239,7 @@
       },
       {
         "id": "1",
-        "text": "rivage"
+        "text": "lampe"
       }
     ],
     "accepted": [
@@ -3551,83 +3283,16 @@
     }
   },
   {
-    "id": "litus",
+    "id": "lucerna",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "litus",
-    "assessment": "study.lexicon.theatrum.sententiae:litus",
+    "item": "lucerna",
+    "assessment": "study.lexicon.theatrum.sententiae:lucerna",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "lītus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "mer"
-      },
-      {
-        "id": "2",
-        "text": "mère"
-      },
-      {
-        "id": "0",
-        "text": "rivage"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "litus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: lītus — rivage.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: lītus — rivage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: lītus — rivage.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "mare",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "mare",
-    "assessment": "study.lexicon.theatrum.sententiae:mare",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "mare"
+        "text": "lūcerna"
       }
     ],
     "choices": [
@@ -3641,7 +3306,7 @@
       },
       {
         "id": "0",
-        "text": "mer"
+        "text": "lampe"
       }
     ],
     "accepted": [
@@ -3653,7 +3318,7 @@
     "requires": [],
     "help": "study.lexicon.sententiae",
     "vocabulary": [
-      "mare"
+      "lucerna"
     ],
     "editorial": {
       "language": "la",
@@ -3661,13 +3326,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: mare — mer.",
+        "feedback": "Rēctē: lūcerna — lampe.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mare — mer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
           "study.error"
         ],
@@ -3675,7 +3340,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mare — mer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: lūcerna — lampe.",
         "observed": [
           "study.error"
         ],
@@ -4034,16 +3699,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "raconter"
+      },
+      {
         "id": "2",
         "text": "navire"
       },
       {
         "id": "1",
         "text": "marin"
-      },
-      {
-        "id": "0",
-        "text": "raconter"
       }
     ],
     "accepted": [
@@ -4168,16 +3833,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "navire"
-      },
-      {
         "id": "2",
-        "text": "négliger"
+        "text": "ne pas vouloir"
       },
       {
         "id": "1",
         "text": "pour que… ne… pas"
+      },
+      {
+        "id": "0",
+        "text": "navire"
       }
     ],
     "accepted": [
@@ -4235,16 +3900,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "pour que… ne… pas"
+      },
+      {
         "id": "2",
-        "text": "et ne… pas, ni"
+        "text": "ne… pas"
       },
       {
         "id": "1",
-        "text": "négliger"
-      },
-      {
-        "id": "0",
-        "text": "pour que… ne… pas"
+        "text": "ne pas vouloir"
       }
     ],
     "accepted": [
@@ -4288,140 +3953,6 @@
     }
   },
   {
-    "id": "neglego",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "neglego",
-    "assessment": "study.lexicon.theatrum.sententiae:neglego",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "neglegere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "négliger"
-      },
-      {
-        "id": "1",
-        "text": "et ne… pas, ni"
-      },
-      {
-        "id": "2",
-        "text": "ne pas vouloir"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "neglego"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: neglegere — négliger.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neglegere — négliger.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neglegere — négliger.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "neque",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "neque",
-    "assessment": "study.lexicon.theatrum.sententiae:neque",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "neque"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ne pas vouloir"
-      },
-      {
-        "id": "0",
-        "text": "et ne… pas, ni"
-      },
-      {
-        "id": "2",
-        "text": "ne… pas"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "neque"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: neque — et ne… pas, ni.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neque — et ne… pas, ni.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: neque — et ne… pas, ni.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "nolo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4445,7 +3976,7 @@
       },
       {
         "id": "2",
-        "text": "messager, message"
+        "text": "ville fortifiée"
       }
     ],
     "accepted": [
@@ -4504,7 +4035,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "ville fortifiée"
+        "text": "montrer"
       },
       {
         "id": "0",
@@ -4512,7 +4043,7 @@
       },
       {
         "id": "1",
-        "text": "messager, message"
+        "text": "ville fortifiée"
       }
     ],
     "accepted": [
@@ -4556,73 +4087,6 @@
     }
   },
   {
-    "id": "nuntius",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "nuntius",
-    "assessment": "study.lexicon.theatrum.sententiae:nuntius",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "nūntius"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ville fortifiée"
-      },
-      {
-        "id": "0",
-        "text": "messager, message"
-      },
-      {
-        "id": "2",
-        "text": "pain"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "nuntius"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: nūntius — messager, message.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nūntius — messager, message.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: nūntius — messager, message.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "oppidum",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4637,16 +4101,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "montrer"
+      },
+      {
         "id": "0",
         "text": "ville fortifiée"
       },
       {
-        "id": "1",
-        "text": "pain"
-      },
-      {
         "id": "2",
-        "text": "préparer"
+        "text": "mouton, brebis"
       }
     ],
     "accepted": [
@@ -4690,6 +4154,140 @@
     }
   },
   {
+    "id": "ostendo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ostendo",
+    "assessment": "study.lexicon.theatrum.sententiae:ostendo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ostendere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "pain"
+      },
+      {
+        "id": "0",
+        "text": "montrer"
+      },
+      {
+        "id": "1",
+        "text": "mouton, brebis"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "ostendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ostendere — montrer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ostendere — montrer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "ovis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ovis",
+    "assessment": "study.lexicon.theatrum.sententiae:ovis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "ovis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "mouton, brebis"
+      },
+      {
+        "id": "2",
+        "text": "préparer, se procurer"
+      },
+      {
+        "id": "1",
+        "text": "pain"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "ovis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: ovis — mouton, brebis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ovis — mouton, brebis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "panis",
     "interaction": "choice",
     "dimension": "lemma",
@@ -4709,7 +4307,7 @@
       },
       {
         "id": "1",
-        "text": "préparer"
+        "text": "préparer, se procurer"
       },
       {
         "id": "2",
@@ -4780,7 +4378,7 @@
       },
       {
         "id": "0",
-        "text": "préparer"
+        "text": "préparer, se procurer"
       }
     ],
     "accepted": [
@@ -4800,13 +4398,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: parāre — préparer.",
+        "feedback": "Rēctē: parāre — préparer, se procurer.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
           "study.error"
         ],
@@ -4814,7 +4412,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: parāre — préparer, se procurer.",
         "observed": [
           "study.error"
         ],
@@ -4847,7 +4445,7 @@
       },
       {
         "id": "2",
-        "text": "perdre"
+        "text": "étranger, voyageur"
       }
     ],
     "accepted": [
@@ -4910,11 +4508,11 @@
       },
       {
         "id": "1",
-        "text": "perdre"
+        "text": "étranger, voyageur"
       },
       {
         "id": "2",
-        "text": "étranger, voyageur"
+        "text": "terrifier"
       }
     ],
     "accepted": [
@@ -4958,73 +4556,6 @@
     }
   },
   {
-    "id": "perdo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "perdo",
-    "assessment": "study.lexicon.theatrum.sententiae:perdo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "perdere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "terrifier"
-      },
-      {
-        "id": "1",
-        "text": "étranger, voyageur"
-      },
-      {
-        "id": "0",
-        "text": "perdre"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "perdo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: perdere — perdre.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: perdere — perdre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: perdere — perdre.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "peregrinus",
     "interaction": "choice",
     "dimension": "lemma",
@@ -5043,12 +4574,12 @@
         "text": "terrifier"
       },
       {
-        "id": "0",
-        "text": "étranger, voyageur"
-      },
-      {
         "id": "2",
         "text": "parvenir, arriver"
+      },
+      {
+        "id": "0",
+        "text": "étranger, voyageur"
       }
     ],
     "accepted": [
@@ -5106,12 +4637,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "terrifier"
+        "id": "2",
+        "text": "se diriger vers, chercher à obtenir"
       },
       {
-        "id": "2",
-        "text": "chercher à obtenir, demander"
+        "id": "0",
+        "text": "terrifier"
       },
       {
         "id": "1",
@@ -5173,16 +4704,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "parvenir, arriver"
+      },
+      {
         "id": "1",
-        "text": "chercher à obtenir, demander"
+        "text": "se diriger vers, chercher à obtenir"
       },
       {
         "id": "2",
         "text": "porte d’une ville"
-      },
-      {
-        "id": "0",
-        "text": "parvenir, arriver"
       }
     ],
     "accepted": [
@@ -5240,16 +4771,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "chercher à obtenir, demander"
-      },
-      {
         "id": "2",
         "text": "porter"
       },
       {
         "id": "1",
         "text": "porte d’une ville"
+      },
+      {
+        "id": "0",
+        "text": "se diriger vers, chercher à obtenir"
       }
     ],
     "accepted": [
@@ -5269,13 +4800,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: petere — chercher à obtenir, demander.",
+        "feedback": "Rēctē: petere — se diriger vers, chercher à obtenir.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — chercher à obtenir, demander.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
           "study.error"
         ],
@@ -5283,7 +4814,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — chercher à obtenir, demander.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: petere — se diriger vers, chercher à obtenir.",
         "observed": [
           "study.error"
         ],
@@ -5307,12 +4838,12 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "porter"
-      },
-      {
         "id": "0",
         "text": "porte d’une ville"
+      },
+      {
+        "id": "1",
+        "text": "porter"
       },
       {
         "id": "2",
@@ -5375,7 +4906,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "se hâter"
+        "text": "jeune fille"
       },
       {
         "id": "0",
@@ -5442,7 +4973,7 @@
     "choices": [
       {
         "id": "1",
-        "text": "se hâter"
+        "text": "jeune fille"
       },
       {
         "id": "0",
@@ -5450,7 +4981,7 @@
       },
       {
         "id": "2",
-        "text": "jeune fille"
+        "text": "garçon"
       }
     ],
     "accepted": [
@@ -5494,73 +5025,6 @@
     }
   },
   {
-    "id": "propero",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "propero",
-    "assessment": "study.lexicon.theatrum.sententiae:propero",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "properāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "se hâter"
-      },
-      {
-        "id": "2",
-        "text": "garçon"
-      },
-      {
-        "id": "1",
-        "text": "jeune fille"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "propero"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: properāre — se hâter.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: properāre — se hâter.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: properāre — se hâter.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "puella",
     "interaction": "choice",
     "dimension": "lemma",
@@ -5575,16 +5039,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "jeune fille"
+      },
+      {
         "id": "1",
         "text": "garçon"
       },
       {
         "id": "2",
-        "text": "penser"
-      },
-      {
-        "id": "0",
-        "text": "jeune fille"
+        "text": "chercher"
       }
     ],
     "accepted": [
@@ -5642,16 +5106,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "garçon"
-      },
-      {
         "id": "1",
-        "text": "penser"
+        "text": "chercher"
       },
       {
         "id": "2",
-        "text": "chercher, demander"
+        "text": "parce que"
+      },
+      {
+        "id": "0",
+        "text": "garçon"
       }
     ],
     "accepted": [
@@ -5695,73 +5159,6 @@
     }
   },
   {
-    "id": "puto",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "puto",
-    "assessment": "study.lexicon.theatrum.sententiae:puto",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "putāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "bien que"
-      },
-      {
-        "id": "1",
-        "text": "chercher, demander"
-      },
-      {
-        "id": "0",
-        "text": "penser"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "puto"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: putāre — penser.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "quaero",
     "interaction": "choice",
     "dimension": "lemma",
@@ -5777,15 +5174,15 @@
     "choices": [
       {
         "id": "0",
-        "text": "chercher, demander"
+        "text": "chercher"
       },
       {
         "id": "1",
-        "text": "bien que"
+        "text": "parce que"
       },
       {
         "id": "2",
-        "text": "qui, pronom relatif"
+        "text": "chose, événement"
       }
     ],
     "accepted": [
@@ -5805,13 +5202,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: quaerere — chercher, demander.",
+        "feedback": "Rēctē: quaerere — chercher.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher, demander.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
           "study.error"
         ],
@@ -5819,141 +5216,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher, demander.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "quamquam",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "quamquam",
-    "assessment": "study.lexicon.theatrum.sententiae:quamquam",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "quamquam"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "parce que"
-      },
-      {
-        "id": "1",
-        "text": "qui, pronom relatif"
-      },
-      {
-        "id": "0",
-        "text": "bien que"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "quamquam"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quamquam — bien que.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quamquam — bien que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quamquam — bien que.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "qui",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "qui",
-    "assessment": "study.lexicon.theatrum.sententiae:qui",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "quī"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "chose, événement"
-      },
-      {
-        "id": "1",
-        "text": "parce que"
-      },
-      {
-        "id": "0",
-        "text": "qui, pronom relatif"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "qui"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: quī — qui, pronom relatif.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: quī — qui, pronom relatif.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: quaerere — chercher.",
         "observed": [
           "study.error"
         ],
@@ -5981,12 +5244,12 @@
         "text": "rose"
       },
       {
-        "id": "0",
-        "text": "parce que"
-      },
-      {
         "id": "1",
         "text": "chose, événement"
+      },
+      {
+        "id": "0",
+        "text": "parce que"
       }
     ],
     "accepted": [
@@ -6116,7 +5379,7 @@
       },
       {
         "id": "2",
-        "text": "soi, se"
+        "text": "garder"
       },
       {
         "id": "0",
@@ -6179,15 +5442,15 @@
     "choices": [
       {
         "id": "1",
-        "text": "soi, se"
-      },
-      {
-        "id": "2",
-        "text": "vieillard"
+        "text": "garder"
       },
       {
         "id": "0",
         "text": "écrire"
+      },
+      {
+        "id": "2",
+        "text": "esclave"
       }
     ],
     "accepted": [
@@ -6231,140 +5494,6 @@
     }
   },
   {
-    "id": "se",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "se",
-    "assessment": "study.lexicon.theatrum.sententiae:se",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "sē"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "garder"
-      },
-      {
-        "id": "0",
-        "text": "soi, se"
-      },
-      {
-        "id": "1",
-        "text": "vieillard"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "se"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: sē — soi, se.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "senex",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "senex",
-    "assessment": "study.lexicon.theatrum.sententiae:senex",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "senex"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "esclave"
-      },
-      {
-        "id": "0",
-        "text": "vieillard"
-      },
-      {
-        "id": "1",
-        "text": "garder"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "senex"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: senex — vieillard.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: senex — vieillard.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: senex — vieillard.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "servo",
     "interaction": "choice",
     "dimension": "lemma",
@@ -6380,7 +5509,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "forêt"
+        "text": "seul"
       },
       {
         "id": "1",
@@ -6447,15 +5576,15 @@
     "choices": [
       {
         "id": "2",
+        "text": "être"
+      },
+      {
+        "id": "1",
         "text": "seul"
       },
       {
         "id": "0",
         "text": "esclave"
-      },
-      {
-        "id": "1",
-        "text": "forêt"
       }
     ],
     "accepted": [
@@ -6490,73 +5619,6 @@
       },
       "2": {
         "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "silva",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "silva",
-    "assessment": "study.lexicon.theatrum.sententiae:silva",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "silva"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "forêt"
-      },
-      {
-        "id": "2",
-        "text": "être"
-      },
-      {
-        "id": "1",
-        "text": "seul"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "silva"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: silva — forêt.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: silva — forêt.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: silva — forêt.",
         "observed": [
           "study.error"
         ],
@@ -6718,12 +5780,12 @@
         "text": "seulement"
       },
       {
-        "id": "2",
-        "text": "tenir"
-      },
-      {
         "id": "0",
         "text": "se taire"
+      },
+      {
+        "id": "2",
+        "text": "tenir"
       }
     ],
     "accepted": [
@@ -6781,16 +5843,16 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "tenir"
-      },
-      {
         "id": "0",
         "text": "seulement"
       },
       {
+        "id": "1",
+        "text": "tenir"
+      },
+      {
         "id": "2",
-        "text": "triste"
+        "text": "ville"
       }
     ],
     "accepted": [
@@ -6848,16 +5910,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "ville"
+      },
+      {
         "id": "0",
         "text": "tenir"
       },
       {
-        "id": "1",
-        "text": "triste"
-      },
-      {
         "id": "2",
-        "text": "ville"
+        "text": "pour que"
       }
     ],
     "accepted": [
@@ -6901,73 +5963,6 @@
     }
   },
   {
-    "id": "tristis",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "tristis",
-    "assessment": "study.lexicon.theatrum.sententiae:tristis",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "trīstis"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "ville"
-      },
-      {
-        "id": "2",
-        "text": "pour que"
-      },
-      {
-        "id": "0",
-        "text": "triste"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.sententiae"
-    ],
-    "requires": [],
-    "help": "study.lexicon.sententiae",
-    "vocabulary": [
-      "tristis"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: trīstis — triste.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: trīstis — triste.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: trīstis — triste.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
     "id": "urbs",
     "interaction": "choice",
     "dimension": "lemma",
@@ -6982,12 +5977,12 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "ville"
-      },
-      {
         "id": "1",
         "text": "pour que"
+      },
+      {
+        "id": "0",
+        "text": "ville"
       },
       {
         "id": "2",
@@ -7049,16 +6044,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "pour que"
-      },
-      {
         "id": "1",
         "text": "voile de bateau"
       },
       {
         "id": "2",
-        "text": "venir, arriver"
+        "text": "venir"
+      },
+      {
+        "id": "0",
+        "text": "pour que"
       }
     ],
     "accepted": [
@@ -7116,16 +6111,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "voile de bateau"
+      },
+      {
         "id": "2",
         "text": "route"
       },
       {
         "id": "1",
-        "text": "venir, arriver"
-      },
-      {
-        "id": "0",
-        "text": "voile de bateau"
+        "text": "venir"
       }
     ],
     "accepted": [
@@ -7183,16 +6178,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "venir, arriver"
-      },
-      {
         "id": "1",
         "text": "route"
       },
       {
         "id": "2",
         "text": "voyageur"
+      },
+      {
+        "id": "0",
+        "text": "venir"
       }
     ],
     "accepted": [
@@ -7212,13 +6207,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: venīre — venir, arriver.",
+        "feedback": "Rēctē: venīre — venir.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir, arriver.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
           "study.error"
         ],
@@ -7226,7 +6221,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir, arriver.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
         "observed": [
           "study.error"
         ],
@@ -7250,16 +6245,16 @@
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "route"
+      },
+      {
         "id": "1",
         "text": "voyageur"
       },
       {
         "id": "2",
         "text": "voisin"
-      },
-      {
-        "id": "0",
-        "text": "route"
       }
     ],
     "accepted": [
@@ -7317,16 +6312,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "voyageur"
-      },
-      {
         "id": "1",
         "text": "voisin"
       },
       {
         "id": "2",
-        "text": "veuve"
+        "text": "voir"
+      },
+      {
+        "id": "0",
+        "text": "voyageur"
       }
     ],
     "accepted": [
@@ -7384,16 +6379,16 @@
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "appeler"
+        "id": "0",
+        "text": "voisin"
       },
       {
-        "id": "1",
+        "id": "2",
         "text": "veuve"
       },
       {
-        "id": "0",
-        "text": "voisin"
+        "id": "1",
+        "text": "voir"
       }
     ],
     "accepted": [
@@ -7437,6 +6432,73 @@
     }
   },
   {
+    "id": "video",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "video",
+    "assessment": "study.lexicon.theatrum.sententiae:video",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "vidēre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "veuve"
+      },
+      {
+        "id": "2",
+        "text": "appeler"
+      },
+      {
+        "id": "0",
+        "text": "voir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.sententiae"
+    ],
+    "requires": [],
+    "help": "study.lexicon.sententiae",
+    "vocabulary": [
+      "video"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: vidēre — voir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "vidua",
     "interaction": "choice",
     "dimension": "lemma",
@@ -7451,16 +6513,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "veuve"
-      },
-      {
         "id": "2",
         "text": "vouloir"
       },
       {
         "id": "1",
         "text": "appeler"
+      },
+      {
+        "id": "0",
+        "text": "veuve"
       }
     ],
     "accepted": [
@@ -7590,7 +6652,7 @@
       },
       {
         "id": "2",
-        "text": "vers, auprès de"
+        "text": "vers, auprès de ; pour"
       },
       {
         "id": "0",

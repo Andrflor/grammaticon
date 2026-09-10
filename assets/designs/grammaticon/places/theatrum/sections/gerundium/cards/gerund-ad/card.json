@@ -1,0 +1,67 @@
+{
+  "id": "gerund-ad",
+  "name": "Ad discendum",
+  "subtitle": "Interpretātiō sententiarum",
+  "access": {
+    "price": 25,
+    "requires": {
+      "all": [
+        {
+          "unlocked": "theatrum/sententiae/10-sacred"
+        }
+      ]
+    }
+  },
+  "skills": [
+    "study.version.gerund-ad"
+  ],
+  "encounter": {
+    "lives": 3,
+    "target": 5,
+    "completion": "sequence"
+  },
+  "questions": "questions.json",
+  "lesson": "lesson.json",
+  "presentation": {
+    "background": "theatrum_bg",
+    "hero": "histrio_idle",
+    "opponent": "actor_comoedus",
+    "heroCorrect": "histrio_gesture",
+    "heroWrong": "histrio_hurt",
+    "heroVictory": "histrio_victory",
+    "heroDefeat": "histrio_defeat",
+    "opponentName": "Cōmoedus Rīdēns",
+    "motion": "projectile",
+    "projectile": "persona",
+    "correctSound": "plausus",
+    "wrongSound": "murmur",
+    "cues": {
+      "correct": [
+        {
+          "delayMs": 60,
+          "sound": "oratio"
+        },
+        {
+          "delayMs": 300,
+          "sound": "plausus"
+        }
+      ],
+      "incorrect": [
+        {
+          "delayMs": 120,
+          "sound": "refutatio"
+        },
+        {
+          "delayMs": 320,
+          "sound": "murmur"
+        }
+      ]
+    },
+    "rewardEffect": "laurel",
+    "longText": true,
+    "introductionBlocks": [
+      0,
+      1
+    ]
+  }
+}

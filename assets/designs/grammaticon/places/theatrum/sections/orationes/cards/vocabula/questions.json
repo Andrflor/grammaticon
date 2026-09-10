@@ -1,29 +1,29 @@
 [
   {
-    "id": "magister",
+    "id": "ager",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "magister",
-    "assessment": "study.lexicon.theatrum.orationes:magister",
+    "item": "ager",
+    "assessment": "study.lexicon.theatrum.orationes:ager",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "magister"
+        "text": "ager"
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "garçon"
+        "text": "marcher"
       },
       {
         "id": "1",
-        "text": "dire"
+        "text": "agriculteur"
       },
       {
         "id": "0",
-        "text": "maître"
+        "text": "champ"
       }
     ],
     "accepted": [
@@ -35,7 +35,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "magister"
+      "ager"
     ],
     "editorial": {
       "language": "la",
@@ -43,13 +43,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Rēctē: magister — maître.",
+        "feedback": "Rēctē: ager — champ.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
           "study.error"
         ],
@@ -57,7 +57,7 @@
         "practice": []
       },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ager — champ.",
         "observed": [
           "study.error"
         ],
@@ -67,34 +67,34 @@
     }
   },
   {
-    "id": "dico",
+    "id": "agricola",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "dico",
-    "assessment": "study.lexicon.theatrum.orationes:dico",
+    "item": "agricola",
+    "assessment": "study.lexicon.theatrum.orationes:agricola",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "dīcere"
+        "text": "agricola"
       }
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "dire"
-      },
-      {
         "id": "0",
-        "text": "garçon"
+        "text": "agriculteur"
       },
       {
         "id": "1",
-        "text": "chanter"
+        "text": "marcher"
+      },
+      {
+        "id": "2",
+        "text": "ami, amie"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -102,7 +102,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "dico"
+      "agricola"
     ],
     "editorial": {
       "language": "la",
@@ -110,15 +110,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: agricola — agriculteur.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
         "observed": [
           "study.error"
         ],
@@ -126,42 +124,44 @@
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: dīcere — dire.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
+        "observed": [
+          "study.error"
+        ],
         "hypotheses": [],
         "practice": []
       }
     }
   },
   {
-    "id": "puer",
+    "id": "ambulo",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "puer",
-    "assessment": "study.lexicon.theatrum.orationes:puer",
+    "item": "ambulo",
+    "assessment": "study.lexicon.theatrum.orationes:ambulo",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "puer"
+        "text": "ambulāre"
       }
     ],
     "choices": [
       {
+        "id": "2",
+        "text": "ouvrir"
+      },
+      {
         "id": "0",
-        "text": "femme"
+        "text": "marcher"
       },
       {
         "id": "1",
-        "text": "garçon"
-      },
-      {
-        "id": "2",
-        "text": "chanter"
+        "text": "ami, amie"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -169,7 +169,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "puer"
+      "ambulo"
     ],
     "editorial": {
       "language": "la",
@@ -177,21 +177,289 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "feedback": "Rēctē: ambulāre — marcher.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: puer — garçon.",
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "amicus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "amicus",
+    "assessment": "study.lexicon.theatrum.orationes:amicus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "amīcus, amīca"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "ami, amie"
+      },
+      {
+        "id": "1",
+        "text": "ouvrir"
+      },
+      {
+        "id": "2",
+        "text": "eau"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "amicus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: amīcus, amīca — ami, amie.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus, amīca — ami, amie.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: amīcus, amīca — ami, amie.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "aperio",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "aperio",
+    "assessment": "study.lexicon.theatrum.orationes:aperio",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "aperīre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "labourer"
+      },
+      {
+        "id": "1",
+        "text": "eau"
+      },
+      {
+        "id": "0",
+        "text": "ouvrir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "aperio"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: aperīre — ouvrir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "aqua",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "aqua",
+    "assessment": "study.lexicon.theatrum.orationes:aqua",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "aqua"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "eau"
+      },
+      {
+        "id": "2",
+        "text": "chanter"
+      },
+      {
+        "id": "1",
+        "text": "labourer"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "aqua"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: aqua — eau.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: aqua — eau.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "aro",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "aro",
+    "assessment": "study.lexicon.theatrum.orationes:aro",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "arāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "dîner"
+      },
+      {
+        "id": "0",
+        "text": "labourer"
+      },
+      {
+        "id": "1",
+        "text": "chanter"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "aro"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: arāre — labourer.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: arāre — labourer.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: arāre — labourer.",
         "observed": [
           "study.error"
         ],
@@ -215,16 +483,16 @@
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "dîner"
+      },
+      {
         "id": "0",
         "text": "chanter"
       },
       {
-        "id": "1",
-        "text": "femme"
-      },
-      {
         "id": "2",
-        "text": "jeune fille"
+        "text": "croire"
       }
     ],
     "accepted": [
@@ -268,6 +536,609 @@
     }
   },
   {
+    "id": "ceno",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "ceno",
+    "assessment": "study.lexicon.theatrum.orationes:ceno",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "cēnāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dîner"
+      },
+      {
+        "id": "2",
+        "text": "courir"
+      },
+      {
+        "id": "1",
+        "text": "croire"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "ceno"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: cēnāre — dîner.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēnāre — dîner.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: cēnāre — dîner.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "credo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "credo",
+    "assessment": "study.lexicon.theatrum.orationes:credo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "crēdere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "dire"
+      },
+      {
+        "id": "0",
+        "text": "croire"
+      },
+      {
+        "id": "1",
+        "text": "courir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "credo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: crēdere — croire.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: crēdere — croire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: crēdere — croire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "curro",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "curro",
+    "assessment": "study.lexicon.theatrum.orationes:curro",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "currere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "courir"
+      },
+      {
+        "id": "2",
+        "text": "maître de maison"
+      },
+      {
+        "id": "1",
+        "text": "dire"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "curro"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: currere — courir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dico",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "dico",
+    "assessment": "study.lexicon.theatrum.orationes:dico",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dīcere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dire"
+      },
+      {
+        "id": "1",
+        "text": "maître de maison"
+      },
+      {
+        "id": "2",
+        "text": "maison"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "dico"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dīcere — dire.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dīcere — dire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dominus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "dominus",
+    "assessment": "study.lexicon.theatrum.orationes:dominus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dominus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "dormir"
+      },
+      {
+        "id": "1",
+        "text": "maison"
+      },
+      {
+        "id": "0",
+        "text": "maître de maison"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "dominus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dominus — maître de maison.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "domus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "domus",
+    "assessment": "study.lexicon.theatrum.orationes:domus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "domus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "dormir"
+      },
+      {
+        "id": "2",
+        "text": "acheter"
+      },
+      {
+        "id": "0",
+        "text": "maison"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "domus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: domus — maison.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: domus — maison.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "dormio",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "dormio",
+    "assessment": "study.lexicon.theatrum.orationes:dormio",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "dormīre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "dormir"
+      },
+      {
+        "id": "1",
+        "text": "acheter"
+      },
+      {
+        "id": "2",
+        "text": "lettre envoyée"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "dormio"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: dormīre — dormir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "emo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "emo",
+    "assessment": "study.lexicon.theatrum.orationes:emo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "emere"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "femme"
+      },
+      {
+        "id": "0",
+        "text": "acheter"
+      },
+      {
+        "id": "1",
+        "text": "lettre envoyée"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "emo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: emere — acheter.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: emere — acheter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: emere — acheter.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "epistula",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "epistula",
+    "assessment": "study.lexicon.theatrum.orationes:epistula",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "epistula"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "lettre envoyée"
+      },
+      {
+        "id": "2",
+        "text": "fils"
+      },
+      {
+        "id": "1",
+        "text": "femme"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "epistula"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: epistula — lettre envoyée.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "femina",
     "interaction": "choice",
     "dimension": "lemma",
@@ -282,20 +1153,20 @@
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "dans, sur"
-      },
-      {
         "id": "2",
-        "text": "femme"
+        "text": "jardin"
       },
       {
         "id": "0",
-        "text": "jeune fille"
+        "text": "femme"
+      },
+      {
+        "id": "1",
+        "text": "fils"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -311,10 +1182,8 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: fēmina — femme.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
@@ -327,34 +1196,36 @@
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: fēmina — femme.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fēmina — femme.",
+        "observed": [
+          "study.error"
+        ],
         "hypotheses": [],
         "practice": []
       }
     }
   },
   {
-    "id": "puella",
+    "id": "filius",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "puella",
-    "assessment": "study.lexicon.theatrum.orationes:puella",
+    "item": "filius",
+    "assessment": "study.lexicon.theatrum.orationes:filius",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "puella"
+        "text": "fīlius"
       }
     ],
     "choices": [
       {
         "id": "0",
-        "text": "jardin"
+        "text": "fils"
       },
       {
         "id": "1",
-        "text": "jeune fille"
+        "text": "jardin"
       },
       {
         "id": "2",
@@ -362,7 +1233,7 @@
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -370,7 +1241,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "puella"
+      "filius"
     ],
     "editorial": {
       "language": "la",
@@ -378,21 +1249,88 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "feedback": "Rēctē: fīlius — fils.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: puella — jeune fille.",
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "hortus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "hortus",
+    "assessment": "study.lexicon.theatrum.orationes:hortus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "hortus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "lire"
+      },
+      {
+        "id": "0",
+        "text": "jardin"
+      },
+      {
+        "id": "1",
+        "text": "dans, sur"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "hortus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: hortus — jardin.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
         "observed": [
           "study.error"
         ],
@@ -417,11 +1355,11 @@
     "choices": [
       {
         "id": "1",
-        "text": "jardin"
+        "text": "lire"
       },
       {
         "id": "2",
-        "text": "être"
+        "text": "livre"
       },
       {
         "id": "0",
@@ -469,704 +1407,34 @@
     }
   },
   {
-    "id": "hortus",
+    "id": "lego",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "hortus",
-    "assessment": "study.lexicon.theatrum.orationes:hortus",
+    "item": "lego",
+    "assessment": "study.lexicon.theatrum.orationes:lego",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "hortus"
+        "text": "legere"
       }
     ],
     "choices": [
-      {
-        "id": "0",
-        "text": "être"
-      },
-      {
-        "id": "1",
-        "text": "marchand"
-      },
-      {
-        "id": "2",
-        "text": "jardin"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "hortus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: hortus — jardin.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: hortus — jardin.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "sum",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "sum",
-    "assessment": "study.lexicon.theatrum.orationes:sum",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "esse"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "marchand"
-      },
-      {
-        "id": "1",
-        "text": "être"
-      },
-      {
-        "id": "0",
-        "text": "esclave"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "sum"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: esse — être.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "mercator",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "mercator",
-    "assessment": "study.lexicon.theatrum.orationes:mercator",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "mercātor"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "marchand"
-      },
-      {
-        "id": "1",
-        "text": "esclave"
-      },
-      {
-        "id": "2",
-        "text": "marcher"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "mercator"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: mercātor — marchand.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "servus",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "servus",
-    "assessment": "study.lexicon.theatrum.orationes:servus",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "servus"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "marcher"
-      },
-      {
-        "id": "2",
-        "text": "esclave"
-      },
-      {
-        "id": "1",
-        "text": "père"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "servus"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: servus — esclave.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "ambulo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "ambulo",
-    "assessment": "study.lexicon.theatrum.orationes:ambulo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "ambulāre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "marcher"
-      },
-      {
-        "id": "0",
-        "text": "fils"
-      },
-      {
-        "id": "2",
-        "text": "père"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "ambulo"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: ambulāre — marcher.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: ambulāre — marcher.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "pater",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "pater",
-    "assessment": "study.lexicon.theatrum.orationes:pater",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "pater"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "père"
-      },
-      {
-        "id": "1",
-        "text": "fils"
-      },
-      {
-        "id": "2",
-        "text": "école"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "pater"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: pater — père.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "filius",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "filius",
-    "assessment": "study.lexicon.theatrum.orationes:filius",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "fīlius"
-      }
-    ],
-    "choices": [
-      {
-        "id": "1",
-        "text": "agriculteur"
-      },
-      {
-        "id": "2",
-        "text": "fils"
-      },
-      {
-        "id": "0",
-        "text": "école"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "filius"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: fīlius — fils.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: fīlius — fils.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "schola",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "schola",
-    "assessment": "study.lexicon.theatrum.orationes:schola",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "schola"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "courir"
-      },
-      {
-        "id": "1",
-        "text": "école"
-      },
-      {
-        "id": "2",
-        "text": "agriculteur"
-      }
-    ],
-    "accepted": [
-      "1"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "schola"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Rēctē: schola — école.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "agricola",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "agricola",
-    "assessment": "study.lexicon.theatrum.orationes:agricola",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "agricola"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "agriculteur"
-      },
-      {
-        "id": "1",
-        "text": "courir"
-      },
-      {
-        "id": "2",
-        "text": "être assis"
-      }
-    ],
-    "accepted": [
-      "0"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "agricola"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Rēctē: agricola — agriculteur.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: agricola — agriculteur.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "curro",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "curro",
-    "assessment": "study.lexicon.theatrum.orationes:curro",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "currere"
-      }
-    ],
-    "choices": [
-      {
-        "id": "0",
-        "text": "être assis"
-      },
-      {
-        "id": "2",
-        "text": "courir"
-      },
-      {
-        "id": "1",
-        "text": "livre"
-      }
-    ],
-    "accepted": [
-      "2"
-    ],
-    "skills": [
-      "study.lexicon.theatrum.orationes"
-    ],
-    "requires": [],
-    "help": "study.lexicon.orationes",
-    "vocabulary": [
-      "curro"
-    ],
-    "editorial": {
-      "language": "la",
-      "translationDirection": "la-fr"
-    },
-    "outcomes": {
-      "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: currere — courir.",
-        "observed": [
-          "study.error"
-        ],
-        "hypotheses": [],
-        "practice": []
-      },
-      "2": {
-        "feedback": "Rēctē: currere — courir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      }
-    }
-  },
-  {
-    "id": "sedeo",
-    "interaction": "choice",
-    "dimension": "lemma",
-    "item": "sedeo",
-    "assessment": "study.lexicon.theatrum.orationes:sedeo",
-    "prompt": "Quid hoc vocābulum Gallicē significat?",
-    "content": [
-      {
-        "type": "text",
-        "text": "sedēre"
-      }
-    ],
-    "choices": [
-      {
-        "id": "2",
-        "text": "livre"
-      },
       {
         "id": "0",
         "text": "lire"
       },
       {
+        "id": "2",
+        "text": "maître"
+      },
+      {
         "id": "1",
-        "text": "être assis"
+        "text": "livre"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1174,7 +1442,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "sedeo"
+      "lego"
     ],
     "editorial": {
       "language": "la",
@@ -1182,21 +1450,21 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
+        "feedback": "Rēctē: legere — lire.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: sedēre — être assis.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
         "observed": [
           "study.error"
         ],
@@ -1221,15 +1489,15 @@
     "choices": [
       {
         "id": "1",
-        "text": "lire"
-      },
-      {
-        "id": "2",
-        "text": "maître de maison"
+        "text": "maître"
       },
       {
         "id": "0",
         "text": "livre"
+      },
+      {
+        "id": "2",
+        "text": "mère"
       }
     ],
     "accepted": [
@@ -1273,34 +1541,34 @@
     }
   },
   {
-    "id": "lego",
+    "id": "magister",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "lego",
-    "assessment": "study.lexicon.theatrum.orationes:lego",
+    "item": "magister",
+    "assessment": "study.lexicon.theatrum.orationes:magister",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "legere"
+        "text": "magister"
       }
     ],
     "choices": [
       {
-        "id": "1",
-        "text": "porte d’une ville"
+        "id": "2",
+        "text": "marchand"
       },
       {
         "id": "0",
-        "text": "maître de maison"
+        "text": "maître"
       },
       {
-        "id": "2",
-        "text": "lire"
+        "id": "1",
+        "text": "mère"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1308,7 +1576,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "lego"
+      "magister"
     ],
     "editorial": {
       "language": "la",
@@ -1316,15 +1584,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: magister — maître.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: legere — lire.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
         "observed": [
           "study.error"
         ],
@@ -1332,42 +1598,44 @@
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: legere — lire.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: magister — maître.",
+        "observed": [
+          "study.error"
+        ],
         "hypotheses": [],
         "practice": []
       }
     }
   },
   {
-    "id": "dominus",
+    "id": "mater",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "dominus",
-    "assessment": "study.lexicon.theatrum.orationes:dominus",
+    "item": "mater",
+    "assessment": "study.lexicon.theatrum.orationes:mater",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "dominus"
+        "text": "māter"
       }
     ],
     "choices": [
       {
+        "id": "0",
+        "text": "mère"
+      },
+      {
         "id": "1",
-        "text": "maître de maison"
+        "text": "marchand"
       },
       {
         "id": "2",
-        "text": "porte d’une ville"
-      },
-      {
-        "id": "0",
-        "text": "ouvrir"
+        "text": "marin"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1375,7 +1643,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "dominus"
+      "mater"
     ],
     "editorial": {
       "language": "la",
@@ -1383,21 +1651,289 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "feedback": "Rēctē: māter — mère.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: māter — mère.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: dominus — maître de maison.",
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: māter — mère.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "mercator",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "mercator",
+    "assessment": "study.lexicon.theatrum.orationes:mercator",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "mercātor"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "marin"
+      },
+      {
+        "id": "2",
+        "text": "navire"
+      },
+      {
+        "id": "0",
+        "text": "marchand"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "mercator"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: mercātor — marchand.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dominus — maître de maison.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: mercātor — marchand.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "nauta",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "nauta",
+    "assessment": "study.lexicon.theatrum.orationes:nauta",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "nauta"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "père"
+      },
+      {
+        "id": "1",
+        "text": "navire"
+      },
+      {
+        "id": "0",
+        "text": "marin"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "nauta"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: nauta — marin.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nauta — marin.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "navis",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "navis",
+    "assessment": "study.lexicon.theatrum.orationes:navis",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "nāvis"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "porte d’une ville"
+      },
+      {
+        "id": "0",
+        "text": "navire"
+      },
+      {
+        "id": "1",
+        "text": "père"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "navis"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: nāvis — navire.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nāvis — navire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: nāvis — navire.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "pater",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "pater",
+    "assessment": "study.lexicon.theatrum.orationes:pater",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "pater"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "porte d’une ville"
+      },
+      {
+        "id": "2",
+        "text": "porter"
+      },
+      {
+        "id": "0",
+        "text": "père"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "pater"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: pater — père.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: pater — père.",
         "observed": [
           "study.error"
         ],
@@ -1421,16 +1957,16 @@
     ],
     "choices": [
       {
-        "id": "0",
-        "text": "porte d’une ville"
-      },
-      {
         "id": "2",
-        "text": "lettre envoyée"
+        "text": "jeune fille"
       },
       {
         "id": "1",
-        "text": "ouvrir"
+        "text": "porter"
+      },
+      {
+        "id": "0",
+        "text": "porte d’une ville"
       }
     ],
     "accepted": [
@@ -1474,34 +2010,34 @@
     }
   },
   {
-    "id": "aperio",
+    "id": "porto",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "aperio",
-    "assessment": "study.lexicon.theatrum.orationes:aperio",
+    "item": "porto",
+    "assessment": "study.lexicon.theatrum.orationes:porto",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "aperīre"
+        "text": "portāre"
       }
     ],
     "choices": [
       {
         "id": "2",
-        "text": "ouvrir"
-      },
-      {
-        "id": "0",
-        "text": "lettre envoyée"
+        "text": "garçon"
       },
       {
         "id": "1",
-        "text": "écrire"
+        "text": "jeune fille"
+      },
+      {
+        "id": "0",
+        "text": "porter"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1509,7 +2045,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "aperio"
+      "porto"
     ],
     "editorial": {
       "language": "la",
@@ -1517,15 +2053,13 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: portāre — porter.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
       "1": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: aperīre — ouvrir.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
         "observed": [
           "study.error"
         ],
@@ -1533,42 +2067,44 @@
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: aperīre — ouvrir.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: portāre — porter.",
+        "observed": [
+          "study.error"
+        ],
         "hypotheses": [],
         "practice": []
       }
     }
   },
   {
-    "id": "epistula",
+    "id": "puella",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "epistula",
-    "assessment": "study.lexicon.theatrum.orationes:epistula",
+    "item": "puella",
+    "assessment": "study.lexicon.theatrum.orationes:puella",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "epistula"
+        "text": "puella"
       }
     ],
     "choices": [
       {
+        "id": "1",
+        "text": "garçon"
+      },
+      {
         "id": "2",
-        "text": "écrire"
+        "text": "penser"
       },
       {
         "id": "0",
-        "text": "venir"
-      },
-      {
-        "id": "1",
-        "text": "lettre envoyée"
+        "text": "jeune fille"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1576,7 +2112,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "epistula"
+      "puella"
     ],
     "editorial": {
       "language": "la",
@@ -1584,21 +2120,289 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
+        "feedback": "Rēctē: puella — jeune fille.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: epistula — lettre envoyée.",
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puella — jeune fille.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puer",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puer",
+    "assessment": "study.lexicon.theatrum.orationes:puer",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "puer"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "garçon"
+      },
+      {
+        "id": "1",
+        "text": "penser"
+      },
+      {
+        "id": "2",
+        "text": "revenir"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "puer"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: puer — garçon.",
         "observed": [],
         "hypotheses": [],
         "practice": []
       },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: epistula — lettre envoyée.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: puer — garçon.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "puto",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "puto",
+    "assessment": "study.lexicon.theatrum.orationes:puto",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "putāre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "penser"
+      },
+      {
+        "id": "1",
+        "text": "revenir"
+      },
+      {
+        "id": "2",
+        "text": "école"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "puto"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: putāre — penser.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: putāre — penser.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "redeo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "redeo",
+    "assessment": "study.lexicon.theatrum.orationes:redeo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "redīre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "école"
+      },
+      {
+        "id": "0",
+        "text": "revenir"
+      },
+      {
+        "id": "2",
+        "text": "écrire"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "redeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: redīre — revenir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: redīre — revenir.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "schola",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "schola",
+    "assessment": "study.lexicon.theatrum.orationes:schola",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "schola"
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "école"
+      },
+      {
+        "id": "2",
+        "text": "soi, se"
+      },
+      {
+        "id": "1",
+        "text": "écrire"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "schola"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: schola — école.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: schola — école.",
         "observed": [
           "study.error"
         ],
@@ -1623,7 +2427,7 @@
     "choices": [
       {
         "id": "2",
-        "text": "dormir"
+        "text": "être assis"
       },
       {
         "id": "0",
@@ -1631,7 +2435,7 @@
       },
       {
         "id": "1",
-        "text": "venir"
+        "text": "soi, se"
       }
     ],
     "accepted": [
@@ -1675,6 +2479,274 @@
     }
   },
   {
+    "id": "se",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "se",
+    "assessment": "study.lexicon.theatrum.orationes:se",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "sē"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "esclave"
+      },
+      {
+        "id": "1",
+        "text": "être assis"
+      },
+      {
+        "id": "0",
+        "text": "soi, se"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "se"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: sē — soi, se.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sē — soi, se.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "sedeo",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "sedeo",
+    "assessment": "study.lexicon.theatrum.orationes:sedeo",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "sedēre"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "être"
+      },
+      {
+        "id": "0",
+        "text": "être assis"
+      },
+      {
+        "id": "1",
+        "text": "esclave"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "sedeo"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: sedēre — être assis.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: sedēre — être assis.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "servus",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "servus",
+    "assessment": "study.lexicon.theatrum.orationes:servus",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "servus"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "venir"
+      },
+      {
+        "id": "0",
+        "text": "esclave"
+      },
+      {
+        "id": "1",
+        "text": "être"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "servus"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: servus — esclave.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: servus — esclave.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
+    "id": "sum",
+    "interaction": "choice",
+    "dimension": "lemma",
+    "item": "sum",
+    "assessment": "study.lexicon.theatrum.orationes:sum",
+    "prompt": "Quid hoc vocābulum Gallicē significat?",
+    "content": [
+      {
+        "type": "text",
+        "text": "esse"
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "voir"
+      },
+      {
+        "id": "1",
+        "text": "venir"
+      },
+      {
+        "id": "0",
+        "text": "être"
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.lexicon.theatrum.orationes"
+    ],
+    "requires": [],
+    "help": "study.lexicon.orationes",
+    "vocabulary": [
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē: esse — être.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: esse — être.",
+        "observed": [
+          "study.error"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  },
+  {
     "id": "venio",
     "interaction": "choice",
     "dimension": "lemma",
@@ -1690,19 +2762,19 @@
     "choices": [
       {
         "id": "1",
-        "text": "maître"
-      },
-      {
-        "id": "0",
-        "text": "dormir"
+        "text": "voir"
       },
       {
         "id": "2",
+        "text": "champ"
+      },
+      {
+        "id": "0",
         "text": "venir"
       }
     ],
     "accepted": [
-      "2"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1718,10 +2790,8 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
-        "observed": [
-          "study.error"
-        ],
+        "feedback": "Rēctē: venīre — venir.",
+        "observed": [],
         "hypotheses": [],
         "practice": []
       },
@@ -1734,42 +2804,44 @@
         "practice": []
       },
       "2": {
-        "feedback": "Rēctē: venīre — venir.",
-        "observed": [],
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: venīre — venir.",
+        "observed": [
+          "study.error"
+        ],
         "hypotheses": [],
         "practice": []
       }
     }
   },
   {
-    "id": "dormio",
+    "id": "video",
     "interaction": "choice",
     "dimension": "lemma",
-    "item": "dormio",
-    "assessment": "study.lexicon.theatrum.orationes:dormio",
+    "item": "video",
+    "assessment": "study.lexicon.theatrum.orationes:video",
     "prompt": "Quid hoc vocābulum Gallicē significat?",
     "content": [
       {
         "type": "text",
-        "text": "dormīre"
+        "text": "vidēre"
       }
     ],
     "choices": [
       {
-        "id": "2",
-        "text": "maître"
+        "id": "0",
+        "text": "voir"
       },
       {
-        "id": "0",
-        "text": "dire"
+        "id": "2",
+        "text": "agriculteur"
       },
       {
         "id": "1",
-        "text": "dormir"
+        "text": "champ"
       }
     ],
     "accepted": [
-      "1"
+      "0"
     ],
     "skills": [
       "study.lexicon.theatrum.orationes"
@@ -1777,7 +2849,7 @@
     "requires": [],
     "help": "study.lexicon.orationes",
     "vocabulary": [
-      "dormio"
+      "video"
     ],
     "editorial": {
       "language": "la",
@@ -1785,21 +2857,21 @@
     },
     "outcomes": {
       "0": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "feedback": "Rēctē: vidēre — voir.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
           "study.error"
         ],
         "hypotheses": [],
         "practice": []
       },
-      "1": {
-        "feedback": "Rēctē: dormīre — dormir.",
-        "observed": [],
-        "hypotheses": [],
-        "practice": []
-      },
       "2": {
-        "feedback": "Nōn rēctē. Vocābulum quaesītum: dormīre — dormir.",
+        "feedback": "Nōn rēctē. Vocābulum quaesītum: vidēre — voir.",
         "observed": [
           "study.error"
         ],

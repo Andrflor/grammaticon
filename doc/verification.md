@@ -308,3 +308,37 @@ The full section vocabulary now contains 114 lemmas per direction. Quantities we
 Current Theatrum/Templum totals: eleven groups, 62 paired topics, 22 lexical cards; 146 cards and 1,520 questions. Existing source requirements and mixed advanced cards still require work. No runtime or graphical code changed.
 
 All 34 Flutter tests, complete design validation and Linux compilation passed. Whole Grammaticon contains 317 cards and 892,074 questions. All 3,331 bundled design files and the unchanged engine hash match the workspace.
+
+### First Fabulae Syrae reading requirements
+
+Inspected the bodies of the first five readings in the referenced 2010 edition, including their transitions on shared pages. The original start-page-based ranges incorrectly cut off the final portions of readings 1–3. Their inclusive printed ranges are now 7–8, 8–9 and 9–11; readings 4–5 occupy 11 and 12 respectively. First-five boundaries are marked as body-verified. The remaining forty end-page estimates are explicitly provisional.
+
+Drafted salient lexical senses, constructions and reading objectives for all five. The resulting index contains 63 distinct provisional construction requirements. It distinguishes gerund uses, deponent and semideponent forms, passive reporting and commands, nominal versus absolute participles, ordinary versus figurative referents, and intentionally ambiguous references. Proper names are recorded separately. These are requirement drafts, not exhaustive lemma inventories or verified reading coverage. No source sentences, stories or illustrations were added to gameplay.
+
+Eight scoped mappings reference existing original questions for perfect absolutes, resulting states and nonne. The completion checker resolves these references and reports no undeclared requirements; the full objective remains incomplete. Catalog validation and whitespace checks pass. Only source-audit documentation changed, so the already verified Linux bundle remains current and no app rebuild was needed.
+
+### Gerund constructions
+
+Added the Gerundium group with four separate paired topics: purpose with ad and the accusative gerund, genitive after cupidus/studiosus, ablative of means, and the genitive before causā. Each bank has six original full-sentence questions. Production diagnostics distinguish incorrect cases or an infinitive after ad; translation diagnostics distinguish purpose, time, cause, means, desire and actual action. No runtime question generation was introduced.
+
+Each sentence card costs 25 gems, followed by a 30-gem lexical card requiring completion of all four. All main and lexical skills require successful evidence for every declared item for mastery. Existing actors and temple opponents rotate across the new cards; scenes and hero graphics are reused. The complete 48-lemma inventory is tested in both directions, including the contextual purpose meaning of ad. Accepted lexical meanings and choice uniqueness were checked.
+
+Explicit partial mappings connect these basic gerund constructions to the first five Fabulae Syrae readings. They do not claim to cover gerunds with direct objects, deponent gerunds or causal gerunds with adjectives. The previously omitted ad-gerund requirement in the third reading was added from the inspected source body. All new question references resolve; full reading coverage remains unfinished.
+
+Current Theatrum/Templum totals: twelve groups, 66 paired sentence topics and 24 terminal lexical cards; 156 cards and 1,664 questions.
+
+All 34 Flutter tests, complete design validation and Linux compilation passed. Whole Grammaticon contains 327 cards and 892,218 questions. All 3,363 bundled design files and the unchanged engine hash match the workspace.
+
+### Epitome opening requirements and purpose after past actions
+
+Visually inspected the first ten numbered paragraphs on PDF pages 11, 12 and 14 of the referenced 2009 Epitome. Paragraph 3 continues onto page 12; paragraph 7 continues on page 14 after an illustration. The source map now records inclusive end pages for these ten paragraphs. Their provisional inventory distinguishes 82 construction requirements, including deponent meanings, future perfect conditions, predicative complements, secondary-sequence purposes, the supine after motion and figurative references. Salient lexical candidates and reading objectives are recorded separately; the other 236 paragraph bodies and exhaustive lexical disambiguation remain pending.
+
+Replaced the old mixed Concessiō et antecēdentia card with Ut monēret in both places and moved it directly after Ut et nē. Six original sentences per direction contrast purpose after a past action with cause or reversed polarity. The new card has a new skill/item identity, costs 25 gems, and is connected to the explicit unlock chain and terminal vocabulary prerequisite list. Removed the retired card directories, help and skill IDs. The gerund group now depends on the actual last sentence card of the preceding group. The course, titles and corrections remain Latin; all graphics and runtime code are unchanged.
+
+The section's final vocabulary was rebuilt from the actual remaining and new sentences: 115 lemmas in each direction, including all new contextual words. Words present only in the removed mixed bank are no longer claimed by that section. Partial source mappings for Epitome paragraphs 5 and 7 refer to the new purposes; they explicitly exclude certification of the irregular edere forms and complete reading comprehension.
+
+Current Theatrum/Templum totals: twelve groups, 66 paired topics and 24 terminal lexical cards; 156 cards and 1,670 questions. Whole Grammaticon validates with 327 cards and 892,224 authored questions. The full completion gate remains false; six legacy sentence banks still lack specific diagnostics, alongside the wider source-coverage work.
+
+The 32 unaffected Flutter tests passed. The two scene tests initially referenced the retired card; after updating their addresses, both passed at 420 and 1,500 pixels. Their new temple screenshots were visually inspected. Catalog validation, full design validation, lexical-report freshness and whitespace checks passed. These checks do not certify exhaustive pedagogical coverage.
+
+Linux compilation passed. All 3,363 bundled design files match the workspace byte-for-byte; the retired card is absent from both. The engine hash remains `e5ef4c6f090ac375f188755225cf997686927af132ace85e32b269e0992a83ae`.

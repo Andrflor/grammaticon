@@ -1,0 +1,439 @@
+[
+  {
+    "id": "q1",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puer cupidus discendī est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "Le garçon n’a pas envie d’apprendre."
+      },
+      {
+        "id": "0",
+        "text": "Le garçon a envie d’apprendre."
+      },
+      {
+        "id": "1",
+        "text": "Le garçon apprend avec envie."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q1",
+    "assessment": "study.version.gerund-desire:q1",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": false,
+    "vocabulary": [
+      "cupidus",
+      "disco",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puella studiōsa legendī est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "2",
+        "text": "La jeune fille s’intéresse vivement à la lecture."
+      },
+      {
+        "id": "1",
+        "text": "La jeune fille ne s’intéresse pas à la lecture."
+      },
+      {
+        "id": "0",
+        "text": "La jeune fille lit avec enthousiasme."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q2",
+    "assessment": "study.version.gerund-desire:q2",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "lego",
+      "puella",
+      "studiosus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q3"
+  },
+  {
+    "id": "q3",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Mercātor cupidus vēndendī est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Le marchand a envie de vendre."
+      },
+      {
+        "id": "0",
+        "text": "Le marchand n’a pas envie de vendre."
+      },
+      {
+        "id": "2",
+        "text": "Le marchand vend avec envie."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q3",
+    "assessment": "study.version.gerund-desire:q3",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cupidus",
+      "mercator",
+      "sum",
+      "vendo"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q4"
+  },
+  {
+    "id": "q4",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Puerī cupidī lūdendī sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les garçons jouent avec envie."
+      },
+      {
+        "id": "0",
+        "text": "Les garçons ont envie de jouer."
+      },
+      {
+        "id": "2",
+        "text": "Les garçons n’ont pas envie de jouer."
+      }
+    ],
+    "accepted": [
+      "0"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q4",
+    "assessment": "study.version.gerund-desire:q4",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cupidus",
+      "ludo",
+      "puer",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q5"
+  },
+  {
+    "id": "q5",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Amīcī studiōsī nārrandī sunt."
+      }
+    ],
+    "choices": [
+      {
+        "id": "1",
+        "text": "Les amis n’aiment pas raconter."
+      },
+      {
+        "id": "0",
+        "text": "Les amis racontent avec enthousiasme."
+      },
+      {
+        "id": "2",
+        "text": "Les amis aiment raconter."
+      }
+    ],
+    "accepted": [
+      "2"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q5",
+    "assessment": "study.version.gerund-desire:q5",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "amicus",
+      "narro",
+      "studiosus",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      }
+    },
+    "next": "q6"
+  },
+  {
+    "id": "q6",
+    "interaction": "choice",
+    "dimension": "course.reading",
+    "prompt": "Sententiam Gallicē redde.",
+    "content": [
+      {
+        "type": "text",
+        "text": "Nauta cupidus nāvigandī est."
+      }
+    ],
+    "choices": [
+      {
+        "id": "0",
+        "text": "Le marin n’a pas envie de naviguer."
+      },
+      {
+        "id": "2",
+        "text": "Le marin navigue avec envie."
+      },
+      {
+        "id": "1",
+        "text": "Le marin a envie de naviguer."
+      }
+    ],
+    "accepted": [
+      "1"
+    ],
+    "skills": [
+      "study.version.gerund-desire"
+    ],
+    "item": "gerund-desire:q6",
+    "assessment": "study.version.gerund-desire:q6",
+    "help": "study.gerund-desire",
+    "requires": [],
+    "followUpOnly": true,
+    "vocabulary": [
+      "cupidus",
+      "nauta",
+      "navigo",
+      "sum"
+    ],
+    "editorial": {
+      "language": "la",
+      "topic": "gerund-desire",
+      "translationDirection": "la-fr"
+    },
+    "outcomes": {
+      "0": {
+        "feedback": "Nōn rēctē. Studium vel cupiditās hīc affirmātur. Negātiō in responsō addita est.",
+        "observed": [
+          "study.confusion.gerund-desire-negation"
+        ],
+        "hypotheses": [],
+        "practice": []
+      },
+      "1": {
+        "feedback": "Rēctē. Cupidus discendī is est quī discere cupit; studiōsus legendī legere valdē amat. Gerundium post haec adiectīva genetīvō pōnitur. Cupiditās actiōnis nōn probat eam iam fierī. Gerundium nōn cum numerō persōnae congruit: puer cupidus discendī, puerī cupidī discendī.",
+        "observed": [],
+        "hypotheses": [],
+        "practice": []
+      },
+      "2": {
+        "feedback": "Nōn rēctē. Sententia cupiditātem vel studium indicat; nōn affirmat actiōnem iam fierī. Cupere legere et legere nōn idem sunt.",
+        "observed": [
+          "study.confusion.gerund-desire-action"
+        ],
+        "hypotheses": [],
+        "practice": []
+      }
+    }
+  }
+]
