@@ -49,7 +49,10 @@ void main() {
         s.state['skills'][id] = evidence();
       }
       expect(s.cardMastered(card), false);
-      expect(s.progress(aggregate), 0);
+      expect(
+        s.progress(aggregate),
+        closeTo((leaves.length - 1) / leaves.length, 1e-9),
+      );
       s.state['skills'][leaves.first] = evidence();
       expect(s.cardMastered(card), true);
       expect(s.progress(aggregate), 1);

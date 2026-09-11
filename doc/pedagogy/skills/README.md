@@ -40,8 +40,9 @@ formes et traits du registre existant peuvent être référencés comme prérequ
 `knowledge.aggregation.skills` compose une compétence visible à partir de
 compétences évaluables ou d'autres compositions. Avec `level: "minimum"`, une
 feuille inconnue vaut zéro ; toutes les feuilles doivent être maîtrisées pour
-valider le composite. La progression affichée suit également le minimum, pas la
-moyenne des seules feuilles rencontrées. Aucun score enregistré directement sur
+valider le composite. La progression affichée est la moyenne de toutes les
+feuilles distinctes, avec zéro pour les feuilles inconnues ; elle ne remplace pas
+la condition de maîtrise de chaque composante. Aucun score enregistré directement sur
 le composite n'est lu comme preuve de ses composants.
 
 `knowledge.requires` décrit les prérequis, distincts de la composition.
@@ -59,8 +60,13 @@ la carte. L’ancien opérateur `completed`
 emploie aussi cette règle pour toutes les cartes. Les compteurs de victoires sont conservés pour les
 statistiques, jamais utilisés pour valider une carte.
 
-La sélection privilégie les feuilles fragiles et les questions déclarant les
-mêmes feuilles que les erreurs récentes, même dans une autre carte. La navigation
+Sur les cartes adaptatives, la sélection cible d'abord une feuille parmi celles
+dont la progression est la plus faible dans les questions éligibles, à égalité
+sans pondération par leur nombre de questions. Elle choisit ensuite un groupe
+et une question évaluant cette feuille. Les erreurs récentes et les stimuli non
+encore réussis guident ce second choix, même pour une erreur faite ailleurs.
+L'évitement des répétitions reste interne à cette cible : il ne force pas à
+réviser une compétence forte quand seule une question récente travaille la faible. La navigation
 vers les activités liées utilise la composition explicite des cartes. L'index
 éditorial `coverage.json.questionIndex` fournit la correspondance exacte
 compétence → carte → question. Il est recalculable, pas un deuxième référentiel.
@@ -156,8 +162,9 @@ crédite les trois compétences ; chaque erreur ne touche que la feuille indiqu�
 L’extrait est recalculable avec `tool/curriculum/export_example.py`.
 
 `selectionGroup` conserve les familles de stimuli dans l’index et dans les
-parties matérialisées. La sélection adaptative utilise leur besoin moyen de
-travail, puis choisit une question dans la famille. Multiplier ses variantes de
+parties matérialisées. Après ciblage d'une feuille faible, la sélection adaptative
+utilise le besoin moyen de travail des questions candidates de chaque groupe,
+puis choisit une question dans la famille. Multiplier ses variantes de
 décor ne multiplie donc pas son poids. Les politiques de groupe restent des
 facteurs explicites et les stimuli non encore réussis sont favorisés.
 

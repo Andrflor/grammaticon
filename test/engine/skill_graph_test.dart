@@ -168,14 +168,16 @@ void main() {
     addTearDown(s.dispose);
     s.state['skills']['compositio.numeri.quantitas-ordo'] = evidence();
     s.state['skills']['compositio.numeri.ordo-frequentia'] = evidence();
-    expect(s.progress(frequency.data['skills'].single), 0);
+    final before = s.progress(frequency.data['skills'].single)!;
+    expect(before, greaterThan(0));
+    expect(before, lessThan(1));
     s.state['purchased'].add(quantity.address);
     await s.start(quantity);
     await s.begin();
     s.state['encounter']['question'] = q.data;
     await s.answer('0');
     expect(s.skill(shared)['correct'], 1);
-    expect(s.progress(frequency.data['skills'].single), greaterThan(0));
+    expect(s.progress(frequency.data['skills'].single), greaterThan(before));
     expect(s.cardMastered(frequency), false);
     expect(s.state['completed'][frequency.address] ?? 0, 0);
   });
@@ -333,6 +335,61 @@ void main() {
     },
   );
 
+  test('mean progress counts distinct leaves, not nested aggregates', () async {
+    final d = await graph();
+    d.knowledge['time-units']!['aggregation']['skills'] = [
+      'fine-a',
+      'nested',
+      'fine-b',
+    ];
+    final s = GameSession(d, {}, (_) async {});
+    addTearDown(s.dispose);
+    expect(s.progress('time-units'), isNull);
+    s.state['skills']['fine-a'] = evidence(estimate: 0.8);
+    expect(s.progress('time-units'), closeTo(0.4, 1e-9));
+    s.state['skills']['fine-b'] = evidence(estimate: 0.4);
+    expect(s.progress('time-units'), closeTo(0.6, 1e-9));
+    expect(s.cardMastered(d.cards['observatory/discovery/durations']!), false);
+  });
+
+  test(
+    'adaptive selection targets weakest skill despite volume and recency',
+    () async {
+      final d = await demo();
+      final card = d.cards['observatory/discovery/durations']!;
+      final bank = await d.questions(card);
+      for (final id in ['fine-a', 'fine-b']) {
+        d.knowledge[id] = {'id': id, 'name': id};
+      }
+      card.data['skills'] = ['fine-a', 'fine-b'];
+      final source = bank.first.data;
+      bank.clear();
+      for (var i = 0; i < 101; i++) {
+        bank.add(
+          QuestionEntry({
+            ...source,
+            'id': 'target-$i',
+            'skills': [i == 100 ? 'fine-b' : 'fine-a'],
+            'selectionGroup': i == 100 ? 'rare' : 'common',
+            'eligible': {'all': []},
+          }),
+        );
+      }
+      card.data['questionSelection'] = 'adaptive';
+      for (var seed = 0; seed < 20; seed++) {
+        final s = GameSession(d, {}, (_) async {}, random: Random(seed));
+        addTearDown(s.dispose);
+        s.state['skills']['fine-a'] = evidence();
+        s.state['recentQuestions'] = {
+          card.address: ['target-100'],
+        };
+        await s.start(card);
+        await s.begin();
+        expect(s.question!.skills, ['fine-b']);
+      }
+    },
+  );
+
   test('malformed snapshots cannot credit composite skills', () async {
     final d = await demo();
     final s = GameSession(d, {}, (_) async {});
@@ -358,7 +415,7 @@ void main() {
       s.state['completed'][card.address] = 900;
       s.state['skills']['time-units'] = evidence();
       s.state['skills']['fine-a'] = evidence();
-      expect(s.progress('time-units'), 0);
+      expect(s.progress('time-units'), 0.5);
       expect(s.level('time-units'), 0);
       expect(s.cardMastered(card), false);
       expect(s.meets({'completed': card.address}), false);

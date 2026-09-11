@@ -228,7 +228,10 @@ class GameSession extends ChangeNotifier {
     if (design.knowledge[id]?['aggregation'] != null) {
       final values = design.skillLeaves(id).map(progress).toList();
       if (values.every((value) => value == null)) return null;
-      return values.map((value) => value ?? 0.0).reduce(min);
+      // Show advancement across distinct leaves, including unknown skills.
+      // Mastery/level still requires every component to meet its threshold.
+      return values.fold<double>(0, (sum, value) => sum + (value ?? 0)) /
+          values.length;
     }
     final record = skill(id);
     var value = estimate(record, skillId: id);
@@ -474,8 +477,22 @@ class GameSession extends ChangeNotifier {
         required.length;
   }
 
-  double weight(ContentNode card, QuestionEntry q, {String? encounterId}) {
-    final estimates = q.skills.map(progress).toList();
+  double weight(ContentNode card, QuestionEntry q, {String? encounterId}) =>
+      _weight(card, q, encounterId: encounterId);
+
+  double _weight(
+    ContentNode card,
+    QuestionEntry q, {
+    String? encounterId,
+    _SelectionEvidence? evidence,
+  }) {
+    final estimates = q.skills
+        .map(
+          (id) => evidence == null
+              ? progress(id)
+              : evidence.progress.putIfAbsent(id, () => progress(id)),
+        )
+        .toList();
     final est = estimates.any((v) => v == null)
         ? null
         : estimates.cast<double>().reduce(min);
@@ -516,7 +533,14 @@ class GameSession extends ChangeNotifier {
     }
     if (card.data['questionSelection'] == 'adaptive') {
       if (q.skills.any(
-        (id) => !_successfulItems(skill(id)).contains(q.evidenceItem),
+        (id) =>
+            !(evidence == null
+                    ? _successfulItems(skill(id))
+                    : evidence.successful.putIfAbsent(
+                        id,
+                        () => _successfulItems(skill(id)),
+                      ))
+                .contains(q.evidenceItem),
       )) {
         result *= (selection['unprovenItemBoost'] as num? ?? 2);
       }
@@ -534,7 +558,13 @@ class GameSession extends ChangeNotifier {
     }
     // Prerequisites guide selection without claiming evidence for them. Keep
     // questions available even before vocabulary practice at section end.
-    return result * (0.25 + 0.75 * _readiness(q));
+    final readiness = evidence == null
+        ? _readiness(q)
+        : evidence.readiness.putIfAbsent(
+            jsonEncode([q.skills, strings(q.data['requires'])]),
+            () => _readiness(q),
+          );
+    return result * (0.25 + 0.75 * readiness);
   }
 
   QuestionEntry _select(
@@ -543,7 +573,7 @@ class GameSession extends ChangeNotifier {
     Json battle,
     Json next,
   ) {
-    final allowed = bank
+    var allowed = bank
         .where(
           (q) =>
               q.data['followUpOnly'] != true &&
@@ -554,6 +584,19 @@ class GameSession extends ChangeNotifier {
       throw StateError('No eligible authored questions for ${card.address}');
     }
     final adaptive = card.data['questionSelection'] == 'adaptive';
+    if (adaptive) {
+      // Select a weakest eligible leaf BEFORE groups/questions: neither scenery
+      // volume nor a group's policy may drown out a skill that needs practice.
+      // Restrict to eligible questions so prerequisites/follow-ups remain valid.
+      final eligibleSkills = {for (final q in allowed) ...q.skills};
+      final needs = {for (final id in eligibleSkills) id: progress(id) ?? 0.0};
+      final lowest = needs.values.reduce(min);
+      final weakest =
+          needs.keys.where((id) => (needs[id]! - lowest).abs() < 1e-9).toList()
+            ..sort();
+      final target = _pick(weakest, List.filled(weakest.length, 1.0));
+      allowed = allowed.where((q) => q.skills.contains(target)).toList();
+    }
     final recent = adaptive
         ? strings(next['recentQuestions']?[card.address])
         : strings(battle['recent']);
@@ -577,10 +620,19 @@ class GameSession extends ChangeNotifier {
           )
           .add(q);
     }
+    // Evidence is immutable for this draw. Cache shared skill computations,
+    // not question weights: history, error links and authored policies still
+    // apply individually. Discard the cache before the next answer/draw.
+    final evidence = _SelectionEvidence();
     final adaptiveWeights = adaptive
         ? {
             for (final q in candidates)
-              q.id: weight(card, q, encounterId: battle['id'] as String),
+              q.id: _weight(
+                card,
+                q,
+                encounterId: battle['id'] as String,
+                evidence: evidence,
+              ),
           }
         : <String, double>{};
     final groupNames = groups.keys.toList();
@@ -611,7 +663,12 @@ class GameSession extends ChangeNotifier {
           .map(
             (q) =>
                 adaptiveWeights[q.id] ??
-                weight(card, q, encounterId: battle['id'] as String),
+                _weight(
+                  card,
+                  q,
+                  encounterId: battle['id'] as String,
+                  evidence: evidence,
+                ),
           )
           .toList(),
     );
@@ -1083,4 +1140,10 @@ class GameSession extends ChangeNotifier {
       busy = false;
     }
   }
+}
+
+class _SelectionEvidence {
+  final progress = <String, double?>{};
+  final successful = <String, Set<String>>{};
+  final readiness = <String, double>{};
 }
