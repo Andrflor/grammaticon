@@ -1,0 +1,157 @@
+/// Cadres authored du Theatrum (lecture) et du Templum (production) : une
+/// structure de phrase avec emplacements variables, des choix alignés sur les
+/// mêmes emplacements, une réponse acceptée et une explication par choix.
+///
+/// Les cadres sont extraits des banques de référence
+/// (`tool/reference/extract_frames.py`) et embarqués dans
+/// `assets/arbor/frames/<lieu>.json`. Rien n'est généré à la volée en dehors
+/// de l'instanciation des emplacements avec des tuples alignés observés.
+library;
+
+import 'dart:convert';
+import 'dart:math';
+
+import 'package:flutter/services.dart' show AssetBundle;
+
+class FrameSegment {
+  const FrameSegment({required this.type, required this.template});
+
+  /// `text`, `gap` ou `highlight`.
+  final String type;
+  final String template;
+}
+
+class FrameChoice {
+  const FrameChoice({required this.template, required this.accepted, required this.feedback, required this.observed});
+  final String template;
+  final bool accepted;
+  final String feedback;
+
+  /// Anciens identifiants de compétence observés par la banque de référence.
+  final List<String> observed;
+}
+
+class Frame {
+  const Frame({
+    required this.id,
+    required this.card,
+    required this.interaction,
+    required this.dimension,
+    required this.prompt,
+    required this.content,
+    required this.choices,
+    required this.slotCount,
+    required this.aligned,
+    required this.instances,
+    required this.legacySkills,
+  });
+
+  final String id;
+
+  /// Adresse de carte : `theatrum/casuum-sensus/8`.
+  final String card;
+  final String interaction;
+  final String dimension;
+  final String prompt;
+  final List<FrameSegment> content;
+  final List<FrameChoice> choices;
+  final int slotCount;
+
+  /// Tuples de valeurs alignées (une valeur par emplacement), observés dans la
+  /// référence ; l'instanciation en tire un au hasard.
+  final List<List<String>> aligned;
+  final int instances;
+  final List<String> legacySkills;
+
+  String get place => card.split('/')[0];
+  String get section => card.split('/')[1];
+  String get cardId => card.split('/')[2];
+  bool get isVocabulary => cardId == 'vocabula';
+
+  factory Frame.fromJson(Map<String, Object?> j) => Frame(
+    id: j['id'] as String,
+    card: j['card'] as String,
+    interaction: j['interaction'] as String,
+    dimension: j['dimension'] as String,
+    prompt: j['prompt'] as String? ?? '',
+    content: [
+      for (final s in (j['content'] as List).cast<Map>())
+        if (s['type'] != 'image') FrameSegment(type: s['type'] as String, template: s['template'] as String? ?? ''),
+    ],
+    choices: [
+      for (final c in (j['choices'] as List).cast<Map>())
+        FrameChoice(
+          template: c['template'] as String,
+          accepted: c['accepted'] == true,
+          feedback: ((c['outcome'] as Map?)?['feedback'] as String?) ?? '',
+          observed: (((c['outcome'] as Map?)?['observed'] as List?) ?? const []).cast<String>(),
+        ),
+    ],
+    slotCount: (j['slots'] as List).length,
+    aligned: [for (final row in ((j['aligned'] as List?) ?? const [])) (row as List).cast<String>()],
+    instances: (j['instances'] as num?)?.toInt() ?? 1,
+    legacySkills: ((j['skills'] as List?) ?? const []).cast<String>(),
+  );
+
+  static final _slot = RegExp(r'\{(\d+)\}');
+
+  /// Une instanciation cohérente : contenu et choix remplis avec le même tuple.
+  FrameInstance instantiate(Random rng) {
+    final row = aligned.isEmpty ? const <String>[] : aligned[rng.nextInt(aligned.length)];
+    String fill(String tpl) => tpl.replaceAllMapped(_slot, (m) {
+      final i = int.parse(m.group(1)!);
+      return i < row.length ? row[i] : '';
+    });
+    return FrameInstance(
+      frame: this,
+      content: [for (final s in content) FrameSegment(type: s.type, template: fill(s.template))],
+      choices: [for (final c in choices) fill(c.template)],
+    );
+  }
+}
+
+class FrameInstance {
+  const FrameInstance({required this.frame, required this.content, required this.choices});
+  final Frame frame;
+  final List<FrameSegment> content;
+  final List<String> choices;
+
+  /// Texte affiché : les segments, le trou marqué […].
+  String get surface => content.map((s) => s.type == 'gap' ? '[…]' : s.template).join().trim();
+}
+
+class FrameLibrary {
+  FrameLibrary(this.frames);
+  final List<Frame> frames;
+
+  static FrameLibrary parse(String json) {
+    final j = (jsonDecode(json) as Map).cast<String, Object?>();
+    return FrameLibrary([for (final f in (j['frames'] as List)) Frame.fromJson((f as Map).cast<String, Object?>())]);
+  }
+
+  static Future<FrameLibrary> load(AssetBundle bundle, {List<String> places = const ['theatrum', 'templum']}) async {
+    final all = <Frame>[];
+    for (final p in places) {
+      try {
+        final text = await bundle.loadString('assets/arbor/frames/$p.json');
+        all.addAll(parse(text).frames);
+      } catch (_) {
+        // Un lieu sans cadres embarqués n'a simplement pas de contenu.
+      }
+    }
+    return FrameLibrary(all);
+  }
+
+  FrameLibrary merge(FrameLibrary other) => FrameLibrary([...frames, ...other.frames]);
+
+  late final Map<String, List<Frame>> _byCard = () {
+    final m = <String, List<Frame>>{};
+    for (final f in frames) {
+      (m[f.card] ??= []).add(f);
+    }
+    return m;
+  }();
+
+  List<Frame> forCard(String card) => _byCard[card] ?? const [];
+  Iterable<String> get cards => _byCard.keys;
+}
