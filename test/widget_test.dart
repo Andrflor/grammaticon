@@ -224,7 +224,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
     expect(find.text('Incipe!'), findsOneWidget);
-    expect(find.textContaining('Sententiās Latīnās lege'), findsOneWidget);
+    expect(find.textContaining('In cum ablātīvō locum ubi'), findsOneWidget);
     await tester.tap(find.text('Incipe!'));
     await tester.pump();
     final element = tester.element(find.byType(Scaffold).last);
@@ -334,6 +334,25 @@ void main() {
       expect(find.text(c.label), findsOneWidget);
     }
     expect(find.textContaining('favor deōrum'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Iter: the City proposes the next card, buys it if needed, and opens the encounter', (tester) async {
+    tester.view.physicalSize = const Size(1400, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final store = MemorySaveStore();
+    await tester.pumpWidget(app(store, initial: SaveData(gems: 50)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Iter'));
+    await tester.pumpAndSettle();
+    expect(find.text('Iter · proximum'), findsOneWidget);
+    expect(find.textContaining('Prōgressus'), findsOneWidget);
+    // La première carte du parcours (dec-2-mf) s'achète : le bouton le dit.
+    final go = find.text('Eme et perge').evaluate().isNotEmpty ? find.text('Eme et perge') : find.text('Perge');
+    await tester.tap(go);
+    await tester.pumpAndSettle();
+    expect(find.text('Incipe!'), findsOneWidget); // the encounter opened on its introduction
     expect(tester.takeException(), isNull);
   });
 

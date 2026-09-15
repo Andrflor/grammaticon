@@ -17,6 +17,10 @@ import 'linguistics/lexicon/verbs.dart';
 import 'pedagogy/reading/reading_content.dart';
 import 'arbor/arbor.dart';
 import 'linguistics/lexicon/forum_lexicon.dart';
+import 'pedagogy/iter.dart';
+import 'pedagogy/question_generator.dart';
+import 'pedagogy/forum/forum_question_source.dart';
+import 'pedagogy/forum/syntagmata/syntagmata.dart';
 import 'pedagogy/frames/frame_content.dart';
 import 'persistence/save_repository.dart';
 
@@ -31,6 +35,10 @@ Future<void> main() async {
   // premier clic d'une épreuve.
   final nominalAnalyzer = buildNominalAnalyzer(nouns: nounAnalyzer);
   final arbor = Arbor.standard(analyzer: analyzer, nominal: nominalAnalyzer);
+  final verbSource = QuestionGenerator(analyzer);
+  final forumSource = ForumQuestionSource(nominalAnalyzer, kSyntagmata);
+  // Ce que chaque carte fait travailler, pour l'Iter (parcours automatique).
+  final coverage = TrialCoverage.build(verbSource, forumSource);
   ReadingLibrary reading;
   try {
     reading = await ReadingLibrary.load(rootBundle);
@@ -39,7 +47,17 @@ Future<void> main() async {
   }
   final frames = await FrameLibrary.load(rootBundle);
   final repo = SaveRepository(PrefsSaveStore());
-  final save = await repo.load();
+  var save = await repo.load();
+  // Les maillons sans historique propre héritent de l'historique par carte
+  // (sauvegarde d'avant l'arbre, ou nœuds ajoutés depuis — les compétences en
+  // contexte des cartes du Theātrum et du Templum, par exemple).
+  if (save.skills.isNotEmpty) {
+    final seeded = Iter.seedFromCardSkills(save, arbor, coverage);
+    if (seeded.records.length != save.arbor.records.length) {
+      save = save.copyWith(arbor: seeded);
+      await repo.save(save);
+    }
+  }
   final audio = AudioService();
   AudioService.current = audio;
   await audio.preload();
@@ -53,6 +71,9 @@ Future<void> main() async {
         analyzerProvider.overrideWithValue(analyzer),
         nominalAnalyzerProvider.overrideWithValue(nominalAnalyzer),
         arborProvider.overrideWithValue(arbor),
+        questionGeneratorProvider.overrideWithValue(verbSource),
+        forumQuestionSourceProvider.overrideWithValue(forumSource),
+        trialCoverageProvider.overrideWithValue(coverage),
         nounAnalyzerProvider.overrideWithValue(nounAnalyzer),
         readingLibraryProvider.overrideWithValue(reading),
         frameLibraryProvider.overrideWithValue(frames),

@@ -7,6 +7,8 @@
 /// latines analysables, la différence morphologique s'y ajoute.
 library;
 
+import '../../arbor/contextus.dart';
+
 const Map<String, String> templumAlias = {
   'casuum-electio': 'casuum-sensus',
   'sententiae-subordinatae': 'nexus-sententiarum',
@@ -160,14 +162,12 @@ const Map<String, List<String>> kFrameCardNodes = {
   'verbis-intellegendis/6': ['syn.regimen.casus'],
 };
 
-/// Nœuds visés par une carte (adresse `place/section/card`). Les cartes de
-/// vocabulaire visent la lecture ou la production du lexique ; le Templum
-/// ajoute le geste de production à chaque carte.
-List<String> frameCardNodes(String card) {
-  final parts = card.split('/');
-  final place = parts[0], section = templumAlias[parts[1]] ?? parts[1], id = parts[2];
-  final production = place == 'templum';
-  if (id == 'vocabula') return [production ? 'lect.vocabula.latine' : 'lect.vocabula.gallice'];
-  final base = kFrameCardNodes['$section/$id'] ?? const ['lect.versio.fidelitas'];
-  return [...base, if (production) 'lect.versio.latine.constructio' else 'lect.versio.fidelitas'];
-}
+/// Nœud visé par une carte (adresse `place/section/card`) : sa compétence en
+/// contexte, `lect.intellectus.*` au Theātrum, `lect.thema.*` au Templum. Les
+/// maillons de grammaire de [kFrameCardNodes] en sont les prérequis, pas la
+/// cible : comprendre ou rendre une construction dans une phrase n'est pas la
+/// même compétence que la reconnaître sur demande morphologique.
+List<String> frameCardNodes(String card) => [contextNodeId(card)];
+
+/// Maillons de grammaire que la carte met en jeu (prérequis du nœud de contexte).
+List<String> frameCardBaseNodes(String card) => contextBaseNodes(card);

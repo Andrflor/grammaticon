@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../iter/iter_sheet.dart';
 import '../trials/trial_selection_screen.dart';
 import '../../app/app.dart';
 import '../../app/providers.dart';
@@ -92,17 +93,24 @@ class CityScreen extends HookConsumerWidget {
   }
 }
 
-class _CityHud extends StatelessWidget {
+class _CityHud extends ConsumerWidget {
   const _CityHud({required this.narrow, required this.gems});
   final bool narrow;
   final int gems;
 
   @override
-  Widget build(BuildContext context) {
-    final tabula = SizedBox(
-      height: kPillHeight,
-      child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () => pushScreen(context, const TabulaScreen())),
-    );
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tabula = Row(mainAxisSize: MainAxisSize.min, children: [
+      SizedBox(
+        height: kPillHeight,
+        child: RomanButton(label: 'Tabula', icon: Icons.menu_book, style: RomanButtonStyle.gold, dense: true, onPressed: () => pushScreen(context, const TabulaScreen())),
+      ),
+      const SizedBox(width: kHudGap),
+      SizedBox(
+        height: kPillHeight,
+        child: RomanButton(label: 'Iter', icon: Icons.alt_route, style: RomanButtonStyle.primary, dense: true, onPressed: () => showIter(context, ref)),
+      ),
+    ]);
     final right = Row(mainAxisSize: MainAxisSize.min, children: [
       SettingsButton(onPressed: () => pushScreen(context, const SettingsScreen())),
       const SizedBox(width: kHudGap),

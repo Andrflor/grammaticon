@@ -2,6 +2,7 @@
 /// lexique (L4), arêtes indexées et validation structurelle.
 library;
 
+import 'contextus.dart';
 import '../linguistics/engine/analyzer.dart';
 import '../linguistics/engine/conjugator.dart';
 import '../linguistics/engine/nominal_analyzer.dart';
@@ -61,6 +62,8 @@ class Arbor {
       ...kSyntaxis,
       ...kLectioGroups,
       ...kLectio,
+      ...kContextusGroups,
+      ...contextusNodes(),
       ...deriveVerbalCellae(an),
       ...deriveNominalCellae(nom, problems: problems),
       ...lexiconNodes(an, nom),

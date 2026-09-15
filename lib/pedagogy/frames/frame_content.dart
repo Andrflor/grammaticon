@@ -45,6 +45,7 @@ class Frame {
     required this.aligned,
     required this.instances,
     required this.legacySkills,
+    this.help,
   });
 
   final String id;
@@ -63,6 +64,9 @@ class Frame {
   final List<List<String>> aligned;
   final int instances;
   final List<String> legacySkills;
+
+  /// Identifiant de la fiche d'aide (clé de `help.json`).
+  final String? help;
 
   String get place => card.split('/')[0];
   String get section => card.split('/')[1];
@@ -92,6 +96,7 @@ class Frame {
     aligned: [for (final row in ((j['aligned'] as List?) ?? const [])) (row as List).cast<String>()],
     instances: (j['instances'] as num?)?.toInt() ?? 1,
     legacySkills: ((j['skills'] as List?) ?? const []).cast<String>(),
+    help: j['help'] as String?,
   );
 
   static final _slot = RegExp(r'\{(\d+)\}');
@@ -121,17 +126,40 @@ class FrameInstance {
   String get surface => content.map((s) => s.type == 'gap' ? '[…]' : s.template).join().replaceAll(RegExp(r' *\n *'), '\n').trim();
 }
 
+/// Un bloc d'une fiche d'aide : paragraphe (`text`) ou entrée « mot — sens » (`example`).
+class HelpBlock {
+  const HelpBlock(this.type, this.text);
+  final String type;
+  final String text;
+}
+
 class FrameLibrary {
-  FrameLibrary(this.frames);
+  FrameLibrary(this.frames, {this.help = const {}});
   final List<Frame> frames;
 
-  static FrameLibrary parse(String json) {
+  /// Fiches d'aide par identifiant.
+  final Map<String, List<HelpBlock>> help;
+
+  static FrameLibrary parse(String json, {Map<String, List<HelpBlock>> help = const {}}) {
     final j = (jsonDecode(json) as Map).cast<String, Object?>();
-    return FrameLibrary([for (final f in (j['frames'] as List)) Frame.fromJson((f as Map).cast<String, Object?>())]);
+    return FrameLibrary([for (final f in (j['frames'] as List)) Frame.fromJson((f as Map).cast<String, Object?>())], help: help);
+  }
+
+  static Map<String, List<HelpBlock>> parseHelp(String json) {
+    final j = (jsonDecode(json) as Map).cast<String, Object?>();
+    return {
+      for (final e in j.entries) e.key: [for (final b in (e.value as List).cast<Map>()) HelpBlock(b['type'] as String, b['text'] as String)],
+    };
   }
 
   static Future<FrameLibrary> load(AssetBundle bundle, {List<String> places = const ['theatrum', 'templum']}) async {
     final all = <Frame>[];
+    var help = const <String, List<HelpBlock>>{};
+    try {
+      help = parseHelp(await bundle.loadString('assets/arbor/frames/help.json'));
+    } on FlutterError {
+      // pas de fiches : les questions restent jouables
+    }
     for (final p in places) {
       String text;
       try {
@@ -141,10 +169,12 @@ class FrameLibrary {
       }
       all.addAll(parse(text).frames); // une erreur de format doit remonter
     }
-    return FrameLibrary(all);
+    return FrameLibrary(all, help: help);
   }
 
-  FrameLibrary merge(FrameLibrary other) => FrameLibrary([...frames, ...other.frames]);
+  List<HelpBlock> helpFor(Frame f) => f.help == null ? const [] : (help[f.help] ?? const []);
+
+  FrameLibrary merge(FrameLibrary other) => FrameLibrary([...frames, ...other.frames], help: {...help, ...other.help});
 
   late final Map<String, List<Frame>> _byCard = () {
     final m = <String, List<Frame>>{};

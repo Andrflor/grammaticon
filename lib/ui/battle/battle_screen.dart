@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../iter/iter_sheet.dart';
 import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../audio/audio_service.dart';
@@ -25,7 +26,10 @@ import '../widgets/roman_widgets.dart';
 /// in the Theatrum. Every encounter is played for real: there is no training
 /// mode. Activity-specific presentation comes from the trial's [ActivityConfig].
 class BattleScreen extends HookConsumerWidget {
-  const BattleScreen({super.key, required this.trial, this.resume});
+  const BattleScreen({super.key, required this.trial, this.resume, this.focus = const []});
+
+  /// Maillons visés par l'Iter (consigne de sélection du combat).
+  final List<String> focus;
   final Trial trial;
   final ActiveBattle? resume;
 
@@ -48,7 +52,7 @@ class BattleScreen extends HookConsumerWidget {
       final save = ref.read(profileProvider);
       final cfg = ref.read(masteryConfigProvider);
       startTiers.value = {for (final s in trial.skillIds) s: MasterySummary.forSkill(save, s, cfg).tier};
-      Future.microtask(() => ctrl.start(trial, resume: resume));
+      Future.microtask(() => ctrl.start(trial, resume: resume, focus: focus));
       return () {
         for (final t in timers.value) {
           t.cancel();
@@ -188,7 +192,10 @@ class BattleScreen extends HookConsumerWidget {
                 _Center(state: state, cardKey: cardKey, trial: trial, config: config),
                 if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro),
                 if (state.paused) _PauseOverlay(body: config.labels.pausedBody, onResume: ctrl.resume, onLeave: leave),
-                if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry),
+                if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry, onNext: () async {
+                  await ctrl.finish();
+                  if (context.mounted) await showIter(context, ref, replace: true);
+                }),
               ],
               for (final f in flights.value) _GemFlight(key: ValueKey(f.id), spec: f),
             ],
@@ -662,7 +669,8 @@ class _PauseOverlay extends StatelessWidget {
 }
 
 class _ResultOverlay extends ConsumerWidget {
-  const _ResultOverlay({required this.state, required this.config, required this.startTiers, required this.onLeave, required this.onRetry});
+  const _ResultOverlay({required this.state, required this.config, required this.startTiers, required this.onLeave, required this.onRetry, required this.onNext});
+  final VoidCallback onNext;
   final BattleState state;
   final ActivityConfig config;
   final Map<String, MasteryTier> startTiers;
@@ -718,7 +726,8 @@ class _ResultOverlay extends ConsumerWidget {
               runSpacing: 10,
               alignment: WrapAlignment.center,
               children: [
-                RomanButton(label: labels.back, icon: Icons.stadium, style: RomanButtonStyle.gold, onPressed: onLeave),
+                RomanButton(label: 'Iter', icon: Icons.alt_route, style: RomanButtonStyle.gold, onPressed: onNext),
+                RomanButton(label: labels.back, icon: Icons.stadium, style: RomanButtonStyle.neutral, onPressed: onLeave),
                 RomanButton(label: 'Iterum', icon: Icons.replay, style: RomanButtonStyle.primary, onPressed: onRetry),
               ],
             ),

@@ -184,8 +184,8 @@ class Oracle {
 
   Set<String> _verbCorrect(Dimension dim, PoolEntry e) {
     if (dim == Dimension.formaPlena) {
-      final prim = verbs.analyzer.paradigmOf(e.verb.id).primary(e.form.analysis.selector);
-      return prim == null ? {} : {prim.surface};
+      final p = verbs.analyzer.paradigmOf(e.verb.id);
+      return {for (final f in verbs.analyzer.analyze(e.form.surface)) if (f.analysis.lemmaId == e.verb.id && p.primary(f.analysis.selector) != null) p.primary(f.analysis.selector)!.surface};
     }
     if (dim == Dimension.analysis) {
       return verbs.analyzer.analyze(e.form.surface).where((f) => f.analysis.lemmaId == e.verb.id).map((f) => QuestionGenerator.analysisKey(f.analysis)).toSet();

@@ -9,6 +9,7 @@ import '../arbor/evidence.dart';
 import '../economy/economy.dart';
 import '../pedagogy/mastery.dart';
 import '../pedagogy/question.dart';
+import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
 
 class Resolution {
@@ -110,7 +111,7 @@ class AnswerResolver {
     if (arbor != null && diagnostician != null) {
       diagnosis = correct ? const Diagnosis() : diagnostician!.diagnose(q, chosenValue);
       credited = correct ? diagnostician!.credited(q) : const {};
-      arborAfter = save.arbor.observe(arbor: arbor!, diagnosis: diagnosis, credited: credited, correct: correct, quality: quality, lemmaId: q.lemmaId, trialId: q.trialId, now: now, cfg: mastery);
+      arborAfter = save.arbor.observe(arbor: arbor!, diagnosis: diagnosis, credited: credited, correct: correct, quality: quality, lemmaId: q.lemmaId, trialId: q.trialId, now: now, place: Trials.maybe(q.trialId)?.activity.key, cfg: mastery);
     }
 
     return Resolution(

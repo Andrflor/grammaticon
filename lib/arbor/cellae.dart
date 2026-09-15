@@ -274,13 +274,13 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
     switch ((a.mood, a.tense)) {
       case (Mood.indicativus, Tense.imperfectum) when cls != 'sum' && cls != 'possum':
         n('v.sig.imperf.ba');
-      case (Mood.indicativus, Tense.futurum) when const {'fero', 'volo', 'nolo', 'malo', 'fio', 'edo'}.contains(cls):
+      case (Mood.indicativus, Tense.futurum) when const {'fero', 'volo', 'nolo', 'malo', 'fio', 'edo', 'anom'}.contains(cls):
         n('v.sig.fut.a_e');
       case (Mood.indicativus, Tense.futurum) when cls == 'do':
         n('v.sig.fut.b');
       case (Mood.indicativus, Tense.praesens):
         n('v.sig.praes');
-      case (Mood.subiunctivus, Tense.praesens) when const {'fero', 'fio', 'edo'}.contains(cls):
+      case (Mood.subiunctivus, Tense.praesens) when const {'fero', 'fio', 'edo', 'eo', 'anom'}.contains(cls):
         n('v.sig.subj.praes.a');
       case (Mood.subiunctivus, Tense.praesens) when cls == 'do':
         n('v.sig.subj.praes.e');

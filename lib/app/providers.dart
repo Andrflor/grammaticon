@@ -1,6 +1,7 @@
 
 import '../pedagogy/frames/frame_content.dart';
 import '../pedagogy/frames/frame_question_source.dart';
+import '../pedagogy/iter.dart';
 import '../pedagogy/mastery.dart';
 import '../pedagogy/trial.dart';
 import '../arbor/arbor.dart';
@@ -63,6 +64,8 @@ final audioProvider = Provider<AudioService>((ref) => throw UnimplementedError('
 final masteryConfigProvider = Provider<MasteryConfig>((ref) => const MasteryConfig());
 /// L'arbre des compétences, construit une fois à partir des lexiques.
 final arborProvider = Provider<Arbor>((ref) => Arbor.standard(analyzer: ref.watch(analyzerProvider), nominal: ref.watch(nominalAnalyzerProvider)));
+/// Ce que chaque carte peut faire travailler (calculé une fois, pour l'Iter).
+final trialCoverageProvider = Provider<TrialCoverage>((ref) => TrialCoverage.build(ref.watch(questionGeneratorProvider), ref.watch(forumQuestionSourceProvider)));
 final diagnosticianProvider = Provider<Diagnostician>((ref) => Diagnostician(ref.watch(arborProvider), ref.watch(questionGeneratorProvider), ref.watch(forumQuestionSourceProvider)));
 final answerResolverProvider = Provider<AnswerResolver>((ref) => AnswerResolver(mastery: ref.watch(masteryConfigProvider), arbor: ref.watch(arborProvider), diagnostician: ref.watch(diagnosticianProvider)));
 

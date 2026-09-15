@@ -160,6 +160,8 @@ final battleProvider = NotifierProvider<BattleController, BattleState?>(BattleCo
 /// [QuestionSource] of the trial's activity. Every answer is resolved exactly
 /// once, by [AnswerResolver], and persisted before any animation starts.
 class BattleController extends Notifier<BattleState?> {
+  /// Maillons visés par l'Iter pour le combat en cours (vide hors parcours).
+  List<String> _focus = const [];
   Timer? _timer;
   Random? _rng;
 
@@ -176,7 +178,8 @@ class BattleController extends Notifier<BattleState?> {
 
   // ----- lifecycle --------------------------------------------------------------
 
-  void start(Trial trial, {ActiveBattle? resume}) {
+  void start(Trial trial, {ActiveBattle? resume, List<String> focus = const []}) {
+    _focus = focus;
     _timer?.cancel();
     final save = ref.read(profileProvider);
     final componentIds = resume?.componentIds ?? Progression.componentsFor(save, trial);
@@ -258,7 +261,7 @@ class BattleController extends Notifier<BattleState?> {
       cfg: cfg,
       exposure: save.exposure,
       recall: save.errata.recall(s.seed),
-      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg),
+      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg, focus: _focus.toSet()),
     );
     if (q == null) {
       // Plus rien à demander (carte sans contenu) : l'épreuve se termine sans

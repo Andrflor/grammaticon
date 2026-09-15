@@ -15,7 +15,7 @@ import sys
 import glob
 import os
 
-from common import REPO, ROOT, cards, flatten, questions
+from common import REPO, ROOT, cards, flatten, load, questions
 
 TOKEN = re.compile(r"\n|[^\s]+")
 
@@ -96,6 +96,37 @@ def _fill(member_text, ref_text, tpl_slots, members):
         hi = m[b] if b < len(ref) and b in m else len(row)
         out.append(' '.join(row[lo:hi]))
     return out
+
+
+BOILER = 'Vocābula in extrēmā parte sectiōnis probantur.'
+
+
+def _strip_echo(text):
+    for prefix in ('Rēctē. ', 'Nōn rēctē. ', 'Rēctē: ', 'Nōn rēctē: '):
+        if text.startswith(prefix):
+            return text[len(prefix):]
+    return text
+
+
+def _clean_lesson(blocks):
+    """Paragraphes de leçon (sans les échos « Rēctē. » ni la phrase passe-partout,
+    dédoublonnés) et entrées de vocabulaire « mot — sens »."""
+    texts, examples, seen = [], [], set()
+    for b in blocks:
+        t = (b.get('text') or '').strip()
+        if not t:
+            continue
+        if b.get('type') == 'example':
+            if t not in seen:
+                seen.add(t)
+                examples.append(t)
+            continue
+        t = _strip_echo(t)
+        if t == BOILER or t in seen:
+            continue
+        seen.add(t)
+        texts.append(t)
+    return texts, examples
 
 
 def main(place):
@@ -183,7 +214,11 @@ def main(place):
     cards_meta = []
     for address, directory, card in cards(place):
         section = address.split('/')[1]
+        lesson_path = os.path.join(directory, card.get('lesson', 'lesson.json'))
+        lesson, examples = _clean_lesson(load(lesson_path)) if os.path.exists(lesson_path) else ([], [])
         cards_meta.append({
+            'lesson': lesson,
+            'examples': examples,
             'id': address, 'section': section, 'card': address.split('/')[2],
             'name': card.get('name'), 'subtitle': card.get('subtitle'),
             'price': (card.get('access') or {}).get('price', 0),
@@ -198,6 +233,18 @@ def main(place):
         sections[sec['id']] = {'name': sec.get('name'), 'subtitle': sec.get('subtitle'), 'children': [c['id'] for c in sec.get('children', [])]}
     place_file = os.path.join(ROOT, place, 'place.json')
     place_meta = json.load(open(place_file, encoding='utf-8')) if os.path.exists(place_file) else {}
+    # Fiches d'aide référencées par les cadres (texte et exemples seulement).
+    help_all = load(os.path.join(ROOT, '..', 'help.json.gz'))
+    used = sorted({fr['help'] for fr in frames if fr.get('help')})
+    help_path = os.path.join(REPO, 'assets/arbor/frames/help.json')
+    existing = json.load(open(help_path, encoding='utf-8')) if os.path.exists(help_path) else {}
+    for hid in used:
+        blocks = help_all.get(hid)
+        if blocks is not None:
+            existing[hid] = [{'type': b['type'], 'text': _strip_echo(b['text'])} for b in blocks if b.get('type') in ('text', 'example')]
+    os.makedirs(os.path.dirname(help_path), exist_ok=True)
+    with open(help_path, 'w', encoding='utf-8') as f:
+        json.dump(existing, f, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
     with open(os.path.join(REPO, f'reference/frames/{place}.cards.json'), 'w', encoding='utf-8') as f:
         json.dump({'place': {k: place_meta.get(k) for k in ('id', 'name', 'subtitle', 'children')}, 'sections': sections, 'cards': cards_meta}, f, ensure_ascii=False, indent=1)
     # Asset embarqué : les cadres sans échantillons ni identifiants bruts.

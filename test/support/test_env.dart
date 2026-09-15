@@ -35,10 +35,13 @@ final ReadingLibrary testReadingLibrary = ReadingLibrary.parse(
 );
 
 /// Frame cards of the Theatrum and Templum, read from the embedded assets.
-final FrameLibrary testFrameLibrary = FrameLibrary([
-  for (final place in ['theatrum', 'templum'])
-    if (File('assets/arbor/frames/$place.json').existsSync()) ...FrameLibrary.parse(File('assets/arbor/frames/$place.json').readAsStringSync()).frames,
-]);
+final FrameLibrary testFrameLibrary = FrameLibrary(
+  [
+    for (final place in ['theatrum', 'templum'])
+      if (File('assets/arbor/frames/$place.json').existsSync()) ...FrameLibrary.parse(File('assets/arbor/frames/$place.json').readAsStringSync()).frames,
+  ],
+  help: File('assets/arbor/frames/help.json').existsSync() ? FrameLibrary.parseHelp(File('assets/arbor/frames/help.json').readAsStringSync()) : const {},
+);
 
 /// A [ProviderScope] with both lexicons, an in-memory store and silent audio.
 Widget testScope(MemorySaveStore store, {SaveData? initial, required Widget child}) => ProviderScope(

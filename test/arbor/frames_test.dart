@@ -3,7 +3,10 @@ import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:grammaticon/arbor/arbor.dart';
+import 'package:grammaticon/arbor/contextus.dart';
 import 'package:grammaticon/arbor/diagnosis.dart';
+import 'package:grammaticon/arbor/evidence.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
 import 'package:grammaticon/linguistics/engine/analyzer.dart';
 import 'package:grammaticon/linguistics/engine/conjugator.dart';
 import 'package:grammaticon/linguistics/lexicon/forum_lexicon.dart';
@@ -11,6 +14,7 @@ import 'package:grammaticon/linguistics/lexicon/verbs.dart';
 import 'package:grammaticon/pedagogy/forum/forum_question_source.dart';
 import 'package:grammaticon/pedagogy/forum/syntagmata/syntagmata.dart';
 import 'package:grammaticon/pedagogy/frames/frame_cards.dart';
+import 'package:grammaticon/pedagogy/frames/frame_catalogue.dart';
 import 'package:grammaticon/pedagogy/frames/frame_content.dart';
 import 'package:grammaticon/pedagogy/frames/frame_question_source.dart';
 import 'package:grammaticon/pedagogy/frames/frame_trials.dart';
@@ -45,6 +49,13 @@ void main() {
       expect(Skills.maybe(t.primarySkill), isNotNull, reason: t.id);
       expect(Skills.maybe(t.primarySkill)!.parent, isNotNull, reason: t.id);
     }
+    // Leçon et aide : chaque carte a une leçon, chaque cadre une fiche d'aide.
+    for (final t in trials) {
+      expect(t.intro.length, greaterThan(40), reason: '${t.id} sans leçon');
+    }
+    final help = FrameLibrary.parseHelp(File('assets/arbor/frames/help.json').readAsStringSync());
+    final noHelp = library.frames.where((f) => f.help == null || !help.containsKey(f.help)).map((f) => f.id).toList();
+    expect(noHelp, isEmpty, reason: 'cadres sans fiche d\'aide');
     expect(missing, isEmpty, reason: 'cartes sans cadre');
     expect(unknown, isEmpty, reason: 'nœuds inconnus');
     // Chaque carte de la table pointe vers une carte existante.
@@ -85,5 +96,53 @@ void main() {
       print('  $s');
     }
     expect(empty, 0);
+  });
+
+  test('une erreur en contexte débite la compétence de la carte, non la grammaire : celle-ci devient suspecte', () {
+    final rng = Random(5);
+    // Theātrum : le nœud observé est lect.intellectus.<section>.<carte> ; ses
+    // prérequis (syntaxe, morphologie) passent en hypothèses, sans dette.
+    final th = Trials.byId('th-actiones-passive-number');
+    final q = source.generate(trial: th, componentIds: const [], rng: rng, id: 'q-th')!;
+    final wrong = q.choices.firstWhere((c) => !q.isCorrect(c.value));
+    final d = dx.diagnose(q, wrong.value);
+    final node = contextNodeId('theatrum/actiones/passive-number');
+    expect(d.observed, {node});
+    expect(d.suspecta, isEmpty);
+    expect(arbor[node]!.requirit, containsAll(['v.des.pass.3.sg.tur', 'v.des.pass.3.pl.ntur', 'syn.concordia.verbum']));
+    final ev = const ArborEvidence().observe(arbor: arbor, diagnosis: d, credited: const {}, correct: false, quality: AnswerQuality.autonoma, lemmaId: q.lemmaId, trialId: th.id, now: DateTime(2026, 9, 15), place: 'theatrum');
+    expect(ev.records.keys, contains(node));
+    expect(ev.records.containsKey('v.des.pass.3.sg.tur'), isFalse, reason: 'la forme n\'est pas débitée par une erreur de lecture');
+    expect(ev.hypotheses.keys, containsAll([node, 'v.des.pass.3.sg.tur', 'syn.concordia.verbum']));
+    // Templum : quand le distracteur est une autre forme du même mot, les
+    // maillons de la forme attendue absents de la forme choisie sont suspects.
+    var found = false;
+    for (var i = 0; i < 40 && !found; i++) {
+      final tq = source.generate(trial: Trials.byId('tp-actiones-passive-number'), componentIds: const [], rng: rng, id: 'q-tp-$i')!;
+      for (final c in tq.choices.where((c) => !tq.isCorrect(c.value))) {
+        final s = dx.frameSuspecta(tq, c.value);
+        if (s.isEmpty) continue;
+        found = true;
+        final td = dx.diagnose(tq, c.value);
+        expect(td.observed, {contextNodeId('templum/actiones/passive-number')});
+        expect(td.suspecta, s);
+        expect(s.every((id) => id.startsWith('v.') || id.startsWith('n.') || id.startsWith('adj.') || id.startsWith('pron.')), isTrue, reason: s.join(' '));
+      }
+    }
+    expect(found, isTrue, reason: 'aucun distracteur morphologique trouvé au Templum');
+    // Réussir la compétence lève le soupçon sur ses prérequis directs.
+    final ok = ev.observe(arbor: arbor, diagnosis: const Diagnosis(), credited: {node}, correct: true, quality: AnswerQuality.autonoma, lemmaId: q.lemmaId, trialId: th.id, now: DateTime(2026, 9, 15, 1), place: 'theatrum');
+    expect(ok.hypotheses.containsKey('v.des.pass.3.sg.tur'), isFalse);
+    expect(ok.records[node]!.places, {'theatrum'});
+  });
+
+  test('le thema exige l\'intellectus du même concept, et chaque carte du Templum a son pendant', () {
+    for (final c in kTemplumCards.where((c) => c.card != 'vocabula')) {
+      final thema = arbor[contextNodeId(c.id)]!;
+      final intellectus = thema.requirit.where((r) => r.startsWith('lect.intellectus.')).toList();
+      expect(intellectus.length, 1, reason: c.id);
+      expect(arbor.nodes.containsKey(intellectus.single), isTrue, reason: c.id);
+      expect(thema.requirit.toSet(), containsAll(frameCardBaseNodes(c.id)), reason: c.id);
+    }
   });
 }

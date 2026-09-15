@@ -22,6 +22,9 @@ class FrameFilter extends ContentFilter {
 class FrameTrials {
   FrameTrials._();
 
+  /// Métadonnées d'une carte par adresse `place/section/card`.
+  static final Map<String, FrameCardMeta> cardsById = {for (final c in [...kTheatrumCards, ...kTemplumCards]) c.id: c};
+
   static String trialId(String cardAddress) {
     final p = cardAddress.split('/');
     return '${p[0] == 'templum' ? 'tp' : 'th'}-${p[1]}-${p[2]}';
@@ -48,7 +51,7 @@ class FrameTrials {
       for (final cardId in s.cards) {
         final c = byId['${activity.key}/${s.id}/$cardId'];
         if (c == null) continue;
-        final nodes = frameCardNodes(c.id);
+        final base = frameCardBaseNodes(c.id);
         final production = activity == Activity.templum;
         out.add(Trial(
           id: trialId(c.id),
@@ -59,10 +62,13 @@ class FrameTrials {
           prerequisites: [for (final r in c.requires) trialId(r)],
           filter: FrameFilter(c.id),
           dimensions: [cardId == 'vocabula' ? Dimension.vocabulum : (production ? Dimension.productio : Dimension.sensus)],
-          intro: production
-              ? 'Sententiam Gallicam Latīnē redde: ēlige fōrmam aut sententiam quae sēnsum servat.'
-              : 'Sententiās Latīnās lege et interpretātiōnem Gallicam fidēlem ēlige.',
-          examples: [for (final n in nodes) if (_nomina[n] != null && !n.startsWith('lect.versio.')) _nomina[n]!],
+          intro: [
+            ...c.lesson,
+            production
+                ? 'Sententiam Gallicam Latīnē redde: ēlige fōrmam aut sententiam quae sēnsum servat.'
+                : 'Sententiās Latīnās lege et interpretātiōnem Gallicam fidēlem ēlige.',
+          ].join(' '),
+          examples: c.examples.isNotEmpty ? c.examples.take(8).toList() : [for (final n in base) if (_nomina[n] != null) _nomina[n]!],
           opponentId: opponents[i++ % opponents.length],
           activity: activity,
           questionsToWin: c.target,

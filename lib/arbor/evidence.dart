@@ -38,6 +38,7 @@ class ArborEvidence {
     required String lemmaId,
     required String trialId,
     required DateTime now,
+    String? place,
     MasteryConfig cfg = const MasteryConfig(),
   }) {
     final recs = Map<String, SkillRecord>.from(records);
@@ -49,8 +50,16 @@ class ArborEvidence {
     bool tracked(String id) => arbor.nodes.containsKey(id) && !id.startsWith('lex.') && (!id.startsWith('cella.') || id.startsWith('cella.pron.') || id.startsWith('cella.num.'));
     if (correct) {
       for (final id in credited.where(tracked)) {
-        recs[id] = of(id).apply(obs, cfg);
-        if (quality == AnswerQuality.autonoma) hyps.remove(id);
+        recs[id] = of(id).apply(obs, cfg, place: place);
+        if (quality == AnswerQuality.autonoma) {
+          hyps.remove(id);
+          // Réussir une compétence lève le soupçon sur ce qu'elle suppose
+          // directement (comprendre la phrase au passif, c'est aussi ne plus
+          // suspecter -tur) ; le maillon garde son propre historique.
+          for (final pre in arbor[id]?.requirit ?? const <String>[]) {
+            hyps.remove(pre);
+          }
+        }
       }
     } else {
       // Le maillon non reconnu, et le maillon que le joueur a cru voir : les
@@ -66,6 +75,12 @@ class ArborEvidence {
           final r = recs[pre] ?? of(pre);
           if (r.tier(cfg).index < MasteryTier.familiaris.index) hyps.putIfAbsent(pre, () => now);
         }
+      }
+      // Suspects sans dette : la forme attendue au Templum différait de la forme
+      // choisie sur ces maillons ; on les vérifiera hors contexte.
+      for (final id in diagnosis.suspecta.where(tracked)) {
+        final r = recs[id] ?? of(id);
+        if (r.tier(cfg).index < MasteryTier.perita.index) hyps.putIfAbsent(id, () => now);
       }
       // Les notions L0 touchées gardent aussi la trace (agrégat de la Tabula).
       for (final id in diagnosis.observed.where((id) => id.startsWith('not.') && arbor.nodes.containsKey(id))) {

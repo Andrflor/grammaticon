@@ -118,6 +118,7 @@ class SkillRecord {
     this.lemmas = const {},
     this.sessionDays = const {},
     this.lastPractice,
+    this.places = const {},
   });
 
   final int autonomousCorrect;
@@ -139,6 +140,11 @@ class SkillRecord {
   /// Distinct practice days (yyyymmdd) — diversity across sessions.
   final Set<String> sessionDays;
   final DateTime? lastPractice;
+
+  /// Lieux (clés d'[Activity]) où le maillon a reçu une bonne réponse autonome :
+  /// un maillon n'est complet que prouvé dans chaque lieu qui le couvre
+  /// (comprendre au Theātrum, produire au Templum…).
+  final Set<String> places;
 
   int get autonomousCount => autonomousCorrect + autonomousWrong;
   int get totalCount => autonomousCount + aidedCorrect + aidedWrong + correctedCorrect;
@@ -184,10 +190,11 @@ class SkillRecord {
       lemmas: lemmas,
       sessionDays: sessionDays,
       lastPractice: lastPractice,
+      places: places,
     );
   }
 
-  SkillRecord apply(Observation o, MasteryConfig cfg) {
+  SkillRecord apply(Observation o, MasteryConfig cfg, {String? place}) {
     var ac = autonomousCorrect, aw = autonomousWrong, aidC = aidedCorrect, aidW = aidedWrong, corC = correctedCorrect;
     // A long absence is not forgiven by the next answer: it starts from the
     // receded estimate.
@@ -233,6 +240,7 @@ class SkillRecord {
       lemmas: lem.length > 60 ? lem.skip(lem.length - 60).toSet() : lem,
       sessionDays: days,
       lastPractice: o.at,
+      places: place != null && o.correct && o.quality == AnswerQuality.autonoma ? {...places, place} : places,
     );
   }
 
@@ -299,6 +307,7 @@ class SkillRecord {
         'lemmas': lemmas.toList(),
         'days': sessionDays.toList(),
         if (lastPractice != null) 'last': lastPractice!.millisecondsSinceEpoch,
+        if (places.isNotEmpty) 'places': places.toList(),
       };
 
   factory SkillRecord.fromJson(Map<String, Object?> j) => SkillRecord(
@@ -313,5 +322,6 @@ class SkillRecord {
         lemmas: ((j['lemmas'] as List?) ?? const []).cast<String>().toSet(),
         sessionDays: ((j['days'] as List?) ?? const []).cast<String>().toSet(),
         lastPractice: j['last'] == null ? null : DateTime.fromMillisecondsSinceEpoch(j['last'] as int),
+        places: ((j['places'] as List?) ?? const []).cast<String>().toSet(),
       );
 }

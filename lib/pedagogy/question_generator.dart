@@ -402,9 +402,16 @@ class QuestionGenerator implements QuestionSource {
 
   Set<String> _correctValues(Dimension dim, PoolEntry e) {
     if (dim == Dimension.formaPlena) {
+      // Toutes les lectures de la variante ont leur forme pleine : amātus fuerit
+      // vaut amātus erit (futur antérieur) et amātus sit (subjonctif parfait).
       final p = analyzer.paradigmOf(e.verb.id);
-      final prim = p.primary(e.form.analysis.selector);
-      return prim == null ? {} : {prim.surface};
+      final out = <String>{};
+      for (final f in analyzer.analyze(e.form.surface)) {
+        if (f.analysis.lemmaId != e.verb.id) continue;
+        final prim = p.primary(f.analysis.selector);
+        if (prim != null) out.add(prim.surface);
+      }
+      return out;
     }
     if (dim == Dimension.analysis) {
       // Every complete analysis of the surface for this lemma is correct.

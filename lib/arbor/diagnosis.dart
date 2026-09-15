@@ -24,7 +24,7 @@ import 'arbor.dart';
 import 'cellae.dart';
 
 class Diagnosis {
-  const Diagnosis({this.observed = const {}, this.confusedWith = const {}});
+  const Diagnosis({this.observed = const {}, this.confusedWith = const {}, this.suspecta = const {}});
 
   /// Maillons de la bonne réponse que le joueur n'a pas reconnus.
   final Set<String> observed;
@@ -32,15 +32,22 @@ class Diagnosis {
   /// Maillons sur lesquels repose la réponse choisie.
   final Set<String> confusedWith;
 
-  bool get isEmpty => observed.isEmpty && confusedWith.isEmpty;
+  /// Maillons rendus suspects sans être débités : la différence morphologique
+  /// entre la forme attendue et la forme choisie dans une phrase du Templum. La
+  /// compétence testée est le thema ; le maillon de forme est une hypothèse que
+  /// l'Amphitheātrum ou le Forum vérifiera.
+  final Set<String> suspecta;
+
+  bool get isEmpty => observed.isEmpty && confusedWith.isEmpty && suspecta.isEmpty;
 
   /// Maillons L1 et au-dessus (les notions L0 servent d'agrégat, pas de cible).
   Set<String> get observedElementa => observed.where((id) => !id.startsWith('not.')).toSet();
 
-  Map<String, Object?> toJson() => {'o': observed.toList()..sort(), 'c': confusedWith.toList()..sort()};
+  Map<String, Object?> toJson() => {'o': observed.toList()..sort(), 'c': confusedWith.toList()..sort(), if (suspecta.isNotEmpty) 's': suspecta.toList()..sort()};
   factory Diagnosis.fromJson(Map<String, Object?> j) => Diagnosis(
     observed: ((j['o'] as List?) ?? const []).cast<String>().toSet(),
     confusedWith: ((j['c'] as List?) ?? const []).cast<String>().toSet(),
+    suspecta: ((j['s'] as List?) ?? const []).cast<String>().toSet(),
   );
 }
 
@@ -77,17 +84,10 @@ class Diagnostician {
       return out;
     }
     if (p is ReadingQuestionPayload) return {_readingSkill(p.entry.item.skillId, p.entry.item.distinctions)};
-    if (p is FrameQuestionPayload) {
-      final out = p.nodes.toSet();
-      // Templum, hors vocabulaire : un choix latin d'un mot apporte ses maillons
-      // (les choix du Theatrum sont français ; un mot de vocabulaire n'est pas
-      // une forme à analyser).
-      if (_frameMorphology(p)) {
-        final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
-        if (accepted != null) out.addAll(_wordComponents(accepted));
-      }
-      return out;
-    }
+    // Theātrum / Templum : la compétence en contexte de la carte (comprendre ou
+    // rendre la construction dans une phrase), non les maillons de grammaire
+    // qu'elle suppose — ceux-là sont ses prérequis dans l'arbre.
+    if (p is FrameQuestionPayload) return p.nodes.toSet();
     return {};
   }
 
@@ -101,6 +101,41 @@ class Diagnostician {
   };
 
   static bool _frameMorphology(FrameQuestionPayload p) => p.frame.place == 'templum' && !p.frame.isVocabulary;
+
+  /// Templum, hors vocabulaire : quand la forme choisie et la forme attendue
+  /// sont deux formes analysables du même lexème, les maillons de la forme
+  /// attendue absents de la forme choisie deviennent suspects (une hypothèse à
+  /// vérifier hors contexte, pas une dette). Un autre mot ou une phrase entière
+  /// ne désignent aucun maillon de forme.
+  Set<String> frameSuspecta(Question q, String chosen) {
+    final p = q.payload;
+    if (p is! FrameQuestionPayload || !_frameMorphology(p)) return const {};
+    final label = q.choices.where((c) => c.value == chosen).map((c) => c.label).firstOrNull;
+    final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
+    if (label == null || accepted == null) return const {};
+    // Deux phrases qui ne différent que par un mot : c'est ce mot qui compte.
+    final pair = _differingWords(label, accepted);
+    if (pair == null) return const {};
+    final m = _wordComponents(pair.$1), a = _wordComponents(pair.$2);
+    final lemA = a.where((c) => c.startsWith('lex.')).toSet(), lemM = m.where((c) => c.startsWith('lex.')).toSet();
+    if (lemA.isEmpty || lemA.length != lemM.length || !lemA.containsAll(lemM)) return const {};
+    return a.difference(m).where((c) => !c.startsWith('lex.') && !c.startsWith('cella.') && !c.startsWith('not.') && arbor.nodes.containsKey(c)).toSet();
+  }
+
+  /// Le mot choisi et le mot attendu quand deux réponses (mot ou phrase) ne
+  /// différent que par un seul mot, sinon null.
+  static (String, String)? _differingWords(String chosen, String accepted) {
+    List<String> words(String s) => s.trim().replaceAll(RegExp(r'[.,;:!?«»"]'), '').split(RegExp(r'\s+'));
+    final c = words(chosen), a = words(accepted);
+    if (c.length != a.length) return null;
+    (String, String)? out;
+    for (var i = 0; i < c.length; i++) {
+      if (c[i] == a[i]) continue;
+      if (out != null) return null;
+      out = (c[i], a[i]);
+    }
+    return out;
+  }
 
   /// Maillons d'un mot latin isolé (une seule analyse acceptée), sinon rien.
   Set<String> _wordComponents(String label) {
@@ -161,6 +196,7 @@ class Diagnostician {
     final a = targetComponents(q);
     final b = chosenComponents(q, chosen);
     if (b == null) return const Diagnosis();
+    if (q.payload is FrameQuestionPayload) return Diagnosis(observed: a, suspecta: frameSuspecta(q, chosen));
     var observed = a.difference(b);
     // Distracteur « impossible » (aucune forme ne lui correspond, l'analyse
     // synthétique retombe sur la cible) : ce que le joueur n'a pas reconnu,
@@ -206,22 +242,9 @@ class Diagnostician {
     if (p is VerbQuestionPayload) return _verbChosen(q, p, chosen);
     if (p is ForumQuestionPayload) return _nominalChosen(q, p, chosen);
     if (p is ReadingQuestionPayload) return _readingChosen(p, chosen);
-    if (p is FrameQuestionPayload) {
-      var morph = const <String>{};
-      if (_frameMorphology(p)) {
-        final label = q.choices.where((c) => c.value == chosen).map((c) => c.label).firstOrNull;
-        final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
-        final m = label == null ? const <String>{} : _wordComponents(label);
-        final a = accepted == null ? const <String>{} : _wordComponents(accepted);
-        // Une autre forme du même lexème : la différence est morphologique ; un
-        // autre mot : c'est le lexique, pas la morphologie, qui est en cause.
-        final sameLemma = m.any((c) => c.startsWith('lex.')) && m.where((c) => c.startsWith('lex.')).toSet().containsAll(a.where((c) => c.startsWith('lex.')));
-        morph = sameLemma ? m : {...m.where((c) => c.startsWith('lex.'))};
-      }
-      // Le nœud de la carte est ce qui a manqué ; ce que le choix repose sur
-      // d'autre (forme fautive, geste de fidélité) est la confusion.
-      return {...morph, 'lect.versio.fidelitas'};
-    }
+    // Un mauvais choix dans une phrase ne repose sur aucun maillon de la
+    // cible : ce qui a manqué est la compétence en contexte de la carte.
+    if (p is FrameQuestionPayload) return const {};
     return null;
   }
 
@@ -474,6 +497,7 @@ class Diagnostician {
   /// la case et le lexème.
   Set<String> credited(Question q) {
     final a = targetComponents(q);
+    if (q.payload is FrameQuestionPayload) return a;
     final out = <String>{};
     for (final c in q.choices) {
       if (q.isCorrect(c.value)) continue;
@@ -522,6 +546,9 @@ class Diagnostician {
     ..addAll(add is Set<String> ? add : {add as String});
 
   Set<String> _functioNodes(Syntagma? s) => {for (final f in Functio.values) _functioNode(f.key, s)};
+
+  static String functioNode(String key, Syntagma? s) => _functioNode(key, s);
+  static Set<String> constructioNodes(String key) => _constructioNodes(key);
 
   static String _functioNode(String key, Syntagma? s) => switch (key) {
     'subiectum' => 'syn.nom.subiectum',

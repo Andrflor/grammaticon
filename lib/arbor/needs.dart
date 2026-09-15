@@ -11,13 +11,20 @@ import 'cellae.dart';
 import 'evidence.dart';
 
 class ArborNeeds {
-  ArborNeeds(this.arbor, this.evidence, this.now, {this.cfg = const MasteryConfig()});
+  ArborNeeds(this.arbor, this.evidence, this.now, {this.cfg = const MasteryConfig(), this.focus = const {}});
+
+  /// Maillons visés par l'Iter pour ce combat : les formes qui les portent
+  /// pèsent quatre fois plus.
+  final Set<String> focus;
   final Arbor arbor;
   final ArborEvidence evidence;
   final DateTime now;
   final MasteryConfig cfg;
 
-  double nodes(Iterable<String> ids) => evidence.need(ids, now, cfg: cfg);
+  double nodes(Iterable<String> ids) {
+    final base = evidence.need(ids, now, cfg: cfg);
+    return focus.isNotEmpty && ids.any(focus.contains) ? base * 4 : base;
+  }
   double verb(Analysis a, VerbEntry v) => nodes(verbalComponents(a, v));
   double nominal(NominalForm f, Lexeme l) => nodes(nominalComponents(f, l));
 }
