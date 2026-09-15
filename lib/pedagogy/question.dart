@@ -6,6 +6,7 @@
 /// attach their own linguistic detail in a [QuestionPayload].
 library;
 
+import 'dart:convert';
 import 'dart:math';
 
 import '../arbor/needs.dart';
@@ -95,6 +96,11 @@ class Question {
 
   String get primarySkill => skillIds.first;
   bool isCorrect(String value) => correctValues.contains(value);
+
+  /// Identité pédagogique, indépendante du tirage et de la position des
+  /// boutons. Une même surface dans deux contextes peut demander deux cas.
+  String get repetitionKey => jsonEncode([dimension.name, lemmaId, surface, syntagma,
+    ([for (final c in choices) if (isCorrect(c.value)) c.value]..sort())]);
 
   Question withChoices(List<Choice> values, {String? id}) => Question(
     id: id ?? this.id, trialId: trialId, dimension: dimension, prompt: prompt,

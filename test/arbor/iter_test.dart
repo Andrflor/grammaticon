@@ -246,7 +246,13 @@ void main() {
     expect(path.first, startsWith('th-loca-'), reason: path.join(' → '));
     expect(path.indexWhere((p) => p.startsWith('tp-loca-')), allOf(greaterThan(0), lessThan(4)), reason: path.join(' → '));
     final firstSyntax = path.indexWhere((p) => p.contains(':syn.'));
-    expect(firstSyntax, allOf(greaterThanOrEqualTo(0), lessThan(24)), reason: path.join(' → '));
+    // La syntaxe élémentaire doit être jouable avec les 1re/2e déclinaisons.
+    // Le nombre exact de combats varie quand on écarte les contextes qui
+    // contiennent des noms encore inconnus : comparer les découvertes, pas
+    // imposer un rang qui dépend de ces phrases trop avancées.
+    final thirdDeclension = path.indexWhere((p) => p.startsWith('th-nomina-third-subject-object:'));
+    expect(thirdDeclension, greaterThan(0), reason: path.join(' → '));
+    expect(firstSyntax, allOf(greaterThan(path.indexWhere((p) => p.startsWith('tp-loca-'))), lessThan(thirdDeclension)), reason: path.join(' → '));
   });
 
   test('la consigne de combat concentre les questions sur la cible', () {

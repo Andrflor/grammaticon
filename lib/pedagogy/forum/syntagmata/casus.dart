@@ -36,6 +36,18 @@ const List<Syntagma> kCasusSyntagmata = [
   Syntagma(id: 'cas-verba-dat-021', text: 'dominus {servō} pecūniam dat', lemmaId: 'servus', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.datum, tags: {'cas-verba-dat'}, note: 'Datīvus persōnae cui datur: servō pecūnia datur.'),
   Syntagma(id: 'cas-verba-dat-022', text: 'Iūlius {Aemiliae} ōsculum dat', lemmaId: 'aemilia', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.datum, tags: {'cas-verba-dat'}, note: 'Datīvus persōnae cui datur: Aemiliae ōsculum datur.'),
   Syntagma(id: 'cas-verba-dat-023', text: 'māter {īnfantī} lac dat', lemmaId: 'infans', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.datum, tags: {'cas-verba-dat'}, note: 'Datīvus persōnae cui datur: īnfantī lac datur.'),
+  // Premiers contrastes : tous les noms de la phrase sont des 1re/2e
+  // déclinaisons, pour travailler le régime avant les déclinaisons suivantes.
+  Syntagma(id: 'cas-verba-dat-024', text: 'puella {amīcae} crēdit', lemmaId: 'amica', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.obiectumDativum, tags: {'cas-verba-dat'}, note: 'Crēdō datīvum regit: amīcae crēdit, nōn amīcam.'),
+  Syntagma(id: 'cas-verba-dat-025', text: 'puella {amīcam} videt', lemmaId: 'amica', casus: Casus.accusativus, number: Numerus.singularis, functio: Functio.obiectum, tags: {'cas-verba-dat'}, note: 'Videō accūsātīvum regit: amīcam videt, nōn amīcae.'),
+  Syntagma(id: 'cas-verba-dat-026', text: 'nauta {agricolae} respondet', lemmaId: 'agricola', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.obiectumDativum, tags: {'cas-verba-dat'}, note: 'Respondeō datīvum regit: agricolae respondet.'),
+  Syntagma(id: 'cas-verba-dat-027', text: 'nauta {agricolam} vocat', lemmaId: 'agricola', casus: Casus.accusativus, number: Numerus.singularis, functio: Functio.obiectum, tags: {'cas-verba-dat'}, note: 'Vocō accūsātīvum regit: agricolam vocat.'),
+  Syntagma(id: 'cas-verba-dat-028', text: 'fābula {puellīs} placet', lemmaId: 'puella', casus: Casus.dativus, number: Numerus.pluralis, functio: Functio.obiectumDativum, tags: {'cas-verba-dat'}, note: 'Placeō datīvum regit: puellīs placet; -īs datīvus plūrālis prīmae.'),
+  Syntagma(id: 'cas-verba-dat-029', text: 'fēmina {puellās} laudat', lemmaId: 'puella', casus: Casus.accusativus, number: Numerus.pluralis, functio: Functio.obiectum, tags: {'cas-verba-dat'}, note: 'Laudō accūsātīvum regit: puellās laudat; -ās accūsātīvus plūrālis prīmae.'),
+  Syntagma(id: 'cas-verba-dat-030', text: 'servus {dominae} pāret', lemmaId: 'domina', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.obiectumDativum, tags: {'cas-verba-dat'}, note: 'Pāreō datīvum regit: dominae pāret.'),
+  Syntagma(id: 'cas-verba-dat-031', text: 'servus {dominam} timet', lemmaId: 'domina', casus: Casus.accusativus, number: Numerus.singularis, functio: Functio.obiectum, tags: {'cas-verba-dat'}, note: 'Timeō accūsātīvum regit: dominam timet.'),
+  Syntagma(id: 'cas-verba-dat-032', text: 'Mārcus {amīcō} favet', lemmaId: 'amicus', casus: Casus.dativus, number: Numerus.singularis, functio: Functio.obiectumDativum, tags: {'cas-verba-dat'}, note: 'Faveō datīvum regit: amīcō favet.'),
+  Syntagma(id: 'cas-verba-dat-033', text: 'Mārcus {amīcum} amat', lemmaId: 'amicus', casus: Casus.accusativus, number: Numerus.singularis, functio: Functio.obiectum, tags: {'cas-verba-dat'}, note: 'Amō accūsātīvum regit: amīcum amat.'),
 
   // ------------------------------------------------------------ cas-verba-abl
   // Ablatives governed by the verb.

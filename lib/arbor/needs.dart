@@ -15,11 +15,13 @@ import 'skill.dart';
 import 'contextus.dart';
 
 class ArborNeeds {
-  ArborNeeds(this.arbor, this.evidence, this.now, {this.cfg = const MasteryConfig(), this.focus = const {}, this.credit, this.contrast, this.presented});
+  ArborNeeds(this.arbor, this.evidence, this.now, {this.cfg = const MasteryConfig(), this.focus = const {}, this.credit, this.contrast, this.presented, this.recentQuestions = const []});
 
   /// Maillons visés par l'Iter pour ce combat : les formes qui les portent
   /// pèsent quatre fois plus.
   final Set<String> focus;
+  /// Identités exactes des questions précédentes (surface et contexte).
+  final List<String> recentQuestions;
   /// Même diagnostic qu'à la résolution : afficher une forme ne suffit pas.
   final Set<String> Function(Question)? credit;
   final Set<String>? Function(Question, String)? contrast;
@@ -37,6 +39,7 @@ class ArborNeeds {
   /// La version seule ne suffit pas : les liens du graphe demandent le thème,
   /// lequel exige à son tour la version du même concept.
   bool introduced(String id) {
+    if ((arbor[id]?.notiones ?? const <String>[]).any(_missingDiscovery)) return false;
     final gates = arbor.discoveriesOf(id);
     if (gates.isEmpty) return false;
     return gates.every((gate) => exposed(gate) &&
@@ -45,15 +48,19 @@ class ArborNeeds {
         .every(exposed));
   }
 
+  static bool _missingDiscovery(String id) => kNotionDiscoveries.containsKey(id) && kNotionDiscoveries[id] == null;
+
   /// Toute la forme doit appartenir aux notions déjà découvertes, y compris
   /// ses composants qui ne sont pas la cible de la question.
   bool canPresent(Iterable<String> components) {
     for (final id in components) {
+      if (_missingDiscovery(id)) return false;
       final concept = kCaseDiscoveries[id] ?? kNotionDiscoveries[id];
       if (concept != null && !introduced(discoveryThema(concept))) return false;
       if (id == 'not.tempus.futex' && !exposed('syn.tempora.futex')) return false;
       final node = arbor[id];
       if (node == null || (node.stratum != Stratum.elementum && node.stratum != Stratum.syntaxis)) continue;
+      if (node.notiones.any(_missingDiscovery)) return false;
       if (node.notiones.contains('not.tempus.futex') && !exposed('syn.tempora.futex')) return false;
       if (arbor.discoveriesOf(id).isNotEmpty && !introduced(id)) return false;
     }

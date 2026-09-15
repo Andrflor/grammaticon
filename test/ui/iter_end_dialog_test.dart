@@ -19,11 +19,11 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     const trialId = 'ind-praes-act';
-    final resume = ActiveBattle(trialId: trialId, hearts: 1, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9);
+    final resume = ActiveBattle(trialId: trialId, hearts: 1, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9, focus: const ['v.thema.praes.c1']);
     await tester.pumpWidget(
       testScope(
         MemorySaveStore(),
-        initial: const SaveData(gems: 40, introSeen: {trialId}),
+        initial: SaveData(gems: 40, introSeen: {trialId}, arbor: testDiscoveries({'loca'})),
         child: ProviderScope(
           overrides: [if (noNextCard) iterChoiceProvider.overrideWithValue(null)],
           child: MaterialApp(
@@ -48,6 +48,7 @@ void main() {
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
     final container = ProviderScope.containerOf(tester.element(find.byType(BattleScreen)));
+    expect(find.text('Fōrmae verbōrum mixtae · 9/10'), findsOneWidget);
     final ctrl = container.read(battleProvider.notifier);
     final q = container.read(battleProvider)!.question!;
     ctrl.answer(q.id, q.choices.indexWhere((c) => q.isCorrect(c.value) == won));
@@ -104,6 +105,34 @@ void main() {
     expect(find.byType(BattleScreen), findsNothing);
     expect(find.text('Activity menu'), findsOneWidget);
     expect(container.read(profileProvider).battlesWon, 1);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('une ancienne séance triviale peut poursuivre Iter sans défaite ni perte de progression', (tester) async {
+    tester.view.physicalSize = const Size(1600, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final trial = Trials.byId('ind-praes-act');
+    final resume = ActiveBattle(trialId: trial.id, hearts: 3, enemyHp: 6, answered: 4, gemsDelta: 32,
+      seed: 20260907, questionIndex: 4, componentIds: const [], correctCount: 4, focus: const ['v.sig.praes']);
+    await tester.pumpWidget(testScope(MemorySaveStore(),
+      initial: SaveData(gems: 40, introSeen: {trial.id}, activeBattle: resume, arbor: testDiscoveries({'loca'})),
+      child: MaterialApp(theme: G.theme(), home: BattleScreen(trial: trial, resume: resume))));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    final container = ProviderScope.containerOf(tester.element(find.byType(BattleScreen)));
+    expect(container.read(battleProvider)!.phase, BattlePhase.unavailable);
+    expect(find.text('Iter'), findsOneWidget);
+    await tester.tap(find.text('Iter'));
+    await tester.pumpAndSettle();
+    expect(find.text('Iter · proximum'), findsOneWidget);
+    expect(container.read(profileProvider).gems, 40);
+    expect(container.read(profileProvider).battlesLost, 0);
+    final choice = container.read(iterChoiceProvider)!;
+    await tester.tap(find.text(choice.mustBuy ? 'Eme et perge' : 'Perge'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(container.read(battleProvider)!.question, isNotNull);
     expect(tester.takeException(), isNull);
   });
 }

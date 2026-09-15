@@ -53,6 +53,7 @@ class BattleState {
     this.defeatPenalty = 0,
     this.recentLemmas = const [],
     this.recentSurfaces = const [],
+    this.recentQuestions = const [],
     this.resumed = false,
     this.outcomeCount = 0,
     this.pendingFollowUpOf,
@@ -84,6 +85,7 @@ class BattleState {
   final int defeatPenalty;
   final List<String> recentLemmas;
   final List<String> recentSurfaces;
+  final List<String> recentQuestions;
   final bool resumed;
   final int outcomeCount;
 
@@ -113,6 +115,7 @@ class BattleState {
     int? defeatPenalty,
     List<String>? recentLemmas,
     List<String>? recentSurfaces,
+    List<String>? recentQuestions,
     int? outcomeCount,
     String? pendingFollowUpOf,
     bool clearPendingFollowUp = false,
@@ -138,6 +141,7 @@ class BattleState {
     defeatPenalty: defeatPenalty ?? this.defeatPenalty,
     recentLemmas: recentLemmas ?? this.recentLemmas,
     recentSurfaces: recentSurfaces ?? this.recentSurfaces,
+    recentQuestions: recentQuestions ?? this.recentQuestions,
     resumed: resumed,
     outcomeCount: outcomeCount ?? this.outcomeCount,
     pendingFollowUpOf: clearPendingFollowUp ? null : (pendingFollowUpOf ?? this.pendingFollowUpOf),
@@ -155,6 +159,9 @@ class BattleState {
     componentIds: componentIds,
     correctCount: correctCount,
     focus: focus,
+    recentLemmas: recentLemmas,
+    recentSurfaces: recentSurfaces,
+    recentQuestions: recentQuestions,
   );
 }
 
@@ -206,6 +213,9 @@ class BattleController extends Notifier<BattleState?> {
       questionIndex: resume?.questionIndex ?? 0,
       resumed: resume != null,
       focus: _focus,
+      recentLemmas: resume?.recentLemmas ?? const [],
+      recentSurfaces: resume?.recentSurfaces ?? const [],
+      recentQuestions: resume?.recentQuestions ?? const [],
     );
     // Advance the deterministic generator to the resumed position.
     for (var i = 0; i < s.questionIndex; i++) {
@@ -272,7 +282,7 @@ class BattleController extends Notifier<BattleState?> {
       cfg: cfg,
       exposure: save.exposure,
       recall: save.errata.recall(s.seed),
-      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg, focus: _focus.toSet(), credit: ref.read(diagnosticianProvider).credited, contrast: ref.read(diagnosticianProvider).chosenComponents, presented: ref.read(diagnosticianProvider).targetComponents),
+      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg, focus: _focus.toSet(), credit: ref.read(diagnosticianProvider).credited, contrast: ref.read(diagnosticianProvider).chosenComponents, presented: ref.read(diagnosticianProvider).targetComponents, recentQuestions: s.recentQuestions),
     );
     if (q == null) {
       // Une absence de question est un problème de contenu ou de sélection,
@@ -307,6 +317,10 @@ class BattleController extends Notifier<BattleState?> {
     while (recentS.length > 12) {
       recentS.removeAt(0);
     }
+    final recentQ = [...s.recentQuestions, q.repetitionKey];
+    while (recentQ.length > 12) {
+      recentQ.removeAt(0);
+    }
     var next = s.copyWith(
       phase: res.correct ? BattlePhase.correct : BattlePhase.wrong,
       hearts: hearts,
@@ -317,6 +331,7 @@ class BattleController extends Notifier<BattleState?> {
       questionIndex: s.questionIndex + 1,
       recentLemmas: recentL,
       recentSurfaces: recentS,
+      recentQuestions: recentQ,
       outcomeCount: s.outcomeCount + 1,
       last: AnswerOutcome(sequence: s.outcomeCount + 1, question: q, chosenValue: chosen, correct: res.correct, resolution: res, explanation: explanation),
       pendingFollowUpOf: q.followUp == null ? null : q.id,

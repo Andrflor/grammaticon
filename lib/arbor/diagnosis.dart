@@ -226,6 +226,7 @@ class Diagnostician {
     Dimension.genus: ['n.des.', 'n.genus.', 'adj.', 'syn.', 'lect.via.ambiguitas'],
     Dimension.genusNumerus: ['n.des.', 'pron.des.', 'syn.', 'lect.via.ambiguitas'],
     Dimension.declinatio: ['n.thema.'],
+    Dimension.thema: ['n.thema.'],
     Dimension.classis: ['adj.classis.'],
     Dimension.gradus: ['adj.gradus.', 'adj.adv.'],
     Dimension.functio: ['syn.'],
@@ -391,6 +392,7 @@ class Diagnostician {
       case Dimension.genusNumerus:
       case Dimension.gradus:
       case Dimension.analysis:
+      case Dimension.productio:
         final contrast = forum.contrastForm(q, chosen);
         // Dans un syntagme, la lecture fautive d'un cas est d'abord une erreur
         // sur la fonction ou la construction imposée par le contexte : ces
@@ -423,6 +425,11 @@ class Diagnostician {
           ..removeWhere((c) => c.startsWith('n.thema.') || c.startsWith('not.declinatio.'))
           ..add(_themaOfDeclension(chosen))
           ..add('not.declinatio.${chosen.substring(1)}');
+      case Dimension.thema:
+        return {...base}
+          ..removeWhere((c) => c.startsWith('n.thema.') || c.startsWith('not.declinatio.'))
+          ..add('n.thema.$chosen')
+          ..add('not.declinatio.${chosen[1]}');
       case Dimension.classis:
         return {...base}
           ..removeWhere((c) => c.startsWith('adj.classis.'))
@@ -506,6 +513,13 @@ class Diagnostician {
       out.addAll(a.difference(b));
     }
     out.addAll(a.where((id) => id.startsWith('cella.') || id.startsWith('lex.')));
+    // « Troisième » ne prouve pas la distinction consonant / -i-, ni
+    // « deuxième » les types -us / -er / neutre. Ils ont leur propre consigne.
+    if (q.dimension == Dimension.declinatio) {
+      out.removeWhere((id) => id.startsWith('n.thema.') && id != 'n.thema.d1' && id != 'n.thema.d5');
+    }
+    // Reconnaître un lexème ne prouve pas à lui seul son type de thème.
+    if (q.dimension == Dimension.lemma) out.removeWhere((id) => id.startsWith('n.thema.'));
     return out;
   }
 

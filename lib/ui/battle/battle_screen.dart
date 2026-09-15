@@ -150,13 +150,14 @@ class BattleScreen extends HookConsumerWidget {
         final k = e.logicalKey;
         final proceedKey = k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.enter || k == LogicalKeyboardKey.numpadEnter;
         // Le mode du combat détermine la suite : Iter en parcours guidé,
-        // Iterum en jeu manuel. Une carte indisponible retourne au lieu.
+        // Iterum en jeu manuel. Une ancienne séance devenue inadmissible peut
+        // aussi poursuivre l'Iter, sans résultat ni pénalité.
         if (s.isOver) {
           if (proceedKey) {
-            if (s.phase == BattlePhase.unavailable) {
-              leave();
-            } else if (s.isIter) {
+            if (s.isIter) {
               next();
+            } else if (s.phase == BattlePhase.unavailable) {
+              leave();
             } else {
               ctrl.retry();
             }
@@ -366,7 +367,7 @@ class _Center extends ConsumerWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: Text('${trial.name} · ${state.answered}/${state.enemyMaxHp}', style: G.body(12, color: G.inkSoft, weight: 700)),
+                      child: Text('${state.isIter ? iterPracticeName(trial) : trial.name} · ${state.answered}/${state.enemyMaxHp}', style: G.body(12, color: G.inkSoft, weight: 700)),
                     ),
                     RomanButton(
                       label: 'Auxilium',
@@ -611,7 +612,9 @@ class _IntroOverlay extends ConsumerWidget {
   final Trial trial;
   final VoidCallback onStart;
   @override
-  Widget build(BuildContext context, WidgetRef ref) => _Dim(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final mixed = (ref.watch(battleProvider)?.isIter ?? false) && iterPracticeName(trial) != trial.name;
+    return _Dim(
     child: RomanPanel(
       width: min(MediaQuery.sizeOf(context).width - 32, 640),
       child: SingleChildScrollView(
@@ -619,12 +622,12 @@ class _IntroOverlay extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(trial.name, style: G.display(24, color: G.purple)),
-            Text(trial.subtitle, style: G.body(14, color: G.inkSoft, weight: 700)),
+            Text(mixed ? iterPracticeName(trial) : trial.name, style: G.display(24, color: G.purple)),
+            if (!mixed) Text(trial.subtitle, style: G.body(14, color: G.inkSoft, weight: 700)),
             const SizedBox(height: 10),
-            Text(trial.intro, style: G.body(16, height: 1.45)),
+            Text(mixed ? 'Fōrmae iam cognitae miscentur. Singulam quaestiōnem lege: respōnsum nōn semper idem est. Nōtiō exercenda cum nōtiōnibus anteā inventīs comparātur.' : trial.intro, style: G.body(16, height: 1.45)),
             const SizedBox(height: 10),
-            for (final e in trial.examples)
+            for (final e in mixed ? const <String>[] : trial.examples)
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 3),
                 child: RomanPanel(
@@ -656,6 +659,7 @@ class _IntroOverlay extends ConsumerWidget {
       ),
     ),
   );
+  }
 }
 
 class _PauseOverlay extends StatelessWidget {
@@ -706,7 +710,10 @@ class _ResultOverlay extends ConsumerWidget {
           const SizedBox(height: 12),
           Text('Nūlla quaestiō apta parāta est. Hoc nōn est clādēs: nūlla poena, nūlla perītiae dēminūtiō.', style: G.body(16), textAlign: TextAlign.center),
           const SizedBox(height: 16),
-          RomanButton(label: config.labels.back, icon: Icons.arrow_back, onPressed: onLeave),
+          Wrap(spacing: 10, runSpacing: 10, children: [
+            if (state.isIter) RomanButton(label: 'Iter', icon: Icons.alt_route, style: RomanButtonStyle.gold, onPressed: onNext),
+            RomanButton(label: config.labels.back, icon: Icons.arrow_back, onPressed: onLeave),
+          ]),
         ]),
       ));
     }

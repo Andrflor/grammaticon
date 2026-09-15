@@ -402,8 +402,14 @@ void main() {
     test('case functions: datives after pāreō-type verbs, contrasted with objects; town names carry the locative', () {
       final dat = Trials.byId('cas-verba-dat');
       expect(gen.poolValues(dat, const [])[Dimension.functio]!.length, greaterThanOrEqualTo(2));
-      final q = find(dat, (q) => q.dimension == Dimension.functio && q.forum.target.analysis.casus == Casus.dativus);
-      expect(q!.correctValues.single, isIn([Functio.obiectumDativum.key, Functio.datum.key]));
+      final q = find(dat, (q) => q.dimension == Dimension.productio && q.surface == 'dominō');
+      expect(q, isNotNull);
+      expect(q!.correctValues, {'dominō'});
+      expect(q.syntagma, 'servus {…} servit');
+      expect(q.choices.map((c) => c.label), contains('dominum'));
+      final explanation = gen.explain(q: q, chosenValue: 'dominum', correct: false);
+      expect(explanation.detail, contains('Serviō datīvum regit'));
+      expect(explanation.detail, contains('dominum: accūsātīvus singulāris'));
       final loci = Trials.byId('cas-loci');
       final loc = find(loci, (q) => q.dimension == Dimension.casus && q.forum.target.analysis.casus == Casus.locativus);
       expect(loc, isNotNull);

@@ -4,6 +4,9 @@ import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:grammaticon/arbor/contextus.dart';
+import 'package:grammaticon/arbor/evidence.dart';
+import 'package:grammaticon/pedagogy/mastery.dart';
 import 'package:grammaticon/pedagogy/frames/frame_content.dart';
 import 'package:grammaticon/app/providers.dart';
 import 'package:grammaticon/audio/audio_service.dart';
@@ -24,6 +27,21 @@ final NounAnalyzer testNounAnalyzer = NounAnalyzer(kNouns, const Declinator());
 
 /// The whole nominal lexicon of the Forum, built once for every test.
 final NominalAnalyzer testNominalAnalyzer = buildNominalAnalyzer(nouns: testNounAnalyzer);
+
+/// Les tests d'écran Iter doivent réellement lancer une séance guidée après
+/// ses découvertes, et non un combat manuel sans cible ni exposition.
+ArborEvidence testDiscoveries(Set<String> sections) {
+  final now = DateTime.now();
+  var record = const SkillRecord();
+  for (var i = 0; i < 5; i++) {
+    record = record.apply(Observation(at: now, correct: true, lemmaId: 'example-$i',
+      quality: AnswerQuality.autonoma, trialId: 'fixture'), const MasteryConfig());
+  }
+  return ArborEvidence(records: {
+    for (final node in contextusNodes())
+      if (sections.any((s) => node.id.startsWith('lect.intellectus.$s.') || node.id.startsWith('lect.thema.$s.'))) node.id: record,
+  });
+}
 
 /// The shipped Theatrum content, read from the asset files on disk.
 final ReadingLibrary testReadingLibrary = ReadingLibrary.parse(

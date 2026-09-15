@@ -21,10 +21,10 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     // One heart left: a single wrong answer ends the fight.
-    final resume = ActiveBattle(trialId: trialId, hearts: 1, enemyHp: 10, answered: 0, gemsDelta: 0, seed: 20260907, questionIndex: 0, componentIds: const [], correctCount: 0);
+    final resume = ActiveBattle(trialId: trialId, hearts: 1, enemyHp: 10, answered: 0, gemsDelta: 0, seed: 20260907, questionIndex: 0, componentIds: const [], correctCount: 0, focus: const ['v.thema.praes.c1']);
     await tester.pumpWidget(testScope(
       MemorySaveStore(),
-      initial: SaveData(gems: 40, introSeen: {trialId}),
+      initial: SaveData(gems: 40, introSeen: {trialId}, arbor: testDiscoveries({'loca'})),
       child: MaterialApp(
         theme: G.theme(),
         home: Scaffold(
@@ -86,10 +86,10 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     // One hit point left: a single correct answer wins the fight.
-    final resume = ActiveBattle(trialId: trialId, hearts: 3, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9);
+    final resume = ActiveBattle(trialId: trialId, hearts: 3, enemyHp: 1, answered: 9, gemsDelta: 0, seed: 20260907, questionIndex: 9, componentIds: const [], correctCount: 9, focus: const ['v.thema.praes.c1']);
     await tester.pumpWidget(testScope(
       MemorySaveStore(),
-      initial: SaveData(gems: 40, introSeen: {trialId}),
+      initial: SaveData(gems: 40, introSeen: {trialId}, arbor: testDiscoveries({'loca'})),
       child: MaterialApp(
         theme: G.theme(),
         home: Scaffold(

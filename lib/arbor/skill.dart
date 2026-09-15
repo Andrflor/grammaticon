@@ -58,6 +58,7 @@ enum Dimensio {
   voxSensus('Quae vōx sēnsū?'),
   coniugatio('Quae coniugātiō?'),
   declinatio('Quae dēclīnātiō?'),
+  thema('Quod thema nōminis?'),
   genus('Quod genus?'),
   casus('Quī cāsus?'),
   forma('Quae fōrma?'),

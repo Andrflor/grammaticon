@@ -94,6 +94,8 @@ class ForumQuestionSource implements QuestionSource {
   final Map<String, List<ForumItem>> _pools = {};
   final _targetQuestions = TargetQuestionCache();
   final Map<String, Map<Dimension, Set<String>>> _poolValues = {};
+  final Map<String, List<Set<String>>> _contextDeclensions = {};
+  List<ForumItem>? _nominalContrasts;
   Map<String, Set<Declension>>? _endingDeclensions;
 
   static const _valueDimensions = [
@@ -102,6 +104,7 @@ class ForumQuestionSource implements QuestionSource {
     Dimension.genus,
     Dimension.genusNumerus,
     Dimension.declinatio,
+    Dimension.thema,
     Dimension.classis,
     Dimension.gradus,
     Dimension.lemma,
@@ -113,6 +116,7 @@ class ForumQuestionSource implements QuestionSource {
     Dimension.correlativum,
     Dimension.valor,
     Dimension.forma,
+    Dimension.productio,
   ];
 
   // ----- pool ------------------------------------------------------------------
@@ -233,6 +237,8 @@ class ForumQuestionSource implements QuestionSource {
         return a.gender == null || a.number == null ? null : '${a.gender!.key}.${a.number!.key}';
       case Dimension.declinatio:
         return a.declension?.key;
+      case Dimension.thema:
+        return l is NounEntry ? nounStemType(l) : null;
       case Dimension.classis:
         return l is AdjectiveEntry ? (l.pronominal ? 'pron' : l.cls.key) : null;
       case Dimension.gradus:
@@ -260,6 +266,8 @@ class ForumQuestionSource implements QuestionSource {
         return _formaOf(l);
       case Dimension.analysis:
         return a.selector;
+      case Dimension.productio:
+        return s == null ? null : e.surface;
       default:
         return null;
     }
@@ -276,6 +284,22 @@ class ForumQuestionSource implements QuestionSource {
     };
   }
 
+  static const _themeLabels = {
+    'd1': 'Prīma · rosa',
+    'd2.us': 'Secunda · servus',
+    'd2.er': 'Secunda · puer, ager',
+    'd2.ius': 'Secunda · fīlius',
+    'd2.n': 'Secunda · neutra (bellum)',
+    'd3.cons': 'Tertia · cōnsonāns (rēx)',
+    'd3.i': 'Tertia · in -i- (cīvis)',
+    'd3.ipura': 'Tertia · in -i- pūrum (turris)',
+    'd3.n': 'Tertia · neutra cōnsonantia (corpus)',
+    'd3.ni': 'Tertia · neutra in -i- (mare)',
+    'd4.m': 'Quārta · manus',
+    'd4.n': 'Quārta · neutra (cornū)',
+    'd5': 'Quīnta · rēs',
+  };
+
   String labelOf(Dimension d, String v, {ForumItem? item}) {
     switch (d) {
       case Dimension.casus:
@@ -289,6 +313,8 @@ class ForumQuestionSource implements QuestionSource {
         return '${Gender.fromKey(p[0]).latin} ${Numerus.fromKey(p[1]).latin.toLowerCase()}';
       case Dimension.declinatio:
         return '${Declension.fromKey(v).latin} dēclīnātiō';
+      case Dimension.thema:
+        return _themeLabels[v] ?? v;
       case Dimension.classis:
         return switch (v) { '12' => 'Prīma et secunda classis', '3' => 'Tertia classis', _ => 'Prōnōmināle (-īus, -ī)' };
       case Dimension.gradus:
@@ -326,6 +352,8 @@ class ForumQuestionSource implements QuestionSource {
         };
       case Dimension.analysis:
         return analysisLabel(v);
+      case Dimension.productio:
+        return v;
       default:
         return v;
     }
@@ -364,6 +392,8 @@ class ForumQuestionSource implements QuestionSource {
         return Numerus.fromKey(p[1]).index * 10 + Gender.fromKey(p[0]).index;
       case Dimension.declinatio:
         return Declension.fromKey(v).index;
+      case Dimension.thema:
+        return _themeLabels.keys.toList().indexOf(v);
       case Dimension.classis:
         return ['12', '3', 'pron'].indexOf(v);
       case Dimension.gradus:
@@ -405,6 +435,7 @@ class ForumQuestionSource implements QuestionSource {
     if (needs?.credit != null && needs!.focus.isNotEmpty) {
       for (final target in needs.targets(trial.activity.key)) {
         final q = forTarget(trial: trial, componentIds: componentIds, target: target, rng: rng, id: id,
+          recentQuestions: needs.recentQuestions,
           proves: (q) => needs.credit!(q).contains(target), recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, seenLemmas: needs.evidence.of(target).lemmas, dimensions: ArborNeeds.dimensionsFor(needs.arbor, target), canPresent: needs.canPresent,
           constrain: needs.contrast == null ? null : (q) => needs.constrain(q, needs.contrast!), eligibilityKey: needs.questionCacheKey);
         if (q != null) return q;
@@ -429,7 +460,7 @@ class ForumQuestionSource implements QuestionSource {
     }
     if (dims.isEmpty) return null;
     final dim = weightedPick(dims, [for (final d in dims) d == Dimension.numerus ? 0.8 : (trial.chain.isNotEmpty && d == trial.chain.first ? 2.0 : 1.0)], rng);
-    final offered = dim == Dimension.analysis ? null : _offered(trial, dim, values);
+    final offered = dim == Dimension.analysis || dim == Dimension.productio ? null : _offered(trial, dim, values);
 
     // Candidates avoiding recent lemmas and surfaces, applicable to the dimension.
     final applicable = items.where((e) => valueOf(dim, e) != null).toList();
@@ -479,71 +510,111 @@ class ForumQuestionSource implements QuestionSource {
     return q;
   }
 
-  /// Le maillon visé commande la question, même quand sa dimension est
-  /// constante dans la carte (par exemple la première déclinaison).
+  /// Le maillon commande la séance, sans réduire toutes ses réponses au nom
+  /// de la cible. Une dimension constante après filtrage est écartée.
   Question? forTarget({required Trial trial, required List<String> componentIds, required String target,
     required Random rng, required String id, required bool Function(Question) proves,
-    List<String> recentLemmas = const [], List<String> recentSurfaces = const [], Set<String> seenLemmas = const {}, List<Dimension> dimensions = const [], bool Function(Iterable<String>)? canPresent, Question? Function(Question)? constrain, String? eligibilityKey}) {
+    List<String> recentLemmas = const [], List<String> recentSurfaces = const [], List<String> recentQuestions = const [], Set<String> seenLemmas = const {}, List<Dimension> dimensions = const [], bool Function(Iterable<String>)? canPresent, Question? Function(Question)? constrain, String? eligibilityKey}) {
     final cache = eligibilityKey != null || (canPresent == null && constrain == null) ? _targetQuestions.forExposure(eligibilityKey) : null;
     final key = '${_poolKey(trial, componentIds)}|$target|${dimensions.map((d) => d.name).join(',')}';
-    Question? fallback = cache?[key];
-    if (fallback != null) {
-      if (constrain != null) fallback = constrain(fallback);
-      if (fallback != null && !proves(fallback)) fallback = null;
+    if (cache?.containsKey(key) ?? false) {
+      final practice = cache![key];
+      if (practice == null) return null;
+      if (practice.supports(proves)) {
+        return practice.draw(rng: rng, id: id, proves: proves,
+          recentSurfaces: recentSurfaces, recentLemmas: recentLemmas, recentQuestions: recentQuestions, seenLemmas: seenLemmas);
+      }
     }
-    final entries = pool(trial, componentIds).where((e) {
-      final parts = nominalComponents(e.form, e.lexeme);
-      if (canPresent != null && !canPresent(parts)) return false;
-      if (parts.contains(target)) return true;
-      return e.syntagma != null;
-    }).toList()..shuffle(rng);
-    entries.sort((a, b) {
-      int recent(ForumItem e) => (seenLemmas.contains(e.lexeme.id) ? 4 : 0) + (recentSurfaces.contains(e.surface) ? 2 : 0) + (recentLemmas.contains(e.lexeme.id) ? 1 : 0);
-      return recent(a).compareTo(recent(b));
-    });
-    final dims = <Dimension>{
+    final entries = _practiceEntries(pool(trial, componentIds), target, canPresent);
+    final dims = trial.dimensions.contains(Dimension.productio) ? {Dimension.productio} : <Dimension>{
+      if (target.startsWith('n.thema.') && target != 'n.thema.proprium') Dimension.thema,
       ...dimensions,
       for (final d in trial.dimensions)
         if ((Diagnostician.kDimensionFamilies[d] ?? const <String>[]).any(target.startsWith)) d,
       for (final e in Diagnostician.kDimensionFamilies.entries)
         if (e.value.any(target.startsWith) && !trial.dimensions.contains(e.key)) e.key,
-      ...trial.dimensions,
-      Dimension.analysis, Dimension.lemma,
+      ...trial.dimensions.where((d) => d != Dimension.analysis || dimensions.contains(d)),
     };
-    final values = poolValues(trial, componentIds);
-    var attempts = 0;
+    for (final dim in dims) {
+      if (dim == Dimension.productio && !trial.dimensions.contains(dim)) continue;
+      var candidates = entries;
+      // Reconnaître une classe suppose de comparer les classes déjà découvertes.
+      // Les contrastes de base sont disponibles dès leur découverte, sans
+      // attendre les cartes Mixta tardives ni changer l'identité de la carte.
+      if (target.startsWith('n.') && const {Dimension.declinatio, Dimension.thema, Dimension.genus}.contains(dim)) {
+        final contrasts = _nominalContrasts ??= [
+          for (final l in analyzer.lexemes.whereType<NounEntry>())
+            if (!l.isProper && const {'d1', 'd2.us', 'd2.n', 'd3.cons'}.contains(nounStemType(l)))
+              for (final f in analyzer.formsOf(l.id))
+                if (f.isPrimary && f.analysis.casus != Casus.locativus) ForumItem(l, f),
+        ];
+        candidates = _practiceEntries([...entries, ...contrasts], target, canPresent);
+      }
+      final practice = _practice(trial, candidates, dim, proves, constrain);
+      if (practice != null) {
+        TargetQuestionCache.remember(cache, key, practice);
+        return practice.draw(rng: rng, id: id, proves: proves,
+          recentSurfaces: recentSurfaces, recentLemmas: recentLemmas, recentQuestions: recentQuestions, seenLemmas: seenLemmas);
+      }
+    }
+    TargetQuestionCache.remember(cache, key, null);
+    return null;
+  }
+
+  List<ForumItem> _practiceEntries(List<ForumItem> items, String target, bool Function(Iterable<String>)? canPresent) {
+    final focused = <ForumItem>[], others = <ForumItem>[];
+    for (final e in items.toList()..shuffle(Random(0))) {
+      final parts = nominalComponents(e.form, e.lexeme);
+      if (canPresent != null && (!canPresent(parts) || !_canPresentContext(e, canPresent))) continue;
+      final s = e.syntagma;
+      if (s?.functio != null) parts.add(Diagnostician.functioNode(s!.functio!.key, s));
+      if (s?.constructio != null) parts.addAll(Diagnostician.constructioNodes(s!.constructio!.key));
+      (parts.contains(target) ? focused : others).add(e);
+    }
+    return [...focused, ...others];
+  }
+
+  TargetPractice? _practice(Trial trial, List<ForumItem> entries, Dimension dim, bool Function(Question) proves, Question? Function(Question)? constrain) {
+    final values = _computeValues(entries);
+    final scale = dim == Dimension.analysis || dim == Dimension.productio ? null : _offered(trial, dim, values);
+    if (scale != null && (values[dim]?.length ?? 0) < 2) return null;
+    final builder = TargetPracticeBuilder();
+    final rng = Random(0);
     for (final e in entries) {
-      if (fallback != null && attempts++ >= 24) break;
-      for (final dim in dims) {
-        if (valueOf(dim, e) == null) continue;
-        final correct = correctValues(trial, dim, e);
-        if (correct.isEmpty) continue;
-        final Set<String>? scale = switch (dim) {
-          Dimension.analysis => null,
-          Dimension.declinatio => Declension.values.map((v) => v.key).toSet(),
-          Dimension.persona => Person.values.map((v) => v.key).toSet(),
-          Dimension.numerus => Numerus.values.map((v) => v.key).toSet(),
-          Dimension.genus => Gender.values.map((v) => v.key).toSet(),
-          Dimension.casus => Casus.values.map((v) => v.key).toSet(),
-          Dimension.classis => {'12', '3', 'pron'},
-          Dimension.gradus => Degree.values.map((v) => v.key).toSet(),
-          Dimension.functio => Functio.values.map((v) => v.key).toSet(),
-          Dimension.constructio => Constructio.values.map((v) => v.key).toSet(),
-          Dimension.relatio => Relatio.values.map((v) => v.key).toSet(),
-          _ => _offered(trial, dim, values),
-        };
-        final offered = scale ?? _offeredFor(dim, e, correct);
-        if (offered.intersection(correct).isEmpty || offered.difference(correct).isEmpty) continue;
-        final q = _build(trial, dim, e, correct, scale, rng, id);
-        if (q == null) continue;
+      if (valueOf(dim, e) == null) continue;
+      final correct = correctValues(trial, dim, e);
+      if (correct.isEmpty || builder.full(correct)) continue;
+      final offered = scale ?? _offeredFor(dim, e, correct);
+      if (offered.intersection(correct).isEmpty || offered.difference(correct).isEmpty) continue;
+      final q = _build(trial, dim, e, correct, scale, rng, 'practice');
+      if (q != null) {
         final ready = constrain == null ? q : constrain(q);
-        if (ready != null && proves(ready)) {
-          if (cache != null) cache[key] = ready;
-          return ready;
+        if (ready != null) {
+          builder.add(ready, correct);
         }
       }
     }
-    return fallback?.withChoices(fallback.choices, id: id);
+    return builder.finish(proves);
+  }
+
+  /// Le nom en surbrillance ne suffit pas : « pater {fīliō} » contient aussi
+  /// un nom de troisième déclinaison. Pour un mot ambigu, une lecture nominale
+  /// déjà découverte suffit ; on ne cumule pas ses analyses possibles.
+  bool _canPresentContext(ForumItem e, bool Function(Iterable<String>) canPresent) {
+    final s = e.syntagma;
+    if (s == null) return true;
+    final words = _contextDeclensions.putIfAbsent(s.id, () {
+      final out = <Set<String>>[];
+      for (final token in s.words) {
+        final word = token.replaceAll(RegExp(r'[.,;:!?«»"()]'), '');
+        var readings = analyzer.analyze(word);
+        if (readings.isEmpty) readings = analyzer.analyze(word.toLowerCase());
+        if (readings.isEmpty || readings.any((f) => f.analysis.wordClass != WordClass.nomen)) continue;
+        out.add({for (final f in readings) if (f.analysis.declension != null) 'not.declinatio.${f.analysis.declension!.ordinal}'});
+      }
+      return out;
+    });
+    return words.every((declensions) => declensions.isEmpty || declensions.any((d) => canPresent({d})));
   }
 
   /// Follow-up questions on the same item, in chain order.
@@ -588,7 +659,9 @@ class ForumQuestionSource implements QuestionSource {
       id: id,
       trialId: trial.id,
       dimension: dim,
-      prompt: dim.prompt,
+      // Préciser le rôle évite qu'un génitif rattaché au sujet soit aussi une
+      // complétion possible (« servus dominī servit »).
+      prompt: dim == Dimension.productio ? 'Complēmentum verbī ēlige.' : dim.prompt,
       surface: e.surface,
       lemmaId: e.lexeme.id,
       payload: ForumQuestionPayload(target: e.form, analyses: analyzer.analyze(e.surface), lexeme: e.lexeme, syntagma: e.syntagma),
@@ -598,7 +671,7 @@ class ForumQuestionSource implements QuestionSource {
       componentId: e.componentId,
       ambiguous: ambiguous,
       context: _context(trial, dim, e),
-      syntagma: e.syntagma?.display,
+      syntagma: dim == Dimension.productio ? e.syntagma!.display.replaceFirst('{${e.syntagma!.target}}', '{…}') : e.syntagma?.display,
       errata: ErrataNote(formKey: e.formKey, cellKey: e.cellKey, analysis: _describe(e)),
     );
   }
@@ -631,6 +704,8 @@ class ForumQuestionSource implements QuestionSource {
     switch (d) {
       case Dimension.analysis:
         return analyzer.formsOf(e.lexeme.id).map((f) => f.analysis.selector).toSet();
+      case Dimension.productio:
+        return _productionForms(e).map((f) => f.surface).toSet();
       case Dimension.quodNomen:
         final s = e.syntagma;
         if (s == null) return correct;
@@ -644,6 +719,9 @@ class ForumQuestionSource implements QuestionSource {
   Set<String> correctValues(Trial trial, Dimension dim, ForumItem e) {
     final s = e.syntagma;
     if (s != null) {
+      if (dim == Dimension.productio) {
+        return {e.surface, for (final f in _productionForms(e)) if (f.analysis.casus == e.analysis.casus) f.surface};
+      }
       // The context imposes one reading. Vocative and nominative share their
       // form; a declared nominative also accepts the vocative only when the
       // phrase is an address (authored as vocative), so nothing is added.
@@ -651,7 +729,7 @@ class ForumQuestionSource implements QuestionSource {
       return v == null ? const {} : {v};
     }
     if (dim == Dimension.quodNomen) return const {};
-    final sameLemmaOnly = dim == Dimension.analysis || trial.showDictionaryEntry || dim == Dimension.valor || dim == Dimension.correlativum;
+    final sameLemmaOnly = dim == Dimension.analysis || dim == Dimension.thema || trial.showDictionaryEntry || dim == Dimension.valor || dim == Dimension.correlativum;
     final out = <String>{};
     for (final f in analyzer.analyze(e.surface)) {
       final a = f.analysis;
@@ -677,6 +755,15 @@ class ForumQuestionSource implements QuestionSource {
   List<Choice> _buildChoices(Trial trial, Dimension dim, ForumItem e, Set<String> correct, Set<String>? offered, Random rng) {
     List<String> values;
     switch (dim) {
+      case Dimension.productio:
+        final forms = _productionForms(e);
+        final others = forms.map((f) => f.surface).where((s) => !correct.contains(s)).toSet().toList()..shuffle(rng);
+        // Garder le contraste de régime avant les autres distracteurs.
+        final contrast = e.analysis.casus == Casus.accusativus ? Casus.dativus : Casus.accusativus;
+        final contrasting = {for (final f in forms) if (f.analysis.casus == contrast) f.surface};
+        others.sort((a, b) => (contrasting.contains(a) ? 0 : 1).compareTo(contrasting.contains(b) ? 0 : 1));
+        values = [...correct, ...others.take(max(1, 4 - correct.length))]..shuffle(rng);
+        return [for (final v in values) Choice(v, v)];
       case Dimension.analysis:
         final a = e.analysis;
         final others = analyzer.formsOf(e.lexeme.id).map((f) => f.analysis.selector).where((s) => !correct.contains(s)).toSet().toList()..shuffle(rng);
@@ -773,6 +860,12 @@ class ForumQuestionSource implements QuestionSource {
     return [for (final v in values) Choice(v, labelOf(dim, v, item: e))];
   }
 
+  /// Même nom et même nombre : seule la flexion selon le rôle dans la phrase
+  /// change. Les surfaces syncrétiques ne créent pas de boutons en double.
+  List<NominalForm> _productionForms(ForumItem e) => analyzer.matching(e.lexeme.id,
+    number: e.analysis.number, gender: e.analysis.gender, degree: e.analysis.degree)
+    .where((f) => f.isPrimary).toList();
+
   /// Skills credited: the card's skill, then the component's skill in Mixta
   /// cards, then the noun cell (`d.1.acc.sg`) for noun forms.
   List<String> _skillIds(Trial trial, Dimension dim, ForumItem e) {
@@ -782,7 +875,7 @@ class ForumQuestionSource implements QuestionSource {
       if (c?.skillId != null && Skills.maybe(c!.skillId!) != null) out.add(c.skillId!);
     }
     final cell = _cellSkill(e);
-    if (cell != null && dim != Dimension.declinatio && dim != Dimension.lemma) out.add(cell);
+    if (cell != null && dim != Dimension.declinatio && dim != Dimension.thema && dim != Dimension.lemma) out.add(cell);
     return out;
   }
 
@@ -795,6 +888,11 @@ class ForumQuestionSource implements QuestionSource {
   /// does not give the answer away; in declension questions only when the
   /// ending alone is shared by several declensions.
   List<String> _context(Trial trial, Dimension dim, ForumItem e) {
+    if (dim == Dimension.productio) return ['${e.lexeme.lemma} (${e.lexeme.glossFr}) · ${e.analysis.number!.latin}'];
+    if (dim == Dimension.thema) {
+      final genitivePlural = analyzer.primary(e.lexeme.id, 'gen.pl');
+      return [e.lexeme.dictionaryEntry, if (genitivePlural != null) 'Genetīvus plūrālis: ${genitivePlural.surface}'];
+    }
     if (e.isContextual) return const [];
     if (dim == Dimension.declinatio) {
       return _endingIsShared(e) ? ['${e.lexeme.lemma}, ${(e.lexeme as NounEntry).genitive}'] : const [];
@@ -881,6 +979,10 @@ class ForumQuestionSource implements QuestionSource {
         return _primaryMatching(id, casus: a.casus, number: a.number, gender: a.gender, degree: Degree.fromKey(chosenValue));
       case Dimension.analysis:
         return analyzer.primary(id, chosenValue);
+      case Dimension.productio:
+        final forms = analyzer.analyzeAs(chosenValue, id).where((f) =>
+          f.analysis.number == a.number && f.analysis.gender == a.gender && f.analysis.degree == a.degree).toList();
+        return forms.where((f) => f.analysis.casus == a.casus).firstOrNull ?? forms.firstOrNull;
       default:
         return null;
     }
@@ -913,7 +1015,11 @@ class ForumQuestionSource implements QuestionSource {
     final correctLabels = q.choices.where((c) => q.correctValues.contains(c.value)).map((c) => c.label).join(' aut ');
     final contrast = contrastForm(q, chosenValue);
     var detail = 'Rēctum: $correctLabels. Tū dīxistī: $chosenLabel.';
-    if (contrast != null && contrast.surface != q.surface) detail += ' Fōrma "$chosenLabel" esset: ${contrast.surface}.';
+    if (contrast != null && contrast.surface != q.surface) {
+      detail += q.dimension == Dimension.productio
+        ? ' ${contrast.surface}: ${contrast.analysis.describe()}.'
+        : ' Fōrma "$chosenLabel" esset: ${contrast.surface}.';
+    }
     if (why.isNotEmpty) detail += ' $why';
     return Explanation(headline: headline, detail: detail, contrastSurface: contrast?.surface, also: p.syntagma == null ? others : const []);
   }
@@ -957,6 +1063,9 @@ class ForumQuestionSource implements QuestionSource {
         return 'Dēsinentia $ending genus ostendit: ${a.gender?.latin.toLowerCase() ?? ''}.';
       case Dimension.declinatio:
         if (lex is NounEntry) return 'Genetīvus ${lex.genitive} ${lex.declension.latin.toLowerCase()}m dēclīnātiōnem ostendit.';
+        return '';
+      case Dimension.thema:
+        if (lex is NounEntry) return '${lex.dictionaryEntry}: ${_themeLabels[nounStemType(lex)]}. Thema ē genetīvō cognōscitur.';
         return '';
       case Dimension.classis:
         if (lex is AdjectiveEntry) {

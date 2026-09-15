@@ -1106,11 +1106,12 @@ class ForumTrials {
       cas(
         id: 'cas-verba-dat',
         name: 'Verba cum datīvō',
-        subtitle: 'pāreō · placeō · noceō · crēdō · imperō',
+        subtitle: 'dominō pāret · dominum laudat',
         price: 45,
         prereq: const ['dec-2-mf'],
-        intro: 'Pāreō, serviō, placeō, noceō, faveō, crēdō, parcō, studeō, persuādeō, imperō datīvum regunt. Ē Gallicō dīvīnārī nōn potest: persuādeō et imperō trānsitīva videntur. Nōn irregulāre est, sed regulāre Latīnē vīsum: pāreō = oboediēns sum alicui. Sēnsum proprium quaere, nōn exceptiōnem memoriā tenē.',
-        examples: ['mīlitēs ducī pārent (dat.)', 'mīlitēs ducem laudant (acc.)', 'servus dominō nōn nocet'],
+        dimensions: const [Dimension.productio],
+        intro: 'Sententiam complē: fōrmam nōminis ēlige, numerō indicātō. Pāreō, serviō, placeō, noceō, faveō, crēdō, parcō, studeō, persuādeō, imperō datīvum regunt. Laudō, amō, videō accūsātīvum regunt. Utraque genera hīc miscentur: verbum lege antequam fōrmam ēligis. Dominō pāret, sed dominum laudat; amīcae crēdit, sed amīcam videt.',
+        examples: ['servus dominō pāret · servus dominum laudat', 'puella amīcae crēdit · puella amīcam videt', 'dominus servō pecūniam dat'],
         helpNote: 'Verba cum datīvō: pāreō, serviō, placeō, noceō, faveō, crēdō, parcō, studeō, persuādeō, imperō, respondeō, appropinquō.',
       ),
       cas(

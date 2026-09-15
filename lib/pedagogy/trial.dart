@@ -34,6 +34,7 @@ enum Dimension {
   voxSensus('Quae vōx sēnsū?'),
   coniugatio('Quae coniugātiō?'),
   declinatio('Quae dēclīnātiō?'),
+  thema('Quod thema nōminis?'),
   genus('Quod genus?'),
   casus('Quī cāsus?'),
   forma('Quae fōrma?'),
@@ -167,3 +168,10 @@ class Trial {
   bool get isFree => price == 0;
   String get primarySkill => skillIds.first;
 }
+
+/// Le titre d'une séance contrastive ne donne pas la catégorie attendue.
+String iterPracticeName(Trial trial) => switch (trial.activity) {
+  Activity.forum => 'Fōrmae nōminum mixtae',
+  Activity.amphitheatrum => 'Fōrmae verbōrum mixtae',
+  _ => trial.name,
+};

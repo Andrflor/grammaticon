@@ -31,7 +31,10 @@ Skill _e(
   notiones: not,
   requirit: req,
   confunditur: conf,
-  probatur: prob,
+  probatur: [
+    if (id.startsWith('n.thema.') && id != 'n.thema.proprium') Dimensio.thema,
+    ...prob,
+  ],
   fontes: [for (final s in ag) '$_ag $s'],
   parens: parens,
   visibilis: visibilis,

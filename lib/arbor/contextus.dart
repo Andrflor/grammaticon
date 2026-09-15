@@ -134,10 +134,14 @@ Map<String, String> exposureEdges() {
 /// sont inscrits dans le graphe : une forme au parfait ne doit pas servir à
 /// apprendre le présent avant la découverte du passé en version et en thème.
 /// Les notions sans découverte déclarée restent signalables comme lacunes.
-const Map<String, String> kNotionDiscoveries = {
+const Map<String, String?> kNotionDiscoveries = {
   'not.declinatio.1': 'loca/a-ablative',
   'not.declinatio.2': 'loca/a-ablative',
   'not.declinatio.3': 'nomina/third-subject-object',
+  // Pas encore de découverte dédiée dans les banques de contexte : une
+  // absence de cours ne doit pas autoriser ces formes au début de l'Iter.
+  'not.declinatio.4': null,
+  'not.declinatio.5': null,
   'not.classis.12': 'loca/concordia',
   'not.numerus.sg': 'loca/a-ablative',
   'not.numerus.pl': 'loca/numerus',

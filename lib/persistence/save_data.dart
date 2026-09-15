@@ -96,6 +96,9 @@ class ActiveBattle {
     required this.componentIds,
     required this.correctCount,
     this.focus = const [],
+    this.recentLemmas = const [],
+    this.recentSurfaces = const [],
+    this.recentQuestions = const [],
   });
 
   final String trialId;
@@ -109,8 +112,11 @@ class ActiveBattle {
   final int correctCount;
   /// Cibles de l'Iter conservées lors d'une reprise de combat.
   final List<String> focus;
+  final List<String> recentLemmas;
+  final List<String> recentSurfaces;
+  final List<String> recentQuestions;
 
-  Map<String, Object?> toJson() => {'t': trialId, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount, if (focus.isNotEmpty) 'focus': focus};
+  Map<String, Object?> toJson() => {'t': trialId, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount, if (focus.isNotEmpty) 'focus': focus, if (recentLemmas.isNotEmpty) 'rl': recentLemmas, if (recentSurfaces.isNotEmpty) 'rs': recentSurfaces, if (recentQuestions.isNotEmpty) 'rq': recentQuestions};
   factory ActiveBattle.fromJson(Map<String, Object?> j) => ActiveBattle(
     trialId: j['t'] as String,
     hearts: (j['h'] as num).toInt(),
@@ -122,6 +128,9 @@ class ActiveBattle {
     componentIds: ((j['c'] as List?) ?? const []).cast<String>(),
     correctCount: (j['ok'] as num?)?.toInt() ?? 0,
     focus: ((j['focus'] as List?) ?? const []).cast<String>(),
+    recentLemmas: ((j['rl'] as List?) ?? const []).cast<String>(),
+    recentSurfaces: ((j['rs'] as List?) ?? const []).cast<String>(),
+    recentQuestions: ((j['rq'] as List?) ?? const []).cast<String>(),
   );
 }
 

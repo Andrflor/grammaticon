@@ -11,6 +11,7 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../audio/audio_service.dart';
 import '../../pedagogy/iter.dart';
+import '../../pedagogy/trial.dart';
 import '../activity/activity_config.dart';
 import '../battle/battle_screen.dart';
 import '../widgets/roman_widgets.dart';
@@ -72,8 +73,8 @@ Future<bool> showIter(BuildContext context, WidgetRef ref, {bool replace = false
               children: [
                 Text('Iter · proximum', style: G.display(20, color: G.purpleTitle, letterSpacing: 1.0)),
                 const SizedBox(height: 8),
-                Text('${t.name} · ${t.activity.latin}', style: G.body(17, weight: 800)),
-                if (t.subtitle.isNotEmpty) Text(t.subtitle, style: G.body(14, color: G.inkSoft)),
+                Text('${iterPracticeName(t)} · ${t.activity.latin}', style: G.body(17, weight: 800)),
+                if (iterPracticeName(t) == t.name && t.subtitle.isNotEmpty) Text(t.subtitle, style: G.body(14, color: G.inkSoft)),
                 const SizedBox(height: 10),
                 Text(causaLatin(choice.causa), style: G.body(14, weight: 700, color: G.purpleTitle)),
                 const SizedBox(height: 4),
