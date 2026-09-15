@@ -8,6 +8,8 @@ library;
 
 import 'dart:math';
 
+import '../arbor/cellae.dart';
+import '../arbor/diagnosis.dart' show Diagnostician;
 import '../linguistics/engine/analyzer.dart';
 import '../linguistics/engine/conjugator.dart';
 import '../linguistics/model/analysis.dart';
@@ -19,6 +21,7 @@ import 'mastery.dart';
 import 'question.dart';
 import 'skills.dart';
 import 'trials.dart';
+import 'target_question_cache.dart';
 
 export 'question.dart';
 
@@ -51,6 +54,7 @@ class QuestionGenerator implements QuestionSource {
   QuestionGenerator(this.analyzer);
   final Analyzer analyzer;
   final Map<String, List<PoolEntry>> _pools = {};
+  final _targetQuestions = TargetQuestionCache();
   final Map<String, Map<Dimension, Set<String>>> _poolValues = {};
 
   // ----- pool ------------------------------------------------------------------
@@ -257,6 +261,15 @@ class QuestionGenerator implements QuestionSource {
     Recall recall = Recall.none,
     ArborNeeds? needs,
   }) {
+    if (needs?.credit != null && needs!.focus.isNotEmpty) {
+      for (final target in needs.targets(trial.activity.key)) {
+        final q = forTarget(trial: trial, componentIds: componentIds, target: target, rng: rng, id: id,
+          proves: (q) => needs.credit!(q).contains(target), recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, seenLemmas: needs.evidence.of(target).lemmas, dimensions: ArborNeeds.dimensionsFor(needs.arbor, target), canPresent: needs.canPresent,
+          constrain: needs.contrast == null ? null : (q) => needs.constrain(q, needs.contrast!), eligibilityKey: needs.questionCacheKey);
+        if (q != null) return q;
+      }
+      return null;
+    }
     final entries = pool(trial, componentIds);
     if (entries.isEmpty) return null;
     final values = poolValues(trial, componentIds);
@@ -335,8 +348,10 @@ class QuestionGenerator implements QuestionSource {
 
     final choices = _buildChoices(dim, e, correct, values[dim] ?? const {}, trial, rng);
     if (choices.length < 2) return null;
-    final ambiguous = chosenAmbiguous && correct.length > 1;
+    return _question(trial, dim, e, correct, choices, id, ambiguous: chosenAmbiguous && correct.length > 1);
+  }
 
+  Question _question(Trial trial, Dimension dim, PoolEntry e, Set<String> correct, List<Choice> choices, String id, {bool ambiguous = false}) {
     final skillIds = <String>[trial.primarySkill];
     final comp = trial.components.where((c) => c.id == e.componentId).firstOrNull;
     // A component's conjugation skill (v.ind.perf.act…) measures endings: it
@@ -382,6 +397,72 @@ class QuestionGenerator implements QuestionSource {
   }
 
   static String _formKey(PoolEntry e) => verbFormKey(e.verb.id, e.form.analysis.selector);
+
+  /// Le graphe commande la dimension et les contrastes, la carte fournit les
+  /// formes. Une carte de présent peut demander le temps : les distracteurs
+  /// viennent alors de l'échelle des temps, pas du seul vivier présent.
+  Question? forTarget({required Trial trial, required List<String> componentIds, required String target,
+    required Random rng, required String id, required bool Function(Question) proves,
+    List<String> recentLemmas = const [], List<String> recentSurfaces = const [], Set<String> seenLemmas = const {}, List<Dimension> dimensions = const [], bool Function(Iterable<String>)? canPresent, Question? Function(Question)? constrain, String? eligibilityKey}) {
+    // Les participes emploient la classe adjectivale 1/2, mais une question
+    // verbale ne peut pas la distinguer : elle se prouve au Forum.
+    if (!target.startsWith('v.') && !target.startsWith('n.des.')) return null;
+    final cache = eligibilityKey != null || (canPresent == null && constrain == null) ? _targetQuestions.forExposure(eligibilityKey) : null;
+    final key = '${_poolKey(trial, componentIds)}|$target|${dimensions.map((d) => d.name).join(',')}';
+    Question? fallback = cache?[key];
+    if (fallback != null) {
+      if (constrain != null) fallback = constrain(fallback);
+      if (fallback != null && !proves(fallback)) fallback = null;
+    }
+    final entries = pool(trial, componentIds).where((e) {
+      final parts = verbalComponents(e.form.analysis, e.verb);
+      return parts.contains(target) && (canPresent == null || canPresent(parts));
+    }).toList()..shuffle(rng);
+    entries.sort((a, b) {
+      int recent(PoolEntry e) => (seenLemmas.contains(e.verb.id) ? 4 : 0) + (recentSurfaces.contains(e.form.surface) ? 2 : 0) + (recentLemmas.contains(e.verb.id) ? 1 : 0);
+      return recent(a).compareTo(recent(b));
+    });
+    final dims = <Dimension>{
+      ...dimensions,
+      for (final d in trial.dimensions)
+        if ((Diagnostician.kDimensionFamilies[d] ?? const <String>[]).any(target.startsWith)) d,
+      for (final e in Diagnostician.kDimensionFamilies.entries)
+        if (e.value.any(target.startsWith) && !trial.dimensions.contains(e.key)) e.key,
+      Dimension.analysis, Dimension.lemma,
+    };
+    final values = poolValues(trial, componentIds);
+    var attempts = 0;
+    for (final e in entries) {
+      if (fallback != null && attempts++ >= 24) break;
+      for (final dim in dims) {
+        if (dim != Dimension.analysis && valueOf(dim, e.verb, e.form.analysis) == null) continue;
+        final correct = _correctValues(dim, e);
+        if (correct.isEmpty) continue;
+        final scale = switch (dim) {
+          Dimension.tempus || Dimension.tempusSensus => Tense.values.map((v) => v.key).toSet(),
+          Dimension.modus => Mood.values.map((v) => v.key).toSet(),
+          Dimension.vox || Dimension.voxSensus => Voice.values.map((v) => v.key).toSet(),
+          Dimension.coniugatio => Conjugation.values.map((v) => v.key).toSet(),
+          Dimension.forma => FormKind.values.map((v) => v.name).toSet(),
+          Dimension.persona => Person.values.map((v) => v.key).toSet(),
+          Dimension.numerus => Numerus.values.map((v) => v.key).toSet(),
+          Dimension.personaNumerus => {for (final p in Person.values) for (final n in Numerus.values) '${p.key}.${n.key}'},
+          Dimension.genus => Gender.values.map((v) => v.key).toSet(),
+          Dimension.casus => Casus.values.map((v) => v.key).toSet(),
+          _ => values[dim] ?? const <String>{},
+        };
+        final choices = _buildChoices(dim, e, correct, scale, trial, rng);
+        if (!choices.any((c) => !correct.contains(c.value)) || !choices.any((c) => correct.contains(c.value))) continue;
+        final q = _question(trial, dim, e, correct, choices, id, ambiguous: correct.length > 1);
+        final ready = constrain == null ? q : constrain(q);
+        if (ready != null && proves(ready)) {
+          if (cache != null) cache[key] = ready;
+          return ready;
+        }
+      }
+    }
+    return fallback?.withChoices(fallback.choices, id: id);
+  }
   static String _cellKey(PoolEntry e) => verbCellKey(e.form.analysis.selector);
 
   /// Finest skill whose record steers the selection of [e]: in Mixta trials

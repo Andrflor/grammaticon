@@ -39,6 +39,8 @@ class ArborEvidence {
     required String trialId,
     required DateTime now,
     String? place,
+    int? availableLemmas,
+    Map<String, int> lemmaCapacities = const {},
     MasteryConfig cfg = const MasteryConfig(),
   }) {
     final recs = Map<String, SkillRecord>.from(records);
@@ -50,7 +52,7 @@ class ArborEvidence {
     bool tracked(String id) => arbor.nodes.containsKey(id) && !id.startsWith('lex.') && (!id.startsWith('cella.') || id.startsWith('cella.pron.') || id.startsWith('cella.num.'));
     if (correct) {
       for (final id in credited.where(tracked)) {
-        recs[id] = of(id).apply(obs, cfg, place: place);
+        recs[id] = of(id).apply(obs, cfg, place: place, availableLemmas: lemmaCapacities[id] ?? availableLemmas);
         if (quality == AnswerQuality.autonoma) {
           hyps.remove(id);
           // Réussir une compétence lève le soupçon sur ce qu'elle suppose
@@ -67,7 +69,7 @@ class ArborEvidence {
       // savoir à quoi ressemble un présent).
       final targets = {...diagnosis.observedElementa, ...diagnosis.confusedWith.where((id) => !id.startsWith('not.'))}.where(tracked).toSet();
       for (final id in targets) {
-        recs[id] = of(id).apply(obs, cfg);
+        recs[id] = of(id).apply(obs, cfg, availableLemmas: lemmaCapacities[id] ?? availableLemmas);
         hyps.putIfAbsent(id, () => now);
         // Seuls les prérequis directs deviennent suspects : on redescend d'un
         // cran à la fois, et plus bas seulement si eux aussi échouent.

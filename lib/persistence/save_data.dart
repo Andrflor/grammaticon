@@ -95,6 +95,7 @@ class ActiveBattle {
     required this.questionIndex,
     required this.componentIds,
     required this.correctCount,
+    this.focus = const [],
   });
 
   final String trialId;
@@ -106,8 +107,10 @@ class ActiveBattle {
   final int questionIndex;
   final List<String> componentIds;
   final int correctCount;
+  /// Cibles de l'Iter conservées lors d'une reprise de combat.
+  final List<String> focus;
 
-  Map<String, Object?> toJson() => {'t': trialId, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount};
+  Map<String, Object?> toJson() => {'t': trialId, 'h': hearts, 'e': enemyHp, 'a': answered, 'g': gemsDelta, 's': seed, 'q': questionIndex, 'c': componentIds, 'ok': correctCount, if (focus.isNotEmpty) 'focus': focus};
   factory ActiveBattle.fromJson(Map<String, Object?> j) => ActiveBattle(
     trialId: j['t'] as String,
     hearts: (j['h'] as num).toInt(),
@@ -118,6 +121,7 @@ class ActiveBattle {
     questionIndex: (j['q'] as num).toInt(),
     componentIds: ((j['c'] as List?) ?? const []).cast<String>(),
     correctCount: (j['ok'] as num?)?.toInt() ?? 0,
+    focus: ((j['focus'] as List?) ?? const []).cast<String>(),
   );
 }
 

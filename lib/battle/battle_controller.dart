@@ -13,7 +13,7 @@ import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
 import 'answer_resolver.dart';
 
-enum BattlePhase { intro, question, correct, wrong, victory, defeat }
+enum BattlePhase { intro, question, correct, wrong, victory, defeat, unavailable }
 
 class AnswerOutcome {
   const AnswerOutcome({required this.sequence, required this.question, required this.chosenValue, required this.correct, required this.resolution, required this.explanation});
@@ -56,6 +56,7 @@ class BattleState {
     this.resumed = false,
     this.outcomeCount = 0,
     this.pendingFollowUpOf,
+    this.focus = const [],
   });
 
   final Trial trial;
@@ -88,8 +89,10 @@ class BattleState {
 
   /// Id of the question just answered whose follow-up must be asked next.
   final String? pendingFollowUpOf;
+  final List<String> focus;
 
-  bool get isOver => phase == BattlePhase.victory || phase == BattlePhase.defeat;
+  bool get isOver => phase == BattlePhase.victory || phase == BattlePhase.defeat || phase == BattlePhase.unavailable;
+  bool get isIter => focus.isNotEmpty;
   bool get acceptsInput => phase == BattlePhase.question && !paused;
 
   BattleState copyWith({
@@ -138,6 +141,7 @@ class BattleState {
     resumed: resumed,
     outcomeCount: outcomeCount ?? this.outcomeCount,
     pendingFollowUpOf: clearPendingFollowUp ? null : (pendingFollowUpOf ?? this.pendingFollowUpOf),
+    focus: focus,
   );
 
   ActiveBattle snapshot() => ActiveBattle(
@@ -150,6 +154,7 @@ class BattleState {
     questionIndex: questionIndex,
     componentIds: componentIds,
     correctCount: correctCount,
+    focus: focus,
   );
 }
 
@@ -179,7 +184,7 @@ class BattleController extends Notifier<BattleState?> {
   // ----- lifecycle --------------------------------------------------------------
 
   void start(Trial trial, {ActiveBattle? resume, List<String> focus = const []}) {
-    _focus = focus;
+    _focus = resume?.focus ?? focus;
     _timer?.cancel();
     final save = ref.read(profileProvider);
     final componentIds = resume?.componentIds ?? Progression.componentsFor(save, trial);
@@ -200,6 +205,7 @@ class BattleController extends Notifier<BattleState?> {
       gemsDelta: resume?.gemsDelta ?? 0,
       questionIndex: resume?.questionIndex ?? 0,
       resumed: resume != null,
+      focus: _focus,
     );
     // Advance the deterministic generator to the resumed position.
     for (var i = 0; i < s.questionIndex; i++) {
@@ -207,8 +213,8 @@ class BattleController extends Notifier<BattleState?> {
     }
     s = _withNewQuestion(s);
     state = s;
-    _profile.setActiveBattle(s.snapshot());
-    _audio.play(showIntro ? Sfx.folium : Sfx.tuba);
+    _profile.setActiveBattle(s.isOver ? null : s.snapshot());
+    if (s.phase != BattlePhase.unavailable) _audio.play(showIntro ? Sfx.folium : Sfx.tuba);
   }
 
   void beginAfterIntro() {
@@ -230,6 +236,11 @@ class BattleController extends Notifier<BattleState?> {
     final s = state;
     if (s == null || !s.isOver) return;
     _timer?.cancel();
+    if (s.phase == BattlePhase.unavailable) {
+      await _profile.setActiveBattle(null);
+      state = null;
+      return;
+    }
     final won = s.phase == BattlePhase.victory;
     await _profile.recordBattleEnd(activity: s.trial.activity, won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
     state = null;
@@ -261,12 +272,12 @@ class BattleController extends Notifier<BattleState?> {
       cfg: cfg,
       exposure: save.exposure,
       recall: save.errata.recall(s.seed),
-      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg, focus: _focus.toSet()),
+      needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg, focus: _focus.toSet(), credit: ref.read(diagnosticianProvider).credited, contrast: ref.read(diagnosticianProvider).chosenComponents, presented: ref.read(diagnosticianProvider).targetComponents),
     );
     if (q == null) {
-      // Plus rien à demander (carte sans contenu) : l'épreuve se termine sans
-      // rejouer la question précédente.
-      return s.copyWith(clearQuestion: true, phase: s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.defeat, helpUsed: false, explanationOpen: false);
+      // Une absence de question est un problème de contenu ou de sélection,
+      // jamais une défaite du joueur. Aucun résultat ni pénalité n'est enregistré.
+      return s.copyWith(clearQuestion: true, phase: s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.unavailable, helpUsed: false, explanationOpen: false);
     }
     return s.copyWith(question: q, helpUsed: false, explanationOpen: false);
   }
@@ -352,7 +363,7 @@ class BattleController extends Notifier<BattleState?> {
     if (s.phase != BattlePhase.correct && s.phase != BattlePhase.wrong) return;
     if (target == BattlePhase.question) {
       state = _withNewQuestion(s.copyWith(phase: BattlePhase.question));
-      _profile.setActiveBattle(state!.snapshot());
+      _profile.setActiveBattle(state!.isOver ? null : state!.snapshot());
     } else {
       state = s.copyWith(phase: target, clearQuestion: true);
       _audio.play(target == BattlePhase.victory ? Sfx.victoria : Sfx.clades);
@@ -419,12 +430,12 @@ class BattleController extends Notifier<BattleState?> {
     if (s == null) return;
     final trial = s.trial;
     _timer?.cancel();
-    if (s.isOver) {
+    if (s.isOver && s.phase != BattlePhase.unavailable) {
       final won = s.phase == BattlePhase.victory;
       _profile.recordBattleEnd(activity: s.trial.activity, won: won, bonus: won ? s.victoryBonus : 0, penalty: won ? 0 : s.defeatPenalty);
     } else {
       _profile.setActiveBattle(null);
     }
-    start(trial);
+    start(trial, focus: s.focus);
   }
 }

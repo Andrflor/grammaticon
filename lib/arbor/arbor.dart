@@ -44,6 +44,28 @@ class Arbor {
   /// nœud → lexèmes qui l'illustrent.
   final Map<String, Set<String>> exempla = {};
 
+  final Map<String, Set<String>> _discoveryRequirements = {};
+
+  /// Les découvertes en contexte que suppose un maillon, directement ou par
+  /// ses prérequis. On s'arrête aux nœuds de contexte : leur chaîne est évaluée
+  /// par le parcours, pas transformée en crédits grammaticaux.
+  Set<String> discoveriesOf(String id) => _discoveryRequirements.putIfAbsent(id, () {
+    final out = <String>{};
+    final seen = <String>{};
+    void visit(String n) {
+      if (!seen.add(n)) return;
+      if (n.startsWith('lect.thema.') || n.startsWith('lect.intellectus.')) {
+        out.add(n);
+        return;
+      }
+      for (final pre in nodes[n]?.requirit ?? const <String>[]) {
+        visit(pre);
+      }
+    }
+    visit(id);
+    return out;
+  });
+
   Skill? operator [](String id) => nodes[id];
   Iterable<Skill> get omnes => nodes.values;
   Iterable<Skill> stratum(Stratum s) => nodes.values.where((n) => n.stratum == s);
@@ -68,6 +90,24 @@ class Arbor {
       ...deriveNominalCellae(nom, problems: problems),
       ...lexiconNodes(an, nom),
     ];
+    // Exposition avant morphologie : chaque maillon de grammaire introduit par
+    // une carte du Theātrum / Templum exige le thema de cette carte.
+    final exposure = exposureEdges();
+    for (var i = 0; i < all.length; i++) {
+      final s = all[i];
+      if (s.stratum != Stratum.elementum && s.stratum != Stratum.syntaxis) continue;
+      final discoveries = <String>{
+        if (exposure[s.id] != null) exposure[s.id]!,
+        for (final notion in s.notiones)
+          if (kNotionDiscoveries[notion] != null) discoveryThema(kNotionDiscoveries[notion]!),
+      };
+      // Le programme contient cette connaissance, mais sa découverte dédiée
+      // manque actuellement aux banques de contexte. Elle n'est pas dispensée
+      // par la seule connaissance du parfait.
+      final req = {...s.requirit, ...discoveries};
+      if (s.notiones.contains('not.tempus.futex') && s.id != 'syn.tempora.futex') req.add('syn.tempora.futex');
+      all[i] = s.copyWith(requirit: req.toList());
+    }
     final arbor = Arbor.of(all);
     arbor._syncretisms(an, nom);
     return arbor;

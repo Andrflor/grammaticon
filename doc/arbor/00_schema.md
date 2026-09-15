@@ -110,7 +110,7 @@ L'arbre est écrit **en Dart**, pas en Markdown : les nœuds sont des constantes
 | `lib/arbor/cellae.dart` | L2 | dérivation des cases et fonctions de composition `verbalComponents` / `nominalComponents` |
 | `lib/arbor/syntaxis.dart` | L3 | fonctions des cas, accord, ordre, propositions, constructions |
 | `lib/arbor/lectio.dart` | L5 | lecture, traduction, écriture, vocabulaire |
-| `lib/arbor/contextus.dart` | L5 | compétences en contexte : `lect.intellectus.<section>.<carte>` (comprendre dans une phrase, Theātrum) et `lect.thema.<section>.<carte>` (rendre en latin, Templum), une par carte, prérequis = maillons de grammaire de la carte ; le thema exige l'intellectus |
+| `lib/arbor/contextus.dart` | L5 | compétences en contexte : `lect.intellectus.<section>.<carte>` (comprendre dans une phrase, Theātrum) et `lect.thema.<section>.<carte>` (rendre en latin, Templum), une par carte, chaînées par le catalogue ; le thema exige l'intellectus ; la grammaire qu'une carte introduit exige son thema (exposition avant morphologie) |
 | `lib/arbor/arbor.dart` | L4 + graphe | nœuds lexicaux, index des arêtes, syncrétismes dérivés, `validate()` |
 | `lib/arbor/diagnosis.dart` | — | diagnostic d'un distracteur par différence de maillons |
 | `lib/arbor/evidence.dart`, `needs.dart` | — | évidence par nœud, hypothèses, poids de sélection |

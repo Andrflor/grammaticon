@@ -8,6 +8,7 @@ import '../arbor/diagnosis.dart';
 import '../arbor/evidence.dart';
 import '../economy/economy.dart';
 import '../pedagogy/mastery.dart';
+import '../pedagogy/frames/frame_question_source.dart';
 import '../pedagogy/question.dart';
 import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
@@ -59,11 +60,12 @@ class Resolution {
 }
 
 class AnswerResolver {
-  const AnswerResolver({this.economy = const Economy(kEconomy), this.mastery = const MasteryConfig(), this.arbor, this.diagnostician});
+  const AnswerResolver({this.economy = const Economy(kEconomy), this.mastery = const MasteryConfig(), this.arbor, this.diagnostician, this.lemmaCapacities = const {}});
   final Economy economy;
   final MasteryConfig mastery;
   final Arbor? arbor;
   final Diagnostician? diagnostician;
+  final Map<String, int> lemmaCapacities;
 
   Resolution resolve({required SaveData save, required Question q, required String chosenValue, required AnswerQuality quality, required DateTime now, int battleSeed = 0}) {
     final correct = q.isCorrect(chosenValue);
@@ -82,8 +84,9 @@ class AnswerResolver {
     // Each observed skill is updated exactly once.
     final skills = Map<String, SkillRecord>.from(save.skills);
     final obs = Observation(at: now, correct: correct, lemmaId: q.lemmaId, quality: quality, trialId: q.trialId);
+    final capacity = q.payload is FrameQuestionPayload ? (q.payload as FrameQuestionPayload).lemmaCapacity : null;
     for (final s in q.skillIds.toSet()) {
-      skills[s] = (skills[s] ?? const SkillRecord()).apply(obs, mastery);
+      skills[s] = (skills[s] ?? const SkillRecord()).apply(obs, mastery, availableLemmas: capacity);
     }
     final daily = Map<String, int>.from(save.lemmaDaily);
     if (correct && quality == AnswerQuality.autonoma) daily[satKey] = satCount + 1;
@@ -111,7 +114,7 @@ class AnswerResolver {
     if (arbor != null && diagnostician != null) {
       diagnosis = correct ? const Diagnosis() : diagnostician!.diagnose(q, chosenValue);
       credited = correct ? diagnostician!.credited(q) : const {};
-      arborAfter = save.arbor.observe(arbor: arbor!, diagnosis: diagnosis, credited: credited, correct: correct, quality: quality, lemmaId: q.lemmaId, trialId: q.trialId, now: now, place: Trials.maybe(q.trialId)?.activity.key, cfg: mastery);
+      arborAfter = save.arbor.observe(arbor: arbor!, diagnosis: diagnosis, credited: credited, correct: correct, quality: quality, lemmaId: q.lemmaId, trialId: q.trialId, now: now, place: Trials.maybe(q.trialId)?.activity.key, cfg: mastery, availableLemmas: capacity, lemmaCapacities: lemmaCapacities);
     }
 
     return Resolution(

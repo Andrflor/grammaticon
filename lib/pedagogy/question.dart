@@ -95,6 +95,16 @@ class Question {
 
   String get primarySkill => skillIds.first;
   bool isCorrect(String value) => correctValues.contains(value);
+
+  Question withChoices(List<Choice> values, {String? id}) => Question(
+    id: id ?? this.id, trialId: trialId, dimension: dimension, prompt: prompt,
+    surface: surface, lemmaId: lemmaId, choices: values,
+    correctValues: correctValues, skillIds: skillIds, payload: payload,
+    componentId: componentId,
+    ambiguous: values.where((c) => isCorrect(c.value)).length > 1,
+    context: context, exposure: exposure, errata: errata,
+    syntagma: syntagma, followUp: id == null ? followUp : followUp?.withChoices(followUp!.choices, id: '$id-${followUp!.dimension.name}'),
+  );
 }
 
 /// Latin feedback built from a resolved answer.

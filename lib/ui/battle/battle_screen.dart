@@ -46,6 +46,7 @@ class BattleScreen extends HookConsumerWidget {
     final flights = useState<List<_GemFlightSpec>>(const []);
     final timers = useRef(<Timer>[]);
     final startTiers = useRef<Map<String, MasteryTier>>({});
+    final openingIter = useRef(false);
 
     // Start (or resume) the encounter once.
     useEffect(() {
@@ -121,6 +122,20 @@ class BattleScreen extends HookConsumerWidget {
       if (context.mounted) Navigator.of(context).pop();
     }
 
+    // Écran de résultat → l'Iter : clore l'épreuve, puis proposer la carte suivante.
+    Future<void> next() async {
+      if (openingIter.value) return;
+      openingIter.value = true;
+      try {
+        await ctrl.finish();
+        if (!context.mounted) return;
+        final started = await showIter(context, ref, replace: true);
+        if (!started && context.mounted) Navigator.of(context).pop();
+      } finally {
+        openingIter.value = false;
+      }
+    }
+
     // Keyboard: digits 1–9 answer, Escape pauses, Space/Enter proceeds; on the
     // result screen Space/Enter retries and Escape leaves. Only
     // KeyDownEvent counts (held keys repeat, releases never answer), and only
@@ -134,10 +149,17 @@ class BattleScreen extends HookConsumerWidget {
         if (s == null) return false;
         final k = e.logicalKey;
         final proceedKey = k == LogicalKeyboardKey.space || k == LogicalKeyboardKey.enter || k == LogicalKeyboardKey.numpadEnter;
-        // Result screen: Space/Enter is "Iterum", Escape returns to the activity.
+        // Le mode du combat détermine la suite : Iter en parcours guidé,
+        // Iterum en jeu manuel. Une carte indisponible retourne au lieu.
         if (s.isOver) {
           if (proceedKey) {
-            ctrl.retry();
+            if (s.phase == BattlePhase.unavailable) {
+              leave();
+            } else if (s.isIter) {
+              next();
+            } else {
+              ctrl.retry();
+            }
             return true;
           }
           if (k == LogicalKeyboardKey.escape) {
@@ -192,10 +214,7 @@ class BattleScreen extends HookConsumerWidget {
                 _Center(state: state, cardKey: cardKey, trial: trial, config: config),
                 if (state.phase == BattlePhase.intro) _IntroOverlay(trial: trial, onStart: ctrl.beginAfterIntro),
                 if (state.paused) _PauseOverlay(body: config.labels.pausedBody, onResume: ctrl.resume, onLeave: leave),
-                if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry, onNext: () async {
-                  await ctrl.finish();
-                  if (context.mounted) await showIter(context, ref, replace: true);
-                }),
+                if (state.isOver) _ResultOverlay(state: state, config: config, startTiers: startTiers.value, onLeave: leave, onRetry: ctrl.retry, onNext: next),
               ],
               for (final f in flights.value) _GemFlight(key: ValueKey(f.id), spec: f),
             ],
@@ -679,6 +698,18 @@ class _ResultOverlay extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    if (state.phase == BattlePhase.unavailable) {
+      return _Dim(child: RomanPanel(
+        width: min(MediaQuery.sizeOf(context).width - 32, 560),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Text('Exercitium nōn parātum', style: G.display(26, color: G.purpleTitle)),
+          const SizedBox(height: 12),
+          Text('Nūlla quaestiō apta parāta est. Hoc nōn est clādēs: nūlla poena, nūlla perītiae dēminūtiō.', style: G.body(16), textAlign: TextAlign.center),
+          const SizedBox(height: 16),
+          RomanButton(label: config.labels.back, icon: Icons.arrow_back, onPressed: onLeave),
+        ]),
+      ));
+    }
     final won = state.phase == BattlePhase.victory;
     final save = ref.watch(profileProvider);
     final cfg = ref.watch(masteryConfigProvider);
@@ -726,7 +757,7 @@ class _ResultOverlay extends ConsumerWidget {
               runSpacing: 10,
               alignment: WrapAlignment.center,
               children: [
-                RomanButton(label: 'Iter', icon: Icons.alt_route, style: RomanButtonStyle.gold, onPressed: onNext),
+                if (state.isIter) RomanButton(label: 'Iter', icon: Icons.alt_route, style: RomanButtonStyle.gold, onPressed: onNext),
                 RomanButton(label: labels.back, icon: Icons.stadium, style: RomanButtonStyle.neutral, onPressed: onLeave),
                 RomanButton(label: 'Iterum', icon: Icons.replay, style: RomanButtonStyle.primary, onPressed: onRetry),
               ],

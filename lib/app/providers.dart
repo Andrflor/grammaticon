@@ -65,9 +65,9 @@ final masteryConfigProvider = Provider<MasteryConfig>((ref) => const MasteryConf
 /// L'arbre des compétences, construit une fois à partir des lexiques.
 final arborProvider = Provider<Arbor>((ref) => Arbor.standard(analyzer: ref.watch(analyzerProvider), nominal: ref.watch(nominalAnalyzerProvider)));
 /// Ce que chaque carte peut faire travailler (calculé une fois, pour l'Iter).
-final trialCoverageProvider = Provider<TrialCoverage>((ref) => TrialCoverage.build(ref.watch(questionGeneratorProvider), ref.watch(forumQuestionSourceProvider)));
+final trialCoverageProvider = Provider<TrialCoverage>((ref) => TrialCoverage.build(ref.watch(questionGeneratorProvider), ref.watch(forumQuestionSourceProvider), diagnostician: ref.watch(diagnosticianProvider), frames: ref.watch(frameQuestionSourceProvider)));
 final diagnosticianProvider = Provider<Diagnostician>((ref) => Diagnostician(ref.watch(arborProvider), ref.watch(questionGeneratorProvider), ref.watch(forumQuestionSourceProvider)));
-final answerResolverProvider = Provider<AnswerResolver>((ref) => AnswerResolver(mastery: ref.watch(masteryConfigProvider), arbor: ref.watch(arborProvider), diagnostician: ref.watch(diagnosticianProvider)));
+final answerResolverProvider = Provider<AnswerResolver>((ref) => AnswerResolver(mastery: ref.watch(masteryConfigProvider), arbor: ref.watch(arborProvider), diagnostician: ref.watch(diagnosticianProvider), lemmaCapacities: ref.watch(trialCoverageProvider).lemmaCapacities));
 
 final profileProvider = NotifierProvider<ProfileController, SaveData>(ProfileController.new);
 final settingsProvider = Provider<Settings>((ref) => ref.watch(profileProvider).settings);

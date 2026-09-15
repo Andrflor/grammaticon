@@ -42,6 +42,22 @@ class Progression {
     return s.access == TrialAccess.purchasable && s.affordable;
   }
 
+  /// Achats nécessaires, dans l'ordre des prérequis : le graphe peut conduire
+  /// à une carte sans imposer de rejouer les compétences des cartes d'accès.
+  static List<Trial> purchasePath(SaveData save, Trial trial) {
+    final seen = <String>{};
+    final out = <Trial>[];
+    void visit(Trial t) {
+      if (isAccessible(save, t) || !seen.add(t.id)) return;
+      for (final id in t.prerequisites) {
+        visit(Trials.byId(id));
+      }
+      out.add(t);
+    }
+    visit(trial);
+    return out;
+  }
+
   /// Cheapest price among trials the player could buy now, or null.
   static int? cheapestPurchasable(SaveData save) {
     int? best;

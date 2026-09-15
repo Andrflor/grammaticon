@@ -119,6 +119,7 @@ class SkillRecord {
     this.sessionDays = const {},
     this.lastPractice,
     this.places = const {},
+    this.lemmaCapacity,
   });
 
   final int autonomousCorrect;
@@ -145,6 +146,10 @@ class SkillRecord {
   /// un maillon n'est complet que prouvé dans chaque lieu qui le couvre
   /// (comprendre au Theātrum, produire au Templum…).
   final Set<String> places;
+
+  /// Borne connue du contenu disponible (notamment les cadres d'une carte de
+  /// contexte). Null conserve l'exigence normale de diversité.
+  final int? lemmaCapacity;
 
   int get autonomousCount => autonomousCorrect + autonomousWrong;
   int get totalCount => autonomousCount + aidedCorrect + aidedWrong + correctedCorrect;
@@ -191,10 +196,11 @@ class SkillRecord {
       sessionDays: sessionDays,
       lastPractice: lastPractice,
       places: places,
+      lemmaCapacity: lemmaCapacity,
     );
   }
 
-  SkillRecord apply(Observation o, MasteryConfig cfg, {String? place}) {
+  SkillRecord apply(Observation o, MasteryConfig cfg, {String? place, int? availableLemmas}) {
     var ac = autonomousCorrect, aw = autonomousWrong, aidC = aidedCorrect, aidW = aidedWrong, corC = correctedCorrect;
     // A long absence is not forgiven by the next answer: it starts from the
     // receded estimate.
@@ -241,6 +247,7 @@ class SkillRecord {
       sessionDays: days,
       lastPractice: o.at,
       places: place != null && o.correct && o.quality == AnswerQuality.autonoma ? {...places, place} : places,
+      lemmaCapacity: availableLemmas == null || availableLemmas < 1 ? lemmaCapacity : availableLemmas,
     );
   }
 
@@ -258,7 +265,8 @@ class SkillRecord {
   MasteryTier _tierOf(double? e, MasteryConfig cfg, {required bool requireRecent}) {
     if (e == null || autonomousCount == 0) return MasteryTier.nova;
     final recentOk = !requireRecent || (recentFirstTrySuccess ?? 0) >= 0.85;
-    if (e >= cfg.peritaThreshold && autonomousCount >= cfg.minObservationsPerita && lemmas.length >= cfg.minLemmasPerita && recentOk) {
+    final requiredLemmas = lemmaCapacity == null || lemmaCapacity! < 1 ? cfg.minLemmasPerita : cfg.minLemmasPerita.clamp(1, lemmaCapacity!);
+    if (e >= cfg.peritaThreshold && autonomousCount >= cfg.minObservationsPerita && lemmas.length >= requiredLemmas && recentOk) {
       return MasteryTier.perita;
     }
     if (e >= cfg.familiarisThreshold && autonomousCount >= cfg.minObservationsFamiliaris) return MasteryTier.familiaris;
@@ -308,6 +316,7 @@ class SkillRecord {
         'days': sessionDays.toList(),
         if (lastPractice != null) 'last': lastPractice!.millisecondsSinceEpoch,
         if (places.isNotEmpty) 'places': places.toList(),
+        if (lemmaCapacity != null) 'lemmaCapacity': lemmaCapacity,
       };
 
   factory SkillRecord.fromJson(Map<String, Object?> j) => SkillRecord(
@@ -323,5 +332,6 @@ class SkillRecord {
         sessionDays: ((j['days'] as List?) ?? const []).cast<String>().toSet(),
         lastPractice: j['last'] == null ? null : DateTime.fromMillisecondsSinceEpoch(j['last'] as int),
         places: ((j['places'] as List?) ?? const []).cast<String>().toSet(),
+        lemmaCapacity: (j['lemmaCapacity'] as num?)?.toInt(),
       );
 }

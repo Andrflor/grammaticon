@@ -19,7 +19,7 @@ Future<void> showFrameHelpSheet(BuildContext context, WidgetRef ref, {required Q
   final arbor = ref.read(arborProvider);
   final library = ref.read(frameLibraryProvider);
   // Le nœud de contexte de la carte, puis les maillons de grammaire qu'il suppose.
-  final ids = <String>{...p.nodes, for (final id in p.nodes) ...(arbor[id]?.requirit ?? const <String>[])};
+  final ids = <String>{...p.nodes, for (final id in p.nodes) ...(arbor[id]?.exempla ?? const <String>[])};
   final nodes = [for (final id in ids) arbor[id]].whereType<Skill>().where((s) => !s.id.startsWith('lect.vocabula.')).toList();
   final card = FrameTrials.cardsById[p.frame.card];
   final blocks = library.helpFor(p.frame);

@@ -159,7 +159,7 @@ final List<Skill> kVerbalElementa = [
       not: ['not.tempus.plusq', 'not.modus.ind', 'not.tempus.systema.perf'], parens: 'v.sig', ag: ['§179', '§184'], req: ['v.sig.perf'],
       conf: [_c('v.sig.futex.eri', Modus.similitudo, 'amāverat / amāverit'), _c('v.anom.sum.imperf', Modus.similitudo, 'amāverat = amāv- + erat'), _c('v.sig.imperf.ba', Modus.analogia, 'amāverat / amābat'), _c('v.sig.subj.plusq.isse', Modus.analogia, 'amāverat / amāvisset')]),
   _e('v.sig.futex.eri', 'Signum futūrī exāctī -eri-', 'Reconnaître -erō, -eri- comme marque du futur antérieur (amāverō, amāverit).',
-      not: ['not.tempus.futex', 'not.modus.ind', 'not.tempus.systema.perf'], parens: 'v.sig', ag: ['§179', '§184'], req: ['v.sig.perf'],
+      not: ['not.tempus.futex', 'not.modus.ind', 'not.tempus.systema.perf'], parens: 'v.sig', ag: ['§179', '§184'], req: ['v.sig.perf', 'v.sig.fut.b', 'v.sig.fut.a_e'],
       conf: [_c('v.sig.subj.perf.eri', Modus.syncretismus, 'amāverit : futur antérieur ou subjonctif parfait ; amāveris / amāverīs par la quantité'), _c('v.sig.plusq.era', Modus.similitudo, 'amāverit / amāverat'), _c('v.sig.fut.b', Modus.analogia, 'amāverit / amābit'), _c('v.anom.sum.fut', Modus.similitudo, 'amāverō = amāv- + erō')]),
   _e('v.sig.subj.perf.eri', 'Signum subiūnctīvī perfectī -erī-', 'Reconnaître -erim, -erī- comme marque du subjonctif parfait (amāverim, amāverīs).',
       not: ['not.tempus.perf', 'not.modus.subj', 'not.tempus.systema.perf'], parens: 'v.sig', ag: ['§179', '§185'], req: ['v.sig.perf'],

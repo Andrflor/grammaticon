@@ -1,5 +1,5 @@
-// On the result screen, Space/Enter presses "Iterum" and Escape returns to
-// the activity.
+// On the result screen, Space/Enter follows the Iter (the path proposes the
+// next card), Escape returns to the activity; "Iterum" stays a button.
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,7 +16,7 @@ import '../support/test_env.dart';
 void main() {
   const trialId = 'ind-praes-act';
 
-  testWidgets('result screen: Enter retries, Escape leaves', (tester) async {
+  testWidgets('result screen: Escape leaves, Enter follows the Iter', (tester) async {
     tester.view.physicalSize = const Size(1600, 900);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -62,25 +62,26 @@ void main() {
     }
 
     await loseFight();
-    // Enter on the result screen = Iterum: a fresh fight starts at once.
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 400));
-    var s = container.read(battleProvider)!;
-    expect(s.isOver, isFalse);
-    expect(s.hearts, Trials.byId(trialId).hearts);
-    expect(find.text('Iterum'), findsNothing);
-    expect(find.byType(BattleScreen), findsOneWidget);
-
-    await loseFight();
     // Escape on the result screen returns to the activity.
     await tester.sendKeyEvent(LogicalKeyboardKey.escape);
     await tester.pumpAndSettle();
     expect(find.byType(BattleScreen), findsNothing);
     expect(find.text('go'), findsOneWidget);
+
+    // Enter on the result screen = Iter: the fight is closed and the path
+    // proposes the next card (no replay of this one).
+    await tester.tap(find.text('go'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    await loseFight();
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
+    expect(container.read(battleProvider), isNull);
+    expect(find.text('Iter · proximum'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 
-  testWidgets('victory screen: Enter retries, Escape leaves', (tester) async {
+  testWidgets('victory screen: Escape leaves, Enter follows the Iter', (tester) async {
     tester.view.physicalSize = const Size(1600, 900);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -119,16 +120,17 @@ void main() {
     expect(s.phase, BattlePhase.victory);
     expect(find.text('Iterum'), findsOneWidget);
 
-    // Enter on the victory screen = Iterum.
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    // Escape on the victory screen returns to the activity.
+    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.pumpAndSettle();
+    expect(find.byType(BattleScreen), findsNothing);
+    expect(find.text('go'), findsOneWidget);
+
+    // Win again, then Enter = Iter: the fight is closed and the path proposes
+    // the next card.
+    await tester.tap(find.text('go'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 400));
-    s = container.read(battleProvider)!;
-    expect(s.isOver, isFalse);
-    expect(s.phase, BattlePhase.question);
-    expect(find.text('Iterum'), findsNothing);
-
-    // Win again, then Escape returns to the activity.
     while (!container.read(battleProvider)!.isOver) {
       final s2 = container.read(battleProvider)!;
       final q2 = s2.question!;
@@ -140,9 +142,10 @@ void main() {
       await tester.pump(const Duration(milliseconds: 400));
     }
     expect(container.read(battleProvider)!.phase, BattlePhase.victory);
-    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.pumpAndSettle();
-    expect(find.byType(BattleScreen), findsNothing);
-    expect(find.text('go'), findsOneWidget);
+    expect(container.read(battleProvider), isNull);
+    expect(find.text('Iter · proximum'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 }

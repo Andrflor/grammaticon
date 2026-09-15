@@ -21,6 +21,8 @@ library;
 
 import 'dart:math';
 
+import '../../arbor/cellae.dart';
+import '../../arbor/diagnosis.dart' show Diagnostician;
 import '../../linguistics/engine/nominal_analyzer.dart';
 import '../../linguistics/help/declension_help.dart';
 import '../../linguistics/help/nominal_help.dart';
@@ -35,6 +37,7 @@ import '../mastery.dart';
 import '../question.dart';
 import '../skills.dart';
 import '../trial.dart';
+import '../target_question_cache.dart';
 import 'forum_filters.dart';
 import 'syntagma.dart';
 
@@ -89,6 +92,7 @@ class ForumQuestionSource implements QuestionSource {
   final List<Syntagma> syntagmata;
 
   final Map<String, List<ForumItem>> _pools = {};
+  final _targetQuestions = TargetQuestionCache();
   final Map<String, Map<Dimension, Set<String>>> _poolValues = {};
   Map<String, Set<Declension>>? _endingDeclensions;
 
@@ -398,6 +402,15 @@ class ForumQuestionSource implements QuestionSource {
     Recall recall = Recall.none,
     ArborNeeds? needs,
   }) {
+    if (needs?.credit != null && needs!.focus.isNotEmpty) {
+      for (final target in needs.targets(trial.activity.key)) {
+        final q = forTarget(trial: trial, componentIds: componentIds, target: target, rng: rng, id: id,
+          proves: (q) => needs.credit!(q).contains(target), recentLemmas: recentLemmas, recentSurfaces: recentSurfaces, seenLemmas: needs.evidence.of(target).lemmas, dimensions: ArborNeeds.dimensionsFor(needs.arbor, target), canPresent: needs.canPresent,
+          constrain: needs.contrast == null ? null : (q) => needs.constrain(q, needs.contrast!), eligibilityKey: needs.questionCacheKey);
+        if (q != null) return q;
+      }
+      return null;
+    }
     final items = pool(trial, componentIds);
     if (items.isEmpty) return null;
     final values = poolValues(trial, componentIds);
@@ -464,6 +477,73 @@ class ForumQuestionSource implements QuestionSource {
       if (next != null) return _withFollowUp(q, next);
     }
     return q;
+  }
+
+  /// Le maillon visé commande la question, même quand sa dimension est
+  /// constante dans la carte (par exemple la première déclinaison).
+  Question? forTarget({required Trial trial, required List<String> componentIds, required String target,
+    required Random rng, required String id, required bool Function(Question) proves,
+    List<String> recentLemmas = const [], List<String> recentSurfaces = const [], Set<String> seenLemmas = const {}, List<Dimension> dimensions = const [], bool Function(Iterable<String>)? canPresent, Question? Function(Question)? constrain, String? eligibilityKey}) {
+    final cache = eligibilityKey != null || (canPresent == null && constrain == null) ? _targetQuestions.forExposure(eligibilityKey) : null;
+    final key = '${_poolKey(trial, componentIds)}|$target|${dimensions.map((d) => d.name).join(',')}';
+    Question? fallback = cache?[key];
+    if (fallback != null) {
+      if (constrain != null) fallback = constrain(fallback);
+      if (fallback != null && !proves(fallback)) fallback = null;
+    }
+    final entries = pool(trial, componentIds).where((e) {
+      final parts = nominalComponents(e.form, e.lexeme);
+      if (canPresent != null && !canPresent(parts)) return false;
+      if (parts.contains(target)) return true;
+      return e.syntagma != null;
+    }).toList()..shuffle(rng);
+    entries.sort((a, b) {
+      int recent(ForumItem e) => (seenLemmas.contains(e.lexeme.id) ? 4 : 0) + (recentSurfaces.contains(e.surface) ? 2 : 0) + (recentLemmas.contains(e.lexeme.id) ? 1 : 0);
+      return recent(a).compareTo(recent(b));
+    });
+    final dims = <Dimension>{
+      ...dimensions,
+      for (final d in trial.dimensions)
+        if ((Diagnostician.kDimensionFamilies[d] ?? const <String>[]).any(target.startsWith)) d,
+      for (final e in Diagnostician.kDimensionFamilies.entries)
+        if (e.value.any(target.startsWith) && !trial.dimensions.contains(e.key)) e.key,
+      ...trial.dimensions,
+      Dimension.analysis, Dimension.lemma,
+    };
+    final values = poolValues(trial, componentIds);
+    var attempts = 0;
+    for (final e in entries) {
+      if (fallback != null && attempts++ >= 24) break;
+      for (final dim in dims) {
+        if (valueOf(dim, e) == null) continue;
+        final correct = correctValues(trial, dim, e);
+        if (correct.isEmpty) continue;
+        final Set<String>? scale = switch (dim) {
+          Dimension.analysis => null,
+          Dimension.declinatio => Declension.values.map((v) => v.key).toSet(),
+          Dimension.persona => Person.values.map((v) => v.key).toSet(),
+          Dimension.numerus => Numerus.values.map((v) => v.key).toSet(),
+          Dimension.genus => Gender.values.map((v) => v.key).toSet(),
+          Dimension.casus => Casus.values.map((v) => v.key).toSet(),
+          Dimension.classis => {'12', '3', 'pron'},
+          Dimension.gradus => Degree.values.map((v) => v.key).toSet(),
+          Dimension.functio => Functio.values.map((v) => v.key).toSet(),
+          Dimension.constructio => Constructio.values.map((v) => v.key).toSet(),
+          Dimension.relatio => Relatio.values.map((v) => v.key).toSet(),
+          _ => _offered(trial, dim, values),
+        };
+        final offered = scale ?? _offeredFor(dim, e, correct);
+        if (offered.intersection(correct).isEmpty || offered.difference(correct).isEmpty) continue;
+        final q = _build(trial, dim, e, correct, scale, rng, id);
+        if (q == null) continue;
+        final ready = constrain == null ? q : constrain(q);
+        if (ready != null && proves(ready)) {
+          if (cache != null) cache[key] = ready;
+          return ready;
+        }
+      }
+    }
+    return fallback?.withChoices(fallback.choices, id: id);
   }
 
   /// Follow-up questions on the same item, in chain order.

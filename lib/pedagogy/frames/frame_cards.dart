@@ -24,14 +24,14 @@ const Map<String, String> templumAlias = {
 
 const Map<String, List<String>> kFrameCardNodes = {
   // Locī et rēs
-  'loca/a-ablative': ['syn.abl.locus', 'syn.praep.in.duplex', 'n.des.a_long'],
+  'loca/a-ablative': ['syn.abl.locus', 'n.des.a_long', 'n.des.o_long', 'n.des.a', 'n.des.us', 'n.des.um'],
   'loca/concordia': ['syn.concordia.adiectivum'],
   'loca/negatio': ['syn.neg.non'],
-  'loca/numerus': ['syn.concordia.verbum', 'n.des.ae'],
+  'loca/numerus': ['syn.concordia.verbum', 'n.des.ae', 'n.des.i_long', 'n.des.neutrum'],
   // Persōnae
-  'personae/agents': ['syn.nom.subiectum', 'syn.acc.obiectum'],
-  'personae/giving': ['syn.dat.attributio'],
-  'personae/possession': ['syn.gen.possessivus'],
+  'personae/agents': ['syn.nom.subiectum', 'syn.acc.obiectum', 'n.des.am', 'n.des.as', 'n.des.os'],
+  'personae/giving': ['syn.dat.attributio', 'n.des.is_long'],
+  'personae/possession': ['syn.gen.possessivus', 'n.des.arum', 'n.des.orum'],
   'personae/reference': ['syn.pron.reflexivum', 'pron.suus_eius'],
   'personae/relative-case-role': ['syn.concordia.relativum', 'syn.rel.indicativus'],
   // Nōmina (3e déclinaison)

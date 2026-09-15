@@ -11,11 +11,13 @@ import 'frame_content.dart';
 import 'frame_trials.dart';
 
 class FrameQuestionPayload extends QuestionPayload {
-  const FrameQuestionPayload({required this.instance, required this.nodes});
+  const FrameQuestionPayload({required this.instance, required this.nodes, this.lemmaCapacity});
   final FrameInstance instance;
 
   /// Nœuds de l'arbre visés par la carte.
   final List<String> nodes;
+  /// Nombre d'exemples distincts effectivement disponibles pour ce nœud.
+  final int? lemmaCapacity;
   Frame get frame => instance.frame;
 }
 
@@ -27,7 +29,9 @@ class FrameQuestionSource implements QuestionSource {
   FrameQuestionSource(this.library);
   final FrameLibrary library;
 
-  List<Frame> pool(Trial trial) => trial.filter is FrameFilter ? library.forCard((trial.filter as FrameFilter).card) : const [];
+  List<Frame> pool(Trial trial) => trial.filter is FrameFilter
+    ? library.forCard((trial.filter as FrameFilter).card).where((f) => f.choices.any((c) => c.accepted) && f.choices.any((c) => !c.accepted)).toList()
+    : const [];
 
   @override
   Question? generate({
@@ -73,7 +77,7 @@ class FrameQuestionSource implements QuestionSource {
       choices: choices,
       correctValues: correct,
       skillIds: [trial.primarySkill],
-      payload: FrameQuestionPayload(instance: inst, nodes: nodes),
+      payload: FrameQuestionPayload(instance: inst, nodes: nodes, lemmaCapacity: frames.map((f) => f.id).toSet().length),
       ambiguous: correct.length > 1,
       exposure: ExposureNote(itemId: frame.id, passageId: frame.card, lemmas: const [], targetLemma: ''),
     );

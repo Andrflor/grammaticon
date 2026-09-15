@@ -81,6 +81,31 @@ void main() {
     c.dispose();
   });
 
+  test('Iter targets survive serialization, resume and retry', () {
+    final (c, _) = make();
+    addTearDown(c.dispose);
+    final ctrl = c.read(battleProvider.notifier);
+    final trial = Trials.byId('th-loca-a-ablative');
+    const focus = ['lect.intellectus.loca.a_ablative'];
+    ctrl.start(trial, focus: focus);
+    ctrl.beginAfterIntro();
+    final snapshot = ActiveBattle.fromJson(c.read(battleProvider)!.snapshot().toJson());
+    expect(snapshot.focus, focus);
+    ctrl.abandon();
+    ctrl.start(trial, resume: snapshot);
+    expect(c.read(battleProvider)!.focus, focus);
+    for (var i = 0; i < trial.hearts; i++) {
+      final q = c.read(battleProvider)!.question!;
+      ctrl.answer(q.id, q.choices.indexWhere((ch) => !q.isCorrect(ch.value)));
+      ctrl.proceed();
+    }
+    expect(c.read(battleProvider)!.phase, BattlePhase.defeat);
+    ctrl.retry();
+    expect(c.read(battleProvider)!.focus, focus);
+    expect(c.read(profileProvider).activeBattle!.focus, focus);
+    expect(c.read(battleProvider)!.question, isNotNull);
+  });
+
   test('defeat after losing all hearts; retry keeps gems and purchases', () async {
     final (c, _) = make(
       initial: SaveData(gems: 50, purchased: {'ind-imperf-act'}, introSeen: {'ind-imperf-act'}),

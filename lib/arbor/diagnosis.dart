@@ -438,7 +438,7 @@ class Diagnostician {
       case Dimension.constructio:
         return _swap(base, _allConstructioNodes(), _constructioNodes(chosen));
       case Dimension.relatio:
-        return _swap(base, {'syn.pron.reflexivum', 'syn.pron.is.anaphora'}, {chosen == 'subiectum' ? 'syn.pron.reflexivum' : 'syn.pron.is.anaphora', 'pron.suus_eius'});
+        return _swap(base, {'syn.pron.reflexivum', 'syn.pron.is.anaphora', 'pron.suus_eius'}, {chosen == 'subiectum' ? 'syn.pron.reflexivum' : 'syn.pron.is.anaphora'});
       case Dimension.quodNomen:
         // Choisir un autre nom : l'accord a été fait avec le voisin, pas avec le
         // nom qui porte les mêmes genre, nombre et cas.

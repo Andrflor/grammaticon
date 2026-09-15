@@ -348,11 +348,48 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Iter · proximum'), findsOneWidget);
     expect(find.textContaining('Prōgressus'), findsOneWidget);
-    // La première carte du parcours (dec-2-mf) s'achète : le bouton le dit.
-    final go = find.text('Eme et perge').evaluate().isNotEmpty ? find.text('Eme et perge') : find.text('Perge');
-    await tester.tap(go);
+    // Le bouton dit « Perge » ou « Eme et perge » selon que la carte s'achète ;
+    // Entrée (ou Espace) le presse au clavier.
+    expect(find.text('Eme et perge').evaluate().isNotEmpty || find.text('Perge').evaluate().isNotEmpty, isTrue);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
     await tester.pumpAndSettle();
     expect(find.text('Incipe!'), findsOneWidget); // the encounter opened on its introduction
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('result screen: Enter follows the Iter (next card), not a replay', (tester) async {
+    tester.view.physicalSize = const Size(1600, 900);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    final store = MemorySaveStore();
+    await tester.pumpWidget(app(store, initial: SaveData(gems: 50)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Amphitheātrum'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(InkWell, 'Certāmen').first);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.tap(find.text('Incipe!'));
+    await tester.pump();
+    final element = tester.element(find.byType(Scaffold).last);
+    final container = ProviderScope.containerOf(element);
+    // Answer correctly until the encounter is won.
+    for (var i = 0; i < 40; i++) {
+      final s = container.read(battleProvider)!;
+      if (s.isOver) break;
+      final q = s.question!;
+      final correct = q.choices.indexWhere((c) => q.correctValues.contains(c.value));
+      await tester.sendKeyEvent(LogicalKeyboardKey(0x30 + correct + 1), character: '${correct + 1}');
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+    }
+    expect(container.read(battleProvider)!.isOver, isTrue);
+    await tester.pumpAndSettle();
+    expect(find.text('Iterum'), findsOneWidget);
+    // Enter = Iter: the path proposes the next card instead of replaying this one.
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
+    expect(find.text('Iter · proximum'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

@@ -22,6 +22,8 @@ import 'pedagogy/question_generator.dart';
 import 'pedagogy/forum/forum_question_source.dart';
 import 'pedagogy/forum/syntagmata/syntagmata.dart';
 import 'pedagogy/frames/frame_content.dart';
+import 'pedagogy/frames/frame_question_source.dart';
+import 'arbor/diagnosis.dart';
 import 'persistence/save_repository.dart';
 
 Future<void> main() async {
@@ -38,14 +40,14 @@ Future<void> main() async {
   final verbSource = QuestionGenerator(analyzer);
   final forumSource = ForumQuestionSource(nominalAnalyzer, kSyntagmata);
   // Ce que chaque carte fait travailler, pour l'Iter (parcours automatique).
-  final coverage = TrialCoverage.build(verbSource, forumSource);
+    final frames = await FrameLibrary.load(rootBundle);
+    final coverage = TrialCoverage.build(verbSource, forumSource, diagnostician: Diagnostician(arbor, verbSource, forumSource), frames: FrameQuestionSource(frames));
   ReadingLibrary reading;
   try {
     reading = await ReadingLibrary.load(rootBundle);
   } catch (_) {
     reading = ReadingLibrary.empty();
   }
-  final frames = await FrameLibrary.load(rootBundle);
   final repo = SaveRepository(PrefsSaveStore());
   var save = await repo.load();
   // Les maillons sans historique propre héritent de l'historique par carte

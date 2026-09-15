@@ -109,11 +109,14 @@ void main() {
     final node = contextNodeId('theatrum/actiones/passive-number');
     expect(d.observed, {node});
     expect(d.suspecta, isEmpty);
-    expect(arbor[node]!.requirit, containsAll(['v.des.pass.3.sg.tur', 'v.des.pass.3.pl.ntur', 'syn.concordia.verbum']));
+    // Exposition d'abord : la carte ne dépend que de la carte d'avant, la grammaire vient après elle.
+    expect(arbor[node]!.requirit, ['lect.intellectus.actiones.passive_patient']);
+    expect(arbor[node]!.exempla, containsAll(['v.des.pass.3.sg.tur', 'v.des.pass.3.pl.ntur', 'syn.concordia.verbum']));
     final ev = const ArborEvidence().observe(arbor: arbor, diagnosis: d, credited: const {}, correct: false, quality: AnswerQuality.autonoma, lemmaId: q.lemmaId, trialId: th.id, now: DateTime(2026, 9, 15), place: 'theatrum');
     expect(ev.records.keys, contains(node));
     expect(ev.records.containsKey('v.des.pass.3.sg.tur'), isFalse, reason: 'la forme n\'est pas débitée par une erreur de lecture');
-    expect(ev.hypotheses.keys, containsAll([node, 'v.des.pass.3.sg.tur', 'syn.concordia.verbum']));
+    expect(ev.hypotheses.keys, containsAll([node, 'lect.intellectus.actiones.passive_patient']));
+    expect(ev.hypotheses.containsKey('v.des.pass.3.sg.tur'), isFalse, reason: 'la grammaire n\'est pas suspectée par une erreur de lecture : elle vient après');
     // Templum : quand le distracteur est une autre forme du même mot, les
     // maillons de la forme attendue absents de la forme choisie sont suspects.
     var found = false;
@@ -130,19 +133,29 @@ void main() {
       }
     }
     expect(found, isTrue, reason: 'aucun distracteur morphologique trouvé au Templum');
-    // Réussir la compétence lève le soupçon sur ses prérequis directs.
+    // Réussir la compétence lève le soupçon sur ses prérequis directs (la carte d'avant).
     final ok = ev.observe(arbor: arbor, diagnosis: const Diagnosis(), credited: {node}, correct: true, quality: AnswerQuality.autonoma, lemmaId: q.lemmaId, trialId: th.id, now: DateTime(2026, 9, 15, 1), place: 'theatrum');
-    expect(ok.hypotheses.containsKey('v.des.pass.3.sg.tur'), isFalse);
+    expect(ok.hypotheses.containsKey('lect.intellectus.actiones.passive_patient'), isFalse);
     expect(ok.records[node]!.places, {'theatrum'});
   });
 
-  test('le thema exige l\'intellectus du même concept, et chaque carte du Templum a son pendant', () {
+  test('exposition d\'abord : le thema exige l\'intellectus, et la grammaire qu\'une carte introduit exige son thema', () {
     for (final c in kTemplumCards.where((c) => c.card != 'vocabula')) {
       final thema = arbor[contextNodeId(c.id)]!;
       final intellectus = thema.requirit.where((r) => r.startsWith('lect.intellectus.')).toList();
       expect(intellectus.length, 1, reason: c.id);
       expect(arbor.nodes.containsKey(intellectus.single), isTrue, reason: c.id);
-      expect(thema.requirit.toSet(), containsAll(frameCardBaseNodes(c.id)), reason: c.id);
+      // Les nœuds de contexte ne dépendent d'aucun maillon de grammaire.
+      expect(thema.requirit.any((r) => !r.startsWith('lect.')), isFalse, reason: c.id);
+      expect(arbor[intellectus.single]!.requirit.any((r) => !r.startsWith('lect.')), isFalse, reason: c.id);
     }
+    // -um est introduit par « personae/agents » (sujet et objet) : la désinence
+    // attend le thema de cette carte ; -tur attend « actiones/passive-patient ».
+    final edges = exposureEdges();
+    for (final e in edges.entries) {
+      expect(arbor[e.key]!.requirit, contains(e.value), reason: e.key);
+    }
+    expect(arbor['v.des.pass.3.sg.tur']!.requirit, contains('lect.thema.actiones.passive_patient'));
+    expect(arbor['syn.abl.locus']!.requirit, contains('lect.thema.loca.a_ablative'));
   });
 }
