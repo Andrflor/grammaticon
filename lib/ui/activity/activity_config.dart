@@ -3,7 +3,6 @@
 /// configuration; nothing in them tests which activity is running.
 library;
 
-import '../../pedagogy/frames/frame_question_source.dart';
 import '../../pedagogy/trial.dart';
 import '../help/frame_help_sheet.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,6 @@ import '../../game/theatrum_game.dart';
 import '../../pedagogy/question_generator.dart';
 import '../help/help_sheet.dart';
 import '../help/forum_help_sheet.dart';
-import '../help/reading_help_sheet.dart';
 
 /// A sound played [delayMs] after an outcome is shown.
 class SoundCue {
@@ -231,7 +229,7 @@ final ActivityConfig kTheatrumConfig = ActivityConfig(
   },
   opponentAssetPrefix: 'actor_',
   createScene: (trial, {required reducedMotion}) => TheatrumGame(opponentId: trial.opponentId, reducedMotion: reducedMotion),
-  showHelp: (context, ref, q, {required revealForm, note}) => q.payload is FrameQuestionPayload ? showFrameHelpSheet(context, ref, q: q, revealForm: revealForm, note: note) : showReadingHelpSheet(context, ref, q: q, revealForm: revealForm, note: note),
+  showHelp: (context, ref, q, {required revealForm, note}) => showFrameHelpSheet(context, ref, q: q, revealForm: revealForm, note: note),
   correctCues: const [SoundCue(60, Sfx.tibia), SoundCue(320, Sfx.plausus)],
   wrongCues: const [SoundCue(120, Sfx.refutatio), SoundCue(340, Sfx.sibilus)],
   longText: true,

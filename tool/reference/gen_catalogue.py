@@ -1,0 +1,53 @@
+"""Génère lib/pedagogy/frames/frame_catalogue.dart depuis reference/frames/<lieu>.cards.json.
+
+Les conditions d'accès `unlocked` et `mastered` deviennent des prérequis de carte
+(la carte requise doit être accessible) ; les conditions `skill` du moteur JSON
+(niveaux de ses 67 021 nœuds) n'ont pas d'équivalent et sont ignorées.
+"""
+import json
+import os
+
+from common import REPO
+
+def esc(x):
+    return (x or '').replace('\\', '\\\\').replace("'", "\\'").replace('$', '\\$')
+
+
+def main():
+    out = [
+        '/// Catalogue des cartes du Theatrum et du Templum, dérivé des banques de référence',
+        '/// (`reference/frames/<lieu>.cards.json`). Généré par tool/reference/gen_catalogue.py ;',
+        '/// ne pas éditer à la main : les nœuds visés sont dans frame_cards.dart.',
+        'library;', '',
+        'class FrameSectionMeta {', '  const FrameSectionMeta(this.id, this.name, this.cards);', '  final String id;', '  final String name;', '  final List<String> cards;', '}', '',
+        'class FrameCardMeta {',
+        '  const FrameCardMeta({required this.place, required this.section, required this.card, required this.name, required this.subtitle, required this.price, required this.requires, required this.target, required this.lives});',
+        '  final String place, section, card, name, subtitle;', '  final int price, target, lives;',
+        '  /// Adresses des cartes requises (accessibles avant celle-ci).', '  final List<String> requires;',
+        "  String get id => '$place/$section/$card';", '}', '',
+    ]
+    for place in ['theatrum', 'templum']:
+        m = json.load(open(os.path.join(REPO, f'reference/frames/{place}.cards.json'), encoding='utf-8'))
+        order = [c['id'] for c in m['place']['children']]
+        out.append(f'const List<FrameSectionMeta> k{place.capitalize()}Sections = [')
+        for sid in order:
+            sec = m['sections'][sid]
+            out.append(f"  FrameSectionMeta('{sid}', '{esc(sec['name'])}', [{', '.join(repr(c) for c in sec['children'])}]),")
+        out.append('];')
+        out.append(f'const List<FrameCardMeta> k{place.capitalize()}Cards = [')
+        for c in m['cards']:
+            req = []
+            for cond in ((c.get('requires') or {}).get('all') or []):
+                for key in ('unlocked', 'mastered', 'completed'):
+                    if key in cond and cond[key] not in req:
+                        req.append(cond[key])
+            enc = c.get('encounter') or {}
+            out.append(f"  FrameCardMeta(place: '{place}', section: '{c['section']}', card: '{c['card']}', name: '{esc(c['name'])}', subtitle: '{esc(c['subtitle'])}', price: {c['price']}, requires: [{', '.join(repr(x) for x in req)}], target: {enc.get('target', 5)}, lives: {enc.get('lives', 3)}),")
+        out.append('];')
+    path = os.path.join(REPO, 'lib/pedagogy/frames/frame_catalogue.dart')
+    open(path, 'w', encoding='utf-8').write('\n'.join(out) + '\n')
+    print('écrit', path)
+
+
+if __name__ == '__main__':
+    main()

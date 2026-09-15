@@ -17,7 +17,7 @@ import os
 
 from common import REPO, ROOT, cards, flatten, questions
 
-TOKEN = re.compile(r"[^\s]+")
+TOKEN = re.compile(r"\n|[^\s]+")
 
 
 def tokens(s):

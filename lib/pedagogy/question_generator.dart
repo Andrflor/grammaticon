@@ -624,6 +624,9 @@ class QuestionGenerator implements QuestionSource {
         return p.primary(a.copyWith(mood: m, tense: t).selector) ?? _firstOf(p, (x) => x.mood == m && x.tense == t && x.voice == a.voice && x.periphrasis == Periphrasis.nulla);
       case Dimension.vox:
         return p.primary(a.copyWith(voice: Voice.fromKey(chosenValue)).selector) ?? _firstOf(p, (x) => x.voice?.key == chosenValue && x.mood == a.mood && x.tense == a.tense && x.person == a.person && x.number == a.number);
+      case Dimension.voxSensus:
+        // Le sens ne change pas la forme : il n'y a pas de forme de contraste.
+        return null;
       case Dimension.genus:
         return p.primary(a.copyWith(gender: Gender.fromKey(chosenValue)).selector);
       case Dimension.casus:

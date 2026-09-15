@@ -17,7 +17,6 @@ import '../pedagogy/forum/syntagmata/syntagmata.dart';
 import '../pedagogy/progression.dart';
 import '../pedagogy/question_generator.dart';
 import '../pedagogy/reading/reading_content.dart';
-import '../pedagogy/reading/reading_question_source.dart';
 import '../pedagogy/trials.dart';
 import '../persistence/save_data.dart';
 import '../persistence/save_repository.dart';
@@ -40,11 +39,6 @@ final forumQuestionSourceProvider = Provider<ForumQuestionSource>((ref) => Forum
 /// Curated reading content of the Theatrum (overridden in main and tests).
 final readingLibraryProvider = Provider<ReadingLibrary>((ref) => throw UnimplementedError('readingLibraryProvider must be overridden'));
 
-/// Reading source for the selected translation language. Rebuilt when the
-/// language changes; unavailable languages yield no questions.
-final readingQuestionSourceProvider = Provider<ReadingQuestionSource>(
-  (ref) => ReadingQuestionSource(ref.watch(readingLibraryProvider), language: ref.watch(settingsProvider.select((s) => s.translationLanguage.code))),
-);
 
 /// Cadres authored du Theatrum et du Templum (overridden in main and tests).
 final frameLibraryProvider = Provider<FrameLibrary>((ref) => FrameLibrary(const []));

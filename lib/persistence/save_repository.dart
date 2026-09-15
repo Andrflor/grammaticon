@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../pedagogy/trials.dart';
 import 'save_data.dart';
 
 /// Storage backend abstraction (shared_preferences in the app, memory in tests).
@@ -74,7 +75,10 @@ class SaveRepository {
       // La sauvegarde du moteur JSON (septembre 2026) est convertie ; l'original
       // est conservé sous une clé voisine avant toute écriture.
       if (raw.contains('"designId"')) await store.backup(raw);
-      return codec.decode(raw);
+      final data = codec.decode(raw);
+      // Une épreuve interrompue sur une carte qui n'existe plus ne se reprend pas.
+      if (data.activeBattle != null && Trials.maybe(data.activeBattle!.trialId) == null) return data.copyWith(clearActiveBattle: true);
+      return data;
     } catch (e) {
       debugPrint('Cōnservātiō legī nōn potuit: $e');
       return SaveData(createdAt: DateTime.now());

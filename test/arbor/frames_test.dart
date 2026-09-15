@@ -15,6 +15,7 @@ import 'package:grammaticon/pedagogy/frames/frame_content.dart';
 import 'package:grammaticon/pedagogy/frames/frame_question_source.dart';
 import 'package:grammaticon/pedagogy/frames/frame_trials.dart';
 import 'package:grammaticon/pedagogy/question_generator.dart';
+import 'package:grammaticon/pedagogy/skills.dart';
 import 'package:grammaticon/pedagogy/trials.dart';
 
 void main() {
@@ -36,6 +37,13 @@ void main() {
       for (final n in frameCardNodes(card)) {
         if (!arbor.nodes.containsKey(n)) unknown.add('$card → $n');
       }
+    }
+    // Chaque carte a sa compétence propre, enregistrée, sous sa section.
+    final skillIds = trials.map((t) => t.primarySkill).toList();
+    expect(skillIds.toSet().length, trials.length, reason: 'compétence propre par carte');
+    for (final t in trials) {
+      expect(Skills.maybe(t.primarySkill), isNotNull, reason: t.id);
+      expect(Skills.maybe(t.primarySkill)!.parent, isNotNull, reason: t.id);
     }
     expect(missing, isEmpty, reason: 'cartes sans cadre');
     expect(unknown, isEmpty, reason: 'nœuds inconnus');

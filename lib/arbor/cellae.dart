@@ -108,7 +108,16 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
     if (a.mood == Mood.infinitivus) {
       n('v.anom.sum.inf');
     } else {
-      n(a.mood == Mood.subiunctivus ? 'v.anom.sum.subj' : (a.tense!.isPerfectSystem ? 'v.anom.sum.perf' : _auxNode(a.mood, a.tense!)));
+      if (a.mood == Mood.subiunctivus) n('v.anom.sum.subj');
+      // Le temps du tour périphrastique se lit sur l'auxiliaire.
+      n(switch (a.tense!) {
+        Tense.praesens => 'v.anom.sum.praes',
+        Tense.imperfectum => 'v.anom.sum.imperf',
+        Tense.futurum => 'v.anom.sum.fut',
+        Tense.perfectum => 'v.comp.aux.perf',
+        Tense.plusquamperfectum => 'v.comp.aux.plusq',
+        Tense.futurumExactum => 'v.comp.aux.futex',
+      });
       n('v.comp.part.concordia');
       n(_activeEnding(a, oInFirst: false));
     }
@@ -145,6 +154,7 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
   }
   if (a.composite) {
     // participe parfait + sum
+    if (cls == 'fio') n('v.anom.fio');
     n('v.comp.perf.pass');
     n('v.nom.part.perf.tus');
     n(_supThema(v));
@@ -194,6 +204,7 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
       case Mood.gerundium:
         n('v.nom.ger.nd');
         n(_thema(cls));
+        n(switch (a.casus) { Casus.genetivus => 'n.des.i_long', Casus.accusativus => 'n.des.um', _ => 'n.des.o_long' });
       case Mood.supinum:
         n(a.casus == Casus.ablativus ? 'v.nom.sup.u' : 'v.nom.sup.um');
         n(_supThema(v));
@@ -210,6 +221,11 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
       if (a.variant == VariantKind.syncopa) n('v.alt.syncopa');
     } else if (anom) {
       n(anomalousNode(cls, part: 'inf'));
+      if (passive) {
+        n(cls == 'fero' ? 'v.sig.inf.praes.pass.i' : 'v.sig.inf.praes.pass.ri');
+      } else if (cls == 'fero' || cls == 'do') {
+        n('v.sig.inf.praes.act.re');
+      }
     } else if (passive) {
       n(cls == 'c3' || cls == 'c3io' ? 'v.sig.inf.praes.pass.i' : 'v.sig.inf.praes.pass.ri');
       n(_thema(cls));
@@ -251,7 +267,28 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
   // Système du présent, formes finies.
   if (anom) {
     n(_anomalousFinite(cls, a));
-    if (a.mood == Mood.subiunctivus && a.tense == Tense.imperfectum) n('v.sig.subj.imperf.re');
+    if (cls == 'possum') n('v.anom.possum');
+    // Les anomaux gardent les marques régulières là où elles le sont : ferēbat,
+    // volēbam, fīēbat, dabam (-bā-) ; feram, volam, fīam, edam (-a-/-ē-) ; dabō
+    // (-b-) ; feram, fīam, edam au subjonctif (-ā-), dem (-ē-) ; -rē- partout.
+    switch ((a.mood, a.tense)) {
+      case (Mood.indicativus, Tense.imperfectum) when cls != 'sum' && cls != 'possum':
+        n('v.sig.imperf.ba');
+      case (Mood.indicativus, Tense.futurum) when const {'fero', 'volo', 'nolo', 'malo', 'fio', 'edo'}.contains(cls):
+        n('v.sig.fut.a_e');
+      case (Mood.indicativus, Tense.futurum) when cls == 'do':
+        n('v.sig.fut.b');
+      case (Mood.indicativus, Tense.praesens):
+        n('v.sig.praes');
+      case (Mood.subiunctivus, Tense.praesens) when const {'fero', 'fio', 'edo'}.contains(cls):
+        n('v.sig.subj.praes.a');
+      case (Mood.subiunctivus, Tense.praesens) when cls == 'do':
+        n('v.sig.subj.praes.e');
+      case (Mood.subiunctivus, Tense.imperfectum):
+        n('v.sig.subj.imperf.re');
+      default:
+        break;
+    }
     if (a.mood == Mood.imperativus) n(a.tense == Tense.futurum ? 'v.sig.imp.fut.to' : 'v.sig.imp.praes');
   } else {
     n(_thema(cls));
@@ -294,7 +331,11 @@ Set<String> verbalComponents(Analysis a, VerbEntry v) {
     n(_passiveEnding(a));
     if (a.variant == VariantKind.passivumRe || a.variant == VariantKind.rara) n('v.alt.re');
   } else {
-    final oFirst = (a.mood == Mood.indicativus && (a.tense == Tense.praesens || (a.tense == Tense.futurum && (cls == 'c1' || cls == 'c2'))));
+    // -ō à la 1re sg du présent (sauf sum, possum : -m) et des futurs en -b-
+    // (amābō, dabō, ībō, erō, poterō) ; -m partout ailleurs.
+    final oFirst = a.mood == Mood.indicativus &&
+        ((a.tense == Tense.praesens && cls != 'sum' && cls != 'possum') ||
+            (a.tense == Tense.futurum && const {'c1', 'c2', 'do', 'eo', 'sum', 'possum'}.contains(cls)));
     n(_activeEnding(a, oInFirst: oFirst));
   }
   if (v.kind == VerbKind.impersonale) n('v.kind.impers');
@@ -411,7 +452,10 @@ String _anomalousFinite(String fam, Analysis a) {
         _ => 'v.anom.sum.fut',
       };
     case 'possum':
-      return a.tense == Tense.praesens && a.mood == Mood.indicativus ? 'v.anom.possum.praes' : 'v.anom.possum';
+      // pot- + sum : les temps se lisent comme ceux de sum.
+      if (a.mood == Mood.subiunctivus) return 'v.anom.sum.subj';
+      if (a.tense == Tense.praesens) return 'v.anom.possum.praes';
+      return a.tense == Tense.imperfectum ? 'v.anom.sum.imperf' : 'v.anom.sum.fut';
     case 'eo':
       if (a.mood == Mood.subiunctivus) return 'v.anom.eo.subj';
       if (a.tense == Tense.praesens || a.mood == Mood.imperativus) return 'v.anom.eo.praes';
@@ -419,11 +463,11 @@ String _anomalousFinite(String fam, Analysis a) {
     case 'fero':
       return 'v.anom.fero.praes';
     case 'volo':
-      return 'v.anom.volo.praes';
+      return a.mood == Mood.subiunctivus ? 'v.anom.volo.subj' : 'v.anom.volo.praes';
     case 'nolo':
-      return 'v.anom.nolo';
+      return a.mood == Mood.subiunctivus ? 'v.anom.volo.subj' : 'v.anom.nolo';
     case 'malo':
-      return 'v.anom.malo';
+      return a.mood == Mood.subiunctivus ? 'v.anom.volo.subj' : 'v.anom.malo';
     case 'fio':
       return 'v.anom.fio';
     case 'do':
@@ -524,8 +568,10 @@ const _endingKeys = {
 /// Désinence de surface d'une forme nominale par rapport à son thème, ou null.
 String? _ending(String surface, String stem) {
   if (surface.startsWith(stem)) return surface.substring(stem.length);
-  if (stem.endsWith('i') && surface.startsWith('${stem.substring(0, stem.length - 1)}ī')) return 'ī';
-  if (stem.endsWith('u') && surface.startsWith('${stem.substring(0, stem.length - 1)}ū')) return 'ū';
+  // Thème à voyelle finale brève allongée dans la forme : manu- → manūs, fīli- → fīlī.
+  const long = {'a': 'ā', 'e': 'ē', 'i': 'ī', 'o': 'ō', 'u': 'ū'};
+  final last = stem.isEmpty ? '' : stem[stem.length - 1];
+  if (long.containsKey(last) && surface.startsWith('${stem.substring(0, stem.length - 1)}${long[last]}')) return surface.substring(stem.length - 1);
   return null;
 }
 
@@ -566,7 +612,7 @@ Set<String> nominalComponents(NominalForm f, Lexeme lexeme) {
     final d = nominalEndingNode(f.surface, lexeme.stem, isLemma: f.surface == lexeme.lemma, declension: lexeme.declension, neuter: lexeme.isNeuter);
     if (d != null) n(d);
     if (d == 'n.des.nom3') n('n.alt.nom3');
-    if (type == 'd2.er' && f.surface != lexeme.lemma) n('n.alt.syncopa');
+    if (type == 'd2.er' && f.surface != lexeme.lemma && stripMacrons(lexeme.stem) != stripMacrons(lexeme.lemma)) n('n.alt.syncopa');
     return out;
   }
   if (lexeme is AdjectiveEntry) {
@@ -594,7 +640,7 @@ Set<String> nominalComponents(NominalForm f, Lexeme lexeme) {
         d = nominalEndingNode(f.surface, stem, isLemma: f.surface == lexeme.lemma, declension: cls.startsWith('12') ? Declension.secunda : Declension.tertia, neuter: a.gender == Gender.neutrum);
         if (d == null && cls.startsWith('3')) d = _stripEnding(f.surface, const ['ibus', 'ium', 'ēs', 'is', 'em', 'ia', 'ī', 'e', 'a']) ?? 'n.des.nom3';
       } else if (a.degree == Degree.comparativus) {
-        d = _stripEnding(f.surface, const ['ibus', 'ōrum', 'um', 'ēs', 'is', 'em', 'ī', 'e', 'a', 'ius']);
+        d = _stripEnding(f.surface, const ['ibus', 'um', 'ēs', 'is', 'em', 'ī', 'e', 'a']);
         if (f.surface.endsWith('ior')) d = 'n.des.nom3';
       } else {
         d = _stripEnding(f.surface, const ['ōrum', 'ārum', 'ībus', 'īs', 'ōs', 'ās', 'ae', 'am', 'um', 'us', 'ā', 'ī', 'ō', 'a', 'e']);
@@ -608,6 +654,13 @@ Set<String> nominalComponents(NominalForm f, Lexeme lexeme) {
   if (lexeme is PronounEntry) {
     n(pronounNode(lexeme));
     final s = f.surface;
+    // La désinence du pronom, quand elle est celle des noms (quem, quōs, eā,
+    // quibus…) ; les formes propres (huius, huic, id) ont leurs nœuds ci-dessous.
+    final bare = lexeme.id == 'hic' && s.endsWith('c') ? s.substring(0, s.length - 1) : s;
+    if (!(a.casus == Casus.genetivus && a.number == Numerus.singularis) && !(a.casus == Casus.dativus && a.number == Numerus.singularis)) {
+      final d = _stripEnding(bare, const ['ārum', 'ōrum', 'ibus', 'īs', 'ōs', 'ās', 'ae', 'am', 'um', 'em', 'ā', 'ī', 'ō', 'a']);
+      if (d != null) n(d);
+    }
     if (a.casus == Casus.genetivus && a.number == Numerus.singularis && (s.endsWith('īus') || s.endsWith('ius'))) n('pron.des.ius');
     if (a.casus == Casus.dativus && a.number == Numerus.singularis && (s.endsWith('ī') || s.endsWith('ic') || s.endsWith('uic'))) n('pron.des.i');
     if (a.gender == Gender.neutrum && a.number == Numerus.singularis && (a.casus == Casus.nominativus || a.casus == Casus.accusativus) && s.endsWith('d')) n('pron.des.d');
@@ -673,7 +726,7 @@ String numeralNode(NumeralEntry n) {
   if (n.id == 'tres') return 'num.tres';
   if (n.id.startsWith('mille') || n.id == 'milia') return 'num.mille';
   if (n.kind == NumeralKind.substantivum) return 'num.mille';
-  return 'num.card.indecl';
+  return n.isIndeclinable ? 'num.card.indecl' : 'num.card.centeni';
 }
 
 /// Cases nominales dérivées pour les noms (par type de thème), les adjectifs

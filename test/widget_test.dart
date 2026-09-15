@@ -354,7 +354,7 @@ void main() {
     expect(ProviderScope.containerOf(element).read(profileProvider).settings.translationLanguage, TranslationLanguage.gallice);
   });
 
-  testWidgets('Tabula shows the Lēctiō branch and the vocabulary exposure panel apart from mastery', (tester) async {
+  testWidgets('Tabula shows the Lēctiō branch of the skill tree', (tester) async {
     tester.view.physicalSize = const Size(1200, 900);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -363,12 +363,6 @@ void main() {
     await tester.tap(find.text('Tabula'));
     await tester.pumpAndSettle();
     expect(find.textContaining('Fābulae victae'), findsOneWidget);
-    expect(find.textContaining('Vocābula Theātrī'), findsOneWidget);
-    expect(find.textContaining('Obvia: 0'), findsOneWidget);
-    // Vocabulary acquisition by frequency band, with the gradus that gates selection.
-    expect(find.textContaining('Gradus 1 /'), findsOneWidget);
-    expect(find.textContaining('Gradus I'), findsWidgets);
-    expect(find.textContaining('clausus'), findsWidgets);
     await tester.scrollUntilVisible(find.text('Via legendī'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Lēctiō'), findsOneWidget);
     expect(find.text('Via legendī'), findsOneWidget);

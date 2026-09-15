@@ -4,6 +4,10 @@
 /// filtre pour retrouver les cadres).
 library;
 
+import '../../arbor/lectio.dart';
+import '../../arbor/nominal_elementa.dart';
+import '../../arbor/syntaxis.dart';
+import '../../arbor/verbal_elementa.dart';
 import '../trial.dart';
 import 'frame_cards.dart';
 import 'frame_catalogue.dart';
@@ -22,6 +26,11 @@ class FrameTrials {
     final p = cardAddress.split('/');
     return '${p[0] == 'templum' ? 'tp' : 'th'}-${p[1]}-${p[2]}';
   }
+
+  /// Noms des nœuds authored, pour les exemples d'introduction.
+  static final Map<String, String> _nomina = {
+    for (final s in [...kVerbalElementa, ...kNominalElementa, ...kSyntaxis, ...kLectio]) s.id: s.nomen,
+  };
 
   static const _actors = ['comoedus', 'tragoedus', 'mimus', 'pantomimus', 'chorus', 'dominus'];
   static const _priests = ['augur', 'flamen'];
@@ -45,15 +54,15 @@ class FrameTrials {
           id: trialId(c.id),
           name: c.name,
           subtitle: c.subtitle,
-          skillIds: [production ? 'p' : 'l'],
+          skillIds: ['${production ? 'p' : 'l'}.${s.id}.$cardId'],
           price: c.price,
           prerequisites: [for (final r in c.requires) trialId(r)],
           filter: FrameFilter(c.id),
           dimensions: [cardId == 'vocabula' ? Dimension.vocabulum : (production ? Dimension.productio : Dimension.sensus)],
           intro: production
-              ? '${c.name}. Sententiam Gallicam Latīnē redde: ēlige fōrmam aut sententiam quae sēnsum servat.'
-              : '${c.name}. Sententiās Latīnās lege et interpretātiōnem Gallicam fidēlem ēlige.',
-          examples: [for (final n in nodes.take(3)) n],
+              ? 'Sententiam Gallicam Latīnē redde: ēlige fōrmam aut sententiam quae sēnsum servat.'
+              : 'Sententiās Latīnās lege et interpretātiōnem Gallicam fidēlem ēlige.',
+          examples: [for (final n in nodes) if (_nomina[n] != null && !n.startsWith('lect.versio.')) _nomina[n]!],
           opponentId: opponents[i++ % opponents.length],
           activity: activity,
           questionsToWin: c.target,

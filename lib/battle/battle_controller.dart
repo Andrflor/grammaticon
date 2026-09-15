@@ -260,6 +260,11 @@ class BattleController extends Notifier<BattleState?> {
       recall: save.errata.recall(s.seed),
       needs: ArborNeeds(ref.read(arborProvider), save.arbor, now, cfg: cfg),
     );
+    if (q == null) {
+      // Plus rien à demander (carte sans contenu) : l'épreuve se termine sans
+      // rejouer la question précédente.
+      return s.copyWith(clearQuestion: true, phase: s.enemyHp <= 0 ? BattlePhase.victory : BattlePhase.defeat, helpUsed: false, explanationOpen: false);
+    }
     return s.copyWith(question: q, helpUsed: false, explanationOpen: false);
   }
 

@@ -97,15 +97,22 @@ Les identifiants sont stables : ce sont les clés de la sauvegarde.
 - **Maîtrise** : une estimation par nœud ; les cases L2 et les constructions L3 agrègent leurs composants (`pars`), la Tabula montre les agrégats. La sauvegarde ne contient que des compteurs par nœud.
 - **Cartes** : une carte est un ensemble de nœuds cibles. L'ordre des cartes se déduit de `requirit` ; il n'est plus écrit à la main.
 
-## 8. Fichiers du dossier
+## 8. Où vit l'arbre
 
-| Fichier | Couche | Contenu | Écrit par |
-|---|---|---|---|
-| `10_notiones.md` | L0 | catégories grammaticales | main |
-| `20_nominal.md` | L1 (+ règles L2) | thèmes, désinences casuelles, adjectifs, pronoms, numéraux, règles de dérivation des cases et des syncrétismes | main |
-| `30_verbal.md` | L1 (+ règles L2) | radicaux, marqueurs, désinences, formes nominales, verbes anomaux, déponents, périphrastiques, règles de dérivation des cases | main |
-| `40_syntaxis.md` | L3 | fonctions, accord, propositions, constructions | main |
-| `50_lexicon.md` | L4 | règles de constitution des nœuds lexicaux depuis les inventaires existants (`doc/pedagogy/contracts/*-lexical-candidates.json`), procédés de formation | cœur main |
-| `60_lectio.md` | L5 | opérations de lecture, prosodie, écriture | main |
+L'arbre est écrit **en Dart**, pas en Markdown : les nœuds sont des constantes typées, la validation tourne dans les tests, et le moteur le charge sans étape de génération.
 
-Chaque fichier se termine par le compte de ses nœuds et la liste des confusions inter-domaines qu'il déclare.
+| Fichier | Couche | Contenu |
+|---|---|---|
+| `lib/arbor/skill.dart` | — | modèle : `Skill`, `Confusio`, `Modus`, `Dimensio`, `Stratum` |
+| `lib/arbor/notiones.dart` | L0 | catégories grammaticales |
+| `lib/arbor/verbal_elementa.dart` | L1 | thèmes, voyelles, marqueurs, désinences, composés, alternances, genres de verbes, anomaux |
+| `lib/arbor/nominal_elementa.dart` | L1 | thèmes, désinences par surface, genre, adjectifs et degrés, adverbes, pronoms, numéraux |
+| `lib/arbor/cellae.dart` | L2 | dérivation des cases et fonctions de composition `verbalComponents` / `nominalComponents` |
+| `lib/arbor/syntaxis.dart` | L3 | fonctions des cas, accord, ordre, propositions, constructions |
+| `lib/arbor/lectio.dart` | L5 | lecture, traduction, écriture, vocabulaire |
+| `lib/arbor/arbor.dart` | L4 + graphe | nœuds lexicaux, index des arêtes, syncrétismes dérivés, `validate()` |
+| `lib/arbor/diagnosis.dart` | — | diagnostic d'un distracteur par différence de maillons |
+| `lib/arbor/evidence.dart`, `needs.dart` | — | évidence par nœud, hypothèses, poids de sélection |
+| `lib/arbor/oracle.dart` | — | équivalence avec les banques de référence |
+
+`test/arbor/arbor_test.dart` refuse tout nœud sans source, toute référence inconnue, tout cycle de prérequis et tout maillon isolé.

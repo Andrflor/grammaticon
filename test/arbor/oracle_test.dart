@@ -45,7 +45,7 @@ void main() {
         sample.add(lines[i]);
       }
       final report = oracle.run(sample.map((l) => (jsonDecode(l) as Map).cast<String, Object?>()));
-      File('doc/arbor/coverage/$place-sample.md').writeAsStringSync(report.markdown(place, sampled: true));
+      expect(report.markdown(place, sampled: true), contains('Couverture'));
       // ignore: avoid_print
       print(report.summary(place));
       expect(report.patterns, greaterThan(1000));

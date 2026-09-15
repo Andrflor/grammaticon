@@ -5,6 +5,7 @@
 library;
 
 import 'forum/forum_trials.dart';
+import 'frames/frame_catalogue.dart';
 import 'tm_steps.dart';
 
 enum SkillBranch { coniugationes, temporaModi, mixta, declinationes, forum, lectio }
@@ -177,7 +178,27 @@ class Skills {
       list.add(Skill(AmboLadder.skillId(step), step.name, parent: AmboLadder.parentSkill, branch: SkillBranch.temporaModi, hint: step.hint));
     }
     list.addAll(_lectio);
+    list.addAll(_frameSkills());
     return List.unmodifiable(list);
+  }
+
+  /// Une compétence par section et par carte du Theatrum (`l.<section>.<carte>`)
+  /// et du Templum (`p.<section>.<carte>`) : la progression de chaque carte
+  /// est la sienne, la section et le lieu l'agrègent.
+  static List<Skill> _frameSkills() {
+    final out = <Skill>[];
+    for (final (root, sections, cards) in [('l', kTheatrumSections, kTheatrumCards), ('p', kTemplumSections, kTemplumCards)]) {
+      final byId = {for (final c in cards) c.id: c};
+      for (final s in sections) {
+        out.add(Skill('$root.${s.id}', s.name, parent: root, branch: SkillBranch.lectio));
+        for (final cardId in s.cards) {
+          final c = byId.values.where((c) => c.section == s.id && c.card == cardId).firstOrNull ?? byId['${root == 'l' ? 'theatrum' : 'templum'}/${s.id}/$cardId'];
+          if (c == null) continue;
+          out.add(Skill('$root.${s.id}.$cardId', c.name, parent: '$root.${s.id}', branch: SkillBranch.lectio, hint: c.subtitle));
+        }
+      }
+    }
+    return out;
   }
 
   static final Map<String, Skill> _byId = {for (final s in all) s.id: s};

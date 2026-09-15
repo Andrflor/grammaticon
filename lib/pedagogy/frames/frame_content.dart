@@ -11,6 +11,7 @@ library;
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart' show FlutterError;
 import 'package:flutter/services.dart' show AssetBundle;
 
 class FrameSegment {
@@ -117,7 +118,7 @@ class FrameInstance {
   final List<String> choices;
 
   /// Texte affiché : les segments, le trou marqué […].
-  String get surface => content.map((s) => s.type == 'gap' ? '[…]' : s.template).join().trim();
+  String get surface => content.map((s) => s.type == 'gap' ? '[…]' : s.template).join().replaceAll(RegExp(r' *\n *'), '\n').trim();
 }
 
 class FrameLibrary {
@@ -132,12 +133,13 @@ class FrameLibrary {
   static Future<FrameLibrary> load(AssetBundle bundle, {List<String> places = const ['theatrum', 'templum']}) async {
     final all = <Frame>[];
     for (final p in places) {
+      String text;
       try {
-        final text = await bundle.loadString('assets/arbor/frames/$p.json');
-        all.addAll(parse(text).frames);
-      } catch (_) {
-        // Un lieu sans cadres embarqués n'a simplement pas de contenu.
+        text = await bundle.loadString('assets/arbor/frames/$p.json');
+      } on FlutterError {
+        continue; // lieu sans cadres embarqués : pas de contenu, pas d'erreur
       }
+      all.addAll(parse(text).frames); // une erreur de format doit remonter
     }
     return FrameLibrary(all);
   }

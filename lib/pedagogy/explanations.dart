@@ -49,6 +49,7 @@ class Explanations {
       case Dimension.personaNumerus:
         return _personHint(a);
       case Dimension.vox:
+      case Dimension.voxSensus:
         if (a.effectiveSemanticVoice != a.voice) return 'Fōrma passīva, sēnsus āctīvus: verbum dēpōnēns.';
         return a.voice == Voice.passivum ? 'Dēsinentiae -r, -ris, -tur, -mur, -minī, -ntur passīvum ostendunt.' : 'Dēsinentiae -ō/-m, -s, -t, -mus, -tis, -nt āctīvum ostendunt.';
       case Dimension.modus:

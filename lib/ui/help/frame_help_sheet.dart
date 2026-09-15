@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../app/providers.dart';
+import '../../arbor/skill.dart';
 import '../../app/theme.dart';
 import '../../pedagogy/frames/frame_question_source.dart';
 import '../../pedagogy/question.dart';
@@ -15,7 +16,7 @@ import '../widgets/roman_widgets.dart';
 Future<void> showFrameHelpSheet(BuildContext context, WidgetRef ref, {required Question q, required bool revealForm, String? note}) {
   final p = q.frame;
   final arbor = ref.read(arborProvider);
-  final nodes = [for (final id in p.nodes) arbor[id]].whereType<Object>().toList();
+  final nodes = [for (final id in p.nodes) arbor[id]].whereType<Skill>().toList();
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
@@ -39,7 +40,7 @@ Future<void> showFrameHelpSheet(BuildContext context, WidgetRef ref, {required Q
             for (final n in nodes)
               Padding(
                 padding: const EdgeInsets.only(bottom: 4),
-                child: Text('• ${(n as dynamic).nomen}', style: G.body(15)),
+                child: Text('• ${n.nomen}', style: G.body(15)),
               ),
             if (note != null && note.isNotEmpty) ...[
               const SizedBox(height: 12),

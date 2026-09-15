@@ -49,7 +49,9 @@ class FrameQuestionSource implements QuestionSource {
     // Un cadre peu joué pèse plus ; les besoins de l'arbre (maillons faibles,
     // hypothèses ouvertes) s'appliquent à la carte entière puisque tous ses
     // cadres visent les mêmes nœuds.
-    final weights = [for (final f in frames) (1.0 / (1 + exposure.seenCount(f.id))) * (recentSurfaces.contains(f.id) ? 0.2 : 1.0)];
+    // Les cadres joués récemment dans ce combat (recentLemmas porte leurs
+    // identifiants) reculent ; un cadre peu joué pèse plus.
+    final weights = [for (final f in frames) (1.0 / (1 + exposure.seenCount(f.id))) * (recentLemmas.contains(f.id) ? 0.15 : 1.0)];
     final frame = weightedPick(frames, weights, rng);
     final inst = frame.instantiate(rng);
     final choices = <Choice>[];

@@ -43,17 +43,26 @@ class ArborEvidence {
     final recs = Map<String, SkillRecord>.from(records);
     final hyps = Map<String, DateTime>.from(hypotheses);
     final obs = Observation(at: now, correct: correct, lemmaId: lemmaId, quality: quality, trialId: trialId);
+    // Les cases L2 et les lexèmes ne portent pas d'historique propre : leur état
+    // se lit sur leurs maillons ; on évite ainsi des milliers d'enregistrements.
+    // Les paradigmes explicites (pronoms, numéraux) se suivent case par case.
+    bool tracked(String id) => arbor.nodes.containsKey(id) && !id.startsWith('lex.') && (!id.startsWith('cella.') || id.startsWith('cella.pron.') || id.startsWith('cella.num.'));
     if (correct) {
-      for (final id in credited.where(arbor.nodes.containsKey)) {
+      for (final id in credited.where(tracked)) {
         recs[id] = of(id).apply(obs, cfg);
         if (quality == AnswerQuality.autonoma) hyps.remove(id);
       }
     } else {
-      final targets = diagnosis.observedElementa.where(arbor.nodes.containsKey).toSet();
+      // Le maillon non reconnu, et le maillon que le joueur a cru voir : les
+      // deux sont fragiles (prendre amābat pour un présent, c'est aussi ne pas
+      // savoir à quoi ressemble un présent).
+      final targets = {...diagnosis.observedElementa, ...diagnosis.confusedWith.where((id) => !id.startsWith('not.'))}.where(tracked).toSet();
       for (final id in targets) {
         recs[id] = of(id).apply(obs, cfg);
         hyps.putIfAbsent(id, () => now);
-        for (final pre in arbor.prerequisitesOf(id)) {
+        // Seuls les prérequis directs deviennent suspects : on redescend d'un
+        // cran à la fois, et plus bas seulement si eux aussi échouent.
+        for (final pre in arbor[id]?.requirit ?? const <String>[]) {
           final r = recs[pre] ?? of(pre);
           if (r.tier(cfg).index < MasteryTier.familiaris.index) hyps.putIfAbsent(pre, () => now);
         }

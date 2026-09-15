@@ -15,6 +15,8 @@ import 'linguistics/engine/noun_analyzer.dart';
 import 'linguistics/lexicon/nouns.dart';
 import 'linguistics/lexicon/verbs.dart';
 import 'pedagogy/reading/reading_content.dart';
+import 'arbor/arbor.dart';
+import 'linguistics/lexicon/forum_lexicon.dart';
 import 'pedagogy/frames/frame_content.dart';
 import 'persistence/save_repository.dart';
 
@@ -25,7 +27,16 @@ Future<void> main() async {
   final analyzer = Analyzer(kVerbs, Conjugator());
   final nounAnalyzer = NounAnalyzer(kNouns, const Declinator());
   // Curated Theatrum content (Latin passages + shipped translation languages).
-  final reading = await ReadingLibrary.load(rootBundle);
+  // L'arbre des compétences et le diagnostic : construits ici plutôt qu'au
+  // premier clic d'une épreuve.
+  final nominalAnalyzer = buildNominalAnalyzer(nouns: nounAnalyzer);
+  final arbor = Arbor.standard(analyzer: analyzer, nominal: nominalAnalyzer);
+  ReadingLibrary reading;
+  try {
+    reading = await ReadingLibrary.load(rootBundle);
+  } catch (_) {
+    reading = ReadingLibrary.empty();
+  }
   final frames = await FrameLibrary.load(rootBundle);
   final repo = SaveRepository(PrefsSaveStore());
   final save = await repo.load();
@@ -40,6 +51,8 @@ Future<void> main() async {
     ProviderScope(
       overrides: [
         analyzerProvider.overrideWithValue(analyzer),
+        nominalAnalyzerProvider.overrideWithValue(nominalAnalyzer),
+        arborProvider.overrideWithValue(arbor),
         nounAnalyzerProvider.overrideWithValue(nounAnalyzer),
         readingLibraryProvider.overrideWithValue(reading),
         frameLibraryProvider.overrideWithValue(frames),

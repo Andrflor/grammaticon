@@ -69,20 +69,38 @@ class Diagnostician {
         if (s.functio != null) out.add(_functioNode(s.functio!.key, s));
         if (s.constructio != null) out.addAll(_constructioNodes(s.constructio!.key));
         if (s.relatio != null) out.addAll({s.relatio!.key == 'subiectum' ? 'syn.pron.reflexivum' : 'syn.pron.is.anaphora', 'pron.suus_eius'});
-        if (s.head != null) out.addAll({'syn.concordia.adiectivum', 'syn.concordia.distans'});
+        if (s.head != null) out.addAll(p.lexeme is PronounEntry ? {'syn.concordia.relativum'} : {'syn.concordia.adiectivum', 'syn.concordia.distans'});
+        // Une surface ambiguë hors contexte : la lire juste, c'est trancher par le contexte.
+        final readings = {for (final f in p.analyses) if (f.analysis.lemmaId == p.lexeme.id) f.analysis.selector};
+        if (readings.length > 1) out.add('lect.via.ambiguitas');
       }
       return out;
     }
     if (p is ReadingQuestionPayload) return {_readingSkill(p.entry.item.skillId, p.entry.item.distinctions)};
     if (p is FrameQuestionPayload) {
       final out = p.nodes.toSet();
-      // Choix latins d'un seul mot : la forme correcte apporte ses maillons.
-      final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
-      if (accepted != null) out.addAll(_wordComponents(accepted));
+      // Templum, hors vocabulaire : un choix latin d'un mot apporte ses maillons
+      // (les choix du Theatrum sont français ; un mot de vocabulaire n'est pas
+      // une forme à analyser).
+      if (_frameMorphology(p)) {
+        final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
+        if (accepted != null) out.addAll(_wordComponents(accepted));
+      }
       return out;
     }
     return {};
   }
+
+  /// Identifiant de la case du paradigme représentatif pour une analyse d'un lexème.
+  static String? _nominalCellId(Lexeme lexeme, NominalAnalysis a) => switch (lexeme) {
+    NounEntry n => 'cella.n.${nounStemType(n)}.${a.selector}',
+    AdjectiveEntry adj => a.degree == Degree.positivus ? 'cella.adj.${adjectiveClassKey(adj)}.${a.selector}' : 'cella.adj.${a.degree.key}.${a.selector}',
+    PronounEntry p => 'cella.pron.${p.id}.${a.selector}',
+    NumeralEntry n => 'cella.num.${n.id}.${a.selector}',
+    _ => null,
+  };
+
+  static bool _frameMorphology(FrameQuestionPayload p) => p.frame.place == 'templum' && !p.frame.isVocabulary;
 
   /// Maillons d'un mot latin isolé (une seule analyse acceptée), sinon rien.
   Set<String> _wordComponents(String label) {
@@ -143,8 +161,44 @@ class Diagnostician {
     final a = targetComponents(q);
     final b = chosenComponents(q, chosen);
     if (b == null) return const Diagnosis();
-    return Diagnosis(observed: a.difference(b), confusedWith: b.difference(a));
+    var observed = a.difference(b);
+    // Distracteur « impossible » (aucune forme ne lui correspond, l'analyse
+    // synthétique retombe sur la cible) : ce que le joueur n'a pas reconnu,
+    // c'est le maillon de la cible qui porte la dimension demandée.
+    if (observed.every((id) => id.startsWith('not.') || id.startsWith('cella.') || id.startsWith('lex.'))) {
+      final families = kDimensionFamilies[q.dimension] ?? const <String>[];
+      observed = {...observed, ...a.where((id) => !id.startsWith('not.') && !id.startsWith('cella.') && !id.startsWith('lex.') && families.any(id.startsWith))};
+    }
+    return Diagnosis(observed: observed, confusedWith: b.difference(a));
   }
+
+  /// Familles de maillons que chaque dimension met en jeu (préfixes d'identifiants).
+  static const Map<Dimension, List<String>> kDimensionFamilies = {
+    Dimension.tempus: ['v.sig.', 'v.comp.aux.', 'v.anom.', 'v.nom.', 'v.thema.perf', 'v.kind.def'],
+    Dimension.tempusModus: ['v.sig.', 'v.comp.', 'v.anom.', 'v.nom.'],
+    Dimension.tempusSensus: ['v.kind.def'],
+    Dimension.modus: ['v.sig.', 'v.anom.', 'v.nom.', 'v.comp.', 'v.des.imp'],
+    Dimension.persona: ['v.des.', 'pron.'],
+    Dimension.numerus: ['v.des.', 'n.des.', 'pron.des.', 'num.'],
+    Dimension.personaNumerus: ['v.des.'],
+    Dimension.vox: ['v.des.', 'v.sig.inf', 'v.nom.', 'v.comp.', 'v.kind.', 'v.anom.fio'],
+    Dimension.voxSensus: ['v.kind.', 'v.anom.fio', 'v.des.', 'v.comp.'],
+    Dimension.coniugatio: ['v.thema.praes.', 'v.voc.', 'v.anom.'],
+    Dimension.lemma: ['lex.'],
+    Dimension.forma: ['v.nom.', 'v.comp.', 'v.sig.', 'pron.', 'num.'],
+    Dimension.casus: ['n.des.', 'pron.des.', 'n.thema.proprium', 'syn.', 'lect.via.ambiguitas'],
+    Dimension.genus: ['n.des.', 'n.genus.', 'adj.', 'syn.', 'lect.via.ambiguitas'],
+    Dimension.genusNumerus: ['n.des.', 'pron.des.', 'syn.', 'lect.via.ambiguitas'],
+    Dimension.declinatio: ['n.thema.'],
+    Dimension.classis: ['adj.classis.'],
+    Dimension.gradus: ['adj.gradus.', 'adj.adv.'],
+    Dimension.functio: ['syn.'],
+    Dimension.constructio: ['syn.', 'n.thema.proprium'],
+    Dimension.relatio: ['syn.pron.', 'pron.'],
+    Dimension.quodNomen: ['syn.concordia.'],
+    Dimension.correlativum: ['pron.corr'],
+    Dimension.valor: ['num.'],
+  };
 
   /// Maillons sur lesquels repose une réponse [chosen] (correcte ou non).
   Set<String>? chosenComponents(Question q, String chosen) {
@@ -153,8 +207,17 @@ class Diagnostician {
     if (p is ForumQuestionPayload) return _nominalChosen(q, p, chosen);
     if (p is ReadingQuestionPayload) return _readingChosen(p, chosen);
     if (p is FrameQuestionPayload) {
-      final label = q.choices.where((c) => c.value == chosen).map((c) => c.label).firstOrNull;
-      final morph = label == null ? const <String>{} : _wordComponents(label);
+      var morph = const <String>{};
+      if (_frameMorphology(p)) {
+        final label = q.choices.where((c) => c.value == chosen).map((c) => c.label).firstOrNull;
+        final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
+        final m = label == null ? const <String>{} : _wordComponents(label);
+        final a = accepted == null ? const <String>{} : _wordComponents(accepted);
+        // Une autre forme du même lexème : la différence est morphologique ; un
+        // autre mot : c'est le lexique, pas la morphologie, qui est en cause.
+        final sameLemma = m.any((c) => c.startsWith('lex.')) && m.where((c) => c.startsWith('lex.')).toSet().containsAll(a.where((c) => c.startsWith('lex.')));
+        morph = sameLemma ? m : {...m.where((c) => c.startsWith('lex.'))};
+      }
       // Le nœud de la carte est ce qui a manqué ; ce que le choix repose sur
       // d'autre (forme fautive, geste de fidélité) est la confusion.
       return {...morph, 'lect.versio.fidelitas'};
@@ -170,15 +233,19 @@ class Diagnostician {
       case Dimension.coniugatio:
         final cls = chosen == 'c3io' ? 'c3io' : chosen;
         return {..._verb(target, v)}
-          ..remove('v.thema.praes.${verbClassKey(v)}')
-          ..remove(_vocalisFor(verbClassKey(v)))
+          ..removeWhere((c) => c.startsWith('v.thema.praes.') || c.startsWith('not.coniugatio.') || c.startsWith('v.voc.') || c == anomalousNode(verbClassKey(v)))
           ..add('v.thema.praes.$cls')
-          ..add(_vocalisFor(cls));
+          ..add(_vocalisFor(cls))
+          ..add('not.coniugatio.${cls == 'c3io' ? '3io' : cls.substring(1)}');
       case Dimension.tempusSensus:
         return {..._verb(target, v)}
           ..remove('v.kind.def')
           ..removeWhere((c) => c.startsWith('not.tempus.'))
           ..add('not.tempus.$chosen');
+      case Dimension.vox || Dimension.voxSensus when verbClassKey(v) == 'fio':
+        // fīō est le passif de faciō : le prendre pour un actif, c'est ignorer
+        // ce rapport, non une désinence.
+        return {..._verb(target, v)}..remove('v.anom.fio')..removeWhere((c) => c.startsWith('not.vox.'))..add('not.vox.$chosen');
       case Dimension.voxSensus:
         if (!v.isDeponent && !v.isSemiDeponent) {
           final want = chosen == 'act' ? Voice.activum : Voice.passivum;
@@ -202,7 +269,8 @@ class Diagnostician {
         // Une forme de contraste réelle si elle existe ; sinon l'analyse
         // synthétique : les maillons se calculent même pour une case vide.
         final contrast = verbs.contrastForm(q, chosen);
-        if (contrast != null && contrast.analysis.lemmaId == v.id) return _verb(contrast.analysis, v);
+        final sameSlot = contrast != null && contrast.analysis.lemmaId == v.id && (q.dimension == Dimension.persona || q.dimension == Dimension.numerus || q.dimension == Dimension.personaNumerus || (contrast.analysis.person == target.person && contrast.analysis.number == target.number));
+        if (sameSlot) return _verb(contrast.analysis, v);
         final synthetic = _syntheticAnalysis(target, q.dimension, chosen);
         if (synthetic != null) {
           final comps = _synthetic(synthetic, v);
@@ -227,16 +295,26 @@ class Diagnostician {
   dynamic _syntheticAnalysis(dynamic t, Dimension d, String chosen) {
     switch (d) {
       case Dimension.persona:
-        return t.copyWith(person: Person.fromKey(chosen));
+        final person = Person.fromKey(chosen);
+        // Un impératif pris pour une 1re ou 3e personne : c'est un indicatif
+        // présent de cette personne qui a été lu.
+        if (t.mood == Mood.imperativus && person != Person.secunda) return t.copyWith(mood: Mood.indicativus, tense: Tense.praesens, person: person);
+        return t.copyWith(person: person);
       case Dimension.numerus:
         return t.copyWith(number: Numerus.fromKey(chosen));
       case Dimension.personaNumerus:
         final k = chosen.split('.');
-        return t.copyWith(person: Person.fromKey(k[0]), number: Numerus.fromKey(k[1]));
+        final person = Person.fromKey(k[0]);
+        if (t.mood == Mood.imperativus && person != Person.secunda) return t.copyWith(mood: Mood.indicativus, tense: Tense.praesens, person: person, number: Numerus.fromKey(k[1]));
+        return t.copyWith(person: person, number: Numerus.fromKey(k[1]));
       case Dimension.tempus:
         final tense = Tense.fromKey(chosen);
         if (t.mood == Mood.participium) {
-          return t.copyWith(tense: tense, voice: tense == Tense.perfectum ? Voice.passivum : Voice.activum);
+          // Le participe n'a que trois temps : un temps « impossible » est lu
+          // comme le participe le plus proche (imparfait → présent, plus-que-
+          // parfait / futur antérieur → parfait).
+          final near = switch (tense) { Tense.imperfectum => Tense.praesens, Tense.plusquamperfectum || Tense.futurumExactum => Tense.perfectum, _ => tense };
+          return t.copyWith(tense: near, voice: near == Tense.perfectum ? Voice.passivum : Voice.activum);
         }
         // Un composé (amātus erat) pris pour un temps du système du présent :
         // c'est une forme simple qui a été lue.
@@ -244,7 +322,13 @@ class Diagnostician {
         return t.copyWith(tense: tense);
       case Dimension.modus:
         final mood = Mood.fromKey(chosen);
-        if (t.composite && (mood.isNominal || mood == Mood.imperativus)) return t.copyWith(mood: mood, composite: false, tense: mood == Mood.imperativus ? Tense.praesens : t.tense);
+        if (t.composite && (mood.isNominal || mood == Mood.imperativus)) return t.copyWith(mood: mood, composite: false, periphrasis: Periphrasis.nulla, tense: mood == Mood.imperativus ? Tense.praesens : t.tense);
+        // Une forme nominale ou un infinitif pris pour un mode personnel : la
+        // forme lue est une 3e personne du singulier, au temps le plus proche.
+        if (mood.isFinite && (t.mood.isNominal || t.mood == Mood.infinitivus)) {
+          final tense = mood == Mood.imperativus ? Tense.praesens : (mood == Mood.subiunctivus && (t.tense == Tense.futurum || t.tense == null) ? Tense.praesens : (t.tense ?? Tense.praesens));
+          return t.copyWith(mood: mood, tense: tense, person: t.person ?? Person.tertia, number: t.number ?? Numerus.singularis, composite: false);
+        }
         return t.copyWith(mood: mood);
       case Dimension.tempusModus:
         final (m, te) = QuestionGenerator.tempusModusOf(chosen);
@@ -269,7 +353,8 @@ class Diagnostician {
   }
 
   Set<String>? _nominalChosen(Question q, ForumQuestionPayload p, String chosen) {
-    final base = _nominal(p.target, p.lexeme);
+    // Même base que la cible (syntagme compris) : seule la dimension choisie change.
+    final base = targetComponents(q);
     switch (q.dimension) {
       case Dimension.genus when p.lexeme is NounEntry:
         // Le genre d'un nom ne se lit pas sur la désinence : c'est la règle de
@@ -284,7 +369,14 @@ class Diagnostician {
       case Dimension.gradus:
       case Dimension.analysis:
         final contrast = forum.contrastForm(q, chosen);
-        if (contrast != null) return _nominal(contrast, p.lexeme);
+        // Dans un syntagme, la lecture fautive d'un cas est d'abord une erreur
+        // sur la fonction ou la construction imposée par le contexte : ces
+        // nœuds restent à observer et ne passent pas du côté du choix.
+        final extra = base.difference(_nominal(p.target, p.lexeme)).where((c) => !c.startsWith('syn.')).toSet();
+        // Même surface que la cible : l'erreur est de n'avoir pas tranché
+        // l'ambiguïté par le contexte, pas une désinence.
+        if (contrast != null && contrast.surface == p.target.surface) extra.remove('lect.via.ambiguitas');
+        if (contrast != null) return _nominal(contrast, p.lexeme)..addAll(extra);
         final a = p.target.analysis;
         final synthetic = switch (q.dimension) {
           Dimension.casus => a.copyWith(casus: Casus.fromKey(chosen)),
@@ -295,7 +387,14 @@ class Diagnostician {
           _ => null,
         };
         if (synthetic == null) return _genericChosen(q, base, chosen);
-        return _nominal(NominalForm(p.target.surface, synthetic), p.lexeme);
+        // Case inexistante pour ce lexème (pluriel d'un singulare tantum…) :
+        // les maillons attendus sont ceux de la case du paradigme représentatif.
+        final cell = _nominalCellId(p.lexeme, synthetic);
+        final parts = cell == null ? null : arbor.partes[cell];
+        if (parts != null) {
+          return {...parts, ...base.where((c) => c.startsWith('lex.')), ...extra}..removeWhere((c) => c.startsWith('n.des.') && parts.any((x) => x.startsWith('n.des.')) && !parts.contains(c));
+        }
+        return _nominal(NominalForm(p.target.surface, synthetic), p.lexeme)..addAll(extra);
       case Dimension.declinatio:
         return {...base}
           ..removeWhere((c) => c.startsWith('n.thema.') || c.startsWith('not.declinatio.'))
@@ -310,7 +409,7 @@ class Diagnostician {
         if (other == null) return null;
         final form = forum.analyzer.primary(other.id, p.target.analysis.selector) ?? forum.analyzer.formsOf(other.id).firstOrNull;
         if (form == null) return {...base}..removeWhere((c) => c.startsWith('lex.'));
-        return _nominal(form, other);
+        return _nominal(form, other)..addAll(base.difference(_nominal(p.target, p.lexeme)));
       case Dimension.functio:
         return _swap(base, _functioNodes(p.syntagma), _functioNode(chosen, p.syntagma));
       case Dimension.constructio:
@@ -320,12 +419,17 @@ class Diagnostician {
       case Dimension.quodNomen:
         // Choisir un autre nom : l'accord a été fait avec le voisin, pas avec le
         // nom qui porte les mêmes genre, nombre et cas.
-        return {...base}..remove('syn.concordia.distans')..remove('syn.concordia.adiectivum');
+        return {...base}..remove('syn.concordia.distans')..remove('syn.concordia.adiectivum')..remove('syn.concordia.relativum');
       case Dimension.correlativum:
         return {...base}..removeWhere((c) => c.startsWith('lex.'))..add('pron.corr');
       case Dimension.valor:
         return {...base}..removeWhere((c) => c.startsWith('num.') || c.startsWith('lex.'))..add('num.card.indecl');
       case Dimension.forma:
+        if (p.lexeme is NumeralEntry || p.lexeme is AdjectiveEntry) {
+          return {...base}
+            ..removeWhere((c) => c.startsWith('num.') || c.startsWith('lex.') || c.startsWith('adj.classis.'))
+            ..add(chosen == 'indeclinabile' ? 'num.card.indecl' : 'num.card.centeni');
+        }
         return {...base}..removeWhere((c) => c.startsWith('pron.') || c.startsWith('lex.'))..add(_pronounKindNode(chosen));
       case Dimension.persona:
         return {...base}..removeWhere((c) => c.startsWith('not.persona.') || c.startsWith('pron.'))..add('not.persona.$chosen');
@@ -453,8 +557,8 @@ class Diagnostician {
     'sub-abl' => {'syn.abl.locus', 'syn.praep.sub', 'syn.praep.in.duplex'},
     'in-acc' => {'syn.acc.directio', 'syn.praep.in', 'syn.praep.in.duplex'},
     'sub-acc' => {'syn.acc.directio', 'syn.praep.sub', 'syn.praep.in.duplex'},
-    'mille-adi' => {'syn.numeri.mille'},
-    'milia-gen' => {'syn.gen.quantitatis', 'syn.numeri.mille'},
+    'mille-adi' => {'syn.numeri.mille', 'syn.concordia.adiectivum', 'num.mille'},
+    'milia-gen' => {'syn.numeri.mille', 'syn.gen.quantitatis', 'num.mille'},
     'loc' => {'syn.locus.locativus', 'n.thema.proprium'},
     'acc-motus' => {'syn.acc.directio', 'n.thema.proprium'},
     'abl-sep' => {'syn.abl.separatio', 'n.thema.proprium'},
