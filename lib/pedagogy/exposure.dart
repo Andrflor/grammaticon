@@ -48,11 +48,13 @@ class LemmaExposure {
 /// What a resolved question exposes: the item played, its passage and the
 /// lemmas met, with the one the distinction turned on.
 class ExposureNote {
-  const ExposureNote({required this.itemId, required this.passageId, required this.lemmas, required this.targetLemma});
+  const ExposureNote({required this.itemId, required this.passageId, required this.lemmas, required this.targetLemma, this.groupId});
   final String itemId;
   final String passageId;
   final List<String> lemmas;
   final String targetLemma;
+  /// Optional selection family; distinct from an exact question's exposure.
+  final String? groupId;
 }
 
 class ExposureLedger {
@@ -77,6 +79,9 @@ class ExposureLedger {
     }
     final i = Map<String, int>.from(items);
     i[note.itemId] = (i[note.itemId] ?? 0) + 1;
+    if (note.groupId != null && note.groupId != note.itemId) {
+      i[note.groupId!] = (i[note.groupId!] ?? 0) + 1;
+    }
     return ExposureLedger(lemmas: l, items: i);
   }
 

@@ -10,6 +10,7 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../arbor/skill.dart';
 import '../../pedagogy/frames/frame_question_source.dart';
+import '../../pedagogy/frames/frame_lexicon.dart';
 import '../../pedagogy/frames/frame_trials.dart';
 import '../../pedagogy/question.dart';
 import '../widgets/roman_widgets.dart';
@@ -24,7 +25,10 @@ Future<void> showFrameHelpSheet(BuildContext context, WidgetRef ref, {required Q
   final card = FrameTrials.cardsById[p.frame.card];
   final blocks = library.helpFor(p.frame);
   final paragraphs = <String>{...?card?.lesson, ...blocks.where((b) => b.type == 'text').map((b) => b.text)}.toList();
-  final vocabulary = <String>{...blocks.where((b) => b.type == 'example').map((b) => b.text), ...?card?.examples}.toList();
+  final vocabulary = p.instance.vocabulary.isEmpty
+      ? <String>{...?card?.examples}.toList()
+      : [for (final word in p.instance.vocabulary)
+          if (kFrameLexemes[word] case final entry?) '${entry.latin} — ${entry.french}'];
   return showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,

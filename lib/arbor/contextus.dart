@@ -23,6 +23,7 @@ library;
 
 import '../pedagogy/frames/frame_cards.dart';
 import '../pedagogy/frames/frame_catalogue.dart';
+import '../pedagogy/frames/frame_lexicon.dart';
 import 'skill.dart';
 
 const _intellectus = 'lect.intellectus';
@@ -39,6 +40,10 @@ String contextNodeId(String cardAddress) {
   final section = templumAlias[p[1]] ?? p[1];
   return '${p[0] == 'templum' ? _thema : _intellectus}.${_seg(section)}.${_seg(p[2])}';
 }
+
+/// Direction-specific recall of a meaning. A sentence only exposes a word;
+/// the final lexical question is what observes this node.
+String vocabularyNodeId(String place, String word) => 'lect.vocabula.${place == 'theatrum' ? 'gallice' : 'latine'}.$word';
 
 /// Maillons de grammaire (morphologie, syntaxe) qu'une carte met en jeu.
 List<String> contextBaseNodes(String cardAddress) {
@@ -107,6 +112,20 @@ List<Skill> contextusNodes() {
     // exposés ici et travaillés ensuite ; ils restent liés comme exemples.
     out.add(Skill(intellectus, nomen: c.name, quid: 'Comprendre dans une phrase latine ce que met en jeu la carte « ${c.name} » (${c.section}).', stratum: Stratum.lectio, parens: _intellectus, requirit: intellectusChain, exempla: base, probatur: const [Dimensio.sensus]));
     out.add(Skill(thema, nomen: themaName, quid: 'Rendre en latin, depuis le français, ce que met en jeu la carte « $themaName » (${_templumSection[c.section] ?? c.section}).', stratum: Stratum.lectio, parens: _thema, requirit: [intellectus, ...themaChain], exempla: base, probatur: const [Dimensio.productio]));
+  }
+  for (final e in kFrameLexemes.entries) {
+    final word = e.key, lex = e.value;
+    final reading = vocabularyNodeId('theatrum', word);
+    if (lex.readingCard != null) {
+      out.add(Skill(reading, nomen: '${lex.latin} · Gallicē', quid: 'Reconnaître le sens : ${lex.french}.',
+        stratum: Stratum.lectio, parens: 'lect.vocabula.gallice', visibilis: false,
+        requirit: [contextNodeId(lex.readingCard!)], probatur: const [Dimensio.vocabulum]));
+    }
+    if (lex.productionCard != null) {
+      out.add(Skill(vocabularyNodeId('templum', word), nomen: '${lex.latin} · Latīnē', quid: 'Mobiliser le mot latin pour : ${lex.french}.',
+        stratum: Stratum.lectio, parens: 'lect.vocabula.latine', visibilis: false,
+        requirit: [if (lex.readingCard != null) reading, contextNodeId(lex.productionCard!)], probatur: const [Dimensio.vocabulum]));
+    }
   }
   return out;
 }

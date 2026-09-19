@@ -8,6 +8,8 @@ emplacements ; l'ensemble des valeurs observées à chaque emplacement est conse
 Sortie : reference/frames/<lieu>.json — liste de cadres, jamais de questions générées.
 """
 import collections
+import base64
+import hashlib
 import json
 import re
 import sys
@@ -24,6 +26,27 @@ def tokens(s):
     return TOKEN.findall(s)
 
 
+def pack_rows(rows):
+    """Lossless column dictionaries + little-endian indices, never a sample.
+
+    Dart decodes one row on demand rather than allocating hundreds of thousands
+    of lists and repeated strings at startup. Column widths are explicit.
+    """
+    columns, indices, widths = [], [], []
+    for values in zip(*rows):
+        dictionary = dict.fromkeys(values)
+        lookup = {value: i for i, value in enumerate(dictionary)}
+        columns.append(list(dictionary))
+        indices.append([lookup[value] for value in values])
+        widths.append(1 if len(dictionary) <= 256 else 2 if len(dictionary) <= 65536 else 4)
+    packed = bytearray()
+    for row in zip(*indices):
+        for value, width in zip(row, widths):
+            packed.extend(value.to_bytes(width, 'little'))
+    return {'columns': columns, 'widths': widths, 'length': len(rows),
+            'data': base64.b64encode(packed).decode('ascii')}
+
+
 def skeleton(flat):
     """Signature structurelle : types des segments et nombre de propositions. Les longueurs en
     mots ne comptent pas : « L'ami » et « Le cavalier » sont le même emplacement."""
@@ -38,6 +61,7 @@ def template(strings):
     mots. Renvoie (patron, emplacements) ; chaque emplacement liste ses valeurs distinctes.
     """
     import difflib
+    strings = list(dict.fromkeys(strings))
     ref = tokens(strings[0])
     rows = [tokens(s) for s in strings]
     if len(rows) == 1:
@@ -130,6 +154,9 @@ def _clean_lesson(blocks):
 
 
 def main(place):
+    from context_banks import prepared
+    compiled = prepared()
+    print(f'{place}: compiling complete banks (no variant cap)', flush=True)
     groups = collections.defaultdict(list)
     for address, directory, card in cards(place):
         for q, texts in questions(directory, card):
@@ -137,11 +164,14 @@ def main(place):
             feedback = tuple(sorted(o['feedback'] for o in flat['outcomes'].values()))
             accepted = tuple(sorted(
                 i for i, c in enumerate(flat['choices']) if c['id'] in flat['accepted']))
-            key = (address, flat['interaction'], flat['dimension'], feedback, skeleton(flat), accepted, tuple(flat['skills']))
+            # Keep each choice's diagnosis attached to that choice, and never
+            # merge distinct authored assessment families, prompts or help.
+            outcomes = tuple(json.dumps(flat['outcomes'][c['id']], sort_keys=True, ensure_ascii=False) for c in flat['choices'])
+            key = (address, flat['interaction'], flat['dimension'], outcomes, skeleton(flat), accepted, tuple(flat['skills']), flat['prompt'], flat['help'], flat['selectionGroup'])
             groups[key].append(flat)
     frames = []
     for n, (key, members) in enumerate(sorted(groups.items(), key=lambda kv: (kv[0][0], -len(kv[1])))):
-        address, interaction, dimension, feedback, _, accepted, skills = key
+        address, interaction, dimension, feedback, _, accepted, skills, _, _, _ = key
         first = members[0]
         content = []
         slots = []
@@ -168,25 +198,41 @@ def main(place):
                 'template': tpl,
                 'accepted': j in accepted,
                 'outcome': first['outcomes'][ch['id']],
+                'lexeme': ch.get('lexeme'),
             })
-        # Instanciations alignées : pour chaque instance, la valeur de chaque
-        # emplacement dans l'ordre des emplacements (24 au plus, régulièrement
-        # espacées), pour régénérer des phrases cohérentes.
+        # Keep ALL observed aligned tuples, including their lexical exposure and
+        # authored evidence identity. Background substitutions are not new evidence.
+        value_cache = {}
         def values_of(member):
             vals = []
             for seg_i, seg in enumerate(first['content']):
                 if seg['type'] == 'image':
                     continue
                 tpl_slots = [sl for sl in slots if sl['in'] == f'content[{seg_i}]']
-                vals.extend(_fill(member['content'][seg_i]['text'], first['content'][seg_i]['text'], tpl_slots, members))
+                text = member['content'][seg_i]['text']
+                cache_key = ('content', seg_i, text)
+                if cache_key not in value_cache:
+                    value_cache[cache_key] = _fill(text, first['content'][seg_i]['text'], tpl_slots, members)
+                vals.extend(value_cache[cache_key])
             for j in range(len(first['choices'])):
                 tpl_slots = [sl for sl in slots if sl['in'] == f'choices[{j}]']
-                vals.extend(_fill(member['choices'][j]['text'], first['choices'][j]['text'], tpl_slots, members))
-            return vals
-        step = max(1, len(members) // 24)
-        instances = [values_of(m) for m in members[::step][:24]]
+                text = member['choices'][j]['text']
+                cache_key = ('choice', j, text)
+                if cache_key not in value_cache:
+                    value_cache[cache_key] = _fill(text, first['choices'][j]['text'], tpl_slots, members)
+                vals.extend(value_cache[cache_key])
+            # Verify every text, not just the first reference sample.
+            def fill(tpl):
+                return re.sub(r'\{(\d+)\}', lambda m: vals[int(m[1])], tpl)
+            for seg, original in zip(content, member['content']):
+                if seg['type'] != 'image':
+                    assert tokens(fill(seg['template'])) == tokens(original['text']), (address, member['id'], 'content')
+            for choice, original in zip(choices, member['choices']):
+                assert tokens(fill(choice['template'])) == tokens(original['text']), (address, member['id'], 'choice')
+            return vals + [json.dumps(sorted(member['vocabulary']), ensure_ascii=False, separators=(',', ':')), member['evidenceItem']]
+        instances = [values_of(m) for m in members]
         frames.append({
-            'id': f'{address}#{n}',
+            'id': address + '#' + hashlib.sha256(json.dumps(key, ensure_ascii=False).encode()).hexdigest()[:16],
             'card': address,
             'interaction': interaction,
             'dimension': dimension,
@@ -197,7 +243,8 @@ def main(place):
             'choices': choices,
             'slots': slots,
             'instances': len(members),
-            'aligned': instances,
+            'alignedPacked': pack_rows(instances),
+            'variantMetadata': True,
             'samples': [
                 {'content': ' '.join(s.get('text', '') for s in m['content']), 'choices': [c['text'] for c in m['choices']]}
                 for m in members[:3]
@@ -209,13 +256,24 @@ def main(place):
         for sl in fr['slots']:
             sl.pop('_next', None)
     with open(os.path.join(REPO, f'reference/frames/{place}.json'), 'w', encoding='utf-8') as f:
-        json.dump(frames, f, ensure_ascii=False, indent=1)
+        # Reference samples remain small; the complete lossless tuples live in
+        # the executable asset, not twice in the repository.
+        references = [{**{k: v for k, v in fr.items() if k not in ('alignedPacked', 'slots')},
+                       'slots': [{'in': sl['in'], 'count': sl['count']} for sl in fr['slots']]} for fr in frames]
+        json.dump(references, f, ensure_ascii=False, indent=1)
     # Métadonnées des cartes (nom, sous-titre, prix, prérequis, ordre).
     cards_meta = []
     for address, directory, card in cards(place):
         section = address.split('/')[1]
         lesson_path = os.path.join(directory, card.get('lesson', 'lesson.json'))
         lesson, examples = _clean_lesson(load(lesson_path)) if os.path.exists(lesson_path) else ([], [])
+        cm = compiled['metadata'][address]
+        lexical_order = cm['newVocabulary'] + [w for w in cm['vocabulary'] if w not in cm['newVocabulary']]
+        examples = [compiled['lexicon'][w]['latin'] + ' — ' + compiled['lexicon'][w]['french'] for w in lexical_order]
+        encounter = dict(card.get('encounter') or {})
+        if address.endswith('/vocabula'):
+            lesson = ['Vocābula nova huius sectiōnis tantum probantur. Vocābula sectiōnum priōrum hīc nōn repetuntur.']
+            encounter['target'] = min(encounter.get('target', 10), len(cm['vocabulary']))
         cards_meta.append({
             'lesson': lesson,
             'examples': examples,
@@ -224,8 +282,9 @@ def main(place):
             'price': (card.get('access') or {}).get('price', 0),
             'requires': (card.get('access') or {}).get('requires'),
             'skills': card.get('skills', []),
-            'encounter': card.get('encounter'),
+            'encounter': encounter,
             'questionSelection': card.get('questionSelection'),
+            **cm,
         })
     sections = {}
     for sec_file in sorted(glob.glob(os.path.join(ROOT, place, 'sections', '*', 'section.json'))):
@@ -242,11 +301,20 @@ def main(place):
         blocks = help_all.get(hid)
         if blocks is not None:
             existing[hid] = [{'type': b['type'], 'text': _strip_echo(b['text'])} for b in blocks if b.get('type') in ('text', 'example')]
+    for fr in frames:
+        if fr['help'] and fr['help'].startswith('context.vocabula.'):
+            existing[fr['help']] = [{'type': 'text', 'text': 'Vocābula nova huius sectiōnis redde. Verbum quaesītum et significātiō eius infra explicantur.'}]
+        elif fr['help'] and fr['help'].startswith('expansion.'):
+            existing[fr['help']] = [{'type': 'text', 'text': fr['choices'][0]['outcome']['feedback']}]
     os.makedirs(os.path.dirname(help_path), exist_ok=True)
     with open(help_path, 'w', encoding='utf-8') as f:
         json.dump(existing, f, ensure_ascii=False, separators=(',', ':'), sort_keys=True)
     with open(os.path.join(REPO, f'reference/frames/{place}.cards.json'), 'w', encoding='utf-8') as f:
         json.dump({'place': {k: place_meta.get(k) for k in ('id', 'name', 'subtitle', 'children')}, 'sections': sections, 'cards': cards_meta}, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(REPO, 'reference/frames/lexicon.json'), 'w', encoding='utf-8') as f:
+        json.dump(compiled['lexicon'], f, ensure_ascii=False, indent=1)
+    with open(os.path.join(REPO, 'reference/frames/coverage.json'), 'w', encoding='utf-8') as f:
+        json.dump(compiled['summary'], f, ensure_ascii=False, indent=1)
     # Asset embarqué : les cadres sans échantillons ni identifiants bruts.
     os.makedirs(os.path.join(REPO, 'assets/arbor/frames'), exist_ok=True)
     asset = []

@@ -3,6 +3,8 @@ library;
 
 import 'dart:math';
 
+import '../../arbor/contextus.dart';
+
 import '../mastery.dart';
 import '../question.dart';
 import '../trials.dart';
@@ -28,9 +30,10 @@ extension FrameQuestion on Question {
 class FrameQuestionSource implements QuestionSource {
   FrameQuestionSource(this.library);
   final FrameLibrary library;
+  final Map<String, List<Frame>> _pools = {};
 
   List<Frame> pool(Trial trial) => trial.filter is FrameFilter
-    ? library.forCard((trial.filter as FrameFilter).card).where((f) => f.choices.any((c) => c.accepted) && f.choices.any((c) => !c.accepted)).toList()
+    ? _pools.putIfAbsent((trial.filter as FrameFilter).card, () => library.forCard((trial.filter as FrameFilter).card).where((f) => f.choices.any((c) => c.accepted) && f.choices.any((c) => !c.accepted)).toList())
     : const [];
 
   @override
@@ -49,15 +52,34 @@ class FrameQuestionSource implements QuestionSource {
   }) {
     final frames = pool(trial);
     if (frames.isEmpty) return null;
-    final nodes = frameCardNodes((trial.filter as FrameFilter).card);
-    // Un cadre peu joué pèse plus ; les besoins de l'arbre (maillons faibles,
-    // hypothèses ouvertes) s'appliquent à la carte entière puisque tous ses
-    // cadres visent les mêmes nœuds.
-    // Les cadres joués récemment dans ce combat (recentLemmas porte leurs
-    // identifiants) reculent ; un cadre peu joué pèse plus.
-    final weights = [for (final f in frames) (1.0 / (1 + exposure.seenCount(f.id))) * (recentLemmas.contains(f.id) ? 0.15 : 1.0)];
-    final frame = weightedPick(frames, weights, rng);
-    final inst = frame.instantiate(rng);
+    final cardNodes = frameCardNodes((trial.filter as FrameFilter).card);
+    final remaining = [...frames];
+    FrameInstance? selected;
+    while (remaining.isNotEmpty && selected == null) {
+      final weights = [for (final f in remaining)
+        (1.0 / (1 + exposure.seenCount(f.id))) *
+        (needs?.nodes([...cardNodes, if (f.targetLexeme != null) vocabularyNodeId(f.place, f.targetLexeme!)]) ?? 1.0)];
+      final candidate = weightedPick(remaining, weights, rng);
+      remaining.remove(candidate);
+      final start = rng.nextInt(candidate.variantCount);
+      final options = <FrameInstance>[];
+      // At most twelve recent surfaces are supplied by the encounter. Scan
+      // past them without materializing the complete (potentially huge) bank.
+      for (var offset = 0; offset < candidate.variantCount && options.length < 8; offset++) {
+        final instance = candidate.instantiateAt((start + offset) % candidate.variantCount);
+        if (!recentSurfaces.contains(instance.surface)) options.add(instance);
+      }
+      if (options.isNotEmpty) {
+        final minimum = options.map((i) => exposure.seenCount(i.itemId)).reduce(min);
+        final fresh = options.where((i) => exposure.seenCount(i.itemId) == minimum).toList();
+        selected = weightedPick(fresh, [for (final i in fresh) recentLemmas.contains(i.evidenceId ?? i.frame.id) ? 0.15 : 1.0], rng);
+      }
+    }
+    // Small lexical/test banks may have exhausted every distinct surface.
+    // Only then allow a repeat, rather than reporting missing content.
+    final inst = selected ?? weightedPick(frames, [for (final f in frames) 1.0 / (1 + exposure.seenCount(f.id))], rng).instantiate(rng);
+    final frame = inst.frame;
+    final nodes = [...cardNodes, if (frame.targetLexeme != null) vocabularyNodeId(frame.place, frame.targetLexeme!)];
     final choices = <Choice>[];
     final correct = <String>{};
     for (var i = 0; i < inst.choices.length; i++) {
@@ -73,13 +95,14 @@ class FrameQuestionSource implements QuestionSource {
       dimension: trial.dimensions.first,
       prompt: frame.prompt.isEmpty ? trial.dimensions.first.prompt : frame.prompt,
       surface: inst.surface,
-      lemmaId: frame.id,
+      lemmaId: inst.evidenceId ?? frame.id,
       choices: choices,
       correctValues: correct,
       skillIds: [trial.primarySkill],
-      payload: FrameQuestionPayload(instance: inst, nodes: nodes, lemmaCapacity: frames.map((f) => f.id).toSet().length),
+      payload: FrameQuestionPayload(instance: inst, nodes: nodes, lemmaCapacity: library.evidenceCapacity(frame.card)),
       ambiguous: correct.length > 1,
-      exposure: ExposureNote(itemId: frame.id, passageId: frame.card, lemmas: const [], targetLemma: ''),
+      exposure: ExposureNote(itemId: inst.itemId, groupId: frame.id, passageId: inst.itemId,
+        lemmas: inst.vocabulary, targetLemma: frame.targetLexeme ?? ''),
     );
   }
 

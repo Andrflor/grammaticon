@@ -22,6 +22,7 @@ import '../pedagogy/reading/reading_question_source.dart';
 import '../pedagogy/trial.dart';
 import 'arbor.dart';
 import 'cellae.dart';
+import 'contextus.dart';
 
 class Diagnosis {
   const Diagnosis({this.observed = const {}, this.confusedWith = const {}, this.suspecta = const {}});
@@ -114,12 +115,15 @@ class Diagnostician {
     final accepted = q.choices.where((c) => q.isCorrect(c.value)).map((c) => c.label).firstOrNull;
     if (label == null || accepted == null) return const {};
     // Deux phrases qui ne différent que par un mot : c'est ce mot qui compte.
+    final index = int.tryParse(chosen.replaceFirst('c', ''));
+    final declared = index == null || index >= p.frame.choices.length ? <String>{}
+        : p.frame.choices[index].suspecta.where(arbor.nodes.containsKey).toSet();
     final pair = _differingWords(label, accepted);
-    if (pair == null) return const {};
+    if (pair == null) return declared;
     final m = _wordComponents(pair.$1), a = _wordComponents(pair.$2);
     final lemA = a.where((c) => c.startsWith('lex.')).toSet(), lemM = m.where((c) => c.startsWith('lex.')).toSet();
-    if (lemA.isEmpty || lemA.length != lemM.length || !lemA.containsAll(lemM)) return const {};
-    return a.difference(m).where((c) => !c.startsWith('lex.') && !c.startsWith('cella.') && !c.startsWith('not.') && arbor.nodes.containsKey(c)).toSet();
+    if (lemA.isEmpty || lemA.length != lemM.length || !lemA.containsAll(lemM)) return declared;
+    return {...declared, ...a.difference(m).where((c) => !c.startsWith('lex.') && !c.startsWith('cella.') && !c.startsWith('not.') && arbor.nodes.containsKey(c))};
   }
 
   /// Le mot choisi et le mot attendu quand deux réponses (mot ou phrase) ne
@@ -141,17 +145,17 @@ class Diagnostician {
   Set<String> _wordComponents(String label) {
     final word = label.trim().replaceAll(RegExp(r'[.,;:!?«»"]'), '');
     if (word.isEmpty || word.contains(' ')) return {};
+    final analyses = <Set<String>>[];
     final vf = verbs.analyzer.analyzeLoose(word);
-    if (vf.length == 1 || (vf.isNotEmpty && vf.every((f) => f.analysis.lemmaId == vf.first.analysis.lemmaId))) {
-      final f = vf.first;
-      return _verb(f.analysis, verbs.analyzer.verb(f.analysis.lemmaId))..removeWhere((c) => c.startsWith('cella.'));
+    for (final f in vf) {
+      analyses.add(_verb(f.analysis, verbs.analyzer.verb(f.analysis.lemmaId))..removeWhere((c) => c.startsWith('cella.')));
     }
     final nf = forum.analyzer.analyzeLoose(word);
-    if (nf.isNotEmpty && nf.every((f) => f.analysis.lemmaId == nf.first.analysis.lemmaId)) {
-      final f = nf.first;
-      return _nominal(f, forum.analyzer.lexeme(f.analysis.lemmaId))..removeWhere((c) => c.startsWith('cella.'));
+    for (final f in nf) {
+      analyses.add(_nominal(f, forum.analyzer.lexeme(f.analysis.lemmaId))..removeWhere((c) => c.startsWith('cella.')));
     }
-    return {};
+    // Syncretic surfaces must not inherit the arbitrarily first analysis.
+    return analyses.isEmpty ? {} : analyses.reduce((a, b) => a.intersection(b));
   }
 
   Set<String> _verb(dynamic analysis, VerbEntry v) {
@@ -196,7 +200,7 @@ class Diagnostician {
     final a = targetComponents(q);
     final b = chosenComponents(q, chosen);
     if (b == null) return const Diagnosis();
-    if (q.payload is FrameQuestionPayload) return Diagnosis(observed: a, suspecta: frameSuspecta(q, chosen));
+    if (q.payload is FrameQuestionPayload) return Diagnosis(observed: a, confusedWith: b.difference(a), suspecta: frameSuspecta(q, chosen));
     var observed = a.difference(b);
     // Distracteur « impossible » (aucune forme ne lui correspond, l'analyse
     // synthétique retombe sur la cible) : ce que le joueur n'a pas reconnu,
@@ -245,7 +249,13 @@ class Diagnostician {
     if (p is ReadingQuestionPayload) return _readingChosen(p, chosen);
     // Un mauvais choix dans une phrase ne repose sur aucun maillon de la
     // cible : ce qui a manqué est la compétence en contexte de la carte.
-    if (p is FrameQuestionPayload) return const {};
+    if (p is FrameQuestionPayload) {
+      if (!p.frame.isVocabulary) return const {};
+      final index = int.tryParse(chosen.replaceFirst('c', ''));
+      if (index == null || index < 0 || index >= p.frame.choices.length) return null;
+      final word = p.frame.choices[index].lexeme;
+      return word == null ? const {} : {vocabularyNodeId(p.frame.place, word)};
+    }
     return null;
   }
 

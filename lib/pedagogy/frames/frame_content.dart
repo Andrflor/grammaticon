@@ -9,10 +9,50 @@
 library;
 
 import 'dart:convert';
+import 'dart:collection';
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart' show FlutterError;
 import 'package:flutter/services.dart' show AssetBundle;
+
+/// Lossless dictionary-coded rows. Only the requested tuple is materialized;
+/// the complete authored bank remains available on mobile and web alike.
+class PackedFrameRows extends ListBase<List<String>> {
+  PackedFrameRows(Map j)
+      : columns = [for (final c in j['columns'] as List) (c as List).cast<String>()],
+        widths = (j['widths'] as List).cast<int>(),
+        _length = j['length'] as int,
+        bytes = base64Decode(j['data'] as String) {
+    if (columns.length != widths.length || widths.any((w) => w != 1 && w != 2 && w != 4) || bytes.length != stride * length) {
+      throw const FormatException('Invalid packed frame rows');
+    }
+  }
+
+  final List<List<String>> columns;
+  final List<int> widths;
+  final Uint8List bytes;
+  final int _length;
+  late final int stride = widths.fold(0, (a, b) => a + b);
+  @override
+  int get length => _length;
+  @override
+  set length(int value) => throw UnsupportedError('Read-only frame bank');
+  @override
+  void operator []=(int index, List<String> value) => throw UnsupportedError('Read-only frame bank');
+  @override
+  List<String> operator [](int index) {
+    RangeError.checkValidIndex(index, this);
+    var offset = index * stride;
+    return [for (var c = 0; c < columns.length; c++) (() {
+      var value = 0;
+      for (var b = 0; b < widths[c]; b++) {
+        value |= bytes[offset++] << (8 * b);
+      }
+      return columns[c][value];
+    })()];
+  }
+}
 
 class FrameSegment {
   const FrameSegment({required this.type, required this.template});
@@ -23,13 +63,15 @@ class FrameSegment {
 }
 
 class FrameChoice {
-  const FrameChoice({required this.template, required this.accepted, required this.feedback, required this.observed});
+  const FrameChoice({required this.template, required this.accepted, required this.feedback, required this.observed, this.lexeme, this.suspecta = const []});
   final String template;
   final bool accepted;
   final String feedback;
 
   /// Anciens identifiants de compétence observés par la banque de référence.
   final List<String> observed;
+  final String? lexeme;
+  final List<String> suspecta;
 }
 
 class Frame {
@@ -46,6 +88,7 @@ class Frame {
     required this.instances,
     required this.legacySkills,
     this.help,
+    this.variantMetadata = false,
   });
 
   final String id;
@@ -67,6 +110,7 @@ class Frame {
 
   /// Identifiant de la fiche d'aide (clé de `help.json`).
   final String? help;
+  final bool variantMetadata;
 
   String get place => card.split('/')[0];
   String get section => card.split('/')[1];
@@ -90,20 +134,39 @@ class Frame {
           accepted: c['accepted'] == true,
           feedback: ((c['outcome'] as Map?)?['feedback'] as String?) ?? '',
           observed: (((c['outcome'] as Map?)?['observed'] as List?) ?? const []).cast<String>(),
+          lexeme: c['lexeme'] as String?,
+          suspecta: (((c['outcome'] as Map?)?['suspecta'] as List?) ?? const []).cast<String>(),
         ),
     ],
     slotCount: (j['slots'] as List).length,
-    aligned: [for (final row in ((j['aligned'] as List?) ?? const [])) (row as List).cast<String>()],
+    aligned: j['alignedPacked'] is Map
+        ? PackedFrameRows(j['alignedPacked'] as Map)
+        : [for (final row in ((j['aligned'] as List?) ?? const [])) (row as List).cast<String>()],
     instances: (j['instances'] as num?)?.toInt() ?? 1,
     legacySkills: ((j['skills'] as List?) ?? const []).cast<String>(),
     help: j['help'] as String?,
+    variantMetadata: j['variantMetadata'] == true,
   );
 
   static final _slot = RegExp(r'\{(\d+)\}');
 
   /// Une instanciation cohérente : contenu et choix remplis avec le même tuple.
   FrameInstance instantiate(Random rng) {
-    final row = aligned.isEmpty ? const <String>[] : aligned[rng.nextInt(aligned.length)];
+    return instantiateAt(aligned.isEmpty ? 0 : rng.nextInt(aligned.length));
+  }
+
+  int get variantCount => aligned.isEmpty ? 1 : aligned.length;
+
+  Iterable<String> get evidenceIds => !variantMetadata
+      ? [id]
+      : aligned is PackedFrameRows
+          ? (aligned as PackedFrameRows).columns[slotCount + 1]
+          : aligned.map((row) => row[slotCount + 1]).toSet();
+
+  String? get targetLexeme => isVocabulary ? choices.where((c) => c.accepted).first.lexeme : null;
+
+  FrameInstance instantiateAt(int index) {
+    final row = aligned.isEmpty ? const <String>[] : aligned[index];
     String fill(String tpl) => tpl.replaceAllMapped(_slot, (m) {
       final i = int.parse(m.group(1)!);
       return i < row.length ? row[i] : '';
@@ -112,15 +175,22 @@ class Frame {
       frame: this,
       content: [for (final s in content) FrameSegment(type: s.type, template: fill(s.template))],
       choices: [for (final c in choices) fill(c.template)],
+      variantIndex: index,
+      vocabulary: variantMetadata ? (jsonDecode(row[slotCount]) as List).cast<String>() : const [],
+      evidenceId: variantMetadata ? row[slotCount + 1] : id,
     );
   }
 }
 
 class FrameInstance {
-  const FrameInstance({required this.frame, required this.content, required this.choices});
+  const FrameInstance({required this.frame, required this.content, required this.choices, this.variantIndex = 0, this.vocabulary = const [], this.evidenceId});
   final Frame frame;
   final List<FrameSegment> content;
   final List<String> choices;
+  final int variantIndex;
+  final List<String> vocabulary;
+  final String? evidenceId;
+  String get itemId => '${frame.id}:$variantIndex';
 
   /// Texte affiché : les segments, le trou marqué […].
   String get surface => content.map((s) => s.type == 'gap' ? '[…]' : s.template).join().replaceAll(RegExp(r' *\n *'), '\n').trim();
@@ -185,5 +255,9 @@ class FrameLibrary {
   }();
 
   List<Frame> forCard(String card) => _byCard[card] ?? const [];
+  final Map<String, int> _capacities = {};
+  int evidenceCapacity(String card) => _capacities.putIfAbsent(card, () => {
+    for (final frame in forCard(card)) ...frame.evidenceIds,
+  }.length);
   Iterable<String> get cards => _byCard.keys;
 }

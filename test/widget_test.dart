@@ -364,15 +364,17 @@ void main() {
     final store = MemorySaveStore();
     await tester.pumpWidget(app(store, initial: SaveData(gems: 50)));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Amphitheātrum'));
+    // Only a guided encounter follows the Iter on Enter. A manually selected
+    // card intentionally retries, so exercise the real guided entry point.
+    await tester.tap(find.text('Iter'));
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(InkWell, 'Certāmen').first);
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 400));
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Incipe!'));
     await tester.pump();
     final element = tester.element(find.byType(Scaffold).last);
     final container = ProviderScope.containerOf(element);
+    expect(container.read(battleProvider)!.isIter, isTrue);
     // Answer correctly until the encounter is won.
     for (var i = 0; i < 40; i++) {
       final s = container.read(battleProvider)!;

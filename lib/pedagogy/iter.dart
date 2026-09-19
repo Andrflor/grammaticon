@@ -8,12 +8,14 @@ import 'dart:math';
 
 import '../arbor/arbor.dart';
 import '../arbor/cellae.dart';
+import '../arbor/contextus.dart';
 import '../arbor/diagnosis.dart';
 import '../arbor/evidence.dart';
 import '../arbor/skill.dart';
 import '../persistence/save_data.dart';
 import 'forum/forum_question_source.dart';
 import 'frames/frame_cards.dart';
+import 'frames/frame_content.dart';
 import 'frames/frame_trials.dart';
 import 'frames/frame_question_source.dart';
 import 'mastery.dart';
@@ -111,7 +113,12 @@ class TrialCoverage {
           }
         case Activity.theatrum:
         case Activity.templum:
-          if (t.filter is FrameFilter) nodes.addAll(frameCardNodes((t.filter as FrameFilter).card));
+          if (t.filter is FrameFilter) {
+            nodes.addAll(frameCardNodes((t.filter as FrameFilter).card));
+            for (final f in frames?.pool(t) ?? const <Frame>[]) {
+              if (f.targetLexeme != null) nodes.add(vocabularyNodeId(f.place, f.targetLexeme!));
+            }
+          }
       }
       nodes.removeWhere((n) => n.startsWith('not.') || n.startsWith('cella.') || n.startsWith('lex.'));
       out[t.id] = nodes;
@@ -119,7 +126,7 @@ class TrialCoverage {
     final dx = diagnostician ?? Diagnostician(Arbor.standard(analyzer: verbs.analyzer, nominal: forum.analyzer), verbs, forum);
     return TrialCoverage(out, lemmaCapacities: {for (final e in lemmas.entries) e.key: e.value.length}, lemmasByTrial: byTrial,
       proves: (t, node, components, needs) {
-        if (t.activity == Activity.theatrum || t.activity == Activity.templum) return frames == null || frames.pool(t).isNotEmpty;
+        if (t.activity == Activity.theatrum || t.activity == Activity.templum) return (out[t.id]?.contains(node) ?? false) && (frames == null || frames.pool(t).isNotEmpty);
         bool proves(Question q) => dx.credited(q).contains(node);
         return (t.activity == Activity.amphitheatrum
           ? verbs.forTarget(trial: t, componentIds: components, target: node, rng: Random(0), id: 'coverage', proves: proves, dimensions: ArborNeeds.dimensionsFor(dx.arbor, node), canPresent: needs?.canPresent, constrain: needs == null ? null : (q) => needs.constrain(q, dx.chosenComponents, surfaceComponents: dx.targetComponents(q)), eligibilityKey: needs?.questionCacheKey)

@@ -50,9 +50,11 @@ class ArborEvidence {
     // se lit sur leurs maillons ; on évite ainsi des milliers d'enregistrements.
     // Les paradigmes explicites (pronoms, numéraux) se suivent case par case.
     bool tracked(String id) => arbor.nodes.containsKey(id) && !id.startsWith('lex.') && (!id.startsWith('cella.') || id.startsWith('cella.pron.') || id.startsWith('cella.num.'));
+    int? capacity(String id) => id.startsWith('lect.vocabula.gallice.') || id.startsWith('lect.vocabula.latine.')
+        ? 1 : lemmaCapacities[id] ?? availableLemmas;
     if (correct) {
       for (final id in credited.where(tracked)) {
-        recs[id] = of(id).apply(obs, cfg, place: place, availableLemmas: lemmaCapacities[id] ?? availableLemmas);
+        recs[id] = of(id).apply(obs, cfg, place: place, availableLemmas: capacity(id));
         if (quality == AnswerQuality.autonoma) {
           hyps.remove(id);
           // Réussir une compétence lève le soupçon sur ce qu'elle suppose
@@ -69,7 +71,7 @@ class ArborEvidence {
       // savoir à quoi ressemble un présent).
       final targets = {...diagnosis.observedElementa, ...diagnosis.confusedWith.where((id) => !id.startsWith('not.'))}.where(tracked).toSet();
       for (final id in targets) {
-        recs[id] = of(id).apply(obs, cfg, availableLemmas: lemmaCapacities[id] ?? availableLemmas);
+        recs[id] = of(id).apply(obs, cfg, availableLemmas: capacity(id));
         hyps.putIfAbsent(id, () => now);
         // Seuls les prérequis directs deviennent suspects : on redescend d'un
         // cran à la fois, et plus bas seulement si eux aussi échouent.
